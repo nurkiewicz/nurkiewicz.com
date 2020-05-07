@@ -1,5 +1,5 @@
 ---
-name: Episode topic suggestion
+name: Suggest topic
 about: Suggest new topic for upcoming episode
 title: "[Your topic idea here]"
 labels: episode-idea
