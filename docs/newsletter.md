@@ -15,7 +15,7 @@
 </div>
 <!--End mc_embed_signup-->
 
-## To get exclusive content:
+# To get exclusive content:
 
 * Transcripts
 * Unedited, longer content
