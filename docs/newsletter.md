@@ -22,5 +22,4 @@
 * More extra materials to learn
 * Your [user voice ideas](https://github.com/nurkiewicz/256/issues/new/choose) are prioritized
 
-<iframe src="https://castbox.fm/app/castbox/player/id2827444?v=8.22.1&autoplay=0" frameborder="0" width="100%" height="400"></iframe>
-
+<a class="spreaker-player" href="https://www.spreaker.com/show/around-it-in-256-seconds" data-resource="show_id=4399573" data-width="100%" data-height="350px" data-theme="dark" data-playlist="show" data-playlist-continuous="true" data-autoplay="false" data-live-autoplay="false" data-chapters-image="true" data-episode-image-position="left" data-hide-logo="false" data-hide-likes="false" data-hide-comments="false" data-hide-sharing="false" data-hide-download="true">Listen to "Around IT in 256 seconds" on Spreaker.</a>
