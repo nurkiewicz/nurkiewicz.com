@@ -5,7 +5,7 @@ All you need is to know some technology or concept really well and be able to ex
 You can either talk freely or answer e.g. the following questions:
 
 * What is ...?
-* Why/how ... is useful?
+* Why/how ... is useful/important?
 * Pros of ...
 * Cons of ...
 
