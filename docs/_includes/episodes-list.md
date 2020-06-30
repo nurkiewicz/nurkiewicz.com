@@ -1,4 +1,4 @@
-# See all episodes
+# Listen to all episodes
 
 <ul>
     {% for post in site.posts %}

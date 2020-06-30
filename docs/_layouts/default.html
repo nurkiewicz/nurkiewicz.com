@@ -45,7 +45,10 @@
         <a href="newsletter">Newsletter</a> •
         <a href="https://github.com/nurkiewicz/256/issues/new/choose">User Voice</a> •
         <a href="guest">Be My Guest</a> •
-        {% include episodes.html %}
+        <a href="episodes">Episodes</a>: 
+        {% for post in site.posts %}
+        <a href="{{ post.url }}">{{ post.permalink | slice: 1,10}}</a>
+        {% endfor %}
       </div>
     </footer>
 

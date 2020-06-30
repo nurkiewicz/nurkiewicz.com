@@ -1,7 +1,7 @@
 ---
 title: "#6: Little's law"
 permalink: /6
-tags: little, nodejs, tomcat
+tags: little nodejs tomcat
 description: Little's law is an astounding equation that's dead simple, yet it can bring an amazing insight into what your distributed system is capable of
 
 ---
