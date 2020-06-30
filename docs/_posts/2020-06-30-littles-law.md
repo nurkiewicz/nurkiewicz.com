@@ -16,4 +16,10 @@ description: Little's law is an astounding equation that's dead simple, yet it c
 * [John Little](https://en.wikipedia.org/wiki/John_Little_(academic))
 * [Node.js and CPU intensive requests](https://stackoverflow.com/questions/3491811/node-js-and-cpu-intensive-requests)
 
+# My talk where I briefly mention Little's law
+
+From 23:03:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5TJiTSWktLU?start=1383" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 {% include newsletter-input.md %}
