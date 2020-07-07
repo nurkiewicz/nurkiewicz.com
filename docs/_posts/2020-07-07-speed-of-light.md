@@ -27,6 +27,10 @@ description: Speed of light is not as abstract to us, software engineers, as you
     \end{align}
 </p>
 
+# More materials
+
+* [Moore's law](https://en.wikipedia.org/wiki/Moore%27s_law)
+
 {% include newsletter-input.md %}
 
 </script>
