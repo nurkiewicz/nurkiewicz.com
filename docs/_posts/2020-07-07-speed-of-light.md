@@ -10,4 +10,10 @@ description: Speed of light is not as abstract to us, software engineers, as you
 
 {{ page.description }}
 
+# Distance the light travels during one CPU cycle at 5 GHz
+
+{% include episode-7-eq.html %}
+
 {% include newsletter-input.md %}
+
+</script>
