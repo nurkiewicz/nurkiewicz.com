@@ -29,7 +29,11 @@ description: Speed of light is not as abstract to us, software engineers, as you
 
 # More materials
 
+* [Latency Numbers Every Programmer Should Know](https://gist.github.com/jboner/2841832)
+* [Instruction pipelining](https://en.wikipedia.org/wiki/Instruction_pipelining)
+* [A CPU history](https://www.techjunkie.com/a-cpu-history/)
 * [Moore's law](https://en.wikipedia.org/wiki/Moore%27s_law)
+* [The distance from Perth, Australia to New York](https://www.travelmath.com/distance/from/Perth,+Australia/to/New+York,+NY)
 
 {% include newsletter-input.md %}
 
