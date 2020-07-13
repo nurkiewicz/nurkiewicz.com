@@ -36,5 +36,3 @@ description: Speed of light is not as abstract to us, software engineers, as you
 * [The distance from Perth, Australia to New York](https://www.travelmath.com/distance/from/Perth,+Australia/to/New+York,+NY)
 
 {% include newsletter-input.md %}
-
-</script>
