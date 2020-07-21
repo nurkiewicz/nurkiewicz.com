@@ -12,7 +12,7 @@ description: >
 
 ---
 
-{% include player.html episode_id="39764507" %}
+{% include player.html %}
 
 {{ page.description }}
 
