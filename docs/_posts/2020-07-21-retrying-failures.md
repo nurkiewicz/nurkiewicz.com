@@ -4,11 +4,11 @@ permalink: /9
 tags: ddos "fault tolerance"
 description: >
     I find it quite fascinating how many failures in complex systems could be avoided if we simply... tried again.
-    So how so you retry effectively, so that your systems are much more fault tolerant and less brittle?
+    So how so you retry effectively, so that your systems are much more fault-tolerant and less brittle?
 
 ---
 
-{% include player.html episode_id="39887805" %}
+{% include player.html episode_id="6QZVGv2RqHRoUvwCSjndPR" %}
 
 {{ page.description }}
 
