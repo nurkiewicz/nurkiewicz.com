@@ -23,5 +23,6 @@ description: >
 * [Continuous delivery](https://en.wikipedia.org/wiki/Continuous_delivery) on Wikipedia
 * [Continuous deployment](https://en.wikipedia.org/wiki/Continuous_deployment) on Wikipedia
 * [Togglz](https://www.togglz.org/): Feature Flags for the Java platform
+* [18 - Continuous Delivery & efficient workflows](https://anchor.fm/effective-developer/episodes/18---Continuous-Delivery--efficient-workflows-ehosqu) on _The Effective Developer_ podcast
 
 {% include newsletter-input.md %}
