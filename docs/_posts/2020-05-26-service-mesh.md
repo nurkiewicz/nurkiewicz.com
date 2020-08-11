@@ -3,6 +3,7 @@ title: '#2: Service Mesh'
 permalink: /2
 tags: microservices istio envoy linkerd
 description: Service mesh is used in environments where there are many services talking to each other. The aim of the service matches is to extract cross-cutting concerns like infrastructure and networking code to an independent layer. Service mesh is commonly implemented using an HTTP proxy.
+
 ---
 
 {% include player.html episode_id="6zuXau7Dt0RmbhmbprUf4g" %}
