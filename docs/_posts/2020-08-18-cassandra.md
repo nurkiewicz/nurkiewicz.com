@@ -18,6 +18,7 @@ description: >
 
 # More materials
 
+* [Official website](https://cassandra.apache.org/)
 * [Cassandra writes in depth](https://blog.softwaremill.com/cassandra-writes-in-depth-6ea8d7581eb)
 * [Cassandra Architecture and Write Path Anatomy](https://medium.com/jorgeacetozi/cassandra-architecture-and-write-path-anatomy-51e339bcfe0c)
 * [The most important thing to know in Cassandra data modeling: The primary key](https://www.datastax.com/blog/2016/02/most-important-thing-know-cassandra-data-modeling-primary-key)
