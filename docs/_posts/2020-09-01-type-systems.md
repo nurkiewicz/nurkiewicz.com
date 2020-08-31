@@ -1,14 +1,15 @@
 ---
-title: "#13: Cassandra"
-permalink: /13
-tags: cassandra bloom-filter scylladb memtable sstable vnode consistent-hashing cap-theorem
+title: "#14: Static, Dynamic, Strong and Weak Type Systems"
+permalink: /14
+tags: type-systems ruby powershell python java c# groovy
 description: >
-    Cassandra is an open-source NoSQL database.
-    It's heavily optimized for writes, but also has intriguing read capabilities.
-    Cassandra has near-linear scalability.
-    In terms of CAP theorem it favours consistency over availability.
-    Interestingly, despite NoSQL label, Cassandra tables have strict schema.
-    Also, Cassandra Query Language is similar to SQL.
+    When choosing or learning a new programming language, type system should be your first question.
+    How strict is that language when types don't really match?
+    Will there be a conservative, slow and annoying compiler?
+    Or maybe a fast feedback loop, often resulting in crashes at runtime?
+    And also, is the language runtime trusting you know what you are doing, even if you don't?
+    Or maybe it's babysitting you, making it hard to write fast, low-level code?
+    Believe it or not, I just described static, dynamic, weak and strong typing.
 
 ---
 
@@ -18,11 +19,7 @@ description: >
 
 # More materials
 
-* [Official website](https://cassandra.apache.org/)
-* [Cassandra writes in depth](https://blog.softwaremill.com/cassandra-writes-in-depth-6ea8d7581eb)
-* [Cassandra Architecture and Write Path Anatomy](https://medium.com/jorgeacetozi/cassandra-architecture-and-write-path-anatomy-51e339bcfe0c)
-* [The most important thing to know in Cassandra data modeling: The primary key](https://www.datastax.com/blog/2016/02/most-important-thing-know-cassandra-data-modeling-primary-key)
-* [The CAP Theorem](https://teddyma.gitbooks.io/learncassandra/content/about/the_cap_theorem.html)
-* [Difference between UPDATE and INSERT in Cassandra?](https://stackoverflow.com/questions/16532227/difference-between-update-and-insert-in-cassandra)
+* [Type system](https://en.wikipedia.org/wiki/Type_system)
+* [Strong and weak typing](https://en.wikipedia.org/wiki/Strong_and_weak_typing)
 
 {% include newsletter-input.md %}
