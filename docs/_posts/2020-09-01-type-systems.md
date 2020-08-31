@@ -13,7 +13,7 @@ description: >
 
 ---
 
-{% include player.html episode_id="24hMSXpkmQcVkfM1g0J4Ez" %}
+{% include player.html episode_id="3ryE77MvuGwE08S9q6jv6n" %}
 
 {{ page.description }}
 
