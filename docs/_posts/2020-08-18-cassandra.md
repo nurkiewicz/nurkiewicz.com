@@ -24,5 +24,6 @@ description: >
 * [The most important thing to know in Cassandra data modeling: The primary key](https://www.datastax.com/blog/2016/02/most-important-thing-know-cassandra-data-modeling-primary-key)
 * [The CAP Theorem](https://teddyma.gitbooks.io/learncassandra/content/about/the_cap_theorem.html)
 * [Difference between UPDATE and INSERT in Cassandra?](https://stackoverflow.com/questions/16532227/difference-between-update-and-insert-in-cassandra)
+* [7 mistakes when using Apache Cassandra](https://blog.softwaremill.com/7-mistakes-when-using-apache-cassandra-51d2cf6df519)
 
 {% include newsletter-input.md %}
