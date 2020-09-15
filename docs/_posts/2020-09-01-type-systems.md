@@ -17,6 +17,26 @@ description: >
 
 {{ page.description }}
 
+# Example of typing system in Python
+
+```
+Python 3.8.5 (default, Jul 21 2020, 10:48:26)
+[Clang 11.0.3 (clang-1103.0.32.62)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+```
+
+
+```python
+>>> x = "abc"
+>>> y = 123
+>>> x + y
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: can only concatenate str (not "int") to str
+>>> x = 7
+>>> x + y
+130```
+
 # More materials
 
 * [Type system](https://en.wikipedia.org/wiki/Type_system)
