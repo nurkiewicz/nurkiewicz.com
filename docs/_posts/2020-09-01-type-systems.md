@@ -35,7 +35,8 @@ Traceback (most recent call last):
 TypeError: can only concatenate str (not "int") to str
 >>> x = 7
 >>> x + y
-130```
+130
+```
 
 # More materials
 
