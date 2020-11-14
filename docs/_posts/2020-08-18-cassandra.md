@@ -6,7 +6,7 @@ description: >
     Cassandra is an open-source NoSQL database.
     It's heavily optimized for writes, but also has intriguing read capabilities.
     Cassandra has near-linear scalability.
-    In terms of CAP theorem it favours consistency over availability.
+    In terms of CAP theorem it favours availability over consistency .
     Interestingly, despite NoSQL label, Cassandra tables have strict schema.
     Also, Cassandra Query Language is similar to SQL.
 
