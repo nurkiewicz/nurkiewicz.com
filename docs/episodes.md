@@ -4,7 +4,8 @@
 
 # Tags
 
-{% for tag in site.tags %}
+{% assign tags = site.tags | sort %}
+{% for tag in tags %}
   <h2>{{ tag[0] }}</h2>
   <ul>
     {% for post in tag[1] %}
