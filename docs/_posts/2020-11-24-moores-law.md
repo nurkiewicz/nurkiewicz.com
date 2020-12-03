@@ -87,6 +87,7 @@ That's it, thanks for listening, bye!
 * [Apple M1 has 16 billion transistors](https://www.forbes.com/sites/patrickmoorhead/2020/11/11/the-good-bad-and-the-ugly-of-apples-mac-launch-with-m1-processors/)
 * [Designing an AND Gate using Transistors](https://circuitdigest.com/electronic-circuits/designing-and-gate-using-transistors)
 * [TSMC: Moore’s Law is "not dead, it’s not slowing down, it’s not even sick."](https://www.pcgamesn.com/tsmc-moores-law-not-dead-not-slowing-down-not-even-sick)
-* [#7: Speed of light](https://256.nurkiewicz.com/7)
+* 🔉 [#7: Speed of light](https://256.nurkiewicz.com/7)
+* [From Nand to Tetris](https://www.nand2tetris.org/) - Building a Modern Computer From First Principles
 
 {% include newsletter-input.md %}
