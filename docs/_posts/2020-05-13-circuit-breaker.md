@@ -36,7 +36,7 @@ When it's closed it's transparent.
 When it's open you are not calling external dependency.
 Instead you get a failure immediately.
 There's a third state that's actually crucial for how circuit breaker operates.
-It's called hall-open.
+It's called half-open.
 In the half-open state circuit breaker behaves as if it was open.
 However, exactly one request every second or every ten seconds is actually passed to the broken dependency just in case that dependency fixed itself.
 If the dependency is fixed, so if this single request, this probe, succeeded, the circuit breaker automatically closes.
