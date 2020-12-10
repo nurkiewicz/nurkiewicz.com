@@ -82,6 +82,7 @@ That's it, thanks for listening, bye!
 * [Websockets 101](https://lucumr.pocoo.org/2012/9/24/websockets-101/)
 * [emojitracker](http://emojitracker.com/) - a showcase of SSE in action
 * [HTTP/2 Server Push](https://en.wikipedia.org/wiki/HTTP/2_Server_Push)
+* [HTTP/2 Push is dead](https://evertpot.com/http-2-push-is-dead/)
 
 
 {% include newsletter-input.md %}
