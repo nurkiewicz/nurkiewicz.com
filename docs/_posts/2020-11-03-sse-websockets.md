@@ -1,5 +1,5 @@
 ---
-title: "#21: SEE and WebSockets"
+title: "#21: SSE and WebSockets"
 permalink: /21
 tags: sse websocket http EventSource
 description: >
