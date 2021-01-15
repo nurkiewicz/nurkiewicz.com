@@ -22,4 +22,4 @@ description: >
 * [How LinkedIn customizes Apache Kafka for 7 trillion messages per day
 ](https://engineering.linkedin.com/blog/2019/apache-kafka-trillion-messages)
 
-{% include newsletter-input.md %}
+{% include post-footer.md %}

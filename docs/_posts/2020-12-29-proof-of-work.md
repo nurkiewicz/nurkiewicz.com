@@ -95,4 +95,4 @@ Thanks for listening, bye!
 * [Blockchain size (MB)](https://www.blockchain.com/charts/blocks-size)
 
 
-{% include newsletter-input.md %}
+{% include post-footer.md %}

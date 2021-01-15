@@ -35,4 +35,4 @@ description: Speed of light is not as abstract to us, software engineers, as you
 * [Moore's law](https://en.wikipedia.org/wiki/Moore%27s_law)
 * [The distance from Perth, Australia to New York](https://www.travelmath.com/distance/from/Perth,+Australia/to/New+York,+NY)
 
-{% include newsletter-input.md %}
+{% include post-footer.md %}

@@ -79,4 +79,4 @@ Thanks for listening, bye!
 * [How proof of work prevents double spend](https://bitcoin.stackexchange.com/questions/61385/how-proof-of-work-prevents-double-spend)
 * [Blockchain size (MB)](https://www.blockchain.com/charts/blocks-size)
 
-{% include newsletter-input.md %}
+{% include post-footer.md %}

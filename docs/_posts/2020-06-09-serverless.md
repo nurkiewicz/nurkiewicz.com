@@ -19,4 +19,4 @@ description: Serverless (function as a service) is the fastest and most cost eff
 
 * [Spring Cloud Function](https://spring.io/projects/spring-cloud-function)
 
-{% include newsletter-input.md %}
+{% include post-footer.md %}

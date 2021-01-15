@@ -82,4 +82,4 @@ That's it for today, thanks for listening, bye!
 
 
 
-{% include newsletter-input.md %}
+{% include post-footer.md %}

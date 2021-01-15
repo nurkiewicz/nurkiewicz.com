@@ -17,4 +17,4 @@ description: asm.js and WebAssembly are two technologies used to run native code
 * [Quake in the browser (asm.js)](http://www.quakejs.com/)
 * [Unity Engine in the browser (WebAssembly)](https://blogs.unity3d.com/2018/08/15/webassembly-is-here/)
 
-{% include newsletter-input.md %}
+{% include post-footer.md %}

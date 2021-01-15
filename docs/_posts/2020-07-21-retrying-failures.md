@@ -18,4 +18,4 @@ description: >
 * [`spring-retry` for Java](https://github.com/spring-projects/spring-retry)
 * [Retry in Resilience4J](https://resilience4j.readme.io/docs/retry)
 
-{% include newsletter-input.md %}
+{% include post-footer.md %}

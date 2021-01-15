@@ -27,4 +27,4 @@ description: >
 * [Google Dumps MapReduce in Favor of New Hyper-Scale Analytics System](https://www.datacenterknowledge.com/archives/2014/06/25/google-dumps-mapreduce-favor-new-hyper-scale-analytics-system/)
 
 
-{% include newsletter-input.md %}
+{% include post-footer.md %}

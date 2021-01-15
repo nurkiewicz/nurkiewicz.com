@@ -82,4 +82,4 @@ Copied from [Wikipedia]():
 
 
 
-{% include newsletter-input.md %}
+{% include post-footer.md %}

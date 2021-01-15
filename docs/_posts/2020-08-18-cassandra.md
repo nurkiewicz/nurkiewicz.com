@@ -26,4 +26,4 @@ description: >
 * [Difference between UPDATE and INSERT in Cassandra?](https://stackoverflow.com/questions/16532227/difference-between-update-and-insert-in-cassandra)
 * [7 mistakes when using Apache Cassandra](https://blog.softwaremill.com/7-mistakes-when-using-apache-cassandra-51d2cf6df519)
 
-{% include newsletter-input.md %}
+{% include post-footer.md %}

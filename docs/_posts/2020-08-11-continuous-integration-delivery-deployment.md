@@ -25,4 +25,4 @@ description: >
 * [Togglz](https://www.togglz.org/): Feature Flags for the Java platform
 * [18 - Continuous Delivery & efficient workflows](https://anchor.fm/effective-developer/episodes/18---Continuous-Delivery--efficient-workflows-ehosqu) on _The Effective Developer_ podcast
 
-{% include newsletter-input.md %}
+{% include post-footer.md %}

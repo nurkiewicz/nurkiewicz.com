@@ -77,4 +77,4 @@ I will also notify you about new episodes and add some extra content.
 
 * [#2: Service Mesh](2) - often includes circuit breaker so you don't have to include it yourself in your application
 
-{% include newsletter-input.md %}
+{% include post-footer.md %}

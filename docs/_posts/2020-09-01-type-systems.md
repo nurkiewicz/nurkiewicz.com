@@ -43,4 +43,4 @@ TypeError: can only concatenate str (not "int") to str
 * [Type system](https://en.wikipedia.org/wiki/Type_system)
 * [Strong and weak typing](https://en.wikipedia.org/wiki/Strong_and_weak_typing)
 
-{% include newsletter-input.md %}
+{% include post-footer.md %}

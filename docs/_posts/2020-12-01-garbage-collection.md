@@ -86,4 +86,4 @@ That's it, thanks for listening, bye!
 * [Yes, Rust Has Garbage Collection, And A Fast One](https://blog.akquinet.de/2020/10/09/yes-rust-has-garbage-collection-and-a-fast-one/)
 
 
-{% include newsletter-input.md %}
+{% include post-footer.md %}
