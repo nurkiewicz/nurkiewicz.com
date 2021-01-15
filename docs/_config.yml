@@ -18,10 +18,16 @@ twitter:
   card: summary
 
 # Build settings
-theme: jekyll-theme-hacker
+# remote_theme: wowthemesnet/mediumish-theme-jekyll
+# remote_theme: wowthemesnet/mundana-theme-jekyll
+# remote_theme: samesies/barber-jekyll
+remote_theme: brianmaierjr/long-haul
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-include-cache
+  - jekyll-remote-theme
 
 # Exclude from processing.
 # The following items will not be processed, by default.
