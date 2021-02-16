@@ -21,7 +21,8 @@ description: >
 
 {{ page.description }}
 
-<!--
+
+
 Back in the old days of C and C++, every object we created had to be manually freed.
 It seems hard to imagine.
 Every time you created a new instance of almost anything, you had to remember to destroy that.
@@ -76,7 +77,8 @@ And guarantee at compile time that no memory leaks.
 
 That's it, thanks for listening, bye!
 
--->
+
+
 
 # More materials
 

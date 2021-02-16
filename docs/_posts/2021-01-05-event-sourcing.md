@@ -17,7 +17,8 @@ description: >
 
 {{ page.description }}
 
-<!--
+
+
 Let's say you need to keep track of your customers.
 When a new customer appears in your system, we store `CustomerCreated` event.
 It contains customer's data provided during registration.
@@ -71,7 +72,8 @@ Some stick to relational database or choose commercial, specialized tools.
 More links in the shownotes.
 
 That's it, thanks for listening, bye!
--->
+
+
 
 # More materials
 

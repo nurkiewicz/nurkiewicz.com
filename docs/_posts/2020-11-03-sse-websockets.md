@@ -21,7 +21,8 @@ description: >
 
 {{ page.description }}
 
-<!--
+
+
 A slightly smarter approach is long-polling.
 In this implementation you periodically ask the server whether there is some new data.
 To avoid excessive round-trips, the server doesn't respond until some update is available.
@@ -71,7 +72,8 @@ If you want to know more, I covered the history of HTTP protocol in episode 10.
 That's it, thanks for listening, bye!
 
 
--->
+
+
 
 # More materials
 

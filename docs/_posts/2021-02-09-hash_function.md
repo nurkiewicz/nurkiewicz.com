@@ -25,7 +25,8 @@ description: >
 
 {{ page.description }}
 
-<!--
+
+
 Good hash functions are quintessential to implement efficient hash tables.
 It's a data structure which allows searching by key in constant time.
 You simply calculate the hash of the key and then go to the bucket for that key.
@@ -79,7 +80,8 @@ The digital signature also proves we are the authors of that message.
 You'll find more materials in the show notes.
 Especially about birthday attack and rainbow tables.
 Thanks for listening, bye!
--->
+
+
 
 # More materials
 

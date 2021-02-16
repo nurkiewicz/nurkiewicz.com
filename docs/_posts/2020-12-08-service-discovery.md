@@ -24,7 +24,8 @@ description: >
 
 {{ page.description }}
 
-<!--
+
+
 ## Shared database
 
 The simplest approach is a shared SQL database.
@@ -74,7 +75,8 @@ DNS with its built-in fault-tolerance, layers of caching and operating system su
 
 That's it, thanks for listening, bye!
 
--->
+
+
 
 # More materials
 

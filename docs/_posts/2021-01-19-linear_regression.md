@@ -23,7 +23,8 @@ description: >
 
 {{ page.description }}
 
-<!--
+
+
 As a matter of fact, this train of thought is quite obvious.
 The biggest factor in real estate pricing is its area.
 For example, let's say one square foot in New York costs around $1000.
@@ -88,7 +89,8 @@ Or unknown car's top speed knowing its engine's power and total mass.
 If you are interested in how linear regression finds the coefficients, check out the show notes.
 You'll find articles about so-called _gradient descent_.
 That's it, thanks for listening, bye!
--->
+
+
 
 # More materials
 

@@ -20,7 +20,8 @@ description: >
 
 {{ page.description }}
 
-<!--
+
+
 A drug dealer may believe in one fork, whereas a gun dealer believes in the other.
 They both think they received the money and sell me the goods.
 But the whole network is confused.
@@ -82,7 +83,8 @@ I see blockchain as a wonderful concept but with very limited practical uses.
 Thanks for listening, bye!
 
 * difficulty parameter
--->
+
+
 
 # More materials
 

@@ -27,7 +27,8 @@ description: >
 
 {{ page.description }}
 
-<!--
+
+
 For practical reasons we really want two servers, even very geographically distant, to have the same time.
 I'm not talking about time zones.
 I'm talking about tiny differences, measured in milliseconds.
@@ -80,7 +81,8 @@ Fun fact: if clocks between nodes drift too much, CockroachDB simply terminates 
 
 You can find lots of extra materials in the show notes.
 That's it, thanks for listening, bye!
--->
+
+
 
 # More materials
 

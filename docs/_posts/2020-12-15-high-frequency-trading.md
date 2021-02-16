@@ -22,7 +22,8 @@ description: >
 
 {{ page.description }}
 
-<!--
+
+
 Interpreting social media and other online sources is just one strategy.
 Another one is even more reliant on speed.
 Let me tell you a little bit how the stock exchange works.
@@ -62,7 +63,8 @@ Customized hardware and top-notch developers are working hard to squeeze every m
 And win against other machines.
 
 That's it, thanks for listening, bye!
--->
+
+
 
 # More materials
 

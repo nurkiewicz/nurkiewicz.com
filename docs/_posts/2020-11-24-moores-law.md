@@ -19,7 +19,8 @@ description: >
 
 {{ page.description }}
 
-<!--
+
+
 A clock speed is simple.
 It tells how many operations a processor can run in a second.
 The role of transistors is more complex.
@@ -77,7 +78,8 @@ Yet, for the time being, we can enjoy an unbelievable progress in computing capa
 
 That's it, thanks for listening, bye!
 
--->
+
+
 
 # More materials
 

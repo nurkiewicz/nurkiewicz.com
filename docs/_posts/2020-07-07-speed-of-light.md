@@ -10,6 +10,57 @@ description: Speed of light is not as abstract to us, software engineers, as you
 
 {{ page.description }}
 
+Light travels at an unbelievable speed of three hundred thousand kilometres per second.
+That's more than 7 times around the globe in one second.
+Is this relevant in our industry?
+
+What do you think is faster: loading data from local hard drive or from a Redis in-memory cache, deployed somewhere in the same data center?
+Turns out network round-trip is faster by an order of magnitude, compared to hard drive.
+Basically the speed of light beats mechanical device by far.
+But let's scale out a little bit.
+Ever heard of `ping` command?
+
+`ping` measures how much time a tiny network packet travelled from your computer to the server and back again.
+This time is affected by the number of network hops, server's latency, but also... speed of light.
+The distance from Perth (Australia) to New York is almost nineteen thousand kilometres.
+So `ping` from your customer in Australia to your server in New York needs to travel more than **thirty seven thousand** kilometres.
+This is about one hundred and twenty five milliseconds if `ping` was a photon and a server was a mirror.
+In practice speed of light is the least of your concerns, when you think about server's latency, number of network hops, dropped and retransmitted packets, etc.
+But the speed of lights says already tells us, that no matter what you do, you can't expect your website to respond faster that one eighth of a second.
+That's why CDNs (content delivery networks) are so popular, serving data and running code as close geographically as possible.
+Also that's why the most scalable database are replicated across multiple continents.
+Otherwise, even if your backend is deployed in close proximity to the customer, it has to wait ages (well, milliseconds) for the database.
+Even if you believe that network is extremely fast, when building a worldwide business, you must think about geography.
+Because of the speed of light limitations.
+
+OK, that's the speed of light on the macro scale.
+But it happens to be relevant in the micro scale as well.
+The fastest CPUs these days have a clock speed of about 5 GHz.
+Greatly oversimplifying, this means a single instruction takes about 0.2 nanoseconds.
+That's rather... fast.
+How far can light travel in that time?
+I'll spare you the tedious math - only 6 centimetres.
+If CPU is larger than 9 square centimetres there is not enough time for light to travel from top-left to bottom-right corner of the device.
+Assuming paths are perpendicular.
+Let that sink into you: today's CPUs are so fast that there is not enough time for electrical signal to propagate from input to output.
+OK, I'm greatly simplifying.
+First of all, CPU architectures takes that into account.
+They can't bend the laws of physics, but due to instruction pipelining a single cycle invokes only small part of instruction.
+So even the simplest instruction, like adding two numbers, takes multiple cycles.
+However, when CPU is about to finish addition, it already started several subsequent instructions.
+This techniques was used in Intel's 386 CPU back in 1985.
+
+And no, speed of light is not causing Moore's Law to collapse.
+First of all because Moore's does not talk about CPU speed doubling every 18 months.
+This indeed no longer olds true.
+But it talks about number of integrated transistors that keeps growing.
+And Moore's Law still holds.
+
+However, because transistors do include certain delay in signal propagation and because of the speed of light, CPU clock frequencies can't go higher infinitely.
+That's it, thanks for listening about physics for a while.
+Hope you'll understand why choosing the right location for your data center is important.
+Any why CPUs are not getting faster.
+
 # Distance the light travels during one CPU cycle at 5 GHz
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>

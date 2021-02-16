@@ -19,7 +19,8 @@ description: >
 
 {{ page.description }}
 
-<!--
+
+
 Believe it or not, many organizations do practice deliberately injecting faults into production.
 Now, turning off a service's instance on production is probably the easiest test you can conduct.
 The client must catch an exception and handle the failure gracefully.
@@ -69,7 +70,8 @@ Finally, Amazon realized that injecting 100 milliseconds of latency costs them 1
 That's it for today, thanks for listening, bye!
 
 
--->
+
+
 
 # More materials
 

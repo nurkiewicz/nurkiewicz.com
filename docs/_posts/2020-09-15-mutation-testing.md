@@ -23,6 +23,61 @@ description: >
 
 {{ page.description }}
 
+Your code coverage metric doesn't tell the full story.
+The fact that a given line was executed during the unit testing phase doesn't mean it's thoroughly tested!
+Maybe you skipped an assertion or forgot an edge case?
+How can you automatically tell a test is thorough?
+Well, it's definitely not if random changes to the production code don't trigger failures.
+Changes, known as _mutations_.
+Tools that perform mutation testing have a wide range of such defects:
+
+* removing lines and expressions
+* inverting condition
+* forcing different return values
+* changing constants
+* ...and so on
+
+If a test suite succeeded with a mutation, we say it survived - thus our tests need to be more strict.
+Otherwise, we assume a developer did a good job.
+In the end we get a so-called mutant score, which sounds really cool!
+This is the number of killed mutations to overall number of mutations.
+One is a perfect score.
+
+## Technicalities
+
+A good mutation testing framework needs to be quite clever.
+First of all it must run cove coverage analysis.
+Based on them framework chooses precisely which tests are covering which lines.
+When mutating one function, there's no reason to rerun tests that never touch that function.
+Secondly, framework must somehow alter our code.
+This is challenging.
+Theoretically the easiest way is to parse the source code and make a few changes, here and there.
+In practice, surprisingly, machine code is much easier to tamper with.
+
+
+
+## Disadvantages
+
+Mutation testing can take a lot of time.
+Mainly due to running a test suite repeatedly.
+Also, you may expect many false-positives.
+Last, but not least, it will not help you with code that's not covered.
+It won't replace writing tests.
+
+Moreover, if you religiously practice TDD, mutation testing is of no use.
+Every feature is tested before written so it's technically impossible to write untested code.
+
+Even if you are not using mutation testing framework on a daily basis, consider being one yourself.
+What?
+Well, I've seen tests that were green by accident too many times.
+For example an assertion statement was used incorrectly.
+If you are not sure if your tests are actually testing anything, make a random change to your codebase.
+Replacing _greater than_ with _greater than or equal_ operator should cause a few tests to fail.
+Ideally - just one.
+If suddenly 90% of your tests failed - well, I think you are testing the same thing too many times.
+If your tests are still green - you have a serious problem.
+
+
 # More materials: Mutation testing tools
 
 Copied from [Wikipedia]():

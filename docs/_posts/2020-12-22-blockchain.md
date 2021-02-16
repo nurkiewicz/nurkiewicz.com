@@ -23,7 +23,8 @@ description: >
 
 {{ page.description }}
 
-<!--
+
+
 Starting from the basics.
 Blockchain is most commonly used to keep track of cryptocurrency transactions.
 The most popular one is bitcoin, so I'll use it in the examples.
@@ -68,7 +69,8 @@ But that will be covered in the next episode.
 Thanks for listening, bye!
 
 
--->
+
+
 
 # More materials
 
