@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
     <meta charset='utf-8'>
@@ -19,12 +23,11 @@
 
   <body>
 
-    <header>
+    <!-- <header>
       <div class="container">
         <a id="a-title" href="{{ '/' | relative_url }}">
           <h1>{{ site.title | default: site.github.repository_name }}</h1>
         </a>
-        <h2>{{ site.description | default: site.github.project_tagline }}</h2>
           <p>Subscribe in
             <a href="https://podcasts.apple.com/pl/podcast/around-it-in-256-seconds/id1510899104">Apple Podcasts</a> •
             <a href="https://podcasts.google.com/?feed=aHR0cHM6Ly9hbmNob3IuZm0vcy8xNTVlNzEzNC9wb2RjYXN0L3Jzcw%3D%3D">Google Podcasts</a> •
@@ -32,15 +35,20 @@
             <a href="https://anchor.fm/s/155e7134/podcast/rss">RSS</a>
           </p>
         </div>
-    </header>
+    </header> -->
 
-    <div class="container">
-      <section id="main_content">
-        {{ content }}
-      </section>
-    </div>
+    {%- include header.html -%}
 
-    <footer>
+    <div class="content">
+       <div class="container">
+          {{ content }}
+       </div>
+    </div><!-- end .content -->
+ 
+    {%- include footer.html -%}
+    {%- include scripts.html -%}
+
+    <!-- <footer>
       <div class="container">
         <a href="newsletter">Newsletter</a> •
         <a href="https://github.com/nurkiewicz/256/issues/new/choose">User Voice</a> •
@@ -50,17 +58,7 @@
         <a href="{{ post.url }}">{{ post.permalink | slice: 1,10}}</a>
         {% endfor %}
       </div>
-    </footer>
+    </footer> -->
 
-    {% if site.google_analytics %}
-      <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create', '{{ site.google_analytics }}', 'auto');
-        ga('send', 'pageview');
-      </script>
-    {% endif %}
   </body>
 </html>
