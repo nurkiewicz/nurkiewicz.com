@@ -1,6 +1,6 @@
 ----
 
-# Be the first to listen to new episodes!
+## Be the first to listen to new episodes!
 
 <!-- Begin Mailchimp Signup Form -->
 <div id="mc_embed_signup">
@@ -17,7 +17,7 @@
 </div>
 <!--End mc_embed_signup-->
 
-## To get exclusive content:
+### To get exclusive content:
 
 * Transcripts
 * Unedited, longer content
