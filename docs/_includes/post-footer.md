@@ -1,7 +1,7 @@
 <script src="https://utteranc.es/client.js"
         repo="nurkiewicz/256"
         issue-term="title"
-        theme="github-dark"
+        theme="preferred-color-scheme"
         crossorigin="anonymous"
         async>
 </script>

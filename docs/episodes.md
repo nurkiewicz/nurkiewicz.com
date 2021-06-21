@@ -1,15 +1,15 @@
-{% include newsletter-input.md %}
-
 {% include episodes-list.md %}
 
 # Tags
 
 {% assign tags = site.tags | sort %}
+<dl>
 {% for tag in tags %}
-  <h2>{{ tag[0] }}</h2>
-  <ul>
-    {% for post in tag[1] %}
-      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
+  <dt>{{ tag[0] }}</dt>
+  {% for post in tag[1] %}
+    <dd><a href="{{ post.url }}">{{ post.title }}</a></dd>
+  {% endfor %}
 {% endfor %}
+</dl>
+
+{% include newsletter-input.md %}

@@ -1,0 +1,20 @@
+<div class="header {% if site.header == "large" %}header--large{% endif %}">
+    <div class="container">
+        <h1 class="logo"><a href="/">Around IT in 256 seconds</a></h1>
+        <nav class="nav-collapse">
+            <ul class="noList">
+                {%- for link in site.navigation -%}{%- assign current = nil -%}{%- if page.url contains link.url or forloop.first and page.url == '/' or page.url == 'index.html' -%}{%- assign current = 'current' -%}{%- endif -%}
+                <li class="element {%- if forloop.first -%}first{%- endif -%} {{ current }} {%- if forloop.last -%}last{%- endif -%}">
+                    <a href="{{ link.url }}">{{ link.title }}</a>
+                </li> 
+                {%- endfor -%}
+                <li><a href="https://podcasts.apple.com/pl/podcast/around-it-in-256-seconds/id1510899104">Apple Podcasts</a></li>
+                <li><a href="https://podcasts.google.com/?feed=aHR0cHM6Ly9hbmNob3IuZm0vcy8xNTVlNzEzNC9wb2RjYXN0L3Jzcw%3D%3D">Google Podcasts</a></li>
+                <li><a href="https://open.spotify.com/show/2WTzG4ef4L5GDSBf7IB2tJ">Spotify</a></li>
+                <li><a href="guest">Be my guest</a></li>
+                <li><a href="episodes">All episodes</a></li>
+                <li><a href="newsletter">Newsletter</a></li>
+            </ul>
+        </nav>
+    </div>
+</div><!-- end .header -->
