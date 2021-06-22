@@ -6,6 +6,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://256.nurkiewicz.com"
 twitter_username: tnurkiewicz
 github_username:  nurkiewicz
+permalink: /:year/:month/:title:output_ext
 defaults:
   - scope:
       path: ""

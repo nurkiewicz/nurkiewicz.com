@@ -1,0 +1,15 @@
+---
+layout: post
+title: My first open source contribution
+date: '2009-10-25T17:04:00.006+01:00'
+author: Tomasz Nurkiewicz
+tags:
+- commons
+- esb
+- mule
+modified_time: '2009-10-25T17:20:01.251+01:00'
+blogger_id: tag:blogger.com,1999:blog-6753769565491687768.post-7851561838076769982
+blogger_orig_url: https://www.nurkiewicz.com/2009/10/my-first-open-source-contribution.html
+---
+
+Few days ago popular <a href="http://commons.apache.org/lang"><span style="font-weight: bold;">Apache Commons Lang</span></a> library gained new utility method in <span style="font-family:courier new;">Validate</span> class: <span style="font-family:courier new;">notBlank()</span>. This also happens to be my first contribution to the open source community (see: <a href="https://issues.apache.org/jira/browse/LANG-533">LANG-533</a> and commit <a href="http://svn.apache.org/viewvc?view=revision&amp;revision=828310">828310</a>). Use <span style="font-family:courier new;">notBlank </span>when you want to check whether the given string is not null, not empty, and does contain anything apart from whitespaces:<br /><br /><pre name="code" class="java">Validate.notBlank("a");<br />Validate.notBlank(" a  ");<br />Validate.notBlank(null);        //will throw IllegalArgumentException<br />Validate.notBlank("");        //will throw IllegalArgumentException<br />Validate.notBlank("  ", "Should not be blank");         //will throw IllegalArgumentException<br />Validate.notBlank(" \n ");        //will throw IllegalArgumentException<br /></pre><br /><br />This handy method can be used to validate user input or configuration, where single space or newline characters should also be treated as invalid. It will be available in version 3.0 of Lang library.<br /><br />I know this contribution is so tiny and not very significant, probably not even worth to mention, but I am still proud of it ;-).<br /><br />Meanwhile I past the middle of "<a href="http://www.amazon.com/Open-Source-ESBs-Action-Tijs-Rademakers/dp/1933988215">Open-Source ESBs in Action</a>", which is a great book comparing <a href="http://www.mulesoft.org/display/MULE/Home">Mule</a> and <a href="http://servicemix.apache.org">ServiceMix</a>. Sadly, after first two examples I found Mule to be much more intuitive and easy to use, so I skip <a href="http://servicemix.apache.org/">ServiceMix</a> chapters. Maybe I will go back to them one day, but for now expect few Mule ESB related articles in the future, as this is the topic  I would like to focus now.

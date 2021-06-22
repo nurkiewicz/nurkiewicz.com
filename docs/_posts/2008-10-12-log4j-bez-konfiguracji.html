@@ -1,0 +1,13 @@
+---
+layout: post
+title: Log4j bez konfiguracji
+date: '2008-10-12T14:06:00.004+02:00'
+author: Tomasz Nurkiewicz
+tags:
+- logging
+modified_time: '2010-01-03T14:25:13.682+01:00'
+blogger_id: tag:blogger.com,1999:blog-6753769565491687768.post-6149802180245335927
+blogger_orig_url: https://www.nurkiewicz.com/2008/10/log4j-bez-konfiguracji.html
+---
+
+<p>Często piszę króciutkie programy z samym <span style="font-family:courier new;">mainem</span> tylko po to, aby sprawdzić działania nieznanej funkcji API czy właśnie zaimplementowanego algorytmu. Ot taki <em>proof-of-concept</em> jeszcze przed napisaniem testów jednostkowych (wiem, wiem, testy piszemy najpierw, ale...)</p><p>Aby zachować pewne standardy staram się nawet w takim testowym kodzie używać Log4j do pary z commons-logging zamiast klasycznego <span style="font-family:courier new;">System.out.println()</span>. Nie tylko lepiej wygląda, ale też Log4j zapewnia pewne dodatkowe informacje. Niestety kod:</p><br /><br /><pre class="brush:java; highlight: [6, 9]">import org.apache.commons.logging.Log;<br />import org.apache.commons.logging.LogFactory;<br /><br />class Main {<br /><br />    private static final Log log = LogFactory.getLog(Main.class);<br /><br />    public static void main(String[] args) {<br />        log.info("Example message");<br />    }<br />}</pre><br /> <br />spowoduje wyświetlenie co najwyżej znanego skądinąd błędu:<br /><br /><pre class="brush:plain"><br />log4j:WARN No appenders could be found for logger (Main).<br />log4j:WARN Please initialize the log4j system properly.<br /></pre><br /><br />W takich sytuacjach z reguły kopiowałem plik <span style="font-family:courier new;">log4j.xml</span> z jakiegokolwiek innego projektu, ewentualnie delikatnie go poprawiając. Całe szczęście framework zapewnia znacznie prostszą metodę konfiguracji:<br /><br /><pre class="brush:java; highlight: [3, 10]"><br />import org.apache.commons.logging.Log;<br />import org.apache.commons.logging.LogFactory;<br />import org.apache.log4j.BasicConfigurator;<br /><br />class Main {<br /><br />    private static final Log log = LogFactory.getLog(Main.class);<br /><br />    public static void main(String[] args) {<br />        BasicConfigurator.configure();<br />        log.info("Example message");<br />    }<br />}<br /></pre><br /><br />I wreszcie spodziewany wynik bez żadnych niepotrzebnych plików konfiguracyjnych:<br /><br /><pre class="brush:plain">0 [main] INFO Main  - Example message</pre>
