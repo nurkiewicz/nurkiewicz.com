@@ -14,6 +14,9 @@ layout: default
   
   {{ content }}
 
+
+Tags: {{page.tags | sort | join: ', '}}
+
   <!-- POST NAVIGATION -->
   <footer class="postNav clearfix">
     {%- if page.previous.url -%} 
