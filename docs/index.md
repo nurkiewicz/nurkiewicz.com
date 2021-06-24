@@ -14,3 +14,5 @@ If I can't explain something within this time frame, it's either too complex, or
 Hosted by **Tomasz Nurkiewicz**. Java Champion, CTO, trainer, O'Reilly author, blogger.
   
 {% include episodes-list.md %}
+
+{% include newsletter-input.html %}
