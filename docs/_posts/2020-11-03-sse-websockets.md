@@ -87,4 +87,4 @@ That's it, thanks for listening, bye!
 * [HTTP/2 Push is dead](https://evertpot.com/http-2-push-is-dead/)
 
 
-{% include post-footer.md %}
+

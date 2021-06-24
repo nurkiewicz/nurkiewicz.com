@@ -81,4 +81,3 @@ That's it, thanks for listening, bye!
 * [Hypertext Transfer Protocol -- HTTP/1.1](https://www.w3.org/Protocols/rfc2616/rfc2616.html)
 * [SOAP](https://en.wikipedia.org/wiki/SOAP)
 
-{% include post-footer.md %}

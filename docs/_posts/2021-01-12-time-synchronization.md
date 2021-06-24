@@ -92,4 +92,3 @@ That's it, thanks for listening, bye!
 * [Living Without Atomic Clocks](https://www.cockroachlabs.com/blog/living-without-atomic-clocks/)
 
 
-{% include post-footer.md %}

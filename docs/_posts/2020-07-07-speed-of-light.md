@@ -86,4 +86,4 @@ Any why CPUs are not getting faster.
 * [Moore's law](https://en.wikipedia.org/wiki/Moore%27s_law)
 * [The distance from Perth, Australia to New York](https://www.travelmath.com/distance/from/Perth,+Australia/to/New+York,+NY)
 
-{% include post-footer.md %}
+

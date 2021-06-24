@@ -92,4 +92,4 @@ That's it, thanks for listening, bye!
 * 🔉 [#7: Speed of light](https://256.nurkiewicz.com/7)
 * [From Nand to Tetris](https://www.nand2tetris.org/) - Building a Modern Computer From First Principles
 
-{% include post-footer.md %}
+

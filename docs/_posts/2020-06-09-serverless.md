@@ -63,4 +63,4 @@ However, cloud providers are doing their best to reduce the problem of cold star
 
 * [Spring Cloud Function](https://spring.io/projects/spring-cloud-function)
 
-{% include post-footer.md %}
+

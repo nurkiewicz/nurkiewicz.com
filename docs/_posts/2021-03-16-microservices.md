@@ -91,4 +91,3 @@ See [The Bezos API Mandate: Amazon’s Manifesto For Externalization](https://no
 
 
 
-{% include post-footer.md %}

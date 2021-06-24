@@ -72,4 +72,4 @@ Your dependencies can cope with a smooth load much better than sudden bursts of 
 * [`spring-retry` for Java](https://github.com/spring-projects/spring-retry)
 * [Retry in Resilience4J](https://resilience4j.readme.io/docs/retry)
 
-{% include post-footer.md %}
+

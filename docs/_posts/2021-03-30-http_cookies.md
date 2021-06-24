@@ -73,4 +73,3 @@ That's it, thanks for listening, bye!
 * ["Nigerian prince" email scams still rake in over $700,000 a year—here’s how to protect yourself](https://www.cnbc.com/2019/04/18/nigerian-prince-scams-still-rake-in-over-700000-dollars-a-year.html)
 
 
-{% include post-footer.md %}

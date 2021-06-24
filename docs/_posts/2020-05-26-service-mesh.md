@@ -67,4 +67,3 @@ Bye!
 
 * [#1: Circuit Breaker](1) - often included transparently in a service mesh
 
-{% include post-footer.md %}

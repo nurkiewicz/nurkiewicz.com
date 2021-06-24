@@ -12,4 +12,3 @@
 {% endfor %}
 </dl>
 
-{% include newsletter-input.md %}

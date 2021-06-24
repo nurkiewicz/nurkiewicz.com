@@ -102,4 +102,3 @@ That's it, thanks for listening, bye!
 * [Anscombe's quartet](https://en.wikipedia.org/wiki/Anscombe%27s_quartet) - when linear regression is lying
 
 
-{% include post-footer.md %}

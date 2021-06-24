@@ -86,4 +86,3 @@ That's it, thanks for listening, bye!
 * [Kube DNS](https://github.com/kubernetes/kubernetes/blob/master/cluster/addons/dns/kube-dns/README.md)
 
 
-{% include post-footer.md %}

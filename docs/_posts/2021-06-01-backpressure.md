@@ -83,4 +83,3 @@ That's it, thanks for listening, bye!
 * [#35: Reactive programming: from spreadsheets to modern web frameworks](https://256.nurkiewicz.com/35)
 
 
-{% include post-footer.md %}

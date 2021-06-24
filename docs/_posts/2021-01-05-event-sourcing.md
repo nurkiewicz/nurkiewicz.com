@@ -84,4 +84,3 @@ That's it, thanks for listening, bye!
 * [A Decade of DDD, CQRS, Event Sourcing](https://www.youtube.com/watch?v=LDW0QWie21s) by Greg Young
 
 
-{% include post-footer.md %}

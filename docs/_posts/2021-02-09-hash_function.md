@@ -93,4 +93,3 @@ Thanks for listening, bye!
 * [Rainbow table](https://en.wikipedia.org/wiki/Rainbow_table)
 
 
-{% include post-footer.md %}

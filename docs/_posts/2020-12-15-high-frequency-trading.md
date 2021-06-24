@@ -74,4 +74,3 @@ That's it, thanks for listening, bye!
 * [Software Testing Lessons Learned From Knight Capital Fiasco](https://www.cio.com/article/2393212/software-testing-lessons-learned-from-knight-capital-fiasco.html)
 
 
-{% include post-footer.md %}

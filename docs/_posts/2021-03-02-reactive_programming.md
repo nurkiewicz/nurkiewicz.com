@@ -90,4 +90,3 @@ That's it, thanks for listening, bye!
 * [Reactive programming](https://en.wikipedia.org/wiki/Reactive_programming) in Wikipedia
 
 
-{% include post-footer.md %}

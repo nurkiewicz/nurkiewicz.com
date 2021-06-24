@@ -82,4 +82,3 @@ Thanks for listening, bye!
 * [Cryptography: Crash Course Computer Science #33](https://www.youtube.com/watch?v=jhXCTbFnK8o) on YouTube
 
 
-{% include post-footer.md %}

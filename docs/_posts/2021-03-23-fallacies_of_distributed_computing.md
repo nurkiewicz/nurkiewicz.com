@@ -97,4 +97,3 @@ That's if, thanks for listening, bye!
 * [The Internet is running in debug mode](http://java-is-the-new-c.blogspot.com/2014/10/why-protocols-are-messy-concept.html)
 
 
-{% include post-footer.md %}

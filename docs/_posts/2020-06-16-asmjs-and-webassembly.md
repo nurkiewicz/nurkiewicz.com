@@ -59,4 +59,4 @@ It's pretty amazing that you can now compile a full Unreal Engine or Unity engin
 * [Quake in the browser (asm.js)](http://www.quakejs.com/)
 * [Unity Engine in the browser (WebAssembly)](https://blogs.unity3d.com/2018/08/15/webassembly-is-here/)
 
-{% include post-footer.md %}
+
