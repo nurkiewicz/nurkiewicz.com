@@ -86,6 +86,3 @@ That's it, thanks for listening, bye!
     * [AWS](https://aws.amazon.com/kubernetes/)
     * [Azure](https://azure.microsoft.com/en-us/overview/kubernetes-on-azure/)
     * [Oracle Cloud](https://cloud.google.com/kubernetes-engine/)
-
-
-{% include post-footer.md %}
