@@ -12,6 +12,7 @@ description: >
     Doing this by hand is quite problematic.
     Manually tracking which servers should host which components is tedious and error-prone.
     You need to take into account:
+    
     * CPU and memory requirements of each component
     * discoverability (where each component is located)
     * provisioning (different components need different libraries and packages)
