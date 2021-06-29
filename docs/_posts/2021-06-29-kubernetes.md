@@ -11,18 +11,19 @@ description: >
     First of all, to support fault tolerance, but also to achieve horizontal scaling.
     Doing this by hand is quite problematic.
     Manually tracking which servers should host which components is tedious and error-prone.
-    You need to take into account:
-    
-    * CPU and memory requirements of each component
-    * discoverability (where each component is located)
-    * provisioning (different components need different libraries and packages)
-    * scaling out and migrating from broken servers
-    * and so on, and so forth
 ---
 
 {% include player.html episode_id="3Y2ROQqmPKatG2bMMFzEQE" %}
 
 {{ page.description }}
+
+You need to take into account:
+
+* CPU and memory requirements of each component
+* discoverability (where each component is located)
+* provisioning (different components need different libraries and packages)
+* scaling out and migrating from broken servers
+* and so on, and so forth
 
 <!--
 This sound like too much work!
