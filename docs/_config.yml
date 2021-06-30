@@ -23,6 +23,8 @@ social:
   linkedin: nurkiewicz
   twitter: tnurkiewicz
 
+feed:
+  path: feeds/posts/default
 
 # Build settings
 markdown: kramdown
