@@ -3,7 +3,7 @@ tagline: Around IT In 256 Seconds By Tomasz Nurkiewicz
 description: Podcast for developers, testers, SREs… and their managers. I explain complex and convoluted technologies in a clear way, avoiding buzzwords and hype. Never longer than 4 minutes and 16 seconds.
 logo: img/cover.jpg
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://www.nurkiewicz.com"
+url: "https://nurkiewicz.com"
 twitter_username: tnurkiewicz
 github_username:  nurkiewicz
 permalink: /:year/:month/:title:output_ext
