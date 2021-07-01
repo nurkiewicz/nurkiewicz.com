@@ -1,4 +1,5 @@
 ---
+category: podcast
 title: "#36: Microservices architecture: principles and how to break them"
 permalink: /36
 tags: microservices monolith big-ball-of-mud rest graphql conways-law

@@ -1,4 +1,5 @@
 ---
+category: podcast
 title: "#9: Retrying failures"
 permalink: /9
 tags: ddos fault-tolerance

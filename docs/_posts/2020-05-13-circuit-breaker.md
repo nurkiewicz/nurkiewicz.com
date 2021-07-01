@@ -1,4 +1,5 @@
 ---
+category: podcast
 title: '#1: Circuit Breaker'
 permalink: /1
 tags: resilience4j hystrix polly akka ruby

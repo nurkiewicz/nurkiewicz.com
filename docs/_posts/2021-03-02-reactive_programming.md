@@ -1,4 +1,5 @@
 ---
+category: podcast
 title: "#35: Reactive programming: from spreadsheets to modern web frameworks"
 permalink: /35
 tags: reactive rxjs rxjava rxpy rxswift reactor excel elm

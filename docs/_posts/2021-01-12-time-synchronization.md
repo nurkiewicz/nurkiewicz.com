@@ -1,4 +1,5 @@
 ---
+category: podcast
 title: "#29: Time synchronization"
 permalink: /29
 tags: ntp stratum spanner CockroachDB truetime

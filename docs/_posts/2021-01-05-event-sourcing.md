@@ -1,4 +1,5 @@
 ---
+category: podcast
 title: "#28: Event sourcing"
 permalink: /28
 tags: event-sourcing cassandra kafka read-model ddd event-store

@@ -1,4 +1,5 @@
 ---
+category: podcast
 title: "#13: Cassandra"
 permalink: /13
 tags: cassandra bloom-filter scylladb memtable sstable vnode consistent-hashing cap-theorem

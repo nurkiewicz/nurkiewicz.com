@@ -1,4 +1,5 @@
 ---
+category: podcast
 title: '#2: Service Mesh'
 permalink: /2
 tags: microservices istio envoy linkerd

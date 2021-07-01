@@ -1,4 +1,5 @@
 ---
+category: podcast
 title: "#43: Public-key cryptography: math invention that revolutionized the Internet"
 permalink: /43
 tags: encryption rsa enigma pki alan-turing

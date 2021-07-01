@@ -1,4 +1,5 @@
 ---
+category: podcast
 title: "#27: Proof-of-work in blockchain"
 permalink: /27
 tags: proof-of-work blockchain bitcoin double-spending halving

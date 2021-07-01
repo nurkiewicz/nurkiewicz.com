@@ -1,4 +1,5 @@
 ---
+category: podcast
 title: "#7: Speed of light"
 permalink: /7
 tags: moore cpu cdn ping

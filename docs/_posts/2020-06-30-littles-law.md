@@ -1,4 +1,5 @@
 ---
+category: podcast
 title: "#6: Little's law"
 permalink: /6
 tags: little nodejs tomcat

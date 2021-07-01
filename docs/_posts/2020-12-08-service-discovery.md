@@ -1,4 +1,5 @@
 ---
+category: podcast
 title: "#24: Service discovery"
 permalink: /24
 tags: zookeeper consul dns eureka

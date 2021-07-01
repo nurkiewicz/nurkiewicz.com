@@ -1,4 +1,5 @@
 ---
+category: podcast
 title: "#38: HTTP cookies: from saving shopping cart to online tracking"
 permalink: /38
 tags: cookie http javascript ssh ftp real-time-bidding

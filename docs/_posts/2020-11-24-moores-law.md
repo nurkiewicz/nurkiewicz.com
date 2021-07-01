@@ -1,4 +1,5 @@
 ---
+category: podcast
 title: "#22: Moore's law"
 permalink: /22
 tags: moore intel 286 386 486 pentium wolfenstein doom quake transistor

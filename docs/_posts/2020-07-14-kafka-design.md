@@ -1,4 +1,5 @@
 ---
+category: podcast
 title: "#8: Kafka's design"
 permalink: /8
 tags: kafka sendfile tail partitioning

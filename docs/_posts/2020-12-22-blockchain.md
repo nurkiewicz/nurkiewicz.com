@@ -1,4 +1,5 @@
 ---
+category: podcast
 title: "#26: Blockchain"
 permalink: /26
 tags: blockchain bitcoin merkle-tree hash-function

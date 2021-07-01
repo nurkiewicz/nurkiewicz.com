@@ -1,4 +1,5 @@
 ---
+category: podcast
 title: "#46: Kubernetes: Orchestrating large-scale deployments"
 permalink: /46
 tags: docker k8s

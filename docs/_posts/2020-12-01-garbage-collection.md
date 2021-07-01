@@ -1,4 +1,5 @@
 ---
+category: podcast
 title: "#23: Garbage collection"
 permalink: /23
 tags: gc lisp

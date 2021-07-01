@@ -1,4 +1,10 @@
-{% include episodes-list.md %}
+<ul>
+  {% for post in site.posts %}
+    {% if post.url and post.category != "podcast" %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>
 
 # Tags
 
@@ -11,4 +17,3 @@
   {% endfor %}
 {% endfor %}
 </dl>
-

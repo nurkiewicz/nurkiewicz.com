@@ -1,4 +1,5 @@
 ---
+category: podcast
 title: "#14: Static, Dynamic, Strong and Weak Type Systems"
 permalink: /14
 tags: type-systems ruby powershell python java c# groovy

@@ -1,4 +1,5 @@
 ---
+category: podcast
 title: '#5: asm.js and WebAssembly'
 permalink: /5
 tags: javascript asm.js webassembly c c++ rust gc

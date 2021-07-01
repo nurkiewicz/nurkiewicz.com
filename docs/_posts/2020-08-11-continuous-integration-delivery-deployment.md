@@ -1,4 +1,5 @@
 ---
+category: podcast
 title: "#12: Continuous integration, delivery and deployment"
 permalink: /12
 tags: CI CD canary-deployment ab-testing

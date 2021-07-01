@@ -1,4 +1,5 @@
 ---
+category: podcast
 title: "#25: High-frequency trading"
 permalink: /25
 tags: hft stock-exchange

@@ -1,4 +1,5 @@
 ---
+category: podcast
 title: "#11: MapReduce"
 permalink: /11
 tags: hadoop hdfs spark hive google

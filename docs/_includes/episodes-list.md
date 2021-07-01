@@ -1,9 +1,9 @@
-# Listen to all episodes
-
 <ul>
-    {% for post in site.posts %}
-      <li>
-        <a href="{{ post.url }}">{{ post.title }}</a>
-      </li>
+    {% for post in site.categories.podcast %}
+      {% if post.url %}
+        <li>
+          <a href="{{ post.url }}">{{ post.title }}</a>
+        </li>
+      {% endif %}
     {% endfor %}
   </ul>

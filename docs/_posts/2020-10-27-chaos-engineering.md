@@ -1,4 +1,5 @@
 ---
+category: podcast
 title: "#20: Chaos engineering "
 permalink: /20
 tags: chubby chaos-monkey chaos-kong chaos-gorilla

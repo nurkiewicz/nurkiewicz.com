@@ -1,4 +1,5 @@
 ---
+category: podcast
 title: "#37: Fallacies of distributed computing: overlooked challenges"
 permalink: /37
 tags: microservices kubernetes distributed-computing

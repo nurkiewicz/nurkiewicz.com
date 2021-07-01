@@ -1,4 +1,5 @@
 ---
+category: podcast
 title: "#15: Mutation testing"
 permalink: /15
 tags: mutation-testing tdd pitest

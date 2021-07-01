@@ -1,4 +1,5 @@
 ---
+category: podcast
 title: "#32: Cryptographic hash function"
 permalink: /32
 tags: hash-function cryptographic-hash-function md5 sha256 java c# rainbow-table birthday-attack
