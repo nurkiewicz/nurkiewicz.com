@@ -1,4 +1,4 @@
-# [Around IT in 256 seconds blog and podcast](https://256.nurkiewicz.com)
+# [Around IT in 256 seconds blog and podcast](https://nurkiewicz.com)
 
 ## [Newsletter](https://www.nurkiewicz.com/newsletter)
 
