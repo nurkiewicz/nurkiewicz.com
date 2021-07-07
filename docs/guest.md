@@ -15,7 +15,7 @@ Just let me know via Twitter DM ([@tnurkiewicz](https://twitter.com/tnurkiewicz)
 
 ## Requirements
 
-* under 4 minutes
+* **under 4 minutes**
 * not a commercial product/sale pitch
 * laptop's microphone is fine, as long as there's not [too much echo](https://www.youtube.com/watch?v=xgL51PXBd1A)
 
