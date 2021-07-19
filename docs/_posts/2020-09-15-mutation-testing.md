@@ -2,7 +2,7 @@
 category: podcast
 title: "#15: Mutation testing"
 permalink: /15
-tags: mutation-testing tdd pitest
+tags: mutation-testing tdd pitest testing
 description: >
     Imagine I wrote a script that takes your codebase and removes a random line.
     Fairly simple.
