@@ -1,8 +1,8 @@
 ---
-name: Suggest topic
-about: Suggest new topic for upcoming episode
+name: Suggest podcast topic
+about: Suggest new topic for the upcoming podcast episode
 title: "[Your topic idea here]"
-labels: episode-idea
+labels: podcast-idea
 assignees: nurkiewicz
 
 ---
