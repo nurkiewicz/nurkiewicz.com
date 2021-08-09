@@ -19,7 +19,6 @@ description: >
 
 {{ page.description }}
 
-<!--
 ## Number 1: The network is reliable
 
 Somehow we believe that making an HTTP request will always suceed.
@@ -89,7 +88,6 @@ Don't take them for granted and don't reinvent them.
 
 There are actually more myths, but these are most common.
 That's if, thanks for listening, bye!
--->
 
 # More materials
 

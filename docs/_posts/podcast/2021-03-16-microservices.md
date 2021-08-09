@@ -20,7 +20,6 @@ description: >
 
 {{ page.description }}
 
-<!--
 # Deployment independence
 
 It should be possible to deploy each service independently.
@@ -82,7 +81,6 @@ See [The Bezos API Mandate: Amazon’s Manifesto For Externalization](https://no
 * It doesn’t matter what technology you use.
 * All service interfaces, without exception, must be designed from the ground up to be externalize-able. That is to say, the team must plan and design to be able to expose the interface to developers in the outside world. No exceptions.
 * The mandate closed with: Anyone who doesn’t do this will be fired. Thank you; have a nice day!
--->
 
 # More materials
 

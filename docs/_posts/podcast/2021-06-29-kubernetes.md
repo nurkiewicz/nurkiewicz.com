@@ -26,7 +26,6 @@ You need to take into account:
 * scaling out and migrating from broken servers
 * and so on, and so forth
 
-<!--
 This sound like too much work!
 All you want is to deploy a backend, a message queue and a database with some redundancy.
 The first stop to tackle this chaos is containerizing everything.
@@ -77,7 +76,6 @@ Instead you upload your application's descriptor to the cloud.
 The vendor does the deployment for you.
 
 That's it, thanks for listening, bye!
--->
 
 # More materials
 

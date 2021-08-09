@@ -24,7 +24,6 @@ description: >
 
 {{ page.description }}
 
-<!--
 When the server wants to keep some information in between requests, it uses cookies.
 Cookies are just a tiny piece of information stored on the client.
 That's right, in the browser, not the server!
@@ -65,7 +64,6 @@ In short, it's a dogdy hack that notifies these giants every time you open one o
 But online tracking and real-time bidding for ads deserve a separate episode.
 
 That's it, thanks for listening, bye!
--->
 
 # More materials
 

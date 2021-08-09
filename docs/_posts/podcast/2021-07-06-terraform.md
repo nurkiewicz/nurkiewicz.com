@@ -19,7 +19,6 @@ description: >
 
 {{ page.description }}
 
-<!--
 The Terraform configuration consists of a bunch of resources.
 Each resource describes one infrastructure element.
 What kind of elements you can manage?
@@ -66,7 +65,6 @@ Contrast this approach to manually clicking through hundreds upon hundreds of sc
 Defining your infrastructure as version-controlled code seems much more manageable.
 
 That's it, thanks for listening, bye!
--->
 
 # More materials
 

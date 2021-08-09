@@ -20,7 +20,6 @@ description: >
 
 {{ page.description }}
 
-<!--
 Backpressure is a mechanism of automatically slowing down the producer when the consumer can't keep up with the incoming data.
 This term was popularized recently with many reactive libraries flourishing.
 But it's much older.
@@ -71,7 +70,6 @@ The producer pushes data to the consumer.
 But the consumer pulls data, based on its current processing capacity.
 
 That's it, thanks for listening, bye!
--->
 
 # More materials
 

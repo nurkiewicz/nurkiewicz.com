@@ -25,7 +25,6 @@ description: >
 
 {{ page.description }}
 
-<!--
 Yes, good old spreadsheet is a very sophisticated reactive programming environment.
 The change propagation is crucial here.
 Rather than defining a sequence of operations, we declare data dependencies.
@@ -84,7 +83,6 @@ Because eerything is a stream, backpressure effectively manages supply and deman
 It keeps your cores busy and prevents overflows.
 
 That's it, thanks for listening, bye!
--->
 
 # More materials
 

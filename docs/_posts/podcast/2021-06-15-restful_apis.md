@@ -18,7 +18,6 @@ description: >
 
 {{ page.description }}
 
-<!--
 SOAP used to be an acronym starting with _Simple_.
 However, the acronym was later dropped.
 It's far from simple, to be honest.
@@ -73,7 +72,6 @@ Surprisingly, GraphQL tries to solve some of these problems, while being more li
 
 That's it, thanks for listening, bye!
 
--->
 
 # More materials
 

@@ -25,7 +25,6 @@ description: >
 
 {{ page.description }}
 
-<!--
 This is not an abstract problem.
 German army during Second World War used an encryption device known as Enigma.
 The password was changed daily.
@@ -72,7 +71,6 @@ So typically it's only used in the beginning to exchange strong, single-use symm
 
 But that's a different topic.
 Thanks for listening, bye!
--->
 
 # More materials
 
