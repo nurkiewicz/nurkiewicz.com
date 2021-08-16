@@ -1,5 +1,5 @@
 ---
-title: When and how to use onErrorContinue() in Reactor?
+title: "When and how to use onErrorContinue(): Reactor FAQ"
 tags: Reactor faq onErrorContinue onErrorResume flatMap
 layout: post
 ---
