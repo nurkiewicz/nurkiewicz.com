@@ -1,6 +1,7 @@
 ---
 title: "JSON streaming and error handling with Spring WebFlux"
 tags: Reactor FAQ JSON streaming HTTP SSE TTFB
+description: How different techniques of JSON streaming in WebFlux affect TTFB and error handling?
 layout: post
 ---
 
