@@ -2,7 +2,7 @@
 title: "#48: Distributed tracing: find bottlenecks in complex systems"
 category: podcast
 permalink: /48
-tags: zipkin jaeger microservices span trace opentracing kibana
+tags: zipkin jaeger microservices span trace opentracing opentelemetry kibana
 description: >
     Life used to be simple.
     In a traditional monolithic application, when a failure occurred, you could easily find the problem.
@@ -79,7 +79,7 @@ That's it, thanks for listening, bye!
 * [#36: Microservices architecture: principles and how to break them](https://nurkiewicz.com/36)
 * [GraphQL server in Java: Part III: Improving concurrency](https://nurkiewicz.com/2020/03/graphql-server-in-java-part-iii.html) - tracing in a real-world scenario
 * [Pattern: Distributed tracing](https://microservices.io/patterns/observability/distributed-tracing.html)
-* [OpenTracing](https://opentracing.io/) - Vendor-neutral APIs and instrumentation for distributed tracing
+* [OpenTracing](https://opentracing.io/) and [OpenCensus](https://opencensus.io) got merged to become [OpenTelemetry](https://opentelemetry.io/)
 * [Zipkin](https://zipkin.io/) is a distributed tracing system
 * [Jaeger](https://www.jaegertracing.io/): open source, end-to-end distributed tracing
 * [Zipkin vs Jaeger: Getting Started With Tracing](https://logz.io/blog/zipkin-vs-jaeger/)
