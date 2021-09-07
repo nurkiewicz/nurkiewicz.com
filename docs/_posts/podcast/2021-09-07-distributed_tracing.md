@@ -1,7 +1,7 @@
 ---
 title: "#48: Distributed tracing: find bottlenecks in complex systems"
 category: podcast
-permalink: /distributed_tracing-48
+permalink: /48
 tags: zipkin jaeger microservices span trace opentracing kibana
 description: >
     Life used to be simple.
