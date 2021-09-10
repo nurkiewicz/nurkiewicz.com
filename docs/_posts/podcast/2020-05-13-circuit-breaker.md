@@ -10,10 +10,10 @@ description: Circuit breaker is a design pattern that prevents cascading failure
 
 # Transcript
 
-Circuit breaker is a mechanism that sits in between your system and its dependencies
+Circuit breaker is a mechanism that sits in between your system and its dependencies.
 When external dependencies like APIs or databases work, circuit breaker is transparent and simply does nothing.
 However, when they start to malfunction and when they do it too frequently circuit breaker kicks in and opens and you can no longer access external API.
-Instead your system fails immediately
+Instead your system fails immediately.
 Imagine your external dependency just fails constantly.
 That's not that bad, it can get much worse.
 For example, when your external dependency is really slow and you constantly hit timeouts.

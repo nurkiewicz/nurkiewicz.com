@@ -38,7 +38,7 @@ If you want to have secure communication it's enough that side cars can talk to 
 
 Service mesh can not only add security.
 It can even upgrade to the HTTP 2 or 3 to get better performance.
-Also because all traffic goes through service mash you have lots of metrics out of the box like which services are talking to each other, what are the response times, what are the error codes and so on and so forth.
+Also because all traffic goes through service mesh you have lots of metrics out of the box like which services are talking to each other, what are the response times, what are the error codes and so on and so forth.
 Typically you would have to add this logic to each and every service, no matter in which language it is implemented.
 Moreover, most of the time, you will come up with a library.
 So you'll have a special library that you include in every service that adds these capabilities.

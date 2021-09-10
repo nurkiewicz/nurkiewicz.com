@@ -59,7 +59,7 @@ The API can evolve so you should continue exploring its capabilities over time, 
 This feature is abbreviated as HATEOAS.
 
 These and other guidelines allow building APIs that take what's best from HTTP protocol.
-For example, built-in support for caching and humand-readable representation.
+For example, built-in support for caching and human-readable representation.
 Of course, not every API that claims to be RESTful follows all these guidelines.
 There's a Richardson Maturity Model for RESTful APIs, starting with level 0 for SOAP and alike.
 HATEOAS is level 3.
