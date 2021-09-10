@@ -57,7 +57,7 @@ Imagine `Node.js` server that handles CPU-intensive request.
 `Node.js` is famously single-threaded, so if a request needs your CPU for 100 milliseconds, we can effectively server at most ten requests per second.
 However if we deploy four `Node.js` server behind a load-balancer, our theoretical throughput grows to forty requests per second.
 On the other hand let's take old-school Tomcat server with one hundred worker threads configured by default.
-If one transaction is IO-bound and takes on average hundred milliseconds, this Tomcat instance can server **one thousand** request per second.
+If one transaction is IO-bound and takes on average hundred milliseconds, this Tomcat instance can serve **one thousand** request per second.
 Notice I said _IO-bound_.
 If transactions on this Tomcat instance are CPU-bound, we use number of available CPU cores, not threads in the equation.
 
