@@ -10,6 +10,11 @@ I wrote a book about RxJava.
 
 ![Book cover](img/rxjava-book.jpeg)
 
+## Hire me
+
+I'm occasionally doing [training](https://github.com/nurkiewicz/reactor-workshop) and consulting.
+If you find my work valuable or need some help, contact me.
+
 ## Contact me
 
 * E-mail: `nurkiewicz` (on GMail)
