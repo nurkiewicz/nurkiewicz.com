@@ -15,21 +15,21 @@ Service mesh is used in environments where there are many services talking to ea
 The aim of the service matches is to extract cross-cutting concerns like infrastructure and networking code to an independent layer.
 Service mesh is commonly implemented using an HTTP proxy.
 Imagine you have just two services talking to each other, one named Alpha on a server A and another name Delta on a server D.
-Without a service mesh when service Alpha wants to make a request to service Delta it simply makes an HTTP requests directly from server A to server D.
+Without a service mesh when service Alpha wants to make a request to service Delta it simply makes HTTP requests directly from server A to server D.
 With service master situations is much more complex.
 On each server there is a special proxy called the side car which is part of the service mesh.
 When service Alpha wants to talk to service Delta, rather than making a request directly to server D, it makes a request to server A, to its own server so to localhost, to a sidecar proxy.
 Sidecar proxy then makes a request to server D, but not to the service Delta.
-Instead it makes a request to another side car that's deployed on server D.
+Instead, it makes a request to another side car that's deployed on server D.
 And a sidecar proxy on server D makes a local request to service Delta over localhost.
 Overall rather than having a single HTTP request from server A to server D, we have three requests.
 Two requests are through localhosts so between service Alpha and sidecar proxy and then between sidecar proxy and service Delta and also one remote call between one side car and the other.
-OK so what's the point of having this extra layer that definitely adds a lot of latency to your request?
+OK, so what's the point of having this extra layer that definitely adds a lot of latency to your request?
 Well, first of all, these two requests are over localhost so the performance hit is not as big as you would imagine.
 On the other hand service mesh brings you a whole lot of features.
 If you've ever tried microservice architecture you soon realized that there is a lot of infrastructure code that has to go to your application like service discovery, metrics, security.
 Every single application within the ecosystem needs to have this custom logic built-in.
-It gets even worse when you're truly polyglot so you have services written in .NET, Java, Python and whatever.
+It gets even worse when you're truly polyglot so you have services written in .NET, Java, Python, and whatever.
 All the services need to have this custom logic.
 And this custom logic has to be compatible with each other.
 This is where service mesh really shines.
