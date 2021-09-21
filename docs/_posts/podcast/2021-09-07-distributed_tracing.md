@@ -17,7 +17,6 @@ description: >
 
 {{ page.description }}
 
-<!--
 In a distributed system, a failure in one component may be caused by problems several services away.
 For example, your Python backend returned HTTP 503 to the browser.
 What happened?
@@ -71,7 +70,6 @@ So, often only a fraction of traces are stored.
 Moreover, specialized software and databases like Zipkin and Jaeger is used to quickly search through data.
 
 That's it, thanks for listening, bye!
--->
 
 # More materials
 
