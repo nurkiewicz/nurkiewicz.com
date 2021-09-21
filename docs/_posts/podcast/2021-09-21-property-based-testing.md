@@ -1,5 +1,5 @@
 ---
-title: "#50: Property-based testing"
+title: "#50: Property-based testing: find bugs automatically by generating thousands of test cases"
 category: podcast
 permalink: /50
 tags: property-based-testing haskell scalacheck
