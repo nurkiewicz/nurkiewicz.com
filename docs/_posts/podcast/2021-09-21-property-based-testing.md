@@ -23,7 +23,6 @@ description: >
 
 {{ page.description }}
 
-<!--
 Property-based testing frameworks, do just that.
 The most popular one is QuickCheck for Haskell.
 Here's an example of a compression algorithm test.
@@ -68,7 +67,6 @@ Typically these are malformed or otherwise unusual inputs.
 
 That's it, thanks for listening, bye!
 
--->
 
 # More materials
 

@@ -22,7 +22,6 @@ description: >
 
 {{ page.description }}
 
-<!--
 This cloud model is known as Infrastructure as a Service.
 IaaS for short.
 It was popularized by one of the first cloud vendors: Amazon's Elastic Compute Cloud.
@@ -70,7 +69,6 @@ Such a division may be dictated by regulatory requirements, for example keeping 
 Or an organization only rents extra computing power during traffic peeks.
 
 That's it, thanks for listening, bye!
--->
 
 # More materials
 
