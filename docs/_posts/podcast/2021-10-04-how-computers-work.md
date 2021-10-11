@@ -16,7 +16,6 @@ description: >
 
 {{ page.description }}
 
-<!--
 ## Vacuum tubes
 
 Then comes diode.
@@ -87,7 +86,6 @@ All of this to see funny cat pictures.
 
 That's it, thanks for listening, bye!
 
--->
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Even understanding all the steps that go into taking a pile of sand and it ending up with you shotgunning a zombie on Mars, I say it&#39;s magic. There is a step or two in there which aren&#39;t just material science or electronics or computer programming, and that step is Magic. <a href="https://t.co/ONec479sEP">pic.twitter.com/ONec479sEP</a></p>&mdash; foone (@Foone) <a href="https://twitter.com/Foone/status/1445437908064751621?ref_src=twsrc%5Etfw">October 5, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
