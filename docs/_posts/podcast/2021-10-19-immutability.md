@@ -19,6 +19,7 @@ description: >
 
 {{ page.description }}
 
+<!--
 You may think this is terribly inefficient.
 Naively implemented immutable data structures are very inefficient.
 Imagine copying 1 million items in a list just to add a new one.
@@ -68,6 +69,7 @@ This is the most effective caching technique.
 Once stored in your browser or caching proxy, it may live there forever, safely.
 
 That's it, thanks for listening, bye!
+-->
 
 # More materials
 
