@@ -79,6 +79,9 @@ Any why CPUs are not getting faster.
     \end{align}
 </p>
 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The speed of light on a cosmic scale.<br><br>Credit: <a href="https://twitter.com/physicsJ?ref_src=twsrc%5Etfw">@physicsJ</a> <a href="https://t.co/ekTd5Sdamu">pic.twitter.com/ekTd5Sdamu</a></p>&mdash; Wonder of Science (@wonderofscience) <a href="https://twitter.com/wonderofscience/status/1450804100388384771?ref_src=twsrc%5Etfw">October 20, 2021</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 # More materials
 
 * [Latency Numbers Every Programmer Should Know](https://gist.github.com/jboner/2841832)
