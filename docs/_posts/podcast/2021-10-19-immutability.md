@@ -76,6 +76,6 @@ That's it, thanks for listening, bye!
 * [Write-Ahead Logging (WAL)](https://www.postgresql.org/docs/13/wal-intro.html) in PostgreSQL
 * [Episode 447: Michael Perry on Immutable Architecture](https://www.se-radio.net/2021/02/episode-447-michael-perry-on-immutable-architecture/)
 * [Using Immutable Caching To Speed Up The Web](https://hacks.mozilla.org/2017/01/using-immutable-caching-to-speed-up-the-web/)
-* [#40: Docker: more than a process, less than a VM]({% post_url 2021-05-18-docker %})
-* [#47: Terraform: managing infrastructure as code]({% post_url 2021-07-06-terraform %})
+* [#40: Docker: more than a process, less than a VM]({% post_url podcast/2021-05-18-docker %})
+* [#47: Terraform: managing infrastructure as code]({% post_url podcast/2021-07-06-terraform %})
 

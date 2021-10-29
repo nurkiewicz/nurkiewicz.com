@@ -15,7 +15,6 @@ description: >
 
 {{ page.description }}
 
-<!--
 First of all, percentages are used to define a ratio of two values.
 For example, if your data uses 100 GiB out of 500 GiB on disk, it uses one fifth.
 Or 20%.
@@ -76,7 +75,6 @@ Indeed, the absolute disk space grew from 100 to 130 (by 30%).
 But to be effective when communicating, avoid being smart and confuse people.
 
 That's it, thanks for listening, bye!
--->
 
 # More materials
 
