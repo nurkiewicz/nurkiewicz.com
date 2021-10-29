@@ -44,7 +44,7 @@ For example they may coerce a single number to an array with one element.
 Or assume that a lambda expression, when executed, *will* return a date.
 These languages are quite liberal to allow fast development, fast compilation (if any) and fast results.
 If you make a type mistake, it's caught at runtime and you can quickly fix it.
-The lack of type information in the source code makes it a little bit harder to maintain dynaic codebases.
+The lack of type information in the source code makes it a little bit harder to maintain dynamic codebases.
 But writing is much faster.
 Examples of dynamically typed languages are: JavaScript, perl, PowerShell, Ruby, Python and Groovy.
 Also Smalltalk, the father of object-oriented programming and Lisp, the father of functional programming.

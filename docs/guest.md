@@ -2,7 +2,7 @@
 
 I'd love to have you as a guest in my podcast!
 All you need is to know some technology or concept really well and be able to explain it in **under 4 minutes**.
-At the moment each episode is downloaded more than **800 times**.
+Each episode is downloaded on average more than **900 times**.
 You can either talk freely or answer e.g. the following questions:
 
 * What is ...?

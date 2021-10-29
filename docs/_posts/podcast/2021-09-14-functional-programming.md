@@ -21,7 +21,6 @@ description: >
 
 {{ page.description }}
 
-<!--
 There is another important distinction of what is a function.
 It can't have visible side effects.
 For example, registering a user saves that user to the database.
@@ -68,7 +67,6 @@ Actually, handling the outside world (the input/output) is quite complex in pure
 But monads deserve a separate episode.
 
 That's it, thanks for listening, bye!
--->
 
 # More materials
 
