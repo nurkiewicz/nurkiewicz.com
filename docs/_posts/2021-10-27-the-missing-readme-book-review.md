@@ -261,7 +261,7 @@ If you want to be immune to cheap marketing tricks, learn these tricks!
 People have different skills and experiences.
 You are great at functional programming.
 Alice is not.
-Bot she is exceptional at mitigating production issues of any sort.
+But she is exceptional at mitigating production issues of any sort.
 Embrace that!
 
 > A promotion isn’t a function of time: whether you are in your job for one year or five, impact is what matters
