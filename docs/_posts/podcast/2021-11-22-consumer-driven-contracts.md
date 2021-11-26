@@ -81,5 +81,5 @@ That's it, thanks for listening, bye!
 
 * [Consumer-Driven Contracts: A Service Evolution Pattern](https://www.martinfowler.com/articles/consumerDrivenContracts.html)
 * [Consumer-Driven Contracts from ThoughtWorks](https://thoughtworks.github.io/pacto/patterns/cdc)
-* [Spring Cloud Contract Reference Documentation](https://cloud.spring.io/spring-cloud-contract/reference/html/)
+* [Spring Cloud Contract Reference Documentation](https://docs.spring.io/spring-cloud-contract/docs/current/reference/html/)
 * [PACT framework](https://docs.pact.io/)
