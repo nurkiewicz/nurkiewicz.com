@@ -20,7 +20,6 @@ description: >
 
 {{ page.description }}
 
-<!--
 First, the consumer (client) creates a contract.
 It's basically a set of requirements for the server.
 The contract typically contains sample requests and responses.
@@ -75,7 +74,6 @@ This approach is well established and can work with asynchronous APIs as well.
 An alternative to CDC is a strict schema that is driven by the producer.
 
 That's it, thanks for listening, bye!
--->
 
 # More materials
 
