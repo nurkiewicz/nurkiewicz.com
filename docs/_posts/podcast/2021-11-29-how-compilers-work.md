@@ -53,6 +53,8 @@ The second child is a subtree.
 That subtree has multiplication as a parent node.
 And numbers `21` and `2` are children.
 
+![Abstract syntax tree](img/podcast-59-ast.svg)
+
 This weird tree structure supports operator precedence, parentheses and overall is quite convenient.
 At this point, many errors are caught.
 For example, the first child of the assignment operator must be an identifier (a variable).
