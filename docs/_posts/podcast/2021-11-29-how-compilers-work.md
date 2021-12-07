@@ -15,7 +15,6 @@ description: >
 
 {{ page.description }}
 
-<!--
 The compiler's work is traditionally divided into three stages: frontend, middle, and backend.
 The frontend interacts directly with the source code.
 It reads your C++, Rust or... Go file.
@@ -92,7 +91,6 @@ The compilation typically happens inside a browser.
 And it's just an optimization technique, known as Just-in-time compilation.
 
 That's it, thanks for listening, bye!
--->
 
 # More materials
 
