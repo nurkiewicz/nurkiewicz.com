@@ -1035,25 +1035,44 @@
 					</ul>
 			</section>
 
-			<section id="Backpressure">
-				<h1>Backpressure</h1>
-				<p>Sources you can't slow down:</p>
-				<ul>
-					<li><code>Flux.interval()</code></li>
-					<li>Mouse moves (!)</li>
-					<li>Network packets (?)</li>
-				</ul>
-			</section>
-
 			<section>
-				<h1>Missing backpressure</h1>
-				<pre>
-					<code class="hljs language-txt" data-trim>
-						reactor.core.Exceptions$OverflowException: 
-						Could not emit tick 256 due to lack of requests 
-						(interval doesn't support small downstream requests that replenish slower than the ticks)
-					</code>
-				</pre>
+				<section id="Backpressure">
+					<h1>Backpressure</h1>
+					<p>Sources you can't slow down:</p>
+					<ul>
+						<li><code>Flux.interval()</code></li>
+						<li>Mouse moves (!)</li>
+						<li>Network packets (?)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Ignoring backpressure</h1>
+					<pre>
+						<code class="hljs language-java" data-trim>
+							<script type="text/template">
+								Flux.create(sink -> {
+									while(!sink.isDisposed()) {
+										sink.next(Math.random())
+									}
+								})
+
+							</script>
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h1>Missing backpressure</h1>
+					<pre>
+						<code class="hljs language-txt" data-trim>
+							reactor.core.Exceptions$OverflowException: 
+							Could not emit tick 256 due to lack of requests 
+							(interval doesn't support small downstream requests that replenish slower than the ticks)
+						</code>
+					</pre>
+				</section>
+
 			</section>
 
 			<section id="WebFlux">
