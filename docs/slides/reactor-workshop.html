@@ -38,7 +38,7 @@
 					<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd> to search
 				</p>
 				<p>
-					Right/left to navigate slides
+					Use arrow keys to navigate slides
 				</p>
 			</section>
 
@@ -57,7 +57,11 @@
 
 			<section>
 				<h1>Disclaimer</h1>
-				<p>These slides are rough notes I made during several 3-day <em><a href="https://github.com/nurkiewicz/reactor-workshop">Reactor and WebFlux</a></em> workshops. They are not a complete tutorial by far.</p>
+				<p>
+					These slides are rough notes I made during several 3-day <em><a href="https://github.com/nurkiewicz/reactor-workshop">Reactor and WebFlux</a></em> workshops. 
+					They are not a complete tutorial by far.
+					Many code snippets were written by hand.
+				</p>
 			</section>
 
 			<section>
@@ -275,6 +279,15 @@
 					<li>You can subscribe to <code>Flux</code> multiple times</li>
 					<li><code>parallelStream()</code> is a joke</li>
 					<li>Much richer API in Reactor (<code>zip()</code>, <code>window()</code>, etc.)</li>
+				</ul>
+			</section>
+
+			<section>
+				<h1>Laziness</h1>
+				<ul>
+					<li>Default in Haskell</li>
+					<li>In Kotlin: <code>lazy</code> / <code>lateinit</code></li>
+					<li>In Vavr: <code>Lazy&lt;T&gt;</code></li>
 				</ul>
 			</section>
 
@@ -605,6 +618,22 @@
 						</code>
 					</pre>
 				</section>
+
+				<section>
+					<h1>Which thread runs after <code>zip()</code>?</h1>
+					<pre>
+						<code class="hljs language-java" data-trim>
+							<script type="text/template">
+								Mono
+										.zip(
+												monoOnSchedulerA,
+												monoOnSchedulerB
+										)
+										.doOnNext(whichThreadRunsMe?);
+							</script>
+						</code>
+					</pre>
+				</section>
 			</section>
 
 			<section id="onError">
@@ -648,6 +677,15 @@
 							}
 						</code>
 					</pre>
+			</section>
+
+			<section>
+				<h1><code>doOnNext()</code></h1>
+				<p>Equivalent to <code>Stream.peek()</code> in Java.</p>
+				<p>Good for:</p>
+				<ul>
+
+				</ul>
 			</section>
 
 			<section>
@@ -876,44 +914,61 @@
 				</pre>
 			</section>
 
-			<section id="publishOn">
-				<h1><code>publishOn()</code></h1>
-				❌ Wrong (<code>map</code> is long-running):
-				<pre>
-					<code class="hljs language-java" data-trim data-line-numbers="3">
-						result
-							.map(result -> result.getId())
-							.map(id -> cpuIntensive(id))
-					</code>
-				</pre>
-			</section>
-
 			<section>
-				<h1><code>publishOn()</code></h1>
-				❌ Wrong (<code>map</code> is single-threaded anyway):
-				<pre>
-					<code class="hljs language-java" data-trim data-line-numbers="4">
-						result
-							.map(result -> result.getId())
-							.publishOn(cpuScheduler)
-							.map(id -> cpuIntensive(id))
-					</code>
-				</pre>
-			</section>
+				<section id="publishOn">
+					<h1><code>publishOn()</code></h1>
+					❌ Wrong (<code>map</code> is long-running):
+					<pre>
+						<code class="hljs language-java" data-trim data-line-numbers="3">
+							result
+								.map(result -> result.getId())
+								.map(id -> cpuIntensive(id))
+						</code>
+					</pre>
+				</section>
 
-			<section>
-				<h1><code>publishOn()</code></h1>
-				✅ Correct:
-				<pre>
-					<code class="hljs language-java" data-trim data-line-numbers="4">
-						result
-							.map(result -> result.getId())
-							.flatMap(id -> Mono.fromCallable(() -> 
-									cpuIntensiveAsync(id))
-											.subscribeOn(cpuScheduler)
-							)
-					</code>
-				</pre>
+				<section>
+					<h1><code>publishOn()</code></h1>
+					❌ Wrong (<code>map</code> is single-threaded anyway):
+					<pre>
+						<code class="hljs language-java" data-trim data-line-numbers="4">
+							result
+								.map(result -> result.getId())
+								.publishOn(cpuScheduler)
+								.map(id -> cpuIntensive(id))
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h1><code>publishOn()</code></h1>
+					✅ Correct:
+					<pre>
+						<code class="hljs language-java" data-trim data-line-numbers="4">
+							result
+								.map(result -> result.getId())
+								.flatMap(id -> Mono.fromCallable(() -> 
+										cpuIntensiveAsync(id))
+												.subscribeOn(cpuScheduler)
+								)
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h1>Weird behaviour of <code>publishOn()</code></h1>
+					<pre>
+						<code class="hljs language-java" data-trim>
+							<script type="text/template">
+								Mono
+										.fromRunnable(() -> System.out.println(Thread.currentThread().getName()))
+										.doOnNext(e -> {})  //remove this or use hide()
+										.publishOn(Schedulers.boundedElastic())
+							</script>
+						</code>
+					</pre>
+					<a href="https://github.com/reactor/reactor-core/issues/1810"><code>Mono.fromCallable()</code> and <code>publishOn()</code></a>
+				</section>
 			</section>
 
 			<section>
@@ -931,38 +986,52 @@
 				</pre>
 			</section>
 
-			<section id="flatMapSequential">
-				<h1><code>flatMapSequential()</code></h1>
-				<pre>
-					<code class="hljs language-txt" data-trim>
-						-- G - Y - F ---------------------------------------> (t)
-						   |   |   |
-						   +--------------------------------------|
-						       +---------|........................
-						           +--------------------|.........
-					 
-						----------------------------------------- G.html Y.html F.html ---> (t)
-					</code>
-				</pre>
-			</section>
-
 			<section>
-				<h1><code>flatMapSequential()</code></h1>
-				<pre>
-						<code class="hljs language-java" data-trim>
-							Mono&lt;LargeImage&gt; download(URL url);
-
-							Flux&lt;URL&gt; thousandUrls;
-							
-							Flux&lt;LargeImage&gt; x = thousandUrls.flatMapSequential(this::download);
+				<section id="flatMapSequential">
+					<h1><code>flatMapSequential()</code></h1>
+					<pre>
+						<code class="hljs language-txt" data-trim>
+							-- G - Y - F ---------------------------------------> (t)
+							|   |   |
+							+--------------------------------------|
+								+---------|........................
+									+--------------------|.........
+						
+							----------------------------------------- G.html Y.html F.html ---> (t)
 						</code>
 					</pre>
+				</section>
+
+				<section>
+					<h1><code>flatMapSequential()</code></h1>
+					<pre>
+							<code class="hljs language-java" data-trim>
+								Mono&lt;LargeImage&gt; download(URL url);
+
+								Flux&lt;URL&gt; thousandUrls;
+								
+								Flux&lt;LargeImage&gt; x = thousandUrls.flatMapSequential(this::download);
+							</code>
+						</pre>
+				</section>
+
+				<section>
+					<h1><code>flatMapSequential()</code></h1>
+					<p>What if the first element fails?</p>
+					<p>See: <code>flatMapSequentialDelayError()</code></p>
+				</section>
 			</section>
 
 			<section>
-				<h1><code>flatMapSequential()</code></h1>
-				<p>What if the first element fails?</p>
-				<p>See: <code>flatMapSequentialDelayError()</code></p>
+				<h1><code>concatMap</code></h1>
+				<p>Basically equivalent to</p>
+				<pre>
+					<code class="hljs language-java" data-trim>
+						<script type="text/template">
+							flatMap(f, 1)
+						</script>
+					</code>
+				</pre>
 			</section>
 
 			<section>
@@ -1057,6 +1126,17 @@
 									}
 								})
 
+							</script>
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h1>Improved</h1>
+					<pre>
+						<code class="hljs language-java" data-trim>
+							<script type="text/template">
+								Flux.generate(sink -> sink.next(Math.random());
 							</script>
 						</code>
 					</pre>
@@ -1184,8 +1264,10 @@
 					<pre>
 						<code class="hljs language-java" data-trim>
 							Person p = Mono.fromCallable(() -&gt; db.query())
+										.subscribeOn(myScheduler)
 										.block(ofMillis(500));
 							User u = Mono.fromCallable(() -&gt; rest.get())
+										.subscribeOn(myScheduler)
 										.block(ofMillis(500));
 						</code>
 					</pre>
@@ -1309,7 +1391,6 @@
 			<section id="Reference-materials">
 				<h1>Reference materials</h1>
 				<ul>
-					<li><a href="https://github.com/reactor/reactor-core/issues/1810"><code>Mono.fromCallable()</code> and <code>publishOn()</code></a></li>
 					<li><a href="http://www.flatmapthatshit.com/">Flat map that shit</a></li>
 					<li><a href="https://journal.stuffwithstuff.com/2015/02/01/what-color-is-your-function/">What Color is Your Function?</a></li>
 					<li><a href="https://www.techempower.com/benchmarks/">Web framework benchmarks</a></li>
@@ -1322,6 +1403,13 @@
 					<li><a href="https://kotlinlang.org/docs/flow.html#flows">Kotlin flows</a></li>
 					<li><a href="https://blog.frankel.ch/reactor-to-coroutines/">From Reactor to Coroutines</a></li>
 					<li><a href="https://wiki.openjdk.java.net/display/loom/Main">Project Loom</a></li>
+				</ul>
+			</section>
+
+			<section>
+				<h1>Miscellaneous</h1>
+				<ul>
+					<li><a href="https://gist.github.com/jboner/2841832">Latency Numbers Every Programmer Should Know</a></li>
 				</ul>
 			</section>
 
@@ -1349,6 +1437,7 @@
 					<li><a href="https://rsocket.io/">RSocket</a></li>
 					<li><a href="https://r2dbc.io/">R2DBC</a> - reactive relational database access</li>
 					<li><a href="https://rxmarbles.com">RxMarbles</a></li>
+					<li><a href="https://rxviz.com/">Rx Vizualize</a></li>
 					<li><a href="https://github.com/reactor/BlockHound">BlockHound</a></li>
 					<li><a href="https://github.com/electronicarts/ea-async">electronicarts/ea-async</a></li>
 				</ul>
