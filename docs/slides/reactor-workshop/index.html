@@ -933,13 +933,42 @@
 
 			<section>
 				<h1>Little's Law</h1>
-				<ul>
-					<li>100 threads, 0.5s/request? 200 rps</li>
-					<li>100 threads, 100ms/request? 1000 rps</li>
-					<li>200 threads, 200ms/request? 1000 rps</li>
-					<li>100 threads, 2s/request? 50 rps</li>
-					<li>2000 threads, 2s/request? 1000 rps</li>
-				</ul>
+				<table>
+					<thead>
+						<tr>
+							<th>Threads</th>
+							<th>Avg. resp.</th>
+							<th>rps</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>100</td>
+							<td>0.5s</td>
+							<td>200</td>
+						</tr>
+						<tr>
+							<td>100</td>
+							<td>0.1s</td>
+							<td>1000</td>
+						</tr>
+						<tr>
+							<td>200</td>
+							<td>0.2s</td>
+							<td>1000</td>
+						</tr>
+						<tr>
+							<td>100</td>
+							<td>2.0s</td>
+							<td>50</td>
+						</tr>
+						<tr>
+							<td>2000</td>
+							<td>2.0s</td>
+							<td>1000</td>
+						</tr>
+					</tbody>
+				</table>
 			</section>
 
 			<section>
