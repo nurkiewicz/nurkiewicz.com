@@ -267,7 +267,6 @@
 						</tr>
 					</tbody>
 				</table>
-				<p>See also: RxScala, RxPython, RxSwift, RxJS, RxPHP</p>
 			</section>
 
 			<section id="Flux">
@@ -334,6 +333,19 @@
 						Mono&lt;T&gt;    reduced = flux.reduce();
 					</code>
 				</pre>
+			</section>
+
+			<section>
+				<h1>History and ports</h1>
+				<ul>
+					<li><a href="https://dotnetfoundation.org/projects/reactive-extensions">Reactive Extensions for .NET</a></li>
+					<li>RxJava</li>
+					<li>RxScala</li>
+					<li>RxPython</li>
+					<li>RxSwift</li>
+					<li>RxJS</li>
+					<li>RxPHP</li>
+				</ul>
 			</section>
 
 			<section id="Hot-cold">
@@ -427,167 +439,172 @@
 				</pre>
 			</section>
 
-			<section id="flatMap">
-				<h1><code>flatMap()</code></h1>
-				<pre>
+
+			<section>
+				<section id="flatMap">
+					<h1><code>flatMap()</code></h1>
+					<pre>
+							<code class="hljs language-java" data-trim>
+								Optional&lt;Integer&gt; tryParse(String s);
+								
+								Optional&lt;String&gt; s = Optional.of("42");
+	
+								Optional&lt;Optional&lt;Integer&gt;&gt; x = s.map(this::tryParse);
+								
+								Optional&lt;Integer&gt; x = s.flatMap(this::tryParse);
+							</code>
+						</pre>
+				</section>
+
+				<section>
+					<h1><code>flatMap()</code></h1>
+					<pre>
+							<code class="hljs language-java" data-trim>
+								Stream&lt;Integer&gt; tryParse(String s);
+								
+								Stream&lt;String&gt; s = Stream.of("42");
+
+								Stream&lt;Stream&lt;Integer&gt;&gt; x = s.map(this::tryParse);
+
+								Stream&lt;Integer&gt; x = s.flatMap(this::tryParse);
+							</code>
+						</pre>
+				</section>
+
+				<section>
+					<h1><code>flatMap()</code></h1>
+					<pre>
+							<code class="hljs language-java" data-trim>
+								CompletableFuture&lt;Integer&gt; tryParse(String s);
+
+								CompletableFuture&lt;String&gt; s = 
+									CompletableFuture.completed("42");
+
+								CompletableFuture&lt;CompletableFuture&lt;Integer&gt;&gt; x = 
+									s.thenApply(this::tryParse);
+
+								CompletableFuture&lt;Integer&gt; x = 
+									s.thenCompose(this::tryParse);
+							</code>
+						</pre>
+				</section>
+
+				<section>
+					<h1><code>flatMap()</code></h1>
+					<pre>
+							<code class="hljs language-java" data-trim>
+								Mono&lt;Integer&gt; tryParse(String s);
+								
+								Mono&lt;String&gt; s = Mono.just("42");
+								
+								Mono&lt;Mono&lt;Integer&gt;&gt; x = 
+									s.map(this::tryParse);
+								
+								Mono&lt;Integer&gt; x = 
+									s.flatMap(this::tryParse);
+							</code>
+						</pre>
+				</section>
+
+				<section>
+					<h1><code>flatMap</code> = <code>map</code> + <code>merge</code></h1>
+					<pre>
+							<code class="hljs language-java" data-trim>
+								Flux&lt;Integer&gt; userIds;  //Integer x1000
+
+								Mono&lt;User&gt; loadUser(int id); //Mono&lt;User&gt; x1000
+								
+								Flux&lt;User&gt; x = userIds.flatMap(this::loadUser);
+							</code>
+						</pre>
+				</section>
+
+				<section>
+					<h1><code>flatMap</code> pseudocode</h1>
+					<pre>
+							<code class="hljs language-java" data-trim>
+								flatMap(f) {
+									return merge(map(f));
+								}
+							</code>
+						</pre>
+				</section>
+			</section>
+
+			<section>
+				<section id="zip">
+					<h1><code>zip()</code></h1>
+					<pre>
+							<code class="hljs language-java" data-trim>
+								Mono&lt;Ads&gt; loadAds();
+								Mono&lt;Article&gt; fetchArticle();
+								Mono&lt;Header&gt; composeHeader();
+								Mono&lt;Footer&gt; composeFooter();
+								Mono&lt;Tags&gt; guessTags();
+								Mono&lt;Next&gt; recommendNext();
+							</code>
+						</pre>
+				</section>
+
+				<section>
+					<h1><code>zip()</code></h1>
+					<pre>
+							<code class="hljs language-java" data-trim>
+								Page makePage(Ads ads, Article article, Header header, 
+												Footer footer, Tags tags, Next next);
+
+								Mono&lt;Page&gt; x = Mono.zip(
+									loadAds(),
+									fetchArticle(),
+									composeHeader(),
+									composeFooter(),
+									guessTags(),
+									recommendNext(),
+										(ads, art, head, foot, tags, next) -&gt; 
+											makePage(ads, art, head, foot, tags, next)
+								)
+
+							</code>
+						</pre>
+				</section>
+
+				<section>
+					<h1><code>zip()</code></h1>
+					Watch out for empty <code>Mono</code>!
+					<pre>
+							<code class="hljs language-java" data-trim data-line-numbers="6-8">
+								Mono&lt;Page&gt; x = Mono.zip(
+									loadAds(),
+									fetchArticle(),
+									composeHeader(),
+									composeFooter(),
+									guessTags()
+										.switchIfEmpty(Mono.just(new Tags()))
+										.timeout(ofMillis(500)),
+									recommendNext(),
+									this::makePage)
+
+							</code>
+						</pre>
+				</section>
+
+				<section>
+					<h1>Asynchronous <code>zip()</code></h1>
+					<pre>
 						<code class="hljs language-java" data-trim>
-							Optional&lt;Integer&gt; tryParse(String s);
+							Mono&lt;Statement&gt; fooAsync(Order order, Customer customer);
+
+							Mono&lt;Mono&lt;Statement&gt;&gt; x = Mono.zip(
+									order, customer, 
+									(Order o, Customer c) -&gt; fooAsync(o, c));
 							
-							Optional&lt;String&gt; s = Optional.of("42");
-
-							Optional&lt;Optional&lt;Integer&gt;&gt; x = s.map(this::tryParse);
+							Mono&lt;Statement&gt; x = Mono
+									.zip(order, customer, (Order o, Customer c) -&gt; fooAsync(o, c))
+									.flatMap(x -&gt; x);
 							
-							Optional&lt;Integer&gt; x = s.flatMap(this::tryParse);
 						</code>
 					</pre>
-			</section>
-
-			<section>
-				<h1><code>flatMap()</code></h1>
-				<pre>
-						<code class="hljs language-java" data-trim>
-							Stream&lt;Integer&gt; tryParse(String s);
-							
-							Stream&lt;String&gt; s = Stream.of("42");
-
-							Stream&lt;Stream&lt;Integer&gt;&gt; x = s.map(this::tryParse);
-
-							Stream&lt;Integer&gt; x = s.flatMap(this::tryParse);
-						</code>
-					</pre>
-			</section>
-
-			<section>
-				<h1><code>flatMap()</code></h1>
-				<pre>
-						<code class="hljs language-java" data-trim>
-							CompletableFuture&lt;Integer&gt; tryParse(String s);
-
-							CompletableFuture&lt;String&gt; s = 
-								CompletableFuture.completed("42");
-
-							CompletableFuture&lt;CompletableFuture&lt;Integer&gt;&gt; x = 
-								s.thenApply(this::tryParse);
-
-							CompletableFuture&lt;Integer&gt; x = 
-								s.thenCompose(this::tryParse);
-						</code>
-					</pre>
-			</section>
-
-			<section>
-				<h1><code>flatMap()</code></h1>
-				<pre>
-						<code class="hljs language-java" data-trim>
-							Mono&lt;Integer&gt; tryParse(String s);
-							
-							Mono&lt;String&gt; s = Mono.just("42");
-							
-							Mono&lt;Mono&lt;Integer&gt;&gt; x = 
-								s.map(this::tryParse);
-							
-							Mono&lt;Integer&gt; x = 
-								s.flatMap(this::tryParse);
-						</code>
-					</pre>
-			</section>
-
-			<section>
-				<h1><code>flatMap</code> = <code>map</code> + <code>merge</code></h1>
-				<pre>
-						<code class="hljs language-java" data-trim>
-							Flux&lt;Integer&gt; userIds;  //Integer x1000
-
-							Mono&lt;User&gt; loadUser(int id); //Mono&lt;User&gt; x1000
-							
-							Flux&lt;User&gt; x = userIds.flatMap(this::loadUser);
-						</code>
-					</pre>
-			</section>
-
-			<section>
-				<h1><code>flatMap</code> pseudocode</h1>
-				<pre>
-						<code class="hljs language-java" data-trim>
-							flatMap(f) {
-								return merge(map(f));
-							}
-						</code>
-					</pre>
-			</section>
-
-			<section id="zip">
-				<h1><code>zip()</code></h1>
-				<pre>
-						<code class="hljs language-java" data-trim>
-							Mono&lt;Ads&gt; loadAds();
-							Mono&lt;Article&gt; fetchArticle();
-							Mono&lt;Header&gt; composeHeader();
-							Mono&lt;Footer&gt; composeFooter();
-							Mono&lt;Tags&gt; guessTags();
-							Mono&lt;Next&gt; recommendNext();
-						</code>
-					</pre>
-			</section>
-
-			<section>
-				<h1><code>zip()</code></h1>
-				<pre>
-						<code class="hljs language-java" data-trim>
-							Page makePage(Ads ads, Article article, Header header, 
-											Footer footer, Tags tags, Next next);
-
-							Mono&lt;Page&gt; x = Mono.zip(
-								loadAds(),
-								fetchArticle(),
-								composeHeader(),
-								composeFooter(),
-								guessTags(),
-								recommendNext(),
-									(ads, art, head, foot, tags, next) -&gt; 
-										makePage(ads, art, head, foot, tags, next)
-							)
-
-						</code>
-					</pre>
-			</section>
-
-			<section>
-				<h1><code>zip()</code></h1>
-				Watch out for empty <code>Mono</code>!
-				<pre>
-						<code class="hljs language-java" data-trim data-line-numbers="6-8">
-							Mono&lt;Page&gt; x = Mono.zip(
-								loadAds(),
-								fetchArticle(),
-								composeHeader(),
-								composeFooter(),
-								guessTags()
-									.switchIfEmpty(Mono.just(new Tags()))
-									.timeout(ofMillis(500)),
-								recommendNext(),
-								this::makePage)
-
-						</code>
-					</pre>
-			</section>
-
-			<section>
-				<h1>Asynchronous <code>zip()</code></h1>
-				<pre>
-					<code class="hljs language-java" data-trim>
-						Mono&lt;Statement&gt; fooAsync(Order order, Customer customer);
-
-						Mono&lt;Mono&lt;Statement&gt;&gt; x = Mono.zip(
-								order, customer, 
-								(Order o, Customer c) -&gt; fooAsync(o, c));
-						
-						Mono&lt;Statement&gt; x = Mono
-								.zip(order, customer, (Order o, Customer c) -&gt; fooAsync(o, c))
-								.flatMap(x -&gt; x);
-						
-					</code>
-				</pre>
+				</section>
 			</section>
 
 			<section id="onError">
@@ -633,99 +650,101 @@
 					</pre>
 			</section>
 
-			<section id="Side-effects">
-				<h1>Side effects 1/5</h1>
-				❌ Wrong:
-				<pre>
-					<code class="hljs language-java" data-trim>
-						Flux&lt;Article&gt; loadAndSaveArticles();
-					</code>
-				</pre>
-
-				<pre>
-					<code class="hljs language-java" data-trim>
-						Flux
-							.interval(ofMinutes(5))
-							.subscribe(num -&gt; loadAndSaveArticles());
-					</code>
-				</pre>
-			</section>
-
 			<section>
-				<h1>Side effects 2/5</h1>
-				❌ Wrong:
-				<pre>
-					<code class="hljs language-java" data-trim>
-						Flux&lt;Article&gt; loadAndSaveArticles();
-					</code>
-				</pre>
+				<section id="Side-effects">
+					<h1>Side effects 1/5</h1>
+					❌ Wrong:
+					<pre>
+						<code class="hljs language-java" data-trim>
+							Flux&lt;Article&gt; loadAndSaveArticles();
+						</code>
+					</pre>
 
-				<pre>
-					<code class="hljs language-java" data-trim>
-						Flux
-							.interval(ofMinutes(5))
-							.doOnNext(num -&gt; loadAndSaveArticles())
-							.subscribe();
-					</code>
-				</pre>
-			</section>
+					<pre>
+						<code class="hljs language-java" data-trim>
+							Flux
+								.interval(ofMinutes(5))
+								.subscribe(num -&gt; loadAndSaveArticles());
+						</code>
+					</pre>
+				</section>
 
-			<section>
-				<h1>Side effects 3/5</h1>
-				❌ Wrong:
-				<pre>
-					<code class="hljs language-java" data-trim>
-						Flux&lt;Article&gt; loadAndSaveArticles();
-					</code>
-				</pre>
+				<section>
+					<h1>Side effects 2/5</h1>
+					❌ Wrong:
+					<pre>
+						<code class="hljs language-java" data-trim>
+							Flux&lt;Article&gt; loadAndSaveArticles();
+						</code>
+					</pre>
 
-				<pre>
-					<code class="hljs language-java" data-trim>
-						Flux
-							.interval(ofMinutes(5))
-							.doOnNext(num -&gt; loadAndSaveArticles().blockLast())
-							.subscribe();
-					</code>
-				</pre>
-			</section>
+					<pre>
+						<code class="hljs language-java" data-trim>
+							Flux
+								.interval(ofMinutes(5))
+								.doOnNext(num -&gt; loadAndSaveArticles())
+								.subscribe();
+						</code>
+					</pre>
+				</section>
 
-			<section>
-				<h1>Side effects 4/5</h1>
-				❌ Wrong:
-				<pre>
-					<code class="hljs language-java" data-trim>
-						Flux&lt;Article&gt; loadAndSaveArticles();
-					</code>
-				</pre>
+				<section>
+					<h1>Side effects 3/5</h1>
+					❌ Wrong:
+					<pre>
+						<code class="hljs language-java" data-trim>
+							Flux&lt;Article&gt; loadAndSaveArticles();
+						</code>
+					</pre>
 
-				<pre>
-					<code class="hljs language-java" data-trim>
-						Flux
-							.interval(ofMinutes(5))
-							.doOnNext(num -&gt; loadAndSaveArticles().subscribe())
-							.subscribe();
-					</code>
-				</pre>
-			</section>
+					<pre>
+						<code class="hljs language-java" data-trim>
+							Flux
+								.interval(ofMinutes(5))
+								.doOnNext(num -&gt; loadAndSaveArticles().blockLast())
+								.subscribe();
+						</code>
+					</pre>
+				</section>
 
-			<section>
-				<h1>Side effects 5/5</h1>
-				✅ Correct:
-				<pre>
-					<code class="hljs language-java" data-trim>
-						Flux&lt;Article&gt; loadAndSaveArticles();
-					</code>
-				</pre>
+				<section>
+					<h1>Side effects 4/5</h1>
+					❌ Wrong:
+					<pre>
+						<code class="hljs language-java" data-trim>
+							Flux&lt;Article&gt; loadAndSaveArticles();
+						</code>
+					</pre>
 
-				<pre>
-					<code class="hljs language-java" data-trim>
-						Flux
-							.interval(ofMinutes(5))
-							.flatMap(n -&gt; loadAndSaveArticles())
-							.subscribe();
-						
-					</code>
-				</pre>
+					<pre>
+						<code class="hljs language-java" data-trim>
+							Flux
+								.interval(ofMinutes(5))
+								.doOnNext(num -&gt; loadAndSaveArticles().subscribe())
+								.subscribe();
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h1>Side effects 5/5</h1>
+					✅ Correct:
+					<pre>
+						<code class="hljs language-java" data-trim>
+							Flux&lt;Article&gt; loadAndSaveArticles();
+						</code>
+					</pre>
+
+					<pre>
+						<code class="hljs language-java" data-trim>
+							Flux
+								.interval(ofMinutes(5))
+								.flatMap(n -&gt; loadAndSaveArticles())
+								.subscribe();
+							
+						</code>
+					</pre>
+				</section>
 			</section>
 
 			<section id="window">
@@ -946,43 +965,45 @@
 				<p>See: <code>flatMapSequentialDelayError()</code></p>
 			</section>
 
-			<section id="parallel">
-				<h1><code>parallel()</code></h1>
-				<pre>
-					<code class="hljs language-txt" data-trim>
-						                        + -- A D ...
-						                       /
-						---- A B C D E F ... -+ ---- B E ...
-						                       \
-						                        + -- C F ...					
-					</code>
-				</pre>
-			</section>
+			<section>
+				<section id="parallel">
+					<h1><code>parallel()</code></h1>
+					<pre>
+						<code class="hljs language-txt" data-trim>
+													+ -- A D ...
+												/
+							---- A B C D E F ... -+ ---- B E ...
+												\
+													+ -- C F ...					
+						</code>
+					</pre>
+				</section>
 
-			<section>
-				<h1><code>parallel()</code></h1>
-				From:
-				<pre>
-					<code class="hljs language-java" data-trim>
-						flux
-							.flatMap(x -&gt; 
-									Mono.fromCallable(() -&gt; blockingOperation(x))
-										.subscribeOn(scheduler))
-					
-					</code>
-				</pre>
-			</section>
-			
-			<section>
-				<h1><code>parallel()</code></h1>
-				To (incomplete):
-				<pre>
-					<code class="hljs language-java" data-trim>
-						flux
-							.parallel(3)
-							.map(x -> blockingOperation(x))
-					</code>
-				</pre>
+				<section>
+					<h1><code>parallel()</code></h1>
+					From:
+					<pre>
+						<code class="hljs language-java" data-trim>
+							flux
+								.flatMap(x -&gt; 
+										Mono.fromCallable(() -&gt; blockingOperation(x))
+											.subscribeOn(scheduler))
+						
+						</code>
+					</pre>
+				</section>
+				
+				<section>
+					<h1><code>parallel()</code></h1>
+					To (incomplete):
+					<pre>
+						<code class="hljs language-java" data-trim>
+							flux
+								.parallel(3)
+								.map(x -> blockingOperation(x))
+						</code>
+					</pre>
+				</section>
 			</section>
 			
 			<section id="expand">
@@ -1127,63 +1148,65 @@
 				</dl>
 			</section>
 
-			<section id="Refactoring">
-				<h1>Refactoring toward Reactor</h1>
-				<h2>Step 0:</h2>
-				<pre>
-					<code class="hljs language-java" data-trim>
-						Person p = db.query();
-						User u = rest.get();
-					</code>
-				</pre>
-			</section>
-
 			<section>
-				<h1>Step 1:</h1>
-				<pre>
-					<code class="hljs language-java" data-trim>
-						Person p = Mono.fromCallable(() -&gt; db.query())
-									.block(ofMillis(500));
-						User u = Mono.fromCallable(() -&gt; rest.get())
-									.block(ofMillis(500));
-					</code>
-				</pre>
-			</section>
+				<section id="Refactoring">
+					<h1>Refactoring toward Reactor</h1>
+					<h2>Step 0:</h2>
+					<pre>
+						<code class="hljs language-java" data-trim>
+							Person p = db.query();
+							User u = rest.get();
+						</code>
+					</pre>
+				</section>
 
-			<section>
-				<h1>Step 2:</h1>
-				<pre>
-					<code class="hljs language-java" data-trim>
-						Person p = db.queryAsync()
-									.block(ofMillis(500));
-						User u = rest.getAsync()
-									.block(ofMillis(500));
-					</code>
-				</pre>
-			</section>
+				<section>
+					<h1>Step 1:</h1>
+					<pre>
+						<code class="hljs language-java" data-trim>
+							Person p = Mono.fromCallable(() -&gt; db.query())
+										.block(ofMillis(500));
+							User u = Mono.fromCallable(() -&gt; rest.get())
+										.block(ofMillis(500));
+						</code>
+					</pre>
+				</section>
 
-			<section>
-				<h1>Step 3:</h1>
-				<pre>
-					<code class="hljs language-java" data-trim>
-						Tuple2&lt;Person, User&gt; t = Mono.zip(
-							db.queryAsync(),
-							rest.getAsync()
-						).block(ofMillis(500));
-					</code>
-				</pre>
-			</section>
+				<section>
+					<h1>Step 2:</h1>
+					<pre>
+						<code class="hljs language-java" data-trim>
+							Person p = db.queryAsync()
+										.block(ofMillis(500));
+							User u = rest.getAsync()
+										.block(ofMillis(500));
+						</code>
+					</pre>
+				</section>
 
-			<section>
-				<h1>Step 4:</h1>
-				<pre>
-					<code class="hljs language-java" data-trim>
-						return Mono.zip(
-							db.queryAsync(),
-							rest.getAsync()
-						);
-					</code>
-				</pre>
+				<section>
+					<h1>Step 3:</h1>
+					<pre>
+						<code class="hljs language-java" data-trim>
+							Tuple2&lt;Person, User&gt; t = Mono.zip(
+								db.queryAsync(),
+								rest.getAsync()
+							).block(ofMillis(500));
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h1>Step 4:</h1>
+					<pre>
+						<code class="hljs language-java" data-trim>
+							return Mono.zip(
+								db.queryAsync(),
+								rest.getAsync()
+							);
+						</code>
+					</pre>
+				</section>
 			</section>
 
 			<section id="Reactive-databases">
