@@ -30,30 +30,86 @@
 
 			<section>
 				<h1>Reactor workshop</h1>
-				<p>
+				<h2>
+					Exercises:
 					<a href="https://github.com/nurkiewicz/reactor-workshop">github.com/nurkiewicz/reactor-workshop</a>
-				</p>
+				</h2>
 				<p>
 					<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd> to search
 				</p>
 				<p>
-					Left/right to navigate slides
+					Right/left to navigate slides
 				</p>
 			</section>
 
-			<section>
+			<section id="whoami">
 				<h1><code>whoami</code></h1>
 				<h2>Tomasz Nurkiewicz</h2>
 				<h2>Java Champion</h2>
 				<ul>
 					<li>nurkiewicz (on GMail)</li>
 					<li><a href="https:/nurkiewicz.com">nurkiewicz.com</a></li>
+					<li><a href="https://nurkiewicz.com/podcast.html">My podcast</a></li>
 					<li><a href="https://twitter.com/tnurkiewicz">@tnurkiewicz</a></li>
 					<li><a href="https://www.linkedin.com/in/nurkiewicz/">LinkedIn</a></li>
 				</ul>
 			</section>
 
 			<section>
+				<h1>Quick links</h1>
+				<small>
+				<div style="display: flex">
+					<div style="flex: 1">
+						<ul>
+							<li><a href="#/Blocking-code">Blocking code</a></li>
+							<li><a href="#/Classic-future">Classic Future</a></li>
+							<li><a href="#/Mono-and-Flux">Mono and Flux</a></li>
+							<li><a href="#/Hot-cold">Hot vs. cold</a></li>
+							<li><a href="#/block">block()</a></li>
+							<li><a href="#/just">just()</a></li>
+							<li><a href="#/collectList">collectList()</a></li>
+							<li><a href="#/map">map()</a></li>
+							<li><a href="#/flatMap">flatMap()</a></li>
+							<li><a href="#/zip">zip()</a></li>
+							<li><a href="#/onError">onError*()</a></li>
+							<li><a href="#/filterWhen">filterWhen()</a></li>
+							<li><a href="#/doOnSubscribe">doOnSubscribe()</a></li>
+							<li><a href="#/Side-effects">Side effects</a></li>
+							<li><a href="#/window">window()</a></li>
+							<li><a href="#/interval">interval()</a></li>
+						</ul>
+					</div>
+					<div style="flex: 1">
+						<ul>
+							<li><a href="#/Schedulers">Schedulers</a></li>
+							<li><a href="#/subscribeOn">subscribeOn()</a></li>
+							<li><a href="#/publishOn">publishOn()</a></li>
+							<li><a href="#/flatMapSequential">flatMapSequential()</a></li>
+							<li><a href="#/parallel">parallel()</a></li>
+							<li><a href="#/expand">expand()</a></li>
+							<li><a href="#/Reactive-streams">Reactive streams</a></li>
+							<li><a href="#/Backpressure">Backpressure</a></li>
+						</ul>
+					</div>
+					<div style="flex: 1">
+						<ul>
+							<li><a href="#/WebFlux">WebFlux</a></li>
+							<li><a href="#/Littles-law">Little's Law</a></li>
+							<li><a href="#/Netty">Netty</a></li>
+							<li><a href="#/WebClient">WebClient</a></li>
+							<li><a href="#/Refactoring">Refactoring toward Reactor</a></li>
+							<li><a href="#/Reactive-databases">Reactive databases</a></li>
+							<li><a href="#/ReactorDebugAgent">ReactorDebugAgent</a></li>
+							<li><a href="#/BlockHound">BlockHound</a></li>
+							<li><a href="#/When-to-use">When to use WebFlux?</a></li>
+							<li><a href="#/Reference-materials">Reference materials</a></li>
+						</ul>
+					</div>
+				</div>
+			</small>
+			</section>
+
+			<section id="Blocking-code">
 				<h1>Blocking code</h1>
 				<pre>
 						<code class="hljs language-java" data-trim>
@@ -63,8 +119,8 @@
 					</pre>
 			</section>
 
-			<section>
-				<h1>Clasic <code>Future</code></h1>
+			<section id="Classic-future">
+				<h1>Classic <code>Future</code></h1>
 				<pre>
 						<code class="hljs language-java" data-trim>
 							String s1 = future1.get();  //poor practice
@@ -75,7 +131,7 @@
 			</section>
 
 			<section>
-				<h1>🤦‍♂️</h1>
+				<h1>Wait for first 🤦‍♂️</h1>
 				<pre>
 						<code class="hljs language-java" data-trim>
 								Future&lt;String&gt;     future1 = asyncOp1();
@@ -97,7 +153,7 @@
 					</pre>
 			</section>
 
-			<section>
+			<section id="CompletableFuture">
 				<h1><code>CompletableFuture</code></h1>
 				<pre>
 						<code class="hljs language-java" data-trim>
@@ -113,7 +169,7 @@
 				<pre>
 					<code class="hljs language-java" data-trim>
 						CompletableFuture&lt;BlockingResult&gt; f = 
-						CompletableFuture.supplyAsync(() -&gt; blockingOp())					
+								CompletableFuture.supplyAsync(() -&gt; blockingOp())					
 					</code>
 				</pre>
 				Watch out! <code>ForkJoinPool.commonPool()</code>
@@ -147,6 +203,7 @@
 			</section>
 
 			<section>
+				<h1>Wait for the first one</h1>
 				<pre>
 						<code class="hljs language-java" data-trim>
 							CompletableFuture&lt;Object&gt; f =
@@ -155,7 +212,7 @@
 					</pre>
 			</section>
 
-			<section>
+			<section id="Mono-and-Flux">
 				<h1><code>Mono</code> and <code>Flux</code></h1>
 				<pre>
 						<code class="hljs language-java" data-trim>
@@ -174,44 +231,41 @@
 						<tr>
 						  <th>RxJava 2+</th>
 						  <th>Reactor</th>
+						  <th>Java 8+</th>
 						</tr>
 					  </thead>
 					  <tbody>
 						<tr>
 							<td><code>Maybe&lt;T&gt;</code></td>
 							<td><code>Mono&lt;T&gt;</code></td>
+							<td>&nbsp;</td>
 						</tr>
 						<tr>
 							<td><code>Single&lt;T&gt;</code></td>
 							<td><code>Mono&lt;T&gt;</code></td>
+							<td><code>CompletableFuture&lt;T&gt;</code></td>
 						</tr>
 						<tr>
-							<td><code>Completable</code></td><td><code>Mono&lt;Void&gt;</code></td>
+							<td><code>Completable</code></td>
+							<td><code>Mono&lt;Void&gt;</code></td>
+							<td>&nbsp;</td>
 						</tr>
 						<tr>
 							<td><code>Flowable&lt;T&gt;</code></td>
 							<td><code>Flux&lt;T&gt;</code></td>
+							<td>&nbsp;</td>
 						</tr>
 						<tr>
 							<td><code>Observable&lt;T&gt;</code></td>
 							<td><code>Flux&lt;T&gt;</code> w/o backpressure</td>
+							<td>CompletableFuture&lt;List&lt;T&gt;&gt;<sup>*</sup></td>
 						</tr>
 					</tbody>
 				</table>
 				<p>See also: RxScala, RxPython, RxSwift, RxJS, RxPHP</p>
 			</section>
 
-			<section>
-				<h1><code>Flux</code> use cases</h1>
-				<ul>
-					<li>Loading many records</li>
-					<li>Streaming changes</li>
-					<li>Event/command queue</li>
-					<li>Infinite updates</li>
-				</ul>
-			</section>
-
-			<section>
+			<section id="Flux">
 				<h1><code>Flux</code> vs Java's <code>Stream</code></h1>
 				<ul>
 					<li>You can subscribe to <code>Flux</code> multiple times</li>
@@ -227,6 +281,16 @@
 					<li>May be infinite</li>
 					<li>May terminate with success or error</li>
 					<li>May be empty</li>
+				</ul>
+			</section>
+
+			<section>
+				<h1><code>Flux</code> use cases</h1>
+				<ul>
+					<li>Loading many records</li>
+					<li>Streaming changes</li>
+					<li>Event/command queue</li>
+					<li>Infinite updates</li>
 				</ul>
 			</section>
 
@@ -267,12 +331,12 @@
 				</pre>
 			</section>
 
-			<section>
+			<section id="Hot-cold">
 				<h1>Hot vs. cold</h1>
 				<p><code>publish()</code> / <code>connect()</code> / <code>autoConnect()</code>.</p>
 			</section>
 
-			<section>
+			<section id="block">
 				<h1><code>block()</code></h1>
 				<pre>
 					<code class="hljs language-java" data-trim>
@@ -294,7 +358,7 @@
 					</pre>
 			</section>
 
-			<section>
+			<section id="just">
 				<h1><code>just()</code></h1>
 				Antipattern:
 				<pre>
@@ -306,7 +370,7 @@
 				</pre>
 			</section>
 
-			<section>
+			<section id="collectList">
 				<h1><code>collectList()</code></h1>
 				<pre>
 						<code class="hljs language-java" data-trim>
@@ -327,7 +391,7 @@
 				</ul>
 			</section>
 
-			<section>
+			<section id="map">
 				<h1><code>map()</code></h1>
 				<pre>
 						<code class="hljs language-java" data-trim>
@@ -358,7 +422,7 @@
 				</pre>
 			</section>
 
-			<section>
+			<section id="flatMap">
 				<h1><code>flatMap()</code></h1>
 				<pre>
 						<code class="hljs language-java" data-trim>
@@ -447,7 +511,7 @@
 					</pre>
 			</section>
 
-			<section>
+			<section id="zip">
 				<h1><code>zip()</code></h1>
 				<pre>
 						<code class="hljs language-java" data-trim>
@@ -475,8 +539,8 @@
 								composeFooter(),
 								guessTags(),
 								recommendNext(),
-								(ads, article, header, footer, tags, next) -&gt; 
-									makePage(ads, article, header, footer, tags, next)
+									(ads, art, head, foot, tags, next) -&gt; 
+										makePage(ads, art, head, foot, tags, next)
 							)
 
 						</code>
@@ -485,6 +549,7 @@
 
 			<section>
 				<h1><code>zip()</code></h1>
+				Watch out for empty <code>Mono</code>!
 				<pre>
 						<code class="hljs language-java" data-trim data-line-numbers="6-8">
 							Mono&lt;Page&gt; x = Mono.zip(
@@ -520,7 +585,7 @@
 				</pre>
 			</section>
 
-			<section>
+			<section id="onError">
 				<h1><code>onError*()</code></h1>
 				<pre>
 					<code class="hljs language-java" data-trim data-line-numbers="|4,6">
@@ -535,7 +600,7 @@
 				</pre>
 			</section>
 
-			<section>
+			<section id="filterWhen">
 				<h1><code>filterWhen()</code></h1>
 				<pre>
 						<code class="hljs language-java" data-trim>
@@ -549,13 +614,13 @@
 					</pre>
 			</section>
 
-			<section>
+			<section id="doOnSubscribe">
 				<h1><code>doOnSubscribe()</code></h1>
 				This is misleading:
 				<pre>
 						<code class="hljs language-java" data-trim>
 							Mono&lt;Email&gt; sendEmail(String address) {
-								log.info("Sending email to {}", address);  //ten log kłamie
+								log.info("Sending email to {}. O RLY?", address);  //ten log kłamie
 								return Mono.fromCallable(() -&gt; malingApi.send("...", address))
 										.doOnSubscribe(s -&gt; log.info("Sending email to {}", address));
 							}
@@ -563,13 +628,17 @@
 					</pre>
 			</section>
 
-			<section>
+			<section id="Side-effects">
 				<h1>Side effects 1/5</h1>
 				❌ Wrong:
 				<pre>
 					<code class="hljs language-java" data-trim>
 						Flux&lt;Article&gt; loadAndSaveArticles();
+					</code>
+				</pre>
 
+				<pre>
+					<code class="hljs language-java" data-trim>
 						Flux
 							.interval(ofMinutes(5))
 							.subscribe(num -&gt; loadAndSaveArticles());
@@ -583,7 +652,11 @@
 				<pre>
 					<code class="hljs language-java" data-trim>
 						Flux&lt;Article&gt; loadAndSaveArticles();
+					</code>
+				</pre>
 
+				<pre>
+					<code class="hljs language-java" data-trim>
 						Flux
 							.interval(ofMinutes(5))
 							.doOnNext(num -&gt; loadAndSaveArticles())
@@ -598,7 +671,11 @@
 				<pre>
 					<code class="hljs language-java" data-trim>
 						Flux&lt;Article&gt; loadAndSaveArticles();
+					</code>
+				</pre>
 
+				<pre>
+					<code class="hljs language-java" data-trim>
 						Flux
 							.interval(ofMinutes(5))
 							.doOnNext(num -&gt; loadAndSaveArticles().blockLast())
@@ -613,7 +690,11 @@
 				<pre>
 					<code class="hljs language-java" data-trim>
 						Flux&lt;Article&gt; loadAndSaveArticles();
+					</code>
+				</pre>
 
+				<pre>
+					<code class="hljs language-java" data-trim>
 						Flux
 							.interval(ofMinutes(5))
 							.doOnNext(num -&gt; loadAndSaveArticles().subscribe())
@@ -628,7 +709,11 @@
 				<pre>
 					<code class="hljs language-java" data-trim>
 						Flux&lt;Article&gt; loadAndSaveArticles();
+					</code>
+				</pre>
 
+				<pre>
+					<code class="hljs language-java" data-trim>
 						Flux
 							.interval(ofMinutes(5))
 							.flatMap(n -&gt; loadAndSaveArticles())
@@ -638,7 +723,7 @@
 				</pre>
 			</section>
 
-			<section>
+			<section id="window">
 				<h1><code>window()</code></h1>
 				<pre>
 						<code class="hljs language-java" data-trim>
@@ -655,23 +740,32 @@
 				<h1>Run all</h1>
 				<pre>
 						<code class="hljs language-java" data-trim>
-							Flux<Result> sendMany(List<Email> emails);
+							Flux&lt;Result&gt; sendMany(List&lt;Email&gt; emails);
 
-							Flux<Result> results = emailsToSend.collectList()
-								.flatMap(list -> sendMany(list));
+							Flux&lt;Result&gt; results = emailsToSend.collectList()
+								.flatMap(list -&gt; sendMany(list));
 						</code>
 					</pre>
 			</section>
 
 			<section>
-				<h1>Run in batches</h1>
+				<h1>Run in batches (<code>buffer()</code>)</h1>
 				<pre>
 						<code class="hljs language-java" data-trim>
 							Flux&lt;Result&gt; sendMany(List&lt;Email&gt; emails);
 
 							Flux&lt;List&lt;Email&gt;&gt; batches = emailsToSend.buffer(100);
 							batches.flatMap(this::sendMany);
-							
+						</code>
+					</pre>
+			</section>
+
+			<section>
+				<h1>Run in batches (<code>window()</code>)</h1>
+				<pre>
+						<code class="hljs language-java" data-trim>
+							Flux&lt;Result&gt; sendMany(List&lt;Email&gt; emails);
+
 							Flux&lt;Flux&lt;Email&gt;&gt; batches2 = emailsToSend.window(100);
 							batches2.flatMap(
 									(Flux&lt;Email&gt; batch) -&gt; batch.collectList()
@@ -680,7 +774,7 @@
 					</pre>
 			</section>
 
-			<section>
+			<section id="interval">
 				<h1><code>interval()</code></h1>
 				<pre>
 						<code class="hljs language-java" data-trim>
@@ -711,7 +805,7 @@
 				</ul>
 			</section>
 
-			<section>
+			<section id="Schedulers">
 				<h1>Schedulers</h1>
 				<dl>
 					<dt>newBoundedElastic()</dt>
@@ -725,7 +819,40 @@
 				</dl>
 			</section>
 
+			<section id="subscribeOn">
+				<h1><code>subscribeOn()</code></h1>
+				<pre>
+					<code class="hljs language-java" data-trim data-line-numbers="|2-4|5-6|7-8|9-10|11-12">
+						Mono
+							.fromCallable(() -&gt; reliable.findBlocking(41))
+							.subscribeOn(Schedulers.newBoundedElastic(10, 100, "A"))
+							.doOnNext(x -&gt; log.info("Received {}", x))
+							.publishOn(Schedulers.newBoundedElastic(10, 100, "B"))
+							.map(x -&gt; ...)
+							.publishOn(Schedulers.newBoundedElastic(10, 100, "C"))
+							.filter(x -&gt; ...)
+							.publishOn(Schedulers.newBoundedElastic(10, 100, "D"))
+							.doOnNext(x -&gt; log.info("Still here {}", x))
+							.publishOn(Schedulers.newBoundedElastic(10, 100, "E"))
+							.subscribe(x -&gt; log.info("Finally received {}", x));
+					</code>
+				</pre>
+			</section>
+
 			<section>
+				<h1>What's wrong here?</h1>
+				<pre>
+					<code class="hljs language-java" data-trim>
+						domains
+								.flatMap(domain -&gt;
+										download(domain) //Mono
+												.subscribeOn(newBoundedElastic(50, 1000, "Crawler"))
+								);
+					</code>
+				</pre>
+			</section>
+
+			<section id="publishOn">
 				<h1><code>publishOn()</code></h1>
 				❌ Wrong (<code>map</code> is long-running):
 				<pre>
@@ -780,7 +907,7 @@
 				</pre>
 			</section>
 
-			<section>
+			<section id="flatMapSequential">
 				<h1><code>flatMapSequential()</code></h1>
 				<pre>
 					<code class="hljs language-txt" data-trim>
@@ -809,6 +936,12 @@
 			</section>
 
 			<section>
+				<h1><code>flatMapSequential()</code></h1>
+				<p>What if the first element fails?</p>
+				<p>See: <code>flatMapSequentialDelayError()</code></p>
+			</section>
+
+			<section id="parallel">
 				<h1><code>parallel()</code></h1>
 				<pre>
 					<code class="hljs language-txt" data-trim>
@@ -847,7 +980,7 @@
 				</pre>
 			</section>
 			
-			<section>
+			<section id="expand">
 				<h1><code>expand()</code></h1>
 				<pre>
 					<code class="hljs language-java" data-trim>
@@ -862,7 +995,7 @@
 				</pre>
 			</section>
 
-			<section>
+			<section id="Reactive-streams">
 				<h1>Reactive streams</h1>
 				<p>
 					Implementations:
@@ -876,7 +1009,7 @@
 					</ul>
 			</section>
 
-			<section>
+			<section id="Backpressure">
 				<h1>Backpressure</h1>
 				<p>Sources you can't slow down:</p>
 				<ul>
@@ -897,7 +1030,7 @@
 				</pre>
 			</section>
 
-			<section>
+			<section id="WebFlux">
 				<h1>WebFlux</h1>
 			</section>
 
@@ -931,8 +1064,9 @@
 				</dl>
 			</section>
 
-			<section>
+			<section id="Littles-Law">
 				<h1>Little's Law</h1>
+				Thread per request
 				<table>
 					<thead>
 						<tr>
@@ -972,6 +1106,11 @@
 			</section>
 
 			<section>
+				<h1>Netty</h1>
+				<h2>Netty ➡ <code>reactor-netty</code> ➡ WebFlux</h2>
+			</section>
+
+			<section id="WebClient">
 				<h1><code>WebClient</code></h1>
 				<dl>
 					<dt><code>WebClient</code></dt>
@@ -983,7 +1122,7 @@
 				</dl>
 			</section>
 
-			<section>
+			<section id="Refactoring">
 				<h1>Refactoring toward Reactor</h1>
 				<h2>Step 0:</h2>
 				<pre>
@@ -1042,6 +1181,27 @@
 				</pre>
 			</section>
 
+			<section id="Reactive-databases">
+				<h1>Reactive databases</h1>
+				<ul>
+					<li><a href="https://docs.mongodb.com/drivers/reactive-streams/">MongoDB</a></li>
+					<li>Cassandra</li>
+					<li><a href="https://docs.couchbase.com/java-sdk/current/howtos/concurrent-async-apis.html">Couchbase</a></li>
+					<li><a href="https://spring.io/guides/gs/spring-data-reactive-redis/">Redis</a></li>
+					<li>SQL (via <a href="https://r2dbc.io/">R2DBC</a> - reactive relational database access)
+						<ul>
+							<li><a href="https://github.com/r2dbc/r2dbc-h2">H2</a></li>
+							<li><a href="https://github.com/mariadb-corporation/mariadb-connector-r2dbc">MariaDB</a></li>
+							<li><a href="https://github.com/r2dbc/r2dbc-mssql">Microsoft SQL Server</a></li>
+							<li><a href="https://github.com/mirromutth/r2dbc-mysql">MySQL</a></li>
+							<li><a href="https://github.com/jasync-sql/jasync-sql">jasync-sql MySQL</a></li>
+							<li><a href="https://github.com/pgjdbc/r2dbc-postgresql">Postgres</a></li>
+							<li><a href="https://github.com/oracle/oracle-r2dbc">Oracle</a></li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+
 			<section>
 				<h1>Reactive MongoDB</h1>
 				<pre>
@@ -1057,7 +1217,23 @@
 				</pre>
 			</section>
 
-			<section>
+			<section id="ReactorDebugAgent">
+				<h1>ReactorDebugAgent</h1>
+				<pre>
+					<code class="hljs language-java" data-trim>
+						import reactor.tools.agent.ReactorDebugAgent;
+
+						@BeforeClass
+						public static void setup() {
+							ReactorDebugAgent.init();
+							ReactorDebugAgent.processExistingClasses();
+						}
+		
+					</code>
+				</pre>
+			</section>
+
+			<section id="BlockHound">
 				<h1>BlockHound</h1>
 				<pre>
 					<code class="hljs language-java" data-trim>
@@ -1071,7 +1247,7 @@
 				</pre>
 			</section>
 
-			<section>
+			<section id="When-to-use">
 				<h1>When to use WebFlux?</h1>
 				<ul>
 					<li>proxy/gateway-type of service</li>
@@ -1081,15 +1257,22 @@
 				</ul>
 			</section>
 
-			<section>
-				<h1>Reference material</h1>
+			<section id="Reference-materials">
+				<h1>Reference materials</h1>
 				<ul>
 					<li><a href="https://github.com/reactor/reactor-core/issues/1810"><code>Mono.fromCallable()</code> and <code>publishOn()</code></a></li>
 					<li><a href="http://www.flatmapthatshit.com/">Flat map that shit</a></li>
-					<li><a href="https://kotlinlang.org/docs/flow.html#flows">Kotlin flows</a></li>
 					<li><a href="https://journal.stuffwithstuff.com/2015/02/01/what-color-is-your-function/">What Color is Your Function?</a></li>
 					<li><a href="https://www.techempower.com/benchmarks/">Web framework benchmarks</a></li>
+				</ul>
+			</section>
+
+			<section>
+				<h1>Beyond</h1>
+				<ul>
+					<li><a href="https://kotlinlang.org/docs/flow.html#flows">Kotlin flows</a></li>
 					<li><a href="https://blog.frankel.ch/reactor-to-coroutines/">From Reactor to Coroutines</a></li>
+					<li><a href="https://wiki.openjdk.java.net/display/loom/Main">Project Loom</a></li>
 				</ul>
 			</section>
 
@@ -1137,7 +1320,7 @@
 			margin: 0.02,
 			transition: 'fade',
 			progress: true,
-			controls: false,
+			controls: true,
 			center: false,
 			slideNumber: 'c/t',
 		});

@@ -1,0 +1,565 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Revolution in concurrency or obscure implementation detail?</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/night.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1>Project Loom</h1>
+				<h2>Revolution in concurrency<br />
+					or obscure implementation detail?</h2>
+				<p>
+					Tomasz Nurkiewicz, Java Champion
+				</p>
+				<p>
+					<a href="https://nurkiewicz.com/">nurkiewicz.com</a>
+				</p>
+				<p>
+					<a href="https://twitter.com/tnurkiewicz">@tnurkiewicz</a>
+				</p>
+			</section>
+
+			<section>
+				<h1>TL;DR:</h1>
+				<h2>aka. Agenda</h2>
+				<ol>
+					<li>Create millions of threads</li>
+					<li>Block and <code>sleep()</code> everywhere, like crazy</li>
+					<li>Does it make any difference to us, developers?</li>
+				</ol>
+			</section>
+
+			<section>
+				<h1>What is a thread?</h1>
+				<h2>...in Java</h2>
+			</section>
+
+			<section>
+				<h1>User threads</h1>
+				<pre>
+					<code class="hljs language-java" data-trim>
+						Thread thread = new Thread(() -> System.out.println("Hello"));
+						thread.start();
+						thread.join();					
+					</code>
+				</pre>
+			</section>
+
+			<section>
+				<h1>Kernel threads</h1>
+				<blockquote cite="https://www.informit.com/articles/article.aspx?p=101760">
+					<p>
+						The scheduler is the component of the kernel that selects which process to run next.
+					</p>
+					<p>The scheduler [...] can be viewed as the code that divides the finite resource of processor time between the runnable processes on a system.</p>
+				</blockquote>
+				From: <a href="https://www.informit.com/articles/article.aspx?p=101760">Linux Kernel Development, Chapter 3: Scheduling</a>
+			</section>
+
+			<section>
+				<h1>User threads ≠ Kernel threads</h1>
+				<ul>
+					<li>User threads are created by the JVM</li>
+					<li>Kernel thread are created and managed by kernel (duh!)</li>
+				</ul>
+			</section>
+
+			<section>
+				<h1>Many-to-One Model</h1>
+				<h2>aka. Green threads</h2>
+				<blockquote cite="https://docs.oracle.com/cd/E19620-01/805-4031/6j3qv1oej/index.html">
+					<p>
+						Implementations of the <strong>many-to-one</strong> model (many user threads to one kernel thread) allow the
+						application to create any number of threads that can execute concurrently. [...]
+					</p>
+					<p>
+						this multithreading model provides limited concurrency and does not exploit multiprocessors.
+					</p>
+				</blockquote>
+				From <a href="https://docs.oracle.com/cd/E19620-01/805-4031/6j3qv1oej/index.html">Java on Solaris 7 Developer's Guide > Multithreading Models</a>
+			</section>
+
+			<section>
+				<h1>Many-to-Many Model</h1>
+				<blockquote cite="https://docs.oracle.com/cd/E19620-01/805-4031/6j3qv1oej/index.html">
+					<p>
+						a user-level threads library provides sophisticated scheduling of user-level threads above
+						kernel threads.
+					</p>
+					<p>
+						The kernel needs to manage only the threads that are currently active.
+					</p>
+				</blockquote>
+				From <a href="https://docs.oracle.com/cd/E19620-01/805-4031/6j3qv1oej/index.html">Java on Solaris 7 Developer's Guide > Multithreading Models</a>
+			</section>
+
+			<section>
+				<h1>One-to-One Model</h1>
+				<blockquote cite="https://docs.oracle.com/cd/E19620-01/805-4031/6j3qv1oej/index.html">
+					<p>
+						each user-level thread created by the application is known to the kernel [...]
+					</p>
+					<p>
+						The main problem with this model is that it places a restriction on you to be careful and frugal with threads, as each additional thread adds more "weight" to the process. 
+					</p>
+				</blockquote>
+				From <a href="https://docs.oracle.com/cd/E19620-01/805-4031/6j3qv1oej/index.html">Java on Solaris 7 Developer's Guide > Multithreading Models</a>
+			</section>
+
+			<section>
+				<h1>User threads = Kernel threads</h1>
+				<h2><code>jstack PID</code></h2>
+				<pre>
+						<code class="hljs language-java" data-trim data-line-numbers="|2">
+							"Thread-0" #13 prio=5 os_prio=31 cpu=0.13ms elapsed=71.09s 
+							tid=0x00007fd008917000 nid=0x6a03 
+							waiting on condition  [0x000070000e2a6000]		
+						</code>
+					</pre>
+			</section>
+
+			<section>
+				<h1>top -H</h1>
+				<pre>
+					<code class="hljs language-java" data-trim>
+						-H
+							[...] all individual threads will be displayed.
+							Otherwise, top displays a summation of all threads in a process.
+					</code>
+				</pre>
+				<a href="https://explainshell.com/explain?cmd=top+-H">explainshell.com</a>
+				<span class="fragment">
+					<pre>
+						<code class="hljs language-java" data-trim>
+							PID    COMMAND      %CPU TIME     #TH    #WQ  #PORT MEM    PURG   CMPRS PGRP  PPID  STATE    BOOSTS          %CPU_ME %CPU_OTHRS UID  FAULTS     COW     MSGSENT     MSGRECV     SYSBSD      SYSMACH    CSW         PAGEINS
+							75368  java         0.0  00:10.00 38     1    146   84M    0B     0B    75082 75082 sleeping *0[1]           0.00000 0.00000    502  47394      393     5635        2795        316143+     11062      158846+     8
+							76787  java         0.0  00:20.31 43     1    158  130M    0B     0B    75082 75082 sleeping *0[1]           0.00000 0.00000    502  95759      400     12434       6179        324542      21096      168946      291     44984
+
+						</code>
+					</pre>
+					<a href="https://nurkiewicz.com/2012/08/which-java-thread-consumes-my-cpu.html">Which Java thread consumes my CPU?</a>
+				</span>
+			</section>
+
+			<section>
+				<h1>Linux thread = Linux process</h1>
+				<blockquote cite="https://unix.stackexchange.com/a/317759">
+					<p>
+						from the kernel point of view, only processes exist [...]
+					</p>
+					<p>
+						and a so-called thread is just a different kind of process
+					</p>
+				</blockquote>
+				Source: <a href="https://unix.stackexchange.com/a/317759">Are Linux kernel threads really kernel
+					processes?</a>
+			</section>
+
+			<section>
+				<h1>Why threads are expensive?</h1>
+				<h2><code>Thread.start()</code> considered inefficient</h2>
+				<ul>
+					<li>1 MiB of memory (outside of heap, <code>-Xss</code>)</li>
+					<li>Kernel thread</li>
+				</ul>
+			</section>
+
+			<section>
+				<h1>Project Loom</h1>
+				<h2>Work in progress 🚧</h2>
+			</section>
+
+			<section>
+				<h1>Goal:</h1>
+				<h2>JVM supports creating <strong>millions</strong> of threads</h2>
+				<hr/>
+				<dl>
+					<dt>Virtual thread</dt>
+					<dd class="fragment">Lightweight, cheap, user thread</dd>
+					<dt>Carrier thread</dt>
+					<dd class="fragment">"Real" (kernel) thread running virtual threads</dd>
+					<dt>Continuation</dt>
+					<dd class="fragment">A piece of code that can be paused, at almost no cost</dd>
+				</dl>
+			</section>
+
+			<section>
+				<h1>Creating virtual threads</h1>
+				<pre>
+					<code class="hljs language-java" data-trim>
+						Thread t = Thread.startVirtualThread(() ->
+							System.out.println("Hello")
+						);
+					</code>
+				</pre>
+				Builder API:
+				<pre>
+					<code class="hljs language-java" data-trim>
+						Thread t = Thread
+							.ofVirtual()
+							.name("MyThread")
+							.unstarted(() -> task());		
+					</code>
+				</pre>
+			</section>
+
+			<section>
+				<h1>Special <code>ExecutorService</code></h1>
+				<pre>
+					<code class="hljs language-java" data-trim>
+						ExecutorService es = Executors.newVirtualThreadExecutor();
+					</code>
+				</pre>
+				<h2>...and <code>ThreadFactory</code></h2>
+				<pre>
+					<code class="hljs language-java" data-trim>
+						ThreadFactory factory = Thread
+							.ofVirtual()
+							.factory();
+					</code>
+				</pre>
+			</section>
+
+			<section>
+				<h1>Virtual thread</h1>
+				<h2>Continuation + scheduler</h2>
+			</section>
+
+			<section>
+				<h1>Continuations</h1>
+				<blockquote>
+					<p>
+						sequential code that may suspend (itself) and resume (be resumed by a caller).
+					</p>
+					<p>
+						[...] may suspend or yield execution at some point [...] When a delimited continuation suspends, control is passed outside of the continuation, and when it is resumed, control returns to the last yield point, with the execution context up to the entry point intact
+					</p>
+				</blockquote>
+			</section>
+
+			<section>
+				<p>Pseudo-code</p>
+				<pre>
+					<code class="hljs language-java" data-trim data-line-numbers="|2|3|8,9|10|14,15|16|4|5|17">
+						void main() {
+							c = continuation(foo)
+							c.run() 
+							...
+							c.run() 
+						}
+ 
+						void foo() { 
+							... 
+							bar()
+							... 
+						}
+						​
+						void bar() {
+							...
+							yield() 
+							... 
+						}
+					</code>
+				</pre>
+				From: <a href="https://cr.openjdk.java.net/~rpressler/loom/Loom-Proposal.html">Project Loom: Fibers and Continuations for the Java Virtual Machine</a>, modified
+			</section>
+
+			<section>
+				<h1>Think:</h1>
+				<ul>
+					<li>Coroutines / goroutines</li>
+					<li><code>async / await</code></li>
+					<li>Python generators</li>
+				</ul>
+			</section>
+
+			<section>
+				<h1><code>Thread.sleep()</code></h1>
+				<h2>in the XXI century</h2>
+				<pre>
+					<code class="hljs language-java" data-trim data-line-numbers="|2-3">
+						private static void sleepMillis(long millis) throws InterruptedException {
+							if (currentThread() instanceof VirtualThread vthread) {
+								vthread.sleepNanos(millis * 1000000);
+							} else {
+								sleep0(millis);
+							}
+						}
+					</code>
+				</pre>
+				<p>Simplified for clarity</p>
+			</section>
+
+			<section>
+				<h1><code>VirtualThread.parkNanos()</code></h1>
+				<pre>
+					<code class="hljs language-java" data-trim data-line-numbers="|4|2">
+						void parkNanos(long nanos) {
+							Future&lt;?&gt; unparker = scheduleUnpark(nanos);
+							try {
+								continuation.yield();
+							} finally {
+								cancel(unparker);
+							}
+						}
+					</code>
+				</pre>
+				<p>Simplified for clarity</p>
+			</section>
+
+			<section>
+				<h1>Hello, world!</h1>
+				<pre>
+					<code class="hljs language-java" data-trim>
+						CountDownLatch latch = new CountDownLatch(COUNT);
+						for (int i = 0; i < COUNT; i++) {
+							Thread.startVirtualThread(() -> {
+								try {
+									Thread.sleep(1_000);
+									latch.countDown();
+								} catch (InterruptedException ignored) {}
+							});
+						}
+						latch.await();
+					</code>
+				</pre>
+			</section>
+
+			<section>
+				<h1>Carrier thread</h1>
+				<code>ForkJoinPool.commonPool()</code> by default.
+				<pre>
+					<code class="hljs language-java" data-trim>
+						var carrierExecutor = Executors.newFixedThreadPool(1);
+
+						ThreadFactory factory = Thread.ofVirtual()
+							.name("Virtual-", 1)
+							.scheduler(carrierExecutor)
+							.factory();		
+
+						var virtualExecutor = Executors.newThreadPerTaskExecutor(factory)
+					</code>
+				</pre>
+			</section>
+
+			<section>
+				<h1><code>RestTemplate</code></h1>
+				Exciting again?
+			</section>
+
+			<section>
+				<h1>Structured concurrency</h1>
+				<pre>
+					<code class="hljs language-java" data-trim>
+						try (ExecutorService exec = Executors.newVirtualThreadExecutor()) {
+							//...
+						}
+					</code>
+				</pre>
+				<blockquote>when the flow of execution splits into multiple concurrent flows, they rejoin in the same code block</blockquote>
+			</section>
+
+			<section>
+				<h1>"Tasks, not Threads"</h1>
+				See: <a href="https://horstmann.com/presentations/2021/jchampions/#(19)">Let's rethink concurrency</a>
+				by Cay Horstmann.
+			</section>
+
+			<section>
+				<h1>Run something after 8 hours</h1>
+				<pre>
+					<code class="hljs language-java" data-trim>
+						Thread.startVirtualThread(() -> {
+							TimeUnit.HOURS.sleep(8)
+							runSomething();
+						});
+					</code>
+				</pre>
+			</section>
+
+			<section>
+				<h1>Handle each new player/connection/message</h1>
+				<pre>
+					<code class="hljs language-java" data-trim>
+						var executor = Executors.newVirtualThreadExecutor();
+
+						//...
+						void onPlayer(player -> {
+							executor.submit(() -> handle(player));
+						});
+					</code>
+				</pre>
+			</section>
+
+			<section>
+				<h1>Download 10K images</h1>
+				<pre>
+					<code class="hljs language-java" data-trim>
+						var executor = Executors.newVirtualThreadExecutor();
+
+						for(URL image: images) 
+							executor.submit(() -> 
+								downloadBlocking(url);
+							);
+					</code>
+				</pre>
+				<h2 class="fragment">Hold on! Throttle 🦥</h2>
+			</section>
+
+			<section>
+				<h1><code>CountDownLatch</code></h1>
+				Wait for N tasks to complete.
+				<h1><code>Semaphore</code></h1>
+				Do not allow more than N tasks at the same time.
+			</section>
+
+			<section>
+				<h1>Problems and limitations</h1>
+			</section>
+
+			<section>
+				<h1>Deep stack</h1>
+				<p class="r-stretch">
+					<img src="loom/deep-stack.png" alt="Deep stack trace"/>
+				</p>
+				<small>
+					From <a href="https://nurkiewicz.com/2012/03/filtering-irrelevant-stack-trace-lines.html">Filtering irrelevant stack trace lines in logs</a>
+				</small>
+			</section>
+
+			<section>
+				<h1>Preemption</h1>
+			</section>
+
+			<section>
+				<h1>Unsupported APIs</h1>
+				<a href="https://wiki.openjdk.java.net/display/loom/Blocking+Operations">wiki.openjdk.java.net/display/loom/Blocking+Operations</a>
+			</section>
+
+			<section>
+				<h1>I don't need reactive anymore?</h1>
+			</section>
+
+			<section>
+				<pre>
+					<code class="hljs language-java" data-trim>
+						var executor = Executors.newVirtualThreadExecutor()
+						var scheduler = Schedulers.fromExecutor(executor);
+
+						//...
+						flux.subscribeOn(scheduler);
+					</code>
+				</pre>
+			</section>
+
+			<section>
+				<h1>When?</h1>
+				<ul>
+					<li><a href="https://openjdk.java.net/jeps/8277131">JEP draft: Virtual Threads (Preview)</a></li>
+					<li><a href="https://openjdk.java.net/jeps/8277129">JEP draft: Structured Concurrency (Preview)</a></li>
+				</ul>
+			</section>
+
+			<section>
+				<h1>More materials</h1>
+				<ul>
+					<li><a href="http://cr.openjdk.java.net/~rpressler/loom/Loom-Proposal.html">Project Loom: Fibers and
+							Continuations for the Java Virtual Machine</a></li>
+					<li><a href="https://github.com/AugustNagro/java-async-await">AugustNagro/java-async-await</a></li>
+					<li>🎥 <a href="https://www.youtube.com/watch?v=NFYGZKpPwSM">Cay Horstmann - Looming Changes in
+							Concurrent Programming</a></li>
+					<li>🎥 <a href="https://www.youtube.com/watch?v=_fFzyY_7UmA">Project Loom? Better Futures? What’s
+							next for JVM concurrent programming</a></li>
+					<li>🎥 <a href="https://www.youtube.com/watch?v=4sDd9eZ168w">WJUG #262 - Arkadiusz Gasiński - Fruits
+							of the Loom - Lightweight Concurrency for Java</a> 🇵🇱</li>
+				</ul>
+			</section>
+
+			<section>
+				<h1>Blog posts</h1>
+				<ul>
+					<li><a href="https://blog.frankel.ch/project-loom-reactive-coroutines/">On Project Loom, the
+							Reactive model and coroutines</a></li>
+					<li><a href="https://xebia.com/blog/structured-concurrency-will-java-loom-beat-kotlins-coroutines/">Structured
+							concurrency: will Java Loom beat Kotlin’s coroutines?</a></li>
+					<li><a
+							href="https://blogs.oracle.com/javamagazine/post/going-inside-javas-project-loom-and-virtual-threads">Going
+							inside Java’s Project Loom and virtual threads</a></li>
+					<li><a href="https://alexey-soshin.medium.com/project-loom-virtual-threads-in-java-371dccc88b0f">Project
+							Loom: virtual threads in Java</a></li>
+					<li><a href="https://renato.athaydes.com/posts/taking-loom-for-a-spin.html">Taking Project Loom for
+							a spin</a></li>
+					<li><a href="https://dzone.com/articles/early-access-java-concurrency-with-project-loom">Java
+							Concurrency With Project Loom</a></li>
+				</ul>
+			</section>
+
+			<section>
+				<h1>Critical/skeptic</h1>
+				<ul>
+					<li>🎥 <a href="https://www.youtube.com/watch?v=YwG04UZP2a0">Project Loom - A Friend or Foe of
+							Reactive? - Oleh Dokuka, VMware & Andrii Rodionov</a></li>
+					<li><a href="https://blog.softwaremill.com/will-project-loom-obliterate-java-futures-fb1a28508232">Will
+							Project Loom obliterate Java Futures?</a></li>
+					<li>
+						Do Loom’s Claims Stack Up?
+						<ol>
+							<li><a href="https://webtide.com/do-looms-claims-stack-up-part-1/">Part 1: Millions of
+									Threads?</a></li>
+							<li><a href="https://webtide.com/do-looms-claims-stack-up-part-2/">Part 2: Thread Pools?</a>
+							</li>
+						</ol>
+					</li>
+				</ul>
+			</section>
+
+			<section>
+				<h1>Thank you!</h1>
+				<p>
+					Tomasz Nurkiewicz, Java Champion
+				</p>
+				<p>
+					<a href="https://nurkiewicz.com/">nurkiewicz.com</a>
+				</p>
+				<p>
+					<a href="https://twitter.com/tnurkiewicz">@tnurkiewicz</a>
+				</p>
+			</section>
+
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealHighlight],
+			width: 2500,
+			margin: 0.02,
+			transition: 'fade',
+			progress: false,
+			controls: false,
+			center: false,
+		});
+	</script>
+
+</body>
+
+</html>
