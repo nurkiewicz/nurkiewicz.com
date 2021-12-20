@@ -17,7 +17,6 @@ description: >
 
 {{ page.description }}
 
-<!--
 The core principle of Spring framework is _dependency injection_.
 It's an idea that objects should not create their own dependencies.
 Instead, there should be some glue layer that creates all objects and composes them together.
@@ -64,7 +63,6 @@ Many young frameworks are competing to become the next Java framework of choice.
 Micronaut, Quarkus, Helidon - just to name a few.
 
 That's it, thanks for listening, bye!
--->
 
 # More materials
 
