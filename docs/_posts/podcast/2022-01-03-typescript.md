@@ -17,7 +17,6 @@ description: >
 
 {{ page.description }}
 
-<!--
 OK, but what's the big deal with static typing?
 Well, did you ever come across the dreadful `Undefined is not a function` error?
 In JavaScript, everything is an object of an unknown shape.
@@ -81,7 +80,6 @@ The most popular ones are Dart, CoffeeScript and Elm.
 But it seems TypeScript won.
 
 That's it, thanks for listening, bye!
--->
 
 # More materials
 
