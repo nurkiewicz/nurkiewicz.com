@@ -1,5 +1,5 @@
 ---
-title: "#65: Zero Downtime deployment"
+title: "#65: Zero Downtime deployment: If it hurts, do it more often"
 category: podcast
 permalink: /65
 tags: devops blue-green canary kubernetes
