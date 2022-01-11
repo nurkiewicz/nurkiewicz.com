@@ -86,5 +86,5 @@ That's it, thanks for listening, bye!
 * [DevOps leaders deliver software 200 times more frequently than their peers, study shows](https://www.zdnet.com/article/devops-leaders-deliver-software-200-times-more-frequently-than-their-peers-study-shows/)
 * [#12: Continuous integration, delivery and deployment](https://nurkiewicz.com/12)
 * [#46: Kubernetes: Orchestrating large-scale deployments](https://nurkiewicz.com/46)
-    * [https://codefresh.io/kubernetes-tutorial/fully-automated-blue-green-deployments-kubernetes-codefresh/](https://codefresh.io/kubernetes-tutorial/blue-green-deploy/)
+    * [The simplest guide to using Blue/Green deployment in Kubernetes](https://codefresh.io/kubernetes-tutorial/blue-green-deploy/)
     * [Canary deployment strategy for Kubernetes deployments](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/kubernetes/canary-demo)
