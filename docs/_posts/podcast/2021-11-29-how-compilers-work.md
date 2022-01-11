@@ -97,6 +97,7 @@ That's it, thanks for listening, bye!
 * [Bison is a general-purpose parser generator](https://www.gnu.org/software/bison/)
 * [ANTLR](https://www.antlr.org/)
 * [Grace Hopper](https://en.wikipedia.org/wiki/Grace_Hopper)
+* [How do computers read code?](https://www.youtube.com/watch?v=QXjU9qTsYCc)
 * [#18: JIT: bytecode, interpreters and compilers]({% post_url podcast/2020-10-13-jit %})
 
 
