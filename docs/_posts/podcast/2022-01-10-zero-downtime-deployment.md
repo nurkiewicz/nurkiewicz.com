@@ -17,7 +17,6 @@ description: >
 
 {{ page.description }}
 
-<!--
 A typical old-school process looked as follows:
 
 1. Stopping the production server
@@ -77,7 +76,6 @@ Luckily, modern DevOps tools like Kubernetes greatly simplify this common proced
 
 That's it, thanks for listening, bye!
 
--->
 
 # More materials
 
