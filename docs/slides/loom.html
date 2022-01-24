@@ -357,11 +357,6 @@
 			</section>
 
 			<section>
-				<h1><code>RestTemplate</code></h1>
-				Exciting again?
-			</section>
-
-			<section>
 				<h1>Structured concurrency</h1>
 				<pre>
 					<code class="hljs language-java" data-trim>
@@ -409,12 +404,12 @@
 				<h1>Download 10K images</h1>
 				<pre>
 					<code class="hljs language-java" data-trim>
-						var executor = Executors.newVirtualThreadExecutor();
-
-						for(URL image: images) 
-							executor.submit(() -> 
-								downloadBlocking(url);
-							);
+						try(var executor = Executors.newVirtualThreadExecutor()) {
+							for(URL image: images) 
+								executor.submit(() -> 
+									downloadBlocking(url);
+								);
+						}
 					</code>
 				</pre>
 				<h2 class="fragment">Hold on! Throttle 🦥</h2>
@@ -451,19 +446,30 @@
 			</section>
 
 			<section>
+				<h1>Stack vs. heap memory</h1>
+			</section>
+
+			<section>
 				<h1>I don't need reactive anymore?</h1>
 			</section>
 
 			<section>
-				<pre>
-					<code class="hljs language-java" data-trim>
-						var executor = Executors.newVirtualThreadExecutor()
-						var scheduler = Schedulers.fromExecutor(executor);
+				<h1><code>RestTemplate</code></h1>
+				Exciting again?
+			</section>
 
-						//...
-						flux.subscribeOn(scheduler);
-					</code>
-				</pre>
+			<section>
+				<h1>What Loom addresses?</h1>
+				<ul>
+					<li>👍 Asynchronous programming</li>
+					<li class="fragment" data-fragment-index="1">👎 Backpressure</li>
+					<li class="fragment" data-fragment-index="1">👎 Change propagation</li>
+					<li class="fragment" data-fragment-index="1">👎 Composability</li>
+				</ul>
+			</section>
+
+			<section>
+				<h1>Should I blindly switch to virtual threads?</h1>
 			</section>
 
 			<section>
@@ -487,15 +493,11 @@
 			<section>
 				<h1>More materials</h1>
 				<ul>
-					<li><a href="http://cr.openjdk.java.net/~rpressler/loom/Loom-Proposal.html">Project Loom: Fibers and
-							Continuations for the Java Virtual Machine</a></li>
+					<li><a href="http://cr.openjdk.java.net/~rpressler/loom/Loom-Proposal.html">Project Loom: Fibers and Continuations for the Java Virtual Machine</a></li>
 					<li><a href="https://github.com/AugustNagro/java-async-await">AugustNagro/java-async-await</a></li>
-					<li>🎥 <a href="https://www.youtube.com/watch?v=NFYGZKpPwSM">Cay Horstmann - Looming Changes in
-							Concurrent Programming</a></li>
-					<li>🎥 <a href="https://www.youtube.com/watch?v=_fFzyY_7UmA">Project Loom? Better Futures? What’s
-							next for JVM concurrent programming</a></li>
-					<li>🎥 <a href="https://www.youtube.com/watch?v=4sDd9eZ168w">WJUG #262 - Arkadiusz Gasiński - Fruits
-							of the Loom - Lightweight Concurrency for Java</a> 🇵🇱</li>
+					<li>🎥 <a href="https://www.youtube.com/watch?v=NFYGZKpPwSM">Cay Horstmann - Looming Changes in Concurrent Programming</a></li>
+					<li>🎥 <a href="https://www.youtube.com/watch?v=MuxiaGyidNA">Heinz Kabutz - Prepare for what "Loom"s ahead</a></li>
+					<li>🎥 <a href="https://www.youtube.com/watch?v=_fFzyY_7UmA">Adam Warski - Project Loom? Better Futures? What's next for JVM concurrent programming</a></li>
 				</ul>
 			</section>
 
@@ -561,11 +563,9 @@
 	<script>
 		Reveal.initialize({
 			hash: true,
-
-			// Learn about plugins: https://revealjs.com/plugins/
 			plugins: [RevealHighlight],
 			width: 2500,
-			margin: 0.02,
+			margin: 0.03,
 			transition: 'fade',
 			progress: false,
 			controls: false,
