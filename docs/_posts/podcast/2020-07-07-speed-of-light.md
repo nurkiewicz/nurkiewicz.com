@@ -89,5 +89,4 @@ Any why CPUs are not getting faster.
 * [A CPU history](https://www.techjunkie.com/a-cpu-history/)
 * [Moore's law](https://en.wikipedia.org/wiki/Moore%27s_law)
 * [The distance from Perth, Australia to New York](https://www.travelmath.com/distance/from/Perth,+Australia/to/New+York,+NY)
-
-
+* [11 mm in 1.25 nanoseconds](https://randomascii.wordpress.com/2022/01/12/5-5-mm-in-1-25-nanoseconds/)
