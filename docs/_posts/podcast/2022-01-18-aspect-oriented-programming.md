@@ -18,7 +18,6 @@ description: >
 
 {{ page.description }}
 
-<!--
 Let's take a concrete example.
 Every time your code returns a `SocialSecurityNumber` object, it must belong to a logged-in user.
 Returning someone else's number is a huge security hole.
@@ -71,7 +70,6 @@ Every time you'd like to take advantage of AOP, weigh the pros and cons.
 I tend to use AOP when it's obvious, mature, and makes code much more readable.
 
 That's it, thanks for listening, bye!
--->
 
 # More materials
 
