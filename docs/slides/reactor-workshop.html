@@ -67,55 +67,56 @@
 			<section>
 				<h1>Quick links</h1>
 				<small>
-				<div style="display: flex">
-					<div style="flex: 1">
-						<ul>
-							<li><a href="#/Blocking-code">Blocking code</a></li>
-							<li><a href="#/Classic-future">Classic Future</a></li>
-							<li><a href="#/Mono-and-Flux">Mono and Flux</a></li>
-							<li><a href="#/Hot-cold">Hot vs. cold</a></li>
-							<li><a href="#/block">block()</a></li>
-							<li><a href="#/just">just()</a></li>
-							<li><a href="#/collectList">collectList()</a></li>
-							<li><a href="#/map">map()</a></li>
-							<li><a href="#/flatMap">flatMap()</a></li>
-							<li><a href="#/zip">zip()</a></li>
-							<li><a href="#/onError">onError*()</a></li>
-							<li><a href="#/filterWhen">filterWhen()</a></li>
-							<li><a href="#/doOnSubscribe">doOnSubscribe()</a></li>
-							<li><a href="#/Side-effects">Side effects</a></li>
-							<li><a href="#/window">window()</a></li>
-							<li><a href="#/interval">interval()</a></li>
-						</ul>
+					<div style="display: flex">
+						<div style="flex: 1">
+							<ul>
+								<li><a href="#/Blocking-code">Blocking code</a></li>
+								<li><a href="#/Classic-future">Classic Future</a></li>
+								<li><a href="#/Mono-and-Flux">Mono and Flux</a></li>
+								<li><a href="#/Hot-cold">Hot vs. cold</a></li>
+								<li><a href="#/block"><code>block()</code></a></li>
+								<li><a href="#/just"><code>just()</code></a></li>
+								<li><a href="#/defer"><code>defer()</code></a></li>
+								<li><a href="#/collectList"><code>collectList()</code></a></li>
+								<li><a href="#/map"><code>map()</code></a></li>
+								<li><a href="#/flatMap"><code>flatMap()</code></a></li>
+								<li><a href="#/zip"><code>zip()</code></a></li>
+								<li><a href="#/onError">onError<code>*()</a></code></li>
+								<li><a href="#/filterWhen"><code>filterWhen()</code></a></li>
+							</ul>
+						</div>
+						<div style="flex: 1">
+							<ul>
+								<li><a href="#/doOnSubscribe"><code>doOnSubscribe()</code></a></li>
+								<li><a href="#/Side-effects">Side effects</a></li>
+								<li><a href="#/window"><code>window()</code></a></li>
+								<li><a href="#/interval"><code>interval()</code></a></li>
+								<li><a href="#/Schedulers">Schedulers</a></li>
+								<li><a href="#/subscribeOn"><code>subscribeOn()</code></a></li>
+								<li><a href="#/publishOn"><code>publishOn()</code></a></li>
+								<li><a href="#/flatMapSequential"><code>flatMapSequential()</code></a></li>
+								<li><a href="#/parallel"><code>parallel()</code></a></li>
+								<li><a href="#/expand"><code>expand()</code></a></li>
+								<li><a href="#/Reactive-streams">Reactive streams</a></li>
+								<li><a href="#/Backpressure">Backpressure</a></li>
+							</ul>
+						</div>
+						<div style="flex: 1">
+							<ul>
+								<li><a href="#/WebFlux">WebFlux</a></li>
+								<li><a href="#/Littles-law">Little's Law</a></li>
+								<li><a href="#/Netty">Netty</a></li>
+								<li><a href="#/WebClient">WebClient</a></li>
+								<li><a href="#/Refactoring">Refactoring toward Reactor</a></li>
+								<li><a href="#/Reactive-databases">Reactive databases</a></li>
+								<li><a href="#/ReactorDebugAgent">ReactorDebugAgent</a></li>
+								<li><a href="#/BlockHound">BlockHound</a></li>
+								<li><a href="#/When-to-use">When to use WebFlux?</a></li>
+								<li><a href="#/Reference-materials">Reference materials</a></li>
+							</ul>
+						</div>
 					</div>
-					<div style="flex: 1">
-						<ul>
-							<li><a href="#/Schedulers">Schedulers</a></li>
-							<li><a href="#/subscribeOn">subscribeOn()</a></li>
-							<li><a href="#/publishOn">publishOn()</a></li>
-							<li><a href="#/flatMapSequential">flatMapSequential()</a></li>
-							<li><a href="#/parallel">parallel()</a></li>
-							<li><a href="#/expand">expand()</a></li>
-							<li><a href="#/Reactive-streams">Reactive streams</a></li>
-							<li><a href="#/Backpressure">Backpressure</a></li>
-						</ul>
-					</div>
-					<div style="flex: 1">
-						<ul>
-							<li><a href="#/WebFlux">WebFlux</a></li>
-							<li><a href="#/Littles-law">Little's Law</a></li>
-							<li><a href="#/Netty">Netty</a></li>
-							<li><a href="#/WebClient">WebClient</a></li>
-							<li><a href="#/Refactoring">Refactoring toward Reactor</a></li>
-							<li><a href="#/Reactive-databases">Reactive databases</a></li>
-							<li><a href="#/ReactorDebugAgent">ReactorDebugAgent</a></li>
-							<li><a href="#/BlockHound">BlockHound</a></li>
-							<li><a href="#/When-to-use">When to use WebFlux?</a></li>
-							<li><a href="#/Reference-materials">Reference materials</a></li>
-						</ul>
-					</div>
-				</div>
-			</small>
+				</small>
 			</section>
 
 			<section id="Blocking-code">
@@ -396,6 +397,18 @@
 						Mono.just(restTemplate.getForEntity("/url"));
 						nextOperation1();
 						nextOperation2();
+					</code>
+				</pre>
+			</section>
+
+			<section id="defer">
+				<h1><code>defer()</code></h1>
+				Make eager things lazy:
+				<pre>
+					<code class="hljs language-java" data-trim>
+						<script type="text/template">
+							Mono.defer(() -> Mono.just(restTemplate.getForEntity("/url")));
+						</script>
 					</code>
 				</pre>
 			</section>
@@ -1327,6 +1340,20 @@
 							<li><a href="https://github.com/pgjdbc/r2dbc-postgresql">Postgres</a></li>
 							<li><a href="https://github.com/oracle/oracle-r2dbc">Oracle</a></li>
 						</ul>
+					</li>
+				</ul>
+			</section>
+
+			<section>
+				<h1>Transactions</h1>
+				<ul>
+					<li>
+						<a href="https://spring.io/blog/2019/05/16/reactive-transactions-with-spring">
+							Reactive Transactions with Spring
+						</a>
+					</li>
+					<li>
+						<a href="https://www.vinsguru.com/spring-data-r2dbc-transaction/">Spring Data R2DBC Transaction</a>
 					</li>
 				</ul>
 			</section>
