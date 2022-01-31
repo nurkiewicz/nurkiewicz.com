@@ -77,6 +77,8 @@ Consider every team meber having a public `#john-smith-office` (or `#john-smith-
 Your teammates can ask you non-confidential questions, that can later be browsed by everyone.
 It's like building an FAQ of your personal knowledge.
 
+See also: [twitter.com/ahidalgosre/status/1486442877425266688](https://twitter.com/ahidalgosre/status/1486442877425266688).
+
 ## 11. Learn how to search
 
 `S` in Slack [stands for](https://www.theverge.com/2016/9/28/13098164/slack-is-an-acronym) "searchable" (!). Learn "`from:`", "`in:`" and [other prefixes](https://slack.com/help/articles/202528808-Search-in-Slack) when searching.
