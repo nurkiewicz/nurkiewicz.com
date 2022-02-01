@@ -16,7 +16,6 @@ description: >
 
 {{ page.description }}
 
-<!--
 Imagine you just began a new software project.
 You desperately need a teammate to work on some features.
 You work independently, maybe remotely.
@@ -75,7 +74,6 @@ Even if you work alone.
 Oh, and you can also version-control your infrastructure and developer environment!
 
 That's it, thanks for listening, bye!
--->
 
 # More materials
 
