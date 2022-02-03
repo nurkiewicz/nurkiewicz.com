@@ -22,6 +22,8 @@
 
 <body>
 	<div class="reveal">
+
+		<!-- Any section element inside of this container is displayed as a slide -->
 		<div class="slides">
 			<section>
 				<h1>CharBusters</h1>
@@ -42,7 +44,7 @@
 			</section>
 
 			<section>
-				<p class="r-stretch">
+				<p style="font-size: 80%">
 					काचं शक्नोम्यत्तुम् । नोपहिनस्ति माम् ॥<br/>
 						Μπορῶ νὰ φάω σπασμένα γυαλιὰ χωρὶς νὰ πάθω τίποτα 🇬🇷<br/>
 						ᛁᚳ᛫ᛗᚨᚷ᛫ᚷᛚᚨᛋ᛫ᛖᚩᛏᚪᚾ᛫ᚩᚾᛞ᛫ᚻᛁᛏ᛫ᚾᛖ᛫ᚻᛖᚪᚱᛗᛁᚪᚧ᛫ᛗᛖ᛬<br/>
@@ -70,7 +72,7 @@
 			</section>
 
 			<section>
-				<img src="charbusters/Unicode_logo.svg" class="r-stretch" style="background-color: white;"/>
+				<img src="charbusters/Unicode_logo.svg" class="r-stretch"/>
 				<hr/>
 				<small>
 					<a href="https://en.wikipedia.org/wiki/List_of_Unicode_characters">https://en.wikipedia.org/wiki/List_of_Unicode_characters</a>
@@ -85,7 +87,6 @@
 				</small>
 			</section>
 
-			<!--
 			<section>
 				<ol start="0">
 					<li>I don’t need to worry about Unicode</li>
@@ -101,7 +102,6 @@
 					<li>Unicode is harmless</li>
 				</ol>
 			</section>
-		-->
 
 			<section>
 				<h2>I don’t need to worry about Unicode</h2>
@@ -118,7 +118,7 @@
 
 			<section>
 				<h2>History of IT</h2>
-				<h3>(or how badly we estimate)</h3>
+				<h3>(or how we estimate badly)</h3>
 			</section>
 
 			<section>
@@ -670,10 +670,17 @@
 
 			<section>
 				<pre><code data-trim>
-new StringBuilder("🏭🏖")
-	  .reverse()
-	  .toString()
+					$ irb
+
+					2.7.2 :001 > "abc".reverse!
+					 => "cba"
 				</code></pre>
+				<pre class="fragment"><code data-trim>
+					2.7.2 :002 > "🇬🇧".reverse!
+					 => "🇧🇬"
+				</code></pre>
+				<h1 class="fragment">🇬 🇧 vs. 🇧 🇬</h1>
+				
 			</section>
 
 			<section>
@@ -935,7 +942,8 @@ Normalizer.normalize("ą", Form.NFKC)
 "👰".length()    // 2
 "🇵🇱".length()    // 4
 "👩🏾‍🚀".length()    // 7
-"👨‍👩‍👧‍👦".length() 	// 11
+"👨‍👩‍👧‍👦".length()  	// 11
+"🏴󠁧󠁢󠁳󠁣󠁴󠁿".length()    // 14
 				</code></pre>
 			</section>
 
@@ -945,6 +953,7 @@ Normalizer.normalize("ą", Form.NFKC)
 				</h4>
 				<h2>&nbsp;</h2>
 				<h2 class="fragment">119</h2>
+				<a href="https://www.zalgo.org/">by Zalgo</a>
 			</section>
 
 			<section>
@@ -1309,6 +1318,9 @@ return graphemeCount;
 						<li>
 							<a href="https://adamhooper.medium.com/in-mysql-never-use-utf8-use-utf8mb4-11761243e434">In MySQL, never use “utf8”. Use “utf8mb4”</a>
 						</li>
+						<li>
+							<a href="https://davidamos.dev/why-cant-you-reverse-a-flag-emoji/">Why Can't You Reverse A String With a Flag Emoji?</a>
+						</li>
 					</ul>
 				</small>
 			</section>
@@ -1344,7 +1356,13 @@ return graphemeCount;
 				</section>
 			</section>
 
+			<!--
+				https://eng.getwisdom.io/hacking-github-with-unicode-dotless-i/
+			-->
+
+
 		</div>
+
 	</div>
 
 	<script src="dist/reveal.js"></script>
