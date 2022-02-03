@@ -303,8 +303,8 @@ draw_map(df, sg.box(20.895, 52.19, 20.915, 52.21))
 # [![](https://4.bp.blogspot.com/-SD0U6wqe1rY/XnvtiHYmhcI/AAAAAAAA0Lk/LuewvewoiGUxIOs-bI5zN9hzCJ6ZGJ1zQCK4BGAYYCw/s320/apa1.png)](http://4.bp.blogspot.com/-SD0U6wqe1rY/XnvtiHYmhcI/AAAAAAAA0Lk/LuewvewoiGUxIOs-bI5zN9hzCJ6ZGJ1zQCK4BGAYYCw/s1600/apa1.png) [![](https://3.bp.blogspot.com/-85px62yI-sc/Xnvtiq8XilI/AAAAAAAA0Lw/jJYbSYzny0o-hvJNEYN41GNOw0hl7bLQwCK4BGAYYCw/s320/apa2.png)](http://3.bp.blogspot.com/-85px62yI-sc/Xnvtiq8XilI/AAAAAAAA0Lw/jJYbSYzny0o-hvJNEYN41GNOw0hl7bLQwCK4BGAYYCw/s1600/apa2.png) 
 
 You can clearly see where my flat is located, as well as every single
-street. One more interesting finding: I moved out of this place around
-2016. However, there are very few yellow points from 2020. Turns out
+street. One more interesting finding: I moved out of this place around 2016.
+However, there are very few yellow points from 2020. Turns out
 there is a railway track nearby that I use when travelling to Kraków,
 Poznań or Gdańsk.
 OK, what about some travels and vacations? Looking at raw GPS data is
