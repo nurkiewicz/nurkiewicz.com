@@ -54,7 +54,7 @@ In 2020, parsing JSON and making pretty graphs is called *data science*.
 I want to be a scientist! Before we begin, we need some essential tools:
 Python, Jupyter Notebook and some modules for data manipulation:
 
-```java
+```python
 brew install python3
 pip3 install jupyter pandas geopandas matplotlib descartes
 ```
@@ -70,7 +70,7 @@ visualizations. All within your web browser.
 Google provides a gigantic JSON array that looks more or less like
 this:
 
-```java
+```python
 "locations" : [ {
     "timestampMs" : "1387457266881",
     "latitudeE7" : 521490489,
@@ -103,7 +103,7 @@ Google believes you performed in that location. With 77% confidence I
 was standing still. Let's load this huge file into memory and clean it
 up a little bit:
 
-```java
+```python
 import pandas as pd
 import numpy as np
 import geopandas as gp
@@ -151,7 +151,7 @@ Turns out we need a so-called shape file with borders to draw. I found
 them somewhere and, after many iterations, managed to draw a squashed
 world map:
 
-```java
+```python
 # http://thematicmapping.org/downloads/world_borders.php
 world = gp.read_file('./TM_WORLD_BORDERS-0.3/TM_WORLD_BORDERS-0.3.shp')
 
@@ -179,7 +179,7 @@ assigning a few colours to months and years, I'd rather have a smooth
 palette that dynamically adjusts to data. This took me a while, but here
 is an enhanced version:
 
-```java
+```python
 def seconds(timestamp):
     return timestamp.to_pydatetime().timestamp()
 
@@ -214,7 +214,7 @@ is on the time scale. Oldest points are dark blue/violet. Newest are
 yellow with green in between. I also managed to build a dynamic legend.
 Enough, show me the map!
 
-```java
+```python
 draw_map(df, sg.box(-140, -20, 140, 70))
 ```
 
@@ -225,7 +225,7 @@ draw_map(df, sg.box(-140, -20, 140, 70))
 You can see that I most likely live somewhere in central Europe. Let's
 zoom a little bit:
 
-```java
+```python
 draw_map(df, sg.box(-10, 30, 50, 70))
 ```
 
@@ -233,7 +233,7 @@ draw_map(df, sg.box(-10, 30, 50, 70))
 
 Yup, that's Poland right there in the middle. Zooming in:
 
-```java
+```python
 draw_map(df, sg.box(14, 49, 24, 55))
 ```
 
@@ -246,7 +246,7 @@ various trips and vacations. For example at least three trips to the
 north by the seaside. Straight lines are the two times I forgot to turn
 off GPS on a plane. OK, so let's see where I live:
 
-```java
+```python
 draw_map(df, sg.box(20.6, 52, 21.3, 52.5))
 ```
 
@@ -262,7 +262,7 @@ Zooming in a little bit reveals three hot spots: north, south-west and
 central-east. They represent my current and previous apartment, as well
 as the city centre, where I work:
 
-```java
+```python
 draw_map(df, sg.box(20.88, 52.17, 21.05, 52.32))
 ```
 
@@ -273,7 +273,7 @@ draw_map(df, sg.box(20.88, 52.17, 21.05, 52.32))
 We also extracted activity information, remember? Do you want to see
 only data points identified as `IN_VEHICLE` (by bus or driving a car)?
 
-```java
+```python
 draw_map(df[df.activity == 'IN_VEHICLE'], sg.box(20.88, 52.17, 21.05, 52.32))
 ```
 
@@ -282,7 +282,7 @@ draw_map(df[df.activity == 'IN_VEHICLE'], sg.box(20.88, 52.17, 21.05, 52.32))
 Look how different the map is when only `ON_FOOT` activity is taken into
 account:
 
-```java
+```python
 draw_map(df[df.activity == 'ON_FOOT'], sg.box(20.88, 52.17, 21.05, 52.32))
 ```
 
@@ -297,7 +297,7 @@ jogging about 10 km from office to my flat. And Google knows this.
 
 This is how a neighbourhood around my previous apartment looks like:
 
-```java
+```python
 draw_map(df, sg.box(20.88, 52.17, 20.93, 52.22))
 draw_map(df, sg.box(20.895, 52.19, 20.915, 52.21))
 ```
@@ -313,7 +313,7 @@ OK, what about some travels and vacations? Looking at raw GPS data is
 more enjoyable than family photos! This is a fantastic JCrete
 (un)conference:
 
-```java
+```python
 draw_map(df, sg.box(23.4, 35.15, 24.3, 35.65))
 ```
 
@@ -325,7 +325,7 @@ essentially free in European Union so my phone had much more
 opportunities to spy on my location. A year earlier I was offline most
 of the time. More interesting maps: holidays in Sri Lanka:
 
-```java
+```python
 draw_map(df, sg.box(79.5, 5.5, 81.7, 9))
 ```
 
@@ -333,7 +333,7 @@ draw_map(df, sg.box(79.5, 5.5, 81.7, 9))
 
 ...and Thailand/Cambodia/Vietnam:
 
-```java
+```python
 draw_map(df, sg.box(95, 6, 112, 17))
 ```
 
@@ -347,7 +347,7 @@ One million data points over 8 years make a few hundred locations
 collected daily, on average. However, it varies greatly. I wanted to
 find days when Google collected way more data:
 
-```java
+```python
 def dt_to_date(dt):
     return dt.date()
 
@@ -366,7 +366,7 @@ by_day.plot(figsize=[20,10])
 Holy smoke, 3 thousand observations on June 28th, 2016! Let's split that
 by hour:
 
-```java
+```python
 busy_day = df[df.timestamp.apply(dt_to_date) == dt.date(2016, 6, 28)]
 busy_day.groupby(busy_day.timestamp.dt.hour).agg('count').geometry.plot.bar(figsize=[12, 9])
 ```
@@ -379,7 +379,7 @@ Almost 250 data points in just one hour!
 
 Last but not least, let's see a histogram of my altitude over time:
 
-```java
+```python
 df.altitude.plot.hist(figsize=[20,10], bins=200, log=True)
 ```
 
