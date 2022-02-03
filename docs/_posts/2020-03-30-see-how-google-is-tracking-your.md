@@ -229,7 +229,7 @@ zoom a little bit:
 draw_map(df, sg.box(-10, 30, 50, 70))
 ```
 
-# [![](https://2.bp.blogspot.com/-OyGIdjXqp-w/XnvrVwl1GaI/AAAAAAAA0KM/lkqWD1BC_DovWweDvxvbCnCLBQdzVAGaACK4BGAYYCw/s640/europe.png){border="0" height="432" width="640"}](http://2.bp.blogspot.com/-OyGIdjXqp-w/XnvrVwl1GaI/AAAAAAAA0KM/lkqWD1BC_DovWweDvxvbCnCLBQdzVAGaACK4BGAYYCw/s1600/europe.png) 
+# [![](https://2.bp.blogspot.com/-OyGIdjXqp-w/XnvrVwl1GaI/AAAAAAAA0KM/lkqWD1BC_DovWweDvxvbCnCLBQdzVAGaACK4BGAYYCw/s640/europe.png)](http://2.bp.blogspot.com/-OyGIdjXqp-w/XnvrVwl1GaI/AAAAAAAA0KM/lkqWD1BC_DovWweDvxvbCnCLBQdzVAGaACK4BGAYYCw/s1600/europe.png) 
 
 Yup, that's Poland right there in the middle. Zooming in:
 
@@ -237,7 +237,7 @@ Yup, that's Poland right there in the middle. Zooming in:
 draw_map(df, sg.box(14, 49, 24, 55))
 ```
 
-# [![](https://3.bp.blogspot.com/-RHkZOcCpCtk/XnvriCKJzbI/AAAAAAAA0Kg/sGX6gQW2koMgpAND8AcDRN07bY-g8XlEACK4BGAYYCw/s640/poland.png){border="0" height="392" width="640"}](http://3.bp.blogspot.com/-RHkZOcCpCtk/XnvriCKJzbI/AAAAAAAA0Kg/sGX6gQW2koMgpAND8AcDRN07bY-g8XlEACK4BGAYYCw/s1600/poland.png) 
+# [![](https://3.bp.blogspot.com/-RHkZOcCpCtk/XnvriCKJzbI/AAAAAAAA0Kg/sGX6gQW2koMgpAND8AcDRN07bY-g8XlEACK4BGAYYCw/s640/poland.png)](http://3.bp.blogspot.com/-RHkZOcCpCtk/XnvriCKJzbI/AAAAAAAA0Kg/sGX6gQW2koMgpAND8AcDRN07bY-g8XlEACK4BGAYYCw/s1600/poland.png) 
 
 All right, I hope you know where Poland is, but locating its capital
 might not be that straightforward. As you can see, I live in Warsaw, the
@@ -250,13 +250,11 @@ off GPS on a plane. OK, so let's see where I live:
 draw_map(df, sg.box(20.6, 52, 21.3, 52.5))
 ```
 
-[![](https://2.bp.blogspot.com/--WLb4qJLzfw/XnvtBdmDD5I/AAAAAAAA0LI/rz1dswupkFMFINR9RWA1f_MyKrjLH9n4ACK4BGAYYCw/s640/pollock.jpg){border="0"
-height="488"
-width="640"}](http://2.bp.blogspot.com/--WLb4qJLzfw/XnvtBdmDD5I/AAAAAAAA0LI/rz1dswupkFMFINR9RWA1f_MyKrjLH9n4ACK4BGAYYCw/s1600/pollock.jpg)
+[![](https://2.bp.blogspot.com/--WLb4qJLzfw/XnvtBdmDD5I/AAAAAAAA0LI/rz1dswupkFMFINR9RWA1f_MyKrjLH9n4ACK4BGAYYCw/s640/pollock.jpg)](http://2.bp.blogspot.com/--WLb4qJLzfw/XnvtBdmDD5I/AAAAAAAA0LI/rz1dswupkFMFINR9RWA1f_MyKrjLH9n4ACK4BGAYYCw/s1600/pollock.jpg)
 
 Oh, sorry, this was Jason Pollock\'s painting. This is what I meant:
 
-# [![](https://1.bp.blogspot.com/-_zyWHW-Bv1o/Xnvrp1KsasI/AAAAAAAA0Ks/xCN-pCDRWos02k1iQtLk8yu3VYUN-r9pgCK4BGAYYCw/s640/warsaw.png){border="0" height="454" width="640"}](http://1.bp.blogspot.com/-_zyWHW-Bv1o/Xnvrp1KsasI/AAAAAAAA0Ks/xCN-pCDRWos02k1iQtLk8yu3VYUN-r9pgCK4BGAYYCw/s1600/warsaw.png) 
+# [![](https://1.bp.blogspot.com/-_zyWHW-Bv1o/Xnvrp1KsasI/AAAAAAAA0Ks/xCN-pCDRWos02k1iQtLk8yu3VYUN-r9pgCK4BGAYYCw/s640/warsaw.png)](http://1.bp.blogspot.com/-_zyWHW-Bv1o/Xnvrp1KsasI/AAAAAAAA0Ks/xCN-pCDRWos02k1iQtLk8yu3VYUN-r9pgCK4BGAYYCw/s1600/warsaw.png) 
 
 Zooming in a little bit reveals three hot spots: north, south-west and
 central-east. They represent my current and previous apartment, as well
@@ -266,7 +264,7 @@ as the city centre, where I work:
 draw_map(df, sg.box(20.88, 52.17, 21.05, 52.32))
 ```
 
-# [![](https://4.bp.blogspot.com/-dhBN9nUivek/XnvryWXZ4uI/AAAAAAAA0K4/lbssliEFkyk6b5P6nhriaE_7Sqld6MY-wCK4BGAYYCw/s640/warsaw-zoom.png){border="0" height="556" width="640"}](http://4.bp.blogspot.com/-dhBN9nUivek/XnvryWXZ4uI/AAAAAAAA0K4/lbssliEFkyk6b5P6nhriaE_7Sqld6MY-wCK4BGAYYCw/s1600/warsaw-zoom.png) 
+# [![](https://4.bp.blogspot.com/-dhBN9nUivek/XnvryWXZ4uI/AAAAAAAA0K4/lbssliEFkyk6b5P6nhriaE_7Sqld6MY-wCK4BGAYYCw/s640/warsaw-zoom.png)](http://4.bp.blogspot.com/-dhBN9nUivek/XnvryWXZ4uI/AAAAAAAA0K4/lbssliEFkyk6b5P6nhriaE_7Sqld6MY-wCK4BGAYYCw/s1600/warsaw-zoom.png) 
 
 ## Extracting activity
 
@@ -277,7 +275,7 @@ only data points identified as `IN_VEHICLE` (by bus or driving a car)?
 draw_map(df[df.activity == 'IN_VEHICLE'], sg.box(20.88, 52.17, 21.05, 52.32))
 ```
 
-# [![](https://1.bp.blogspot.com/-j5Ecs6vYvwo/XnvtSPe7KZI/AAAAAAAA0LQ/8Kl2x1KlKTopIdSP-gJrFY81msYZCSNKwCK4BGAYYCw/s640/vehicle.png){border="0" height="556" width="640"}](http://1.bp.blogspot.com/-j5Ecs6vYvwo/XnvtSPe7KZI/AAAAAAAA0LQ/8Kl2x1KlKTopIdSP-gJrFY81msYZCSNKwCK4BGAYYCw/s1600/vehicle.png) 
+# [![](https://1.bp.blogspot.com/-j5Ecs6vYvwo/XnvtSPe7KZI/AAAAAAAA0LQ/8Kl2x1KlKTopIdSP-gJrFY81msYZCSNKwCK4BGAYYCw/s640/vehicle.png)](http://1.bp.blogspot.com/-j5Ecs6vYvwo/XnvtSPe7KZI/AAAAAAAA0LQ/8Kl2x1KlKTopIdSP-gJrFY81msYZCSNKwCK4BGAYYCw/s1600/vehicle.png) 
 
 Look how different the map is when only `ON_FOOT` activity is taken into
 account:
@@ -286,7 +284,7 @@ account:
 draw_map(df[df.activity == 'ON_FOOT'], sg.box(20.88, 52.17, 21.05, 52.32))
 ```
 
-# [![](https://2.bp.blogspot.com/-q5VYB_8AzHQ/XnvtXsbCCMI/AAAAAAAA0Lc/z8CDB3Gkt4U-fagFDHHDqg_Bn7rwOCvzACK4BGAYYCw/s640/foot.png){border="0" height="556" width="640"}](http://2.bp.blogspot.com/-q5VYB_8AzHQ/XnvtXsbCCMI/AAAAAAAA0Lc/z8CDB3Gkt4U-fagFDHHDqg_Bn7rwOCvzACK4BGAYYCw/s1600/foot.png) 
+# [![](https://2.bp.blogspot.com/-q5VYB_8AzHQ/XnvtXsbCCMI/AAAAAAAA0Lc/z8CDB3Gkt4U-fagFDHHDqg_Bn7rwOCvzACK4BGAYYCw/s640/foot.png)](http://2.bp.blogspot.com/-q5VYB_8AzHQ/XnvtXsbCCMI/AAAAAAAA0Lc/z8CDB3Gkt4U-fagFDHHDqg_Bn7rwOCvzACK4BGAYYCw/s1600/foot.png) 
 
 This makes sense, I use a bus or a car to drive long distances whereas
 going on foot is more focused on a single area. Except for the triangle
@@ -302,7 +300,7 @@ draw_map(df, sg.box(20.88, 52.17, 20.93, 52.22))
 draw_map(df, sg.box(20.895, 52.19, 20.915, 52.21))
 ```
 
-# [![](https://4.bp.blogspot.com/-SD0U6wqe1rY/XnvtiHYmhcI/AAAAAAAA0Lk/LuewvewoiGUxIOs-bI5zN9hzCJ6ZGJ1zQCK4BGAYYCw/s320/apa1.png){border="0" height="305" width="320"}](http://4.bp.blogspot.com/-SD0U6wqe1rY/XnvtiHYmhcI/AAAAAAAA0Lk/LuewvewoiGUxIOs-bI5zN9hzCJ6ZGJ1zQCK4BGAYYCw/s1600/apa1.png) [![](https://3.bp.blogspot.com/-85px62yI-sc/Xnvtiq8XilI/AAAAAAAA0Lw/jJYbSYzny0o-hvJNEYN41GNOw0hl7bLQwCK4BGAYYCw/s320/apa2.png){border="0" height="299" width="320"}](http://3.bp.blogspot.com/-85px62yI-sc/Xnvtiq8XilI/AAAAAAAA0Lw/jJYbSYzny0o-hvJNEYN41GNOw0hl7bLQwCK4BGAYYCw/s1600/apa2.png) 
+# [![](https://4.bp.blogspot.com/-SD0U6wqe1rY/XnvtiHYmhcI/AAAAAAAA0Lk/LuewvewoiGUxIOs-bI5zN9hzCJ6ZGJ1zQCK4BGAYYCw/s320/apa1.png)](http://4.bp.blogspot.com/-SD0U6wqe1rY/XnvtiHYmhcI/AAAAAAAA0Lk/LuewvewoiGUxIOs-bI5zN9hzCJ6ZGJ1zQCK4BGAYYCw/s1600/apa1.png) [![](https://3.bp.blogspot.com/-85px62yI-sc/Xnvtiq8XilI/AAAAAAAA0Lw/jJYbSYzny0o-hvJNEYN41GNOw0hl7bLQwCK4BGAYYCw/s320/apa2.png)](http://3.bp.blogspot.com/-85px62yI-sc/Xnvtiq8XilI/AAAAAAAA0Lw/jJYbSYzny0o-hvJNEYN41GNOw0hl7bLQwCK4BGAYYCw/s1600/apa2.png) 
 
 You can clearly see where my flat is located, as well as every single
 street. One more interesting finding: I moved out of this place around
@@ -317,7 +315,7 @@ more enjoyable than family photos! This is a fantastic JCrete
 draw_map(df, sg.box(23.4, 35.15, 24.3, 35.65))
 ```
 
-# [![](https://1.bp.blogspot.com/-38oY9mHkczU/XnvtyrzRoCI/AAAAAAAA0L8/2znYHv1krZosLRrHxa2u_r4UYx3emvXOwCK4BGAYYCw/s640/jcrete.png){border="0" height="360" width="640"}](http://1.bp.blogspot.com/-38oY9mHkczU/XnvtyrzRoCI/AAAAAAAA0L8/2znYHv1krZosLRrHxa2u_r4UYx3emvXOwCK4BGAYYCw/s1600/jcrete.png) 
+# [![](https://1.bp.blogspot.com/-38oY9mHkczU/XnvtyrzRoCI/AAAAAAAA0L8/2znYHv1krZosLRrHxa2u_r4UYx3emvXOwCK4BGAYYCw/s640/jcrete.png)](http://1.bp.blogspot.com/-38oY9mHkczU/XnvtyrzRoCI/AAAAAAAA0L8/2znYHv1krZosLRrHxa2u_r4UYx3emvXOwCK4BGAYYCw/s1600/jcrete.png) 
 
 Apparently, I've been there twice in 2016 and 2017, however, in 2016 the
 data is much narrower. Makes sense, since 2017 mobile roaming became
@@ -329,7 +327,7 @@ of the time. More interesting maps: holidays in Sri Lanka:
 draw_map(df, sg.box(79.5, 5.5, 81.7, 9))
 ```
 
-# [![](https://3.bp.blogspot.com/-QY0GbA8z8EE/Xnvt6ilHj3I/AAAAAAAA0MI/MVnZFS7TIz0vWYv17G9uncJV-q-xbX-gQCK4BGAYYCw/s640/sri-lanka.png){border="0" height="640" width="416"}](http://3.bp.blogspot.com/-QY0GbA8z8EE/Xnvt6ilHj3I/AAAAAAAA0MI/MVnZFS7TIz0vWYv17G9uncJV-q-xbX-gQCK4BGAYYCw/s1600/sri-lanka.png) 
+# [![](https://3.bp.blogspot.com/-QY0GbA8z8EE/Xnvt6ilHj3I/AAAAAAAA0MI/MVnZFS7TIz0vWYv17G9uncJV-q-xbX-gQCK4BGAYYCw/s640/sri-lanka.png)](http://3.bp.blogspot.com/-QY0GbA8z8EE/Xnvt6ilHj3I/AAAAAAAA0MI/MVnZFS7TIz0vWYv17G9uncJV-q-xbX-gQCK4BGAYYCw/s1600/sri-lanka.png) 
 
 ...and Thailand/Cambodia/Vietnam:
 
@@ -337,7 +335,7 @@ draw_map(df, sg.box(79.5, 5.5, 81.7, 9))
 draw_map(df, sg.box(95, 6, 112, 17))
 ```
 
-# [![](https://3.bp.blogspot.com/-xubzvTg_BfA/XnvuAqiPsJI/AAAAAAAA0MQ/hwfNssAVChQiR9aZ09VNHo3ds0j1_mkQQCK4BGAYYCw/s640/thailand.png){border="0" height="416" width="640"}](http://3.bp.blogspot.com/-xubzvTg_BfA/XnvuAqiPsJI/AAAAAAAA0MQ/hwfNssAVChQiR9aZ09VNHo3ds0j1_mkQQCK4BGAYYCw/s1600/thailand.png) 
+# [![](https://3.bp.blogspot.com/-xubzvTg_BfA/XnvuAqiPsJI/AAAAAAAA0MQ/hwfNssAVChQiR9aZ09VNHo3ds0j1_mkQQCK4BGAYYCw/s640/thailand.png)](http://3.bp.blogspot.com/-xubzvTg_BfA/XnvuAqiPsJI/AAAAAAAA0MQ/hwfNssAVChQiR9aZ09VNHo3ds0j1_mkQQCK4BGAYYCw/s1600/thailand.png) 
 
 As you can see, I like to wander around during my vacations.
 
@@ -361,7 +359,7 @@ by_day = aggregate_by(df, dt_to_date)
 by_day.plot(figsize=[20,10])
 ```
 
-# [![](https://3.bp.blogspot.com/-SNWjRSUEBGk/XnvuL6yitkI/AAAAAAAA0Mg/go3e-fZThRoBhN6-4wRTnWhQnQClTLKjACK4BGAYYCw/s640/activity.png){border="0" height="316" width="640"}](http://3.bp.blogspot.com/-SNWjRSUEBGk/XnvuL6yitkI/AAAAAAAA0Mg/go3e-fZThRoBhN6-4wRTnWhQnQClTLKjACK4BGAYYCw/s1600/activity.png)
+# [![](https://3.bp.blogspot.com/-SNWjRSUEBGk/XnvuL6yitkI/AAAAAAAA0Mg/go3e-fZThRoBhN6-4wRTnWhQnQClTLKjACK4BGAYYCw/s640/activity.png)](http://3.bp.blogspot.com/-SNWjRSUEBGk/XnvuL6yitkI/AAAAAAAA0Mg/go3e-fZThRoBhN6-4wRTnWhQnQClTLKjACK4BGAYYCw/s1600/activity.png)
 
 Holy smoke, 3 thousand observations on June 28th, 2016! Let's split that
 by hour:
@@ -371,7 +369,7 @@ busy_day = df[df.timestamp.apply(dt_to_date) == dt.date(2016, 6, 28)]
 busy_day.groupby(busy_day.timestamp.dt.hour).agg('count').geometry.plot.bar(figsize=[12, 9])
 ```
 
-# [![](https://4.bp.blogspot.com/-sYw7lGWOkI8/XnvubHvatKI/AAAAAAAA0Mw/QFXSNt2407od8NqdmZEnaR1OXFswrIeNgCK4BGAYYCw/s640/histo.png){border="0" height="484" width="640"}](http://4.bp.blogspot.com/-sYw7lGWOkI8/XnvubHvatKI/AAAAAAAA0Mw/QFXSNt2407od8NqdmZEnaR1OXFswrIeNgCK4BGAYYCw/s1600/histo.png)
+# [![](https://4.bp.blogspot.com/-sYw7lGWOkI8/XnvubHvatKI/AAAAAAAA0Mw/QFXSNt2407od8NqdmZEnaR1OXFswrIeNgCK4BGAYYCw/s640/histo.png)](http://4.bp.blogspot.com/-sYw7lGWOkI8/XnvubHvatKI/AAAAAAAA0Mw/QFXSNt2407od8NqdmZEnaR1OXFswrIeNgCK4BGAYYCw/s1600/histo.png)
 
 Almost 250 data points in just one hour!
 
@@ -383,7 +381,7 @@ Last but not least, let's see a histogram of my altitude over time:
 df.altitude.plot.hist(figsize=[20,10], bins=200, log=True)
 ```
 
-# [![](https://4.bp.blogspot.com/-xWfGyaDNO28/Xnvuh7QLUII/AAAAAAAA0M8/JVIUsflHVm0OZ4FVJk1Y-jwLLVAydmpSgCK4BGAYYCw/s640/altitude.png){border="0" height="314" width="640"}](http://4.bp.blogspot.com/-xWfGyaDNO28/Xnvuh7QLUII/AAAAAAAA0M8/JVIUsflHVm0OZ4FVJk1Y-jwLLVAydmpSgCK4BGAYYCw/s1600/altitude.png) 
+# [![](https://4.bp.blogspot.com/-xWfGyaDNO28/Xnvuh7QLUII/AAAAAAAA0M8/JVIUsflHVm0OZ4FVJk1Y-jwLLVAydmpSgCK4BGAYYCw/s640/altitude.png)](http://4.bp.blogspot.com/-xWfGyaDNO28/Xnvuh7QLUII/AAAAAAAA0M8/JVIUsflHVm0OZ4FVJk1Y-jwLLVAydmpSgCK4BGAYYCw/s1600/altitude.png) 
 
 Mind the logarithmic scale. A mode is around 130 meters, which makes
 sense - I live in Warsaw. Also, I very rarely visit places above 2000
