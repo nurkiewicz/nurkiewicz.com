@@ -1177,7 +1177,10 @@
 
 				<dl>
 					<dt>blocking</dt>
-					<dl>waits for a function to return. E.g. <code>RestTemplate.getForEntity()</code>, <code>Socket.read()</code></dl>
+					<dl>
+						waits for a function to return. E.g. <code>RestTemplate.getForEntity()</code>, <code>Socket.read()</code>.
+						See also <a href="https://github.com/Playtika/feign-reactive">Playtika/feign-reactive</a>
+					</dl>
 
 					<dt>asynchronous</dt>
 					<dl>happens in background, probably in another thread. E.g. <code>CompletableFuture</code>, <code>AsyncRestTemplate</code></dl>
