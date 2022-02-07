@@ -23,13 +23,13 @@
 				<h2>Revolution in concurrency<br />
 					or obscure implementation detail?</h2>
 				<p>
-					Tomasz Nurkiewicz, Java Champion
+					Tomasz Nurkiewicz
 				</p>
 				<p>
-					<a href="https://nurkiewicz.com/">nurkiewicz.com</a>
+					<a href="https://nurkiewicz.com/">nurkiewicz.com</a> | <a href="https://twitter.com/tnurkiewicz">@tnurkiewicz</a>
 				</p>
 				<p>
-					Twitter: <a href="https://twitter.com/tnurkiewicz">@tnurkiewicz</a>
+					Java Champion, CTO at <a href="https://devskiller.com/">DevSkiller</a>
 				</p>
 			</section>
 
@@ -246,7 +246,7 @@
 						sequential code that may suspend (itself) and resume (be resumed by a caller).
 					</p>
 					<p>
-						[...] may suspend or yield execution at some point [...] When a delimited continuation suspends, control is passed outside of the continuation, and when it is resumed, control returns to the last yield point, with the execution context up to the entry point intact
+						[...] may suspend or yield execution at some point [...] When [it] suspends, control is passed outside of the continuation, and when it is resumed, control returns to the last yield point, with the execution context up to the entry point intact
 					</p>
 				</blockquote>
 			</section>
@@ -271,7 +271,7 @@
 						void bar() {
 							...
 							yield() 
-							... 
+							buzz()
 						}
 					</code>
 				</pre>
@@ -284,6 +284,7 @@
 					<li>Coroutines / goroutines</li>
 					<li><code>async / await</code></li>
 					<li>Python generators</li>
+					<li>Ruby fibers</li>
 				</ul>
 			</section>
 
@@ -462,6 +463,7 @@
 				<h1>What Loom addresses?</h1>
 				<ul>
 					<li>👍 Asynchronous programming</li>
+					<li>...</li>
 					<li class="fragment" data-fragment-index="1">👎 Backpressure</li>
 					<li class="fragment" data-fragment-index="1">👎 Change propagation</li>
 					<li class="fragment" data-fragment-index="1">👎 Composability</li>
@@ -542,13 +544,10 @@
 			<section>
 				<h1>Thank you!</h1>
 				<p>
-					Tomasz Nurkiewicz, Java Champion
+					Tomasz Nurkiewicz
 				</p>
 				<p>
-					<a href="https://nurkiewicz.com/">nurkiewicz.com</a>
-				</p>
-				<p>
-					Twitter: <a href="https://twitter.com/tnurkiewicz">@tnurkiewicz</a>
+					<a href="https://nurkiewicz.com/">nurkiewicz.com</a> | <a href="https://twitter.com/tnurkiewicz">@tnurkiewicz</a>
 				</p>
 				<p>
 					Slides: <a href="https://nurkiewicz.com/slides/loom">nurkiewicz.com/slides/loom</a>
