@@ -766,30 +766,38 @@ Normalizer.normalize("ą", Form.NFKC)
 
 			<section>
 				<img src="charbusters/emoji-movie.png" class="r-stretch"/>
-				<small>
-					<a href="https://www.imdb.com/title/tt4877122/">https://www.imdb.com/title/tt4877122/</a>
-				</small>
+				<p>
+					<small>
+						<a href="https://www.imdb.com/title/tt4877122/">https://www.imdb.com/title/tt4877122/</a>
+					</small>
+				</p>
 			</section>
 
 			<section>
 				<img src="charbusters/emoji-translator.jpg" class="r-stretch"/>
-				<small>
-					<a href="https://www.dailymail.co.uk/femail/article-4794964/World-s-emoji-translator-ridiculed-Twitter.html">https://www.dailymail.co.uk/femail/article-4794964/World-s-emoji-translator-ridiculed-Twitter.html</a>
-				</small>
+				<p>
+					<small>
+						<a href="https://www.dailymail.co.uk/femail/article-4794964/World-s-emoji-translator-ridiculed-Twitter.html">https://www.dailymail.co.uk/femail/article-4794964/World-s-emoji-translator-ridiculed-Twitter.html</a>
+					</small>
+				</p>
 			</section>
 
 			<section>
 				<img src="charbusters/emoji-burger.png" class="r-stretch"/>
-				<small>
-					<a href="https://twitter.com/sundarpichai/status/924487551372615680">https://twitter.com/sundarpichai/status/924487551372615680</a>
-				</small>
+				<p>
+					<small>
+						<a href="https://twitter.com/sundarpichai/status/924487551372615680">https://twitter.com/sundarpichai/status/924487551372615680</a>
+					</small>
+				</p>
 			</section>
 
 			<section>
 				<img src="charbusters/emoji-ant.png" class="r-stretch"/>
-				<small>
-					<a href="http://curlicuecal.tumblr.com/post/175362924100/an-entomologist-rates-ant-emojis">http://curlicuecal.tumblr.com/post/175362924100/an-entomologist-rates-ant-emojis</a>
-				</small>
+				<p>
+					<small>
+						<a href="http://curlicuecal.tumblr.com/post/175362924100/an-entomologist-rates-ant-emojis">http://curlicuecal.tumblr.com/post/175362924100/an-entomologist-rates-ant-emojis</a>
+					</small>
+				</p>
 			</section>
 
 			<section>
@@ -961,14 +969,14 @@ Normalizer.normalize("ą", Form.NFKC)
 import java.text.BreakIterator;
 
 int graphemes(String str) {
-BreakIterator graphemeCounter = BreakIterator
-	   .getCharacterInstance(Locale.US);
-graphemeCounter.setText(str);
-int graphemeCount = 0;
-while (graphemeCounter.next() != BreakIterator.DONE) {
-   graphemeCount++;
-}
-return graphemeCount;
+	BreakIterator graphemeCounter = BreakIterator
+		.getCharacterInstance(Locale.US);
+	graphemeCounter.setText(str);
+	int graphemeCount = 0;
+	while (graphemeCounter.next() != BreakIterator.DONE) {
+		graphemeCount++;
+	}
+	return graphemeCount;
 }
 				</code></pre>
 			</section>
@@ -1108,6 +1116,7 @@ return graphemeCount;
 			<section>
 				<h3><code>"i".toUpperCase(tr_TR)</code></h3>
 				<h3>i → İ</h3>
+				<a href="http://www.moserware.com/2008/02/does-your-code-pass-turkey-test.html">Does Your Code Pass The Turkey Test?</a>
 			</section>
 
 			<section>
@@ -1168,10 +1177,23 @@ return graphemeCount;
 
 			<section>
 				<img src="charbusters/winnie.jpg" class="r-stretch"/>
-				<hr/>
-				<small>
-					<a href="https://twitter.com/JenMsft/status/1012586276678086656">https://twitter.com/JenMsft/status/1012586276678086656</a>
-				</small>
+				<p>
+					<small>
+						<a href="https://twitter.com/JenMsft/status/1012586276678086656">https://twitter.com/JenMsft/status/1012586276678086656</a>
+					</small>
+				</p>
+			</section>
+
+			<section>
+				<ul>
+					<li>
+						<a href="https://www.bleepingcomputer.com/news/security/trojan-source-attack-method-can-hide-bugs-into-open-source-code/">'Trojan Source' attack method can hide bugs into open-source code</a>
+					</li>
+					<li>
+						<a href="https://dev.to/jagracey/hacking-github-s-auth-with-unicode-s-turkish-dotless-i-460n">Hacking GitHub's Auth with Unicode's Turkish Dotless 'I'</a>
+					</li>
+				</ul>
+				<img src="https://www.bleepstatic.com/images/news/u/1100723/2021/TrojanSourceAttack02.jpg" alt="'Trojan Source' attack method can hide bugs into open-source code" style="border: 1px solid white">
 			</section>
 
 			<section>
@@ -1355,11 +1377,6 @@ return graphemeCount;
 					</code></pre>
 				</section>
 			</section>
-
-			<!--
-				https://eng.getwisdom.io/hacking-github-with-unicode-dotless-i/
-			-->
-
 
 		</div>
 
