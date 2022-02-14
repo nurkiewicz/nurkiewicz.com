@@ -89,11 +89,10 @@
 			</section>
 
 			<section>
-				<ol start="0">
+				<ol>
 					<li>I don’t need to worry about Unicode</li>
 					<li>1 character = 1 <code>byte</code></li>
 					<li>1 character = 1 <code>char</code></li>
-					<li>Java is UTF-16</li>
 					<li>Unicode is unambiguous</li>
 					<li>1 character ≤ 1 <code>int</code></li>
 					<li>1 character ≤ 2 <code>ints</code></li>
@@ -106,7 +105,7 @@
 
 			<section>
 				<h2>I don’t need to worry about Unicode</h2>
-				<h3>Myth 0</h3>
+				<h3>Myth 1</h3>
 			</section>
 
 			<section>
@@ -213,7 +212,7 @@
 
 			<section>
 				<h2>1 character = 1 byte</h2>
-				<h3>Myth 1</h3>
+				<h3>Myth 2</h3>
 			</section>
 
 			<section>
@@ -482,7 +481,7 @@
 
 			<section>
 				<h2>1 character = 1 char</h2>
-				<h3>Myth 2</h3>
+				<h3>Myth 3</h3>
 			</section>
 
 			<section>
@@ -549,12 +548,12 @@
 			</section>
 
 			<section>
-				<h2>Correct Java type for <mark>one</mark> <code>character</code> is...?</h2>
+				<h2>Correct type for <mark>one</mark> <code>character</code> is...?</h2>
 				<ol>
-					<li class="fragment"><code>byte</code></li>
-					<li class="fragment"><code>char</code></li>
-					<li class="fragment"><code>int</code></li>
-					<li class="fragment"><code>String</code></li>
+					<li class="fragment"><code>byte</code> (8 bits)</li>
+					<li class="fragment"><code>char</code> (16 bits)</li>
+					<li class="fragment"><code>int</code> (32 bits)</li>
+					<li class="fragment"><code>String</code> (... bits)</li>
 				</ol>
 			</section>
 
@@ -710,41 +709,6 @@
 			</section>
 
 			<section>
-				<h2>Java is UTF-16</h2>
-				<h3>Myth 3</h3>
-			</section>
-
-			<section>
-				<h2>Java 8</h2>
-				<pre><code data-trim>
-					private final char value[];
-				</code></pre>
-			</section>
-
-			<section>
-				<h2>Java 9+</h2>
-				<pre><code data-trim>
-					private final byte[] value;
-				</code></pre>
-			</section>
-
-			<section>
-				<h2>Java 9+</h2>
-				<pre><code data-trim>
-					public int indexOf(int ch, int fromIndex) {
-						return isLatin1() 
-						  ? StringLatin1.indexOf(value, ch, fromIndex) 
-						  : StringUTF16.indexOf(value, ch, fromIndex);
-					}
-				</code></pre>
-			</section>
-
-			<section>
-				<h2><code><del>String.getBytes()</del></code></h2>
-				<a href="http://blog.thetaphi.de/2012/07/default-locales-default-charsets-and.html">blog.thetaphi.de/2012/07/default-locales-default-charsets-and.html</a>
-			</section>
-
-			<section>
 				<h2>Unicode is unambiguous</h2>
 				<h3>Myth 4</h3>
 			</section>
@@ -793,7 +757,7 @@ Normalizer.normalize("ą", Form.NFKC)
 			</section>
 
 			<section>
-				<h2>Let’s talk about emoji</h2>
+				<h2>Let's talk about emoji</h2>
 			</section>
 
 			<section>
