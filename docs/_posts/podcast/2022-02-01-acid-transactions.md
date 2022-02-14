@@ -20,7 +20,6 @@ description: >
 
 {{ page.description }}
 
-<!--
 When it comes to ACID, _A_ means _atomicity_.
 Simply put, if you make multiple changes to your database, either all or none of them are persisted.
 Contrast that to a typical NoSQL database.
@@ -70,7 +69,6 @@ Theoretically, you can have ACID properties over multiple databases.
 In practice, two-phase commits are rather slow and may fail in an inconsistent state, anyway.
 
 That's it, thanks for listening, bye!
--->
 
 # More materials
 
