@@ -560,9 +560,8 @@
 			<section>
 				<h3><code>String</code></h3>
 				<pre><code data-trim>
-					codePointAt(int)         : int
-					codePoints()             : IntStream
-					codePointCount(int, int) : int
+					"𝄞".codePointAt(0)
+					//119070
 				</code></pre>
 			</section>
 
@@ -680,20 +679,18 @@
 			</section>
 
 			<section>
-				<h3><code>var life = "🏭" + "🏖";</code></h3>
-			</section>
-
-			<section>
+				<h3>Ruby</h3>
 				<pre><code data-trim>
-					StringBuilder rev = new StringBuilder();
-					for (int i = life.length() - 1; i &gt;= 0; i--)
-						rev.append(life.charAt(i));
-				</code></pre>
-			</section>
+					$ irb
 
-			<section>
-				<h3><code>var life = "🏭🏖";</code></h3>
-				<h3><code>"?🏭?"</code></h3>
+					2.7.2 :001 > "abc".reverse!
+					 => "cba"
+				</code></pre>
+				<pre class="fragment"><code data-trim>
+					2.7.2 :002 > "🇬🇧".reverse!
+					 => "🇧🇬"
+				</code></pre>
+				<h1 class="fragment">🇬 🇧 vs. 🇧 🇬</h1>
 			</section>
 
 			<section>
@@ -714,7 +711,9 @@
 			</section>
 
 			<section>
-				<h2><code>"ą".equals("ą")</code></h2>
+				<pre><code data-trim>
+					"ą" == "ą" //false
+				</code></pre>
 			</section>
 
 			<section>
@@ -745,10 +744,9 @@
 			</section>
 
 			<section>
-				<pre><code data-trim>
-Normalizer.normalize("ą", Form.NFKC)
+				<pre><code data-trim >
+					"ą" == "ą".normalize('NFKC')  //true
 				</code></pre>
-				<code>java.text</code>
 			</section>
 
 			<section>
@@ -783,15 +781,6 @@ Normalizer.normalize("ą", Form.NFKC)
 				<p>
 					<small>
 						<a href="https://twitter.com/sundarpichai/status/924487551372615680">https://twitter.com/sundarpichai/status/924487551372615680</a>
-					</small>
-				</p>
-			</section>
-
-			<section>
-				<img src="charbusters/emoji-ant.png" class="r-stretch"/>
-				<p>
-					<small>
-						<a href="http://curlicuecal.tumblr.com/post/175362924100/an-entomologist-rates-ant-emojis">http://curlicuecal.tumblr.com/post/175362924100/an-entomologist-rates-ant-emojis</a>
 					</small>
 				</p>
 			</section>
@@ -1044,19 +1033,11 @@ Normalizer.normalize("ą", Form.NFKC)
 			</section>
 
 			<section>
-				<pre><code data-trim>
-					IntStream.rangeClosed(0, 0x10FFFF)
-							 .filter(Character::isDefined)
-							 .count();
-				</code></pre>
-			</section>
-
-			<section>
 				<table>
 					<tr>
 						<th>Java</th>
 						<th>Unicode</th>
-						<th><code>isDefined</code></th>
+						<th><code>chars</code></th>
 					</tr>
 					<tr>
 						<td>8</td>
@@ -1084,14 +1065,6 @@ Normalizer.normalize("ą", Form.NFKC)
 						<td>283&nbsp;440</td>
 					</tr>
 				</table>
-			</section>
-
-			<section>
-				<pre><code data-trim>
-					IntStream.rangeClosed(0, 0x10FFFF)
-							 .filter(Character::isWhitespace)
-							 .count();
-				</code></pre>
 			</section>
 
 			<section>
