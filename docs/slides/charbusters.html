@@ -1004,23 +1004,6 @@ Normalizer.normalize("ą", Form.NFKC)
 			</section>
 
 			<section>
-				<pre><code data-trim>
-import java.text.BreakIterator;
-
-int graphemes(String str) {
-	BreakIterator graphemeCounter = BreakIterator
-		.getCharacterInstance(Locale.US);
-	graphemeCounter.setText(str);
-	int graphemeCount = 0;
-	while (graphemeCounter.next() != BreakIterator.DONE) {
-		graphemeCount++;
-	}
-	return graphemeCount;
-}
-				</code></pre>
-			</section>
-
-			<section>
 				<img src="charbusters/twitter-counting.png" class="r-stretch"/>
 				<hr/>
 				<small>
