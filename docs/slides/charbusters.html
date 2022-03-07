@@ -858,6 +858,20 @@ Normalizer.normalize("ą", Form.NFKC)
 			</section>
 
 			<section>
+				<pre><code data-trim>
+					$ irb
+
+					2.7.2 :001 > "abc".reverse!
+					 => "cba"
+				</code></pre>
+				<pre class="fragment"><code data-trim>
+					2.7.2 :002 > "🇬🇧".reverse!
+					 => "🇧🇬"
+				</code></pre>
+				<h1 class="fragment">🇬 🇧 vs. 🇧 🇬</h1>
+			</section>
+
+			<section>
 				<h2>👧🏽</h2>
 			</section>
 
@@ -1379,34 +1393,13 @@ Normalizer.normalize("ą", Form.NFKC)
 			</section>
 
 			<section>
-				<section>
-					<h2>Thank you!</h2>
-					<img src="charbusters/qr.svg" class="r-stretch"/>
-					<p>
-						<small>
-							<a href="https://nurkiewicz.com/slides/charbusters">nurkiewicz.com/slides/charbusters</a>
-						</small>
-					</p>
-				</section>
-				<section>
-					<pre><code data-trim>
-						public static void main(String[] args) throws UnsupportedEncodingException {
-							var s = "\uD83D\uDC69\uD83C\uDFFE\u200D\uD83D\uDE80";
-							System.out.println(s);
-							final byte[] bytes = s.getBytes("UTF-32BE");
-							for (byte b : bytes) {
-								System.out.print(toHex(b) + " ");
-							}
-						}
-					</code></pre>
-					<pre><code data-trim>
-						private static String toHex(byte b) {
-							final int unsigned = b & 0xFF;
-							final String s = Integer.toHexString(unsigned).toUpperCase();
-							return s.length() == 1? "0" + s : s;
-						}
-					</code></pre>
-				</section>
+				<h2>Thank you!</h2>
+				<img src="charbusters/qr.svg" class="r-stretch"/>
+				<p>
+					<small>
+						<a href="https://nurkiewicz.com/slides/charbusters">nurkiewicz.com/slides/charbusters</a>
+					</small>
+				</p>
 			</section>
 
 		</div>
