@@ -15,6 +15,7 @@ Enjoy!
 ## 1. Navigation
 
 To quickly navigate between channels, hit `⌘ + K` or `Ctrl + K` (on Windows). 
+`⌘ + .` (dot) is useful to show/hide the right sidebar.
 Searching is faster when choosing acronyms, e.g. type `tfb` for `team-foo-bar`.
 
 ## 2. Bookmarks
