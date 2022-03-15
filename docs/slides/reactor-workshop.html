@@ -480,7 +480,7 @@
 	
 								Optional&lt;Optional&lt;Integer&gt;&gt; x = s.map(this::tryParse);
 								
-								Optional&lt;Integer&gt; x = s.flatMap(this::tryParse);
+								Optional&lt;Integer&gt; y = s.flatMap(this::tryParse);
 							</code>
 						</pre>
 				</section>
@@ -495,7 +495,7 @@
 
 								Stream&lt;Stream&lt;Integer&gt;&gt; x = s.map(this::tryParse);
 
-								Stream&lt;Integer&gt; x = s.flatMap(this::tryParse);
+								Stream&lt;Integer&gt; y = s.flatMap(this::tryParse);
 							</code>
 						</pre>
 				</section>
@@ -512,7 +512,7 @@
 								CompletableFuture&lt;CompletableFuture&lt;Integer&gt;&gt; x = 
 									s.thenApply(this::tryParse);
 
-								CompletableFuture&lt;Integer&gt; x = 
+								CompletableFuture&lt;Integer&gt; y = 
 									s.thenCompose(this::tryParse);
 							</code>
 						</pre>
@@ -529,7 +529,7 @@
 								Mono&lt;Mono&lt;Integer&gt;&gt; x = 
 									s.map(this::tryParse);
 								
-								Mono&lt;Integer&gt; x = 
+								Mono&lt;Integer&gt; y = 
 									s.flatMap(this::tryParse);
 							</code>
 						</pre>
