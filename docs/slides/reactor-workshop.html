@@ -687,7 +687,7 @@
 				<pre>
 						<code class="hljs language-java" data-trim>
 							Mono&lt;Email&gt; sendEmail(String address) {
-								log.info("Sending email to {}. O RLY?", address);  //ten log kłamie
+								log.info("Sending email to {}. O RLY?", address);  //this log lies
 								return Mono.fromCallable(() -&gt; malingApi.send("...", address))
 										.doOnSubscribe(s -&gt; log.info("Sending email to {}", address));
 							}
