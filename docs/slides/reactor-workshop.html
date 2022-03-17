@@ -859,6 +859,39 @@
 					</pre>
 			</section>
 
+			<section>
+
+				<section>
+					<h1><code>window()</code> vs. <code>buffer</code></h1>
+					<pre>
+						<code class="hljs language-java" data-trim>
+							flux
+								.window(Duration.ofSeconds(1))
+								.flatMap(Flux::count);
+						</code>
+					</pre>
+					vs.
+					<pre>
+						<code class="hljs language-java" data-trim>
+							flux
+								.buffer(Duration.ofSeconds(1))
+								.map(List::size);
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h1><code>window()</code></h1>
+					<img src="reactor-workshop/window.jpeg" alt="window()" class="r-stretch">
+				</section>
+
+				<section>
+					<h1><code>buffer()</code></h1>
+					<img src="reactor-workshop/buffer.jpeg" alt="buffer()" class="r-stretch">
+				</section>
+
+			</section>
+
 			<section id="interval">
 				<h1><code>interval()</code></h1>
 				<pre>
