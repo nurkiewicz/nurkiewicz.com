@@ -3,7 +3,7 @@ category: podcast
 title: "#7: Speed of light"
 permalink: /7
 tags: moore cpu cdn ping
-description: Speed of light is not as abstract to us, software engineers, as you might think. If you are deploying to the cloud or if you want to squeeze every bit of performance in your app, speed of light holds you back
+description: Speed of light is not as abstract to us, software engineers, as you might think. If you are deploying to the cloud or if you want to squeeze every bit of performance in your app, speed of light holds you back.
 
 ---
 
@@ -27,9 +27,9 @@ The distance from Perth (Australia) to New York is almost nineteen thousand kilo
 So `ping` from your customer in Australia to your server in New York needs to travel more than **thirty seven thousand** kilometres.
 This is about one hundred and twenty five milliseconds if `ping` was a photon and a server was a mirror.
 In practice speed of light is the least of your concerns, when you think about server's latency, number of network hops, dropped and retransmitted packets, etc.
-But the speed of lights says already tells us, that no matter what you do, you can't expect your website to respond faster that one eighth of a second.
+But the speed of light already tells us, that no matter what you do, you can't expect your website to respond faster that one eighth of a second.
 That's why CDNs (content delivery networks) are so popular, serving data and running code as close geographically as possible.
-Also that's why the most scalable database are replicated across multiple continents.
+Also that's why the most scalable databases are replicated across multiple continents.
 Otherwise, even if your backend is deployed in close proximity to the customer, it has to wait ages (well, milliseconds) for the database.
 Even if you believe that network is extremely fast, when building a worldwide business, you must think about geography.
 Because of the speed of light limitations.
@@ -45,15 +45,15 @@ If CPU is larger than 9 square centimetres there is not enough time for light to
 Assuming paths are perpendicular.
 Let that sink into you: today's CPUs are so fast that there is not enough time for electrical signal to propagate from input to output.
 OK, I'm greatly simplifying.
-First of all, CPU architectures takes that into account.
+First of all, CPU architectures take that into account.
 They can't bend the laws of physics, but due to instruction pipelining a single cycle invokes only small part of instruction.
 So even the simplest instruction, like adding two numbers, takes multiple cycles.
 However, when CPU is about to finish addition, it already started several subsequent instructions.
-This techniques was used in Intel's 386 CPU back in 1985.
+This technique was used in Intel's 386 CPU back in 1985.
 
 And no, speed of light is not causing Moore's Law to collapse.
-First of all because Moore's does not talk about CPU speed doubling every 18 months.
-This indeed no longer olds true.
+First of all because Moore's Law does not talk about CPU speed doubling every 18 months.
+This indeed no longer holds true.
 But it talks about number of integrated transistors that keeps growing.
 And Moore's Law still holds.
 

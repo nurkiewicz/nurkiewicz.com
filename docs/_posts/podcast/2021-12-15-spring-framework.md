@@ -28,12 +28,12 @@ These components are named _beans_.
 Embracing dependency injection has a few huge advantages:
 
 * When a component simply declares its requirements, it's easy to replace these with stubs or mocks for testing purposes
-* Secondly, it's hard or even impossible to create unintialized component, without dependencies injected
+* Secondly, it's hard or even impossible to create uninitialized component, without dependencies injected
 * And last but not least, by convention components should not have hidden dependencies like singletons or static utilities
 
 But dependency injection is just the beginning.
 Spring has plenty of drop-in modules that add extra capabilities.
-Aspect oriented programming, security, transaction, web, data access, messaging - just to name a few.
+Aspect oriented programming, security, transactions, web, data access, messaging - just to name a few.
 Spring is designed in such a way that all modules work nicely with each other.
 However, it's easy to remove certain features.
 
@@ -46,7 +46,7 @@ Over the years the convention over configuration approach became prevalent.
 Spring Boot framework was built to encapsulate and hide the most common patterns.
 These days one can write a fully-functional web application with database access in just a few lines of code.
 
-If you want to deploy such application in the cloud, Spring Cloud bring even higher abstraction.
+If you want to deploy such application in the cloud, Spring Cloud brings even higher abstraction.
 Essentially it's a set of integrations that help building and deploying modern microservices.
 Critics of this ecosystem say that Spring Cloud is a framework built on top of Sprint Boot.
 Which happens to be a framework built on top of Spring.
@@ -54,7 +54,7 @@ Also a framework.
 
 Jokes aside, Spring proved to be a rock-solid, open-source product.
 These days it can even run on top of GraalVM, promising blazingly fast startup times and low memory footprint.
-Shockingl, this makes Spring feasible for serverless workloads.
+Shockingly, this makes Spring feasible for serverless workloads.
 Also, Spring integrates with existing Java Enterprise standards, like Java Persistence API or Bean Validation.
 
 Spring is almost 2 decades old.

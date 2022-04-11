@@ -13,7 +13,7 @@ description: >
     If you are experienced developer, you will include edge cases.
     I mean, the weirdest inputs, like an empty string or a long sequence of the same character.
     And what are the properties of a good compression algorithm?
-    Its output should takes less space, obviously.
+    Its output should take less space, obviously.
     But even more importantly, lossless algorithm should be capable of decompression.
     What if I told you, there is software that can check these properties automatically?
     With thousands of randomized tests?
