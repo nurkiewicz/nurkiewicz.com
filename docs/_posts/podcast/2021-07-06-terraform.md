@@ -70,3 +70,4 @@ That's it, thanks for listening, bye!
 
 * [Terraform](https://en.wikipedia.org/wiki/Terraform_(software)) on Wikipedia
 * [Providers registry](https://registry.terraform.io/browse/providers)
+* [What is Terraform? A Quick Overview](https://spacelift.io/blog/what-is-terraform)

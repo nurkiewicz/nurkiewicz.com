@@ -1,3 +1,8 @@
+---
+title: "Articles"
+---
+
+
 <ul>
   {% for post in site.posts %}
     {% if post.url and post.category != "podcast" %}
