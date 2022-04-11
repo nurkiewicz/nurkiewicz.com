@@ -15,7 +15,7 @@ But first, let's go to a grocery store.
 Imagine there is a single clerk that, on average, procesess one customer in four minutes.
 It's fairly obvious that he can serve: sixty minutes divided by four - fifteen customers per hour.
 This is the arrival rate that is sustainable.
-If surving a single customer would take three minutes instead of four, then the math is simple.
+If serving a single customer would take three minutes instead of four, then the math is simple.
 Sixty divided by three.
 It makes twenty customers per hour.
 As you can see, the faster clerk is capable of handling customers, the more customer he or she can handle in a given unit of time.
@@ -26,13 +26,13 @@ Fairly obvious.
 But what if we add a second clerk?
 We assume he or she has equal throughput, measured by the average time it takes to serve a single customer.
 The throughput of our system suddenly doubled.
-That, again, under the assumption that clerks are independents of each other
+That, again, under the assumption that clerks are independents of each other.
 There is no synchronization needed between them.
 Also there is no shared resource that they have to wait for.
 Each clerk has his/her own register.
-So it's no longer twenty customer per hour, but forty customers per hours.
+So it's no longer twenty customer per hour, but forty customers per hour.
 You can probably guess that adding a third clerk increases the store's throughput as well.
-It should be easy to figure out that the overall throughput is equal to the throughput of a single clerk, multipled by the number of clerks.
+It should be easy to figure out that the overall throughput is equal to the throughput of a single clerk, multiplied by the number of clerks.
 Under above assumptions.
 
 Believe it or not, this is Little's Law in its whole glory.
@@ -70,7 +70,7 @@ It works no matter what is the distribution of incoming requests, whether you ha
 You only work on averages.
 
 That's it about Little's Law.
-I decided to talk about because I belive it's very fundamental and every software developer should understand it intuitevely.
+I decided to talk about because I believe it's very fundamental and every software developer should understand it intuitevely.
 Hope you enjoyed it.
 
 # More resources:
