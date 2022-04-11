@@ -74,6 +74,7 @@ Blocks have limited space, verifying a transaction against gigabytes of history 
 So you must pay for that service.
 Long story short, the price for decentralized currency is huge:
 
+* difficulty parameter
 * transaction fees are quite large
 * latencies are measured in minutes to hours
 * throughput is small due to limited block size
@@ -82,9 +83,6 @@ Long story short, the price for decentralized currency is huge:
 I see blockchain as a wonderful concept but with very limited practical uses.
 
 Thanks for listening, bye!
-
-* difficulty parameter
-
 
 
 # More materials

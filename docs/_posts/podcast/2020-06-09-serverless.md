@@ -3,7 +3,7 @@ category: podcast
 title: '#4: Serverless'
 permalink: /4
 tags: cloud faas lambda
-description: Serverless (function as a service) is the fastest and most cost effective way of deploying your code to the cloud. However it suffers the cold start problem and pricing is not always straightforward
+description: Serverless (function as a service) is the fastest and most cost effective way of deploying your code to the cloud. However it suffers the cold start problem and pricing is not always straightforward.
 ---
 
 {% include player.html episode_id="1RiPQDsstfeXwB0BWNxcYF" %}
@@ -30,7 +30,7 @@ If someone calls your function either from the Internet or maybe another functio
 And also for the amount of memory, CPU and network traffic.
 This means that for systems that have very low traffic serverless becomes really, really cheap.
 
-Because your function only lives for this short amount of time when it serves a request and then it goes to sleep and it no longer consumes and resources it's truly stateless and some even say serverless.
+Because your function only lives for this short amount of time when it serves a request and then it goes to sleep and it no longer consumes any resources it's truly stateless and some even say serverless.
 However, most likely you do need some backing services, like databases, queues and so on and you will use other offerings from your cloud provider.
 
 Another benefit of serverless is auto scaling.
@@ -42,7 +42,7 @@ This means that auto scaling is much faster compared to speeding up your server 
 
 Obviously serverless or function-as-a-service has many disadvantages as well.
 The biggest one is known as cold start.
-It's not a coincidence that I mentioned dynamic languages like python or Java Script.
+It's not a coincidence that I mentioned dynamic languages like Python or Java Script.
 When you're running them, there is no expensive virtual machine that needs to warm up before it can actually serve request.
 Serverless with Java or C# is not that much appealing, although still practiced.
 Because, for example, JVM needs at least a few hundred milliseconds to speed up.
