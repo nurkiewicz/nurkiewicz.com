@@ -24,3 +24,7 @@ Just let me know via Twitter DM ([@tnurkiewicz](https://twitter.com/tnurkiewicz)
 * I can place link to any materials (your blog/website/training) in the show-notes and episode's article
 * I can replace podcast's cover image for this episode with your photo/logo
 * Your name appears in the podcast title as a guest
+
+## Guest episodes
+
+* [#70: CRDT: Conflict-free Replicated Data Type (guest: Martin Kleppmann)](https://nurkiewicz.com/70)
