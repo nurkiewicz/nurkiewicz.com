@@ -17,13 +17,14 @@ Claims that code not tested automatically is not a feature but just a rumour.
 
 ## My book
 
-I wrote a [book about RxJava](https://www.amazon.com/Reactive-Programming-RxJava-Asynchronous-Applications/dp/1491931655), also translated to [Korean](https://www.amazon.com/Reactive-programming-using-RxJava-Korean/dp/8966263062)
+I wrote a [book about RxJava](https://www.amazon.com/Reactive-Programming-RxJava-Asynchronous-Applications/dp/1491931655), also translated to [Korean](https://www.amazon.com/Reactive-programming-using-RxJava-Korean/dp/8966263062).
 
-![Book cover](img/rxjava-book.jpeg) ![Book cover (Korean)](img/rxjava-book-korean.jpeg)
+<img src="img/rxjava-book.jpg" width="40%"/>
+<img src="img/rxjava-book-korean.jpg" width="40%"/>
 
 ## Hire me
 
-I'm occasionally doing [training](https://github.com/nurkiewicz/reactor-workshop) and consulting.
+I'm occasionally doing [Reactor](https://github.com/nurkiewicz/reactor-workshop), [Java concurrency](https://github.com/nurkiewicz/java-concurrency-workshop) workshops and consulting.
 If you find my work valuable or need some help, contact me.
 
 ## Contact me
