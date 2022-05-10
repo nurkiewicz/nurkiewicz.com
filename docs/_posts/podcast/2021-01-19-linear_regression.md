@@ -1,6 +1,6 @@
 ---
 category: podcast
-title: "#30: Linear Regression"
+title: "#30: Linear Regression: simple, yet powerful machine learning"
 permalink: /30
 tags: linear-regression machine-learning kaggle supervised-learning
 description: >
