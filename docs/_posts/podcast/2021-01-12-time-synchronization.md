@@ -72,7 +72,7 @@ This clever trick allows Spanner to achieve external consistency.
 In short, it behaves as if all transactions run sequentially on a single node.
 In reality, Spanner runs across multiple data centers.
 
-An open-source equivalent to Spanner is CockroachDB.
+An open-source equivalent to [Spanner](https://cloud.google.com/spanner/) is [CockroachDB](https://www.cockroachlabs.com/product/).
 It obviously can't rely on hardware-accelerated, TrueTime technology.
 Waiting is also impractical, as normal NTP synchronization can cause drifts of 200-300 milliseconds.
 Sleeping for 300 milliseconds on each transaction is out of the question.
@@ -91,5 +91,5 @@ That's it, thanks for listening, bye!
 * [List of highest-grossing concert tours](https://en.wikipedia.org/wiki/List_of_highest-grossing_concert_tours)
 * [Cloud Spanner: TrueTime and external consistency](https://cloud.google.com/spanner/docs/true-time-external-consistency)
 * [Living Without Atomic Clocks](https://www.cockroachlabs.com/blog/living-without-atomic-clocks/)
-
-
+* [CockroachDB](https://www.cockroachlabs.com/product/)
+* [Spanner](https://cloud.google.com/spanner/)
