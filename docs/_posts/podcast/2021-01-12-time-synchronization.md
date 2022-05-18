@@ -1,6 +1,6 @@
 ---
 category: podcast
-title: "#29: Time synchronization"
+title: "#29: Time synchronization: how Network Time Protocol does it's magic"
 permalink: /29
 tags: ntp stratum spanner CockroachDB truetime
 description: >
