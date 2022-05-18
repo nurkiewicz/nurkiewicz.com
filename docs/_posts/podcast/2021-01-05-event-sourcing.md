@@ -1,6 +1,6 @@
 ---
 category: podcast
-title: "#28: Event sourcing"
+title: "#28: Event sourcing: your data as a stream of changes"
 permalink: /28
 tags: event-sourcing cassandra kafka read-model ddd event-store
 description: >
