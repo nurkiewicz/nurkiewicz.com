@@ -1,6 +1,6 @@
 ---
 category: podcast
-title: "#26: Blockchain"
+title: "#26: Blockchain: distributed, append only database"
 permalink: /26
 tags: blockchain bitcoin merkle-tree hash-function
 description: >
