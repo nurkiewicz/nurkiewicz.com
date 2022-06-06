@@ -14,7 +14,6 @@ description: >
 
 {{ page.description }}
 
-<!--
 ## I. One codebase tracked in revision control, many deploys
 
 It means that there should only be one version of your codebase deployed to all environments.
@@ -87,7 +86,6 @@ Or the same database accessed by different applications.
 OK.
 We'll explore the second half of these principles in the next episode.
 That's it, thanks for listening, bye!
--->
 
 # More materials
 
