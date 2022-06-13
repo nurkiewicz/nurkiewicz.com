@@ -75,7 +75,3 @@ Indeed, the absolute disk space grew from 100 to 130 (by 30%).
 But to be effective when communicating, avoid being smart and confuse people.
 
 That's it, thanks for listening, bye!
-
-# More materials
-
-* []()
