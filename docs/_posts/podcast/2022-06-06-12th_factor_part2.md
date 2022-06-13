@@ -13,7 +13,6 @@ description: >
 
 {{ page.description }}
 
-<!--
 ## VIII. Scale out via the process model
 
 This principle encourages scaling out by spawning multiple instances of the same application.
@@ -86,7 +85,6 @@ Anyway, it's worth knowing them.
 Feel free to break some of these rules intentionally, rather than accidentally.
 
 That's it, thanks for listening, bye!
--->
 
 # More materials
 
