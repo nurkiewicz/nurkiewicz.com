@@ -1,28 +1,31 @@
 /**
- * Black theme for reveal.js.
+ * A simple theme for reveal.js presentations, similar
+ * to the default theme. The accent color is brown.
  *
- * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ * This theme is Copyright (C) 2012-2013 Owen Versteeg, http://owenversteeg.com - it is MIT licensed.
  */
-@import url(https://fonts.googleapis.com/css?family=Montserrat:700);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic);
-section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6 {
-  color: #222;
+.reveal a {
+  line-height: 1.3em;
+}
+
+section.has-dark-background, section.has-dark-background h1, section.has-dark-background h2, section.has-dark-background h3, section.has-dark-background h4, section.has-dark-background h5, section.has-dark-background h6 {
+  color: #fff;
 }
 
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
 :root {
-  --r-background-color: #111;
-  --r-main-font: Open Sans, sans-serif;
+  --r-background-color: #F0F1EB;
+  --r-main-font: Palatino Linotype, Book Antiqua, Palatino, FreeSerif, serif;
   --r-main-font-size: 40px;
-  --r-main-color: #eee;
+  --r-main-color: #000;
   --r-block-margin: 20px;
   --r-heading-margin: 0 0 20px 0;
-  --r-heading-font: Montserrat, Impact, sans-serif;
-  --r-heading-color: #eee;
+  --r-heading-font: Palatino Linotype, Book Antiqua, Palatino, FreeSerif, serif;
+  --r-heading-color: #383D3D;
   --r-heading-line-height: 1.2;
-  --r-heading-letter-spacing: -0.03em;
+  --r-heading-letter-spacing: normal;
   --r-heading-text-transform: none;
   --r-heading-text-shadow: none;
   --r-heading-font-weight: normal;
@@ -32,15 +35,15 @@ section.has-light-background, section.has-light-background h1, section.has-light
   --r-heading3-size: 1.55em;
   --r-heading4-size: 1em;
   --r-code-font: monospace;
-  --r-link-color: #e7ad52;
-  --r-link-color-dark: #d08a1d;
-  --r-link-color-hover: #f3d7ac;
-  --r-selection-background-color: #e7ad52;
+  --r-link-color: #51483D;
+  --r-link-color-dark: #25211c;
+  --r-link-color-hover: #8b7c69;
+  --r-selection-background-color: #26351C;
   --r-selection-color: #fff;
 }
 
 .reveal-viewport {
-  background: #111;
+  background: #F0F1EB;
   background-color: var(--r-background-color);
 }
 

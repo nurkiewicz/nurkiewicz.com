@@ -1,10 +1,15 @@
 /**
- * Black theme for reveal.js.
+ * Blood theme for reveal.js
+ * Author: Walther http://github.com/Walther
  *
- * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ * Designed to be used with highlight.js theme
+ * "monokai_sublime.css" available from
+ * https://github.com/isagalaev/highlight.js/
+ *
+ * For other themes, change $codeBackground accordingly.
+ *
  */
-@import url(https://fonts.googleapis.com/css?family=Montserrat:700);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:300,700,300italic,700italic);
 section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6 {
   color: #222;
 }
@@ -13,34 +18,34 @@ section.has-light-background, section.has-light-background h1, section.has-light
  * GLOBAL STYLES
  *********************************************/
 :root {
-  --r-background-color: #111;
-  --r-main-font: Open Sans, sans-serif;
+  --r-background-color: #222;
+  --r-main-font: Ubuntu, sans-serif;
   --r-main-font-size: 40px;
   --r-main-color: #eee;
   --r-block-margin: 20px;
   --r-heading-margin: 0 0 20px 0;
-  --r-heading-font: Montserrat, Impact, sans-serif;
+  --r-heading-font: Ubuntu, sans-serif;
   --r-heading-color: #eee;
   --r-heading-line-height: 1.2;
-  --r-heading-letter-spacing: -0.03em;
-  --r-heading-text-transform: none;
-  --r-heading-text-shadow: none;
+  --r-heading-letter-spacing: normal;
+  --r-heading-text-transform: uppercase;
+  --r-heading-text-shadow: 2px 2px 2px #222;
   --r-heading-font-weight: normal;
-  --r-heading1-text-shadow: none;
+  --r-heading1-text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 20px 20px rgba(0, 0, 0, 0.15);
   --r-heading1-size: 3.77em;
   --r-heading2-size: 2.11em;
   --r-heading3-size: 1.55em;
   --r-heading4-size: 1em;
   --r-code-font: monospace;
-  --r-link-color: #e7ad52;
-  --r-link-color-dark: #d08a1d;
-  --r-link-color-hover: #f3d7ac;
-  --r-selection-background-color: #e7ad52;
+  --r-link-color: #a23;
+  --r-link-color-dark: #6a1520;
+  --r-link-color-hover: #dd5566;
+  --r-selection-background-color: #a23;
   --r-selection-color: #fff;
 }
 
 .reveal-viewport {
-  background: #111;
+  background: #222;
   background-color: var(--r-background-color);
 }
 
@@ -355,4 +360,31 @@ section.has-light-background, section.has-light-background h1, section.has-light
   .backgrounds {
     background-color: var(--r-background-color);
   }
+}
+.reveal p {
+  font-weight: 300;
+  text-shadow: 1px 1px #222;
+}
+
+section.has-light-background p, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4 {
+  text-shadow: none;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  font-weight: 700;
+}
+
+.reveal p code {
+  background-color: #23241f;
+  display: inline-block;
+  border-radius: 7px;
+}
+
+.reveal small code {
+  vertical-align: baseline;
 }

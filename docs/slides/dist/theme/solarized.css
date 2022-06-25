@@ -1,29 +1,32 @@
 /**
- * Black theme for reveal.js.
- *
- * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ * Solarized Light theme for reveal.js.
+ * Author: Achim Staebler
  */
-@import url(https://fonts.googleapis.com/css?family=Montserrat:700);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic);
-section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6 {
-  color: #222;
+@import url(./fonts/league-gothic/league-gothic.css);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+/**
+ * Solarized colors by Ethan Schoonover
+ */
+html * {
+  color-profile: sRGB;
+  rendering-intent: auto;
 }
 
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
 :root {
-  --r-background-color: #111;
-  --r-main-font: Open Sans, sans-serif;
+  --r-background-color: #fdf6e3;
+  --r-main-font: Lato, sans-serif;
   --r-main-font-size: 40px;
-  --r-main-color: #eee;
+  --r-main-color: #657b83;
   --r-block-margin: 20px;
   --r-heading-margin: 0 0 20px 0;
-  --r-heading-font: Montserrat, Impact, sans-serif;
-  --r-heading-color: #eee;
+  --r-heading-font: League Gothic, Impact, sans-serif;
+  --r-heading-color: #586e75;
   --r-heading-line-height: 1.2;
-  --r-heading-letter-spacing: -0.03em;
-  --r-heading-text-transform: none;
+  --r-heading-letter-spacing: normal;
+  --r-heading-text-transform: uppercase;
   --r-heading-text-shadow: none;
   --r-heading-font-weight: normal;
   --r-heading1-text-shadow: none;
@@ -32,15 +35,15 @@ section.has-light-background, section.has-light-background h1, section.has-light
   --r-heading3-size: 1.55em;
   --r-heading4-size: 1em;
   --r-code-font: monospace;
-  --r-link-color: #e7ad52;
-  --r-link-color-dark: #d08a1d;
-  --r-link-color-hover: #f3d7ac;
-  --r-selection-background-color: #e7ad52;
+  --r-link-color: #268bd2;
+  --r-link-color-dark: #1a6091;
+  --r-link-color-hover: #78b9e6;
+  --r-selection-background-color: #d33682;
   --r-selection-color: #fff;
 }
 
 .reveal-viewport {
-  background: #111;
+  background: #fdf6e3;
   background-color: var(--r-background-color);
 }
 

@@ -1,28 +1,30 @@
 /**
- * Black theme for reveal.js.
+ * A simple theme for reveal.js presentations, similar
+ * to the default theme. The accent color is darkblue.
  *
- * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ * This theme is Copyright (C) 2012 Owen Versteeg, https://github.com/StereotypicalApps. It is MIT licensed.
+ * reveal.js is Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
  */
-@import url(https://fonts.googleapis.com/css?family=Montserrat:700);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic);
-section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6 {
-  color: #222;
+@import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+section.has-dark-background, section.has-dark-background h1, section.has-dark-background h2, section.has-dark-background h3, section.has-dark-background h4, section.has-dark-background h5, section.has-dark-background h6 {
+  color: #fff;
 }
 
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
 :root {
-  --r-background-color: #111;
-  --r-main-font: Open Sans, sans-serif;
+  --r-background-color: #fff;
+  --r-main-font: Lato, sans-serif;
   --r-main-font-size: 40px;
-  --r-main-color: #eee;
+  --r-main-color: #000;
   --r-block-margin: 20px;
   --r-heading-margin: 0 0 20px 0;
-  --r-heading-font: Montserrat, Impact, sans-serif;
-  --r-heading-color: #eee;
+  --r-heading-font: News Cycle, Impact, sans-serif;
+  --r-heading-color: #000;
   --r-heading-line-height: 1.2;
-  --r-heading-letter-spacing: -0.03em;
+  --r-heading-letter-spacing: normal;
   --r-heading-text-transform: none;
   --r-heading-text-shadow: none;
   --r-heading-font-weight: normal;
@@ -32,15 +34,15 @@ section.has-light-background, section.has-light-background h1, section.has-light
   --r-heading3-size: 1.55em;
   --r-heading4-size: 1em;
   --r-code-font: monospace;
-  --r-link-color: #e7ad52;
-  --r-link-color-dark: #d08a1d;
-  --r-link-color-hover: #f3d7ac;
-  --r-selection-background-color: #e7ad52;
+  --r-link-color: #00008B;
+  --r-link-color-dark: #00003f;
+  --r-link-color-hover: #0000f1;
+  --r-selection-background-color: rgba(0, 0, 0, 0.99);
   --r-selection-color: #fff;
 }
 
 .reveal-viewport {
-  background: #111;
+  background: #fff;
   background-color: var(--r-background-color);
 }
 
