@@ -20,7 +20,7 @@ description: >
     This is where cookies help tremendously.
 ---
 
-{% include player.html episode_id="7htJlw269oihrtZ61M6Jaw" %}
+{% include player.html spotify_id="7htJlw269oihrtZ61M6Jaw" youtube_id="6wGkFBTMsGo" %}
 
 {{ page.description }}
 

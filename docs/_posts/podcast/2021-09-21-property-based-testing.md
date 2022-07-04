@@ -19,7 +19,7 @@ description: >
     With thousands of randomized tests?
 ---
 
-{% include player.html episode_id="313A2uGgQeosMewYoIhaRE" %}
+{% include player.html spotify_id="313A2uGgQeosMewYoIhaRE" youtube_id="Ufcjf2YahEk" %}
 
 {{ page.description }}
 

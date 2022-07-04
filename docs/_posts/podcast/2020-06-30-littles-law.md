@@ -7,7 +7,7 @@ description: Little's law is an astounding equation that's dead simple, yet it c
 
 ---
 
-{% include player.html episode_id="4JCnxbwVGdF7KHWVIkpFZs" %}
+{% include player.html spotify_id="4JCnxbwVGdF7KHWVIkpFZs" youtube_id="wT08bS3Gj7o" %}
 
 {{ page.description }}
 

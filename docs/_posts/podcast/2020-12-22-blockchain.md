@@ -20,7 +20,7 @@ description: >
     At what cost all of this can be achieved?
 ---
 
-{% include player.html episode_id="5IbUexoU3P9QCiRhKMRNfv" %}
+{% include player.html spotify_id="5IbUexoU3P9QCiRhKMRNfv" youtube_id="sdizKU1_g-g" %}
 
 {{ page.description }}
 

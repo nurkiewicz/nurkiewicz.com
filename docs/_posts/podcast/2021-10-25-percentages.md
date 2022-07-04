@@ -11,7 +11,7 @@ description: >
     You'll learn all that in the next four minutes.
 ---
 
-{% include player.html episode_id="2kzDD6DGLlHhx9jaKUtvNV" %}
+{% include player.html spotify_id="2kzDD6DGLlHhx9jaKUtvNV" youtube_id="35YSs56-7Lk" %}
 
 {{ page.description }}
 

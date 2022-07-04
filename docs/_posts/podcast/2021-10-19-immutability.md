@@ -15,7 +15,7 @@ description: >
     Modifying a single item, adding or removing, sorting - each of these operations return a copy.
 ---
 
-{% include player.html episode_id="6xiMQEggYikV7WwG0nWULU" %}
+{% include player.html spotify_id="6xiMQEggYikV7WwG0nWULU" youtube_id="7w9BVQLlVO4" %}
 
 {{ page.description }}
 

@@ -17,7 +17,7 @@ description: >
     Well, they both technically are.
 ---
 
-{% include player.html episode_id="3b59wmtZaC5V9qrNnL8zfE" %}
+{% include player.html spotify_id="3b59wmtZaC5V9qrNnL8zfE" youtube_id="jzkRzZxatJE" %}
 
 {{ page.description }}
 

@@ -21,7 +21,7 @@ description: >
     And how is Bob suppose to provide that password if Eve can spy all communication channels?
 ---
 
-{% include player.html episode_id="5K3tGBIHCIG3TdPDg3cZTs" %}
+{% include player.html spotify_id="5K3tGBIHCIG3TdPDg3cZTs" youtube_id="snYyLmOKJq8" %}
 
 {{ page.description }}
 

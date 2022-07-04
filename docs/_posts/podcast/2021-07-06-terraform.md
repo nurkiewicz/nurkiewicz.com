@@ -15,7 +15,7 @@ description: >
     Here's how it works in more detail.
 ---
 
-{% include player.html episode_id="15zlML4thKnVVwwBPyhJ1D" %}
+{% include player.html spotify_id="15zlML4thKnVVwwBPyhJ1D" youtube_id="fBxyoDzw4o8" %}
 
 {{ page.description }}
 

@@ -12,7 +12,7 @@ description: >
     This difference is known as voltage.
 ---
 
-{% include player.html episode_id="7EVHMs2fpRLF0wjyU1eHJk" %}
+{% include player.html spotify_id="7EVHMs2fpRLF0wjyU1eHJk" youtube_id="DaLhEk_3xjE" %}
 
 {{ page.description }}
 

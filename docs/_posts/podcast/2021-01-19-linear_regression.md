@@ -20,7 +20,7 @@ description: >
     Sound reasonable?
 ---
 
-{% include player.html episode_id="7CtIsqE5g04QO0VYdw82ar" %}
+{% include player.html spotify_id="7CtIsqE5g04QO0VYdw82ar" youtube_id="6TalLh9CM9w" %}
 
 {{ page.description }}
 

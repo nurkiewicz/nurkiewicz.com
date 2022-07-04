@@ -14,7 +14,7 @@ description: >
     And GraphQL released recently.
 ---
 
-{% include player.html episode_id="0qZ47M7fLhMf2jm5PQ0doZ" %}
+{% include player.html spotify_id="0qZ47M7fLhMf2jm5PQ0doZ" youtube_id="YDlGK81snSg" %}
 
 {{ page.description }}
 

@@ -16,7 +16,7 @@ description: >
     Also known as FIFO, first in, first out.
 ---
 
-{% include player.html episode_id="6llTs2WyoVFkSsTsW2NQfD" %}
+{% include player.html spotify_id="6llTs2WyoVFkSsTsW2NQfD" youtube_id="S_5hiY5esf4" %}
 
 {{ page.description }}
 

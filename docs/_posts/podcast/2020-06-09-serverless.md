@@ -6,7 +6,7 @@ tags: cloud faas lambda
 description: Serverless (function as a service) is the fastest and most cost effective way of deploying your code to the cloud. However it suffers the cold start problem and pricing is not always straightforward.
 ---
 
-{% include player.html episode_id="1RiPQDsstfeXwB0BWNxcYF" %}
+{% include player.html spotify_id="1RiPQDsstfeXwB0BWNxcYF" youtube_id="8Y07RglQBX8" %}
 
 {{ page.description }}
 

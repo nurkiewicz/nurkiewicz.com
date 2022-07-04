@@ -24,7 +24,7 @@ description: >
     This is where NTP, network time protocol, comes into play.
 ---
 
-{% include player.html episode_id="6vvNijnCYZMVJM8ZzD1DhB" %}
+{% include player.html spotify_id="6vvNijnCYZMVJM8ZzD1DhB" youtube_id="2epTAKPGcOs" %}
 
 {{ page.description }}
 

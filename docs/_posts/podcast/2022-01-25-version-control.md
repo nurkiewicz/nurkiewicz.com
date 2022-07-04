@@ -12,7 +12,7 @@ description: >
     That, and many other applications of version control, will become obvious in a second.
 ---
 
-{% include player.html episode_id="4Wvj5YmBvuOr57vL2xdHa0" %}
+{% include player.html spotify_id="4Wvj5YmBvuOr57vL2xdHa0" youtube_id="RW_CSPK2Igk" %}
 
 {{ page.description }}
 

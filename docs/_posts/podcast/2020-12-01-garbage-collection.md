@@ -18,7 +18,7 @@ description: >
     We take for granted what was thought to be almost impossible: automatic memory management.
 ---
 
-{% include player.html episode_id="35G1SNLsaGlJiWMHSqWUpf" %}
+{% include player.html spotify_id="35G1SNLsaGlJiWMHSqWUpf" youtube_id="uJ11kAzjva4" %}
 
 {{ page.description }}
 

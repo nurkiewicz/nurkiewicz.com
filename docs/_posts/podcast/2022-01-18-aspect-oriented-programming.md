@@ -14,7 +14,7 @@ description: >
     And too ubiquitous to forget.
 ---
 
-{% include player.html episode_id="0LLY25mWRzPV7Uz1DtR3Ht" %}
+{% include player.html spotify_id="0LLY25mWRzPV7Uz1DtR3Ht" youtube_id="oVdq7pCdx7Y" %}
 
 {{ page.description }}
 

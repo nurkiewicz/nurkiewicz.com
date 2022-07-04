@@ -7,7 +7,7 @@ description: Service mesh is used in environments where there are many services 
 
 ---
 
-{% include player.html episode_id="6zuXau7Dt0RmbhmbprUf4g" %}
+{% include player.html spotify_id="6zuXau7Dt0RmbhmbprUf4g" youtube_id="-HcH7UPPqfc" %}
 
 # Transcript
 

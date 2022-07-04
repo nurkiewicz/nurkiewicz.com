@@ -15,7 +15,7 @@ description: >
     Let's go!
 ---
 
-{% include player.html episode_id="77yxlj0QlkCbWixgbjLTe2" %}
+{% include player.html spotify_id="77yxlj0QlkCbWixgbjLTe2" youtube_id="Y_IVKUtZlgc" %}
 
 {{ page.description }}
 

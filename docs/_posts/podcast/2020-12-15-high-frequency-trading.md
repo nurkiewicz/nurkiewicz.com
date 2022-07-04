@@ -19,7 +19,7 @@ description: >
     Human traders stand no chance.
 ---
 
-{% include player.html episode_id="5SvM2rZkhPU964ZDuJUhGk" %}
+{% include player.html spotify_id="5SvM2rZkhPU964ZDuJUhGk" youtube_id="By-nAO53yNo" %}
 
 {{ page.description }}
 

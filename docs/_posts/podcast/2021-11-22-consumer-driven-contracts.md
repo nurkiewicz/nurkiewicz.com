@@ -16,7 +16,7 @@ description: >
     CDC attempts to codify the API without explicit schema and coordination.
 ---
 
-{% include player.html episode_id="6FpzyeffBU9Zdo84J6x17B" %}
+{% include player.html spotify_id="6FpzyeffBU9Zdo84J6x17B" youtube_id="Gx31bvbBz34" %}
 
 {{ page.description }}
 

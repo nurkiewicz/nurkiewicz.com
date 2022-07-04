@@ -13,7 +13,7 @@ description: >
     What was just an idea sparked to be one of the largest ecosystems for Java.
 ---
 
-{% include player.html episode_id="425Q4U4XnovBL9iCSAesM0" %}
+{% include player.html spotify_id="425Q4U4XnovBL9iCSAesM0" youtube_id="RlnOZjR7uvc" %}
 
 {{ page.description }}
 

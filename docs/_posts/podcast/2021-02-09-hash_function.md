@@ -22,7 +22,7 @@ description: >
     Often 32- or 64-bit.
 ---
 
-{% include player.html episode_id="7uKytCrSRoGD7PhLXI5bx7" %}
+{% include player.html spotify_id="7uKytCrSRoGD7PhLXI5bx7" youtube_id="C7_oXSTyx0s" %}
 
 {{ page.description }}
 

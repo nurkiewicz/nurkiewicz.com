@@ -14,7 +14,7 @@ description: >
     Manually tracking which servers should host which components is tedious and error-prone.
 ---
 
-{% include player.html episode_id="3Y2ROQqmPKatG2bMMFzEQE" %}
+{% include player.html spotify_id="3Y2ROQqmPKatG2bMMFzEQE" youtube_id="RaAOvdHK76s" %}
 
 {{ page.description }}
 

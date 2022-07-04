@@ -17,7 +17,7 @@ description: >
     Or reading a file.
 ---
 
-{% include player.html episode_id="7eagJKitLtJlcZgfLPyywg" %}
+{% include player.html spotify_id="7eagJKitLtJlcZgfLPyywg" youtube_id="L693WOIBcfs" %}
 
 {{ page.description }}
 

@@ -13,7 +13,7 @@ description: >
     How's all this possible?
 ---
 
-{% include player.html episode_id="6clYLaFhwkV2j2MCIV2T90" %}
+{% include player.html spotify_id="6clYLaFhwkV2j2MCIV2T90" youtube_id="NFr0ClRDEh0" %}
 
 {{ page.description }}
 

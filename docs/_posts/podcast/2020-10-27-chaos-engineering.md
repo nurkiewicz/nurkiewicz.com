@@ -16,7 +16,7 @@ description: >
     This is called _chaos engineering_.
 ---
 
-{% include player.html episode_id="3PyGpbnyKKFPREVcc6DDmR" %}
+{% include player.html spotify_id="3PyGpbnyKKFPREVcc6DDmR" youtube_id="0ZY_LOcnCe4" %}
 
 {{ page.description }}
 

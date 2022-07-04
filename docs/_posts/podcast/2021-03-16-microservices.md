@@ -16,7 +16,7 @@ description: >
     Let's discuss what it means and how often these aspects are violated.
 ---
 
-{% include player.html episode_id="7siqtZgiHgPRzH5E7lkcQ3" %}
+{% include player.html spotify_id="7siqtZgiHgPRzH5E7lkcQ3" youtube_id="EccSxljWY4Y" %}
 
 {{ page.description }}
 

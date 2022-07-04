@@ -11,7 +11,7 @@ description: >
     Let's take a journey through the compiler internals.
 ---
 
-{% include player.html episode_id="5v2EYpKDN6kFqBzpUjtwKw" %}
+{% include player.html spotify_id="5v2EYpKDN6kFqBzpUjtwKw" youtube_id="T1lvRIHoMqc" %}
 
 {{ page.description }}
 

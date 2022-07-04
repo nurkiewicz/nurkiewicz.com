@@ -18,7 +18,7 @@ description: >
     We simply, almost transparently, get a new machine.
 ---
 
-{% include player.html episode_id="6lKzjo3FsHZbEloAdsmAvo" %}
+{% include player.html spotify_id="6lKzjo3FsHZbEloAdsmAvo" youtube_id="U3QhlQNvVJI" %}
 
 {{ page.description }}
 

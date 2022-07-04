@@ -20,7 +20,7 @@ description: >
 
 ---
 
-{% include player.html episode_id="4xfgxHrelMvrHYzry9qOU6" %}
+{% include player.html spotify_id="4xfgxHrelMvrHYzry9qOU6" youtube_id="vFkYCZe0hMY" %}
 
 {{ page.description }}
 

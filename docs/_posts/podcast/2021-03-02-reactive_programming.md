@@ -21,7 +21,7 @@ description: >
     This approach to developing software is called... _reactive programming_.
 ---
 
-{% include player.html episode_id="1kbgcxBKVQk2Dd7UttS4G2" %}
+{% include player.html spotify_id="1kbgcxBKVQk2Dd7UttS4G2" youtube_id="-_JXQfp5X-w" %}
 
 {{ page.description }}
 

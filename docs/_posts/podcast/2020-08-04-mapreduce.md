@@ -11,7 +11,7 @@ description: >
 
 ---
 
-{% include player.html episode_id="4lmzW5Z11t9Mrf2UORvG1C" %}
+{% include player.html spotify_id="4lmzW5Z11t9Mrf2UORvG1C" youtube_id="HBT1hovKj7E" %}
 
 {{ page.description }}
 

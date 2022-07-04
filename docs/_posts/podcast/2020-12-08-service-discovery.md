@@ -21,7 +21,7 @@ description: >
     It needs a mechanism to dynamically discover that service in an ever-changing environment.
 ---
 
-{% include player.html episode_id="3caZaL67OHgcMP4RIaWV5C" %}
+{% include player.html spotify_id="3caZaL67OHgcMP4RIaWV5C" youtube_id="pRvfsbHd3f0" %}
 
 {{ page.description }}
 

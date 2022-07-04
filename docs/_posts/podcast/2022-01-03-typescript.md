@@ -13,7 +13,7 @@ description: >
     It means you can gradually start using TypeScript's features without rewriting your whole application.
 ---
 
-{% include player.html episode_id="5bcelZXuwnmklCXCjp3KPj" %}
+{% include player.html spotify_id="5bcelZXuwnmklCXCjp3KPj" youtube_id="sdfH-DTedpg" %}
 
 {{ page.description }}
 

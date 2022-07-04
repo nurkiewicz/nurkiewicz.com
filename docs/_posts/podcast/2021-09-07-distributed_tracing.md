@@ -13,7 +13,7 @@ description: >
     Answering these questions becomes much harder when there are multiple systems involved.
 ---
 
-{% include player.html episode_id="6ArAEK4X6mmjhyx79QIsgS" %}
+{% include player.html spotify_id="6ArAEK4X6mmjhyx79QIsgS" youtube_id="mJjelWesExI" %}
 
 {{ page.description }}
 

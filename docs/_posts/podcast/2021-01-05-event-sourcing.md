@@ -14,7 +14,7 @@ description: >
     Also, storing changes can be faster because it requires inserting a new record rather than updating an existing one.
 ---
 
-{% include player.html episode_id="2Z8K3Zbe28Mqsw2gTMYJKo" %}
+{% include player.html spotify_id="2Z8K3Zbe28Mqsw2gTMYJKo" youtube_id="Szd5pIFzWKI" %}
 
 {{ page.description }}
 

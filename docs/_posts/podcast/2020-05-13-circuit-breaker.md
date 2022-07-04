@@ -6,7 +6,7 @@ tags: resilience4j hystrix polly akka ruby
 description: Circuit breaker is a design pattern that prevents cascading failures in distributed systems.
 ---
 
-{% include player.html episode_id="1vNMXp4pCNzty1o0L7UkP2" %}
+{% include player.html spotify_id="1vNMXp4pCNzty1o0L7UkP2" youtube_id="BbM9GndTCWE" %}
 
 # Transcript
 

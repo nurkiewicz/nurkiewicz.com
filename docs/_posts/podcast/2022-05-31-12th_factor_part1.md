@@ -10,7 +10,7 @@ description: >
     I have four minutes left, so let's go!
 ---
 
-{% include player.html episode_id="6DY7TcuO082kCzmAa5uRKU" %}
+{% include player.html spotify_id="6DY7TcuO082kCzmAa5uRKU" youtube_id="65Q3iu23mo0" %}
 
 {{ page.description }}
 

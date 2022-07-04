@@ -16,7 +16,7 @@ description: >
     We'll leave BASE for another episode.
 ---
 
-{% include player.html episode_id="4dtpAcKhsiPJUv9vjdTbif" %}
+{% include player.html spotify_id="4dtpAcKhsiPJUv9vjdTbif" youtube_id="KBjID1TTnZM" %}
 
 {{ page.description }}
 

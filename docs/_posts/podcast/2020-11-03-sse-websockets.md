@@ -18,7 +18,7 @@ description: >
     Less frequent requests increase latency, so it's no longer real-time communication.
 ---
 
-{% include player.html episode_id="4Aj3diNw4Xd7VifYsDU0GS" %}
+{% include player.html spotify_id="4Aj3diNw4Xd7VifYsDU0GS" youtube_id="HiBVxtFycTI" %}
 
 {{ page.description }}
 

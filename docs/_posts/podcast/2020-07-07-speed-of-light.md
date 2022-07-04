@@ -7,7 +7,7 @@ description: Speed of light is not as abstract to us, software engineers, as you
 
 ---
 
-{% include player.html episode_id="4xmF0EoYZLebgUSMmpz9Tt" %}
+{% include player.html spotify_id="4xmF0EoYZLebgUSMmpz9Tt" youtube_id="4YEx7FxxnCk" %}
 
 {{ page.description }}
 

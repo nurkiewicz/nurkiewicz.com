@@ -9,7 +9,7 @@ description: >
     We still have only four minutes, so let's go!
 ---
 
-{% include player.html episode_id="5i2IYlEgtz7RcWTVKvVNSH" %}
+{% include player.html spotify_id="5i2IYlEgtz7RcWTVKvVNSH" youtube_id="ldzltWr_HM4" %}
 
 {{ page.description }}
 
