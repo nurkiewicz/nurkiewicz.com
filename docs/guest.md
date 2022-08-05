@@ -27,4 +27,5 @@ Just let me know via Twitter DM ([@tnurkiewicz](https://twitter.com/tnurkiewicz)
 
 ## Guest episodes
 
+* [#81: Quarkus: supersonic, subatomic Java (guest: Holly Cummins)](https://nurkiewicz.com/81)
 * [#70: CRDT: Conflict-free Replicated Data Type (guest: Martin Kleppmann)](https://nurkiewicz.com/70)
