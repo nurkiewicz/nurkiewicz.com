@@ -1,6 +1,6 @@
 ---
 category: podcast
-title: "#21: SSE and WebSockets"
+title: "#21: SSE and WebSockets: servers can talk to browsers, not only the other way around"
 permalink: /21
 tags: sse websocket http EventSource
 description: >
