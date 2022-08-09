@@ -10,7 +10,9 @@
 <a href="https://www.amazon.com/Around-IT-in-256-seconds/dp/B08K4TRK71" style="display: inline-block; overflow: hidden; width: 200px;">
     <img src="img/US_ListenOn_AmazonMusic_button_white_RGB_5X.png" alt="Listen on Amazon Music" style="width: 200px;">
 </a>
-<a href="https://anchor.fm/s/155e7134/podcast/rss">RSS feed</a>
+<a href="https://anchor.fm/s/155e7134/podcast/rss" style="display: inline-block; overflow: hidden">
+  <img src="img/rss-icon.png" alt="RSS icon" style="width: 48px;"/>
+</a>
 
 <ul>
     {% for post in site.categories.podcast %}
