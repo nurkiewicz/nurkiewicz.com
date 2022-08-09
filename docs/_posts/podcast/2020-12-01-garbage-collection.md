@@ -1,6 +1,6 @@
 ---
 category: podcast
-title: "#23: Garbage collection"
+title: "#23: Garbage collection: how automatic memory management makes writing software much easier"
 permalink: /23
 tags: gc lisp
 description: >
