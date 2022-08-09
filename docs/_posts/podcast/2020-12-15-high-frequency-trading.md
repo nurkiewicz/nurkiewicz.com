@@ -1,6 +1,6 @@
 ---
 category: podcast
-title: "#25: High-frequency trading"
+title: "#25: High-frequency trading: why computers are better than human at trading?"
 permalink: /25
 tags: hft stock-exchange
 description: >
