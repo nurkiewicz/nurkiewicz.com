@@ -1,6 +1,6 @@
 ---
 category: podcast
-title: "#20: Chaos engineering "
+title: "#20: Chaos engineering: breaking your system intentionally when you are prepared"
 permalink: /20
 tags: chubby chaos-monkey chaos-kong chaos-gorilla
 description: >
