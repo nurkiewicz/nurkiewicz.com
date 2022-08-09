@@ -1,6 +1,6 @@
 ---
 category: podcast
-title: "#24: Service discovery"
+title: "#24: Service discovery: never again hard-code IP addresses in your configuration"
 permalink: /24
 tags: zookeeper consul dns eureka
 description: >
