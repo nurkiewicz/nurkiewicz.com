@@ -1146,6 +1146,26 @@
 				</pre>
 			</section>
 
+			<section>
+				<h1>SSE</h1>
+				<pre>
+					<code class="hljs" data-trim>
+						curl 'https://api.twitter.com/live_pipeline/events?topic=%2Ftweet_engagement%2F012345678901234567890' \
+						-H 'authority: api.twitter.com' \
+						-H 'accept: text/event-stream'
+								data: {"topic":"/system/config","payload":{"config":{"session_id":"...","subscription_ttl_millis":120000,"heartbeat_millis":25000}}}
+								data: {"topic":"/system/subscriptions","payload":{"subscriptions":{"errors":[]}}}
+								data: {"topic":"/tweet_engagement/012345678901234567890","payload":{"tweet_engagement":{"retweet_count":"20"}}}
+								data: {"topic":"/tweet_engagement/012345678901234567890","payload":{"tweet_engagement":{"like_count":"30"}}}
+								data: {"topic":"/tweet_engagement/012345678901234567890","payload":{"tweet_engagement":{"retweet_count":"21"}}}
+								data: {"topic":"/tweet_engagement/012345678901234567890","payload":{"tweet_engagement":{"retweet_count":"22"}}}
+								data: {"topic":"/tweet_engagement/012345678901234567890","payload":{"tweet_engagement":{"quote_count":"1"}}}
+								data: {"topic":"/tweet_engagement/012345678901234567890","payload":{"tweet_engagement":{"like_count":"30"}}}
+								data: {"topic":"/tweet_engagement/012345678901234567890","payload":{"tweet_engagement":{"retweet_count":"23"}}}
+						</code>
+					</pre>
+			</section>
+
 			<section id="Reactive-streams">
 				<h1>Reactive streams</h1>
 				<p>
