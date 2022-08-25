@@ -421,6 +421,14 @@
 						</script>
 					</code>
 				</pre>
+				Better:
+				<pre>
+					<code class="hljs language-java" data-trim>
+						<script type="text/template">
+							Mono.fromCallable(() -> restTemplate.getForEntity("/url"));
+						</script>
+					</code>
+				</pre>
 			</section>
 
 			<section id="collectList">
