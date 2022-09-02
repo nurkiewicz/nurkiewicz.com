@@ -25,6 +25,7 @@ I wrote a [book about RxJava](https://www.amazon.com/Reactive-Programming-RxJava
 ## Hire me
 
 I'm occasionally doing [Reactor](https://github.com/nurkiewicz/reactor-workshop), [Java concurrency](https://github.com/nurkiewicz/java-concurrency-workshop) workshops and consulting.
+I trained almost **1000** people from companies around the world.
 If you find my work valuable or need some help, contact me.
 
 ## Contact me
