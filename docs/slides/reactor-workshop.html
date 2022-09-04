@@ -122,6 +122,7 @@
 								<li><a href="#/ReactorDebugAgent">ReactorDebugAgent</a></li>
 								<li><a href="#/BlockHound">BlockHound</a></li>
 								<li><a href="#/When-to-use">When to use WebFlux?</a></li>
+								<li><a href="#/Micronaut">Micronaut</a></li>
 								<li><a href="#/Reference-materials">Reference materials</a></li>
 							</ul>
 						</div>
@@ -1496,6 +1497,15 @@
 					<li>A <strong>lot</strong> of open connections (WebSocket, SSE)</li>
 					<li>A <strong>lot</strong> of traffic</li>
 				</ul>
+			</section>
+
+			<section id="Micronaut">
+				<h1>Micronaut</h1>
+				<blockquote cite="https://docs.micronaut.io/latest/guide/#reactiveResponses">
+					When returning a reactive type, Micronaut subscribes to the returned reactive type on the same thread as the request (a Netty Event Loop thread).
+					[...] if you perform any blocking operations, you offload those operations to an appropriately configured thread pool, for example using the <a href="https://projectreactor.io">Project Reactor</a> [...] 
+					<code>subscribeOn(..)</code> facility or <a href="../api/io/micronaut/scheduling/annotation/ExecuteOn.html">@ExecuteOn</a>.
+				</blockquote>
 			</section>
 
 			<section>
