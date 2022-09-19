@@ -16,7 +16,6 @@ description: >
 
 {{ page.description }}
 
-<!--
 Let's take a concrete problem.
 You must schedule classes for teachers, students and buildings.
 There are multiple constraints, for example:
@@ -70,7 +69,6 @@ Moreover, they are relatively easy and fun to implement.
 So even if you don't plan to use them in real life, consider implementing a genetic algorithm only for fun.
 
 That's it, thanks for listening, bye!
--->
 
 # More materials
 
