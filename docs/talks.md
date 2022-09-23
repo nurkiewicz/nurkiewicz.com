@@ -3,6 +3,18 @@
 <table>
     <tr itemscope itemtype="https://schema.org/Event">
         <td>
+            <h3 itemprop="name">Javeloper</h3>
+            <time itemprop="startDate">2022-05-12</time>
+            <h4>
+                CharBusters - 10 mitów o Unicode
+            </h4>
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr itemscope itemtype="https://schema.org/Event">
+        <td>
             <h3 itemprop="name"><a href="https://2022.boilingfrogs.pl/">BoilingFrogs</a></h3>
             <time itemprop="startDate">2022-03-19</time>
             <h4>
