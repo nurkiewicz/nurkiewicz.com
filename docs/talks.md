@@ -15,6 +15,18 @@
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
         <td>
+            <h3 itemprop="name"><a href="https://dworld.pl/devflix/">DevFlix</a></h3>
+            <time itemprop="startDate">2022-02-07</time>
+            <h4>
+                Project Loom: revolution in concurrency or obscure implementation detail?
+            </h4>
+        </td>
+        <td>
+            <iframe width="400" height="225" src="https://www.youtube.com/embed/t8vaZJG0kt4" frameborder="0" allowfullscreen></iframe>
+        </td>
+    </tr>
+    <tr itemscope itemtype="https://schema.org/Event">
+        <td>
             <h3 itemprop="name"><a href="https://jchampionsconf.com/">JChampionsConf</a></h3>
             <time itemprop="startDate">2022-01-24</time>
             <h4>
