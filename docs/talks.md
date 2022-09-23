@@ -3,6 +3,18 @@
 <table>
     <tr itemscope itemtype="https://schema.org/Event">
         <td data-place="Warsaw">
+            <h3 itemprop="name">Yavaconf</h3>
+            <time itemprop="startDate">2022-09-28</time>
+            <h4>
+                Loom: rewolucja czy szczegół implementacyjny?
+            </h4>
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr itemscope itemtype="https://schema.org/Event">
+        <td data-place="Warsaw">
             <h3 itemprop="name">Confitura</h3>
             <time itemprop="startDate">2022-06-28</time>
             <h4>
