@@ -27,6 +27,18 @@
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
         <td data-place="Warsaw">
+            <h3 itemprop="name"><a href="https://inthecloud.withgoogle.com/hr-meetup-warsaw-22/register.html">Back to school - Cloud Talent Meetup at Google</a></h3>
+            <time itemprop="startDate">2022-09-07</time>
+            <h4>
+                Jak skutecznie zaprojektować ścieżkę szkoleniową w organizacji?
+            </h4>
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr itemscope itemtype="https://schema.org/Event">
+        <td data-place="Warsaw">
             <h3 itemprop="name">Confitura</h3>
             <time itemprop="startDate">2022-06-28</time>
             <h4>
