@@ -3,6 +3,18 @@
 <table>
     <tr itemscope itemtype="https://schema.org/Event">
         <td>
+            <h3 itemprop="name">Confitura</h3>
+            <time itemprop="startDate">2022-06-28</time>
+            <h4>
+                Loom: rewolucja czy szczegół implementacyjny?
+            </h4>
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr itemscope itemtype="https://schema.org/Event">
+        <td>
             <h3 itemprop="name">Javeloper</h3>
             <time itemprop="startDate">2022-05-12</time>
             <h4>
@@ -10,7 +22,7 @@
             </h4>
         </td>
         <td>
-            &nbsp;
+            <iframe width="400" height="225" src="https://www.youtube.com/embed/iYbDBBJZb3w" frameborder="0" allowfullscreen></iframe>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
