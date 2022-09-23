@@ -2,6 +2,18 @@
 
 <table>
     <tr itemscope itemtype="https://schema.org/Event">
+        <td>
+            <h3 itemprop="name">IntelliJ IDEA Conf</h3>
+            <time itemprop="startDate">2022-09-29</time>
+            <h4>
+                Project Loom: Revolution in Concurrency or Obscure Implementation Detail?
+            </h4>
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr itemscope itemtype="https://schema.org/Event">
         <td data-place="Warsaw">
             <h3 itemprop="name">Yavaconf</h3>
             <time itemprop="startDate">2022-09-28</time>
