@@ -2,7 +2,7 @@
 
 <table>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td>
+        <td data-place="Warsaw">
             <h3 itemprop="name">Confitura</h3>
             <time itemprop="startDate">2022-06-28</time>
             <h4>
@@ -26,7 +26,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td>
+        <td data-place="Wrocław">
             <h3 itemprop="name"><a href="https://2022.boilingfrogs.pl/">BoilingFrogs</a></h3>
             <time itemprop="startDate">2022-03-19</time>
             <h4>
@@ -83,18 +83,6 @@
         </td>
         <td>
             <iframe width="400" height="225" src="https://www.youtube.com/embed/wZJs3R2-MZs" frameborder="0" allowfullscreen></iframe>
-        </td>
-    </tr>
-    <tr itemscope itemtype="https://schema.org/Event">
-        <td>
-            <h3 itemprop="name">JUGademy</h3>
-            <time itemprop="startDate">2022-01-19</time>
-            <h4>
-                <a href="https://jugademy.eu/start-2022">5 minut, aby przekazać życiową lekcję dla początkujących programistek i programistów</a>
-            </h4>
-        </td>
-        <td>
-            &nbsp;
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
