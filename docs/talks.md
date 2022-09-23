@@ -3,7 +3,7 @@
 <table>
     <tr itemscope itemtype="https://schema.org/Event">
         <td>
-            <h3 itemprop="name">IntelliJ IDEA Conf</h3>
+            <h3 itemprop="name"><a href="https://pages.jetbrains.com/intellij-idea-conf-2022/idea">IntelliJ IDEA Conf</a></h3>
             <time itemprop="startDate">2022-09-29</time>
             <h4>
                 Project Loom: Revolution in Concurrency or Obscure Implementation Detail?
@@ -15,7 +15,7 @@
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
         <td data-place="Warsaw">
-            <h3 itemprop="name">Yavaconf</h3>
+            <h3 itemprop="name"><a href="https://yavaconf.com/">Yavaconf</a></h3>
             <time itemprop="startDate">2022-09-28</time>
             <h4>
                 Loom: rewolucja czy szczegół implementacyjny?
@@ -39,7 +39,7 @@
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
         <td data-place="Warsaw">
-            <h3 itemprop="name">Confitura</h3>
+            <h3 itemprop="name"><a href="https://2022.confitura.pl/">Confitura</a></h3>
             <time itemprop="startDate">2022-06-28</time>
             <h4>
                 Loom: rewolucja czy szczegół implementacyjny?
@@ -51,7 +51,7 @@
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
         <td>
-            <h3 itemprop="name">Javeloper</h3>
+            <h3 itemprop="name"><a href="https://javeloper.pl/">Javeloper</a></h3>
             <time itemprop="startDate">2022-05-12</time>
             <h4>
                 CharBusters - 10 mitów o Unicode
