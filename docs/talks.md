@@ -39,6 +39,18 @@
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
         <td>
+            <h3 itemprop="name">Poznań JUG</h3>
+            <time itemprop="startDate">2022-02-02</time>
+            <h4>
+                12+ rad na początek i Q&A z ekspertami
+            </h4>
+        </td>
+        <td>
+            <iframe width="400" height="225" src="https://www.youtube.com/embed/6Gobw4O5nUA?start=1029" frameborder="0" allowfullscreen></iframe>
+        </td>
+    </tr>
+    <tr itemscope itemtype="https://schema.org/Event">
+        <td>
             <h3 itemprop="name"><a href="https://jchampionsconf.com/">JChampionsConf</a></h3>
             <time itemprop="startDate">2022-01-24</time>
             <h4>
