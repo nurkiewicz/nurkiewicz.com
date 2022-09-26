@@ -95,3 +95,14 @@ They are cool.
 But Slack does not send a clear notification when someone likes your message.
 If your response is important, send a tiny "👍" message in a thread.
 Do not rely on reaction being noticed.
+
+## 14. Don't just write "_hello_"
+
+Don't start your conversation with [plain "_hello_" or "_hi_"](https://nohello.net/), waiting for a reply.
+Just explain what you want in one sentence.
+Mamy people read Slack like e-mail, not like a chat.
+It's even worse if you say:
+
+> We need to talk
+
+Especially when you're a manager.
