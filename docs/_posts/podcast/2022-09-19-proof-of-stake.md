@@ -16,7 +16,6 @@ description: >
 
 {{ page.description }}
 
-<!--
 First of all, let's recap how the proof-of-work algorithm works.
 In general, hundreds of thousands of energy-hungry computers are trying to find a solution to a math problem.
 To be honest, it's more like making millions of uneducated guesses per second.
@@ -71,7 +70,6 @@ But I'm happy for the environment.
 It is said to be the biggest decarbonization event in history.
 
 That's it, thanks for listening, bye!
--->
 
 # More materials
 
