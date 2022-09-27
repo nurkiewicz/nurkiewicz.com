@@ -1,5 +1,5 @@
 ---
-title: "#87: Artificial neural networks: "
+title: "#87: Artificial neural networks: imitating human brain to solve problems like humans"
 category: podcast
 permalink: /87
 tags: machine-learning deep-learning
