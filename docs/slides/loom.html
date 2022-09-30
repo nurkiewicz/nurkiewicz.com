@@ -74,6 +74,56 @@
 			</section>
 
 			<section>
+				<h1>User threads ≠ Kernel threads</h1>
+				<ul>
+					<li>User threads are created by the JVM</li>
+					<li>Kernel thread are created and managed by kernel (duh!)</li>
+				</ul>
+			</section>
+
+			<section>
+				<h1>Many-to-One Model</h1>
+				<h2>aka. Green threads</h2>
+				<blockquote cite="https://docs.oracle.com/cd/E19620-01/805-4031/6j3qv1oej/index.html">
+					<p>
+						Implementations of the <strong>many-to-one</strong> model (many user threads to one kernel thread) allow the
+						application to create any number of threads that can execute concurrently. [...]
+					</p>
+					<p>
+						this multithreading model provides limited concurrency and does not exploit multiprocessors.
+					</p>
+				</blockquote>
+				From <a href="https://docs.oracle.com/cd/E19620-01/805-4031/6j3qv1oej/index.html">Java on Solaris 7 Developer's Guide > Multithreading Models</a>
+			</section>
+
+			<section>
+				<h1>Many-to-Many Model</h1>
+				<blockquote cite="https://docs.oracle.com/cd/E19620-01/805-4031/6j3qv1oej/index.html">
+					<p>
+						a user-level threads library provides sophisticated scheduling of user-level threads above
+						kernel threads.
+					</p>
+					<p>
+						The kernel needs to manage only the threads that are currently active.
+					</p>
+				</blockquote>
+				From <a href="https://docs.oracle.com/cd/E19620-01/805-4031/6j3qv1oej/index.html">Java on Solaris 7 Developer's Guide > Multithreading Models</a>
+			</section>
+
+			<section>
+				<h1>One-to-One Model</h1>
+				<blockquote cite="https://docs.oracle.com/cd/E19620-01/805-4031/6j3qv1oej/index.html">
+					<p>
+						each user-level thread created by the application is known to the kernel [...]
+					</p>
+					<p>
+						The main problem with this model is that it places a restriction on you to be careful and frugal with threads, as each additional thread adds more "weight" to the process. 
+					</p>
+				</blockquote>
+				From <a href="https://docs.oracle.com/cd/E19620-01/805-4031/6j3qv1oej/index.html">Java on Solaris 7 Developer's Guide > Multithreading Models</a>
+			</section>
+
+			<section>
 				<h1>User threads = Kernel threads</h1>
 				<h2><code>jstack PID</code></h2>
 				<pre>
@@ -297,6 +347,35 @@
 						latch.await();
 					</code>
 				</pre>
+			</section>
+
+			<section>
+				<h1>Carrier thread</h1>
+				<code>ForkJoinPool.commonPool()</code> by default.
+				<pre>
+					<code class="hljs language-java" data-trim>
+						var carrierExecutor = Executors.newFixedThreadPool(1);
+
+						ThreadFactory factory = Thread.ofVirtual()
+							.name("Virtual-", 1)
+							.scheduler(carrierExecutor)
+							.factory();		
+
+						var virtualExecutor = Executors.newThreadPerTaskExecutor(factory)
+					</code>
+				</pre>
+			</section>
+
+			<section>
+				<h1>Structured concurrency</h1>
+				<pre>
+					<code class="hljs language-java" data-trim>
+						try (ExecutorService exec = Executors.newVirtualThreadExecutor()) {
+							//...
+						}
+					</code>
+				</pre>
+				<blockquote>when the flow of execution splits into multiple concurrent flows, they rejoin in the same code block</blockquote>
 			</section>
 
 			<section>
