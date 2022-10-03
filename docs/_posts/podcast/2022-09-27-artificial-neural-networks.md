@@ -18,7 +18,6 @@ description: >
 
 {{ page.description }}
 
-<!--
 But first things first.
 Both inputs and outputs are basically just numbers.
 The simplest neuron may take two numbers and return their sum or product.
@@ -68,7 +67,6 @@ Interestingly, artificial neural networks were invented quite some time ago.
 But only recent research, combined with growing hardware capabilities, allowed them to grow in significance.
 
 That's it, thanks for listening, bye!
--->
 
 # More materials
 
