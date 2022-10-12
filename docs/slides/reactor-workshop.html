@@ -51,51 +51,52 @@
 					<div style="display: flex">
 						<div style="flex: 1">
 							<ul>
-								<li><a href="#/Blocking-code">Blocking code</a></li>
-								<li><a href="#/Classic-future">Classic Future</a></li>
-								<li><a href="#/Mono-and-Flux">Mono and Flux</a></li>
-								<li><a href="#/Hot-cold">Hot vs. cold</a></li>
-								<li><a href="#/block"><code>block()</code></a></li>
-								<li><a href="#/just"><code>just()</code></a></li>
-								<li><a href="#/defer"><code>defer()</code></a></li>
-								<li><a href="#/collectList"><code>collectList()</code></a></li>
-								<li><a href="#/map"><code>map()</code></a></li>
-								<li><a href="#/flatMap"><code>flatMap()</code></a></li>
-								<li><a href="#/zip"><code>zip()</code></a></li>
-								<li><a href="#/timeout"><code>timeout()</code></a></li>
-								<li><a href="#/onError">onError<code>*()</a></code></li>
-								<li><a href="#/filterWhen"><code>filterWhen()</code></a></li>
+								<li><a href="#Blocking-code">Blocking code</a></li>
+								<li><a href="#Classic-future">Classic Future</a></li>
+								<li><a href="#Mono-and-Flux">Mono and Flux</a></li>
+								<li><a href="#Hot-cold">Hot vs. cold</a></li>
+								<li><a href="#block"><code>block()</code></a></li>
+								<li><a href="#just"><code>just()</code></a></li>
+								<li><a href="#defer"><code>defer()</code></a></li>
+								<li><a href="#collectList"><code>collectList()</code></a></li>
+								<li><a href="#buffering-operators"><code>Buffering operators</code></a></li>
+								<li><a href="#map"><code>map()</code></a></li>
+								<li><a href="#flatMap"><code>flatMap()</code></a></li>
+								<li><a href="#zip"><code>zip()</code></a></li>
+								<li><a href="#timeout"><code>timeout()</code></a></li>
+								<li><a href="#onError">onError<code>*()</a></code></li>
+								<li><a href="#filterWhen"><code>filterWhen()</code></a></li>
 							</ul>
 						</div>
 						<div style="flex: 1">
 							<ul>
-								<li><a href="#/doOnSubscribe"><code>doOnSubscribe()</code></a></li>
-								<li><a href="#/Side-effects">Side effects</a></li>
-								<li><a href="#/window"><code>window()</code></a></li>
-								<li><a href="#/interval"><code>interval()</code></a></li>
-								<li><a href="#/Schedulers">Schedulers</a></li>
-								<li><a href="#/subscribeOn"><code>subscribeOn()</code></a></li>
-								<li><a href="#/publishOn"><code>publishOn()</code></a></li>
-								<li><a href="#/flatMapSequential"><code>flatMapSequential()</code></a></li>
-								<li><a href="#/parallel"><code>parallel()</code></a></li>
-								<li><a href="#/expand"><code>expand()</code></a></li>
-								<li><a href="#/Reactive-streams">Reactive streams</a></li>
-								<li><a href="#/Backpressure">Backpressure</a></li>
+								<li><a href="#doOnSubscribe"><code>doOnSubscribe()</code></a></li>
+								<li><a href="#Side-effects">Side effects</a></li>
+								<li><a href="#window"><code>window()</code></a></li>
+								<li><a href="#interval"><code>interval()</code></a></li>
+								<li><a href="#Schedulers">Schedulers</a></li>
+								<li><a href="#subscribeOn"><code>subscribeOn()</code></a></li>
+								<li><a href="#publishOn"><code>publishOn()</code></a></li>
+								<li><a href="#flatMapSequential"><code>flatMapSequential()</code></a></li>
+								<li><a href="#parallel"><code>parallel()</code></a></li>
+								<li><a href="#expand"><code>expand()</code></a></li>
+								<li><a href="#Reactive-streams">Reactive streams</a></li>
+								<li><a href="#Backpressure">Backpressure</a></li>
 							</ul>
 						</div>
 						<div style="flex: 1">
 							<ul>
-								<li><a href="#/WebFlux">WebFlux</a></li>
-								<li><a href="#/Littles-Law">Little's Law</a></li>
-								<li><a href="#/Netty">Netty</a></li>
-								<li><a href="#/WebClient">WebClient</a></li>
-								<li><a href="#/Refactoring">Refactoring toward Reactor</a></li>
-								<li><a href="#/Reactive-databases">Reactive databases</a></li>
-								<li><a href="#/ReactorDebugAgent">ReactorDebugAgent</a></li>
-								<li><a href="#/BlockHound">BlockHound</a></li>
-								<li><a href="#/When-to-use">When to use WebFlux?</a></li>
-								<li><a href="#/Micronaut">Micronaut</a></li>
-								<li><a href="#/Reference-materials">Reference materials</a></li>
+								<li><a href="#WebFlux">WebFlux</a></li>
+								<li><a href="#Littles-Law">Little's Law</a></li>
+								<li><a href="#Netty">Netty</a></li>
+								<li><a href="#WebClient">WebClient</a></li>
+								<li><a href="#Refactoring">Refactoring toward Reactor</a></li>
+								<li><a href="#Reactive-databases">Reactive databases</a></li>
+								<li><a href="#ReactorDebugAgent">ReactorDebugAgent</a></li>
+								<li><a href="#BlockHound">BlockHound</a></li>
+								<li><a href="#When-to-use">When to use WebFlux?</a></li>
+								<li><a href="#Micronaut">Micronaut</a></li>
+								<li><a href="#Reference-materials">Reference materials</a></li>
 							</ul>
 						</div>
 					</div>
@@ -411,18 +412,43 @@
 					</pre>
 			</section>
 
-			<section id="just">
-				<h1><code>just()</code></h1>
-				Antipattern:
-				<pre>
-					<code class="hljs language-java" data-trim data-line-numbers="1">
-						Mono.just(restTemplate.getForEntity("/url"));
-						nextOperation1();
-						nextOperation2();
-					</code>
-				</pre>
-			</section>
+			<section>
+				<section id="just">
+					<h1><code>just()</code></h1>
+					Antipattern:
+					<pre>
+						<code class="hljs language-java" data-trim data-line-numbers="1">
+							Mono.just(restTemplate.getForEntity("/url"));
+							nextOperation1();
+							nextOperation2();
+						</code>
+					</pre>
+				</section>
 
+				<section>
+					<h1><code>just()</code> in <code>zip()</code></h1>
+					<pre>
+						<code class="hljs language-java" data-trim>
+							<script type="text/template">
+								Mono<Tuple2<Request, Response>> tup = Mono.zip(
+									Mono.just(request),
+									monoResponse
+								);
+							</script>
+						</code>
+					</pre>
+					Better:
+					<pre>
+						<code class="hljs language-java" data-trim>
+							<script type="text/template">
+								Mono<Tuple2<Request, Response>> tup = monoResponse
+									.map(resp -> Tuples.of(request, response));
+							</script>
+						</code>
+					</pre>
+				</section>
+			</section>
+			
 			<section id="defer">
 				<h1><code>defer()</code></h1>
 				Make eager things lazy:
@@ -443,25 +469,39 @@
 				</pre>
 			</section>
 
-			<section id="collectList">
-				<h1><code>collectList()</code></h1>
-				<pre>
-						<code class="hljs language-java" data-trim>
-							Flux&lt;String&gt; flux;
-							Mono&lt;List&lt;String&gt;&gt; list = flux.collectList();
-						</code>
-					</pre>
-			</section>
-
 			<section>
-				<h1><code>collectList()</code></h1>
-				<h2>Disadvantages</h2>
-				<ul>
-					<li>Must wait for the last element (completion)</li>
-					<li>May lead to <code>OutOfMemoryError</code></li>
-					<li>One exception throws out all elements</li>
-					<li>Doesn't work with infinite streams</li>
-				</ul>
+				<section id="collectList">
+					<h1><code>collectList()</code></h1>
+					<pre>
+							<code class="hljs language-java" data-trim>
+								Flux&lt;String&gt; flux;
+								Mono&lt;List&lt;String&gt;&gt; list = flux.collectList();
+							</code>
+						</pre>
+				</section>
+
+				<section>
+					<h1><code>collectList()</code></h1>
+					<h2>Disadvantages</h2>
+					<ul>
+						<li>Must wait for the last element (completion)</li>
+						<li>May lead to <code>OutOfMemoryError</code></li>
+						<li>One exception throws out all elements</li>
+						<li>Doesn't work with infinite streams</li>
+					</ul>
+				</section>
+
+				<section id="buffering-operators">
+					<h1>Operators that buffer extensively</h1>
+					<ul>
+						<li><code>buffer()</code></li>
+						<li><code>cache()</code></li>
+						<li><code>distinct()</code> (but not <code>distinctUntilChanged()</code>)</li>
+						<li><code>collectList()</code></li>
+						<li><code>collectMap()</code></li>
+						<li><code>flatMapSequential()</code></li>
+					</ul>
+				</section>
 			</section>
 
 			<section id="map">
