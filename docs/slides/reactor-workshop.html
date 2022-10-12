@@ -45,35 +45,6 @@
 				</p>
 			</section>
 
-			<section id="whoami">
-				<h1><code>whoami</code></h1>
-				<h2>Tomasz Nurkiewicz</h2>
-				<h2>Java Champion</h2>
-				<ul>
-					<li>nurkiewicz (on GMail)</li>
-					<li><a href="https:/nurkiewicz.com">nurkiewicz.com</a></li>
-					<li><a href="https://nurkiewicz.com/podcast.html">My podcast</a></li>
-					<li><a href="https://twitter.com/tnurkiewicz">@tnurkiewicz</a></li>
-					<li><a href="https://www.linkedin.com/in/nurkiewicz/">LinkedIn</a></li>
-				</ul>
-			</section>
-
-			<section>
-				<h1>Disclaimer</h1>
-				<p>
-					These slides are rough notes I made during several 3-day <em><a href="https://github.com/nurkiewicz/reactor-workshop">Reactor and WebFlux</a></em> workshops. 
-					They are not a complete tutorial by far.
-					Many code snippets were written by hand.
-				</p>
-			</section>
-
-			<section>
-				<img src="https://pbs.twimg.com/media/D0CCesXWoAEIarZ?format=jpg" alt="I had a problem so I thought to use #Reactor. Now I have a Flux<Problem>"/>
-				<p>
-					<a href="https://twitter.com/tnurkiewicz/status/1099021813152124928">twitter.com/tnurkiewicz/status/1099021813152124928</a>
-				</p>
-			</section>
-
 			<section>
 				<h1>Quick links</h1>
 				<small>
@@ -91,6 +62,7 @@
 								<li><a href="#/map"><code>map()</code></a></li>
 								<li><a href="#/flatMap"><code>flatMap()</code></a></li>
 								<li><a href="#/zip"><code>zip()</code></a></li>
+								<li><a href="#/timeout"><code>timeout()</code></a></li>
 								<li><a href="#/onError">onError<code>*()</a></code></li>
 								<li><a href="#/filterWhen"><code>filterWhen()</code></a></li>
 							</ul>
@@ -128,6 +100,35 @@
 						</div>
 					</div>
 				</small>
+			</section>
+
+			<section id="whoami">
+				<h1><code>whoami</code></h1>
+				<h2>Tomasz Nurkiewicz</h2>
+				<h2>Java Champion</h2>
+				<ul>
+					<li>nurkiewicz (on GMail)</li>
+					<li><a href="https:/nurkiewicz.com">nurkiewicz.com</a></li>
+					<li><a href="https://nurkiewicz.com/podcast.html">My podcast</a></li>
+					<li><a href="https://twitter.com/tnurkiewicz">@tnurkiewicz</a></li>
+					<li><a href="https://www.linkedin.com/in/nurkiewicz/">LinkedIn</a></li>
+				</ul>
+			</section>
+
+			<section>
+				<h1>Disclaimer</h1>
+				<p>
+					These slides are rough notes I made during several 3-day <em><a href="https://github.com/nurkiewicz/reactor-workshop">Reactor and WebFlux</a></em> workshops. 
+					They are not a complete tutorial by far.
+					Many code snippets were written by hand.
+				</p>
+			</section>
+
+			<section>
+				<img src="https://pbs.twimg.com/media/D0CCesXWoAEIarZ?format=jpg" alt="I had a problem so I thought to use #Reactor. Now I have a Flux<Problem>"/>
+				<p>
+					<a href="https://twitter.com/tnurkiewicz/status/1099021813152124928">twitter.com/tnurkiewicz/status/1099021813152124928</a>
+				</p>
 			</section>
 
 			<section id="Blocking-code">
@@ -676,6 +677,17 @@
 						</code>
 					</pre>
 				</section>
+			</section>
+
+			<section id="timeout">
+				<h1><code>timeout()</code></h1>
+				<pre><code class="hljs language-java" data-trim>
+					Mono&lt;Localization&gt; loc =
+						Mono.fromCallable(() -&gt; slowGpsTracking())
+								.timeout(ofSeconds(1),
+										Mono.fromCallable(() -&gt; fastBtsTracking())
+								);
+				</code></pre>
 			</section>
 
 			<section id="onError">
@@ -1583,6 +1595,7 @@
 				<h1>Other tools</h1>
 				<ul>
 					<li><a href="https://rsocket.io/">RSocket</a></li>
+					<li><a href="https://resilience4j.readme.io/docs/getting-started-1">resilience4j-reactor</a></li>
 					<li><a href="https://r2dbc.io/">R2DBC</a> - reactive relational database access</li>
 					<li><a href="https://rxmarbles.com">RxMarbles</a></li>
 					<li><a href="https://rxviz.com/">Rx Vizualize</a></li>
