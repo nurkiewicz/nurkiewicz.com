@@ -51,6 +51,18 @@
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
         <td>
+            <h3 itemprop="name"><a href="https://www.infoq.com/presentations/loom-java-concurrency/">QCon Plus London</a></h3>
+            <time itemprop="startDate">2022-05-11</time>
+            <h4>
+                Project Loom: Revolution in Java Concurrency or Obscure Implementation Detail?
+            </h4>
+        </td>
+        <td>
+            <a href="https://www.infoq.com/presentations/loom-java-concurrency/">watch video</a>
+        </td>
+    </tr>
+    <tr itemscope itemtype="https://schema.org/Event">
+        <td>
             <h3 itemprop="name"><a href="https://javeloper.pl/">Javeloper</a></h3>
             <time itemprop="startDate">2022-05-12</time>
             <h4>
@@ -274,7 +286,6 @@
                 <a href="https://www.meetup.com/allegrotech/events/260242188/">
                     Wycieczka po współbieżności w Javie
                 </a>
-
             </h4>
         </td>
         <td>
@@ -286,9 +297,8 @@
             <h3 itemprop="name">JPoint</h3>
             <time itemprop="startDate">2019-04-05</time>
             <h4>
-                BOF session: "Reactive — today’s need and future perspectives"
+                BOF session: "Reactive — today's need and future perspectives"
             </h4>
-
         </td>
         <td>
             &nbsp;
