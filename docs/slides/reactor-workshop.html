@@ -358,15 +358,13 @@
 				<pre>
 					<code class="hljs language-java" data-trim>
 						Flux&lt;T&gt; flux;
-
 						Mono&lt;List&lt;T&gt;&gt; mono = flux.collectList();
-
 						Mono&lt;T&gt;      first = flux.next();
-
 						Mono&lt;T&gt;       last = flux.last();
-
+						Mono&lt;T&gt;       last = flux.single();
+						Mono&lt;T&gt;       last = flux.singleOrEmpty();
+						Mono&lt;T&gt;       last = flux.elementAt(n);
 						Mono&lt;Long&gt;   count = flux.count();
-
 						Mono&lt;T&gt;    reduced = flux.reduce();
 					</code>
 				</pre>
