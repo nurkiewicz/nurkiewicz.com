@@ -93,3 +93,4 @@ That's it, thanks for listening, bye!
 * [Living Without Atomic Clocks](https://www.cockroachlabs.com/blog/living-without-atomic-clocks/)
 * [CockroachDB](https://www.cockroachlabs.com/product/)
 * [Spanner](https://cloud.google.com/spanner/)
+* [Network Time Protocol (NTP) - Computerphile](https://www.youtube.com/watch?v=BAo5C2qbLq8)
