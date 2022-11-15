@@ -2,9 +2,13 @@ Replying to [@TomaszDziurko](https://twitter.com/TomaszDziurko/status/1383083930
 
 Just check "Surround selection on typing quote or brace" in #Intellij #Idea settings - even simpler!
 
-[Sun Nov 20 22:00:33 +0000 2011](https://twitter.com/tnurkiewicz/status/138376207027814400)> Filtering irrelevant stack trace lines while #logging: http://bit.ly/yJ5SAC in #logback
+[Sun Nov 20 22:00:33 +0000 2011](https://twitter.com/tnurkiewicz/status/138376207027814400)
 
-[Sat Mar 17 22:30:42 +0000 2012](https://twitter.com/tnurkiewicz/status/181145562966528000)> Configuring @quartzscheduler with JDBCJobStore in #SpringFramework: http://bit.ly/HVKxq5
+Filtering irrelevant stack trace lines while #logging: http://bit.ly/yJ5SAC in #logback
+
+[Sat Mar 17 22:30:42 +0000 2012](https://twitter.com/tnurkiewicz/status/181145562966528000)
+
+Configuring @quartzscheduler with JDBCJobStore in #SpringFramework: http://bit.ly/HVKxq5
 
 [Thu Apr 05 12:00:25 +0000 2012](https://twitter.com/tnurkiewicz/status/187872318654128128)
 
@@ -22,7 +26,9 @@ Secret powers of foldLeft() in #scala http://nurkiewicz.blogspot.com/2012/04/sec
 
 eta-expansion (internals) in #scala explained: http://nurkiewicz.blogspot.com/2012/04/eta-expansion-internals-in-scala.html
 
-[Tue Apr 10 13:26:13 +0000 2012](https://twitter.com/tnurkiewicz/status/189705849965514753)> RT @PhilosophersSay: One of the symptoms of an approaching nervous breakdown is the belief that one's work is terribly important. - Bert ...
+[Tue Apr 10 13:26:13 +0000 2012](https://twitter.com/tnurkiewicz/status/189705849965514753)
+
+RT @PhilosophersSay: One of the symptoms of an approaching nervous breakdown is the belief that one's work is terribly important. - Bert ...
 
 [Sun May 06 16:28:25 +0000 2012](https://twitter.com/tnurkiewicz/status/199173785381908480)
 
@@ -60,7 +66,9 @@ RT @pawelwrzeszcz: "Tests are probably the only type of documentation that is up
 
 #Oslo #coderetreat summer 2012 - in #Scala with @jhannes - http://nurkiewicz.blogspot.com/2012/05/oslo-coderetreat-summer-2012-in-scala.html
 
-[Sun May 27 22:01:05 +0000 2012](https://twitter.com/tnurkiewicz/status/206867649806864389)> #Google Bot now crawls arbitrary #Javascript sites (?) http://swapped.tumblr.com/post/23133779276/google-bot-now-crawls-arbitrary-javascript-sites
+[Sun May 27 22:01:05 +0000 2012](https://twitter.com/tnurkiewicz/status/206867649806864389)
+
+#Google Bot now crawls arbitrary #Javascript sites (?) http://swapped.tumblr.com/post/23133779276/google-bot-now-crawls-arbitrary-javascript-sites
 
 [Sun Jun 03 21:02:33 +0000 2012](https://twitter.com/tnurkiewicz/status/209389633493143552)
 
@@ -98,7 +106,9 @@ and what about injecting EntityManager to servlets and singleton beans (without 
 
 "Compilation is automatically triggered [...] Global error highlighting without explicit compilation" in @intellijidea http://blogs.jetbrains.com/idea/2012/06/brand-new-compiler-mode-in-intellij-idea-12-leda/
 
-[Thu Jun 28 14:10:06 +0000 2012](https://twitter.com/tnurkiewicz/status/218345534593826816)> RT @ScalaPL: Wspaniała prezentacja Tomasza Nurkiewicza #confiturapl @tnurkiewicz
+[Thu Jun 28 14:10:06 +0000 2012](https://twitter.com/tnurkiewicz/status/218345534593826816)
+
+RT @ScalaPL: Wspaniała prezentacja Tomasza Nurkiewicza #confiturapl @tnurkiewicz
 
 [Mon Jul 02 09:11:55 +0000 2012](https://twitter.com/tnurkiewicz/status/219720045717229568)
 
@@ -278,7 +288,9 @@ Marvellous talk about immutable data structures in #Scala and how they relate to
 
 RT @mandubian: Java concurrent.Future should have been called blocking.Failure considering it doesn't even provide a callback!!!!!
 
-[Tue Jul 31 18:44:32 +0000 2012](https://twitter.com/tnurkiewicz/status/230373395634716673)> RT @gamsjo: Oslo city turned upside down today, because US embassy had forgotten a training bomb under a car! #fail
+[Tue Jul 31 18:44:32 +0000 2012](https://twitter.com/tnurkiewicz/status/230373395634716673)
+
+RT @gamsjo: Oslo city turned upside down today, because US embassy had forgotten a training bomb under a car! #fail
 
 [Wed Aug 01 16:18:51 +0000 2012](https://twitter.com/tnurkiewicz/status/230699122624172033)
 
@@ -425,7 +437,9 @@ Invoke Interface Optimisations - great benchmark and discussion about method inl
 
 RT @hekonsek: @tnurkiewicz After closer look - I agree :) .
 
-[Fri Aug 31 09:47:55 +0000 2012](https://twitter.com/tnurkiewicz/status/241472375105937408)> Blogged: Accessing clipboard in #Linux terminal - http://nurkiewicz.blogspot.com/2012/09/accessing-clipboard-in-linux-terminal.html \| #Ubuntu #XML #JSON
+[Fri Aug 31 09:47:55 +0000 2012](https://twitter.com/tnurkiewicz/status/241472375105937408)
+
+Blogged: Accessing clipboard in #Linux terminal - http://nurkiewicz.blogspot.com/2012/09/accessing-clipboard-in-linux-terminal.html \| #Ubuntu #XML #JSON
 
 [Sat Sep 01 21:21:11 +0000 2012](https://twitter.com/tnurkiewicz/status/242009229416873984)
 
@@ -469,7 +483,9 @@ RT @roy: http://ascii.io/ is awesome. Record your terminal and playback in your 
 
 Blogged: RateLimiter - discovering #Google #Guava: http://nurkiewicz.blogspot.com/2012/09/ratelimiter-discovering-google-guava.html - lots of samples and use-cases \| #Java
 
-[Sun Sep 30 21:40:09 +0000 2012](https://twitter.com/tnurkiewicz/status/252523250037436417)> @Typesafe brings @SpringSource co-founder Rod Johnson (@springrod) aboard http://gigaom.com/cloud/typesafe-home-of-scala-brings-springsource-co-founder-rod-johnson-aboard/
+[Sun Sep 30 21:40:09 +0000 2012](https://twitter.com/tnurkiewicz/status/252523250037436417)
+
+@Typesafe brings @SpringSource co-founder Rod Johnson (@springrod) aboard http://gigaom.com/cloud/typesafe-home-of-scala-brings-springsource-co-founder-rod-johnson-aboard/
 
 [Mon Oct 01 08:44:04 +0000 2012](https://twitter.com/tnurkiewicz/status/252690332452528128)
 
@@ -539,7 +555,9 @@ Blogged: Your first message - discovering #Akka \| http://nurkiewicz.blogspot.co
 
 Blogged: Request and response - discovering #Akka \| http://nurkiewicz.blogspot.com/2012/10/request-and-response-discovering-akka.html #Scala
 
-[Wed Oct 31 18:59:24 +0000 2012](https://twitter.com/tnurkiewicz/status/263716820811382784)> RT @trzmiel: Saved by @tnurkiewicz again - testing Quartz cron expressions. Keep 'em coming! http://nurkiewicz.blogspot.com/2012/10/testing-quartz-cron-expressions.html
+[Wed Oct 31 18:59:24 +0000 2012](https://twitter.com/tnurkiewicz/status/263716820811382784)
+
+RT @trzmiel: Saved by @tnurkiewicz again - testing Quartz cron expressions. Keep 'em coming! http://nurkiewicz.blogspot.com/2012/10/testing-quartz-cron-expressions.html
 
 [Fri Nov 02 09:40:19 +0000 2012](https://twitter.com/tnurkiewicz/status/264300897746694144)
 
@@ -625,7 +643,9 @@ Replying to [@tnurkiewicz](https://twitter.com/agoncal/status/273440101672030208
 
 Coming out, joining 'Not Only Mocks' movement, RT  @agoncal I'm officially launching the "NoMock Movement": http://wp.me/ptYsK-uu
 
-[Tue Nov 27 17:25:19 +0000 2012](https://twitter.com/tnurkiewicz/status/273477618253320192)> Iterations Considered Harmful \| http://java.dzone.com/articles/iterations-considered-harmful#.UMrte8TgoFU.twitter \| Critical take on #Scrum by @kief
+[Tue Nov 27 17:25:19 +0000 2012](https://twitter.com/tnurkiewicz/status/273477618253320192)
+
+Iterations Considered Harmful \| http://java.dzone.com/articles/iterations-considered-harmful#.UMrte8TgoFU.twitter \| Critical take on #Scrum by @kief
 
 [Fri Dec 14 09:15:43 +0000 2012](https://twitter.com/tnurkiewicz/status/279514997464391680)
 
@@ -635,7 +655,9 @@ Great slides for both #Scala and #Android enthusiast: RT @ktosopl: I just publis
 
 Any #nginx experts out there? Looking for some help... \| http://serverfault.com/q/459369/72302?stw=2
 
-[Thu Dec 20 07:30:18 +0000 2012](https://twitter.com/tnurkiewicz/status/281662796448550912)> "Learning #Highcharts" book is out: http://www.packtpub.com/learning-highcharts-for-javascript-data-visualization/book and I was a technical reviewer. #JavaScript developers-enjoy! 
+[Thu Dec 20 07:30:18 +0000 2012](https://twitter.com/tnurkiewicz/status/281662796448550912)
+
+"Learning #Highcharts" book is out: http://www.packtpub.com/learning-highcharts-for-javascript-data-visualization/book and I was a technical reviewer. #JavaScript developers-enjoy! 
 
 ![](/img/twitter/288716407053639681-BAG6CuPCYAAMyIy.png)
 
@@ -687,7 +709,9 @@ Just got my #DZGoodies package from @DZone. I especially enjoy printed Refcard o
 
 RT @Jfokus: We welcome Konrad Malawski @ktosopl to #Jfokus 2013 with the talk: "Scala your Android" #scala #android #mobile
 
-[Thu Jan 31 09:56:31 +0000 2013](https://twitter.com/tnurkiewicz/status/296919884347105280)> Breaking build is not a crime: http://nurkiewicz.blogspot.com/2013/02/breaking-build-is-not-crime.html \| effective continuous integration with #git and #Atlassian #Bamboo
+[Thu Jan 31 09:56:31 +0000 2013](https://twitter.com/tnurkiewicz/status/296919884347105280)
+
+Breaking build is not a crime: http://nurkiewicz.blogspot.com/2013/02/breaking-build-is-not-crime.html \| effective continuous integration with #git and #Atlassian #Bamboo
 
 [Sat Feb 02 21:47:25 +0000 2013](https://twitter.com/tnurkiewicz/status/297823561987526657)
 
@@ -733,7 +757,9 @@ Blogged: ListenableFuture in #Guava \| http://nurkiewicz.blogspot.com/2013/02/li
 
 Blogged: Advanced ListenableFuture capabilities \| http://nurkiewicz.blogspot.com/2013/02/advanced-listenablefuture-capabilities.html \| #Java and #Guava
 
-[Thu Feb 28 22:36:58 +0000 2013](https://twitter.com/tnurkiewicz/status/307258116087619585)> Is Your Code Structured Like This? \| http://java.dzone.com/articles/your-code-structured#.UTDdvQ96NFg.twitter \| interesting analysis by @EdmundKirwan of #JUnit design evolution
+[Thu Feb 28 22:36:58 +0000 2013](https://twitter.com/tnurkiewicz/status/307258116087619585)
+
+Is Your Code Structured Like This? \| http://java.dzone.com/articles/your-code-structured#.UTDdvQ96NFg.twitter \| interesting analysis by @EdmundKirwan of #JUnit design evolution
 
 [Fri Mar 01 17:05:13 +0000 2013](https://twitter.com/tnurkiewicz/status/307537017292595200)
 
@@ -837,7 +863,9 @@ Replying to [@mariofusco](https://twitter.com/mariofusco/status/3263930222941593
 
 "Beginners will do it for free. Professionals will do it for money. Masters won't do it, even for money."
 
-[Mon Apr 22 20:15:10 +0000 2013](https://twitter.com/tnurkiewicz/status/326428990074126336)> Blogged: Lazy sequences in #Scala and #Clojure \| http://nurkiewicz.blogspot.com/2013/05/lazy-sequences-in-scala-and-clojure.html \| testing #Cron expressions, again
+[Mon Apr 22 20:15:10 +0000 2013](https://twitter.com/tnurkiewicz/status/326428990074126336)
+
+Blogged: Lazy sequences in #Scala and #Clojure \| http://nurkiewicz.blogspot.com/2013/05/lazy-sequences-in-scala-and-clojure.html \| testing #Cron expressions, again
 
 [Sat May 04 09:57:41 +0000 2013](https://twitter.com/tnurkiewicz/status/330622249793114112)
 
@@ -886,7 +914,9 @@ Replying to [@mgrzechocinski](https://twitter.com/mgrzechocinski/status/33970229
 
 This syntax in #Java is called Double Brace Initialization and is sometimes considered bad practice \| http://c2.com/cgi/wiki?DoubleBraceInitialization
 
-[Wed May 29 11:26:54 +0000 2013](https://twitter.com/tnurkiewicz/status/339704399540670464)> Blogged: Mapping enums done right with @Convert in #JPA 2.1 \| http://nurkiewicz.blogspot.com/2013/06/mapping-enums-done-right-with-convert.html \| #Java #JavaEE
+[Wed May 29 11:26:54 +0000 2013](https://twitter.com/tnurkiewicz/status/339704399540670464)
+
+Blogged: Mapping enums done right with @Convert in #JPA 2.1 \| http://nurkiewicz.blogspot.com/2013/06/mapping-enums-done-right-with-convert.html \| #Java #JavaEE
 
 [Sun Jun 02 21:02:42 +0000 2013](https://twitter.com/tnurkiewicz/status/341298853909237760)
 
@@ -918,7 +948,9 @@ RT @sascha_d: People, stop it with your screencasts. When I need to know how to 
 
 Blogged: su and sudo in #Spring Security applications \| http://nurkiewicz.blogspot.com/2013/06/su-and-sudo-in-spring-security.html
 
-[Sun Jun 30 10:15:40 +0000 2013](https://twitter.com/tnurkiewicz/status/351282881584308224)> RT @VidyaLLC: Outstanding post by @tnurkiewicz on using the power of #Scala to create a DSL for tests anyone can understand http://t.co/iOp…
+[Sun Jun 30 10:15:40 +0000 2013](https://twitter.com/tnurkiewicz/status/351282881584308224)
+
+RT @VidyaLLC: Outstanding post by @tnurkiewicz on using the power of #Scala to create a DSL for tests anyone can understand http://t.co/iOp…
 
 [Tue Jul 02 05:42:35 +0000 2013](https://twitter.com/tnurkiewicz/status/351938934181339138)
 
@@ -976,7 +1008,9 @@ Replying to [@eldermael](https://twitter.com/eldermael/status/362006017376124928
 
 CompletableFuture.isCompletedExceptionally() was added in build 98 (http://download.java.net/lambda/b98/docs/api/java/util/concurrent/CompletableFuture.html#isCompletedExceptionally()) of #JDK8, I use build 100
 
-[Tue Jul 30 06:58:19 +0000 2013](https://twitter.com/tnurkiewicz/status/362104852731527168)> RT @bartekzdanowski: @tnurkiewicz najlepszym prelegentem Confitury 2013! Brawa! http://2013.confitura.pl/news/51/najlepsze_prezentacje_tegorocznej_confitury__wyniki_ankiety #confiturapl
+[Tue Jul 30 06:58:19 +0000 2013](https://twitter.com/tnurkiewicz/status/362104852731527168)
+
+RT @bartekzdanowski: @tnurkiewicz najlepszym prelegentem Confitury 2013! Brawa! http://2013.confitura.pl/news/51/najlepsze_prezentacje_tegorocznej_confitury__wyniki_ankiety #confiturapl
 
 [Mon Aug 05 14:02:21 +0000 2013](https://twitter.com/tnurkiewicz/status/364385894150569984)
 
@@ -996,9 +1030,13 @@ Great event by @skillsmatter: #Spring Exchange in #London with @springjuergen, @
 
 Published: Optional in #Java8 cheat sheet \| http://nurkiewicz.blogspot.com/2013/08/optional-in-java-8-cheat-sheet.html
 
-[Mon Aug 19 14:48:40 +0000 2013](https://twitter.com/tnurkiewicz/status/369470980072038401)> Published: instanceof operator and Visitor pattern replacement in #Java 8 http://nurkiewicz.blogspot.com/2013/09/instanceof-operator-and-visitor-pattern.html
+[Mon Aug 19 14:48:40 +0000 2013](https://twitter.com/tnurkiewicz/status/369470980072038401)
 
-[Tue Sep 24 22:01:42 +0000 2013](https://twitter.com/tnurkiewicz/status/382625918537056256)> There is one seat left for my #Java8 workshop (Polish) at #warsjawa in #Warsaw this Saturday, let me know if you are interested
+Published: instanceof operator and Visitor pattern replacement in #Java 8 http://nurkiewicz.blogspot.com/2013/09/instanceof-operator-and-visitor-pattern.html
+
+[Tue Sep 24 22:01:42 +0000 2013](https://twitter.com/tnurkiewicz/status/382625918537056256)
+
+There is one seat left for my #Java8 workshop (Polish) at #warsjawa in #Warsaw this Saturday, let me know if you are interested
 
 [Tue Oct 08 18:18:42 +0000 2013](https://twitter.com/tnurkiewicz/status/387643230566633472)
 
@@ -1028,7 +1066,9 @@ Published: "Beginning #JavaEE 7" by @agoncal review \| http://nurkiewicz.blogspo
 
 Published: #brainfuck in #Clojure. Part I: interpreter \| http://nurkiewicz.blogspot.com/2013/10/brainfuck-in-clojure-part-i-interpreter.html
 
-[Sun Oct 27 23:04:43 +0000 2013](https://twitter.com/tnurkiewicz/status/394600575402143744)> Published: #brainfuck in #Clojure. Part II: compiler \| http://nurkiewicz.blogspot.com/2013/11/brainfuck-in-clojure-part-ii-compiler.html
+[Sun Oct 27 23:04:43 +0000 2013](https://twitter.com/tnurkiewicz/status/394600575402143744)
+
+Published: #brainfuck in #Clojure. Part II: compiler \| http://nurkiewicz.blogspot.com/2013/11/brainfuck-in-clojure-part-ii-compiler.html
 
 [Fri Nov 01 16:19:39 +0000 2013](https://twitter.com/tnurkiewicz/status/396310576835469312)
 
@@ -1036,7 +1076,9 @@ Replying to [@TomaszDziurko](https://twitter.com/TomaszDziurko/status/4012574224
 
 Comments are enabled on my blog but @Blogger is not displaying them most of the time. I blame #GooglePlus integration :-(
 
-[Wed Nov 20 22:47:46 +0000 2013](https://twitter.com/tnurkiewicz/status/403293619299155968)> Tomorrow I'll be talking about functional reactive programming in #Java (CompletableFuture and @RxJava) at @WarszawaJUG, see you there!
+[Wed Nov 20 22:47:46 +0000 2013](https://twitter.com/tnurkiewicz/status/403293619299155968)
+
+Tomorrow I'll be talking about functional reactive programming in #Java (CompletableFuture and @RxJava) at @WarszawaJUG, see you there!
 
 [Mon Dec 02 21:02:49 +0000 2013](https://twitter.com/tnurkiewicz/status/407615862175064064)
 
@@ -1068,7 +1110,9 @@ Published: Proxies done right with #Guava 's AbstractInvocationHandler \| http:/
 
 Finally finished reactive programming course with 70/70 total score. Thanks @headinthebox, @odersky and @rolandkuhn for fantastic material
 
-[Thu Dec 26 18:00:45 +0000 2013](https://twitter.com/tnurkiewicz/status/416267353811206144)> Getting started with @intellijidea from @Packt is out: http://www.packtpub.com/getting-started-with-intellij-idea/book and I was one of the reviewers, enjoy! 
+[Thu Dec 26 18:00:45 +0000 2013](https://twitter.com/tnurkiewicz/status/416267353811206144)
+
+Getting started with @intellijidea from @Packt is out: http://www.packtpub.com/getting-started-with-intellij-idea/book and I was one of the reviewers, enjoy! 
 
 ![](/img/twitter/419817798852825088-BdN-EFNCUAAgfUn.png)
 
@@ -1090,13 +1134,17 @@ You are absolutely right. Fixed, thanks!
 
 Thank you @jetbrains and @WarszawaJUG for @intellijidea Ultimate license. Started using IDEA in 2009 and never looked back.
 
-[Thu Jan 30 20:35:56 +0000 2014](https://twitter.com/tnurkiewicz/status/428989980518518784)> I will give "The Dark Side of #Scala" talk at @scalarconf this April, see you there!
+[Thu Jan 30 20:35:56 +0000 2014](https://twitter.com/tnurkiewicz/status/428989980518518784)
+
+I will give "The Dark Side of #Scala" talk at @scalarconf this April, see you there!
 
 [Fri Feb 14 21:31:08 +0000 2014](https://twitter.com/tnurkiewicz/status/434439690213543936)
 
 Published: Custom #Spring namespaces made easier with #JAXB \| http://nurkiewicz.blogspot.com/2014/02/custom-spring-namespaces-made-easier.html
 
-[Sat Feb 22 20:28:53 +0000 2014](https://twitter.com/tnurkiewicz/status/437323129958830081)> I will be talking about CompletableFuture from #Java8 on #GeeCON this year. Coding only session, see you there! \| http://2014.geecon.org/speakers/tomasz-nurkiewicz
+[Sat Feb 22 20:28:53 +0000 2014](https://twitter.com/tnurkiewicz/status/437323129958830081)
+
+I will be talking about CompletableFuture from #Java8 on #GeeCON this year. Coding only session, see you there! \| http://2014.geecon.org/speakers/tomasz-nurkiewicz
 
 [Tue Mar 04 20:43:11 +0000 2014](https://twitter.com/tnurkiewicz/status/440950607004704768)
 
@@ -1128,7 +1176,9 @@ I'll be speaking at @33rdDegreeConf this June about #Saiku \| http://2014.33degr
 
 Published: Automated bug finding with #git bisect and #mvn test \| http://www.nurkiewicz.com/2014/03/automated-bug-finding-with-git-bisect.html
 
-[Mon Mar 24 21:37:27 +0000 2014](https://twitter.com/tnurkiewicz/status/448212021159284736)> Eating your own dog food? #Subversion developers migrate to #git \| http://www.infoq.com/news/2014/04/svn-migrates-to-git
+[Mon Mar 24 21:37:27 +0000 2014](https://twitter.com/tnurkiewicz/status/448212021159284736)
+
+Eating your own dog food? #Subversion developers migrate to #git \| http://www.infoq.com/news/2014/04/svn-migrates-to-git
 
 [Tue Apr 01 21:09:37 +0000 2014](https://twitter.com/tnurkiewicz/status/451104118095224832)
 
@@ -1178,7 +1228,9 @@ Published: HashMap performance improvements in #Java8 \| http://www.nurkiewicz.c
 
 RT @SolidSoftBlog: Blogged: Using #AssertJ and #Awaitility together thanks to #Java8 and #lambdas http://solidsoft.wordpress.com/2014/04/29/using-assertj-and-awaitility-together-thanks-to-java-8-and-lambdas/
 
-[Tue Apr 29 21:30:58 +0000 2014](https://twitter.com/tnurkiewicz/status/461256351541628928)> RT @wololock: The one of my favorite speakers started his talk - @tnurkiewicz about CompletableFuture in java 8 #geecon http://t.co/e3eR31a…
+[Tue Apr 29 21:30:58 +0000 2014](https://twitter.com/tnurkiewicz/status/461256351541628928)
+
+RT @wololock: The one of my favorite speakers started his talk - @tnurkiewicz about CompletableFuture in java 8 #geecon http://t.co/e3eR31a…
 
 [Thu May 15 14:25:04 +0000 2014](https://twitter.com/tnurkiewicz/status/466947375836438528)
 
@@ -1235,7 +1287,9 @@ Yes, the story and code is real. App is not yet rewritten to #Akka, but it's in 
 
 My async-retry library (https://github.com/nurkiewicz/async-retry) for #Java 8 is published to #Maven central (http://central.maven.org/maven2/com/nurkiewicz/asyncretry/asyncretry/), more to come. Enjoy!
 
-[Sat May 31 09:23:11 +0000 2014](https://twitter.com/tnurkiewicz/status/472669611708923904)> "Don't use setter injection, even when you are alone. Use constructors instead" by @starbuxman at #33rdDegree.
+[Sat May 31 09:23:11 +0000 2014](https://twitter.com/tnurkiewicz/status/472669611708923904)
+
+"Don't use setter injection, even when you are alone. Use constructors instead" by @starbuxman at #33rdDegree.
 
 [Mon Jun 09 15:58:49 +0000 2014](https://twitter.com/tnurkiewicz/status/476030664538877952)
 
@@ -1269,7 +1323,9 @@ Published: Option.fold() considered unreadable \| http://www.nurkiewicz.com/2014
 
 Published: #Clojure for Machine Learning book review \| http://www.nurkiewicz.com/2014/06/clojure-for-machine-learning-book-review.html
 
-[Sun Jun 29 21:35:34 +0000 2014](https://twitter.com/tnurkiewicz/status/483363168148652032)> RT @travisbrown: New blog post about folds and the name `Foldable` (in response to @tnurkiewicz): http://meta.plasm.us/posts/2014/07/04/foldable-considered-confusing/ #critcode #scala #…
+[Sun Jun 29 21:35:34 +0000 2014](https://twitter.com/tnurkiewicz/status/483363168148652032)
+
+RT @travisbrown: New blog post about folds and the name `Foldable` (in response to @tnurkiewicz): http://meta.plasm.us/posts/2014/07/04/foldable-considered-confusing/ #critcode #scala #…
 
 [Fri Jul 04 15:58:44 +0000 2014](https://twitter.com/tnurkiewicz/status/485090340987105283)
 
@@ -1323,7 +1379,9 @@ Published: Building extremely large in-memory InputStream for testing purposes \
 
 Published: Testing code for excessively large inputs \| http://www.nurkiewicz.com/2014/07/testing-code-for-excessively-large.html
 
-[Mon Jul 21 18:54:18 +0000 2014](https://twitter.com/tnurkiewicz/status/491295116716285952)> RT @raboofje: Nice post by @tnurkiewicz on request/response patterns in #scala #akka: http://www.nurkiewicz.com/2014/01/three-flavours-of-request-response.html
+[Mon Jul 21 18:54:18 +0000 2014](https://twitter.com/tnurkiewicz/status/491295116716285952)
+
+RT @raboofje: Nice post by @tnurkiewicz on request/response patterns in #scala #akka: http://www.nurkiewicz.com/2014/01/three-flavours-of-request-response.html
 
 [Tue Aug 12 10:07:12 +0000 2014](https://twitter.com/tnurkiewicz/status/499135002706063360)
 
@@ -1335,7 +1393,9 @@ Replying to [@shelajev](https://twitter.com/shelajev/status/503571971599122432)
 
 You are right, well spotted. Fixed, thank you!
 
-[Sun Aug 24 19:05:05 +0000 2014](https://twitter.com/tnurkiewicz/status/503619019296239616)> Got my @ScalaTimes sticker, thanks @jaceklaskowski and @softwaremill! #scala 
+[Sun Aug 24 19:05:05 +0000 2014](https://twitter.com/tnurkiewicz/status/503619019296239616)
+
+Got my @ScalaTimes sticker, thanks @jaceklaskowski and @softwaremill! #scala 
 
 ![](/img/twitter/506927280636325891-Bwj3rBXIMAAL17L.jpg)
 
@@ -1385,7 +1445,9 @@ Video from my #GeeCON live coding session about CompletableFuture in #Java8 is a
 
 RT @antonarhipov: @tnurkiewicz very good talk, thx!
 
-[Tue Oct 28 14:12:17 +0000 2014](https://twitter.com/tnurkiewicz/status/527100543232397312)> What's the problem? Today it's called "microservices architecture" 
+[Tue Oct 28 14:12:17 +0000 2014](https://twitter.com/tnurkiewicz/status/527100543232397312)
+
+What's the problem? Today it's called "microservices architecture" 
 
 ![](/img/twitter/528868178223722496-B1bqzf9IQAAE5zP.png)
 
@@ -1413,7 +1475,9 @@ Replying to [@heathborders](https://twitter.com/heathborders/status/536745649241
 
 InterruptedIOException is only thrown from PipedInputStream/Reader and ProgressMonitorInputStream so it's almost absent in JDK
 
-[Tue Nov 25 23:40:26 +0000 2014](https://twitter.com/tnurkiewicz/status/537390385627426817)> RT @hhariri: New plugin I’ve been working on…Still in prototype stages... 
+[Tue Nov 25 23:40:26 +0000 2014](https://twitter.com/tnurkiewicz/status/537390385627426817)
+
+RT @hhariri: New plugin I’ve been working on…Still in prototype stages... 
 
 ![](/img/twitter/540579437616824321-B4AdBTRCcAA9Kta.png)
 
@@ -1445,7 +1509,9 @@ RT @joewalnes: Postgres 9.4 final is out with awesome JSON support. Combine that
 
 Asynchronous timeouts with CompletableFuture \| http://www.nurkiewicz.com/2014/12/asynchronous-timeouts-with.html \| #Java8
 
-[Sat Dec 27 21:25:27 +0000 2014](https://twitter.com/tnurkiewicz/status/548952826559201280)> W ostatnim numerze @programistamag m.in. mój artykuł o #Hystrix. Polecam! 
+[Sat Dec 27 21:25:27 +0000 2014](https://twitter.com/tnurkiewicz/status/548952826559201280)
+
+W ostatnim numerze @programistamag m.in. mój artykuł o #Hystrix. Polecam! 
 
 ![](/img/twitter/550777691340034048-B6TBZCcCYAAHTth.png)
 
@@ -1487,7 +1553,9 @@ RT @4financeIT: Check out our open source microservices tools library https://gi
 
 RT @jkubrynski: This Tuesday @iNikem at #wjug about off-heap techniques. Can't miss!
 
-[Mon Jan 26 08:27:52 +0000 2015](https://twitter.com/tnurkiewicz/status/559628775965859841)> Storing months of historical metrics from #Hystrix in #Graphite \| http://www.nurkiewicz.com/2015/02/storing-months-of-historical-metrics.html
+[Mon Jan 26 08:27:52 +0000 2015](https://twitter.com/tnurkiewicz/status/559628775965859841)
+
+Storing months of historical metrics from #Hystrix in #Graphite \| http://www.nurkiewicz.com/2015/02/storing-months-of-historical-metrics.html
 
 [Mon Feb 02 19:40:08 +0000 2015](https://twitter.com/tnurkiewicz/status/562334671460392961)
 
@@ -1513,7 +1581,9 @@ Replying to [@sdeleuze and @mixIT_lyon](https://twitter.com/sdeleuze/status/5712
 
 Sorry, can't make it this time :-(. Thank you for an invitation though!
 
-[Sat Feb 28 10:55:49 +0000 2015](https://twitter.com/tnurkiewicz/status/571624808791855105)> RT @will_sargent: Rereading the "Clean Code, Clean Logs" series and wanting to highfive @tnurkiewicz http://www.nurkiewicz.com/2010/05/clean-code-clean-logs-use-appropriate.html
+[Sat Feb 28 10:55:49 +0000 2015](https://twitter.com/tnurkiewicz/status/571624808791855105)
+
+RT @will_sargent: Rereading the "Clean Code, Clean Logs" series and wanting to highfive @tnurkiewicz http://www.nurkiewicz.com/2010/05/clean-code-clean-logs-use-appropriate.html
 
 [Wed Mar 18 03:32:14 +0000 2015](https://twitter.com/tnurkiewicz/status/578036158699036672)
 
@@ -1528,13 +1598,17 @@ CompletableFuture can't be interrupted \| http://www.nurkiewicz.com/2015/03/comp
 
 I will be talking about #Hystrix ("managing failures in distributed systems") at #Devoxx PL. No slides, just code! http://cfp.devoxx.pl/2015/speaker/tomasz_nurkiewicz
 
-[Tue Mar 31 21:26:48 +0000 2015](https://twitter.com/tnurkiewicz/status/583017623857831936)> Biological computer simulation of selfish genes http://www.nurkiewicz.com/2015/04/biological-computer-simulation-of.html \| Inspired by "The Selfish Gene" by @RichardDawkins
+[Tue Mar 31 21:26:48 +0000 2015](https://twitter.com/tnurkiewicz/status/583017623857831936)
+
+Biological computer simulation of selfish genes http://www.nurkiewicz.com/2015/04/biological-computer-simulation-of.html \| Inspired by "The Selfish Gene" by @RichardDawkins
 
 [Sun Apr 05 18:08:31 +0000 2015](https://twitter.com/tnurkiewicz/status/584779663400116224)
 
 #Spring: injecting lists, maps, optionals and getBeansOfType() pitfalls \| http://www.nurkiewicz.com/2015/04/spring-injecting-lists-maps-optionals.html \| #Java
 
-[Mon Apr 20 22:08:32 +0000 2015](https://twitter.com/tnurkiewicz/status/590275885858717697)> RT @Atmosphereconf: .@tnurkiewicz will speak at #AtmosphereConf about #Hystrix. Is there any reason to NOT to attend? :) http://t.co/FvSglf…
+[Mon Apr 20 22:08:32 +0000 2015](https://twitter.com/tnurkiewicz/status/590275885858717697)
+
+RT @Atmosphereconf: .@tnurkiewicz will speak at #AtmosphereConf about #Hystrix. Is there any reason to NOT to attend? :) http://t.co/FvSglf…
 
 [Wed May 13 11:51:29 +0000 2015](https://twitter.com/tnurkiewicz/status/598455519221800960)
 
@@ -1580,7 +1654,9 @@ Got a gift from @bartekzdanowski from @TouK_pl and finally had time to play. Tha
 
 Notes after #Spring.IO Barcelona conference \| http://www.nurkiewicz.com/2015/05/notes-after-springio-barcelona.html \| Thanks to @4financeIT
 
-[Sun May 31 14:19:02 +0000 2015](https://twitter.com/tnurkiewicz/status/605015632757813249)> RT @cbuleandra: One week left until the next #czjug event in Prague: #microservices &amp; #hystrix with @MGrzejszczak and @tnurkiewicz. It's go…
+[Sun May 31 14:19:02 +0000 2015](https://twitter.com/tnurkiewicz/status/605015632757813249)
+
+RT @cbuleandra: One week left until the next #czjug event in Prague: #microservices &amp; #hystrix with @MGrzejszczak and @tnurkiewicz. It's go…
 
 [Mon Jun 01 15:54:23 +0000 2015](https://twitter.com/tnurkiewicz/status/605402018954493952)
 
@@ -1672,7 +1748,9 @@ Writing a download server. Part II: headers: Last-Modified, ETag and If-None-Mat
 
 Writing a download server. Part III: headers: Content-length and Range \| http://www.nurkiewicz.com/2015/06/writing-download-server-part-iii.html
 
-[Mon Jun 29 20:47:56 +0000 2015](https://twitter.com/tnurkiewicz/status/615622750170939394)> Video of my talk about #CompletableFuture in #Java8 at #GeekOutEE 2015: https://vimeo.com/131394616
+[Mon Jun 29 20:47:56 +0000 2015](https://twitter.com/tnurkiewicz/status/615622750170939394)
+
+Video of my talk about #CompletableFuture in #Java8 at #GeekOutEE 2015: https://vimeo.com/131394616
 
 [Wed Jul 01 08:22:49 +0000 2015](https://twitter.com/tnurkiewicz/status/616160014240235520)
 
@@ -1785,7 +1863,9 @@ Server-sent events with #RxJava and SseEmitter \| http://www.nurkiewicz.com/2015
 
 RT @gregyoung: This is the worst article I have read this year https://dzone.com/articles/restful-considered-harmful?oid=top_cta its just wow in its misunderstandings of things.
 
-[Thu Jul 30 06:58:13 +0000 2015](https://twitter.com/tnurkiewicz/status/626647971950628864)> Testing server faults with #Wiremock \| http://allegro.tech/testing-server-faults-with-Wiremock.html \| via @allegrotechblog
+[Thu Jul 30 06:58:13 +0000 2015](https://twitter.com/tnurkiewicz/status/626647971950628864)
+
+Testing server faults with #Wiremock \| http://allegro.tech/testing-server-faults-with-Wiremock.html \| via @allegrotechblog
 
 [Tue Aug 04 07:14:47 +0000 2015](https://twitter.com/tnurkiewicz/status/628464078617464832)
 
@@ -1799,7 +1879,9 @@ RT @clemensv: For systems made of dozens of microservices, stringing call chains
 
 Dependency injection: syntax sugar over function composition \| http://www.nurkiewicz.com/2015/08/dependency-injection-syntax-sugar-over.html
 
-[Mon Aug 31 17:37:23 +0000 2015](https://twitter.com/tnurkiewicz/status/638405235921289216)> Displaying progress of #Spring application startup in web browser \| http://www.nurkiewicz.com/2015/09/displaying-progress-of-spring.html
+[Mon Aug 31 17:37:23 +0000 2015](https://twitter.com/tnurkiewicz/status/638405235921289216)
+
+Displaying progress of #Spring application startup in web browser \| http://www.nurkiewicz.com/2015/09/displaying-progress-of-spring.html
 
 [Tue Sep 01 22:07:58 +0000 2015](https://twitter.com/tnurkiewicz/status/638835714935799809)
 
@@ -1817,7 +1899,9 @@ RT @trzmiel: Googling for async timeouts with CompletableFuture, of course the f
 
 RT @juglodz: On october 1st  @tnurkiewicz will present "CompletableFuture - asynchronous programming in Java" -  : http://meetu.ps/2NBVrp
 
-[Tue Sep 22 18:08:40 +0000 2015](https://twitter.com/tnurkiewicz/status/646385639995363328)> RT @PawelWlodarski: Reactive Java by @tnurkiewicz @juglodz 
+[Tue Sep 22 18:08:40 +0000 2015](https://twitter.com/tnurkiewicz/status/646385639995363328)
+
+RT @PawelWlodarski: Reactive Java by @tnurkiewicz @juglodz 
 
 ![](/img/twitter/649693930447986689-CQPov4NXAAEDvT8.jpg)
 
@@ -1889,7 +1973,9 @@ RT @igotsideburns: @tnurkiewicz that was awesome! Great format: concise and clea
 
 #GeeCON programming contest answers \| http://www.nurkiewicz.com/2015/10/geecon-programming-contest-answers.html \| CC @4financeIT
 
-[Tue Oct 27 11:16:41 +0000 2015](https://twitter.com/tnurkiewicz/status/658965536341172224)> Moja prezentacja 'Czego Javowiec nauczy się od Haskella?' z #Confiturapl 2015 \| https://www.youtube.com/watch?v=DL40Ru1sn3w, wg uczestników najlepsza w tym roku
+[Tue Oct 27 11:16:41 +0000 2015](https://twitter.com/tnurkiewicz/status/658965536341172224)
+
+Moja prezentacja 'Czego Javowiec nauczy się od Haskella?' z #Confiturapl 2015 \| https://www.youtube.com/watch?v=DL40Ru1sn3w, wg uczestników najlepsza w tym roku
 
 [Wed Nov 04 07:42:00 +0000 2015](https://twitter.com/tnurkiewicz/status/661810611467239424)
 
@@ -1917,11 +2003,15 @@ RT @plamere: @tnurkiewicz  thanks for your nifty Definitive guide to Completable
 
 Which thread executes #CompletableFuture's tasks and callbacks? \| http://www.nurkiewicz.com/2015/11/which-thread-executes.html
 
-[Mon Nov 30 08:01:29 +0000 2015](https://twitter.com/tnurkiewicz/status/671237601794400256)> RT @steve_objectify: One day I'm going to google Java-related and not find the answer on @tnurkiewicz's blog.
+[Mon Nov 30 08:01:29 +0000 2015](https://twitter.com/tnurkiewicz/status/671237601794400256)
+
+RT @steve_objectify: One day I'm going to google Java-related and not find the answer on @tnurkiewicz's blog.
 
 But not this day.
 
-[Wed Dec 23 07:17:20 +0000 2015](https://twitter.com/tnurkiewicz/status/679561410322534400)> I bought fake 100€ ticket from a fraud via @Ticketbis. I got full refund from them with help from @TicketproPolska and @Agencja_GoAhead Thx!
+[Wed Dec 23 07:17:20 +0000 2015](https://twitter.com/tnurkiewicz/status/679561410322534400)
+
+I bought fake 100€ ticket from a fraud via @Ticketbis. I got full refund from them with help from @TicketproPolska and @Agencja_GoAhead Thx!
 
 [Thu Jan 07 21:19:03 +0000 2016](https://twitter.com/tnurkiewicz/status/685209052310274048)
 
@@ -1947,7 +2037,9 @@ Proud to be voted best speaker of 2015 at @juglodz, thank you!
 
 @ddd_eu is over. I enjoyed talk by @cyriux and workshop led by @yreynhout about projections the most. Thank you @4financeIT
 
-[Sat Jan 30 12:17:18 +0000 2016](https://twitter.com/tnurkiewicz/status/693407637967376384)> RT @jmbroad: Never attribute to stupidity that which can be adequately explained by your own ignorance of another's decision-making context.
+[Sat Jan 30 12:17:18 +0000 2016](https://twitter.com/tnurkiewicz/status/693407637967376384)
+
+RT @jmbroad: Never attribute to stupidity that which can be adequately explained by your own ignorance of another's decision-making context.
 
 [Mon Feb 01 16:38:55 +0000 2016](https://twitter.com/tnurkiewicz/status/694198252917366784)
 
@@ -1971,9 +2063,13 @@ Remarkable talk about history, politics and #NASA's space exploration by @carver
 
 RT @charlesweird: Nice read! Introduction to writing custom collectors in Java 8 by @tnurkiewicz  http://www.nurkiewicz.com/2014/07/introduction-to-writing-custom.html #JavaStream #Java…
 
-[Fri Feb 26 19:57:42 +0000 2016](https://twitter.com/tnurkiewicz/status/703307972550778880)> RT @CezaryDraus: @tnurkiewicz will perform #java8 workshops on 9 April at @juglodz meeting. Looking forward to be there!
+[Fri Feb 26 19:57:42 +0000 2016](https://twitter.com/tnurkiewicz/status/703307972550778880)
 
-[Tue Mar 22 12:17:08 +0000 2016](https://twitter.com/tnurkiewicz/status/712251764196708352)> Going through technical review of our #RxJava book from @venkat_s and @akarnokd. In-depth comments make me feel really humble. Thank you!
+RT @CezaryDraus: @tnurkiewicz will perform #java8 workshops on 9 April at @juglodz meeting. Looking forward to be there!
+
+[Tue Mar 22 12:17:08 +0000 2016](https://twitter.com/tnurkiewicz/status/712251764196708352)
+
+Going through technical review of our #RxJava book from @venkat_s and @akarnokd. In-depth comments make me feel really humble. Thank you!
 
 [Sun Apr 03 14:10:54 +0000 2016](https://twitter.com/tnurkiewicz/status/716629050534526977)
 
@@ -1995,7 +2091,9 @@ RT @JakubPilimon: a few words about domain events publishing http://pillopl.gith
 
 30 years ago #Chernobyl disaster occurred due to unrealistic deadlines, going live without safety features and testing on production
 
-[Mon Apr 25 22:01:27 +0000 2016](https://twitter.com/tnurkiewicz/status/724719999202504704)> RT @dgomesbr: CompletableFuture presentation https://www.youtube.com/watch?v=-MBPQ7NIL_Y by @tnurkiewicz #jokerconf
+[Mon Apr 25 22:01:27 +0000 2016](https://twitter.com/tnurkiewicz/status/724719999202504704)
+
+RT @dgomesbr: CompletableFuture presentation https://www.youtube.com/watch?v=-MBPQ7NIL_Y by @tnurkiewicz #jokerconf
 
 [Mon May 02 13:26:28 +0000 2016](https://twitter.com/tnurkiewicz/status/727127116886724608)
 
@@ -2011,7 +2109,9 @@ RT @ldziedziul: @tnurkiewicz presentation mentioned as the best one about Comple
 
 ![](/img/twitter/733401297706082304-Ci2PsUnUYAAI-dJ.jpg)
 
-[Thu May 19 20:57:49 +0000 2016](https://twitter.com/tnurkiewicz/status/733401297706082304)> I'm speaking at #JavaZone this year. Expect an hour of live coding with #RxJava in the context of legacy systems. See you in Oslo!
+[Thu May 19 20:57:49 +0000 2016](https://twitter.com/tnurkiewicz/status/733401297706082304)
+
+I'm speaking at #JavaZone this year. Expect an hour of live coding with #RxJava in the context of legacy systems. See you in Oslo!
 
 [Wed Jun 08 09:04:24 +0000 2016](https://twitter.com/tnurkiewicz/status/740469516170317824)
 
@@ -2033,7 +2133,9 @@ https://t.co/jZCf23xk…
 
 RT @se_thinking: FP in Pure Java: Functor and Monad Examples - http://www.nurkiewicz.com/2016/06/functor-and-monad-examples-in-plain-java.html -A great read for the functional-curious - Thank you…
 
-[Wed Jun 29 18:22:30 +0000 2016](https://twitter.com/tnurkiewicz/status/748220110792425472)> 6 out of 9 chapters of our #RxJava book available, covering fully reactive stacks with #RxNetty and backpressure: http://shop.oreilly.com/product/0636920042228.do
+[Wed Jun 29 18:22:30 +0000 2016](https://twitter.com/tnurkiewicz/status/748220110792425472)
+
+6 out of 9 chapters of our #RxJava book available, covering fully reactive stacks with #RxNetty and backpressure: http://shop.oreilly.com/product/0636920042228.do
 
 [Mon Jul 04 20:45:14 +0000 2016](https://twitter.com/tnurkiewicz/status/750067970714533889)
 
@@ -2041,7 +2143,9 @@ I was voted best speaker at #confiturapl 2015 conference, thx! Awarded talk (in 
 
 ![](/img/twitter/751112859522830336-Cmx703eWAAAy54z.jpg)
 
-[Thu Jul 07 17:57:15 +0000 2016](https://twitter.com/tnurkiewicz/status/751112859522830336)> RT @heinzkabutz: RxJava, Vert.x, Reactive Systems, Reactive Programming, Functional Reactive, very cool!!! @tnurkiewicz #jcrete #java https…
+[Thu Jul 07 17:57:15 +0000 2016](https://twitter.com/tnurkiewicz/status/751112859522830336)
+
+RT @heinzkabutz: RxJava, Vert.x, Reactive Systems, Reactive Programming, Functional Reactive, very cool!!! @tnurkiewicz #jcrete #java https…
 
 [Mon Aug 01 09:25:43 +0000 2016](https://twitter.com/tnurkiewicz/status/760043825624649729)
 
@@ -2067,7 +2171,9 @@ I will give 'Beginning #RxJava' workshop at #QConSF. See you in San Francisco! T
 
 RT @jkubrynski: My #JPA talk has been rated the best talk at @confiturapl 2016. Thanks! Glad that @tnurkiewicz wasn't speaking this year :)…
 
-[Wed Aug 31 07:58:02 +0000 2016](https://twitter.com/tnurkiewicz/status/770893396890222592)> RT @nachkonvention: You actually wrote 200+ loc live in your RxJava talk. Mind blown, I salute you @tnurkiewicz #JavaZone
+[Wed Aug 31 07:58:02 +0000 2016](https://twitter.com/tnurkiewicz/status/770893396890222592)
+
+RT @nachkonvention: You actually wrote 200+ loc live in your RxJava talk. Mind blown, I salute you @tnurkiewicz #JavaZone
 
 [Thu Sep 08 12:22:56 +0000 2016](https://twitter.com/tnurkiewicz/status/773859160735752192)
 
@@ -2119,7 +2225,9 @@ RT @BartoszWalacik: Our biggest publication so far: Performance and Availability
 
 "Don't Build a Distributed Monolith" by @benjchristensen, great talk about mistakes in microservice architectures https://www.youtube.com/watch?v=-czp0Y4Z36Y
 
-[Thu Sep 29 11:58:59 +0000 2016](https://twitter.com/tnurkiewicz/status/781463278794964993)> RT @GFT_Polska: See you in Łódź tomorrow; next week: #JUGtoberfest Poznan with @poznanjug &amp; GFT! Starring Krystian Nowak @mmatloka @j_palka…
+[Thu Sep 29 11:58:59 +0000 2016](https://twitter.com/tnurkiewicz/status/781463278794964993)
+
+RT @GFT_Polska: See you in Łódź tomorrow; next week: #JUGtoberfest Poznan with @poznanjug &amp; GFT! Starring Krystian Nowak @mmatloka @j_palka…
 
 [Wed Oct 05 12:19:07 +0000 2016](https://twitter.com/tnurkiewicz/status/783642673047633921)
 
@@ -2169,7 +2277,9 @@ RT @praveergupta: @tnurkiewicz - it is a great book with very good examples... T
 
 RT @ntsakas: I read 3 other books and got 0 knowledge,just marbles.this is THE ONE book to get you from 0 to 1 in RxJava.It will become cla…
 
-[Mon Oct 31 22:53:38 +0000 2016](https://twitter.com/tnurkiewicz/status/793224438875582465)> RT @jhusain: Great new book by @tnurkiewicz and my former colleague and developer of RxJava @benjchristensen. Nice work guys! https://t.co/…
+[Mon Oct 31 22:53:38 +0000 2016](https://twitter.com/tnurkiewicz/status/793224438875582465)
+
+RT @jhusain: Great new book by @tnurkiewicz and my former colleague and developer of RxJava @benjchristensen. Nice work guys! https://t.co/…
 
 [Thu Nov 03 16:39:47 +0000 2016](https://twitter.com/tnurkiewicz/status/794217518936326145)
 
@@ -2201,7 +2311,9 @@ Replying to [@jnabrdalik and @WarszawaJUG](https://twitter.com/jnabrdalik/status
 
 Thank you! Source code written during this session: https://github.com/nurkiewicz/rx-legacy/blob/wjug/src/test/java/com/nurkiewicz/WjugTest.java
 
-[Wed Nov 30 22:31:03 +0000 2016](https://twitter.com/tnurkiewicz/status/804090392333479936)> Due to a popular demand I published all examples from our #RxJava book: https://github.com/nurkiewicz/rxjava-book-examples - 6000+ lines of code!
+[Wed Nov 30 22:31:03 +0000 2016](https://twitter.com/tnurkiewicz/status/804090392333479936)
+
+Due to a popular demand I published all examples from our #RxJava book: https://github.com/nurkiewicz/rxjava-book-examples - 6000+ lines of code!
 
 [Thu Dec 01 08:52:53 +0000 2016](https://twitter.com/tnurkiewicz/status/804246883208151040)
 
@@ -2246,7 +2358,9 @@ RT @bartczakt: Our case study - my article on using deep learning in image proce
 
 I will give 'Asynchronous by Default, Synchronous When Necessary' talk at #OReillySACon this April in #NewYork \| http://conferences.oreilly.com/software-architecture/sa-ny/public/schedule/detail/57322
 
-[Tue Dec 27 15:24:48 +0000 2016](https://twitter.com/tnurkiewicz/status/813767595014967296)> RT @nofluffjobs: Software Engineer @allegrotechblog
+[Tue Dec 27 15:24:48 +0000 2016](https://twitter.com/tnurkiewicz/status/813767595014967296)
+
+RT @nofluffjobs: Software Engineer @allegrotechblog
 Warsaw, Poznań, Kraków, Poland
 8.0k-14.0k PLN / Month
 https://nofluffjobs.com/job/Software/Engineer/backend/Allegro/KA5GF2YN
@@ -2276,7 +2390,9 @@ RT @mkolodziejski: @AllegroTechBlog @tnurkiewicz Thank You for the speech at yes
 
 RT @sprzedwojski: Very inspiring meetup yesterday at @AllegroTechBlog's new awesome HQ. Thank you @tnurkiewicz and @mjpt777 for great talks!
 
-[Thu Jan 26 14:04:28 +0000 2017](https://twitter.com/tnurkiewicz/status/824619016224440320)> Thank you @mjpt777 and @AllegroTechBlog for 3 days of intensive low-level #Java performance workshop, I learned a lot!
+[Thu Jan 26 14:04:28 +0000 2017](https://twitter.com/tnurkiewicz/status/824619016224440320)
+
+Thank you @mjpt777 and @AllegroTechBlog for 3 days of intensive low-level #Java performance workshop, I learned a lot!
 
 [Thu Feb 02 08:35:23 +0000 2017](https://twitter.com/tnurkiewicz/status/827072914595930113)
 
@@ -2302,7 +2418,9 @@ RT @wendigo: #rxjava 2 workshops @AllegroTechBlog by @tnurkiewicz
 
 RT @WarszawaJUG: Na naszym jubileuszowym spotkaniu numer 200 będzie można zdobyć jedną z książek naszych prelegentów @KevlinHenney oraz @tn…
 
-[Tue Feb 28 16:29:20 +0000 2017](https://twitter.com/tnurkiewicz/status/836614269500329985)> RT @wololock: Next @Java_Champions (I hope!) @tnurkiewicz about distributed applications #WarszawaJUG #java #rxjava #microservices https://…
+[Tue Feb 28 16:29:20 +0000 2017](https://twitter.com/tnurkiewicz/status/836614269500329985)
+
+RT @wololock: Next @Java_Champions (I hope!) @tnurkiewicz about distributed applications #WarszawaJUG #java #rxjava #microservices https://…
 
 [Mon Mar 06 18:42:02 +0000 2017](https://twitter.com/tnurkiewicz/status/838821994963558400)
 
@@ -2324,7 +2442,9 @@ RT @WarszawaJUG: Podsumowanie prelegentów dwustu spotkań WJUG-a, @jaceklaskows
 
 Would #Heartbleed and #Cloudbleed have ever happened if they had been run in managed environment like #JVM or #CLR?
 
-[Tue Mar 21 20:03:24 +0000 2017](https://twitter.com/tnurkiewicz/status/844278289388781569)> RT @ragunathjawahar: Getting started with #RxJava? Look no further, get this book #AndroidDev. Good work @tnurkiewicz &amp; @benjchristensen ht…
+[Tue Mar 21 20:03:24 +0000 2017](https://twitter.com/tnurkiewicz/status/844278289388781569)
+
+RT @ragunathjawahar: Getting started with #RxJava? Look no further, get this book #AndroidDev. Good work @tnurkiewicz &amp; @benjchristensen ht…
 
 [Sun Apr 02 13:05:46 +0000 2017](https://twitter.com/tnurkiewicz/status/848521840414908416)
 
@@ -2348,7 +2468,9 @@ Official #Korean translation of our #RxJava book is out, thanks to Intae Kim. Mo
 
 ![](/img/twitter/857731512745119744-C-dF-O9VoAAUSa3.jpg)
 
-[Thu Apr 27 23:01:43 +0000 2017](https://twitter.com/tnurkiewicz/status/857731512745119744)> RT @lidderupk: @tnurkiewicz thanks for all the great info on #rxjava on @safari. Really helped me get started on reactive programming !
+[Thu Apr 27 23:01:43 +0000 2017](https://twitter.com/tnurkiewicz/status/857731512745119744)
+
+RT @lidderupk: @tnurkiewicz thanks for all the great info on #rxjava on @safari. Really helped me get started on reactive programming !
 
 [Thu May 11 22:47:09 +0000 2017](https://twitter.com/tnurkiewicz/status/862801279206248449)
 
@@ -2376,7 +2498,9 @@ so that
 
 I'll have time to get…
 
-[Fri May 19 08:38:36 +0000 2017](https://twitter.com/tnurkiewicz/status/865486834872098816)> RT @zeroturnaround: So much #Java expertise in one place at the @GeekOutEE speakers dinner! #GeekOutEE 
+[Fri May 19 08:38:36 +0000 2017](https://twitter.com/tnurkiewicz/status/865486834872098816)
+
+RT @zeroturnaround: So much #Java expertise in one place at the @GeekOutEE speakers dinner! #GeekOutEE 
 
 ![](/img/twitter/872697303303426050-DBv0vj7XsAARw_D.jpg)
 
@@ -2392,7 +2516,9 @@ Video of my talk "Asynchronous by default, synchronous when necessary" from #inf
 
 RT @eduardsi: Great presentation! Dependency inversion at the architecture level. Thanks @tnurkiewicz https://twitter.com/tnurkiewicz/status/877212579373993985
 
-[Wed Jun 21 10:03:56 +0000 2017](https://twitter.com/tnurkiewicz/status/877467112289091584)> RT @ntsakas: Who would have thought that a reactive HTTP server with RxJava takes so few lines of code?  http://goo.gl/iChS3o by @tnurki…
+[Wed Jun 21 10:03:56 +0000 2017](https://twitter.com/tnurkiewicz/status/877467112289091584)
+
+RT @ntsakas: Who would have thought that a reactive HTTP server with RxJava takes so few lines of code?  http://goo.gl/iChS3o by @tnurki…
 
 [Sun Jul 09 22:33:53 +0000 2017](https://twitter.com/tnurkiewicz/status/884178825621516288)
 
@@ -2416,7 +2542,9 @@ RT @medtek: This is quite good.  #homeopathy
 
 Eager subscription - #RxJava FAQ \| http://www.nurkiewicz.com/2017/07/eager-subscription-rxjava-faq.html
 
-[Mon Jul 31 19:02:47 +0000 2017](https://twitter.com/tnurkiewicz/status/892098232276398080)> flatMap() vs. concatMap() vs. concatMapEager() - #RxJava FAQ \| http://www.nurkiewicz.com/2017/08/flatmap-vs-concatmap-vs-concatmapeager.html
+[Mon Jul 31 19:02:47 +0000 2017](https://twitter.com/tnurkiewicz/status/892098232276398080)
+
+flatMap() vs. concatMap() vs. concatMapEager() - #RxJava FAQ \| http://www.nurkiewicz.com/2017/08/flatmap-vs-concatmap-vs-concatmapeager.html
 
 [Thu Aug 03 22:28:25 +0000 2017](https://twitter.com/tnurkiewicz/status/893237144654938112)
 
@@ -2438,7 +2566,9 @@ RT @ryan0x44: I can't help but look at Bitcoin mines and find myself disgusted a
 
 Loading files with backpressure - #RxJava FAQ \| http://www.nurkiewicz.com/2017/08/loading-files-with-backpressure-rxjava.html
 
-[Thu Aug 31 19:39:49 +0000 2017](https://twitter.com/tnurkiewicz/status/903341576356802563)> Streaming large JSON file with Jackson - #RxJava FAQ http://www.nurkiewicz.com/2017/09/streaming-large-json-file-with-jackson.html
+[Thu Aug 31 19:39:49 +0000 2017](https://twitter.com/tnurkiewicz/status/903341576356802563)
+
+Streaming large JSON file with Jackson - #RxJava FAQ http://www.nurkiewicz.com/2017/09/streaming-large-json-file-with-jackson.html
 
 [Mon Sep 04 06:49:51 +0000 2017](https://twitter.com/tnurkiewicz/status/904597357077164032)
 
@@ -2462,7 +2592,9 @@ Detecting and testing stalled stream - #RxJava FAQ http://www.nurkiewicz.com/201
 
 Idiomatic concurrency: flatMap() vs. parallel() - #RxJava FAQ http://www.nurkiewicz.com/2017/09/idiomatic-concurrency-flatmap-vs.html
 
-[Thu Sep 14 08:11:02 +0000 2017](https://twitter.com/tnurkiewicz/status/908241665554608128)> My session at #JavaOne2017 about event sourcing is on Tuesday, feel free to catch me during the conference!
+[Thu Sep 14 08:11:02 +0000 2017](https://twitter.com/tnurkiewicz/status/908241665554608128)
+
+My session at #JavaOne2017 about event sourcing is on Tuesday, feel free to catch me during the conference!
 
 [Sun Oct 01 20:05:55 +0000 2017](https://twitter.com/tnurkiewicz/status/914582169108062208)
 
@@ -2476,7 +2608,9 @@ RT @JakubPilimon: I'm honoured to announce that I will be speaking about reactiv
 
 RT @avadhootComp: @tnurkiewicz thanks for the Live training on RxJava. I learned a lot!
 
-[Thu Oct 26 08:00:11 +0000 2017](https://twitter.com/tnurkiewicz/status/923459226592260097)> RT @smcvbeelen: Checkin out @tnurkiewicz his talk @ #JavaDayUA2017; very interesting, including a mention of @axon_iq its EventStore! https…
+[Thu Oct 26 08:00:11 +0000 2017](https://twitter.com/tnurkiewicz/status/923459226592260097)
+
+RT @smcvbeelen: Checkin out @tnurkiewicz his talk @ #JavaDayUA2017; very interesting, including a mention of @axon_iq its EventStore! https…
 
 [Sat Nov 04 11:30:23 +0000 2017](https://twitter.com/tnurkiewicz/status/926773618239041536)
 
@@ -2492,13 +2626,17 @@ Thank you @heinzkabutz and @AllegroTechBlog for three days of Extreme #Java - Co
 
 Słowniczek angielsko 🇬🇧 - polski 🇵🇱 dla programistów: https://github.com/nurkiewicz/polski-w-it
 
-[Sat Nov 25 23:12:44 +0000 2017](https://twitter.com/tnurkiewicz/status/934560516109979648)> RT @JavaDayUA: #JavaDayUA2017: Asynchronous by default, synchronous when neсessary @tnurkiewicz http://youtu.be/ppfCf2o-ofw?a
+[Sat Nov 25 23:12:44 +0000 2017](https://twitter.com/tnurkiewicz/status/934560516109979648)
+
+RT @JavaDayUA: #JavaDayUA2017: Asynchronous by default, synchronous when neсessary @tnurkiewicz http://youtu.be/ppfCf2o-ofw?a
 
 [Wed Dec 06 14:40:53 +0000 2017](https://twitter.com/tnurkiewicz/status/938417968530239488)
 
 RT @ReactSphere: Meet @tnurkiewicz He is an #rxjava author who loves back-end and #data visualization. Can’t wait for his talk @ReactSphere…
 
-[Wed Dec 13 16:10:27 +0000 2017](https://twitter.com/tnurkiewicz/status/940977223909150720)> #Spring, #Reactor and #ElasticSearch: from callbacks to reactive streams http://www.nurkiewicz.com/2018/01/spring-reactor-and-elasticsearch-from.html
+[Wed Dec 13 16:10:27 +0000 2017](https://twitter.com/tnurkiewicz/status/940977223909150720)
+
+#Spring, #Reactor and #ElasticSearch: from callbacks to reactive streams http://www.nurkiewicz.com/2018/01/spring-reactor-and-elasticsearch-from.html
 
 [Wed Jan 10 00:00:09 +0000 2018](https://twitter.com/tnurkiewicz/status/950879898956173312)
 
@@ -2529,7 +2667,9 @@ Monitoring and measuring reactive application with Dropwizard Metrics http://www
 
 #Spring #Boot 2: Fluxes, from #Elasticsearch to controller http://www.nurkiewicz.com/2018/01/spring-boot-2-fluxes-from-elasticsearch.html
 
-[Wed Jan 24 22:59:49 +0000 2018](https://twitter.com/tnurkiewicz/status/956300534910275585)> Reactive #emoji tracker with #WebClient and #Reactor: consuming #SSE http://www.nurkiewicz.com/2018/02/reactive-emoji-tracker-with-webclient.html CC @emojitracker
+[Wed Jan 24 22:59:49 +0000 2018](https://twitter.com/tnurkiewicz/status/956300534910275585)
+
+Reactive #emoji tracker with #WebClient and #Reactor: consuming #SSE http://www.nurkiewicz.com/2018/02/reactive-emoji-tracker-with-webclient.html CC @emojitracker
 
 [Fri Feb 02 00:13:10 +0000 2018](https://twitter.com/tnurkiewicz/status/959218099089272832)
 
@@ -2549,7 +2689,9 @@ RT @Sygyzmundovych: Next #HackinGliwice hosted by @SAPHybris is coming to the to
 
 RT @infosharepl: In 2018 we’ll have 3 tech stages with 8 theme blocks – Security, Java, Front-end, Blockchain, DevOps, Cloud, Machine learn…
 
-[Sat Feb 17 11:40:50 +0000 2018](https://twitter.com/tnurkiewicz/status/964826973695565824)> RT @ReactSphere: Our next Keynote Speaker is @tnurkiewicz. Find out more about his #ReactiveProgramming experiences https://react.sphere.it/tomasz-nurkiewicz…
+[Sat Feb 17 11:40:50 +0000 2018](https://twitter.com/tnurkiewicz/status/964826973695565824)
+
+RT @ReactSphere: Our next Keynote Speaker is @tnurkiewicz. Find out more about his #ReactiveProgramming experiences https://react.sphere.it/tomasz-nurkiewicz…
 
 [Mon Mar 05 13:53:00 +0000 2018](https://twitter.com/tnurkiewicz/status/970658440161976320)
 
@@ -2561,7 +2703,9 @@ https://youtu.be/YjJZaGVwKAY?t=2268…
 
 RT @JakubPilimon: I am thrillered to announce that today is my first day as Spring Developer Advocate @Pivotal! Can’t wait for the upcoming…
 
-[Mon Mar 26 10:32:25 +0000 2018](https://twitter.com/tnurkiewicz/status/978218104986750976)> Slides from my talk "Tour around concurrency in #Java" at #HackinGliwice \| http://nurkiewicz.github.io/talks/2018/concurrency
+[Mon Mar 26 10:32:25 +0000 2018](https://twitter.com/tnurkiewicz/status/978218104986750976)
+
+Slides from my talk "Tour around concurrency in #Java" at #HackinGliwice \| http://nurkiewicz.github.io/talks/2018/concurrency
 
 [Mon Apr 02 09:40:24 +0000 2018](https://twitter.com/tnurkiewicz/status/980741730051002368)
 
@@ -2597,7 +2741,9 @@ RT @JakubPilimon: Gosh! My first article published at http://spring.io/blog! If 
 
 RT @adamwarski: Event sourcing using @apachekafka https://blog.softwaremill.com/event-sourcing-using-kafka-53dfd72ad45d #eventsourcing #kafka
 
-[Fri Apr 27 15:14:19 +0000 2018](https://twitter.com/tnurkiewicz/status/989885459621916673)> RT @mariofusco: "a library that makes those stupid tests for you" is probably one of the best definition of what a statically typed languag…
+[Fri Apr 27 15:14:19 +0000 2018](https://twitter.com/tnurkiewicz/status/989885459621916673)
+
+RT @mariofusco: "a library that makes those stupid tests for you" is probably one of the best definition of what a statically typed languag…
 
 [Mon May 07 07:20:41 +0000 2018](https://twitter.com/tnurkiewicz/status/993390146409107456)
 
@@ -2630,7 +2776,9 @@ Replying to [@shibbow and @prondzyn](https://twitter.com/shibbow/status/99896615
 
 Slides from my talk at #infoShare about #reactive programming: http://nurkiewicz.github.io/talks/2018/reactive-lessons/, I'll let you know once the video is available
 
-[Wed May 23 13:25:11 +0000 2018](https://twitter.com/tnurkiewicz/status/999280080194015232)> Video of my talk: #Reactive programming: lessons learned, from @ReactSphere: https://www.youtube.com/watch?v=g_JyHJ20Iog
+[Wed May 23 13:25:11 +0000 2018](https://twitter.com/tnurkiewicz/status/999280080194015232)
+
+Video of my talk: #Reactive programming: lessons learned, from @ReactSphere: https://www.youtube.com/watch?v=g_JyHJ20Iog
 
 [Wed Jul 11 19:08:36 +0000 2018](https://twitter.com/tnurkiewicz/status/1017123510290927616)
 
@@ -2648,7 +2796,9 @@ RT @bITconf_pl: #prelegent @bITconf_pl !
 
 Tomasz Nurkiewicz ( @tnurkiewicz ) - od 10 lat w okolicach Javy. Rozczarowany jakością tworzonego…
 
-[Mon Jul 30 12:49:28 +0000 2018](https://twitter.com/tnurkiewicz/status/1023913467416330241)> RT @JakubWincewicz: Mam ogromną przyjemność polecić podcast z @tnurkiewicz, na który dziś się natknąłem. Niby o `Reactive Programming`, ale…
+[Mon Jul 30 12:49:28 +0000 2018](https://twitter.com/tnurkiewicz/status/1023913467416330241)
+
+RT @JakubWincewicz: Mam ogromną przyjemność polecić podcast z @tnurkiewicz, na który dziś się natknąłem. Niby o `Reactive Programming`, ale…
 
 [Wed Aug 08 14:06:37 +0000 2018](https://twitter.com/tnurkiewicz/status/1027194372356497410)
 
@@ -2676,7 +2826,9 @@ RT @qrush: "how many layers of agile are you on?"
 "like maybe 5 or 6 right now, we use trello, do standup"
 "you are like a little baby, wat…
 
-[Thu Aug 23 09:13:54 +0000 2018](https://twitter.com/tnurkiewicz/status/1032556525011775490)> RT @allegrotech: Is char enough to represent a letter? 🤔 "10 myths about Unicode" by ⁦@tnurkiewicz⁩ #atm11 
+[Thu Aug 23 09:13:54 +0000 2018](https://twitter.com/tnurkiewicz/status/1032556525011775490)
+
+RT @allegrotech: Is char enough to represent a letter? 🤔 "10 myths about Unicode" by ⁦@tnurkiewicz⁩ #atm11 
 
 ![](/img/twitter/1037715064378335232-DmavoiLX4AAS-JT.jpg)
 
@@ -2700,7 +2852,9 @@ Brute-forcing a seemingly simple number puzzle http://www.nurkiewicz.com/2018/09
 
 ![](/img/twitter/1045026149556981767-DoCtsUEXoAIWNO0.jpg)
 
-[Wed Sep 26 19:03:44 +0000 2018](https://twitter.com/tnurkiewicz/status/1045026149556981767)> RT @fromJuniorDevTo: The #JDD  leave the best for the end. Great presentation @tnurkiewicz about "#Reactive programming - lesson learned",…
+[Wed Sep 26 19:03:44 +0000 2018](https://twitter.com/tnurkiewicz/status/1045026149556981767)
+
+RT @fromJuniorDevTo: The #JDD  leave the best for the end. Great presentation @tnurkiewicz about "#Reactive programming - lesson learned",…
 
 [Tue Oct 09 15:08:58 +0000 2018](https://twitter.com/tnurkiewicz/status/1049678113402212353)
 
@@ -2727,7 +2881,9 @@ On November 6th I'll give 'Tour around concurrency in #Java' talk at @bucharest_
 
 RT @rednaxelafx: Monday fun with JIT compilers: a while ago I did some experiments with code generation in Spark SQL, and tried out a few c…
 
-[Tue Oct 23 08:09:23 +0000 2018](https://twitter.com/tnurkiewicz/status/1054645950101286912)> Small #IntelliJ #IDEA (and other @jetbrains products) tip:
+[Tue Oct 23 08:09:23 +0000 2018](https://twitter.com/tnurkiewicz/status/1054645950101286912)
+
+Small #IntelliJ #IDEA (and other @jetbrains products) tip:
 1. Enable: Settings -&gt; Editor -&gt; General -&gt; Smart Keys -&gt; Surround selection on typing quote or brace
 2. Select some text in the editor
 3. Type any of opening brace, square bracket, parenthesis, single or double quote 
@@ -2746,17 +2902,23 @@ RT @JakubPilimon: Please RT. It has been 8 years since my father was diagnosed w
 
 RT @SegFaultConf: Subskrybujecie kanał @SegFaultConf na YouTube? 👀 Koniecznie zobaczcie kolejną prezentację z wrocławskiej edycji 👉 @tnurki…
 
-[Sun Nov 18 09:45:40 +0000 2018](https://twitter.com/tnurkiewicz/status/1064092264002134017)> RT @GeeCON: Welcome aboard @tnurkiewicz! #geecon https://2019.geecon.org/speakers/info.html?id=460 
+[Sun Nov 18 09:45:40 +0000 2018](https://twitter.com/tnurkiewicz/status/1064092264002134017)
+
+RT @GeeCON: Welcome aboard @tnurkiewicz! #geecon https://2019.geecon.org/speakers/info.html?id=460 
 
 ![](/img/twitter/1075953637178798080-Du2t-7NXQAEh5lo.jpg)
 
-[Fri Dec 21 03:18:32 +0000 2018](https://twitter.com/tnurkiewicz/status/1075953637178798080)> RT @TratifTech: The best explanation of the #CompletableFuture abstraction in Java 8 by @tnurkiewicz. Some articles just don't age and this…
+[Fri Dec 21 03:18:32 +0000 2018](https://twitter.com/tnurkiewicz/status/1075953637178798080)
+
+RT @TratifTech: The best explanation of the #CompletableFuture abstraction in Java 8 by @tnurkiewicz. Some articles just don't age and this…
 
 [Mon Jan 14 17:45:14 +0000 2019](https://twitter.com/tnurkiewicz/status/1084869061236875264)
 
 RT @SegFaultConf: Jeśli kiedykolwiek użyliście metody String.length() do policzenia długości stringa i wydaje się Wam, że zwraca ona liczbę…
 
-[Sat Jan 26 20:20:01 +0000 2019](https://twitter.com/tnurkiewicz/status/1089256669085949952)> #RxJava vs #Reactor https://www.nurkiewicz.com/2019/02/rxjava-vs-reactor.html
+[Sat Jan 26 20:20:01 +0000 2019](https://twitter.com/tnurkiewicz/status/1089256669085949952)
+
+#RxJava vs #Reactor https://www.nurkiewicz.com/2019/02/rxjava-vs-reactor.html
 
 [Thu Feb 07 22:43:22 +0000 2019](https://twitter.com/tnurkiewicz/status/1093641396991471616)
 
@@ -2790,7 +2952,9 @@ RT @koziolek: @tnurkiewicz na @WroclawJUG i wątki od podstaw
 
 RT @collibra: We loved hosting the 10 year anniversary celebration of @WroclawJUG yesterday at our development center in Poland. We were ho…
 
-[Wed Feb 27 15:29:13 +0000 2019](https://twitter.com/tnurkiewicz/status/1100779896803115008)> Map.merge() - One method to rule them all #Java  https://www.nurkiewicz.com/2019/03/mapmerge-one-method-to-rule-them-all.html
+[Wed Feb 27 15:29:13 +0000 2019](https://twitter.com/tnurkiewicz/status/1100779896803115008)
+
+Map.merge() - One method to rule them all #Java  https://www.nurkiewicz.com/2019/03/mapmerge-one-method-to-rule-them-all.html
 
 [Mon Mar 04 09:10:37 +0000 2019](https://twitter.com/tnurkiewicz/status/1102496556056485888)
 
@@ -2869,7 +3033,9 @@ A rare moment i…
 RT @RZEmiosloIT: Czy wiecie, że jeden symbol w #UTF-32 może zajmować nawet… 28 bajtów?
 @tnurkiewicz powie nam o tajnikach kodowania znaków…
 
-[Tue Apr 30 14:32:18 +0000 2019](https://twitter.com/tnurkiewicz/status/1123233621052207104)> RT @jessitron: A definition of done at Microsoft:
+[Tue Apr 30 14:32:18 +0000 2019](https://twitter.com/tnurkiewicz/status/1123233621052207104)
+
+RT @jessitron: A definition of done at Microsoft:
 “Live in production, collecting telemetry that examines the hypothesis which motivated th…
 
 [Wed May 01 14:36:47 +0000 2019](https://twitter.com/tnurkiewicz/status/1123597134966734849)
@@ -2919,7 +3085,9 @@ RT @wmekal: @tnurkiewicz I’m amazed!
 
 ![](/img/twitter/1132239951385563136-D7aAC25W0Ac4rR7.jpg)
 
-[Sat May 25 11:00:15 +0000 2019](https://twitter.com/tnurkiewicz/status/1132239951385563136)> I was voted The Best Speaker at #GeeCON for my talk about #Unicode! Looking back it's the 6th Best Speaker award I've got (+that one time I was 2nd... d'oh!) Turns out people actually enjoy talks about fundamentals, not only shiny new frameworks. Thank you!
+[Sat May 25 11:00:15 +0000 2019](https://twitter.com/tnurkiewicz/status/1132239951385563136)
+
+I was voted The Best Speaker at #GeeCON for my talk about #Unicode! Looking back it's the 6th Best Speaker award I've got (+that one time I was 2nd... d'oh!) Turns out people actually enjoy talks about fundamentals, not only shiny new frameworks. Thank you!
 
 [Wed Jul 03 21:13:58 +0000 2019](https://twitter.com/tnurkiewicz/status/1146527527214694401)
 
@@ -2945,7 +3113,9 @@ Video from my #GeeCON talk about #Unicode: https://www.youtube.com/watch?v=WHWe3
 
 Nagranie z @WarszawaJUG mojej prezentacji o #Unicode, najdłuższa wersja, po polsku: https://www.youtube.com/watch?v=QIEpZ0MGoBc
 
-[Tue Jul 30 08:36:02 +0000 2019](https://twitter.com/tnurkiewicz/status/1156121260130263040)> #GraphQL server in #Java: Part I: Basics https://www.nurkiewicz.com/2019/10/graphql-server-in-java-part-i-basics.html
+[Tue Jul 30 08:36:02 +0000 2019](https://twitter.com/tnurkiewicz/status/1156121260130263040)
+
+#GraphQL server in #Java: Part I: Basics https://www.nurkiewicz.com/2019/10/graphql-server-in-java-part-i-basics.html
 
 [Mon Sep 30 22:47:36 +0000 2019](https://twitter.com/tnurkiewicz/status/1178803608852353025)
 
@@ -2955,15 +3125,21 @@ RT @allegrotech: New blog post: Team tourism at Allegro — part 2 — case stud
 
 #GraphQL server in Java: Part II: Understanding Resolvers https://www.nurkiewicz.com/2019/10/graphql-server-in-java-part-ii.html
 
-[Thu Oct 24 18:45:02 +0000 2019](https://twitter.com/tnurkiewicz/status/1187439874091020288)> #WeWork is the #Juicero of real estate. Overhyped, overinvested and overpriced. The most mundane business in disguise of a tech startup. Also, just like Juicero, soon to be forgotten in disgrace
+[Thu Oct 24 18:45:02 +0000 2019](https://twitter.com/tnurkiewicz/status/1187439874091020288)
+
+#WeWork is the #Juicero of real estate. Overhyped, overinvested and overpriced. The most mundane business in disguise of a tech startup. Also, just like Juicero, soon to be forgotten in disgrace
 
 [Wed Nov 06 14:17:15 +0000 2019](https://twitter.com/tnurkiewicz/status/1192083528533585921)
 
 When I became a father, I finally have time to watch those hundreds of talks I put for later through many years. How? If you don't have a baby, simply wake up randomly at night, fire up half-muted YouTube with just one hand, and sway back and forth for 2 hrs while watching
 
-[Wed Nov 27 02:25:55 +0000 2019](https://twitter.com/tnurkiewicz/status/1199514660661334023)> Ever wondered why Twitter treats this emoji 👨‍👩‍👧‍👦 as two characters, but in #Java "👨‍👩‍👧‍👦".length() says... 11? I'll be speaking about #Unicode myths at @Jfokus next year, can't wait! This and much more https://www.jfokus.se/talks/428
+[Wed Nov 27 02:25:55 +0000 2019](https://twitter.com/tnurkiewicz/status/1199514660661334023)
 
-[Thu Dec 05 20:53:27 +0000 2019](https://twitter.com/tnurkiewicz/status/1202692484712861697)> RT @AdamBien: "You Are Not Google, Netflix, Facebook" http://airhacks.fm podcast episode with @tnurkiewicz is available: https://t.co/…
+Ever wondered why Twitter treats this emoji 👨‍👩‍👧‍👦 as two characters, but in #Java "👨‍👩‍👧‍👦".length() says... 11? I'll be speaking about #Unicode myths at @Jfokus next year, can't wait! This and much more https://www.jfokus.se/talks/428
+
+[Thu Dec 05 20:53:27 +0000 2019](https://twitter.com/tnurkiewicz/status/1202692484712861697)
+
+RT @AdamBien: "You Are Not Google, Netflix, Facebook" http://airhacks.fm podcast episode with @tnurkiewicz is available: https://t.co/…
 
 [Sat Jan 04 11:29:35 +0000 2020](https://twitter.com/tnurkiewicz/status/1213422218513924096)
 
@@ -2973,7 +3149,9 @@ One more to cover...
 
 ![](/img/twitter/1222898880376782848-EPicCluVUAEk0DV.jpg)
 
-[Thu Jan 30 15:06:28 +0000 2020](https://twitter.com/tnurkiewicz/status/1222898880376782848)> RT @allegrotech: New episode released - grab it while it’s hot! 🔥
+[Thu Jan 30 15:06:28 +0000 2020](https://twitter.com/tnurkiewicz/status/1222898880376782848)
+
+RT @allegrotech: New episode released - grab it while it’s hot! 🔥
 Allegro Tech Podcast #3 - How to become and remain a good developer? @tnu…
 
 [Mon Mar 09 15:29:32 +0000 2020](https://twitter.com/tnurkiewicz/status/1237037815512342530)
@@ -3003,11 +3181,15 @@ See how Google is tracking your location. With Python, Jupyter, Pandas, Geopanda
 
 RT @devskiller: We are happy to announce that @tnurkiewicz will be taking up the Chief Technology Officer position. Tomasz brings his deep…
 
-[Tue Mar 31 13:48:58 +0000 2020](https://twitter.com/tnurkiewicz/status/1244985039819100163)> My article on visualizing Google location tracking was referenced by The @Telegraph, cool! https://www.telegraph.co.uk/technology/2020/04/03/google-has-gathering-location-long-coronavirus-tracking/. Unfortunately, behind a paywall: 
+[Tue Mar 31 13:48:58 +0000 2020](https://twitter.com/tnurkiewicz/status/1244985039819100163)
+
+My article on visualizing Google location tracking was referenced by The @Telegraph, cool! https://www.telegraph.co.uk/technology/2020/04/03/google-has-gathering-location-long-coronavirus-tracking/. Unfortunately, behind a paywall: 
 
 ![](/img/twitter/1246738465716305920-EU1NuRcXsAAxwwX.jpg)
 
-[Sun Apr 05 09:56:28 +0000 2020](https://twitter.com/tnurkiewicz/status/1246738465716305920)> A comprehensive map of all countries that provide paid parental leave. Happy Mother's Day, especially to women in the United States, Suriname and Papua New Guinea 
+[Sun Apr 05 09:56:28 +0000 2020](https://twitter.com/tnurkiewicz/status/1246738465716305920)
+
+A comprehensive map of all countries that provide paid parental leave. Happy Mother's Day, especially to women in the United States, Suriname and Papua New Guinea 
 
 ![](/img/twitter/1259590734748975104-EXr23aZXYAYU4_e.jpg)
 
@@ -3026,7 +3208,9 @@ I started a podcast called: Around IT In 256 Seconds! For developers, testers, S
 
 ![](/img/twitter/1264822809299214337-EY2NaUdWsAITalQ.jpg)
 
-[Mon May 25 07:37:11 +0000 2020](https://twitter.com/tnurkiewicz/status/1264822809299214337)> Episode #3: #GraphQL is out: https://256.nurkiewicz.com/3 Feel free to subscribe wherever you get your podcast. Or sign up for a newsletter if you'd like longer, extended version of this episode. Enjoy listening, new topic every Tuesday!
+[Mon May 25 07:37:11 +0000 2020](https://twitter.com/tnurkiewicz/status/1264822809299214337)
+
+Episode #3: #GraphQL is out: https://256.nurkiewicz.com/3 Feel free to subscribe wherever you get your podcast. Or sign up for a newsletter if you'd like longer, extended version of this episode. Enjoy listening, new topic every Tuesday!
 
 [Wed Jun 03 23:18:19 +0000 2020](https://twitter.com/tnurkiewicz/status/1268321141489307648)
 
@@ -3042,7 +3226,9 @@ Replying to [@NiestrojRobert and @kubukoz](https://twitter.com/NiestrojRobert/st
 
 As Jakub already explained, I was talking about small, but complex #GraphQL queries that result in huge response payload. I clarify that in podcast's newsletter: https://mailchi.mp/9b859fc282c6/4-serverless. BTW I use the newsletter to expand topics covered in the podcast: https://256.nurkiewicz.com/newsletter
 
-[Fri Jun 19 07:00:29 +0000 2020](https://twitter.com/tnurkiewicz/status/1273873268362096640)> Episode #6: 'Little's law' is out: https://256.nurkiewicz.com/6. It's an astounding equation that’s dead simple, yet it can bring an amazing insight into what your distributed system is capable of. Enjoy listening, new topic every Tuesday!
+[Fri Jun 19 07:00:29 +0000 2020](https://twitter.com/tnurkiewicz/status/1273873268362096640)
+
+Episode #6: 'Little's law' is out: https://256.nurkiewicz.com/6. It's an astounding equation that’s dead simple, yet it can bring an amazing insight into what your distributed system is capable of. Enjoy listening, new topic every Tuesday!
 
 [Tue Jun 30 23:08:42 +0000 2020](https://twitter.com/tnurkiewicz/status/1278103193893965825)
 
@@ -3078,7 +3264,9 @@ Episode #10 of #aroundITin256 #podcast: '#HTTP protocol' is out: https://256.nur
 
 RT @KrzysztofSlonka: We've done it! One million requests per second in our Service Mesh - @allegrotech @EnvoyProxy @CloudNativeFdn. If you…
 
-[Wed Jul 29 14:23:57 +0000 2020](https://twitter.com/tnurkiewicz/status/1288480386155257859)> Episode #11 of #aroundITin256 #podcast: MapReduce is out: https://256.nurkiewicz.com/11. #MapReduce works best when you have a relatively simple program, but data is spread across thousands of servers. Also about #Hadoop. Enjoy listening, a new topic every Tuesday!
+[Wed Jul 29 14:23:57 +0000 2020](https://twitter.com/tnurkiewicz/status/1288480386155257859)
+
+Episode #11 of #aroundITin256 #podcast: MapReduce is out: https://256.nurkiewicz.com/11. #MapReduce works best when you have a relatively simple program, but data is spread across thousands of servers. Also about #Hadoop. Enjoy listening, a new topic every Tuesday!
 
 [Tue Aug 04 06:45:48 +0000 2020](https://twitter.com/tnurkiewicz/status/1290539414792417280)
 
@@ -3141,7 +3329,9 @@ Interaction Protocols: It's All about Good Manners: https://www.infoq.com/presen
 * asynchronous is better than synchronous
 * batching is important, 2PC is a dead end
 
-[Mon Aug 31 13:05:42 +0000 2020](https://twitter.com/tnurkiewicz/status/1300419494423277568)> Episode #14 of #aroundITin256 #podcast: Type systems is out: https://256.nurkiewicz.com/14
+[Mon Aug 31 13:05:42 +0000 2020](https://twitter.com/tnurkiewicz/status/1300419494423277568)
+
+Episode #14 of #aroundITin256 #podcast: Type systems is out: https://256.nurkiewicz.com/14
 
 "[...] conservative, slow and annoying compiler? Or maybe a fast feedback loop, often resulting in crashes at runtime?"
 
@@ -3169,7 +3359,9 @@ Ep #16 of #aroundITin256 #podcast: #Akka: https://256.nurkiewicz.com/16
 
 "[...] If you want an actor to do something or give you some information, message passing is the only way. Send a message, actor will receive it at some point in time, consume it and send a response back."
 
-[Thu Sep 24 09:10:59 +0000 2020](https://twitter.com/tnurkiewicz/status/1309057735187738627)> In our next live we'd like to discuss homework assignments. Do you think they are a better approach compared to on-site recruiting interviews? Testing real skills in a familiar env? Or too much pointless work and a waste of time? Please comment or DM me \| https://www.youtube.com/watch?v=Y1ZiDVnoj4U
+[Thu Sep 24 09:10:59 +0000 2020](https://twitter.com/tnurkiewicz/status/1309057735187738627)
+
+In our next live we'd like to discuss homework assignments. Do you think they are a better approach compared to on-site recruiting interviews? Testing real skills in a familiar env? Or too much pointless work and a waste of time? Please comment or DM me \| https://www.youtube.com/watch?v=Y1ZiDVnoj4U
 
 [Mon Oct 05 07:08:07 +0000 2020](https://twitter.com/tnurkiewicz/status/1313013079417008133)
 
@@ -3215,7 +3407,9 @@ This is a great overview of #ChaosEngineering in 256 seconds! by @tnurkiewicz
 
 https://anchor.fm/256/episodes/20-Chaos-engineering-eljksc
 
-[Fri Oct 30 15:40:44 +0000 2020](https://twitter.com/tnurkiewicz/status/1322201780470665216)> A great, in-depth article about how @figmadesign implemented real-time multiplayer collaboration with WebSockets, CRDTs, and lots of clever heuristics: https://www.figma.com/blog/how-figmas-multiplayer-technology-works/
+[Fri Oct 30 15:40:44 +0000 2020](https://twitter.com/tnurkiewicz/status/1322201780470665216)
+
+A great, in-depth article about how @figmadesign implemented real-time multiplayer collaboration with WebSockets, CRDTs, and lots of clever heuristics: https://www.figma.com/blog/how-figmas-multiplayer-technology-works/
 
 [Sun Nov 01 17:05:20 +0000 2020](https://twitter.com/tnurkiewicz/status/1322947845385822208)
 
@@ -3239,7 +3433,9 @@ Ep #22 of #aroundITin256 #podcast: Moore's law: https://256.nurkiewicz.com/22
 
 "It's a common misconception that Moore's law is dead. [It's] an observation that holds true after half a century [that] the number of transistors in a CPU doubles every two years. Exponential growth."
 
-[Tue Nov 24 07:40:55 +0000 2020](https://twitter.com/tnurkiewicz/status/1331140725535350785)> Ep #24 of #aroundITin256 #podcast: Service discovery: https://256.nurkiewicz.com/24
+[Tue Nov 24 07:40:55 +0000 2020](https://twitter.com/tnurkiewicz/status/1331140725535350785)
+
+Ep #24 of #aroundITin256 #podcast: Service discovery: https://256.nurkiewicz.com/24
 
 "Services come and go, being deployed on different machines all the time. [...] When one service wants to talk to the other, it must somehow figure out where that service currently lives"
 
@@ -3265,7 +3461,9 @@ Ep #27 of #aroundITin256 #podcast: Proof-of-work in #blockchain: https://256.nur
 
 "Let's try to cheat the blockchain. If my wallet has exactly one #bitcoin, I can't spend it twice. However, what if I purposefully create and announce two blocks at the same time?"
 
-[Tue Dec 29 09:04:50 +0000 2020](https://twitter.com/tnurkiewicz/status/1343845420309639168)> Ep #28 of #aroundITin256 #podcast: Event sourcing: https://256.nurkiewicz.com/28
+[Tue Dec 29 09:04:50 +0000 2020](https://twitter.com/tnurkiewicz/status/1343845420309639168)
+
+Ep #28 of #aroundITin256 #podcast: Event sourcing: https://256.nurkiewicz.com/28
 
 "an alternative technique for storing data. Every change is captured in an immutable append-only log. We never overwrite existing records. ES can be fast because it  inserts data, rather than updating it"
 
@@ -3287,7 +3485,9 @@ I actually enjoy the discussions when I recruit developers. However, sometimes I
 
 ![](/img/twitter/1354800883138142209-Es039NCU0AwXIQ9.png)
 
-[Thu Jan 28 14:37:56 +0000 2021](https://twitter.com/tnurkiewicz/status/1354800883138142209)> Ep #31 of #aroundITin256 #podcast: #Redis: https://256.nurkiewicz.com/31
+[Thu Jan 28 14:37:56 +0000 2021](https://twitter.com/tnurkiewicz/status/1354800883138142209)
+
+Ep #31 of #aroundITin256 #podcast: #Redis: https://256.nurkiewicz.com/31
 
 "Redis is quite a versatile NoSQL, key-value database. Or in-memory cache. Or pub/sub broker. With transactions and stored procedures. Extremely fast, it's often used as an alternative to #Memcached"
 
@@ -3323,7 +3523,9 @@ Ep #34 of #aroundITin256 podcast: #SQL joins: https://256.nurkiewicz.com/34
 
 "For example, when storing books and authors, you don't keep an author's name next to a book record. Instead, you use a so-called foreign key that references the author in another table"
 
-[Wed Feb 24 08:50:48 +0000 2021](https://twitter.com/tnurkiewicz/status/1364497996637954048)> Ep #35 of #aroundITin256 podcast: Reactive programming: https://256.nurkiewicz.com/35
+[Wed Feb 24 08:50:48 +0000 2021](https://twitter.com/tnurkiewicz/status/1364497996637954048)
+
+Ep #35 of #aroundITin256 podcast: Reactive programming: https://256.nurkiewicz.com/35
 
 "Essentially, every spreadsheet is internally represented by a dependency graph. We declare which pieces of data depend on which. It's called reactive programming"
 
@@ -3351,7 +3553,9 @@ Ep #38 of #aroundITin256 podcast: #HTTP cookies: from saving shopping cart to on
 
 "the HTTP server is not allowed and not capable of storing any context between requests. It has no memory of prior questions from the same client"
 
-[Tue Mar 30 10:13:36 +0000 2021](https://twitter.com/tnurkiewicz/status/1376840022146580483)> When your vacuum cleaner throws a JavaScript error. In Chinese. CC @internetofshit 
+[Tue Mar 30 10:13:36 +0000 2021](https://twitter.com/tnurkiewicz/status/1376840022146580483)
+
+When your vacuum cleaner throws a JavaScript error. In Chinese. CC @internetofshit 
 
 ![](/img/twitter/1384769859897200640-EzewXBpXEAIBPqv.jpg)
 
@@ -3359,7 +3563,9 @@ Ep #38 of #aroundITin256 podcast: #HTTP cookies: from saving shopping cart to on
 
 W tym roku nadchodzi nowa #Java 17. Młodzi może lekceważą ten język albo nawet nie znają, ale nie ma wątpliwości, że jakiś rozdział w tworzeniu backendów się otwiera #mimowszystkojava
 
-[Mon Apr 26 10:54:14 +0000 2021](https://twitter.com/tnurkiewicz/status/1386634721933905923)> Ep #39 of #aroundITin256 podcast: #DNS: one of the fundamental protocols of the Internet: https://256.nurkiewicz.com/39
+[Mon Apr 26 10:54:14 +0000 2021](https://twitter.com/tnurkiewicz/status/1386634721933905923)
+
+Ep #39 of #aroundITin256 podcast: #DNS: one of the fundamental protocols of the Internet: https://256.nurkiewicz.com/39
 
 "In the Internet, all communication is routed through IP addresses. Each and every server, as well as your computer, is identified using such an address"
 
@@ -3384,7 +3590,9 @@ Ep #41 of #aroundITin256 podcast: Unicode: can you see these: Æ, 爱 and 🚀?:
 
 "The first attempt was ASCII. [...] it's a table of 127 symbols [...] Of course, it's an American Standard. So it ignores the existence of any other country and alphabet."
 
-[Tue May 25 05:47:36 +0000 2021](https://twitter.com/tnurkiewicz/status/1397066802950180864)> Ep #42 of #aroundITin256 podcast: Flow control and backpressure: slowing down to remain stable: https://256.nurkiewicz.com/42
+[Tue May 25 05:47:36 +0000 2021](https://twitter.com/tnurkiewicz/status/1397066802950180864)
+
+Ep #42 of #aroundITin256 podcast: Flow control and backpressure: slowing down to remain stable: https://256.nurkiewicz.com/42
 
 "Sooner or later, this buffer overflows and either start dropping data or crashes altogether. Moreover, large buffers imply growing latency"
 
@@ -3420,7 +3628,9 @@ Ep #46 of #aroundITin256 podcast: Kubernetes: Orchestrating large-scale deployme
 
 "Kubernetes is a platform for managing various workloads inside containers. [...] Manually tracking which servers should host which components is tedious and error-prone"
 
-[Tue Jun 29 09:12:33 +0000 2021](https://twitter.com/tnurkiewicz/status/1409801953320869890)> Ep #47 of #aroundITin256 podcast: Terraform: managing infrastructure as code: https://256.nurkiewicz.com/47
+[Tue Jun 29 09:12:33 +0000 2021](https://twitter.com/tnurkiewicz/status/1409801953320869890)
+
+Ep #47 of #aroundITin256 podcast: Terraform: managing infrastructure as code: https://256.nurkiewicz.com/47
 
 "software for managing your infrastructure [...] you define desired, final infrastructure state. Terraform takes all the necessary steps to fulfill your needs"
 
@@ -3432,7 +3642,9 @@ I absolutely admire the works of @BCiechanowski. His last article about the inte
 
 We've built something remarkable. A feature that will change the way you recruit Java developers. No, seriously. Live coding, no BS. Join us for a premiere on Aug 4th: https://devskiller.com/webinar-devskiller-java-recruitment-revolution/
 
-[Wed Jul 28 08:15:59 +0000 2021](https://twitter.com/tnurkiewicz/status/1420296969122205696)> Our #DevSkillerRevolution webinar is about to start! https://www.youtube.com/watch?v=x_7H_MQ3qq4 We are revealing some really great features for #Java developers
+[Wed Jul 28 08:15:59 +0000 2021](https://twitter.com/tnurkiewicz/status/1420296969122205696)
+
+Our #DevSkillerRevolution webinar is about to start! https://www.youtube.com/watch?v=x_7H_MQ3qq4 We are revealing some really great features for #Java developers
 
 [Wed Aug 04 14:00:18 +0000 2021](https://twitter.com/tnurkiewicz/status/1422920331161899018)
 
@@ -3450,7 +3662,9 @@ https://developers.google.com/tech-writing is a great resource to learn technica
 
 JSON streaming and error handling with Spring WebFlux https://nurkiewicz.com/2021/08/error-handling-in-json-streaming-with-webflux.html
 
-[Mon Aug 30 19:57:37 +0000 2021](https://twitter.com/tnurkiewicz/status/1432432338294775808)> When troubleshooting internet latency I find https://github.com/orf/gping quite useful. It displays ping to multiple hosts over time. Here: twitter, my ISP and my router 
+[Mon Aug 30 19:57:37 +0000 2021](https://twitter.com/tnurkiewicz/status/1432432338294775808)
+
+When troubleshooting internet latency I find https://github.com/orf/gping quite useful. It displays ping to multiple hosts over time. Here: twitter, my ISP and my router 
 
 ![](/img/twitter/1433326563534286849-E-QysygXMAAhAg8.jpg)
 
@@ -3517,7 +3731,9 @@ I love the Unwrap refactoring in @intellijidea. It removes a surrounding block o
 
 ![](/img/twitter/1443186106309267458-FAcwhWzWQAkp78z.png)
 
-[Wed Sep 29 12:09:15 +0000 2021](https://twitter.com/tnurkiewicz/status/1443186106309267458)> #Chrome browser keyboard tips:
+[Wed Sep 29 12:09:15 +0000 2021](https://twitter.com/tnurkiewicz/status/1443186106309267458)
+
+#Chrome browser keyboard tips:
 
 ☑️  ⌘ + digit: open n-th tab (9 -&gt; last)
 ☑️  ⌘ + ⇧ + A: search open and recently closed tabs
@@ -3570,7 +3786,9 @@ Ep #55 of #aroundITin256 podcast: Percentages, percentage points and basis point
 The Missing README (@missingreadme): A Guide for the New Software Engineer book review 
 https://nurkiewicz.com/2021/10/the-missing-readme-book-review.html
 
-[Wed Oct 27 08:55:05 +0000 2021](https://twitter.com/tnurkiewicz/status/1453284103135051796)> Ep #56 of #aroundITin256 podcast: Test-driven development: https://nurkiewicz.com/56
+[Wed Oct 27 08:55:05 +0000 2021](https://twitter.com/tnurkiewicz/status/1453284103135051796)
+
+Ep #56 of #aroundITin256 podcast: Test-driven development: https://nurkiewicz.com/56
 
 "TDD doesn't say 'testing first'. It says: development driven by tests. It's not really about testing. It's an attitude to designing and developing software that must be testable, by definition.
 "
@@ -3605,7 +3823,9 @@ Ep #59 of #aroundITin256 podcast: How compilers work: from source to execution: 
 
 Command palette is a game-changer in @intellijidea,  @code, @GIMP_Official, @obsdmd and every piece of software that supports it. Check out its history: https://capiche.com/e/consumer-dev-tools-command-palette
 
-[Tue Nov 30 09:24:59 +0000 2021](https://twitter.com/tnurkiewicz/status/1465612816740753410)> RT @neiljbrown: @tnurkiewicz Enjoying your podcast https://nurkiewicz.com/podcast. Like the short form, concise content. Great intros &amp; overviews…
+[Tue Nov 30 09:24:59 +0000 2021](https://twitter.com/tnurkiewicz/status/1465612816740753410)
+
+RT @neiljbrown: @tnurkiewicz Enjoying your podcast https://nurkiewicz.com/podcast. Like the short form, concise content. Great intros &amp; overviews…
 
 [Sat Dec 04 17:49:15 +0000 2021](https://twitter.com/tnurkiewicz/status/1467189267491348484)
 
@@ -3664,7 +3884,9 @@ Ep #63 of #aroundITin256 podcast: Logging libraries: auditing and troubleshootin
 
 RT @PanasWaldemar: Zapraszam na inauguracyjne wydarzenie #jugademy na początek 2022! Wśród gości: @dubieladam @pivovarit @jnabrdalik @Jakub…
 
-[Tue Dec 28 09:30:59 +0000 2021](https://twitter.com/tnurkiewicz/status/1475761187090489348)> Ep #64 of #aroundITin256 podcast: TypeScript: will it entirely replace JavaScript?: https://nurkiewicz.com/64
+[Tue Dec 28 09:30:59 +0000 2021](https://twitter.com/tnurkiewicz/status/1475761187090489348)
+
+Ep #64 of #aroundITin256 podcast: TypeScript: will it entirely replace JavaScript?: https://nurkiewicz.com/64
 
 "any valid JavaScript program is also valid TypeScript. [It] adds a ton of features, addressing the shortcomings of JavaScript like optional static typing and null-safety"
 
@@ -3726,7 +3948,9 @@ TIL IntelliJ IDEA suggests dependency updates! Great if you don't use @dependabo
 
 RT @devskillertech: We are looking for an infrastructure engineer/DevOps to grow our team! https://justjoin.it/offers/devskiller-infrastructure-engineer-devops. Feel free to apply or D…
 
-[Mon Jan 31 17:30:30 +0000 2022](https://twitter.com/tnurkiewicz/status/1488203045683048456)> Ep #68 of #aroundITin256 podcast: ACID transactions: don't corrupt your data: https://nurkiewicz.com/68
+[Mon Jan 31 17:30:30 +0000 2022](https://twitter.com/tnurkiewicz/status/1488203045683048456)
+
+Ep #68 of #aroundITin256 podcast: ACID transactions: don't corrupt your data: https://nurkiewicz.com/68
 
 "..an acronym describing transactions: ACID. A good database engine follows these properties religiously. NoSQL engines, on the other hand, trade ACID for availability or speed"
 
@@ -3757,7 +3981,9 @@ Our family donated:
 ✅ blood
 Helping 🇺🇦 as much as we can
 
-[Mon Feb 28 13:13:32 +0000 2022](https://twitter.com/tnurkiewicz/status/1498285240900538373)> During Reactor workshop I run a simple 1-minute benchmark comparing Reactor's window() vs. buffer() to calculate the number of events/seconds (~5M/s in test setup).
+[Mon Feb 28 13:13:32 +0000 2022](https://twitter.com/tnurkiewicz/status/1498285240900538373)
+
+During Reactor workshop I run a simple 1-minute benchmark comparing Reactor's window() vs. buffer() to calculate the number of events/seconds (~5M/s in test setup).
 
 window() uses 300 MiB of memory with little GC. 
 buffer() quickly allocates 7 GiB. Want to learn more? 
@@ -3782,7 +4008,9 @@ CVE-2021-45029 (RCE)
 CVE-2021-23258 (RCE)
 CVE-2022-22963 (RCE) https://twitter.com/JavaCodeDaily/status/1509201714687135758
 
-[Wed Mar 30 19:23:59 +0000 2022](https://twitter.com/tnurkiewicz/status/1509250102082383876)> RT @DmytroKuleba: Bucha massacre was deliberate. Russians aim to eliminate as many Ukrainians as they can. We must stop them and kick them…
+[Wed Mar 30 19:23:59 +0000 2022](https://twitter.com/tnurkiewicz/status/1509250102082383876)
+
+RT @DmytroKuleba: Bucha massacre was deliberate. Russians aim to eliminate as many Ukrainians as they can. We must stop them and kick them…
 
 [Sun Apr 03 12:09:22 +0000 2022](https://twitter.com/tnurkiewicz/status/1510590278742204422)
 
@@ -3852,7 +4080,9 @@ Replying to [@tnurkiewicz](https://twitter.com/tnurkiewicz/status/15196439099656
 
 The best part: the fact that these two URLs are equal is temporary. They'll become unequal if DNS becomes unreachable or returns different IP. TL;DR: URL.equals() in Java is broken beyond comprehension. It makes a network call, it's slow, unreliable and is a terrible HashMap key
 
-[Thu Apr 28 11:45:17 +0000 2022](https://twitter.com/tnurkiewicz/status/1519643912490602496)> It's been 2 years since I started my podcast https://nurkiewicz.com 🎉! Some statistics:
+[Thu Apr 28 11:45:17 +0000 2022](https://twitter.com/tnurkiewicz/status/1519643912490602496)
+
+It's been 2 years since I started my podcast https://nurkiewicz.com 🎉! Some statistics:
 * 66k - number of downloads
 * 250 newsletter subscribers
 * 90 pages of transcripts
@@ -3929,7 +4159,9 @@ Ep #75 of #aroundITin256 podcast: 12th Factor App: portable and resilient servic
 
 Most of the microservices I have seen break "the one-hop rule: a service should not call other services to respond to a request". And most teams heroically work around it with circuit breakers, distributed tracing, service meshes, client-side routing... https://thenewstack.io/are-your-microservices-overly-chatty/
 
-[Tue May 31 18:17:59 +0000 2022](https://twitter.com/tnurkiewicz/status/1531701540402110464)> NumberFormat.getCompactNumberInstance() is available since Java 12. If this doesn't convince you to upgrade from Java 11, I don't know what will ;-) 
+[Tue May 31 18:17:59 +0000 2022](https://twitter.com/tnurkiewicz/status/1531701540402110464)
+
+NumberFormat.getCompactNumberInstance() is available since Java 12. If this doesn't convince you to upgrade from Java 11, I don't know what will ;-) 
 
 ![](/img/twitter/1532683822759825408-FUUvocxWUAI3c8e.jpg)
 
@@ -4013,7 +4245,9 @@ Ep #79 of #aroundITin256 podcast: QUIC: what makes HTTP/3 faster: https://nurkie
 
 At one org. we had a list of allowed Java libraries and versions. There was a plugin failing builds with unlisted libs. But it was only looking at JAR files. So...? 9 MiB hibernate.gif is not suspicious, and you can always rename it back to hibernate.jar in the next build step 🙈
 
-[Thu Jun 30 13:14:36 +0000 2022](https://twitter.com/tnurkiewicz/status/1542496828205273090)> You either die a developer or live long enough to see yourself become the manager
+[Thu Jun 30 13:14:36 +0000 2022](https://twitter.com/tnurkiewicz/status/1542496828205273090)
+
+You either die a developer or live long enough to see yourself become the manager
 
 [Fri Jul 01 08:21:57 +0000 2022](https://twitter.com/tnurkiewicz/status/1542785566302937098)
 
@@ -4123,7 +4357,9 @@ Ep #84 of #aroundITin256 podcast: Non-fungible token (NFT): digital, decentraliz
 
 "an NFT has an associated piece of data. That data is typically a hyperlink to a digital piece of art. What you actually purchase is... well... that link?"
 
-[Mon Aug 29 20:43:25 +0000 2022](https://twitter.com/tnurkiewicz/status/1564353047723220993)> RT @YavaConf: #Onsite #YavaConf #Wielowątkowość #Skalowalność @devskiller 
+[Mon Aug 29 20:43:25 +0000 2022](https://twitter.com/tnurkiewicz/status/1564353047723220993)
+
+RT @YavaConf: #Onsite #YavaConf #Wielowątkowość #Skalowalność @devskiller 
 
 Już 27.09 na ścieżce Main Stage Onsite wystąpi przed Wami Tomas…
 
@@ -4175,7 +4411,9 @@ RT @devskiller: Need a new podcast to listen to? Check out this podcast by DevSk
 
 RT @eMalaGupta: @intellijidea @tnurkiewicz Thanks so much, @tnurkiewicz for presenting with us on #IntelliJIDEAConf. It was a pleasure to l…
 
-[Fri Sep 30 16:42:30 +0000 2022](https://twitter.com/tnurkiewicz/status/1575888831236014084)> Ep #88 of #aroundITin256 podcast: SLI, SLO and SLA: a number, a threshold and a legal document respectively: https://nurkiewicz.com/88
+[Fri Sep 30 16:42:30 +0000 2022](https://twitter.com/tnurkiewicz/status/1575888831236014084)
+
+Ep #88 of #aroundITin256 podcast: SLI, SLO and SLA: a number, a threshold and a legal document respectively: https://nurkiewicz.com/88
 
 "SLA is a legal obligation. Not a metric or a number. You probably meant SLI or SLO."
 
