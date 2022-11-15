@@ -16,15 +16,15 @@ Configuring @quartzscheduler with JDBCJobStore in #SpringFramework: http://bit.l
 
 [Thu Apr 05 12:01:24 +0000 2012](https://twitter.com/tnurkiewicz/status/187872562804555776)
 
-@quartzscheduler misfire instructions explained http://nurkiewicz.blogspot.com/2012/04/quartz-scheduler-misfire-instructions.html
+@quartzscheduler misfire instructions explained http://nurkiewicz.com/2012/04/quartz-scheduler-misfire-instructions.html
 
 [Sun Apr 08 16:24:44 +0000 2012](https://twitter.com/tnurkiewicz/status/189025997918715905)
 
-Secret powers of foldLeft() in #scala http://nurkiewicz.blogspot.com/2012/04/secret-powers-of-foldleft-in-scala.html
+Secret powers of foldLeft() in #scala http://nurkiewicz.com/2012/04/secret-powers-of-foldleft-in-scala.html
 
 [Mon Apr 09 13:31:31 +0000 2012](https://twitter.com/tnurkiewicz/status/189344796337377281)
 
-eta-expansion (internals) in #scala explained: http://nurkiewicz.blogspot.com/2012/04/eta-expansion-internals-in-scala.html
+eta-expansion (internals) in #scala explained: http://nurkiewicz.com/2012/04/eta-expansion-internals-in-scala.html
 
 [Tue Apr 10 13:26:13 +0000 2012](https://twitter.com/tnurkiewicz/status/189705849965514753)
 
@@ -32,7 +32,7 @@ RT @PhilosophersSay: One of the symptoms of an approaching nervous breakdown is 
 
 [Sun May 06 16:28:25 +0000 2012](https://twitter.com/tnurkiewicz/status/199173785381908480)
 
-#mongodb and recording appenders for #logback - check out http://nurkiewicz.blogspot.com/2011/04/mongodb-and-recording-appenders-for.html and vote for http://jira.qos.ch/browse/LBCLASSIC-260 and http://jira.qos.ch/browse/LBCLASSIC-261
+#mongodb and recording appenders for #logback - check out http://nurkiewicz.com/2011/04/mongodb-and-recording-appenders-for.html and vote for http://jira.qos.ch/browse/LBCLASSIC-260 and http://jira.qos.ch/browse/LBCLASSIC-261
 
 [Sun May 06 17:04:31 +0000 2012](https://twitter.com/tnurkiewicz/status/199182871674621952)
 
@@ -44,15 +44,15 @@ RT @splattne: “Dear StackExchange: Thank You” http://rdit.in/8j (+1)
 
 [Sat May 12 20:10:34 +0000 2012](https://twitter.com/tnurkiewicz/status/201404019330121728)
 
-#servlet startAsync() limited usefulness - bug or a feature in #Tomcat and #Jetty? http://nurkiewicz.blogspot.com/2012/05/javaxservletservletrequeststartasync.html
+#servlet startAsync() limited usefulness - bug or a feature in #Tomcat and #Jetty? http://nurkiewicz.com/2012/05/javaxservletservletrequeststartasync.html
 
 [Sat May 12 20:11:06 +0000 2012](https://twitter.com/tnurkiewicz/status/201404153283616768)
 
-Integrating with #reCAPTCHA using... #SpringIntegration (#spring) http://nurkiewicz.blogspot.com/2012/05/integrating-with-recaptcha-using-spring.html
+Integrating with #reCAPTCHA using... #SpringIntegration (#spring) http://nurkiewicz.com/2012/05/integrating-with-recaptcha-using-spring.html
 
 [Sun May 13 16:30:20 +0000 2012](https://twitter.com/tnurkiewicz/status/201710981389365249)
 
-#JavaScript dynamic language support in #SpringFramework http://nurkiewicz.blogspot.com/2010/09/javascript-dynamic-language-support-in.html - old, but still unresolved, see: https://jira.springsource.org/browse/SPR-7592
+#JavaScript dynamic language support in #SpringFramework http://nurkiewicz.com/2010/09/javascript-dynamic-language-support-in.html - old, but still unresolved, see: https://jira.springsource.org/browse/SPR-7592
 
 [Tue May 15 21:04:35 +0000 2012](https://twitter.com/tnurkiewicz/status/202504776901079041)
 
@@ -64,7 +64,7 @@ RT @pawelwrzeszcz: "Tests are probably the only type of documentation that is up
 
 [Sun May 27 21:40:42 +0000 2012](https://twitter.com/tnurkiewicz/status/206862519309058048)
 
-#Oslo #coderetreat summer 2012 - in #Scala with @jhannes - http://nurkiewicz.blogspot.com/2012/05/oslo-coderetreat-summer-2012-in-scala.html
+#Oslo #coderetreat summer 2012 - in #Scala with @jhannes - http://nurkiewicz.com/2012/05/oslo-coderetreat-summer-2012-in-scala.html
 
 [Sun May 27 22:01:05 +0000 2012](https://twitter.com/tnurkiewicz/status/206867649806864389)
 
@@ -258,7 +258,7 @@ Ctrl + Z in #Opera
 
 [Fri Jul 27 09:52:07 +0000 2012](https://twitter.com/tnurkiewicz/status/228789859953815552)
 
-Blogged: String memory internals in #Java http://nurkiewicz.blogspot.com/2012/07/string-memory-internals.html
+Blogged: String memory internals in #Java http://nurkiewicz.com/2012/07/string-memory-internals.html
 
 [Sat Jul 28 17:45:35 +0000 2012](https://twitter.com/tnurkiewicz/status/229271396994392064)
 
@@ -439,7 +439,7 @@ RT @hekonsek: @tnurkiewicz After closer look - I agree :) .
 
 [Fri Aug 31 09:47:55 +0000 2012](https://twitter.com/tnurkiewicz/status/241472375105937408)
 
-Blogged: Accessing clipboard in #Linux terminal - http://nurkiewicz.blogspot.com/2012/09/accessing-clipboard-in-linux-terminal.html \| #Ubuntu #XML #JSON
+Blogged: Accessing clipboard in #Linux terminal - http://nurkiewicz.com/2012/09/accessing-clipboard-in-linux-terminal.html \| #Ubuntu #XML #JSON
 
 [Sat Sep 01 21:21:11 +0000 2012](https://twitter.com/tnurkiewicz/status/242009229416873984)
 
@@ -465,7 +465,7 @@ Just check out HTML of #endomondo - it's full of #wicket references
 
 [Mon Sep 24 17:46:30 +0000 2012](https://twitter.com/tnurkiewicz/status/250290124284375040)
 
-Dziękuję uczestnikom #confiturapl za oddane głosy i cenne uwagi - drugi najlepszy wykład konferencji (!) \| http://nurkiewicz.blogspot.com/2012/09/confitura-2012-podziekowanie-i-uwagi.html
+Dziękuję uczestnikom #confiturapl za oddane głosy i cenne uwagi - drugi najlepszy wykład konferencji (!) \| http://nurkiewicz.com/2012/09/confitura-2012-podziekowanie-i-uwagi.html
 
 [Tue Sep 25 21:10:22 +0000 2012](https://twitter.com/tnurkiewicz/status/250703816582893569)
 
@@ -481,7 +481,7 @@ RT @roy: http://ascii.io/ is awesome. Record your terminal and playback in your 
 
 [Sun Sep 30 11:09:23 +0000 2012](https://twitter.com/tnurkiewicz/status/252364515797237761)
 
-Blogged: RateLimiter - discovering #Google #Guava: http://nurkiewicz.blogspot.com/2012/09/ratelimiter-discovering-google-guava.html - lots of samples and use-cases \| #Java
+Blogged: RateLimiter - discovering #Google #Guava: http://nurkiewicz.com/2012/09/ratelimiter-discovering-google-guava.html - lots of samples and use-cases \| #Java
 
 [Sun Sep 30 21:40:09 +0000 2012](https://twitter.com/tnurkiewicz/status/252523250037436417)
 
@@ -497,7 +497,7 @@ Every #Java release is like #Apple product première: everyone's excited about f
 
 [Thu Oct 04 19:35:14 +0000 2012](https://twitter.com/tnurkiewicz/status/253941365875032065)
 
-Blogged: Where do the stack traces come from? http://nurkiewicz.blogspot.com/2012/10/where-do-stack-traces-come-from.html \| #Java #performance
+Blogged: Where do the stack traces come from? http://nurkiewicz.com/2012/10/where-do-stack-traces-come-from.html \| #Java #performance
 
 [Sat Oct 06 10:23:52 +0000 2012](https://twitter.com/tnurkiewicz/status/254527384445931520)
 
@@ -517,15 +517,15 @@ Yet another reason to hate #Java/#XML couple - http://stackoverflow.com/q/127797
 
 [Thu Oct 18 07:38:05 +0000 2012](https://twitter.com/tnurkiewicz/status/258834319924158464)
 
-RT @trzmiel: Saved again by @tnurkiewicz - Which Java thread consumes my CPU? http://nurkiewicz.blogspot.com/2012/08/which-java-thread-consumes-my-cpu.html
+RT @trzmiel: Saved again by @tnurkiewicz - Which Java thread consumes my CPU? http://nurkiewicz.com/2012/08/which-java-thread-consumes-my-cpu.html
 
 [Thu Oct 18 10:16:12 +0000 2012](https://twitter.com/tnurkiewicz/status/258874113530159104)
 
-Blogged: #Java Coding Conventions considered harmful \| http://nurkiewicz.blogspot.com/2012/10/java-coding-conventions-considered.html#more
+Blogged: #Java Coding Conventions considered harmful \| http://nurkiewicz.com/2012/10/java-coding-conventions-considered.html#more
 
 [Thu Oct 18 18:10:57 +0000 2012](https://twitter.com/tnurkiewicz/status/258993586723500032)
 
-Blogged: Testing #Quartz Cron expressions http://nurkiewicz.blogspot.com/2012/10/testing-quartz-cron-expressions.html?spref=tw
+Blogged: Testing #Quartz Cron expressions http://nurkiewicz.com/2012/10/testing-quartz-cron-expressions.html?spref=tw
 
 [Sat Oct 20 17:50:45 +0000 2012](https://twitter.com/tnurkiewicz/status/259713278559784960)
 
@@ -545,23 +545,23 @@ Double #Java misunderstanding: objects are garbage collected when they are no lo
 
 [Wed Oct 24 21:34:50 +0000 2012](https://twitter.com/tnurkiewicz/status/261219222150062080)
 
-Blogged: #Java features applicability - which features to use on a daily basis, which occasionally and which... never \| http://nurkiewicz.blogspot.com/2012/10/java-features-applicability.html
+Blogged: #Java features applicability - which features to use on a daily basis, which occasionally and which... never \| http://nurkiewicz.com/2012/10/java-features-applicability.html
 
 [Sun Oct 28 21:33:16 +0000 2012](https://twitter.com/tnurkiewicz/status/262668378941038592)
 
-Blogged: Your first message - discovering #Akka \| http://nurkiewicz.blogspot.com/2012/10/your-first-message-discovering-akka.html, #Scala
+Blogged: Your first message - discovering #Akka \| http://nurkiewicz.com/2012/10/your-first-message-discovering-akka.html, #Scala
 
 [Tue Oct 30 07:56:06 +0000 2012](https://twitter.com/tnurkiewicz/status/263187510514032641)
 
-Blogged: Request and response - discovering #Akka \| http://nurkiewicz.blogspot.com/2012/10/request-and-response-discovering-akka.html #Scala
+Blogged: Request and response - discovering #Akka \| http://nurkiewicz.com/2012/10/request-and-response-discovering-akka.html #Scala
 
 [Wed Oct 31 18:59:24 +0000 2012](https://twitter.com/tnurkiewicz/status/263716820811382784)
 
-RT @trzmiel: Saved by @tnurkiewicz again - testing Quartz cron expressions. Keep 'em coming! http://nurkiewicz.blogspot.com/2012/10/testing-quartz-cron-expressions.html
+RT @trzmiel: Saved by @tnurkiewicz again - testing Quartz cron expressions. Keep 'em coming! http://nurkiewicz.com/2012/10/testing-quartz-cron-expressions.html
 
 [Fri Nov 02 09:40:19 +0000 2012](https://twitter.com/tnurkiewicz/status/264300897746694144)
 
-Blogged: Two actors - discovering #Akka \| http://nurkiewicz.blogspot.com/2012/11/two-actors-discovering-akka.html #Scala
+Blogged: Two actors - discovering #Akka \| http://nurkiewicz.com/2012/11/two-actors-discovering-akka.html #Scala
 
 [Fri Nov 02 19:33:18 +0000 2012](https://twitter.com/tnurkiewicz/status/264450127182307328)
 
@@ -581,7 +581,7 @@ Quite interesting collection of #Spring, #Maven and #Java best practices: http:/
 
 [Sun Nov 04 21:47:37 +0000 2012](https://twitter.com/tnurkiewicz/status/265208707065999360)
 
-Blogged: become/unbecome - discovering #Akka http://nurkiewicz.blogspot.com/2012/11/becomeunbecome-discovering-akka.html #Scala
+Blogged: become/unbecome - discovering #Akka http://nurkiewicz.com/2012/11/becomeunbecome-discovering-akka.html #Scala
 
 [Mon Nov 05 18:45:51 +0000 2012](https://twitter.com/tnurkiewicz/status/265525351910866944)
 
@@ -591,11 +591,11 @@ thanks for pointing it out, I clarified that bit.
 
 [Mon Nov 05 20:35:52 +0000 2012](https://twitter.com/tnurkiewicz/status/265553036561235968)
 
-Non-blocking I/O - discovering #Akka http://nurkiewicz.blogspot.com/2012/11/non-blocking-io-discovering-akka.html #Scala, #netty powered
+Non-blocking I/O - discovering #Akka http://nurkiewicz.com/2012/11/non-blocking-io-discovering-akka.html #Scala, #netty powered
 
 [Tue Nov 06 17:45:31 +0000 2012](https://twitter.com/tnurkiewicz/status/265872555548753920)
 
-Blogged: Remote actors - discovering #Akka http://nurkiewicz.blogspot.com/2012/11/remote-actors-discovering-akka.html \| for the time being - last part #Scala
+Blogged: Remote actors - discovering #Akka http://nurkiewicz.com/2012/11/remote-actors-discovering-akka.html \| for the time being - last part #Scala
 
 [Sat Nov 10 19:28:43 +0000 2012](https://twitter.com/tnurkiewicz/status/267348077168427008)
 
@@ -605,7 +605,7 @@ Replying to [@tnurkiewicz](https://twitter.com/joschi83/status/26741563837553049
 
 [Sun Nov 11 20:03:20 +0000 2012](https://twitter.com/tnurkiewicz/status/267719177303900162)
 
-RT @FrVaBe: Enabling load balancing and failover in Apache #CXF by @tnurkiewicz http://nurkiewicz.blogspot.com/2011/05/enabling-load-balancing-and-failover-in.html &lt; Thanks - could be useful to kn ...
+RT @FrVaBe: Enabling load balancing and failover in Apache #CXF by @tnurkiewicz http://nurkiewicz.com/2011/05/enabling-load-balancing-and-failover-in.html &lt; Thanks - could be useful to kn ...
 
 [Tue Nov 13 15:04:28 +0000 2012](https://twitter.com/tnurkiewicz/status/268368741610442752)
 
@@ -613,7 +613,7 @@ Great #progfun #Scala course by @odersky at @coursera is over. Now waiting for a
 
 [Tue Nov 13 17:58:53 +0000 2012](https://twitter.com/tnurkiewicz/status/268412633458282496)
 
-Blogged: Parallelization of a simple use case explained \| http://nurkiewicz.blogspot.com/2012/11/parallelization-of-simple-use-case.html \| in #Java and a little bit of #Spring
+Blogged: Parallelization of a simple use case explained \| http://nurkiewicz.com/2012/11/parallelization-of-simple-use-case.html \| in #Java and a little bit of #Spring
 
 [Sun Nov 18 19:01:22 +0000 2012](https://twitter.com/tnurkiewicz/status/270240297097781248)
 
@@ -621,7 +621,7 @@ RT @jTed_smith: We've got multi-core CPUs, so why not make use of them? Check th
 
 [Tue Nov 20 07:10:28 +0000 2012](https://twitter.com/tnurkiewicz/status/270786170613538816)
 
-Blogged: Standalone web application with executable #Tomcat \| http://nurkiewicz.blogspot.com/2012/11/standalone-web-application-with.html \| using #Maven plugin
+Blogged: Standalone web application with executable #Tomcat \| http://nurkiewicz.com/2012/11/standalone-web-application-with.html \| using #Maven plugin
 
 [Sat Nov 24 22:15:09 +0000 2012](https://twitter.com/tnurkiewicz/status/272463392235728896)
 
@@ -635,7 +635,7 @@ I'm impressed how easy it was to setup continuous integration for my @github hos
 
 [Sun Nov 25 21:00:09 +0000 2012](https://twitter.com/tnurkiewicz/status/272806907079700480)
 
-Blogged: Forcing #Tomcat to log through #SLF4J/#Logback \| http://nurkiewicz.blogspot.com/2012/11/forcing-tomcat-to-log-through.html
+Blogged: Forcing #Tomcat to log through #SLF4J/#Logback \| http://nurkiewicz.com/2012/11/forcing-tomcat-to-log-through.html
 
 [Mon Nov 26 18:30:09 +0000 2012](https://twitter.com/tnurkiewicz/status/273131542912593921)
 
@@ -667,11 +667,11 @@ RT @jaceklaskowski: @tnurkiewicz Congrats! I'm impressed.
 
 [Wed Jan 09 18:15:13 +0000 2013](https://twitter.com/tnurkiewicz/status/289072853834403841)
 
-Blogged: #Probability distribution for programmers http://nurkiewicz.blogspot.com/2013/01/probability-distribution-for-programmers.html
+Blogged: #Probability distribution for programmers http://nurkiewicz.com/2013/01/probability-distribution-for-programmers.html
 
 [Wed Jan 09 19:04:57 +0000 2013](https://twitter.com/tnurkiewicz/status/289085367037091840)
 
-Blogged: @Cacheable overhead in #Spring \| http://nurkiewicz.blogspot.com/2013/01/cacheable-overhead-in-spring.html \| #Java, #performance
+Blogged: @Cacheable overhead in #Spring \| http://nurkiewicz.com/2013/01/cacheable-overhead-in-spring.html \| #Java, #performance
 
 [Sun Jan 13 21:22:11 +0000 2013](https://twitter.com/tnurkiewicz/status/290569457431093249)
 
@@ -685,7 +685,7 @@ ja słyszałem: 'testy jednostkowe - wrzucamy na produkcję bez testów i modlim
 
 [Fri Jan 18 19:14:28 +0000 2013](https://twitter.com/tnurkiewicz/status/292349255371341824)
 
-Announcing #Spring Data #JDBC generic DAO implementation: https://github.com/nurkiewicz/spring-data-jdbc-repository \| http://nurkiewicz.blogspot.com/2013/01/spring-data-jdbc-generic-dao.html \| Yet another #Java #ORM?! Not quite
+Announcing #Spring Data #JDBC generic DAO implementation: https://github.com/nurkiewicz/spring-data-jdbc-repository \| http://nurkiewicz.com/2013/01/spring-data-jdbc-generic-dao.html \| Yet another #Java #ORM?! Not quite
 
 [Sun Jan 20 17:15:57 +0000 2013](https://twitter.com/tnurkiewicz/status/293044205369036800)
 
@@ -693,7 +693,7 @@ My #Spring Data #JDBC repository now supports #MSSQL Server 2008/2012. Thanks @t
 
 [Thu Jan 24 18:27:23 +0000 2013](https://twitter.com/tnurkiewicz/status/294511733324804096)
 
-Blogged: How aggressive is method inlining in #JVM? http://nurkiewicz.blogspot.com/2013/01/how-aggressive-is-method-inlining-in-jvm.html \| #Java
+Blogged: How aggressive is method inlining in #JVM? http://nurkiewicz.com/2013/01/how-aggressive-is-method-inlining-in-jvm.html \| #Java
 
 [Sun Jan 27 21:14:35 +0000 2013](https://twitter.com/tnurkiewicz/status/295640971528503296)
 
@@ -711,15 +711,15 @@ RT @Jfokus: We welcome Konrad Malawski @ktosopl to #Jfokus 2013 with the talk: "
 
 [Thu Jan 31 09:56:31 +0000 2013](https://twitter.com/tnurkiewicz/status/296919884347105280)
 
-Breaking build is not a crime: http://nurkiewicz.blogspot.com/2013/02/breaking-build-is-not-crime.html \| effective continuous integration with #git and #Atlassian #Bamboo
+Breaking build is not a crime: http://nurkiewicz.com/2013/02/breaking-build-is-not-crime.html \| effective continuous integration with #git and #Atlassian #Bamboo
 
 [Sat Feb 02 21:47:25 +0000 2013](https://twitter.com/tnurkiewicz/status/297823561987526657)
 
-Blogged: Don't rely on unit tests alone \| http://nurkiewicz.blogspot.com/2013/02/dont-rely-on-unit-tests-alone.html \| #Java #TDD
+Blogged: Don't rely on unit tests alone \| http://nurkiewicz.com/2013/02/dont-rely-on-unit-tests-alone.html \| #Java #TDD
 
 [Sat Feb 09 22:44:04 +0000 2013](https://twitter.com/tnurkiewicz/status/300374534119378944)
 
-Blogged: java.util.concurrent.Future basics \| http://nurkiewicz.blogspot.com/2013/02/javautilconcurrentfuture-basics.html \| #Java
+Blogged: java.util.concurrent.Future basics \| http://nurkiewicz.com/2013/02/javautilconcurrentfuture-basics.html \| #Java
 
 [Sat Feb 16 18:43:15 +0000 2013](https://twitter.com/tnurkiewicz/status/302850648012115970)
 
@@ -733,7 +733,7 @@ thx! Good timing, I just reached 100K rep. on #stackoverflow and decided to focu
 
 [Tue Feb 19 16:41:03 +0000 2013](https://twitter.com/tnurkiewicz/status/303907057814364160)
 
-Blogged: Implementing custom Future&lt;T&gt; \| http://nurkiewicz.blogspot.com/2013/02/implementing-custom-future.html \| #Java and #JMS
+Blogged: Implementing custom Future&lt;T&gt; \| http://nurkiewicz.com/2013/02/implementing-custom-future.html \| #Java and #JMS
 
 [Wed Feb 20 19:41:03 +0000 2013](https://twitter.com/tnurkiewicz/status/304314741952770050)
 
@@ -743,7 +743,7 @@ Gifts from #stackoverflow arrived few days ago. Still not sure what it is, but l
 
 [Wed Feb 20 22:14:15 +0000 2013](https://twitter.com/tnurkiewicz/status/304353295667970048)
 
-Blogged: ExecutorCompletionService in practice \| http://nurkiewicz.blogspot.com/2013/02/executorcompletionservice-in-practice.html \| #Java
+Blogged: ExecutorCompletionService in practice \| http://nurkiewicz.com/2013/02/executorcompletionservice-in-practice.html \| #Java
 
 [Fri Feb 22 21:00:12 +0000 2013](https://twitter.com/tnurkiewicz/status/305059439713607682)
 
@@ -751,11 +751,11 @@ RT @nicolaiarocci: Backbone.js vs Angular.js : Demystifying the myths http://bit
 
 [Sun Feb 24 09:41:24 +0000 2013](https://twitter.com/tnurkiewicz/status/305613386660585472)
 
-Blogged: ListenableFuture in #Guava \| http://nurkiewicz.blogspot.com/2013/02/listenablefuture-in-guava.html \| #Java
+Blogged: ListenableFuture in #Guava \| http://nurkiewicz.com/2013/02/listenablefuture-in-guava.html \| #Java
 
 [Mon Feb 25 22:38:53 +0000 2013](https://twitter.com/tnurkiewicz/status/306171435360088065)
 
-Blogged: Advanced ListenableFuture capabilities \| http://nurkiewicz.blogspot.com/2013/02/advanced-listenablefuture-capabilities.html \| #Java and #Guava
+Blogged: Advanced ListenableFuture capabilities \| http://nurkiewicz.com/2013/02/advanced-listenablefuture-capabilities.html \| #Java and #Guava
 
 [Thu Feb 28 22:36:58 +0000 2013](https://twitter.com/tnurkiewicz/status/307258116087619585)
 
@@ -763,7 +763,7 @@ Is Your Code Structured Like This? \| http://java.dzone.com/articles/your-code-s
 
 [Fri Mar 01 17:05:13 +0000 2013](https://twitter.com/tnurkiewicz/status/307537017292595200)
 
-Blogged: DeferredResult - asynchronous processing in #Spring MVC \| http://nurkiewicz.blogspot.com/2013/03/deferredresult-asynchronous-processing.html \| #Java
+Blogged: DeferredResult - asynchronous processing in #Spring MVC \| http://nurkiewicz.com/2013/03/deferredresult-asynchronous-processing.html \| #Java
 
 [Mon Mar 04 17:06:59 +0000 2013](https://twitter.com/tnurkiewicz/status/308624628211912704)
 
@@ -777,7 +777,7 @@ dzięki, miło mi! Piszę, bo lubię, ale nie planuję nic większego. PS: a o F
 
 [Wed Mar 06 21:51:17 +0000 2013](https://twitter.com/tnurkiewicz/status/309420947042078720)
 
-Blogged: Futures in #Akka with #Scala \| http://nurkiewicz.blogspot.com/2013/03/futures-in-akka-with-scala.html
+Blogged: Futures in #Akka with #Scala \| http://nurkiewicz.com/2013/03/futures-in-akka-with-scala.html
 
 [Thu Mar 07 17:41:04 +0000 2013](https://twitter.com/tnurkiewicz/status/309720366815797249)
 
@@ -787,7 +787,7 @@ Any chances for open-sourcing this great feature? I was actually considering wri
 
 [Sun Mar 10 19:47:25 +0000 2013](https://twitter.com/tnurkiewicz/status/310839326550396929)
 
-Blogged: Promises and Deferred objects in #jQuery and #AngularJS \| http://nurkiewicz.blogspot.com/2013/03/promises-and-deferred-objects-in-jquery.html \| Futures in #JavaScript this time
+Blogged: Promises and Deferred objects in #jQuery and #AngularJS \| http://nurkiewicz.com/2013/03/promises-and-deferred-objects-in-jquery.html \| Futures in #JavaScript this time
 
 [Mon Mar 11 18:48:05 +0000 2013](https://twitter.com/tnurkiewicz/status/311186784799318016)
 
@@ -795,11 +795,11 @@ By @zef: "build amazing apps [..] with the most boring technology, [..] (that) h
 
 [Sat Mar 23 10:57:46 +0000 2013](https://twitter.com/tnurkiewicz/status/315417079664738305)
 
-Blogged: Promises and futures in #Clojure \| http://nurkiewicz.blogspot.com/2013/03/promises-and-futures-in-clojure.html
+Blogged: Promises and futures in #Clojure \| http://nurkiewicz.com/2013/03/promises-and-futures-in-clojure.html
 
 [Sun Mar 24 10:31:53 +0000 2013](https://twitter.com/tnurkiewicz/status/315772954170511362)
 
-Blogged: #FitNesse your #ScalaTest with custom #Scala #DSL \| http://nurkiewicz.blogspot.com/2013/03/fitnesse-your-scalatest-with-custom.html
+Blogged: #FitNesse your #ScalaTest with custom #Scala #DSL \| http://nurkiewicz.com/2013/03/fitnesse-your-scalatest-with-custom.html
 
 [Thu Mar 28 16:38:54 +0000 2013](https://twitter.com/tnurkiewicz/status/317314867361112064)
 
@@ -809,7 +809,7 @@ I added support for #grep and #wget for starters: http://htmlpreview.github.com/
 
 [Fri Mar 29 11:29:03 +0000 2013](https://twitter.com/tnurkiewicz/status/317599279504044032)
 
-Blogged: Synchronizing transactions with asynchronous events in #Spring \| http://nurkiewicz.blogspot.com/2013/03/synchronizing-transactions-with.html
+Blogged: Synchronizing transactions with asynchronous events in #Spring \| http://nurkiewicz.com/2013/03/synchronizing-transactions-with.html
 
 [Fri Mar 29 11:48:56 +0000 2013](https://twitter.com/tnurkiewicz/status/317604281236721664)Replying to [@tnurkiewicz](https://twitter.com/douglascayers/status/318609412489089024)
 
@@ -817,11 +817,11 @@ Thank you! RT @DouglasCAyers Great article! Easy to read and I appreciated the c
 
 [Mon Apr 01 09:58:37 +0000 2013](https://twitter.com/tnurkiewicz/status/318663686472466433)
 
-Blogged: #Scala traits implementation and interoperability. Part I: Basics \| http://nurkiewicz.blogspot.com/2013/04/scala-traits-implementation-and.html
+Blogged: #Scala traits implementation and interoperability. Part I: Basics \| http://nurkiewicz.com/2013/04/scala-traits-implementation-and.html
 
 [Mon Apr 01 21:17:46 +0000 2013](https://twitter.com/tnurkiewicz/status/318834597616033793)
 
-Blogged: #Scala traits implementation and interoperability. Part II: Traits linearization \| http://nurkiewicz.blogspot.com/2013/04/scala-traits-implementation-and_3.html
+Blogged: #Scala traits implementation and interoperability. Part II: Traits linearization \| http://nurkiewicz.com/2013/04/scala-traits-implementation-and_3.html
 
 [Wed Apr 03 20:41:06 +0000 2013](https://twitter.com/tnurkiewicz/status/319550147052859392)
 
@@ -841,11 +841,11 @@ RT @jboner: "Don't communicate by sharing memory, share memory by communicating.
 
 [Mon Apr 08 07:46:26 +0000 2013](https://twitter.com/tnurkiewicz/status/321167132576608256)
 
-Blogged: WatchService combined with #Akka actors \| http://nurkiewicz.blogspot.com/2013/04/watchservice-combined-with-akka-actors.html \| #Scala and #Java
+Blogged: WatchService combined with #Akka actors \| http://nurkiewicz.com/2013/04/watchservice-combined-with-akka-actors.html \| #Scala and #Java
 
 [Mon Apr 08 19:15:19 +0000 2013](https://twitter.com/tnurkiewicz/status/321340499506110464)
 
-Blogged: SiftingAppender: logging different threads to different log files \| http://nurkiewicz.blogspot.com/2013/04/siftingappender-logging-different.html \| #Logback
+Blogged: SiftingAppender: logging different threads to different log files \| http://nurkiewicz.com/2013/04/siftingappender-logging-different.html \| #Logback
 
 [Sun Apr 14 11:46:54 +0000 2013](https://twitter.com/tnurkiewicz/status/323401977675517952)
 
@@ -865,7 +865,7 @@ Replying to [@mariofusco](https://twitter.com/mariofusco/status/3263930222941593
 
 [Mon Apr 22 20:15:10 +0000 2013](https://twitter.com/tnurkiewicz/status/326428990074126336)
 
-Blogged: Lazy sequences in #Scala and #Clojure \| http://nurkiewicz.blogspot.com/2013/05/lazy-sequences-in-scala-and-clojure.html \| testing #Cron expressions, again
+Blogged: Lazy sequences in #Scala and #Clojure \| http://nurkiewicz.com/2013/05/lazy-sequences-in-scala-and-clojure.html \| testing #Cron expressions, again
 
 [Sat May 04 09:57:41 +0000 2013](https://twitter.com/tnurkiewicz/status/330622249793114112)
 
@@ -884,7 +884,7 @@ RT @ceki: Remove "build" and your statement would still be true!
 
 [Wed May 08 22:04:01 +0000 2013](https://twitter.com/tnurkiewicz/status/332254589141254144)
 
-Blogged: #Java8: Definitive guide to CompletableFuture \| http://nurkiewicz.blogspot.com/2013/05/java-8-definitive-guide-to.html
+Blogged: #Java8: Definitive guide to CompletableFuture \| http://nurkiewicz.com/2013/05/java-8-definitive-guide-to.html
 
 [Thu May 09 20:11:56 +0000 2013](https://twitter.com/tnurkiewicz/status/332588767565205506)
 
@@ -892,11 +892,11 @@ RT @DouglasCAyers: @tnurkiewicz thanks! I'm learning Scala on http://coursera.or
 
 [Fri May 10 06:27:07 +0000 2013](https://twitter.com/tnurkiewicz/status/332743586535845888)
 
-Blogged: #Java8: CompletableFuture in action \| http://nurkiewicz.blogspot.com/2013/05/java-8-completablefuture-in-action.html \| first part: http://nurkiewicz.blogspot.com/2013/05/java-8-definitive-guide-to.html
+Blogged: #Java8: CompletableFuture in action \| http://nurkiewicz.com/2013/05/java-8-completablefuture-in-action.html \| first part: http://nurkiewicz.com/2013/05/java-8-definitive-guide-to.html
 
 [Sun May 12 21:15:06 +0000 2013](https://twitter.com/tnurkiewicz/status/333691830761832448)
 
-Publishing lazy sequences implementation for #Java8 \| http://nurkiewicz.blogspot.com/2013/05/lazy-sequences-implementation-for-java-8.html \| heavily inspired by #Scala streams and #Clojure
+Publishing lazy sequences implementation for #Java8 \| http://nurkiewicz.com/2013/05/lazy-sequences-implementation-for-java-8.html \| heavily inspired by #Scala streams and #Clojure
 
 [Mon May 13 20:49:50 +0000 2013](https://twitter.com/tnurkiewicz/status/334047859232104448)
 
@@ -906,7 +906,7 @@ Have a look at 2nd part of this article (http://nurkiewicz.blogspot.no/2013/05/j
 
 [Tue May 14 13:13:56 +0000 2013](https://twitter.com/tnurkiewicz/status/334295517444075520)
 
-Blogged: Null safety in #Kotlin \| http://nurkiewicz.blogspot.com/2013/05/null-safety-in-kotlin.html
+Blogged: Null safety in #Kotlin \| http://nurkiewicz.com/2013/05/null-safety-in-kotlin.html
 
 [Mon May 27 19:19:50 +0000 2013](https://twitter.com/tnurkiewicz/status/339098637617475585)
 
@@ -916,7 +916,7 @@ This syntax in #Java is called Double Brace Initialization and is sometimes cons
 
 [Wed May 29 11:26:54 +0000 2013](https://twitter.com/tnurkiewicz/status/339704399540670464)
 
-Blogged: Mapping enums done right with @Convert in #JPA 2.1 \| http://nurkiewicz.blogspot.com/2013/06/mapping-enums-done-right-with-convert.html \| #Java #JavaEE
+Blogged: Mapping enums done right with @Convert in #JPA 2.1 \| http://nurkiewicz.com/2013/06/mapping-enums-done-right-with-convert.html \| #Java #JavaEE
 
 [Sun Jun 02 21:02:42 +0000 2013](https://twitter.com/tnurkiewicz/status/341298853909237760)
 
@@ -924,7 +924,7 @@ I will be speaking at #confiturapl about handling times and dates in software sy
 
 [Sun Jun 09 19:18:29 +0000 2013](https://twitter.com/tnurkiewicz/status/343809340840493056)
 
-Blogged: #Clojure macros for beginners \| http://nurkiewicz.blogspot.com/2013/06/clojure-macros-for-beginners.html
+Blogged: #Clojure macros for beginners \| http://nurkiewicz.com/2013/06/clojure-macros-for-beginners.html
 
 [Sun Jun 09 21:30:09 +0000 2013](https://twitter.com/tnurkiewicz/status/343842477389787140)
 
@@ -946,7 +946,7 @@ RT @sascha_d: People, stop it with your screencasts. When I need to know how to 
 
 [Thu Jun 27 19:54:13 +0000 2013](https://twitter.com/tnurkiewicz/status/350341317450149888)
 
-Blogged: su and sudo in #Spring Security applications \| http://nurkiewicz.blogspot.com/2013/06/su-and-sudo-in-spring-security.html
+Blogged: su and sudo in #Spring Security applications \| http://nurkiewicz.com/2013/06/su-and-sudo-in-spring-security.html
 
 [Sun Jun 30 10:15:40 +0000 2013](https://twitter.com/tnurkiewicz/status/351282881584308224)
 
@@ -954,7 +954,7 @@ RT @VidyaLLC: Outstanding post by @tnurkiewicz on using the power of #Scala to c
 
 [Tue Jul 02 05:42:35 +0000 2013](https://twitter.com/tnurkiewicz/status/351938934181339138)
 
-Blogged: Macro lifecycle in #Clojure \| http://nurkiewicz.blogspot.com/2013/07/macro-lifecycle-in-clojure.html
+Blogged: Macro lifecycle in #Clojure \| http://nurkiewicz.com/2013/07/macro-lifecycle-in-clojure.html
 
 [Tue Jul 02 16:40:50 +0000 2013](https://twitter.com/tnurkiewicz/status/352104590096859137)
 
@@ -974,11 +974,11 @@ Slides from my #confiturapl talk: http://nurkiewicz.github.io/talks/confitura201
 
 [Sat Jul 13 06:07:13 +0000 2013](https://twitter.com/tnurkiewicz/status/355931400232382464)
 
-Blogged: Fake system clock pattern in #Scala with implicit parameters \| http://nurkiewicz.blogspot.com/2013/07/fake-system-clock-pattern-in-scala-with.html
+Blogged: Fake system clock pattern in #Scala with implicit parameters \| http://nurkiewicz.com/2013/07/fake-system-clock-pattern-in-scala-with.html
 
 [Mon Jul 15 16:46:59 +0000 2013](https://twitter.com/tnurkiewicz/status/356817180190441472)
 
-Blogged: Managing congested actors in #Akka and #Scala \| http://nurkiewicz.blogspot.com/2013/07/managing-congested-actors-in-akka.html
+Blogged: Managing congested actors in #Akka and #Scala \| http://nurkiewicz.com/2013/07/managing-congested-actors-in-akka.html
 
 [Wed Jul 17 16:54:37 +0000 2013](https://twitter.com/tnurkiewicz/status/357543874379517953)
 
@@ -988,7 +988,7 @@ Apparently @DZone breaks formatting when republishing my articles (same here: ht
 
 [Sun Jul 21 21:08:47 +0000 2013](https://twitter.com/tnurkiewicz/status/359057390244605952)
 
-Blogged: Asynchronous retry pattern \| http://nurkiewicz.blogspot.com/2013/07/asynchronous-retry-pattern.html \| #Java 8 and #Spring supported
+Blogged: Asynchronous retry pattern \| http://nurkiewicz.com/2013/07/asynchronous-retry-pattern.html \| #Java 8 and #Spring supported
 
 [Tue Jul 23 18:41:24 +0000 2013](https://twitter.com/tnurkiewicz/status/359745074990559232)
 
@@ -1028,11 +1028,11 @@ Great event by @skillsmatter: #Spring Exchange in #London with @springjuergen, @
 
 [Sun Aug 18 22:00:43 +0000 2013](https://twitter.com/tnurkiewicz/status/369217321534910465)
 
-Published: Optional in #Java8 cheat sheet \| http://nurkiewicz.blogspot.com/2013/08/optional-in-java-8-cheat-sheet.html
+Published: Optional in #Java8 cheat sheet \| http://nurkiewicz.com/2013/08/optional-in-java-8-cheat-sheet.html
 
 [Mon Aug 19 14:48:40 +0000 2013](https://twitter.com/tnurkiewicz/status/369470980072038401)
 
-Published: instanceof operator and Visitor pattern replacement in #Java 8 http://nurkiewicz.blogspot.com/2013/09/instanceof-operator-and-visitor-pattern.html
+Published: instanceof operator and Visitor pattern replacement in #Java 8 http://nurkiewicz.com/2013/09/instanceof-operator-and-visitor-pattern.html
 
 [Tue Sep 24 22:01:42 +0000 2013](https://twitter.com/tnurkiewicz/status/382625918537056256)
 
@@ -1060,15 +1060,15 @@ Video of my @confiturapl 2013 talk about time in #Java (voted best according to 
 
 [Wed Oct 16 19:12:51 +0000 2013](https://twitter.com/tnurkiewicz/status/390555957056393216)
 
-Published: "Beginning #JavaEE 7" by @agoncal review \| http://nurkiewicz.blogspot.com/2013/10/beginning-java-ee-7-by-antonio.html
+Published: "Beginning #JavaEE 7" by @agoncal review \| http://nurkiewicz.com/2013/10/beginning-java-ee-7-by-antonio.html
 
 [Thu Oct 24 20:52:20 +0000 2013](https://twitter.com/tnurkiewicz/status/393480098893950976)
 
-Published: #brainfuck in #Clojure. Part I: interpreter \| http://nurkiewicz.blogspot.com/2013/10/brainfuck-in-clojure-part-i-interpreter.html
+Published: #brainfuck in #Clojure. Part I: interpreter \| http://nurkiewicz.com/2013/10/brainfuck-in-clojure-part-i-interpreter.html
 
 [Sun Oct 27 23:04:43 +0000 2013](https://twitter.com/tnurkiewicz/status/394600575402143744)
 
-Published: #brainfuck in #Clojure. Part II: compiler \| http://nurkiewicz.blogspot.com/2013/11/brainfuck-in-clojure-part-ii-compiler.html
+Published: #brainfuck in #Clojure. Part II: compiler \| http://nurkiewicz.com/2013/11/brainfuck-in-clojure-part-ii-compiler.html
 
 [Fri Nov 01 16:19:39 +0000 2013](https://twitter.com/tnurkiewicz/status/396310576835469312)
 
@@ -1092,7 +1092,7 @@ I intentionally avoided them :-) RT @grzkubiak Great talk! It's amazing how you 
 
 [Tue Dec 03 23:21:31 +0000 2013](https://twitter.com/tnurkiewicz/status/408013156791771136)
 
-Published: Playing with #Scala futures \| http://nurkiewicz.blogspot.com/2013/12/playing-with-scala-futures.html
+Published: Playing with #Scala futures \| http://nurkiewicz.com/2013/12/playing-with-scala-futures.html
 
 [Sun Dec 15 21:40:01 +0000 2013](https://twitter.com/tnurkiewicz/status/412336267477532672)
 
@@ -1100,11 +1100,11 @@ RT @flatmaposlo: We're thrilled to announce our first flatMap(Oslo) 2014 speaker
 
 [Thu Dec 19 20:52:34 +0000 2013](https://twitter.com/tnurkiewicz/status/413773875760361472)
 
-Published: Promises and CompletableFuture \| http://nurkiewicz.blogspot.com/2013/12/promises-and-completablefuture.html \| #java8
+Published: Promises and CompletableFuture \| http://nurkiewicz.com/2013/12/promises-and-completablefuture.html \| #java8
 
 [Sun Dec 22 19:25:40 +0000 2013](https://twitter.com/tnurkiewicz/status/414839170352156672)
 
-Published: Proxies done right with #Guava 's AbstractInvocationHandler \| http://nurkiewicz.blogspot.com/2013/12/proxies-done-right-with-guavas.html \| #Java
+Published: Proxies done right with #Guava 's AbstractInvocationHandler \| http://nurkiewicz.com/2013/12/proxies-done-right-with-guavas.html \| #Java
 
 [Mon Dec 23 17:54:05 +0000 2013](https://twitter.com/tnurkiewicz/status/415178511259688960)
 
@@ -1118,11 +1118,11 @@ Getting started with @intellijidea from @Packt is out: http://www.packtpub.com/g
 
 [Sun Jan 05 13:08:57 +0000 2014](https://twitter.com/tnurkiewicz/status/419817798852825088)
 
-Published: Turning #Twitter4J into @RxJava Observable \| http://nurkiewicz.blogspot.com/2014/01/turning-twitter4j-into-rxjavas.html
+Published: Turning #Twitter4J into @RxJava Observable \| http://nurkiewicz.com/2014/01/turning-twitter4j-into-rxjavas.html
 
 [Mon Jan 06 15:32:08 +0000 2014](https://twitter.com/tnurkiewicz/status/420216217635258368)
 
-Published: Three flavours of request-response pattern in #Akka \| http://nurkiewicz.blogspot.com/2014/01/three-flavours-of-request-response.html \| #Scala
+Published: Three flavours of request-response pattern in #Akka \| http://nurkiewicz.com/2014/01/three-flavours-of-request-response.html \| #Scala
 
 [Wed Jan 08 21:20:59 +0000 2014](https://twitter.com/tnurkiewicz/status/421028787455655936)
 
@@ -1140,7 +1140,7 @@ I will give "The Dark Side of #Scala" talk at @scalarconf this April, see you th
 
 [Fri Feb 14 21:31:08 +0000 2014](https://twitter.com/tnurkiewicz/status/434439690213543936)
 
-Published: Custom #Spring namespaces made easier with #JAXB \| http://nurkiewicz.blogspot.com/2014/02/custom-spring-namespaces-made-easier.html
+Published: Custom #Spring namespaces made easier with #JAXB \| http://nurkiewicz.com/2014/02/custom-spring-namespaces-made-easier.html
 
 [Sat Feb 22 20:28:53 +0000 2014](https://twitter.com/tnurkiewicz/status/437323129958830081)
 
