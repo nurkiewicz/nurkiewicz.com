@@ -3994,7 +3994,7 @@ RT [@Java_Champions](https://twitter.com/Java_Champions): We are delighted to we
 
 ---
 
-Replying to [@Java_Champions, [@theNeomatrix369](https://twitter.com/theNeomatrix369), [@saturnism](https://twitter.com/saturnism), [@juliendubois](https://twitter.com/juliendubois), [@noctarius2k](https://twitter.com/noctarius2k), [@ivan_stefanov](https://twitter.com/ivan_stefanov), [@manicode](https://twitter.com/manicode), [@jfarcand](https://twitter.com/jfarcand) and [@danielbryantuk](https://twitter.com/danielbryantuk)](https://twitter.com/Java_Champions/status/993589026857848832)
+Replying to [@Java_Champions](https://twitter.com/Java_Champions), [@theNeomatrix369](https://twitter.com/theNeomatrix369), [@saturnism](https://twitter.com/saturnism), [@juliendubois](https://twitter.com/juliendubois), [@noctarius2k](https://twitter.com/noctarius2k), [@ivan_stefanov](https://twitter.com/ivan_stefanov), [@manicode](https://twitter.com/manicode), [@jfarcand](https://twitter.com/jfarcand) and [@danielbryantuk](https://twitter.com/danielbryantuk)](https://twitter.com/Java_Champions/status/993589026857848832)
 
 Being chosen one of the ~250 #Java Champions out of ten million Java developers is quite an honour. But also a responsibility to keep giving back to this wonderful community. Thank you, everyone, for this warm welcome!
 
@@ -4320,7 +4320,7 @@ RT [@WarszawaJUG](https://twitter.com/WarszawaJUG): Zapraszamy was 2 kwietnia na
 
 ---
 
-Replying to [@athaylean and [@boilingfrogspl](https://twitter.com/boilingfrogspl)](https://twitter.com/cesarski_kod/status/1112009899171557376)
+Replying to [@athaylean](https://twitter.com/athaylean) and [@boilingfrogspl](https://twitter.com/boilingfrogspl)](https://twitter.com/cesarski_kod/status/1112009899171557376)
 
 Świetny cytat, ale raczej nie byłem pierwszy ;-). [https://twitter.com/codewisdom/status/1002181404061552640](https://twitter.com/codewisdom/status/1002181404061552640)
 
@@ -5594,7 +5594,7 @@ Ep #66 of #aroundITin256 podcast: Aspect-oriented programming: another level of 
 
 ---
 
-Replying to [@PanasWaldemar, [@dubieladam](https://twitter.com/dubieladam), [@pivovarit](https://twitter.com/pivovarit), [@jnabrdalik](https://twitter.com/jnabrdalik), [@JakubPilimon](https://twitter.com/JakubPilimon), [@j_palka](https://twitter.com/j_palka), [@jarek000000](https://twitter.com/jarek000000), [@MiroslawZelent](https://twitter.com/MiroslawZelent), [@olga_maciaszek](https://twitter.com/olga_maciaszek), [@ptrstpp950](https://twitter.com/ptrstpp950) and [@SlawekSobotka](https://twitter.com/SlawekSobotka)](https://twitter.com/PanasWaldemar/status/1475743390910324737)
+Replying to [@PanasWaldemar](https://twitter.com/PanasWaldemar), [@dubieladam](https://twitter.com/dubieladam), [@pivovarit](https://twitter.com/pivovarit), [@jnabrdalik](https://twitter.com/jnabrdalik), [@JakubPilimon](https://twitter.com/JakubPilimon), [@j_palka](https://twitter.com/j_palka), [@jarek000000](https://twitter.com/jarek000000), [@MiroslawZelent](https://twitter.com/MiroslawZelent), [@olga_maciaszek](https://twitter.com/olga_maciaszek), [@ptrstpp950](https://twitter.com/ptrstpp950) and [@SlawekSobotka](https://twitter.com/SlawekSobotka)](https://twitter.com/PanasWaldemar/status/1475743390910324737)
 
 Slajdy z mojej 5-minutowej prezentacji o 'lekcji dla początkujących programistek i programistów': [https://nurkiewicz.com/slides/jugademy](https://nurkiewicz.com/slides/jugademy)
 
