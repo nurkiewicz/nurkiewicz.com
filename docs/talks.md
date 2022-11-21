@@ -3,6 +3,18 @@
 <table>
     <tr itemscope itemtype="https://schema.org/Event">
         <td>
+            <h3 itemprop="name">JUG Frankfurt</h3>
+            <time itemprop="startDate">2023-01-25</time>
+            <h4>
+                Project Loom: Revolution in Concurrency or Obscure Implementation Detail?
+            </h4>
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr itemscope itemtype="https://schema.org/Event">
+        <td>
             <h3 itemprop="name"><a href="https://pages.jetbrains.com/intellij-idea-conf-2022/idea">IntelliJ IDEA Conf</a></h3>
             <time itemprop="startDate">2022-09-29</time>
             <h4>
