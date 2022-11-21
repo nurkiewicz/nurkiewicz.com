@@ -3,6 +3,18 @@
 <table>
     <tr itemscope itemtype="https://schema.org/Event">
         <td>
+            <h3 itemprop="name"><a href="https://2023.boilingfrogs.pl/">BoilingFrogs</a></h3>
+            <time itemprop="startDate">2023-03-18</time>
+            <h4>
+                Fifty Shades of State (TBA)
+            </h4>
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr itemscope itemtype="https://schema.org/Event">
+        <td>
             <h3 itemprop="name">JUG Frankfurt</h3>
             <time itemprop="startDate">2023-01-25</time>
             <h4>
