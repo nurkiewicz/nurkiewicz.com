@@ -11,7 +11,7 @@ blogger_id: tag:blogger.com,1999:blog-6753769565491687768.post-21323882392243860
 blogger_orig_url: https://www.nurkiewicz.com/2019/10/graphql-server-in-java-part-ii.html
 ---
 
-I part I
+In [part I](https://nurkiewicz.com/2019/09/graphql-server-in-java-part-i-basics.html)
 we developed a really simple GraphQL server. That solution has a serious
 flaw: all fields are loaded eagerly on the backend, even if they weren't
 requested by the front-end. We sort of accept this situation with
