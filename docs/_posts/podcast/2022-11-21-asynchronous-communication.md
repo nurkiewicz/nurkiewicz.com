@@ -14,7 +14,6 @@ description: >
 
 {{ page.description }}
 
-<!--
 On the other hand, asynchronous communication is more like sending a text message.
 Fire and forget.
 You don't actively wait for a reply.
@@ -67,7 +66,6 @@ One for billing, one for mailing, etc.
 There is a ton of other patterns for message-oriented architectures.
 
 That's it, thanks for listening, bye!
--->
 
 # More materials
 
