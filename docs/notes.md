@@ -115,7 +115,7 @@ awk '{s += $1} END {print s}'
 ### Writing and speaking
 * <https://youglish.com/>
 * [Overview of technical writing courses](https://developers.google.com/tech-writing/overview)
-* https://github.com/asciidoctor/asciidoctor-leanpub-converter
+* [Asciidoctor Markdown & Leanpub Converters](https://github.com/asciidoctor/asciidoctor-leanpub-converter)
 * [Tools and Processes for Collaborating on a Book Remotely](https://trishagee.com/2022/12/12/tools-and-processes-for-collaborating-on-a-book-remotely/)
 
 ### Trainings
