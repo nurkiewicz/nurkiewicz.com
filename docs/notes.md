@@ -28,15 +28,19 @@ title: Awesome notes
 ## Tools
 
 ### Visualization
+
 * <https://www.visidata.org>
 * <https://github.com/javierluraschi/awesome-dataviz>
+* <https://jsoncrack.com/>
 
 #### Diagrams
+
 * <https://kroki.io/>
 * <https://dreampuf.github.io/GraphvizOnline>
 * <https://www.diagrams.net/>
 
 ##### UML
+
 * <https://yuml.me/diagram/scruffy/class/samples>
 * <https://www.websequencediagrams.com/>
 * <https://sequencediagram.org/>
