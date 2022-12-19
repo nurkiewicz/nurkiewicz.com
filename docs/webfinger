@@ -1,3 +1,8 @@
+---
+layout: none
+permalink: .well-known/webfinger
+---
+
 {
   "subject": "acct:nurkiewicz@fosstodon.org",
   "aliases": [
