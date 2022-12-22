@@ -17,6 +17,7 @@ Enjoy!
 To quickly navigate between channels, hit `⌘ + K` or `Ctrl + K` (on Windows). 
 `⌘ + .` (dot) is useful to show/hide the right sidebar.
 Searching is faster when choosing acronyms, e.g. type `tfb` for `team-foo-bar`.
+Finally, look like a pro and hide the left sidebar with list of channels using `⌘ + ⇧ + D`.
 
 ## 2. Bookmarks
 
@@ -51,7 +52,9 @@ Use this checkbox if you are reviving an old thread or your response may be rele
 You can send messages to people or channels with a delay, for example the next day.
 It’s an alternative to reminders.
 Use it if you are working late hours and don’t want to bother your colleagues.
-Check out the small drop-down menu next to send button
+Check out the small drop-down menu next to send button.
+
+And by the way, if you've mistakenly sent a message, hitting `⌘ + Z` quickly will delete it switch back to editing.
 
 ## 7. Use reminders
 
