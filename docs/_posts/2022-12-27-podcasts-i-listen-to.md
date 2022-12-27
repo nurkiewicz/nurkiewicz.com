@@ -4,15 +4,15 @@ tags: podcast, OPML, Python
 layout: post
 ---
 
-Apart from [recording a podcast](https://nurkiewicz.com/podcast), I also listen to a ton of shows.
+Apart from [recording a podcast](https://nurkiewicz.com/podcast), I also listen to a ton of podcasts myself.
 Probably 1-2 hours per day during house chores.
 The following is a list of all podcasts I listen to.
 It's auto-generated from OPML file exported from [my podcast player](https://overcast.fm/).
-The script to generate this article is available on GitHub.
+The script to generate this article is [available on GitHub](https://github.com/nurkiewicz/nurkiewicz.com/blob/master/bin/opml_to_markdown.py).
 
 Podcasts are grouped by language (English and Polish).
-You'll find everything, from economy, through parenting, history to learning English.
-I include official description of each podcast.
+You'll find everything, from the economy, parenting, and history to learning English.
+I include an official description of each podcast.
 Enjoy listening!
 
 ## English
