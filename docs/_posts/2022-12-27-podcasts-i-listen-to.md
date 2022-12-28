@@ -1,6 +1,6 @@
 ---
 title: "Podcasts I listen to: more than 80 recommendations"
-tags: podcast, OPML, Python
+tags: podcast OPML Python
 layout: post
 ---
 
