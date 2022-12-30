@@ -30,7 +30,7 @@
             <h3 itemprop="name"><a href="https://bettersoftwaredesign.pl/episodes/44">Better Software Design</a></h3>
             <time itemprop="startDate">2022-11-15</time>
             <h4>
-                Project Loom: Revolution in Concurrency or Obscure Implementation Detail?
+                44. O programowaniu reaktywnym z Tomkiem Nurkiewiczem
             </h4>
         </td>
         <td>
