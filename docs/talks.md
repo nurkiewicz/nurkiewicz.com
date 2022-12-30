@@ -27,6 +27,18 @@
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
         <td>
+            <h3 itemprop="name"><a href="https://bettersoftwaredesign.pl/episodes/44">Better Software Design</a></h3>
+            <time itemprop="startDate">2022-11-15</time>
+            <h4>
+                Project Loom: Revolution in Concurrency or Obscure Implementation Detail?
+            </h4>
+        </td>
+        <td>
+            <iframe height="200px" width="100%" frameborder="no" scrolling="no" seamless src="https://player.simplecast.com/1b6a4212-ad0a-4b6a-8780-05c71b62985f?dark=false"></iframe>
+        </td>
+    </tr>
+    <tr itemscope itemtype="https://schema.org/Event">
+        <td>
             <h3 itemprop="name"><a href="https://pages.jetbrains.com/intellij-idea-conf-2022/idea">IntelliJ IDEA Conf</a></h3>
             <time itemprop="startDate">2022-09-29</time>
             <h4>
