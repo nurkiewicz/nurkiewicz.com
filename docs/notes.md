@@ -60,6 +60,7 @@ sudo mtr --tcp google.com
 
 #### Docker
 * <https://github.com/wagoodman/dive> - show contents of each layer
+* [A collection of `docker-compose` files](https://github.com/jonatan-ivanov/local-services/)
 
 ### Command line
 
@@ -77,6 +78,7 @@ awk '{s += $1} END {print s}'
 ```
 * [`ls` tips and tricks](https://twitter.com/LinuxHandbook/status/1583081641744138240)
 * [The Art of Command Line](https://github.com/jlevy/the-art-of-command-line)
+* [explainshell.com](https://explainshell.com/)
 
 ### Other
 * [Carbon: Create and share beautiful images of your source code](https://carbon.now.sh/)
@@ -130,6 +132,8 @@ awk '{s += $1} END {print s}'
 ### Quotes
 
 > Any idiot can build a bridge that stands, but it takes an engineer to build a bridge that barely stands
+
+> A good science fiction story should be able to predict not the automobile but the traffic jam. ― [Frederik Pohl](https://www.goodreads.com/quotes/810570-a-good-science-fiction-story-should-be-able-to-predict)
 
 ### Other
 * ["I’m getting ads for her toothpaste brand, the brand I’ve been putting in my mouth for a week. We never talked about this brand or googled it or anything like that"](https://threadreaderapp.com/thread/1397032784703655938.html)
