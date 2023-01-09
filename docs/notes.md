@@ -68,7 +68,8 @@ Start every shell script with this:
 
 ``` bash
 ##!/bin/bash
-set -e -x -o pipefail
+set -euxo pipefail # print every statement, fail on command failure
+cd ${0%/*}         # navigate to script's location
 ```
 
 [Sum numbers, one per line](https://stackoverflow.com/questions/3096259/bash-command-to-sum-a-column-of-numbers):
