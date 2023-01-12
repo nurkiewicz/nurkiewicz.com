@@ -134,7 +134,13 @@ awk '{s += $1} END {print s}'
 
 > Any idiot can build a bridge that stands, but it takes an engineer to build a bridge that barely stands
 
+--
+
 > A good science fiction story should be able to predict not the automobile but the traffic jam. ― [Frederik Pohl](https://www.goodreads.com/quotes/810570-a-good-science-fiction-story-should-be-able-to-predict)
+
+--
+
+> Any application that can be written in JavaScript, will eventually be written in JavaScript. ― [Jeff Atwood, 2009](https://www.laws-of-software.com/laws/atwood/)
 
 ### Other
 * ["I’m getting ads for her toothpaste brand, the brand I’ve been putting in my mouth for a week. We never talked about this brand or googled it or anything like that"](https://threadreaderapp.com/thread/1397032784703655938.html)
