@@ -12,7 +12,7 @@ The list may grow (or shrink) if I discover new tips.
 Of course, your mileage may vary.
 Enjoy!
 
--
+- TOC
 {:toc}
 
 ## 1. Navigation
