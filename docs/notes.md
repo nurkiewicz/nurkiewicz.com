@@ -93,6 +93,7 @@ awk '{s += $1} END {print s}'
 ### System Design
 * [System Design Interview Cheat Sheet](https://mobile.twitter.com/javinpaul/status/1536580563632418816)
 * [Algorithms you should know before you take system design interviews](https://blog.bytebytego.com/p/algorithms-you-should-know-before)
+* [The System Design Primer](https://github.com/donnemartin/system-design-primer)
 
 ### Microservies
 * [Design patterns for Microservices](https://twitter.com/Igfasouza/status/1559834948747624448)
