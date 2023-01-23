@@ -2,6 +2,7 @@
 title: Awesome notes
 ---
 
+1. TOC
 {:toc}
 
 ## Cloud
