@@ -1,8 +1,15 @@
 # My conference talks, webinars, podcasts and workshops
 
+<style>
+    td.list {
+        display: list-item
+    }
+</style>
+
+<ol style="list-style: decimal inside" reversed>
 <table>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td>
+        <td class="list">
             <h3 itemprop="name"><a href="https://2023.boilingfrogs.pl/">BoilingFrogs</a></h3>
             <time itemprop="startDate">2023-03-18</time>
             <h4>
@@ -14,7 +21,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td>
+        <td class="list">
             <h3 itemprop="name"><a href="https://jugf.github.io/posts/project-loom-revolution-in-concurrency-or-obscure-implementation-detail-25-01-2023/">JUG Frankfurt</a></h3>
             <time itemprop="startDate">2023-01-25</time>
             <h4>
@@ -26,7 +33,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td>
+        <td class="list">
             <h3 itemprop="name"><a href="https://bettersoftwaredesign.pl/episodes/44">Better Software Design</a></h3>
             <time itemprop="startDate">2022-11-15</time>
             <h4>
@@ -38,7 +45,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td>
+        <td class="list">
             <h3 itemprop="name"><a href="https://pages.jetbrains.com/intellij-idea-conf-2022/idea">IntelliJ IDEA Conf</a></h3>
             <time itemprop="startDate">2022-09-29</time>
             <h4>
@@ -50,7 +57,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Warsaw">
+        <td data-place="Warsaw" class="list">
             <h3 itemprop="name"><a href="https://yavaconf.com/">Yavaconf</a></h3>
             <time itemprop="startDate">2022-09-28</time>
             <h4>
@@ -62,7 +69,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Warsaw">
+        <td data-place="Warsaw" class="list">
             <h3 itemprop="name"><a href="https://inthecloud.withgoogle.com/hr-meetup-warsaw-22/register.html">Back to school - Cloud Talent Meetup at Google</a></h3>
             <time itemprop="startDate">2022-09-07</time>
             <h4>
@@ -74,7 +81,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Warsaw">
+        <td data-place="Warsaw" class="list">
             <h3 itemprop="name"><a href="https://2022.confitura.pl/">Confitura</a></h3>
             <time itemprop="startDate">2022-06-28</time>
             <h4>
@@ -86,7 +93,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td>
+        <td class="list">
             <h3 itemprop="name"><a href="https://www.infoq.com/presentations/loom-java-concurrency/">QCon Plus London</a></h3>
             <time itemprop="startDate">2022-05-11</time>
             <h4>
@@ -98,7 +105,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td>
+        <td class="list">
             <h3 itemprop="name"><a href="https://javeloper.pl/">Javeloper</a></h3>
             <time itemprop="startDate">2022-05-12</time>
             <h4>
@@ -110,7 +117,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Wrocław">
+        <td data-place="Wrocław" class="list">
             <h3 itemprop="name"><a href="https://2022.boilingfrogs.pl/">BoilingFrogs</a></h3>
             <time itemprop="startDate">2022-03-19</time>
             <h4>
@@ -122,7 +129,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td>
+        <td class="list">
             <h3 itemprop="name"><a href="https://dworld.pl/devflix/">DevFlix</a></h3>
             <time itemprop="startDate">2022-02-07</time>
             <h4>
@@ -134,7 +141,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td>
+        <td class="list">
             <h3 itemprop="name">Poznań JUG</h3>
             <time itemprop="startDate">2022-02-02</time>
             <h4>
@@ -146,7 +153,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td>
+        <td class="list">
             <h3 itemprop="name"><a href="https://jchampionsconf.com/">JChampionsConf</a></h3>
             <time itemprop="startDate">2022-01-24</time>
             <h4>
@@ -158,7 +165,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td>
+        <td class="list">
             <h3 itemprop="name"><a href="https://devskiller.com/it-skills-report/">DevSkiller Tech Talent Report 2022</a></h3>
             <time itemprop="startDate">2022-01-20</time>
             <h4>
@@ -170,7 +177,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td>
+        <td class="list">
             <h3 itemprop="name">Developers World Academy</h3>
             <time itemprop="startDate">2021-01-20</time>
             <h4>
@@ -182,7 +189,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td>
+        <td class="list">
             <h3 itemprop="name">Developers World Academy</h3>
             <time itemprop="startDate">2020-12-21</time>
             <h4>
@@ -194,7 +201,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td>
+        <td class="list">
             <h3 itemprop="name">Developers World Academy</h3>
             <time itemprop="startDate">2020-11-27</time>
             <h4>
@@ -206,7 +213,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td>
+        <td class="list">
             <h3 itemprop="name">QCon Plus</h3>
             <time itemprop="startDate">2020-11-06</time>
             <h4>
@@ -218,7 +225,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td>
+        <td class="list">
             <h3 itemprop="name">PSI Polska code_talks</h3>
             <time itemprop="startDate">2020-10-01</time>
             <h4>
@@ -230,7 +237,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td>
+        <td class="list">
             <h3 itemprop="name">Tech3camp powered by InfoShare</h3>
             <time itemprop="startDate">2020-05-26</time>
             <h4>
@@ -242,7 +249,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Kielce">
+        <td data-place="Kielce" class="list">
             <h3 itemprop="name">Kielce JUG</h3>
             <time itemprop="startDate">2020-03-26</time>
             <h4>
@@ -254,7 +261,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td>
+        <td class="list">
             <h3 itemprop="name">Allegro Tech Podcast</h3>
             <time itemprop="startDate">2020-03-09</time>
             <h4>
@@ -267,7 +274,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Warsaw">
+        <td data-place="Warsaw" class="list">
             <h3 itemprop="name">airhacks.fm podcast with Adam Bien</h3>
             <time itemprop="startDate">2019-12-29</time>
             <h4>
@@ -279,7 +286,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Łódź">
+        <td data-place="Łódź" class="list">
             <h3 itemprop="name">IDEMIA eXpo [5]</h3>
             <time itemprop="startDate">2019-10-24</time>
             <h4>
@@ -291,7 +298,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Rzeszów">
+        <td data-place="Rzeszów" class="list">
             <h3 itemprop="name">Rzemiosło.IT</h3>
             <time itemprop="startDate">2019-05-25</time>
             <h4>
@@ -303,7 +310,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Cracow">
+        <td data-place="Cracow" class="list">
             <h3 itemprop="name">GeeCON <strong>(best speaker)</strong></h3>
             <time itemprop="startDate">2019-05-15</time>
             <h4>
@@ -315,7 +322,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Cracow">
+        <td data-place="Cracow" class="list">
             <h3 itemprop="name">Allegro Tech Talks</h3>
             <time itemprop="startDate">2019-04-10</time>
             <h4>
@@ -329,7 +336,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Moscow">
+        <td data-place="Moscow" class="list">
             <h3 itemprop="name">JPoint</h3>
             <time itemprop="startDate">2019-04-05</time>
             <h4>
@@ -341,7 +348,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Moscow">
+        <td data-place="Moscow" class="list">
             <h3 itemprop="name">JPoint</h3>
             <time itemprop="startDate">2019-04-05</time>
             <h4>
@@ -353,7 +360,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Warsaw">
+        <td data-place="Warsaw" class="list">
             <h3 itemprop="name">Warszawa JUG</h3>
             <time itemprop="startDate">2019-04-02</time>
             <h4>
@@ -367,7 +374,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Gdańsk">
+        <td data-place="Gdańsk" class="list">
             <h3 itemprop="name">Podcast DevSession</h3>
             <time itemprop="startDate">2019-03-15</time>
             <h4>
@@ -379,7 +386,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Gdańsk">
+        <td data-place="Gdańsk" class="list">
             <h3 itemprop="name"><a href="http://segfault.events/gdansk2019/">SegFault Gdańsk</a></h3>
             <time itemprop="startDate">2019-03-15</time>
             <h4>
@@ -391,7 +398,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Wrocław">
+        <td data-place="Wrocław" class="list">
             <h3 itemprop="name">Wrocław JUG</h3>
             <time itemprop="startDate">2019-02-26</time>
             <h4>
@@ -403,7 +410,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Warsaw">
+        <td data-place="Warsaw" class="list">
             <h3 itemprop="name"><a href="https://www.eventbrite.com/e/orange-developer-day-tickets-53132063432">Orange Developer Day</a></h3>
             <time itemprop="startDate">2018-12-06</time>
             <h4>Programowanie reaktywne: czego się nauczyłem
@@ -415,7 +422,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Bucharest">
+        <td data-place="Bucharest" class="list">
             <h3 itemprop="name">Bucharest JUG</h3>
             <time itemprop="startDate">2018-11-06</time>
             <h4>
@@ -428,7 +435,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Kraków">
+        <td data-place="Kraków" class="list">
             <h3 itemprop="name">JDD</h3>
             <time itemprop="startDate">2018-10-14</time>
             <h4>
@@ -440,7 +447,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Wrocław">
+        <td data-place="Wrocław" class="list">
             <h3 itemprop="name">SegFault Wrocław</h3>
             <time itemprop="startDate">2018-09-24</time>
             <h4>
@@ -453,7 +460,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Bydgoszcz">
+        <td data-place="Bydgoszcz" class="list">
             <h3 itemprop="name">biTconf</h3>
             <time itemprop="startDate">2018-09-14</time>
             <h4>
@@ -465,7 +472,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Kraków">
+        <td data-place="Kraków" class="list">
             <h3 itemprop="name">Allegro Tech Meeting <strong>(best speaker)</strong></h3>
             <time itemprop="startDate">2018-09-06</time>
             <h4>
@@ -477,7 +484,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Warsaw">
+        <td data-place="Warsaw" class="list">
             <h3 itemprop="name">Stacja.IT</h3>
             <time itemprop="startDate">2018-08-03</time>
             <h4>
@@ -487,7 +494,7 @@
         <td>&nbsp;</td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Gdańsk">
+        <td data-place="Gdańsk" class="list">
             <h3 itemprop="name">InfoShare Academy Q&A</h3>
             <time itemprop="startDate">2018-05-23</time>
             <h4>
@@ -499,7 +506,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Gdańsk">
+        <td data-place="Gdańsk" class="list">
             <h3 itemprop="name">InfoShare</h3>
             <time itemprop="startDate">2018-05-22</time>
             <h4>
@@ -509,7 +516,7 @@
         <td>&nbsp;</td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Cracow">
+        <td data-place="Cracow" class="list">
             <h3 itemprop="name">ReactSphere</h3>
             <time itemprop="startDate">2018-04-16</time>
             <h4>
@@ -521,7 +528,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Gliwice">
+        <td data-place="Gliwice" class="list">
             <h3 itemprop="name">Hackin' Gliwice</h3>
             <time itemprop="startDate">2018-03-15</time>
             <h4>
@@ -534,7 +541,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="London">
+        <td data-place="London" class="list">
             <h3 itemprop="name"><a href="https://qconlondon.com/">QCon London</a></h3>
             <time itemprop="startDate">2018-03-08</time>
             <h4>
@@ -544,7 +551,7 @@
         <td>&nbsp;</td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Warsaw">
+        <td data-place="Warsaw" class="list">
             <h3 itemprop="name">Allegro Tech Labs</h3>
             <time itemprop="startDate">2018-01-13</time>
             <h4>
@@ -554,7 +561,7 @@
         <td>&nbsp;</td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Kyiv">
+        <td data-place="Kyiv" class="list">
             <h3 itemprop="name">JavaDay Kyiv</h3>
             <br/>
             <strong>(Top 10 of speakers)</strong>
@@ -568,7 +575,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="San Francisco">
+        <td data-place="San Francisco" class="list">
             <h3 itemprop="name">JavaOne</h3>
             <time itemprop="startDate">2017-10-03</time>
             <h4>Asynchronous by default, synchronous when necessary
@@ -577,7 +584,7 @@
         <td>&nbsp;</td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Tallin">
+        <td data-place="Tallin" class="list">
             <h3 itemprop="name">GeekOUT</h3>
             <time itemprop="startDate">2017-06-08</time>
             <h4>
@@ -589,7 +596,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Kolymbari">
+        <td data-place="Kolymbari" class="list">
             <h3 itemprop="name">jCrete unconference</h3>
             <time itemprop="startDate">2016-07-20</time>
             <h4>
@@ -599,7 +606,7 @@
         <td>&nbsp;</td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Gdańsk">
+        <td data-place="Gdańsk" class="list">
             <h3 itemprop="name">InfoShare</h3>
             <time itemprop="startDate">2017-05-18</time>
             <h4>
@@ -611,7 +618,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Gdańsk">
+        <td data-place="Gdańsk" class="list">
             <h3 itemprop="name">InfoShare</h3>
             <time itemprop="startDate">2017-05-17</time>
             <h4>
@@ -621,7 +628,7 @@
         <td>&nbsp;</td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Toruń">
+        <td data-place="Toruń" class="list">
             <h3 itemprop="name">Toruń JUG</h3>
             <time itemprop="startDate">2017-04-26</time>
             <h4>
@@ -633,7 +640,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td>
+        <td class="list">
             <h3 itemprop="name">O'Reilly</h3>
             <time itemprop="startDate">2017-04-21</time>
             <h4>
@@ -643,7 +650,7 @@
         <td>&nbsp;</td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="New York">
+        <td data-place="New York" class="list">
             <h3 itemprop="name">O'Reilly Software Architecture Conference</h3>
             <time itemprop="startDate">2017-04-04</time>
             <h4>
@@ -653,7 +660,7 @@
         <td>&nbsp;</td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td>
+        <td class="list">
             <h3 itemprop="name">DevTalk#53</h3>
             <time itemprop="startDate">2017-04-03</time>
             <h4>
@@ -663,7 +670,7 @@
         <td>&nbsp;</td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Warsaw">
+        <td data-place="Warsaw" class="list">
             <h3 itemprop="name">Warszawa JUG</h3>
             <time itemprop="startDate">2017-03-06</time>
             <h4>
@@ -676,7 +683,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Białystok">
+        <td data-place="Białystok" class="list">
             <h3 itemprop="name">JSession #1</h3>
             <time itemprop="startDate">2017-02-23</time>
             <h4>
@@ -687,7 +694,7 @@
         <td>&nbsp;</td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Warsaw">
+        <td data-place="Warsaw" class="list">
             <h3 itemprop="name">Allegro Tech Talks</h3>
             <time itemprop="startDate">2017-01-25</time>
             <h4>Asynchronous by default, synchronous when necessary
@@ -697,7 +704,7 @@
         <td>&nbsp;</td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Warsaw">
+        <td data-place="Warsaw" class="list">
             <h3 itemprop="name">Code Europe</h3>
             <time itemprop="startDate">2016-12-07</time>
             <h4>
@@ -707,7 +714,7 @@
         <td>&nbsp;</td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Riga">
+        <td data-place="Riga" class="list">
             <h3 itemprop="name">DevTernity</h3>
             <time itemprop="startDate">2016-12-01</time>
             <h4>
@@ -720,7 +727,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Warsaw">
+        <td data-place="Warsaw" class="list">
             <h3 itemprop="name">Warszawa JUG</h3>
             <time itemprop="startDate">2016-11-29</time>
             <h4>
@@ -731,7 +738,7 @@
         <td><iframe width="400" height="225" src="https://www.youtube.com/embed/aXBq1LQSrks" frameborder="0" allowfullscreen></iframe></td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Minsk">
+        <td data-place="Minsk" class="list">
             <h3 itemprop="name">JET Conference</h3>
             <time itemprop="startDate">2016-11-19</time>
             <h4>
@@ -742,7 +749,7 @@
         <td><iframe width="400" height="225" src="https://www.youtube.com/embed/Ut6d_vkUn-U" frameborder="0" allowfullscreen></iframe></td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="San Francisco">
+        <td data-place="San Francisco" class="list">
             <h3 itemprop="name">QCon San Francisco</h3>
             <time itemprop="startDate">2016-11-10</time>
             <h4>
@@ -753,7 +760,7 @@
         <td>&nbsp;</td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Poznań">
+        <td data-place="Poznań" class="list">
             <h3 itemprop="name">JUGtoberFest</h3>
             <time itemprop="startDate">2016-10-13</time>
             <h4>
@@ -768,7 +775,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Sopot">
+        <td data-place="Sopot" class="list">
             <h3 itemprop="name">GeeCON Reactive</h3>
             <time itemprop="startDate">2016-09-09</time>
             <h4>
@@ -779,7 +786,7 @@
         <td>&nbsp;</td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Oslo">
+        <td data-place="Oslo" class="list">
             <h3 itemprop="name">JavaZone</h3>
             <time itemprop="startDate">2016-09-07</time>
             <h4>
@@ -792,7 +799,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Kolymbari">
+        <td data-place="Kolymbari" class="list">
             <h3 itemprop="name">jCrete unconference</h3>
             <time itemprop="startDate">2016-08-01</time>
             <h4>
@@ -803,7 +810,7 @@
         <td>&nbsp;</td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Lyon">
+        <td data-place="Lyon" class="list">
             <h3 itemprop="name">Mix IT</h3>
             <time itemprop="startDate">2016-04-21</time>
             <h4>
@@ -814,7 +821,7 @@
         <td>&nbsp;</td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Warsaw">
+        <td data-place="Warsaw" class="list">
             <h3 itemprop="name">4Developers</h3>
             <time itemprop="startDate">2016-04-11</time>
             <h4>
@@ -826,7 +833,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Łódź">
+        <td data-place="Łódź" class="list">
             <h3 itemprop="name">Łódź JUG</h3>
             <time itemprop="startDate">2016-04-09</time>
             <h4>
@@ -836,7 +843,7 @@
         <td>&nbsp;</td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Saint Petersburg">
+        <td data-place="Saint Petersburg" class="list">
             <h3 itemprop="name">Joker conference</h3>
             <time itemprop="startDate">2015-10-16</time>
             <h4>
@@ -848,7 +855,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Saint Petersburg">
+        <td data-place="Saint Petersburg" class="list">
             <h3 itemprop="name">Joker conference</h3>
             <time itemprop="startDate">2015-10-16</time>
             <h4>
@@ -860,7 +867,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Łódź">
+        <td data-place="Łódź" class="list">
             <h3 itemprop="name">Łódź JUG<br/></h3>
             <strong>(best speaker of 2015)</strong>
             <time itemprop="startDate">2015-10-01</time>
@@ -873,7 +880,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Warsaw">
+        <td data-place="Warsaw" class="list">
             <h3 itemprop="name">Confitura<br/></h3>
             <strong>(best speaker)</strong>
             <time itemprop="startDate">2015-07-04</time>
@@ -887,7 +894,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Cracow">
+        <td data-place="Cracow" class="list">
             <h3 itemprop="name">Devoxx Poland</h3>
             <time itemprop="startDate">2015-06-23</time>
             <h4>
@@ -900,7 +907,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Vilnius">
+        <td data-place="Vilnius" class="list">
             <h3 itemprop="name">Vilnius JUG</h3>
             <time itemprop="startDate">2015-06-16</time>
             <h4>
@@ -911,7 +918,7 @@
         <td>&nbsp;</td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Lviv">
+        <td data-place="Lviv" class="list">
             <h3 itemprop="name">JavaDay Lviv</h3>
             <time itemprop="startDate">2015-06-14</time>
             <h4>
@@ -923,7 +930,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Tallin">
+        <td data-place="Tallin" class="list">
             <h3 itemprop="name">Nighthacking at GeekOut</h3>
             <time itemprop="startDate">2015-06-12</time>
             <h4>
@@ -935,7 +942,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Tallin">
+        <td data-place="Tallin" class="list">
             <h3 itemprop="name">GeekOut<br/> <strong>(best speaker)</strong></h3>
             <time itemprop="startDate">2015-06-12</time>
             <h4>
@@ -947,7 +954,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Warsaw">
+        <td data-place="Warsaw" class="list">
             <h3 itemprop="name">Warszawa JUG</h3>
             <time itemprop="startDate">2015-06-09</time>
             <h4>
@@ -960,7 +967,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Prague">
+        <td data-place="Prague" class="list">
             <h3 itemprop="name">Prague JUG</h3>
             <time itemprop="startDate">2015-06-08</time>
             <h4>
@@ -971,7 +978,7 @@
         <td>&nbsp;</td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Cracow">
+        <td data-place="Cracow" class="list">
             <h3 itemprop="name">Atmosphere Conference</h3>
             <time itemprop="startDate">2015-05-19</time>
             <h4>
@@ -984,7 +991,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Cracow">
+        <td data-place="Cracow" class="list">
             <h3 itemprop="name">GeeCON</h3>
             <time itemprop="startDate">2015-05-15</time>
             <h4>
@@ -997,7 +1004,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Cracow">
+        <td data-place="Cracow" class="list">
             <h3 itemprop="name">33rd Degree</h3>
             <time itemprop="startDate">2014-06-11</time>
             <h4>
@@ -1008,7 +1015,7 @@
         <td>&nbsp;</td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Warsaw">
+        <td data-place="Warsaw" class="list">
             <h3 itemprop="name">Warszawa JUG</h3>
             <time itemprop="startDate">2014-06-03</time>
             <h4>
@@ -1023,7 +1030,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Warsaw">
+        <td data-place="Warsaw" class="list">
             <h3 itemprop="name">JInkubator</h3>
             <time itemprop="startDate">2014-05-27</time>
             <h4>
@@ -1038,7 +1045,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Cracow">
+        <td data-place="Cracow" class="list">
             <h3 itemprop="name">GeeCON</h3>
             <time itemprop="startDate">2014-05-15</time>
             <h4>
@@ -1051,7 +1058,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Warsaw">
+        <td data-place="Warsaw" class="list">
             <h3 itemprop="name">Warszawa JUG</h3>
             <time itemprop="startDate">2014-04-22</time>
             <h4>
@@ -1063,7 +1070,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Warsaw">
+        <td data-place="Warsaw" class="list">
             <h3 itemprop="name">Warszawa JUG</h3>
             <time itemprop="startDate">2014-04-22</time>
             <h4>
@@ -1075,7 +1082,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Warsaw">
+        <td data-place="Warsaw" class="list">
             <h3 itemprop="name">Warszawa JUG</h3>
             <time itemprop="startDate">2014-04-22</time>
             <h4>
@@ -1087,7 +1094,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Warsaw">
+        <td data-place="Warsaw" class="list">
             <h3 itemprop="name">Scalar conference</h3>
             <time itemprop="startDate">2014-04-05</time>
             <h4>
@@ -1098,7 +1105,7 @@
         <td>&nbsp;</td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Warsaw">
+        <td data-place="Warsaw" class="list">
             <h3 itemprop="name">Warszawa JUG</h3>
             <time itemprop="startDate">2013-12-03</time>
             <h4>
@@ -1111,7 +1118,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Cracow">
+        <td data-place="Cracow" class="list">
             <h3 itemprop="name">33rd Degree 4 charity</h3>
             <time itemprop="startDate">2013-10-13</time>
             <h4>
@@ -1122,7 +1129,7 @@
         <td>&nbsp;</td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Warsaw">
+        <td data-place="Warsaw" class="list">
             <h3 itemprop="name">Warsjawa</h3>
             <time itemprop="startDate">2013-10-12</time>
             <h4>
@@ -1133,7 +1140,7 @@
         <td>&nbsp;</td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Warsaw">
+        <td data-place="Warsaw" class="list">
             <h3 itemprop="name">Confitura<br/> <strong>(best speaker)</strong></h3>
             <time itemprop="startDate">2013-07-06</time>
             <h4>
@@ -1146,7 +1153,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Warsaw">
+        <td data-place="Warsaw" class="list">
             <h3 itemprop="name">Confitura<br/> <strong>(2nd best speaker)</strong></h3>
             <time itemprop="startDate">2012-06-30</time>
             <h4>
@@ -1160,7 +1167,7 @@
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Warsaw">
+        <td data-place="Warsaw" class="list">
             <h3 itemprop="name">Javarsovia</h3>
             <time itemprop="startDate">2010-06-26</time>
             <h4>
@@ -1171,7 +1178,7 @@
         <td>&nbsp;</td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
-        <td data-place="Warsaw">
+        <td data-place="Warsaw" class="list">
             <h3 itemprop="name">Warszawa JUG</h3>
             <time itemprop="startDate">2010-02-23</time>
             <h4>
@@ -1184,3 +1191,4 @@
         <td>&nbsp;</td>
     </tr>
 </table>
+</ol>
