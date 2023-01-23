@@ -1,7 +1,8 @@
 ---
 category: podcast
 title: "#42: Flow control and backpressure: slowing down to remain stable"
-permalink: /42
+redirect_from:
+  - /42
 tags: backpressure reactor rxjava tcp-ip
 description: >
     Imagine two independent systems communicating with each other.

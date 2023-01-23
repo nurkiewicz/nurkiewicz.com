@@ -1,7 +1,8 @@
 ---
 category: podcast
 title: "#27: Proof-of-work in blockchain: achieve consensus without trusted third party"
-permalink: /27
+redirect_from:
+  - /27
 tags: proof-of-work blockchain bitcoin double-spending halving
 description: >
     Let's try to cheat the blockchain.

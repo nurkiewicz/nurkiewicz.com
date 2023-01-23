@@ -1,7 +1,8 @@
 ---
 category: podcast
 title: '#1: Circuit Breaker'
-permalink: /1
+redirect_from:
+  - /1
 tags: resilience4j hystrix polly akka ruby
 description: Circuit breaker is a design pattern that prevents cascading failures in distributed systems.
 ---

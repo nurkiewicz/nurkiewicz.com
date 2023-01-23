@@ -1,7 +1,8 @@
 ---
 title: "#61: Spring framework: 2 decades of building Java applications"
 category: podcast
-permalink: /61
+redirect_from:
+  - /61
 tags: spring spring-boot spring-cloud micronaut helidon quarkus ejb dependency-injection hibernate
 description: >
     Spring framework is probably the most popular and most successful application framework for Java.

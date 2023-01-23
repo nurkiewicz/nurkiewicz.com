@@ -1,7 +1,8 @@
 ---
 title: "#64: TypeScript: will it entirely replace JavaScript?"
 category: podcast
-permalink: /64
+redirect_from:
+  - /64
 tags: typescript javascript dart elm node.js deno transpiling
 description: >
     TypeScript is a programming language, a superset of JavaScript.

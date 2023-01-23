@@ -1,7 +1,8 @@
 ---
 title: "#76: 12th Factor App: portable and resilient services start here. Part 8-12/12"
 category: podcast
-permalink: /76
+redirect_from:
+  - /76
 tags: 12th-factor Heroku microservices terraform kubernetes logging Terraform Docker testcontainers Logstash Splunk DataDog
 description: >
     In part 2 of the Twelve-Factor App, we'll explore the second half of the principles.

@@ -1,7 +1,8 @@
 ---
 category: podcast
 title: "#26: Blockchain: distributed, append only database"
-permalink: /26
+redirect_from:
+  - /26
 tags: blockchain bitcoin merkle-tree hash-function
 description: >
     Blockchain is a technology used for storing data without a central database.

@@ -1,7 +1,8 @@
 ---
 title: "#87: Artificial neural networks: imitating human brain to solve problems like humans"
 category: podcast
-permalink: /87
+redirect_from:
+  - /87
 tags: machine-learning deep-learning
 description: >
     An artificial neural network is a computer algorithm somewhat inspired by our brains.

@@ -1,7 +1,8 @@
 ---
 category: podcast
 title: "#22: Moore's law: still alive and true after decades"
-permalink: /22
+redirect_from:
+  - /22
 tags: moore intel 286 386 486 pentium wolfenstein doom quake transistor
 description: >
     It's a common misconception that Moore's law is dead.

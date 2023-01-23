@@ -1,7 +1,8 @@
 ---
 category: podcast
 title: "#46: Kubernetes: Orchestrating large-scale deployments"
-permalink: /46
+redirect_from:
+  - /46
 tags: docker k8s
 description: >
     Kubernetes is a platform for managing various workloads inside containers.

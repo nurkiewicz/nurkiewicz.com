@@ -1,7 +1,8 @@
 ---
 category: podcast
 title: "#32: Cryptographic hash function: much more than a blockchain"
-permalink: /32
+redirect_from:
+  - /32
 tags: hash-function cryptographic-hash-function md5 sha256 java c# rainbow-table birthday-attack
 description: >
     Sometimes you need to split arbitrary objects into a fixed number of groups.

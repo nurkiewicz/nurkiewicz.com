@@ -1,7 +1,8 @@
 ---
 title: "#54: Immutability: from data structures to data centers"
 category: podcast
-permalink: /54
+redirect_from:
+  - /54
 tags: immutability postgresql wal kafka mvcc docker caching
 description: >
     Immutability means that when something was once created, it can't be changed.

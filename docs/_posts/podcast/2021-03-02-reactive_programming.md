@@ -1,7 +1,8 @@
 ---
 category: podcast
 title: "#35: Reactive programming: from spreadsheets to modern web frameworks"
-permalink: /35
+redirect_from:
+  - /35
 tags: reactive rxjs rxjava rxpy rxswift reactor excel elm
 description: >
     To understand what reactive programming is, let's contrast it to _imperative_ programming.

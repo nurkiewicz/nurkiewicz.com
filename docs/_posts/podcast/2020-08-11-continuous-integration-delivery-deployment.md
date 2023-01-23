@@ -1,7 +1,8 @@
 ---
 category: podcast
 title: "#12: Continuous integration, delivery and deployment"
-permalink: /12
+redirect_from:
+  - /12
 tags: CI CD canary-deployment ab-testing
 description: >
     Typically, more than one developer is working on the same codebase.

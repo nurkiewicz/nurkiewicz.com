@@ -1,7 +1,8 @@
 ---
 category: podcast
 title: "#8: Kafka's design"
-permalink: /8
+redirect_from:
+  - /8
 tags: kafka sendfile tail partitioning
 description: >
     Kafka is not a message broker.

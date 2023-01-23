@@ -1,7 +1,8 @@
 ---
 category: podcast
 title: "#21: SSE and WebSockets: servers can talk to browsers, not only the other way around"
-permalink: /21
+redirect_from:
+  - /21
 tags: sse websocket http EventSource
 description: >
     HTTP is historically request-response-driven.

@@ -1,7 +1,8 @@
 ---
 title: "#49: Functional programming: academic research or new hope for the industry?"
 category: podcast
-permalink: /49
+redirect_from:
+  - /49
 tags: functional-programming currying memoization higher-order-function monad lambda-expression map-reduce immutability
 description: >
     Functional programming means programming using functions.

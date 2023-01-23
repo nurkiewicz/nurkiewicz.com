@@ -1,7 +1,8 @@
 ---
 title: "#59: How compilers work: from source to execution"
 category: podcast
-permalink: /59
+redirect_from:
+  - /59
 tags: compiler syntax grace-hopper interpreter cobol
 description: >
     A compiler is an application that turns text into an executable program.

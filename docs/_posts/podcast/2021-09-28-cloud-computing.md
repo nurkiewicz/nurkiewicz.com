@@ -1,7 +1,8 @@
 ---
 title: "#51: Cloud computing: more than renting servers per minute"
 category: podcast
-permalink: /51
+redirect_from:
+  - /51
 tags: cloud-computing iaas paas faas amazon ec2
 description: >
     Cloud computing is a broad term.

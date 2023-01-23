@@ -1,7 +1,8 @@
 ---
 title: "#86: Proof of stake: how to cut global energy usage by 0.2%"
 category: podcast
-permalink: /86
+redirect_from:
+  - /86
 tags: cryptocurrencies ethereum proof-of-work proof-of-stake
 description: >
     A few weeks ago Ethereum blockchain moved from proof-of-work to a proof-of-stake algorithm. 

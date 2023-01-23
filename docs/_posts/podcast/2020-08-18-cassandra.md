@@ -1,7 +1,8 @@
 ---
 category: podcast
 title: "#13: Cassandra"
-permalink: /13
+redirect_from:
+  - /13
 tags: cassandra bloom-filter scylladb memtable sstable vnode consistent-hashing cap-theorem
 description: >
     Cassandra is an open-source NoSQL database.

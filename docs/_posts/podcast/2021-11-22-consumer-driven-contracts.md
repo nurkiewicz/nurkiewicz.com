@@ -1,7 +1,8 @@
 ---
 title: "#58: Consumer-driven Contracts: TDD between services"
 category: podcast
-permalink: /58
+redirect_from:
+  - /58
 tags: cdc consumer-driven-contracts pact spring spring-cloud-contract microservices
 description: >
     Consumer-driven Contracts is an approach to testing integration between services.

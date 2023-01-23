@@ -1,7 +1,8 @@
 ---
 category: podcast
 title: "#44: RESTful APIs: much more than JSON over HTTP"
-permalink: /44
+redirect_from:
+  - /44
 tags: rest soap graphql json xml leonard-richardson roy-fielding idempotency wsdl hateoas
 description: >
     REST is an architectural style of communication, based on HTTP.

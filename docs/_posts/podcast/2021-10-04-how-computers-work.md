@@ -1,7 +1,8 @@
 ---
 title: "#52: How computers work: from electrons to Electron"
 category: podcast
-permalink: /52
+redirect_from:
+  - /52
 tags: cpu alu transistor
 description: >
     Today I'd like to explain how computers work.

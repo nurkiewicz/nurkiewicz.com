@@ -1,7 +1,8 @@
 ---
 title: "#85: Genetic algorithm: natural selection helps to solve coding problems"
 category: podcast
-permalink: /85
+redirect_from:
+  - /85
 tags: machine-learning
 description: >
     A genetic algorithm is a heuristic approach to solving complex computational problems.

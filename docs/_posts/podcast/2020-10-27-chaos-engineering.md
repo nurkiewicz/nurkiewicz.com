@@ -1,7 +1,8 @@
 ---
 category: podcast
 title: "#20: Chaos engineering: breaking your system intentionally when you are prepared"
-permalink: /20
+redirect_from:
+  - /20
 tags: chubby chaos-monkey chaos-kong chaos-gorilla
 description: >
     We tend to focus on testing happy paths and expected edge cases.

@@ -1,7 +1,8 @@
 ---
 category: podcast
 title: "#36: Microservices architecture: principles and how to break them"
-permalink: /36
+redirect_from:
+  - /36
 tags: microservices monolith big-ball-of-mud rest graphql conways-law
 description: >
     Microservices are contrasted to a monolith.

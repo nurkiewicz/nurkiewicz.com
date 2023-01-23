@@ -1,7 +1,8 @@
 ---
 category: podcast
 title: "#37: Fallacies of distributed computing: overlooked challenges"
-permalink: /37
+redirect_from:
+  - /37
 tags: microservices kubernetes distributed-computing
 description: >
     Fallacies of distributed computing are a set of myths we believe, when designing complex systems.

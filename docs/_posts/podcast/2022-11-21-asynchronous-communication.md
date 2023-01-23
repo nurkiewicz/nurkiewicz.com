@@ -1,7 +1,8 @@
 ---
 title: "#91: Asynchronous communication: loose coupling in distributed systems"
 category: podcast
-permalink: /91
+redirect_from:
+  - /91
 tags: asynchronous message-broker
 description: >
     There are two main ways to communicate between components in your distributed system: synchronous and asynchronous.

@@ -1,7 +1,8 @@
 ---
 category: podcast
 title: '#5: asm.js and WebAssembly'
-permalink: /5
+redirect_from:
+  - /5
 tags: javascript asm.js webassembly c c++ rust gc
 description: asm.js and WebAssembly are two technologies used to run native code in the browser with great performance. They can be used to run game engines and complex computation on the client.
 ---

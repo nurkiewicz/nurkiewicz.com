@@ -1,7 +1,8 @@
 ---
 title: "#68: ACID transactions: don't corrupt your data"
 category: podcast
-permalink: /68
+redirect_from:
+  - /68
 tags: acid base isolation-level sql nosql deadlock two-phase-commit
 description: >
     Transactions in SQL databases are rock-solid.

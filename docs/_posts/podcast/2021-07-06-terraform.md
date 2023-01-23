@@ -1,7 +1,8 @@
 ---
 title: "#47: Terraform: managing infrastructure as code"
 category: podcast
-permalink: /47
+redirect_from:
+  - /47
 tags: hcl infrastructure terraform
 description: >
     Terraform is fairly low-level software for managing your infrastructure.

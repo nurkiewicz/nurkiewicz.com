@@ -1,7 +1,8 @@
 ---
 title: "#75: 12th Factor App: portable and resilient services start here. Part 1-7/12"
 category: podcast
-permalink: /75
+redirect_from:
+  - /75
 tags: 12th-factor Heroku microservices
 description: >
     Twelve-Factor App is a set of design guidelines defined by Heroku.

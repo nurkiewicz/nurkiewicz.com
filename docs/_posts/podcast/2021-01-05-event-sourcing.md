@@ -1,7 +1,8 @@
 ---
 category: podcast
 title: "#28: Event sourcing: your data as a stream of changes"
-permalink: /28
+redirect_from:
+  - /28
 tags: event-sourcing cassandra kafka read-model ddd event-store
 description: >
     Event sourcing is an alternative technique of storing business data.

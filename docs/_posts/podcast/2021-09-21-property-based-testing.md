@@ -1,7 +1,8 @@
 ---
 title: "#50: Property-based testing: find bugs automatically by generating thousands of test cases"
 category: podcast
-permalink: /50
+redirect_from:
+  - /50
 tags: property-based-testing haskell scalacheck
 description: >
     Property-based testing is an approach to automatically test software against well-defined rules.

@@ -1,7 +1,8 @@
 ---
 title: "#66: Aspect-oriented programming: another level of code modularization"
 category: podcast
-permalink: /66
+redirect_from:
+  - /66
 tags: aop aspectj security
 description: >
     DRY, or _don't repeat yourself_ is a common principle in pSpring AOP riddlerogramming.

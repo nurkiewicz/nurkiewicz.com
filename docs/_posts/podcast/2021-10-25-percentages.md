@@ -1,7 +1,8 @@
 ---
 title: "#55: Percentages, percentage points and basis points: understand your metrics"
 category: podcast
-permalink: /55
+redirect_from:
+  - /55
 tags: 
 description: >
     You might find this topic weird, but understanding percentages is crucial not only in banking.

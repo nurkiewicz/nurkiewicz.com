@@ -1,7 +1,8 @@
 ---
 category: podcast
 title: "#24: Service discovery: never again hard-code IP addresses in your configuration"
-permalink: /24
+redirect_from:
+  - /24
 tags: zookeeper consul dns eureka
 description: >
     In the old days an application consisted of a monolithic backend and a database.

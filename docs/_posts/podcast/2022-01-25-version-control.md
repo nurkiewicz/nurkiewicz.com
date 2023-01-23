@@ -1,7 +1,8 @@
 ---
 title: "#67: Version control systems: auditing source code, tracking bugs and experimenting"
 category: podcast
-permalink: /67
+redirect_from:
+  - /67
 tags: version-control vcs git mercurial
 description: >
     Version control systems, like git, serve two purposes.

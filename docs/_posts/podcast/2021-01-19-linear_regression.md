@@ -1,7 +1,8 @@
 ---
 category: podcast
 title: "#30: Linear Regression: simple, yet powerful machine learning"
-permalink: /30
+redirect_from:
+  - /30
 tags: linear-regression machine-learning kaggle supervised-learning
 description: >
     Linear regression is one of the simplest machine learning algorithms.

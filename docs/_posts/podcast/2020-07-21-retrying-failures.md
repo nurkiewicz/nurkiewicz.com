@@ -1,7 +1,8 @@
 ---
 category: podcast
 title: "#9: Retrying failures"
-permalink: /9
+redirect_from:
+  - /9
 tags: ddos fault-tolerance
 description: >
     I find it quite fascinating how many failures in complex systems could be avoided if we simply... tried again.

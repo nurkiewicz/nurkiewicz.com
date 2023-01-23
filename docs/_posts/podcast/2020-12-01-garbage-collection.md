@@ -1,7 +1,8 @@
 ---
 category: podcast
 title: "#23: Garbage collection: how automatic memory management makes writing software much easier"
-permalink: /23
+redirect_from:
+  - /23
 tags: gc lisp
 description: >
     Creating new objects, arrays or strings is so straightforward that we often forget what happens underneath.

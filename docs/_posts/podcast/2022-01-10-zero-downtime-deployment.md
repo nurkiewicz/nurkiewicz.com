@@ -1,7 +1,8 @@
 ---
 title: "#65: Zero Downtime deployment: If it hurts, do it more often"
 category: podcast
-permalink: /65
+redirect_from:
+  - /65
 tags: devops blue-green canary kubernetes
 description: >
     Remember the days when deploying a new version of your application required downtime?

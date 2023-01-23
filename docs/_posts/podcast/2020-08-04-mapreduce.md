@@ -1,7 +1,8 @@
 ---
 category: podcast
 title: "#11: MapReduce"
-permalink: /11
+redirect_from:
+  - /11
 tags: hadoop hdfs spark hive google
 description: >
     MapReduce is a programming model for processing large amounts of data.
