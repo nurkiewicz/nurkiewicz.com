@@ -31,5 +31,5 @@ If you find my work valuable or need some help, contact me.
 ## Contact me
 
 * E-mail: `nurkiewicz` (on GMail)
-* [@tnurkiewicz](https://twitter.com/tnurkiewicz) (DMs open)
+* [Mastodon](https://fosstodon.org/@nurkiewicz) or [Twitter](https://twitter.com/tnurkiewicz) (DMs open)
 * [LinkedIn](https://www.linkedin.com/in/tomasz-nurkiewicz-80513b92/)
