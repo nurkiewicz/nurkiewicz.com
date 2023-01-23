@@ -6,7 +6,7 @@
             <h3 itemprop="name"><a href="https://2023.boilingfrogs.pl/">BoilingFrogs</a></h3>
             <time itemprop="startDate">2023-03-18</time>
             <h4>
-                Fifty Shades of State (TBA)
+                <a href="https://2023.boilingfrogs.pl/speaker/tomasz-nurkiewicz/">Fifty Shades of State (TBA)</a>
             </h4>
         </td>
         <td>
