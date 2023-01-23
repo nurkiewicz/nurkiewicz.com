@@ -15,7 +15,7 @@
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
         <td>
-            <h3 itemprop="name">JUG Frankfurt</h3>
+            <h3 itemprop="name"><a href="https://jugf.github.io/posts/project-loom-revolution-in-concurrency-or-obscure-implementation-detail-25-01-2023/">JUG Frankfurt</a></h3>
             <time itemprop="startDate">2023-01-25</time>
             <h4>
                 Project Loom: Revolution in Concurrency or Obscure Implementation Detail?
