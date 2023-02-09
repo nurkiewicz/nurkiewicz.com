@@ -1,6 +1,6 @@
 ---
 category: podcast
-title: "#13: Cassandra"
+title: "#13: Cassandra: NoSQL database that supports large amounts of data on commodity servers"
 redirect_from:
   - /13
 tags: cassandra bloom-filter scylladb memtable sstable vnode consistent-hashing cap-theorem
