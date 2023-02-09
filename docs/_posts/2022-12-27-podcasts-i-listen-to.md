@@ -33,11 +33,11 @@ Our presenters include Finn, Emma, Rob, Neil, Sophie & Alice.
 
 The Advance Tech Podcast brings you the latest in bleeding edge technology and features guests building the technology of tomorrow. We connect you to founders, developers and influencers from around the globe who give our audience insight into what it takes to massively scale from great idea to leading industry maker.
 
-### [Advanced English](https://anchor.fm/advanced_english)
+### [Advanced English](https://academy.explearning.co/)
 
 At Advanced English, we teach you to speak English fluently and confidently through real-world English conversations and the exploration of American English culture.
 
-Our goal is to improve your fluency, confidence, and clarity when speaking English. 
+Our goal is to improve your fluency, confidence, and clarity when speaking English.
 
 While we focus on improving English communication and conversation, we also help improve your English grammar, English comprehension, and English listening skills.
 
@@ -45,7 +45,7 @@ Learn about your teachers Mary Daphne (Ed.M., Columbia University) and Greg (MBA
 
 ### [Around IT in 256 seconds](https://nurkiewicz.com/)
 
-Podcast for developers, testers, SREs... and their managers. I explain complex and convoluted technologies in a clear way, avoiding buzzwords and hype. Never longer than 4 minutes and 16 seconds. Because software development does not require hours of lectures, dev advocates' slide decks and hand waving. For those of you, who want to combat FOMO, while brushing your teeth. 256 seconds is plenty of time. If I can't explain something within this time frame, it's either too complex, or I don't understand it myself. 
+Podcast for developers, testers, SREs... and their managers. I explain complex and convoluted technologies in a clear way, avoiding buzzwords and hype. Never longer than 4 minutes and 16 seconds. Because software development does not require hours of lectures, dev advocates' slide decks and hand waving. For those of you, who want to combat FOMO, while brushing your teeth. 256 seconds is plenty of time. If I can't explain something within this time frame, it's either too complex, or I don't understand it myself.
 
 By Tomasz Nurkiewicz. Java Champion, CTO, trainer, O'Reilly author, blogger
 
@@ -102,21 +102,17 @@ A rundown of the most important global business stories you need to know for the
 
 A history podcast looking at the collapse of a different civilization each episode. What did they have in common? Why did they fall? And what did it feel like to watch it happen?
 
-### [Godmother](https://www.godmother.pl/)
-
-Intelektualny rozwój dzieci
-
 ### [Inside Java](https://insidejava.libsyn.com/)
 
 Inside Java is a podcast for Java Developers brought to you directly from the people that make Java at Oracle. We'll discuss the language, the JVM, OpenJDK, platform security, innovation projects like Loom and Panama, and everything in between.
 
-### [Introvertpreneur](http://thetarareid.com/podcast)
+### [Introvertpreneur](https://thetarareid.com/podcast)
 
-The beauty of starting your own business is that you can build it on your terms around a lifestyle that you design. But trying to build a business with strategies made for extroverts is a recipe for burnout. 
+The beauty of starting your own business is that you can build it on your terms around a lifestyle that you design. But trying to build a business with strategies made for extroverts is a recipe for burnout.
 
 This is the podcast built for service providers who are introverts and struggle with online marketing, mindset issues, and dealing with clients. I’ve been an online entrepreneur since 2007 and love helping introverts discover stress-free ways to build a successful business.
 
-Each weekly episode will be full of actionable advice for using marketing strategies that are effective-like Pinterest, and email marketing, as well as creative ways to engage on Instagram and Facebook. These strategies will allow you to connect with clients and never make you wonder if you should just return to your old 9-5. 
+Each weekly episode will be full of actionable advice for using marketing strategies that are effective-like Pinterest, and email marketing, as well as creative ways to engage on Instagram and Facebook. These strategies will allow you to connect with clients and never make you wonder if you should just return to your old 9-5.
 
 Ready to discover your introvert superpowers?
 
@@ -134,11 +130,11 @@ Conversations about science, technology, history, philosophy and the nature of i
 
 ### [Making Sense with Sam Harris](http://www.samharris.org/)
 
-Join neuroscientist, philosopher, and best-selling author Sam Harris as he explores important and controversial questions about the human mind, society, and current events. 
+Join neuroscientist, philosopher, and five-time New York Times best-selling author Sam Harris as he explores important and controversial questions about the mind, society, current events, moral philosophy, religion, and rationality—with an overarching focus on how a growing understanding of ourselves and the world is changing our sense of how we should live.
 
-Sam Harris is the author of five New York Times bestsellers. His books include The End of Faith, Letter to a Christian Nation, The Moral Landscape, Free Will, Lying, Waking Up, and Islam and the Future of Tolerance (with Maajid Nawaz). The End of Faith won the 2005 PEN Award for Nonfiction. His writing and public lectures cover a wide range of topics—neuroscience, moral philosophy, religion, meditation practice, human violence, rationality—but generally focus on how a growing understanding of ourselves and the world is changing our sense of how we should live. 
+Sam is also the creator of the Waking Up app. Combining Sam’s decades of mindfulness practice, profound wisdom from varied philosophical and contemplative traditions, and a commitment to a secular, scientific worldview, Waking Up is a resource for anyone interested in living a more examined, fulfilling life—and a new operating system for the mind.
 
-Harris's work has been published in more than 20 languages and has been discussed in The New York Times, Time, Scientific American, Nature, Newsweek, Rolling Stone, and many other journals. He has written for The New York Times, The Los Angeles Times, The Economist, The Times (London), The Boston Globe, The Atlantic, The Annals of Neurology, and elsewhere.
+Waking Up offers free subscriptions to anyone who can’t afford one, and donates a minimum of 10% of profits to the most effective charities around the world. To learn more, please go to WakingUp.com.
 
 Sam Harris received a degree in philosophy from Stanford University and a Ph.D. in neuroscience from UCLA.
 
@@ -149,6 +145,10 @@ Sam Harris received a degree in philosophy from Stanford University and a Ph.D. 
 ### [Planet Money](https://www.npr.org/podcasts/510289/planet-money)
 
 Wanna see a trick? Give us any topic and we can tie it back to the economy. At <em>Planet Money</em>, we explore the forces that shape our lives and bring you along for the ride. Don't just understand the economy – understand the world.<br /><br /><em>Wanna go deeper? <em>Subscribe to </em><em>Planet Money+ and get sponsor-free episodes of Planet Money, The Indicator, and Planet Money Summer School. Plus access to bonus content. It's a new way to support the show you love. Learn more at plus.npr.org/planetmoney.</em></em>
+
+### [PreAccident Investigation Podcast](https://preaccidentpodcast.podbean.com/)
+
+The Pre Accident Podcast is an ongoing safety podcast conversation of Human Performance, Systems Safety, & Safety Culture.
 
 ### [Programming Love](https://programming.love/)
 
@@ -174,6 +174,16 @@ In this show, I open you the doors to companies and thought leaders around the w
 
 Great technical leadership requires more than just great coding skills. It requires a variety of other skills that are not well-defined, and they are not something that we can fully learn in any school or book. Hear from experienced technical leaders sharing their journey and philosophy for building great technical teams and achieving technical excellence. Find out what makes them great and how to apply those lessons to your work and team.
 
+### [The Analytics Engineering Podcast](https://roundup.getdbt.com/)
+
+Tristan Handy has been curating the Analytics Engineering Roundup newsletter since 2015, pulling together the internet’s best data science & analytics articles.
+
+Tristan and co-host Julia Schottenstein now bring the Roundup to real life, hosting biweekly conversations with data practitioners inventing the future of analytics engineering.
+
+You can view full episode summaries and read back issues of the Roundup newsletter at https://roundup.getdbt.com.
+
+The podcast is sponsored by dbt labs, makers of the data transformation framework dbt. To reach our team, drop a note to podcast@dbtlabs.com.
+
 ### [The Anthropocene Reviewed](https://www.wnycstudios.org/podcasts/anthropocene-reviewed)
 
 The Anthropocene is the current geological age, in which human activity has profoundly shaped the planet and its biodiversity. On The Anthropocene Reviewed, #1 New York Times bestselling author John Green (The Fault in Our Stars, Turtles All the Way Down) reviews different facets of the human-centered planet on a five-star scale. WNYC Studios is a listener-supported producer of other leading podcasts including On the Media, Snap Judgment, Death, Sex & Money, Nancy and Here’s the Thing with Alec Baldwin. © WNYC Studios
@@ -194,6 +204,12 @@ The podcast for software developers who want to become more efficient and produc
 
 The most important stories, explained through the lens of business. A podcast about money, business and power. Hosted by Kate Linebaugh and Ryan Knutson. The Journal is a co-production from Gimlet Media and The Wall Street Journal.
 
+### [The Making of Modern Ukraine](https://yalepodcasts.blubrry.net/category/making-of-modern-ukraine/)
+
+Ukraine must have existed as a society and polity on 23 February 2022, else Ukrainians would not have collectively resisted Russian invasion the next day.  What does it mean for a nation to exist?  Timothy Snyder explores these and other questions in a very timely course.
+
+This course was recorded live in a classroom at Yale University in the autumn of 2022.
+
 ### [The New Stack @ Scale](http://thenewstack.io/)
 
 The New Stack @ Scale podcast is about developing and managing elastic and dynamic services and systems.
@@ -204,7 +220,7 @@ Alex Williams, founder of The New Stack, hosts "The New Stack Analysts," a biwee
 
 Listen to our other TNS Podcasts on SoundCloud:
 
-The New Stack Makers: https://soundcloud.com/thenewstackmakers 
+The New Stack Makers: https://soundcloud.com/thenewstackmakers
 
 The New Stack Context: https://soundcloud.com/thenewstackcontext
 
@@ -214,11 +230,21 @@ The New Stack @ Scale: https://soundcloud.com/thenewstackatscale
 
 Join The New Stack’s editorial team to review the week’s hottest news in cloud-native technologies and at-scale application development. Editorial Director Libby Clark, Managing Editor Joab Jackson and TNS Founder and Publisher Alex Williams put more context around the stories we’re covering each week and look ahead to topics we expect will gain more attention in coming weeks. Guests include TNS writers and correspondents who join us to discuss what they’re hearing from tech industry insiders.
 
+### [The New Stack Podcast](https://thenewstack.simplecast.com/)
+
+The New Stack Podcast is all about the developers, software engineers and operations people who build at-scale architectures that change the way we develop and deploy software.
+
+For more content from The New Stack, subscribe on YouTube at: https://www.youtube.com/c/TheNewStack
+
+### [This American Life](https://www.thisamericanlife.org/)
+
+This American Life is a weekly public radio show, heard by 2.2 million people on more than 500 stations. Another 2.5 million people download the weekly podcast. It is hosted by Ira Glass, produced in collaboration with Chicago Public Media, delivered to stations by PRX The Public Radio Exchange, and has won all of the major broadcasting awards.
+
 ## Polskie
 
 ### [7 metrów pod ziemią](https://www.youtube.com/@7metrowpodziemia)
 
-Rozmawiam z ciekawymi ludźmi – konkretnie i bez zbędnych dygresji. Mój cel? Wydobyć z rozmówców prawdę, na którą nie zdobyliby się w telewizyjnym studiu. 
+Rozmawiam z ciekawymi ludźmi – konkretnie i bez zbędnych dygresji. Mój cel? Wydobyć z rozmówców prawdę, na którą nie zdobyliby się w telewizyjnym studiu.
 
 Mój mail: kontakt.7mpz@gmail.com
 Znajdziesz mnie również tutaj: https://linktr.ee/Rafal_Gebura
@@ -257,7 +283,9 @@ Więcej wiadomości, oraz informacje o autorze, znajdziesz na: http://www.dzialz
 
 ### [Finanse Bardzo Osobiste: oszczędzanie | inwestowanie | pieniądze | dobre życie](https://marciniwuc.com/)
 
+### [Godmother](https://www.godmother.pl/)
 
+Intelektualny rozwój dzieci
 
 ### [Glosariusz Programisty](https://carste.pl/)
 
@@ -265,8 +293,8 @@ Commit, React, Deployment, CI/CD, Fullstack... Branża IT pełna jest trudnych n
 
 ### [IT i TO](https://www.onyszko.com/)
 
-Podcast dla osób zajmujących się technologią zawodowo i hobbystycznie. Dowiesz się z niego o trendach w technologii, poznasz ludzi, którzy zbudowali swoją karierę i rozwinęli firmy związane z technologią lub doradzają innym strategicznie w tym obszarze. 
-Ten podcast pomoże Ci wybrać Twoją ścieżkę zawodową w świecie technologii i pokaże jak zbudowałem ją ja, moi goście i jak możesz zrobić to Ty, czy to jako programista, konsultant czy pracując niezależnie. 
+Podcast dla osób zajmujących się technologią zawodowo i hobbystycznie. Dowiesz się z niego o trendach w technologii, poznasz ludzi, którzy zbudowali swoją karierę i rozwinęli firmy związane z technologią lub doradzają innym strategicznie w tym obszarze.
+Ten podcast pomoże Ci wybrać Twoją ścieżkę zawodową w świecie technologii i pokaże jak zbudowałem ją ja, moi goście i jak możesz zrobić to Ty, czy to jako programista, konsultant czy pracując niezależnie.
 
 Mam opinię i nie zawaham się jej użyć!
 
@@ -308,18 +336,26 @@ Nerd Management to inicjatywa, która ma na celu pomóc wszystkim świeżo upiec
 
 ### [Nerdy Nocą](https://nerdynoca.pl/)
 
-Świat jest pełen różnorodnych ciekawostek, pasji i przygód. Zapuśćmy się zatem w dobrym towarzystwie w miejsca, gdzie słońce nie dochodzi. 
+Świat jest pełen różnorodnych ciekawostek, pasji i przygód. Zapuśćmy się zatem w dobrym towarzystwie w miejsca, gdzie słońce nie dochodzi.
 Więcej niż podkast znajdziesz na stronie https://nerdynoca.pl
+
+### [Niuniu](https://www.facebook.com/Niuniu-101622264696946/)
+
+Świat dookoła jest niesamowity, spotykają nas absurdalne sytuacje, których spiesząc się nie zauważamy. A ja pracuje na budowie, mnie się nie spieszy.
 
 ### [OSW - Ośrodek Studiów Wschodnich](https://anchor.fm/osw-osrodek-studiow)
 
 W podcastach OSW rozmawiamy o wydarzeniach i procesach ważnych dla świata wschodu. Interesujemy się światem od Berlina po Władywostok.
 
+### [Onet Opinie - Stankiewicz](http://opiniestankiewicz.podcastyonet.libsynpro.com/website)
+
+
+
 ### [PI Technologia](http://www.politykainsight.pl/)
 
 W audycji Polityki Insight rozmawiamy o technologiach i ich wpływie na nasze codzienne życie. Naszymi gośćmi są eksperci i politycy, naukowcy i przedsiębiorcy. Wspólnie zastanawiamy się, jak sztuczna inteligencja, roboty, drony, biometryka czy internet rzeczy zmieniają społeczeństwo i nas samych.
 
-### [Pan Tabletka dla rodziców - podcast](https://www.spreaker.com/show/pan-tabletka-dla-rodzicow-podcast)
+### [Pan Tabletka dla rodziców - podcast](https://pantabletka.pl/)
 
 Motto Pana Tabletki brzmi: <br />"Zróbmy wszystko żeby tabletki nie były potrzebne, a jeśli to niemożliwe to wybierzmy najlepsze i stosujmy je prawidłowo."<br /><br />Jeżeli chcesz  lepiej dbać o zdrowie Twoje i Twoich bliskich - to ten podcast jest dla Ciebie.<br /><br />Serdeczności<br />Pan Tabletka<br /><br />Marcin
 
@@ -337,11 +373,11 @@ Stany Zjednoczone to dziś kraj trapiony przez wiele kryzysów. Ale to również
 
 ### [Po prostu Wschód](http://pogorzelski.wix.com/home)
 
-Podcast poświęcony krajom za naszą wschodnią granicą, czyli byłego Związku Radzieckiego. Mowa nie tylko o polityce, ale też o kulturze i społeczeństwie. Moja + ekspertów wiedza. 
-Jeżeli podoba się Państwu to, co robię, możecie mnie wesprzeć: 
+Podcast poświęcony krajom za naszą wschodnią granicą, czyli byłego Związku Radzieckiego. Mowa nie tylko o polityce, ale też o kulturze i społeczeństwie. Moja + ekspertów wiedza.
+Jeżeli podoba się Państwu to, co robię, możecie mnie wesprzeć:
 https://patronite.pl/PoProstuWschód
 https://zrzutka.pl/6m35sn
-Muzykę z podcastów można znaleźć tu: 
+Muzykę z podcastów można znaleźć tu:
 https://cutt.ly/qsoKGpB
 
 ### [Podcast Historyczny](https://patronite.pl/podcasthistoryczny/description)
@@ -352,12 +388,12 @@ Dla każdego, kto uważa, że historia jest nudna. Zawsze uważałem, że histor
 
 Niekoniecznie nostalgiczny podcast o latach dziewięćdziesiątych i zerowych. Prowadzą Bartek Przybyszewski (blog "Liczne rany kłute") i Mateusz Witkowski (Popmoderna.pl, blog "Popland"). Wizuale i muzyka: Michał Kozikowski. Grafika profilowa: Paweł Kuliński (Pan Kulka). Czyta: Tadeusz Drozda.
 
-### [Podkast Powszechny](https://www.tygodnikpowszechny.pl/podkast)
+### [Podkast Tygodnika Powszechnego](https://www.tygodnikpowszechny.pl/podkast)
 
-Oficjalny podkast „Tygodnika Powszechnego”: rozmowy z naszymi dziennikarzami, autorami i gośćmi. Tematy, kraj, świat, wiara i kultura, nauka i zmysły. Poważnie, a czasem mniej poważnie. 
-O najważniejszych tematach z autorami i gośćmi „Tygodnika” rozmawia Michał Kuźmiński. Co miesiąc także audycje w autorskich cyklach: Punkt zwrotny oraz Własny pokój: Katarzyna Kubisiowska i jej goście | #DOM, czyli rozmowy Krzysztofa Storego o małej ojczyźnie | Sztuka powszechnie nieznana: Magdalena Łanuszka odkrywa dla nas na nowo średniowieczne dzieła | Miesiąc w nauce z autorskim przeglądem newsów naukowych Łukasza Lamży | Opowieści z Izraela: korespondencje Karoliny Przewrockiej-Aderet.
+„Podkast Powszechny”: o najważniejszych tematach z autorami i gośćmi „Tygodnika Powszechnego” rozmawia Michał Kuźmiński | Jagielski Story, gdzie co dwa tygodnie informacje o najważniejszych wydarzeniach przeplatają się z historiami i anegdotami z podróży i pracy jednego z najwybitniejszych polskich reporterów i korespondentów wojennych, Wojciecha Jagielskiego, z którym rozmawia Krzysztof Story | Punkt zwrotny oraz Własny pokój: Katarzyna Kubisiowska i jej goście | Sztuka powszechnie nieznana: Magdalena Łanuszka odkrywa dla nas na nowo średniowieczne dzieła | Miesiąc w nauce z autorskim przeglądem newsów naukowych Łukasza Lamży | Opowieści z Izraela: korespondencje Karoliny Przewrockiej-Aderet.
 Weź, słuchaj!
-Współwydawcą Podkastu Powszechnego jest Fundacja Tygodnika Powszechnego. Wspieraj Podkast Powszechny w serwisie Patronite i ciesz się przywilejami!
+Wspieraj Podkast Tygodnika Powszechnego w serwisie Patronite!
+Współwydawcą podkastu jest Fundacja Tygodnika Powszechnego.
 
 ### [Powojnie](https://anchor.fm/powojnie)
 
@@ -373,7 +409,7 @@ Programista robi biznes to podcast, który ma na celu dzielenie się wiedzą ora
 
 ### [Przewodnik w nieznane](https://mrugalski.pl/)
 
-Przedstawiam mało znane rozwiązania technologiczne w możliwie prosty sposób. Moim celem jest usprawnienie Twojego wirtualnego życia. 
+Przedstawiam mało znane rozwiązania technologiczne w możliwie prosty sposób. Moim celem jest usprawnienie Twojego wirtualnego życia.
 
 Prowadzący:
 Jakub 'unknow' Mrugalski.
@@ -396,7 +432,7 @@ Rozchmurzony jest podcastem technologicznym skupionym wokół DevOps, projektów
 
 ### [Samiec Beta](https://anchor.fm/samiecbeta)
 
-Mateusz Płocha i Szymon Żurawski wyruszają na poszukiwania prawdziwej męskości. Przedzierając się przez dżunglę pnączy z testosteronu starają się odnaleźć siebie, a przy okazji trochę się pośmiać. 
+Mateusz Płocha i Szymon Żurawski wyruszają na poszukiwania prawdziwej męskości. Przedzierając się przez dżunglę pnączy z testosteronu starają się odnaleźć siebie, a przy okazji trochę się pośmiać.
 
 Słuchasz na Spotify? Pamiętaj o zaobserwowaniu i kliknięcia w dzwoneczek.
 
@@ -404,7 +440,7 @@ Macie ciekawe screeny albo historie? Prześlijcie je na samiecbetapodcast@gmail.
 
 Jesteś osobą słuchająca i chciałabyś nas wesprzeć? Zapraszamy na nasz Patronite, gdzie znajdzie próg specjalnie dla siebie: https://patronite.pl/samiecbeta
 
-### [Sprawny Programista » Programowanie](https://www.spreaker.com/show/sprawny-programista)
+### [Sprawny Programista » Programowanie](https://stormit.pl/)
 
 Sprawny Programista » Podcast o programowaniu » Programowanie
 
@@ -412,18 +448,25 @@ Sprawny Programista » Podcast o programowaniu » Programowanie
 
 W tym podcaście znajdziesz codziennie jeden starannie wybrany materiał audio, który pozwoli Ci poznać ofertę Radia TOK FM: to o wiele więcej niż newsy i polityka. Całą ofertę Radia TOK FM - ponad 60 stale aktualizowanych podcastów - znajdziesz tylko na stronie TOKFM.pl i w aplikacji mobilnej TOK FM. Radio TOK FM to kilkanaście godzin najwyższej jakości programu każdego dnia.
 
+### [Tato, no weź](https://zloteprzeboje.pl/tato-no-wez)
+
+„Tato, no weź” to podcast, w którym Kamil Baleja pokazuje tacierzyństwo bez cukru.
+Zapnijcie swoim dzieciom w wózku pasy, bo szykuje się naprawdę ostra jazda bez trzymanki!
+
+Kup książkę „Tato, no weź. Kupa i inne radości tacierzyństwa" (Wydawnictwo Agora): https://cutt.ly/Baleja-Tato-no-wez
+
 ### [Tech Writer koduje](https://techwriterkoduje.pl/)
 
 Podcast o technicznej stronie tworzenia dokumentacji w IT. Skupiamy się na tym jak Tech Writer może wpasować się w środowisko programistów zarówno pod kątem sposobu pracy jak i używanych technologii, narzędzi i rozwiązań. Staramy się też pokazać, że praca Tech Writera może być ciekawa i rozwijająca pod kątem umiejętności technicznych.
 
 ### [Układ Otwarty. Igor Janke zaprasza](https://ukladotwarty.pl/)
 
-Układ Otwarty to niezależny autorski podcast Igora Janke. Projekt otwarty dla różnych osób, różnych poglądów i różnych problemów wychodzący poza nasza plemienną wojnę. Autor razem ze swoimi gośćmi chce pokazać rzeczywistość w całym jej skomplikowaniu i różnorodności. 
+Układ Otwarty to niezależny autorski podcast Igora Janke. Projekt otwarty dla różnych osób, różnych poglądów i różnych problemów wychodzący poza nasza plemienną wojnę. Autor razem ze swoimi gośćmi chce pokazać rzeczywistość w całym jej skomplikowaniu i różnorodności.
 Rozmowy opublikowane są w poniedziałki i czwartki rano w wersji audio – na platformach podcastowych. Wersje wideo możecie znaleźć na YouTube.
 
 ### [Za Rubieżą. Historia i polityka](https://anchor.fm/miosz-szymaski2)
 
-Podcast o historii, podróżach i polityce międzynarodowej. 
+Podcast o historii, podróżach i polityce międzynarodowej.
 
 Jak historyczne wydarzenia wpływają na rzeczywistość, w której żyjemy.
 
@@ -431,7 +474,6 @@ Jak historyczne wydarzenia wpływają na rzeczywistość, w której żyjemy.
 
 Autorska audycja Macieja Filipkowskiego „Zaprojektuj Swoje Życie”. <br /><br />Przedstawiam Wam osoby, które w swoim życiu podjęły nietuzinkowe wyzwania. Moje pytania nie należą do łatwych, ale inspirują do zastanowienia się nad tym co nas napędza i dokąd zmierzamy.  Odpowiedzi moich gości są mądre biznesowo i życiowo.  Pomogą Wam zainspirować się do świadomego i odważnego projektowania swojego życia.
 
-### [miłosz brzeziński](https://www.spreaker.com/show/milosz-brzezinski)
+### [miłosz brzeziński](https://miloszbrzezinski.pl/)
 
 miłosz brzeziński czyta na głos to, co mógł napisać. <br />Ponieważ nie każdy ma czas czytać teksty, a także nie każdy ma możliwość, udostępniamy je w formie czytanej, dziękując za tę możliwość. "Odcinki" będą się pojawiały nieregularnie, ale informacje o nich dostępne będą na stronie <a href="https://miloszbrzezinski.pl" rel="noopener">https://miloszbrzezinski.pl</a> w newsletterze i na fb autora. <br />Dziękuję Państwu za Państwa uwagę. :)
-

@@ -5,9 +5,10 @@
     <outline text="feeds">
 
       <outline type="rss" overcastId="220516" text="The New Stack Analysts" title="The New Stack Analysts" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:94518611/sounds.rss" htmlUrl="http://thenewstack.io/"/>
-      <outline type="rss" overcastId="242181" text="DevTalk" title="DevTalk" xmlUrl="http://feeds.feedburner.com/devtalk_pl" htmlUrl=""/>
+      <outline type="rss" overcastId="242181" text="DevTalk" title="DevTalk" xmlUrl="http://feeds.feedburner.com/devtalk_pl" htmlUrl="http://devtalk.pl/"/>
       <outline type="rss" overcastId="254264" text="Finanse Bardzo Osobiste: oszcz&#x119;dzanie | inwestowanie | pieni&#x105;dze | dobre &#x17C;ycie" title="Finanse Bardzo Osobiste: oszcz&#x119;dzanie | inwestowanie | pieni&#x105;dze | dobre &#x17C;ycie" xmlUrl="https://marciniwuc.com/feed/podcast/" htmlUrl="https://marciniwuc.com/"/>
       <outline type="rss" overcastId="293271" text="Java Off-Heap" title="Java Off-Heap" xmlUrl="https://offheap.libsyn.com/rss" htmlUrl="http://www.javaoffheap.com/"/>
+      <outline type="rss" overcastId="318336" text="This American Life" title="This American Life" xmlUrl="https://www.thisamericanlife.org/podcast/rss.xml" htmlUrl="https://www.thisamericanlife.org/"/>
       <outline type="rss" overcastId="337464" text="The New Stack @ Scale" title="The New Stack @ Scale" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:172286536/sounds.rss" htmlUrl="http://thenewstack.io/"/>
       <outline type="rss" overcastId="426752" text="Nerdy Noc&#x105;" title="Nerdy Noc&#x105;" xmlUrl="http://nerdynoca.pl/feed/podcast" htmlUrl="https://nerdynoca.pl/"/>
       <outline type="rss" overcastId="441711" text="The New Stack Context" title="The New Stack Context" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:231433999/sounds.rss" htmlUrl="http://thenewstack.io/"/>
@@ -27,7 +28,8 @@
       <outline type="rss" overcastId="994920" text="Coding Blocks" title="Coding Blocks" xmlUrl="https://www.codingblocks.net/podcast-feed.xml" htmlUrl="https://www.codingblocks.net/"/>
       <outline type="rss" overcastId="995055" text="7 metr&#xF3;w pod ziemi&#x105;" title="7 metr&#xF3;w pod ziemi&#x105;" xmlUrl="https://anchor.fm/s/cff58c1c/podcast/rss" htmlUrl="https://www.youtube.com/@7metrowpodziemia"/>
       <outline type="rss" overcastId="995543" text="Darknet Diaries" title="Darknet Diaries" xmlUrl="https://feeds.megaphone.fm/darknetdiaries" htmlUrl="https://darknetdiaries.com/"/>
-      <outline type="rss" overcastId="1095133" text="Podkast Powszechny" title="Podkast Powszechny" xmlUrl="https://www.tygodnikpowszechny.pl/podcasts/18945" htmlUrl="https://www.tygodnikpowszechny.pl/podkast"/>
+      <outline type="rss" overcastId="1001641" text="Onet Opinie - Stankiewicz" title="Onet Opinie - Stankiewicz" xmlUrl="https://opiniestankiewicz.libsyn.com/rss" htmlUrl="http://opiniestankiewicz.podcastyonet.libsynpro.com/website"/>
+      <outline type="rss" overcastId="1095133" text="Podkast Tygodnika Powszechnego" title="Podkast Tygodnika Powszechnego" xmlUrl="https://www.tygodnikpowszechny.pl/podcasts/18945" htmlUrl="https://www.tygodnikpowszechny.pl/podkast"/>
       <outline type="rss" overcastId="1137059" text="Zaprojektuj Swoje &#x17B;ycie" title="Zaprojektuj Swoje &#x17B;ycie" xmlUrl="https://www.spreaker.com/show/3443435/episodes/feed" htmlUrl="https://zaprojektujswojezycie.pl/"/>
       <outline type="rss" overcastId="1137875" text="Radek Kotarski i Polimaty" title="Radek Kotarski i Polimaty" xmlUrl="https://anchor.fm/s/a143854/podcast/rss" htmlUrl="http://youtube.com/polimaty"/>
       <outline type="rss" overcastId="1190338" text="Marketplace Tech" title="Marketplace Tech" xmlUrl="https://www.marketplace.org/feed/podcast/marketplace-tech" htmlUrl="https://www.marketplace.org/shows/marketplace-tech/"/>
@@ -40,11 +42,12 @@
       <outline type="rss" overcastId="1285862" text="Patoarchitekci" title="Patoarchitekci" xmlUrl="https://www.spreaker.com/show/4215515/episodes/feed" htmlUrl="https://patoarchitekci.io/"/>
       <outline type="rss" overcastId="1290111" text="Science Vs" title="Science Vs" xmlUrl="https://feeds.megaphone.fm/sciencevs" htmlUrl="https://gimletmedia.com/science-vs/"/>
       <outline type="rss" overcastId="1298463" text="Software Engineering Unlocked" title="Software Engineering Unlocked" xmlUrl="https://feeds.simplecast.com/K1_mv0CJ" htmlUrl="https://www.software-engineering-unlocked.com/"/>
-      <outline type="rss" overcastId="1332925" text="Sprawny Programista &#xBB; Programowanie" title="Sprawny Programista &#xBB; Programowanie" xmlUrl="https://www.spreaker.com/show/3685801/episodes/feed" htmlUrl="https://www.spreaker.com/show/sprawny-programista"/>
+      <outline type="rss" overcastId="1332925" text="Sprawny Programista &#xBB; Programowanie" title="Sprawny Programista &#xBB; Programowanie" xmlUrl="https://www.spreaker.com/show/3685801/episodes/feed" htmlUrl="https://stormit.pl/"/>
       <outline type="rss" overcastId="1579316" text="Allegro Tech Podcast" title="Allegro Tech Podcast" xmlUrl="https://feeds.buzzsprout.com/887914.rss" htmlUrl="https://allegro.tech/"/>
       <outline type="rss" overcastId="1580395" text="CloudHeroes - PODCAST" title="CloudHeroes - PODCAST" xmlUrl="https://anchor.fm/s/131755d0/podcast/rss" htmlUrl="https://cloudheroes.pl/"/>
       <outline type="rss" overcastId="1582880" text="Raport o stanie &#x15B;wiata Dariusza Rosiaka" title="Raport o stanie &#x15B;wiata Dariusza Rosiaka" xmlUrl="https://anchor.fm/s/13a6bdec/podcast/rss" htmlUrl="https://raportostanieswiata.pl/"/>
       <outline type="rss" overcastId="1601281" text="Pi&#x105;tki Na Produkcji" title="Pi&#x105;tki Na Produkcji" xmlUrl="https://anchor.fm/s/13d435c4/podcast/rss" htmlUrl="https://www.facebook.com/piatkiNaProdukcji/"/>
+      <outline type="rss" overcastId="1610115" text="Niuniu" title="Niuniu" xmlUrl="https://niuniu.libsyn.com/rss" htmlUrl="https://www.facebook.com/Niuniu-101622264696946/"/>
       <outline type="rss" overcastId="1618164" text="Planet Money" title="Planet Money" xmlUrl="https://feeds.npr.org/510289/podcast.xml" htmlUrl="https://www.npr.org/podcasts/510289/planet-money"/>
       <outline type="rss" overcastId="1618211" text="Glosariusz Programisty" title="Glosariusz Programisty" xmlUrl="https://anchor.fm/s/141bc614/podcast/rss" htmlUrl="https://carste.pl/"/>
       <outline type="rss" overcastId="1678792" text="Inwestomat - oszcz&#x119;dzanie, inwestowanie, gospodarka" title="Inwestomat - oszcz&#x119;dzanie, inwestowanie, gospodarka" xmlUrl="https://anchor.fm/s/23845a30/podcast/rss" htmlUrl="https://inwestomat.eu/"/>
@@ -56,7 +59,7 @@
       <outline type="rss" overcastId="1804196" text="The Computing Podcast" title="The Computing Podcast" xmlUrl="https://anchor.fm/s/22bff730/podcast/rss" htmlUrl="https://anchor.fm/computing"/>
       <outline type="rss" overcastId="1884985" text="Za Rubie&#x17C;&#x105;. Historia i polityka" title="Za Rubie&#x17C;&#x105;. Historia i polityka" xmlUrl="https://anchor.fm/s/254e2c24/podcast/rss" htmlUrl="https://anchor.fm/miosz-szymaski2"/>
       <outline type="rss" overcastId="1888153" text="Programming Love" title="Programming Love" xmlUrl="https://programming.love/feed/podcast/" htmlUrl="https://programming.love/"/>
-      <outline type="rss" overcastId="1949412" text="mi&#x142;osz brzezi&#x144;ski" title="mi&#x142;osz brzezi&#x144;ski" xmlUrl="https://www.spreaker.com/show/4468503/episodes/feed" htmlUrl="https://www.spreaker.com/show/milosz-brzezinski"/>
+      <outline type="rss" overcastId="1949412" text="mi&#x142;osz brzezi&#x144;ski" title="mi&#x142;osz brzezi&#x144;ski" xmlUrl="https://www.spreaker.com/show/4468503/episodes/feed" htmlUrl="https://miloszbrzezinski.pl/"/>
       <outline type="rss" overcastId="1984940" text="Po prostu Wsch&#xF3;d" title="Po prostu Wsch&#xF3;d" xmlUrl="https://anchor.fm/s/29f41f7c/podcast/rss" htmlUrl="http://pogorzelski.wix.com/home"/>
       <outline type="rss" overcastId="1992480" text="Lex Fridman Podcast" title="Lex Fridman Podcast" xmlUrl="https://lexfridman.com/feed/podcast/" htmlUrl="https://lexfridman.com/"/>
       <outline type="rss" overcastId="1996685" text="IT i Ty" title="IT i Ty" xmlUrl="https://www.spreaker.com/show/4239087/episodes/feed" htmlUrl="https://itity.pl/"/>
@@ -65,22 +68,24 @@
       <outline type="rss" overcastId="2123348" text="Powojnie" title="Powojnie" xmlUrl="https://anchor.fm/s/2b502ca8/podcast/rss" htmlUrl="https://anchor.fm/powojnie"/>
       <outline type="rss" overcastId="2211571" text="Po ameryka&#x144;sku" title="Po ameryka&#x144;sku" xmlUrl="https://anchor.fm/s/322771a8/podcast/rss" htmlUrl="https://anchor.fm/andrzej-kohut"/>
       <outline type="rss" overcastId="2237203" text="Inside Java" title="Inside Java" xmlUrl="https://insidejava.libsyn.com/rss" htmlUrl="https://insidejava.libsyn.com/"/>
-      <outline type="rss" overcastId="2372947" text="Pe&#x142;na Kulturka" title="Pe&#x142;na Kulturka" xmlUrl="https://anchor.fm/s/3807ebc0/podcast/rss" htmlUrl="https://anchor.fm/pelna-kulturka"/>
       <outline type="rss" overcastId="2452257" text="Nerd Management" title="Nerd Management" xmlUrl="https://www.spreaker.com/show/4625425/episodes/feed" htmlUrl="https://nerd.management/"/>
       <outline type="rss" overcastId="2481906" text="The Anthropocene Reviewed" title="The Anthropocene Reviewed" xmlUrl="https://feeds.simplecast.com/p7S4nr_h" htmlUrl="https://www.wnycstudios.org/podcasts/anthropocene-reviewed"/>
       <outline type="rss" overcastId="2483843" text="Na Pods&#x142;uchu - Niebezpiecznik.pl" title="Na Pods&#x142;uchu - Niebezpiecznik.pl" xmlUrl="https://www.spreaker.com/show/2621972/episodes/feed" htmlUrl="https://www.spreaker.com/show/na-podsluchu-niebezpiecznik-pl"/>
       <outline type="rss" overcastId="2484515" text="Joel Beasley | Modern CTO" title="Joel Beasley | Modern CTO" xmlUrl="https://feeds.megaphone.fm/LDB8042666505" htmlUrl="https://moderncto.io/"/>
       <outline type="rss" overcastId="2497670" text="Ojcowska Strona Mocy" title="Ojcowska Strona Mocy" xmlUrl="https://www.spreaker.com/show/2810568/episodes/feed" htmlUrl="https://www.ojcowskastronamocy.pl/podcast-osm/"/>
-      <outline type="rss" overcastId="2577050" text="Advanced English" title="Advanced English" xmlUrl="https://anchor.fm/s/6d05bdc0/podcast/rss" htmlUrl="https://anchor.fm/advanced_english"/>
+      <outline type="rss" overcastId="2577050" text="Advanced English" title="Advanced English" xmlUrl="https://anchor.fm/s/6d05bdc0/podcast/rss" htmlUrl="https://academy.explearning.co/"/>
       <outline type="rss" overcastId="2584134" text="Radio Naukowe" title="Radio Naukowe" xmlUrl="https://www.spreaker.com/show/4638772/episodes/feed" htmlUrl="https://www.spreaker.com/show/radio-naukowe"/>
       <outline type="rss" overcastId="2599870" text="Cloudcast Basics" title="Cloudcast Basics" xmlUrl="https://feeds.buzzsprout.com/1563344.rss" htmlUrl="https://www.cloudcastbasics.net/"/>
-      <outline type="rss" overcastId="2625594" text="Introvertpreneur" title="Introvertpreneur" xmlUrl="https://introvertpreneur.libsyn.com/rss" htmlUrl="http://thetarareid.com/podcast"/>
+      <outline type="rss" overcastId="2625594" text="Introvertpreneur" title="Introvertpreneur" xmlUrl="https://introvertpreneur.libsyn.com/rss" htmlUrl="https://thetarareid.com/podcast"/>
       <outline type="rss" overcastId="2630127" text="The Daily" title="The Daily" xmlUrl="https://feeds.simplecast.com/54nAGcIl" htmlUrl="https://www.nytimes.com/the-daily"/>
       <outline type="rss" overcastId="2819553" text="IT i TO" title="IT i TO" xmlUrl="https://feeds.transistor.fm/it-i-to" htmlUrl="https://www.onyszko.com/"/>
-      <outline type="rss" overcastId="2970877" text="Pan Tabletka dla rodzic&#xF3;w - podcast" title="Pan Tabletka dla rodzic&#xF3;w - podcast" xmlUrl="https://www.spreaker.com/show/4885791/episodes/feed" htmlUrl="https://www.spreaker.com/show/pan-tabletka-dla-rodzicow-podcast"/>
+      <outline type="rss" overcastId="2955072" text="PreAccident Investigation Podcast" title="PreAccident Investigation Podcast" xmlUrl="https://feed.podbean.com/preaccidentpodcast/feed.xml" htmlUrl="https://preaccidentpodcast.podbean.com/"/>
+      <outline type="rss" overcastId="2970877" text="Pan Tabletka dla rodzic&#xF3;w - podcast" title="Pan Tabletka dla rodzic&#xF3;w - podcast" xmlUrl="https://www.spreaker.com/show/4885791/episodes/feed" htmlUrl="https://pantabletka.pl/"/>
+      <outline type="rss" overcastId="3059537" text="The New Stack Podcast" title="The New Stack Podcast" xmlUrl="https://feeds.simplecast.com/IgzWks06" htmlUrl="https://thenewstack.simplecast.com/"/>
       <outline type="rss" overcastId="3075250" text="Beyond Coding" title="Beyond Coding" xmlUrl="https://anchor.fm/s/5bb57eac/podcast/rss" htmlUrl="https://youtube.com/c/beyondcoding"/>
       <outline type="rss" overcastId="3121582" text="Podcastex - podcast o latach 90. i 00." title="Podcastex - podcast o latach 90. i 00." xmlUrl="https://anchor.fm/s/5dc9d530/podcast/rss" htmlUrl="https://anchor.fm/podcastex"/>
       <outline type="rss" overcastId="3135621" text="Behind The Tech with Kevin Scott" title="Behind The Tech with Kevin Scott" xmlUrl="https://behindthetech.libsyn.com/rss" htmlUrl="https://www.microsoft.com/en-us/behind-the-tech"/>
+      <outline type="rss" overcastId="3209093" text="The Analytics Engineering Podcast" title="The Analytics Engineering Podcast" xmlUrl="https://analyticsengineeringroundup.libsyn.com/rss" htmlUrl="https://roundup.getdbt.com/"/>
       <outline type="rss" overcastId="3218740" text="OSW - O&#x15B;rodek Studi&#xF3;w Wschodnich" title="OSW - O&#x15B;rodek Studi&#xF3;w Wschodnich" xmlUrl="https://anchor.fm/s/5c81fea0/podcast/rss" htmlUrl="https://anchor.fm/osw-osrodek-studiow"/>
       <outline type="rss" overcastId="3267697" text="SmartLess" title="SmartLess" xmlUrl="https://rss.art19.com/smartless" htmlUrl="https://wondery.com/shows/smartless/?utm_source=rss"/>
       <outline type="rss" overcastId="3311960" text="Samiec Beta" title="Samiec Beta" xmlUrl="https://anchor.fm/s/6804fde0/podcast/rss" htmlUrl="https://anchor.fm/samiecbeta"/>
@@ -92,8 +97,8 @@
       <outline type="rss" overcastId="3612840" text="Rozchmurzony" title="Rozchmurzony" xmlUrl="https://www.spreaker.com/show/5343219/episodes/feed" htmlUrl="https://www.spreaker.com/show/rozchmurzony"/>
       <outline type="rss" overcastId="3746726" text="Cautionary Tales with Tim Harford" title="Cautionary Tales with Tim Harford" xmlUrl="https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/c0ae8c6e-22f0-4e9b-ac1c-ae390037ac53/7f5a4714-6b10-4ccf-a424-ae390037ac70/podcast.rss" htmlUrl="https://www.pushkin.fm/"/>
       <outline type="rss" overcastId="3749900" text="ADAM 13:37" title="ADAM 13:37" xmlUrl="https://feeds.buzzsprout.com/1978353.rss" htmlUrl="https://1337.zaufanatrzeciastrona.pl/"/>
-      <outline type="rss" overcastId="3778211" text="Dw&#xF3;ch Typ&#xF3;w Podcast" title="Dw&#xF3;ch Typ&#xF3;w Podcast" xmlUrl="https://www.spreaker.com/show/5547577/episodes/feed" htmlUrl="https://www.spreaker.com/show/dwoch-typow-podcast"/>
-      <outline type="rss" overcastId="3804606" text="Kairos. Podcast Piotra Augustyniaka i Marka Pospieszalskiego" title="Kairos. Podcast Piotra Augustyniaka i Marka Pospieszalskiego" xmlUrl="https://anchor.fm/s/98281b74/podcast/rss" htmlUrl="https://anchor.fm/kairos-filozoficzny"/>
+      <outline type="rss" overcastId="3979893" text="Tato, no we&#x17A;" title="Tato, no we&#x17A;" xmlUrl="https://zloteprzeboje.pl/feed/rss_zp?audId=316" htmlUrl="https://zloteprzeboje.pl/tato-no-wez"/>
+      <outline type="rss" overcastId="4022053" text="The Making of Modern Ukraine" title="The Making of Modern Ukraine" xmlUrl="https://yalepodcasts.blubrry.net/category/making-of-modern-ukraine/feed/podcast/" htmlUrl="https://yalepodcasts.blubrry.net/category/making-of-modern-ukraine/"/>
 
     </outline>
   </body>
