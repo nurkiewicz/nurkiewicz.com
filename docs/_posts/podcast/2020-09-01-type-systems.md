@@ -1,6 +1,6 @@
 ---
 category: podcast
-title: "#14: Static, Dynamic, Strong and Weak Type Systems"
+title: "#14: Static, Dynamic, Strong and Weak Type Systems: understand how your language treats data types"
 redirect_from:
   - /14
 tags: type-systems ruby powershell python java c# groovy
