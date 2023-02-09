@@ -27,7 +27,8 @@ def parse_opml():
     file = ET.parse("overcast.opml")
     for item in file.getroot().findall("./body/outline/"):
         website = item.attrib['htmlUrl']
-        if website and int(item.attrib['overcastId']) not in excluded:
+        overcast_id = int(item.attrib['overcastId'])
+        if website and overcast_id not in excluded:
             title = item.attrib['title']
             description = load_description(item.attrib['xmlUrl']) \
                 .replace('''<br /><hr><p style='color:grey; font-size:0.75em;'> Hosted on Acast. See <a style='color:grey;' target='_blank' rel='noopener noreferrer' href='https://acast.com/privacy'>acast.com/privacy</a> for more information.</p>''', '') \
@@ -35,6 +36,8 @@ def parse_opml():
                 .replace(''' || ''', ' / ') \
                 .strip()
             lang_code = next(t[0] for t in (franc.lang_detect(title + ' ' + description)) if t[0] in ['eng', 'pol'])
+            if overcast_id == 613217: # Godmother, falsely trated as English
+                lang_code = 'pol'
             podcasts[lang_code].append({
                 'title': title, 'website': website, 'description': description
 
