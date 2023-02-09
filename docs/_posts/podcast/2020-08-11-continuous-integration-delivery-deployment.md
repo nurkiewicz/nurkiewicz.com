@@ -1,6 +1,6 @@
 ---
 category: podcast
-title: "#12: Continuous integration, delivery and deployment"
+title: "#12: Continuous integration, delivery and deployment: how quickly your main branch appears on production?"
 redirect_from:
   - /12
 tags: CI CD canary-deployment ab-testing
