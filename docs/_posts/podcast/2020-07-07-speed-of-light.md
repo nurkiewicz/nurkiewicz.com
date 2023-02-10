@@ -1,6 +1,6 @@
 ---
 category: podcast
-title: "#7: Speed of light"
+title: "#7: Speed of light: how it impact network latency and CPU performance"
 redirect_from:
   - /7
 tags: moore cpu cdn ping
