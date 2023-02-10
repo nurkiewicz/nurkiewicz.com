@@ -1,6 +1,6 @@
 ---
 category: podcast
-title: "#8: Kafka's design"
+title: "#8: Kafka's design: append-only file that turns out to be a scalable message broker"
 redirect_from:
   - /8
 tags: kafka sendfile tail partitioning
