@@ -1,6 +1,6 @@
 ---
 category: podcast
-title: '#4: Serverless'
+title: '#4: Serverless: the simplest way to deploy your code to the cloud at minimal cost'
 redirect_from:
   - /4
 tags: cloud faas lambda
