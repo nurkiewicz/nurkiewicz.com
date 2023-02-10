@@ -1,0 +1,578 @@
+<html lang="en">
+
+<head>
+    <!-- Based on https://codepen.io/thiagobraga/pen/areqqr -->
+
+    <meta charset="UTF-8">
+    <title>Tomasz Nurkiewicz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paper-css/0.4.1/paper.min.css"> -->
+
+    <style>
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            src: local('Open Sans Regular'), local('OpenSans-Regular'), url("https://fonts.gstatic.com/s/opensans/v16/mem8YaGs126MiZpBA-UFVZ0b.woff2") format('woff2');
+        }
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            src: local('Roboto'), local('Roboto-Regular'), url("https://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu4mxK.woff2") format('woff2');
+        }
+        @page {
+            size: A4;
+        }
+        body {
+            -webkit-print-color-adjust: exact;
+                    color-adjust: exact;
+            background-color: #fff;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 300;
+            display: flex;
+            justify-content: center;
+        }
+        .btn-print {
+            z-index: 1;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+        .resume {
+            display: block;
+            font-family: 'Roboto', sans-serif;
+            font-size: 13.0736px;
+            font-weight: 400;
+            line-height: 1.5;
+            min-height: 1090.41px;
+        }
+        .resume h1 {
+            font-size: 2.86em;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+        .resume h2 {
+            font-size: 1.43em;
+            font-weight: 600;
+            line-height: 1;
+            margin-bottom: 0;
+        }
+        .resume p {
+            margin-bottom: 1em;
+        }
+        .resume p:last-child {
+            margin-bottom: 0;
+        }
+        .resume ul {
+            padding-left: 20px;
+        }
+        .resume .resume__header,
+        .resume .resume__section {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.95em;
+        }
+        .resume .resume__header {
+            padding: 4em 4em 0;
+        }
+        .resume .resume__section {
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+        .resume .resume__section:last-child {
+            padding-bottom: 0;
+        }
+        .resume .resume__section-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.43em;
+            margin-top: 1.43em;
+        }
+        .resume .resume__section-title > i {
+            margin-right: 0.63em;
+            font-size: 1.14em;
+            background-color: #5695cd;
+            color: #fff;
+            border: 0.25em solid #aacae6;
+            border-radius: 50%;
+            width: 2.51em;
+            height: 2.51em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.6;
+        }
+        .resume .resume__section-title > h2 {
+            margin-top: 0;
+            font-size: 1.5em;
+        }
+        .resume .resume__columns {
+            overflow: hidden;
+            padding: 4em;
+            padding-top: 0;
+        }
+        .resume .resume__main {
+            float: left;
+            width: 75%;
+            padding-right: 3em;
+        }
+        .resume .resume__side {
+            float: left;
+            width: 25%;
+        }
+        .resume .other-info p > b {
+            color: #555;
+        }
+        .resume .info-item {
+            margin-bottom: 0.2em;
+            font-weight: 300;
+        }
+        .resume .info-item:last-child {
+            margin-bottom: 0;
+        }
+        .resume .info-label {
+            display: inline-block;
+            padding-right: 0.63em;
+            font-size: 1.14em;
+            min-width: 2.19em;
+            text-align: center;
+        }
+        .resume .info-label i {
+            color: #5695cd;
+        }
+        .resume .xp-item {
+            margin-bottom: 2em;
+        }
+        .resume .xp-item:last-child {
+            margin-bottom: 0;
+        }
+        .resume .xp-job {
+            font-size: 1.14em;
+            font-weight: 600;
+            line-height: 1.25;
+        }
+        .resume .xp-job span,
+        .resume .xp-job small {
+            font-weight: 400;
+        }
+        .resume .xp-job small {
+            font-size: 0.9em;
+        }
+        .resume .xp-date {
+            font-size: 0.8em;
+            margin-top: 0.3em;
+            margin-bottom: 1em;
+            color: #5695cd;
+        }
+        .resume .extra {
+            margin-bottom: 2em;
+        }
+        .resume .extra:last-child {
+            margin-bottom: 0;
+        }
+        .resume .extra-info small {
+            color: #666;
+            display: inline-block;
+            font-size: 0.7em;
+        }
+        .resume .extra-details,
+        .resume .extra-details__progress {
+            border-radius: 6px;
+        }
+        .resume .extra-details {
+            margin-top: 0.5em;
+            background-color: #d1d9e1;
+            width: 100%;
+            height: 5px;
+            position: relative;
+        }
+        .resume .extra-details__progress {
+            background-color: #5695cd;
+            height: 5px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .resume .lang-item {
+            margin-bottom: 2em;
+        }
+        .resume .lang-item:last-child {
+            margin-bottom: 0;
+        }
+        .resume .lang-label {
+            width: 8em;
+        }
+        @media print {
+            body {
+            min-width: initial !important;
+            }
+            .btn-print {
+            display: none;
+            }
+        }
+    </style>
+</head>
+
+<body translate="no" class="A4">
+    <div class="sheet">
+        <button class="btn btn-print btn-sm btn-light" onclick="handlePrint()">
+            <i class="fa fa-print"></i>
+            Print
+        </button>
+        <div class="two-column resume">
+            <section class="resume__section resume__header">
+                <div class="resume__content">
+                    <h1>Tomasz Nurkiewicz</h1>
+                    <div class="info-item"><span class="info-label"><i class="fa fa-location-arrow"></i></span><span class="info-text">... Warsaw, Poland</span></div>
+                    <div class="info-item"> <span class="info-label"><i class="fa fa-envelope"></i></span><span class="info-text">nurkiewicz (at GMail)</span> · <span class="info-text"><a href="https://nurkiewicz.com">nurkiewicz.com</a> · <a href="https://github.com/nurkiewicz">github.com/nurkiewicz</a></span>
+                    </div>
+                    <div class="info-item"><span class="info-label"><i class="fa fa-phone"></i></span><span class="info-text">...</span></div>
+                    <div class="info-item"><span class="info-label"><i class="fa fa-home"></i></span><span class="info-text">Born ..., Poland</span></div>
+                </div>
+            </section>
+            <div class="resume__columns">
+                <div class="resume__main">
+                    <section class="resume__section resume__summary">
+                        <div class="resume__content">
+                            <div class="resume__section-title"><i class="fa fa-pencil-square-o"></i>
+                                <h2>Java Champion (since 2018)</h2>
+                            </div>
+                            <div class="other">
+                                <div class="other-info">
+                                    <p>
+                                        15 years professionally in the Java ecosystem.
+                                        I enjoy back-end, scalability, distributed systems and data visualization.
+                                        I'm passionate about alternative JVM languages, and languages in general.
+                                        My motto: <em>code not tested automatically is not a feature but just a rumour</em>.
+                                    </p>
+                                    <p>
+                                        <span class="info-label"><i class="fa fa-book"></i></span>Author of <a href="https://www.oreilly.com/library/view/reactive-programming-with/9781491931646/">Reactive Programming with RxJava</a> (O'Reilly)<br/>
+                                        <span class="info-label"><i class="fa fa-microphone"></i></span><a href="https://nurkiewicz.com/talks">Conference speaker</a> (almost 100 talks, including JavaOne, QCon, Devoxx; multiple <em>best speaker</em> awards)<br/>
+                                        <span class="info-label"><i class="fa fa-slideshare"></i></span>Trainer (1000+ people trained, mostly reactive programming)<br/>
+                                        <span class="info-label"><i class="fa fa-headphones"></i></span>Podcaster: <a href="https://podcasts.apple.com/pl/podcast/around-it-in-256-seconds/id1510899104">Around IT in 256 seconds</a><br/>
+                                        <span class="info-label"><i class="fa fa-pencil"></i></span><a href="https://nurkiewicz.com/articles">Writing articles</a> around Java since 2009<br/>
+                                        <span class="info-label"><i class="fa fa-stack-overflow"></i></span>I used to be <a href="https://stackoverflow.com/users/605744/tomasz-nurkiewicz">very active on StackOverflow</a> (top 0.02%)<br/>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="resume__section resume__experience">
+                        <div class="resume__content">
+                            <div class="resume__section-title"><i class="fa fa-briefcase"></i>
+                                <h2>Work experience</h2>
+                            </div>
+                            <div class="xp-item">
+                                <div class="xp-job">
+                                    Chief Technology Officer
+                                    <span>@ DevSkiller</span>
+                                </div>
+                                <div class="xp-date">Apr. 2020 – present (2 yrs 11 mos)</div>
+                                <div class="xp-detail">
+                                    <ul>
+                                        <li>
+                                            Managed a team of 10 engineers, overseeing technology stack. Mostly <strong>Spring Boot</strong> with <strong>Java</strong> and <strong>Python</strong> deployed on <strong>Kubernetes</strong> on top of <strong>Google Cloud Platform</strong>.
+                                            We embraced <strong>consumer-driven contracts</strong> to enable testing in distributed systems
+                                        </li>
+                                        <li>
+                                            Designed resilient architecture to avoid single point of failure. Primarily used <strong>RabbitMQ</strong> to avoid temporal coupling
+                                        </li>
+                                        <li>
+                                            Designed and developed plugin platform on top of Google <strong>Cloud Run</strong>. Plugins are isolated via <strong>serverless</strong> functions of <code>iframe</code> sandboxes.
+                                            Despite hosting customer's code, the overall cost was minimal
+                                        </li>
+                                        <li>
+                                            Delivered in-browser IDE with advanced code completion and debugging. Low latency is essential, so IDE is dynamically deployed in the closest region. Also, IDE images are prebuilt to avoid initial indexing costs. Almost one hundred containers started per day.
+                                        </li>
+                                        <li>
+                                            Optimized cloud costs (fine-tuning VMs, auto-scaling), migrated to different vendor to cut VM spending by 70%.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="xp-item">
+                                <div class="xp-job">
+                                    Principal / Senior Software Engineer
+                                    <span>@ Allegro</span>
+                                </div>
+                                <div class="xp-date">Nov 2016 – Mar 2020 (3 yrs 5 mos)</div>
+                                <div class="xp-detail">
+                                    <ul>
+                                        <li>Worked in a large <strong>microservice</strong> ecosystem (a few thousand instances of about 800 apps), mostly communicating <strong>RESTful</strong>y or over message broker.
+                                        We put strong emphasis on schema management and data governance</li>
+                                        <li>Worked on a pricing module handling up to 200 transactions per second over multiple services</li>
+                                        <li>Taking advantage of <strong>Kafka</strong> to support fault-tolerance</li>
+                                        <li>Implemented horizontally-scalable and fault-tolerant job scheduler. Design goals: auto-scaling through dynamic shard allocation. Millions of scheduled tasks</li>
+                                        <li>Worked in multiple teams, including pricing, ads, big data and platform using <strong>Kotlin</strong>, <strong>Scala</strong> and <strong>Python</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="xp-item">
+                                <div class="xp-job">
+                                    Senior Software Developer
+                                    <span>@ 4finance</span>
+                                </div>
+                                <div class="xp-date">Oct 2014 – Oct 2016 (2 yrs 1 mo)</div>
+                                <div class="xp-detail">
+                                    <ul>
+                                        <li>
+                                            Developed on top of monolithic backoffice application supporting almost 20 countries, each with different legislation and business rules. Mostly integrating with various payment providers around the world.
+                                        </li>
+                                        <li>
+                                            Built and delivered new line of credit product to replace legacy system, improving maintainability and visibility of the platform
+                                        </li>
+                                        <li>
+                                            I got "<em>Easiest Person to Work With</em>" award, voted by other employees from multiple offices
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="xp-item">
+                                <div class="xp-job">
+                                    Senior Software Developer
+                                    <span>@ Citi</span><br><small>Sep 2013 – Sep 2014 (1 yr 1 mo)</small>
+                                </div>
+                                <div class="xp-date">Oct 2014 – Oct 2016 (2 yrs 1 mo)</div>
+                                <div class="xp-detail">
+                                    <ul>
+                                        <li>
+                                            Delivered backoffice software running financial computations. Worked with corporate bonds and Credit Default Swaps (CDS).
+                                            System was based on <strong>Clojure</strong>, <strong>Akka</strong> and private cloud.
+                                        </li>
+                                        <li>
+                                            I designed a caching layer on top of <strong>Hazelcast</strong> to speed up startup times of stateless nodes.
+                                            This improved scaling performance and reduced network traffic.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="xp-item">
+                                <div class="xp-job">
+                                    Senior Java Developer
+                                    <span>@ Kezzler</span><br><small>Oslo, Norway</small>
+                                </div>
+                                <div class="xp-date">Dec 2010 – Aug 2013 (2 yrs 9 mos) </div>
+                                <div class="xp-detail">
+                                    <ul>
+                                        <li>
+                                            Full-stack development (<strong>Backbone.js</strong>, <strong>SOAP</strong>, <strong>Spring</strong>) of large-scale product verification system. Using cryptographic hashes to track and trace commodity products
+                                        </li>
+                                        <li>Built custom TCP/IP server in <strong>Netty</strong> for fast data retrieval</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="xp-item">
+                                <div class="xp-job">
+                                    Senior Java Developer / Java EE Developer
+                                    <span>@ JAVEO</span>
+                                </div>
+                                <div class="xp-date">Sep 2009 – Nov 2010 / Oct 2007 – Aug 2009 (3 yrs 2 mos)</div>
+                                <div class="xp-detail">
+                                    <ul>
+                                        <li>
+                                            Worked on large-scale enterprise applications for telecoms and insurance companies. This includes large mobile number portability system that communicated with all other telecoms in Poland.
+                                        </li>
+                                        <li>
+                                            <strong>Apache Struts 1/2</strong>, <strong>Apache Wicket</strong>, <strong>Apache CXF</strong>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="xp-item">
+                                <div class="xp-job">
+                                    Intern in R&D Center
+                                    <span>@ Comarch</span>
+                                </div>
+                                <div class="xp-date">Jul 2007 – Sep 2007 (3 mos)</div>
+                                <div class="xp-detail">
+                                    <ul>
+                                        <li>
+                                            Building data visualization module for desktop reporting software written in <strong>Java</strong>. Strong emphasis on <strong>immutable</strong> data structures
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+        </div>
+        <div class="resume__side">
+
+            <section class="resume__section resume__skills">
+                <div class="resume__content">
+                    <div class="resume__section-title"><i class="fa fa-align-center"></i>
+                        <h2>Skills</h2>
+                    </div>
+                    <div class="resume__text">
+                        <div class="extra">
+                            <div class="extra-info">Java<br><small>Java Champion · JDK · Spring · ORM</small></div>
+                            <div class="extra-details">
+                                <div class="extra-details__progress" style="width:90%"></div>
+                            </div>
+                        </div>
+                        <div class="extra">
+                            <div class="extra-info">Reactive programming<br><small>Reactor · Non-blocking · Resiliency</small></div>
+                            <div class="extra-details">
+                                <div class="extra-details__progress" style="width:80%"></div>
+                            </div>
+                        </div>
+                        <div class="extra">
+                            <div class="extra-info">JVM<br><small>Kotlin · Scala · Clojure</small></div>
+                            <div class="extra-details">
+                                <div class="extra-details__progress" style="width:60%"></div>
+                            </div>
+                        </div>
+                        <div class="extra">
+                            <div class="extra-info">Distributed systems<br><small>Messaging (Kafka, RabbitMQ, JMS) · Observability · Troubleshooting</small></div>
+                            <div class="extra-details">
+                                <div class="extra-details__progress" style="width:70%"></div>
+                            </div>
+                        </div>
+                        <div class="extra">
+                            <div class="extra-info">Python<br><small>Flask · Scraping · Scripting</small></div>
+                            <div class="extra-details">
+                                <div class="extra-details__progress" style="width:40%"></div>
+                            </div>
+                        </div>
+                        <div class="extra">
+                            <div class="extra-info">Machine learning<br><small>Basic algorithms · Pandas · Math</small></div>
+                            <div class="extra-details">
+                                <div class="extra-details__progress" style="width:30%"></div>
+                            </div>
+                        </div>
+                        <div class="extra">
+                            <div class="extra-info">Infrastructure<br><small>Docker · Shell · GCP · CI/CD</small></div>
+                            <div class="extra-details">
+                                <div class="extra-details__progress" style="width:75%"></div>
+                            </div>
+                        </div>
+                        <div class="extra">
+                            <div class="extra-info">Databases<br><small>SQL · MongoDB · Redis · Cassandra</small></div>
+                            <div class="extra-details">
+                                <div class="extra-details__progress" style="width:70%"></div>
+                            </div>
+                        </div>
+                        <div class="extra">
+                            <div class="extra-info">Frontend<br><small>JavaScript · TypeScript · CSS</small></div>
+                            <div class="extra-details">
+                                <div class="extra-details__progress" style="width:20%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="resume__section resume__languages">
+                <div class="resume__content">
+                    <div class="resume__section-title"><i class="fa fa-globe"></i>
+                        <h2>Languages</h2>
+                    </div>
+                    <div class="extra">
+                        <div class="extra-info">Polish <small>(native)</small></div>
+                        <div class="extra-details">
+                            <div class="extra-details__progress" style="width:100%"></div>
+                        </div>
+                    </div>
+                    <div class="extra">
+                        <div class="extra-info">English</div>
+                        <div class="extra-details">
+                            <div class="extra-details__progress" style="width:70%"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="resume__section resume__experience">
+                <div class="resume__content">
+                    <div class="resume__section-title"><i class="fa fa-book"></i>
+                        <h2>Education</h2>
+                    </div>
+                    <div class="xl-item">
+                        <div class="xp-job">
+                            Master of Science (M.Sc.), Comp. Sci.
+                            <span>@ Warsaw University of Technology</span>
+                        </div>
+                        <div class="xp-date">2004 – 2009</div>
+                        <div class="xp-detail">
+                            <ul>
+                                <li>
+                                    Master’s Thesis: I wrote a compiler for educational programming language on top of JVM
+                                </li>
+                                <li>
+                                    Degree with honours
+                                </li>
+                            </ul>
+                        </div>
+            </div>
+                </div>
+            </section>
+
+
+            <section class="resume__section resume__experience">
+                <div class="resume__content">
+                    <div class="resume__section-title"><i class="fa fa-certificate"></i>
+                        <h2>Certificates</h2>
+                    </div>
+                    <div>
+                        <div class="xp-job">Machine Learning<span> @ Coursera</span>
+                        </div>
+                        <div class="xp-date">Jan 2016</div>
+                    </div>
+                    <div>
+                        <div class="xp-job">Principles of Reactive Programming<span> @ Coursera</span>
+                        </div>
+                        <div class="xp-date">Nov 2013</div>
+                    </div>
+                    <div>
+                        <div class="xp-job">Functional Programming Principles in Scala<span> @ Coursera</span>
+                        </div>
+                        <div class="xp-date">Nov 2012</div>
+                    </div>
+                    <div>
+                        <div class="xp-job">Business Component Developer (SCBCD, CX-310-091)<span> @ Sun
+                                Microsystems</span>
+                        </div>
+                        <div class="xp-date">Aug 2009</div>
+                    </div>
+                    <div>
+                        <div class="xp-job">Web Component Developer (SCWCD, CX-310-083)<span> @ Sun
+                                Microsystems</span>
+                        </div>
+                        <div class="xp-date">Jun 2009</div>
+                    </div>
+                    <div>
+                        <div class="xp-job">Java Developer (SCJD CX-310-252A)<span> @ Sun
+                                Microsystems</span>
+                        </div>
+                        <div class="xp-date">Nov 2008</div>
+                    </div>
+                    <div>
+                        <div class="xp-job">
+                    Java Programmer (SCJP, CX-310-065)<span> @Sun Microsystems</span>
+                </div>
+                <div class="xp-date">Aug 2008</div>
+                </div>
+            </section>
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+    <script id="rendered-js">
+        const handlePrint = () => window.print();
+    </script>
+
+
+</body>
+
+</html>
