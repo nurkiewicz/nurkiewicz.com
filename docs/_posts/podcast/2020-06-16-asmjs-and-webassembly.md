@@ -1,6 +1,6 @@
 ---
 category: podcast
-title: '#5: asm.js and WebAssembly'
+title: '#5: asm.js and WebAssembly: binary format to speed up browsers and beyond'
 redirect_from:
   - /5
 tags: javascript asm.js webassembly c c++ rust gc
