@@ -571,6 +571,55 @@
     <script id="rendered-js">
         const handlePrint = () => window.print();
     </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+<script>
+    // Encrypt the string using the given key
+    function encrypt(message, key) {
+        return CryptoJS.AES.encrypt(message, key).toString();
+    }
+
+    // Decrypt the string using the given key
+    function decrypt(ciphertext, key) {
+        var bytes  = CryptoJS.AES.decrypt(ciphertext, key);
+        return bytes.toString(CryptoJS.enc.Utf8);
+    }
+
+    var message = "This is a secret message";
+    var key = "This is a secret key";
+    var ciphertext = encrypt(message, key);
+    console.log("Encrypted: " + ciphertext);
+
+    var decryptedMessage = decrypt(ciphertext, key);
+    if(decryptedMessage) {
+        console.log("Decrypted: " + decryptedMessage);
+    } else {
+        console.log('Failed');
+    }
+    
+</script>
+
+
+<script>
+  // Get the key from the URL query parameter
+  const urlParams = new URLSearchParams(window.location.search);
+  const key = urlParams.get('key');
+
+  // Check if the key is present in the URL
+  if (!key) {
+    // If the key is not present, inform the user that the data is anonymized
+    document.querySelectorAll('.encrypted').forEach(element => {
+      element.textContent = 'Data is anonymized';
+    });
+    return;
+  }
+
+  // Encrypt the data
+  document.querySelectorAll('.encrypted').forEach(element => {
+    const data = element.textContent;
+    const cipher = CryptoJS.AES.encrypt(data, key).toString();
+    element.textContent = cipher;
+  });
+</script>
 
 
 </body>
