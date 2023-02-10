@@ -1,6 +1,6 @@
 ---
 category: podcast
-title: "#9: Retrying failures"
+title: "#9: Retrying failures: the simplest way to improve resiliency of your services"
 redirect_from:
   - /9
 tags: ddos fault-tolerance
