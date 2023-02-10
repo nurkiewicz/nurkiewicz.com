@@ -1,6 +1,6 @@
 ---
 category: podcast
-title: '#1: Circuit Breaker'
+title: '#1: Circuit Breaker: fail fast by cutting off malfunctioning dependencies'
 redirect_from:
   - /1
 tags: resilience4j hystrix polly akka ruby
