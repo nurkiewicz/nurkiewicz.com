@@ -1,6 +1,6 @@
 ---
 category: podcast
-title: '#2: Service Mesh'
+title: '#2: Service Mesh: a transparent layer around your microservices to provide observability and resiliency'
 redirect_from:
   - /2
 tags: microservices istio envoy linkerd
