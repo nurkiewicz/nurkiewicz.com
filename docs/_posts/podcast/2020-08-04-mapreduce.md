@@ -1,6 +1,6 @@
 ---
 category: podcast
-title: "#11: MapReduce"
+title: "#11: MapReduce: Groundbreaking Big Data algorithm and framework"
 redirect_from:
   - /11
 tags: hadoop hdfs spark hive google
