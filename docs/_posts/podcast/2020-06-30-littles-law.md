@@ -1,6 +1,6 @@
 ---
 category: podcast
-title: "#6: Little's law"
+title: "#6: Little's law: calculate response time vs. number of CPUs"
 redirect_from:
   - /6
 tags: little nodejs tomcat
@@ -86,4 +86,4 @@ From 23:03:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5TJiTSWktLU?start=1383" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
+---
