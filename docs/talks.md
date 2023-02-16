@@ -20,6 +20,18 @@ https://www.youtube.com/@DevSkiller/streams
 <table>
     <tr itemscope itemtype="https://schema.org/Event">
         <td class="list">
+            <h3 itemprop="name">InfoShare</h3>
+            <time itemprop="startDate">2023-05-24</time>
+            <h4>
+                Better Call Fallback: Projektowanie usług odpornych na błędy (TBA)
+            </h4>
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr itemscope itemtype="https://schema.org/Event">
+        <td class="list">
             <h3 itemprop="name"><a href="https://2023.boilingfrogs.pl/">BoilingFrogs</a></h3>
             <time itemprop="startDate">2023-03-18</time>
             <h4>
