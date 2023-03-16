@@ -68,7 +68,7 @@ sudo mtr --tcp google.com
 Start every shell script with this:
 
 ``` bash
-##!/bin/bash
+#!/bin/bash
 set -euxo pipefail # print every statement, fail on command failure
 cd ${0%/*}         # navigate to script's location
 ```
