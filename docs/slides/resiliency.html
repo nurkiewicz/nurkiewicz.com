@@ -40,13 +40,10 @@
         </section>
 
         <section>
-            <h1>How to...</h1>
-            <ul>
-                <li>...avoid</li>
-                <li>...deal with</li>
-                <li>...bypass</li>
-            </ul>
-            <h2>...failures</h2>
+            <blockquote cite="https://en.wikiquote.org/wiki/Gerald_Weinberg">
+                If builders built houses the way programmers built programs, the first woodpecker to come along would destroy civilization
+            </blockquote>
+            <small><a href="https://en.wikiquote.org/wiki/Gerald_Weinberg">Gerald Weinberg</a></small>
         </section>
 
         <section>
@@ -57,6 +54,16 @@
         <section>
             <h1>P99 latency</h1>
             <p class="fragment">facebook.com makes 350 HTTP requests</p>
+        </section>
+
+        <section>
+            <h1>How to...</h1>
+            <ul>
+                <li>...avoid</li>
+                <li>...deal with</li>
+                <li>...bypass</li>
+            </ul>
+            <h2>...failures</h2>
         </section>
 
         <section>
@@ -103,18 +110,32 @@
         </section>
 
         <section>
+            <h1>Fallback</h1>
+            <p>...and caching</p>
+        </section>
+
+        <section>
             <h1>Retry</h1>
             <img src="resiliency/have-you-tried-turning-it-off-and-on-again.jpg" class="r-stretch"/>
         </section>
 
         <section>
             <h1>Exponential backoff</h1>
-            <p>...and jitter</p>
         </section>
 
         <section>
             <h1>Timeout</h1>
             <p>Everything that <em>may</em> block <em>will</em> block</p>
+        </section>
+
+        <section>
+            <h1 class="fragment">12 minutes!</h1>
+            <pre>
+                <code class="hljs language-plain" data-trim>
+                    64 bytes from 216.58.212.14: icmp_seq=9720 ttl=114
+                    time=749147.422 ms
+                </code>
+            </pre>
         </section>
 
         <section>
@@ -144,11 +165,16 @@
         </section>
 
         <section>
+            <h1>Thundering herd problem</h1>
+        </section>
+
+        <section>
             <h1>Part II: Asynchrony</h1>
         </section>
 
         <section>
-            <h1>You don't get a failure if you don't wait for result</h1>
+            <h1>You don't get a failure</h1>
+            <h2>if you don't wait for the result</h2>
         </section>
 
         <section>
@@ -163,6 +189,10 @@
                 <li>Coroutines</li>
                 <li>Virtual threads</li>
             </ul>
+        </section>
+
+        <section>
+            <h1>Message queue</h1>
         </section>
 
         <section>
@@ -195,12 +225,15 @@
 
         <section>
             <h1>Leader election</h1>
-            <p>Always best effort</p>
         </section>
 
         <section>
             <h1>Local database</h1>
             <p>Think: asynchronous replication, local SQLite</p>
+        </section>
+
+        <section>
+            <h1>Offline-first</h1>
         </section>
 
         <section>
@@ -213,14 +246,14 @@
 
         <section>
             <h1>Liveness vs Readiness</h1>
-            <img  class="r-stretch" src="resiliency/kubernetes-probe-readiness.GIF" alt="">
-            <p>
-                <small>Source: <a href="https://cloud.google.com/blog/products/containers-kubernetes/kubernetes-best-practices-setting-up-health-checks-with-readiness-and-liveness-probes">https://cloud.google.com</a></small>
-            </p>
         </section>
 
         <section>
             <h1>Part IV: Architecture</h1>
+        </section>
+
+        <section>
+            <h1>Batching</h1>
         </section>
 
         <section>
@@ -242,6 +275,10 @@
         </section>
 
         <section>
+            <h1>Killswitch</h1>
+        </section>
+
+        <section>
             <h1>Canary releases</h1>
         </section>
 
@@ -254,16 +291,21 @@
         </section>
 
         <section>
-            <h1>Health checks</h1>
+            <h1>Problematic warmup</h1>
         </section>
 
         <section>
-            <h1>Problematic warmup</h1>
+            <h1>Cache stampede</h1>
         </section>
 
         <section>
             <h1>Observability</h1>
             <p>Death by a thousand dashboards</p>
+            <ul>
+                <li>Metrics</li>
+                <li>Logs</li>
+                <li>Traces</li>
+            </ul>
         </section>
 
         <section>
@@ -271,26 +313,11 @@
         </section>
 
         <section>
-            <h1>Batching</h1>
-            <p>Just the right size</p>
-        </section>
-
-        <section>
             <h1>Testing resiliency</h1>
-            <a href="https://github.com/Shopify/toxiproxy"><code>Shopify/toxiproxy</code></a>
         </section>
 
         <section>
             <h1>Chaos engineering</h1>
-        </section>
-
-        <section>
-            <h1>Further reading</h1>
-            <ol>
-                <li><a href="https://learn.microsoft.com/en-us/azure/architecture/patterns/">Cloud Design Patterns</a></li>
-                <li><a href="https://resilience4j.readme.io/">Resilience4j</a> (Java)</li>
-                <li><a href="https://www.thepollyproject.org/">Polly</a> (.NET)</li>
-            </ol>
         </section>
 
         <section>
@@ -325,6 +352,7 @@
         progress: false,
         controls: false,
         center: true,
+        slideNumber: 'c/t',
     });
 </script>
 
