@@ -32,6 +32,18 @@ https://www.youtube.com/@DevSkiller/streams
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
         <td class="list">
+            <h3 itemprop="name">Warszawa JUG: THIS IS WJUG! - ŚWIĘTUJEMY 300 SPOTKAŃ WARSAW JAVA USER GROUP</h3>
+            <time itemprop="startDate">2023-04-24</time>
+            <h4>
+                <a href="https://nurkiewicz.com/slides/javachampion">#300: Jak zostać Java Championem?</a>
+            </h4>
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr itemscope itemtype="https://schema.org/Event">
+        <td class="list">
             <h3 itemprop="name"><a href="https://2023.boilingfrogs.pl/">BoilingFrogs</a></h3>
             <time itemprop="startDate">2023-03-18</time>
             <h4>
