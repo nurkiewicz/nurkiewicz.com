@@ -16,8 +16,11 @@
     <style>
         img {
             background-color: rgb(238, 238, 238);
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
         }
-    </style>
+  </style>
 </head>
 
 <body>
@@ -185,6 +188,13 @@
 
         <section>
             <h1>Cache stampede</h1>
+            <blockquote>How a Cache Stampede Caused One of Facebook’s Biggest Outages</blockquote>
+            <img src="resiliency/cache_stampede_fb.webp" class="r-stretch"/>
+            <p>
+                <small>Sources: <a href="https://betterprogramming.pub/how-a-cache-stampede-caused-one-of-facebooks-biggest-outages-dbb964ffc8ed">[1]</a>, 
+                    <a href="https://www.businessinsider.com/how-we-weathered-the-great-facebook-outage-of-2010-2010-9?IR=T#the-outage-had-far-reaching-consequences-7">[2]</a>
+                </small>
+            </p>
         </section>
 
         <section>
@@ -199,7 +209,7 @@
 
         <section>
             <h1>Exceptions</h1>
-            <p>Futures, promises async/await, streams</p>
+            <p>Futures, promises, async/await, streams</p>
         </section>
 
         <section>
@@ -217,6 +227,11 @@
 
         <section>
             <h1>DLQ</h1>
+            <ul>
+                <li>retries?</li>
+                <li>timeouts?</li>
+                <li>head-of-line blocking?</li>
+            </ul>
         </section>
 
         <section>
@@ -225,6 +240,8 @@
 
         <section>
             <h1>Idempotency</h1>
+            E.g.: <code>Idempotency-Key</code> HTTP Header
+            <p><small><a href="https://datatracker.ietf.org/doc/draft-ietf-httpapi-idempotency-key-header/">datatracker.ietf.org/doc/draft-ietf-httpapi-idempotency-key-header</a></small></p>
         </section>
 
         <section>
@@ -237,6 +254,7 @@
 
         <section>
             <h1>Leader election</h1>
+            Leader ≠ singleton worker
         </section>
 
         <section>
@@ -291,6 +309,7 @@
             </p>
         </section>
 
+
         <section>
             <h1>Killswitch</h1>
             <blockquote>
@@ -298,6 +317,9 @@
             </blockquote>
             <p><small>
                 <a href="https://en.wikipedia.org/wiki/Knight_Capital_Group#2012_stock_trading_disruption">Knight Capital Group: 2012 stock trading disruption</a>
+            </small></p>
+            <p class="fragment"><small>
+                $1m per 6 seconds. <span class="fragment"><a href="https://www.businessinsider.com/how-rich-is-bill-gates-net-worth-mind-blowing-facts-2019-5?IR=T">Bill Gates makes &lt; $8k per 6 seconds</a></span>
             </small></p>
         </section>
 
@@ -334,7 +356,7 @@
 
        <section>
             <h1>Thank you!</h1>
-            <img src="resiliency/qr.svg" class="r-stretch"/>
+            <img src="resiliency/qr.svg" class="r-stretch cool-img"/>
             <p>
                 <small>
                     <a href="https://nurkiewicz.com/slides/resiliency">nurkiewicz.com/slides/resiliency</a>
