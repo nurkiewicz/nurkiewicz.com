@@ -63,6 +63,10 @@ sudo mtr --tcp google.com
 * <https://github.com/wagoodman/dive> - show contents of each layer
 * [A collection of `docker-compose` files](https://github.com/jonatan-ivanov/local-services/)
 
+#### CI/CD
+
+* [nektos/act](https://github.com/nektos/act) local GitHub Actions testing
+
 ### Command line
 
 Start every shell script with this:
