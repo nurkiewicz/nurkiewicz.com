@@ -21,7 +21,7 @@ https://www.youtube.com/@DevSkiller/streams
     <tr itemscope itemtype="https://schema.org/Event">
         <td class="list">
             <h3 itemprop="name">Confitura</h3>
-            <time itemprop="startDate">2023-05-24</time>
+            <time itemprop="startDate">2023-06-24</time>
             <h4>
                 No Big Bang Theory: dekada rozwijania własnego produktu
             </h4>
@@ -33,7 +33,7 @@ https://www.youtube.com/@DevSkiller/streams
     <tr itemscope itemtype="https://schema.org/Event">
         <td class="list">
             <h3 itemprop="name">InfoShare</h3>
-            <time itemprop="startDate">2023-06-24</time>
+            <time itemprop="startDate">2023-05-24</time>
             <h4>
                 Better Call Fallback: Projektowanie usług odpornych na błędy (TBA)
             </h4>
