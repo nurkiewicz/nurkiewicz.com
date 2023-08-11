@@ -35,11 +35,11 @@ https://www.youtube.com/@DevSkiller/streams
             <h3 itemprop="name">InfoShare</h3>
             <time itemprop="startDate">2023-05-24</time>
             <h4>
-                Better Call Fallback: Projektowanie usług odpornych na błędy (TBA)
+                Better Call Fallback: Designing resilient services
             </h4>
         </td>
         <td>
-            &nbsp;
+            <iframe width="400" height="225" src="https://www.youtube.com/embed/qAnNqEvcRso" frameborder="0" allowfullscreen></iframe>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -59,7 +59,7 @@ https://www.youtube.com/@DevSkiller/streams
             <h3 itemprop="name"><a href="https://2023.boilingfrogs.pl/">BoilingFrogs</a></h3>
             <time itemprop="startDate">2023-03-18</time>
             <h4>
-                <a href="https://2023.boilingfrogs.pl/speaker/tomasz-nurkiewicz/">Fifty Shades of State (TBA)</a>
+                <a href="https://2023.boilingfrogs.pl/speaker/tomasz-nurkiewicz/">Better Call Fallback: Designing resilient services</a>
             </h4>
         </td>
         <td>
