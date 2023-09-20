@@ -1,6 +1,6 @@
 # About me
 
-**Tomasz Nurkiewicz**, Java Champion, CTO at [DevSkiller](https://devskiller.com/), trainer, [O’Reilly author](https://www.oreilly.com/library/view/reactive-programming-with/9781491931646/), [conference speaker](/talks), [blogger](/articles).
+**Tomasz Nurkiewicz**, Java Champion, software engineer at [monday.com](https://monday.com/), trainer, [O’Reilly author](https://www.oreilly.com/library/view/reactive-programming-with/9781491931646/), [conference speaker](/talks), [blogger](/articles).
 
 Spent half of his life on programming, for the last decade professionally in Java land.
 Loves back-end and data visualization. 
