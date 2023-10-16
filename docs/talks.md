@@ -27,7 +27,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            &nbsp;
+            <iframe width="400" height="225" src="https://www.youtube.com/embed/El7CHysRrgU" frameborder="0" allowfullscreen></iframe>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
