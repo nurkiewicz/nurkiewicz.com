@@ -77,11 +77,26 @@ set -euxo pipefail # print every statement, fail on command failure
 cd ${0%/*}         # navigate to script's location
 ```
 
-[Sum numbers, one per line](https://stackoverflow.com/questions/3096259/bash-command-to-sum-a-column-of-numbers):
+#### [Sum numbers, one per line](https://stackoverflow.com/questions/3096259/bash-command-to-sum-a-column-of-numbers):
 
 ``` bash
 awk '{s += $1} END {print s}'
 ```
+
+#### Download MP3 from YouTube video:
+
+```bash
+alias yt-dl-mp3='docker run \
+                  --rm -i \
+                  -e PGID=$(id -g) \
+                  -e PUID=$(id -u) \
+                  -v "$(pwd)":/workdir:rw \
+                  ghcr.io/mikenye/docker-youtube-dl:latest \
+                  -x --audio-format mp3 --add-metadata'
+```
+
+#### Miscellaneous
+
 * [`ls` tips and tricks](https://twitter.com/LinuxHandbook/status/1583081641744138240)
 * [The Art of Command Line](https://github.com/jlevy/the-art-of-command-line)
 * [explainshell.com](https://explainshell.com/)
