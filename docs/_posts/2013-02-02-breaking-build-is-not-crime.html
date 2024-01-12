@@ -53,15 +53,11 @@ Back in the days of Java 1.4 we were taught that concurrent programming using <c
 <br />
 This naturally leads to an idea of <a href="http://martinfowler.com/bliki/FeatureBranch.html">feature branches</a>. The concept is simple: you develop your feature on a separate branch, CI server might even build all <i>your</i> changes and when you feel you are ready, you simply merge your changes back to mainline. The problem with feature branches is that it's no longer <i>continuous integration</i>. After days of development your feature might be green and ready alone, but merging it back might be extremely problematic. Also other team members might benefit from your changes, even if they are not complete (but already <i>green</i>). All these observations led me to the following requirements:<br />
 <br />
-<ul><li>I want to push my changes as often as I need<br />
-    <br />
- </li><li>CI server should build my changes in isolation so that if they break, no one sees them or cares<br />
-    <br />
- </li><li>if my changes are good, I want them to be automatically and immediately visible to others<br />
-    <br />
- </li><li>I also want to see changes made by others as soon as possible<br />
-    <br />
- </li></ul>Fortunately modern CI servers (I'm using <a href="http://www.atlassian.com/software/bamboo/overview">Bamboo</a> as a reference) and version control systems (git here, Mercurial should work exactly the same) are capable of supporting the workflow I've dreamed of. The main requirement is that I want to push my changes as fast as possible without running all the tests and breaking <code>master</code>. The first step is to create a separate branch and commit to that branch. <b>We should never commit to <code>master</code></b>. When I think I'm ready with my new feature I simply push that branch and move on. No running tests locally, no nervous monitoring of CI server. Just push and approach new challenges. This may lead to great savings in time if your test suite takes few minutes to run.<br />
+<ul><li>I want to push my changes as often as I need</li>
+    <li>CI server should build my changes in isolation so that if they break, no one sees them or cares</li>
+    <li>if my changes are good, I want them to be automatically and immediately visible to others</li>
+    <li>I also want to see changes made by others as soon as possible</li>
+</ul>Fortunately modern CI servers (I'm using <a href="http://www.atlassian.com/software/bamboo/overview">Bamboo</a> as a reference) and version control systems (git here, Mercurial should work exactly the same) are capable of supporting the workflow I've dreamed of. The main requirement is that I want to push my changes as fast as possible without running all the tests and breaking <code>master</code>. The first step is to create a separate branch and commit to that branch. <b>We should never commit to <code>master</code></b>. When I think I'm ready with my new feature I simply push that branch and move on. No running tests locally, no nervous monitoring of CI server. Just push and approach new challenges. This may lead to great savings in time if your test suite takes few minutes to run.<br />
 <br />
 First things first, here is how you set up Bamboo. Under <i>Plan Configuration</i> and <i>Branches</i> select the following highlighted options:<br />
 <br />
@@ -140,7 +136,9 @@ This was all very easy as Bamboo could use fast-forwarding instead of ordinary m
     * 3e6ab7c Initial revision<br />
 </pre></td></tr></tbody></table>Notice the "<i>[bamboo] Automated branch merge</i>" commit made implicitly by Bamboo. As you can see this commit merges all my <code>feature</code> branch changes into <code>master</code> branch. This approach works but has several drawbacks:<br />
 <br />
-<ul><li>after a while your <code>master</code> branch history might consist of barely Bamboo generated commits. I'd rather see ordinary commits there</li><li>automatic merging in Bamboo might fail</li><li>my <code>feature</code> branch still doesn't have <code>bugfix</code> branch changes already merged into mainline</li></ul>For the reasons above it's better to merge my <code>feature</code> branch first locally with <code>master</code> and push that. In this scenario you are almost guaranteed that remote merge on Bamboo will never fail (only fast forward), it's predictable and you work on the latest <code>master</code> state. And BTW wondering what would happen if automatic merging on Bamboo fails?<br />
+<ul><li>after a while your <code>master</code> branch history might consist of barely Bamboo generated commits. I'd rather see ordinary commits there</li>
+    <li>automatic merging in Bamboo might fail</li>
+    <li>my <code>feature</code> branch still doesn't have <code>bugfix</code> branch changes already merged into mainline</li></ul>For the reasons above it's better to merge my <code>feature</code> branch first locally with <code>master</code> and push that. In this scenario you are almost guaranteed that remote merge on Bamboo will never fail (only fast forward), it's predictable and you work on the latest <code>master</code> state. And BTW wondering what would happen if automatic merging on Bamboo fails?<br />
 <br />
 <div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-GPNLQnjU6_4/UQ2EaNHXx-I/AAAAAAAAAsI/nxZwi9pjSDA/s1600/13.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="192" src="http://1.bp.blogspot.com/-GPNLQnjU6_4/UQ2EaNHXx-I/AAAAAAAAAsI/nxZwi9pjSDA/s640/13.png" width="640" /></a></div><br />
 <h1>Summary</h1>This approach for working with version control brings best of both worlds: feature branches and continuous integration. Because each developer is working on a separate branch (or even repository!), broken commit won't ever make it to <code>master</code> branch/mainline. On the other hand automatic merging will make sure our feature branch is always up-to-date and we won't run into issues when trying to merge days worth of work. Moreover good commits are immediately visible to others while bad ones remain hidden.  <script src="https://raw.github.com/gist/3983275/936845e66d98bb7c627684df7884f33b2cc368f5/syntaxhighlighter.js"></script>
