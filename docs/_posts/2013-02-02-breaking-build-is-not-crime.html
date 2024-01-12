@@ -37,15 +37,11 @@ For years I've been taught that breaking continuous integration build is somethi
 <br />
 <blockquote><h4>Never Go Home on a Broken Build</h4>[...] When the build breaks on check-in, try to fix it for ten minutes.</blockquote>To summarize what literature says about continuous integration:<br />
 <br />
-<ul><li>always run all the tests before committing to make sure everything is green<br />
-    <br />
- </li><li>look closely at your CI builds to make sure they pass, don't proceed with further tasks<br />
-    <br />
- </li><li>if you break the build, you must treat this as an emergency and fix it ASAP<br />
-    <br />
- </li><li>you have very little time to fix, otherwise revert your changes<br />
-    <br />
- </li></ul>It's not uncommon to have some hardware alarms triggering when build goes red. I heard of teams where build-breaking developer had to wear some silly hat or donate a dollar for charity (nothing wrong with that alone). Breaking build is considered a sin, assassination on team's productivity, carelessness and laziness. CI server becomes this dreadful, scary machine that developers are afraid of. Bamboo even gives each developer points based on the total number of broken vs. fixed builds.<br />
+<ul><li>always run all the tests before committing to make sure everything is green </li>
+    <li>look closely at your CI builds to make sure they pass, don't proceed with further tasks </li>
+    <li>if you break the build, you must treat this as an emergency and fix it ASAP </li>
+    <li>you have very little time to fix, otherwise revert your changes </li>
+</ul>It's not uncommon to have some hardware alarms triggering when build goes red. I heard of teams where build-breaking developer had to wear some silly hat or donate a dollar for charity (nothing wrong with that alone). Breaking build is considered a sin, assassination on team's productivity, carelessness and laziness. CI server becomes this dreadful, scary machine that developers are afraid of. Bamboo even gives each developer points based on the total number of broken vs. fixed builds.<br />
 <br />
 I fully understand this point of view and behaviour, but this doesn't mean I agree. I feel this workflow is just plain <i>wrong</i>. I am aware that the whole team is working on the same HEAD/trunk in version control so breaking it is possibly a show-stopper for all of them. But I'm against treating CI/source control as some scarce resource that is so mission-critical.<br />
 <br />
