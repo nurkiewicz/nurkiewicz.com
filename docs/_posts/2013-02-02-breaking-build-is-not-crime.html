@@ -65,7 +65,8 @@ First things first, here is how you set up Bamboo. Under <i>Plan Configuration</
 <br />
 <i>Automatically manage branches</i> will discover and build all new branches automatically. <i>Branch Merging Enabled</i> allows Bamboo to automatically merge new branches with <code>master</code> one way or another. In the <i>Gatekeeper</i> configuration we tick <i>Push on</i> option. Here is how it works: I make several commits to my <code>feature</code> branch. You can push them immediately or after some time:<br />
 <br />
-<table><tbody><tr><td><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-eLSBOR-tMlc/UQ2EaR2I6YI/AAAAAAAAAsM/6YgxR3KJjEU/s1600/2.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="74" src="http://3.bp.blogspot.com/-eLSBOR-tMlc/UQ2EaR2I6YI/AAAAAAAAAsM/6YgxR3KJjEU/s320/2.png" width="320" /></a></div><h1></h1></td><td><pre class="brush: plain">* 894217c (HEAD, feature, origin/feature) More tests<br />
+<table><tbody><tr><td><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-eLSBOR-tMlc/UQ2EaR2I6YI/AAAAAAAAAsM/6YgxR3KJjEU/s1600/2.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="74" src="http://3.bp.blogspot.com/-eLSBOR-tMlc/UQ2EaR2I6YI/AAAAAAAAAsM/6YgxR3KJjEU/s320/2.png" width="320" /></a></div>
+</td><td><pre class="brush: plain">* 894217c (HEAD, feature, origin/feature) More tests<br />
     * 3883a5c Starting to work on a feature<br />
     * 1bd4e34 (origin/master, master) Multiplication test<br />
     * f5c886c Testing addition<br />
@@ -77,7 +78,8 @@ First things first, here is how you set up Bamboo. Under <i>Plan Configuration</
 What's so special about that? Bamboo tells me that my changes are fine so I am free to integrate them into the mainline (<code>master</code> branch). Am I? No, Bamboo did it already! It built my changes, found them to be <i>green</i> and automatically merged them into `master so that others can see them. Merging was simple, it's just fast-forward:<br />
 <a name='more'></a><br />
 <br />
-<table><tbody><tr><td><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-mugW8MMby-M/UQ2Ea0nMX2I/AAAAAAAAAsU/wzPb7n1eljk/s1600/4.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="48" src="http://4.bp.blogspot.com/-mugW8MMby-M/UQ2Ea0nMX2I/AAAAAAAAAsU/wzPb7n1eljk/s320/4.png" width="320" /></a></div><h1></h1></td><td><pre class="brush: plain">* 894217c (HEAD, origin/master, origin/feature, master, feature) More tests<br />
+<table><tbody><tr><td><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-mugW8MMby-M/UQ2Ea0nMX2I/AAAAAAAAAsU/wzPb7n1eljk/s1600/4.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="48" src="http://4.bp.blogspot.com/-mugW8MMby-M/UQ2Ea0nMX2I/AAAAAAAAAsU/wzPb7n1eljk/s320/4.png" width="320" /></a></div>
+</td><td><pre class="brush: plain">* 894217c (HEAD, origin/master, origin/feature, master, feature) More tests<br />
     * 3883a5c Starting to work on a feature<br />
     * 1bd4e34 Multiplication test<br />
     * f5c886c Testing addition<br />
@@ -91,7 +93,8 @@ What's so special about that? Bamboo tells me that my changes are fine so I am f
 OK, was it really that interesting? After all we would get the same result by simply pushing directly to <code>master</code>... Well, but what happens if we are pushing <i>breaking</i> changes to unmodified mainline? This is the terrifying moment in most of the teams. I just pushed breaking changes and everyone is yelling at me. <i>Fix. Fast. Y U NO RUN TEST?</i> But not in this approach:<br />
 <br />
 <br />
-<table><tbody><tr><td><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-GmPF-oC4t4E/UQ2EbEfjlcI/AAAAAAAAAsk/BqEtBNZEFvE/s1600/6.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="92" src="http://4.bp.blogspot.com/-GmPF-oC4t4E/UQ2EbEfjlcI/AAAAAAAAAsk/BqEtBNZEFvE/s320/6.png" width="320" /></a></div><h1></h1></td><td><pre class="brush: plain">* cc4ea63 (HEAD, origin/feature, feature) Experimental changes<br />
+<table><tbody><tr><td><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-GmPF-oC4t4E/UQ2EbEfjlcI/AAAAAAAAAsk/BqEtBNZEFvE/s1600/6.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="92" src="http://4.bp.blogspot.com/-GmPF-oC4t4E/UQ2EbEfjlcI/AAAAAAAAAsk/BqEtBNZEFvE/s320/6.png" width="320" /></a></div>
+</td><td><pre class="brush: plain">* cc4ea63 (HEAD, origin/feature, feature) Experimental changes<br />
     * f0a1a95 Side effects<br />
     * 894217c (origin/master, master) More tests<br />
     * 3883a5c Starting to work on a feature<br />
@@ -101,11 +104,13 @@ OK, was it really that interesting? After all we would get the same result by si
 </pre></td></tr></tbody></table>The last commit is breaking one of the tests:<br />
 <br />
 <div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-er_m_nJir4w/UQ2Ebc7BbuI/AAAAAAAAAso/FpdEWew2Ti0/s1600/7.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="230" src="http://2.bp.blogspot.com/-er_m_nJir4w/UQ2Ebc7BbuI/AAAAAAAAAso/FpdEWew2Ti0/s640/7.png" width="640" /></a></div><br />
-<h1></h1>Here is where all this pain starts to pay off: <code>feature</code> branch might be broken, but <code>master</code> is untouched. No merging occurred. Only my very own, private branch is broken. Other developers are unaffected. If this build was <i>green</i>, my experimental changes would have been automatically merged to <code>master</code> and pushed. But I made a mistake and they remain hidden. No one cares, my team mates still see stable <code>master</code>. I can go for lunch or fix it tomorrow. No stress, no peer-pressure. When I get it right, Bamboo will automatically apply my fix. <br />
+
+Here is where all this pain starts to pay off: <code>feature</code> branch might be broken, but <code>master</code> is untouched. No merging occurred. Only my very own, private branch is broken. Other developers are unaffected. If this build was <i>green</i>, my experimental changes would have been automatically merged to <code>master</code> and pushed. But I made a mistake and they remain hidden. No one cares, my team mates still see stable <code>master</code>. I can go for lunch or fix it tomorrow. No stress, no peer-pressure. When I get it right, Bamboo will automatically apply my fix. <br />
 <br />
 This was all very easy as Bamboo could use fast-forwarding instead of ordinary merge. But what if we try pushing <i>good</i> changes to modified remote <code>origin/master</code>? Suppose we are working on our feature but in the meantime other developer pushed some changes to <code>bugfix</code> branch which happened to be correct so Bamboo decided to merge them immediately:<br />
 <br />
-<table><tbody><tr><td><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-q2oFQQSZAJk/UQ2Eb-Pe2iI/AAAAAAAAAsw/QKYPWRpTP4U/s1600/9.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="97" src="http://2.bp.blogspot.com/-q2oFQQSZAJk/UQ2Eb-Pe2iI/AAAAAAAAAsw/QKYPWRpTP4U/s320/9.png" width="320" /></a></div><h1></h1></td><td><pre class="brush: plain">* d600da5 (HEAD, feature) Cosmetics<br />
+<table><tbody><tr><td><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-q2oFQQSZAJk/UQ2Eb-Pe2iI/AAAAAAAAAsw/QKYPWRpTP4U/s1600/9.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="97" src="http://2.bp.blogspot.com/-q2oFQQSZAJk/UQ2Eb-Pe2iI/AAAAAAAAAsw/QKYPWRpTP4U/s320/9.png" width="320" /></a></div>
+</td><td><pre class="brush: plain">* d600da5 (HEAD, feature) Cosmetics<br />
     | * 25612d7 (origin/master, origin/bugfix, master, bugfix) Documentation<br />
     | * 733b6a9 Urgent bug fix<br />
     |/  <br />
@@ -119,8 +124,7 @@ This was all very easy as Bamboo could use fast-forwarding instead of ordinary m
     * 3e6ab7c Initial revision<br />
 </pre></td></tr></tbody></table>As you can see our <code>feature</code> branch was not yet pushed to main repository while <code>bugfix</code> branch is already integrated. How will Bamboo deal with <code>feature</code> branch being pushed? The behaviour is a bit more complex, but still manageable: Bamboo first checks out <code>master</code> (including <code>bugfix</code> branch already merged) and tries to merge changes from <code>feature</code> branch. If merge was successful (no conflicts), ordinary build is performed. If build is successful, merge results are pushed to <code>master</code>:<br />
 <br />
-<table><tbody><tr><td><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-7C0IeJw_7yU/UQ2EZ8pEioI/AAAAAAAAAsA/aj1Tq3_6vxs/s1600/11.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="145" src="http://4.bp.blogspot.com/-7C0IeJw_7yU/UQ2EZ8pEioI/AAAAAAAAAsA/aj1Tq3_6vxs/s320/11.png" width="320" /></a></div><h1><br />
-</h1></td><td><pre class="brush: plain">*   e58a2db (origin/master) [bamboo] Automated branch merge<br />
+<table><tbody><tr><td><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-7C0IeJw_7yU/UQ2EZ8pEioI/AAAAAAAAAsA/aj1Tq3_6vxs/s1600/11.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="145" src="http://4.bp.blogspot.com/-7C0IeJw_7yU/UQ2EZ8pEioI/AAAAAAAAAsA/aj1Tq3_6vxs/s320/11.png" width="320" /></a></div></td><td><pre class="brush: plain">*   e58a2db (origin/master) [bamboo] Automated branch merge<br />
     |\  <br />
     | * d600da5 (HEAD, origin/feature, feature) Cosmetics<br />
     * | 25612d7 (origin/bugfix, master, bugfix) Documentation<br />
@@ -141,4 +145,5 @@ This was all very easy as Bamboo could use fast-forwarding instead of ordinary m
     <li>my <code>feature</code> branch still doesn't have <code>bugfix</code> branch changes already merged into mainline</li></ul>For the reasons above it's better to merge my <code>feature</code> branch first locally with <code>master</code> and push that. In this scenario you are almost guaranteed that remote merge on Bamboo will never fail (only fast forward), it's predictable and you work on the latest <code>master</code> state. And BTW wondering what would happen if automatic merging on Bamboo fails?<br />
 <br />
 <div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-GPNLQnjU6_4/UQ2EaNHXx-I/AAAAAAAAAsI/nxZwi9pjSDA/s1600/13.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="192" src="http://1.bp.blogspot.com/-GPNLQnjU6_4/UQ2EaNHXx-I/AAAAAAAAAsI/nxZwi9pjSDA/s640/13.png" width="640" /></a></div><br />
-<h1>Summary</h1>This approach for working with version control brings best of both worlds: feature branches and continuous integration. Because each developer is working on a separate branch (or even repository!), broken commit won't ever make it to <code>master</code> branch/mainline. On the other hand automatic merging will make sure our feature branch is always up-to-date and we won't run into issues when trying to merge days worth of work. Moreover good commits are immediately visible to others while bad ones remain hidden.  <script src="https://raw.github.com/gist/3983275/936845e66d98bb7c627684df7884f33b2cc368f5/syntaxhighlighter.js"></script>
+<h2>Summary</h2>
+This approach for working with version control brings best of both worlds: feature branches and continuous integration. Because each developer is working on a separate branch (or even repository!), broken commit won't ever make it to <code>master</code> branch/mainline. On the other hand automatic merging will make sure our feature branch is always up-to-date and we won't run into issues when trying to merge days worth of work. Moreover good commits are immediately visible to others while bad ones remain hidden.  <script src="https://raw.github.com/gist/3983275/936845e66d98bb7c627684df7884f33b2cc368f5/syntaxhighlighter.js"></script>
