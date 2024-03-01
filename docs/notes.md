@@ -39,6 +39,7 @@ title: Awesome notes
 * <https://kroki.io/>
 * <https://dreampuf.github.io/GraphvizOnline>
 * <https://www.diagrams.net/>
+* <https://diagrams.mingrammer.com/> - diagrams as Python code
 
 ##### UML
 
