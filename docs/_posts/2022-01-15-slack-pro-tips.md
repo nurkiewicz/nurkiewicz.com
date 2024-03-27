@@ -50,7 +50,14 @@ But without sending also to channel, your message may get lost.
 
 Use this checkbox if you are reviving an old thread or your response may be relevant to everyone, not just people involved in that thread.
 
-## 6. Sending with delay
+## 6. Split long messages with multiple topics
+
+Speaking of threads, if you write a long message covering multiple topics, split it into multiple messages instead.
+First of all, it's easier to digest.
+But more importantly, people can link and answer (using threads) to specific topics.
+Otherwise people will need to quote specific parts of your message anyway to have meaningful discussion.
+
+## 7. Sending with delay
 
 You can send messages to people or channels with a delay, for example the next day.
 It’s an alternative to reminders.
@@ -59,7 +66,7 @@ Check out the small drop-down menu next to send button.
 
 And by the way, if you've mistakenly sent a message, hitting `⌘ + Z` quickly will delete it switch back to editing.
 
-## 7. Use reminders
+## 8. Use reminders
 
 Use reminders to notify yourself, someone, or whole channel some time in the future, once or periodically.
 
@@ -67,18 +74,18 @@ See:
 
 ```/remind #general "Are you coming to the office tomorrow?" at 14:30 every Monday, Tuesday, Wednesday, Thursday```
 
-## 8. Hyperlinks to messages
+## 9. Hyperlinks to messages
     
 Hyperlinks to messages are very powerful.
 You can go directly to the discussion, see it in context, etc.
 Outsiders can't access links to private channels and DMs.
 
-## 9. Prefer channels over private 1-on-1
+## 10. Prefer channels over private 1-on-1
 
 Unless it’s really... private.
 Chances are someone else will join the discussion. Also you can later search and link to messages.
 
-## 10. Consider having a personal, public channel
+## 11. Consider having a personal, public channel
 
 Consider every team meber having a public `#john-smith-office` (or `#john-smith-cubicle`) channel, especially managers.
 Your teammates can ask you non-confidential questions, that can later be browsed by everyone.
@@ -86,23 +93,23 @@ It's like building an FAQ of your personal knowledge.
 
 See also: [twitter.com/ahidalgosre/status/1486442877425266688](https://twitter.com/ahidalgosre/status/1486442877425266688).
 
-## 11. Learn how to search
+## 12. Learn how to search
 
 `S` in Slack [stands for](https://www.theverge.com/2016/9/28/13098164/slack-is-an-acronym) "searchable" (!). Learn "`from:`", "`in:`" and [other prefixes](https://slack.com/help/articles/202528808-Search-in-Slack) when searching.
 Also, you can search by time, etc.
 
-## 12. Send e-mails to channels
+## 13. Send e-mails to channels
 
 Each Slack channel has a [unique e-mail address](https://slack.com/help/articles/206819278-Send-emails-to-Slack). Messages sent to that address appear in that channel
 
-## 13. Watch out for emoji reactions 👍
+## 14. Watch out for emoji reactions 👍
 
 They are cool.
 But Slack does not send a clear notification when someone likes your message.
 If your response is important, send a tiny "👍" message in a thread.
 Do not rely on reaction being noticed.
 
-## 14. Don't just write "_hello_"
+## 15. Don't just write "_hello_"
 
 Don't start your conversation with [plain "_hello_" or "_hi_"](https://nohello.net/), waiting for a reply.
 Just explain what you want in one sentence.
