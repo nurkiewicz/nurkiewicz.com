@@ -1,0 +1,283 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>The Illusion of Immortality - Temporal's Magic for Reliable Workflows</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/beige.css">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+    <style>
+        img {
+            background-color: rgb(238, 238, 238);
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        ul {
+            list-style-type: '↬ ' !important;
+        }
+        h1, h2, h3, h4 {
+            text-transform: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+
+        <div class="slides">
+
+            <section>
+                <h1>The Illusion of Immortality</h1>
+                <h2>Temporal's Magic for Reliable Workflows</h2>
+                <h4>Tomasz Nurkiewicz</h4>
+                <h4>Software eng. at Monday.com</h4>
+                <p>
+                    <a href="https://nurkiewicz.com">nurkiewicz.com</a>,
+                    <a href="https://fosstodon.org/@nurkiewicz">@nurkiewicz@fosstodon.org</a>
+                </p>
+            </section>
+
+            <section>
+                <h1>It's your first day at work...</h1>
+            </section>
+
+            <section>
+                <h1>Implement this</h1>
+                <pre class="fragment">
+                    <code class="hljs language-js" data-trim>
+                        sendRegistrationLink(user);
+                        sleep(86400);
+                        if(!isRegistered(user)) {
+                            sendReminderLink(user);
+                        }
+                    </code>
+                </pre>
+            </section>
+
+            <section>
+                <h1>Problems</h1>
+                <ul>
+                    <li>App can crash</li>
+                    <li><code>sleep</code> takes resources</li>
+                    <li>Untestable</li>
+                </ul>
+            </section>
+
+            <section>
+                <h1>You did well on your first day!</h1>
+                <pre class="fragment">
+                    <code class="hljs language-js" data-trim>
+                        for(user of getPayingUsers()) {
+                            const invoice = prepareInvoice(user);
+                            const url = storeOnS3(invoice);
+                            sendEmail(user.email, url);
+                        }
+                    </code>
+                </pre>
+            </section>
+
+            <section>
+                <h1>Problems</h1>
+                <ul>
+                    <li>One, heavy task on a single node</li>
+                    <li>...that can fail</li>
+                    <li>...but no resume/retry mechanism</li>
+                </ul>
+            </section>
+
+            <section>
+                <h1>The illusion of a server running forever</h1>
+                <p>Meet Temporal workflow engine</p>
+                <p><small><sup>*</sup>Do not confuse with JavaScript Temporal API</small></p>
+            </section>
+
+            <section>
+                <h1><q>Talk is cheap. Show me the code</q></h1>
+                <p>Demo time</p>
+            </section>
+
+            <section>
+                <h1>Not your grandpas workflow engine</h1>
+                <ul>
+                    <li>Microsoft BizTalk Server</li>
+                    <li>BPMN</li>
+                    <li>Airflow</li>
+                </ul>
+            </section>
+
+            <section>
+                <h1>Everything is a workflow</h1>
+                <!-- You keep using this word workflow -->
+            </section>
+
+            <section>
+                <h1 class="fragment">All non-trivial code on the planet</h1>
+                <ul>
+                    <li>Several steps</li>
+                    <li>Branches, conditions, loop</li>
+                    <li>Long-running</li>
+                    <li>Distributed</li>
+                    <li>Asynchronous</li>
+                    <li>Retryable</li>
+                </ul>
+            </section>
+
+            <section>
+                <h1>Examples - implicit workflows</h1>
+                <ul>
+                    <li>Microservice orchestration</li>
+                    <li>Queues</li>
+                    <li>Webhooks</li>
+                    <li>Cron jobs</li>
+                    <li>Periodic processes</li>
+                    <li>Work distribution</li>
+                    <li>Leader election</li>
+                    <li>...</li>
+                </ul>
+            </section>
+
+            <section>
+                <h1>Resiliency</h1>
+                <p>Demo time</p>
+            </section>
+
+            <section>
+                <h1>Supported languages</h1>
+                <ul>
+                    <li>Go</li>
+                    <li>Java</li>
+                    <li>PHP</li>
+                    <li>Python</li>
+                    <li>TypeScript</li>
+                    <li>.NET</li>
+                </ul>
+            </section>
+
+            <section>
+                <h1>Under the hood</h1>
+            </section>
+
+            <section>
+                <h1>Worker node vs. client vs. server</h1>
+            </section>
+
+            <section>
+                <h1>Temporal server</h1>
+                <h2>Event log and work queue</h2>
+                <ul>
+                    <li>Database (SQL or Cassandra)</li>
+                    <li>Elasticsearch</li>
+                    <li>UI</li>
+                </ul>
+            </section>
+
+            <section>
+                <h1>Worker node</h1>
+                <p>Polls the server. Does the work</p>
+            </section>
+
+            <section>
+                <h1>Client</h1>
+            </section>
+
+            <section>
+                <h1>Scalability</h1>
+                <p>Demo time</p>
+            </section>
+
+            <section>
+                <h1>Testing</h1>
+                <ul>
+                    <li>First class support</li>
+                    <li>Replaying process locally from event log!</li>
+                </ul>
+            </section>
+
+            <section>
+                <h1>The bad</h1>
+                <p class="fragment">There's no <em>magic</em>, just leaky abstractions</p>
+            </section>
+
+            <section>
+                <h1>The server is a single point of failure</h1>
+            </section>
+
+            <section>
+                <h1>All arguments and return values are stored in the database</h1>
+            </section>
+
+            <section>
+                <h1>Versioning is tricky</h1>
+            </section>
+
+            <section>
+                <h1>Tracking progress is not that easy</h1>
+            </section>
+
+            <section>
+                <h1>Activities should be idempotent</h1>
+            </section>
+
+            <section>
+                <h1>Watch out for non-determinism</h1>
+                <p><code>new Date()</code> and <code>Math.random()</code> are monkey-patched!</p>
+            </section>
+
+            <section>
+                <h1>Verdict</h1>
+                <p>Impressive<span class="fragment">... And scary</span><span class="fragment">. But impressive!</span></p>
+            </section>
+
+            <section>
+                <h1>Materials</h1>
+                <ul>
+                    <li><a href="https://temporal.io/">temporal.io</a></li>
+                    <li><a href="https://github.com/temporalio/samples-typescript">github.com/temporalio/samples-typescript</a></li>
+                    <li><a href="https://mikhail.io/2020/10/temporal-open-source-workflows-as-code/">Temporal: Open Source Workflows as Code</a></li>
+                    <li><a href="https://mikhail.io/2020/10/practical-approach-to-temporal-architecture/">A Practical Approach to Temporal Architecture</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <h1>Thank you!</h1>
+                <!-- <img src="resiliency/qr.svg" class="r-stretch cool-img" /> -->
+                <p>
+                    <a href="https://nurkiewicz.com">nurkiewicz.com</a>,
+                    <a href="https://fosstodon.org/@nurkiewicz">@nurkiewicz@fosstodon.org</a>
+                </p>
+                <hr/>
+                <p>
+                        <a href="https://nurkiewicz.com/slides/temporal-workflow">nurkiewicz.com/slides/temporal-workflow</a>
+                </p>
+            </section>
+
+        </div>
+
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            plugins: [RevealHighlight],
+            width: 1800,
+            margin: 0.08,
+            transition: 'fade',
+            progress: false,
+            controls: false,
+            center: true,
+        });
+    </script>
+
+</body>
+
+</html>
