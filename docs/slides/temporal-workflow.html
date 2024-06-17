@@ -63,6 +63,11 @@
             </section>
 
             <section>
+                <img src="temporal-workflow/spidermen-meme.jpg" class="r-stretch cool-img" />
+                <p>Demo time<small><sup>01</sup></small> </p>
+            </section>
+
+            <section>
                 <h1>Problems</h1>
                 <ul>
                     <li>App can crash</li>
@@ -72,36 +77,9 @@
             </section>
 
             <section>
-                <h1>You did well on your first day!</h1>
-                <pre class="fragment">
-                    <code class="hljs language-js" data-trim>
-                        for(user of getPayingUsers()) {
-                            const invoice = prepareInvoice(user);
-                            const url = storeOnS3(invoice);
-                            sendEmail(user.email, url);
-                        }
-                    </code>
-                </pre>
-            </section>
-
-            <section>
-                <h1>Problems</h1>
-                <ul>
-                    <li>One, heavy task on a single node</li>
-                    <li>...that can fail</li>
-                    <li>...but no resume/retry mechanism</li>
-                </ul>
-            </section>
-
-            <section>
                 <h1>The illusion of a server running forever</h1>
                 <p>Meet Temporal workflow engine</p>
                 <p><small><sup>*</sup>Do not confuse with JavaScript Temporal API</small></p>
-            </section>
-
-            <section>
-                <h1><q>Talk is cheap. Show me the code</q></h1>
-                <p>Demo time</p>
             </section>
 
             <section>
@@ -119,7 +97,7 @@
             </section>
 
             <section>
-                <h1 class="fragment">All non-trivial code on the planet</h1>
+                <h1 class="fragment">Any non-trivial code on the planet</h1>
                 <ul>
                     <li>Several steps</li>
                     <li>Branches, conditions, loop</li>
@@ -146,7 +124,16 @@
 
             <section>
                 <h1>Resiliency</h1>
-                <p>Demo time</p>
+                <p>Demo time<small><sup>02</sup></small></p>
+            </section>
+
+            <section>
+                <h1>Problems</h1>
+                <ul>
+                    <li>One, heavy task on a single node</li>
+                    <li>...that can fail</li>
+                    <li>...but no resume/retry mechanism</li>
+                </ul>
             </section>
 
             <section>
@@ -166,7 +153,7 @@
             </section>
 
             <section>
-                <h1>Worker node vs. client vs. server</h1>
+                <h1>Server vs. worker vs. client</h1>
             </section>
 
             <section>
@@ -180,6 +167,11 @@
             </section>
 
             <section>
+                <h1>State rehydration</h1>
+                <p>Demo time</p>
+            </section>
+
+            <section>
                 <h1>Worker node</h1>
                 <p>Polls the server. Does the work</p>
             </section>
@@ -190,7 +182,16 @@
 
             <section>
                 <h1>Scalability</h1>
-                <p>Demo time</p>
+                <pre class="fragment">
+                    <code class="hljs language-js" data-trim>
+                        for(user of getPayingUsers()) {
+                            const invoice = prepareInvoice(user);
+                            const url = storeOnS3(invoice);
+                            sendEmail(user.email, url);
+                        }
+                    </code>
+                </pre>    
+                <p>Demo time<small><sup>03</sup></small></p>
             </section>
 
             <section>
@@ -211,7 +212,8 @@
             </section>
 
             <section>
-                <h1>All arguments and return values are stored in the database</h1>
+                <h1>Sensitive database</h1>
+                <h2>All arguments and return values are stored</h2>
             </section>
 
             <section>
@@ -247,8 +249,16 @@
             </section>
 
             <section>
+                <h1>Alternatives</h1>
+                <ul>
+                    <li><a href="https://restate.dev/">Restate.dev</a></li>
+                    <li><a href="https://learn.microsoft.com/en-us/azure/azure-functions/durable/">Azure Durable Functions</a></li>
+                </ul>
+            </section>
+
+            <section>
                 <h1>Thank you!</h1>
-                <!-- <img src="resiliency/qr.svg" class="r-stretch cool-img" /> -->
+                <img src="temporal-workflow/qr.svg" class="r-stretch cool-img" />
                 <p>
                     <a href="https://nurkiewicz.com">nurkiewicz.com</a>,
                     <a href="https://fosstodon.org/@nurkiewicz">@nurkiewicz@fosstodon.org</a>
