@@ -20,6 +20,18 @@ https://www.youtube.com/@DevSkiller/streams
 <table>
     <tr itemscope itemtype="https://schema.org/Event">
         <td class="list">
+            <h3 itemprop="name"> monday.com Meetup vol 4</h3>
+            <time itemprop="startDate">2024-06-17</time>
+            <h4>
+                <a href="https://nurkiewicz.com/slides/temporal-workflow">The Illusion of Immortality: Temporal's Magic for Reliable Workflows</a>
+            </h4>
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr itemscope itemtype="https://schema.org/Event">
+        <td class="list">
             <h3 itemprop="name">Confitura</h3>
             <time itemprop="startDate">2023-06-24</time>
             <h4>
