@@ -1,5 +1,5 @@
 ---
-title: "Is 'return await' redundant or necessary in JavaScript"
+title: "Is 'return await' redundant or necessary in JavaScript?"
 tags: JavaScript
 layout: post
 ---
