@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Bringing down production, one 'catch' at a time</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/beige.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<style>
+			img {
+				background-color: rgb(238, 238, 238);
+				border-radius: 10px;
+				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+				overflow: hidden;
+			}
+			h1, h2, h3, h4 {
+				text-transform: none !important;
+			}
+		</style>
+		</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-markdown>
+					<script type="text/template">
+						# Bringing down production
+						## one 'catch' at a time
+						### Tomasz Nurkiewicz
+						monday.com
+						
+						---
+
+						### `Error: Unhandled promise rejection`
+
+						---
+
+						# Static analysis?
+
+						[`no-floating-promises`](https://typescript-eslint.io/rules/no-floating-promises/)
+
+						---
+
+						```ts
+						const order = await prepareOrder();
+						await chargeCreditCard();
+						await send(order);
+						```
+
+						---
+
+						```ts
+						const promise = prepareOrder();
+						await chargeCreditCard();
+						promise.then(send);
+						```
+
+						---
+
+
+						```ts [5]
+						const promise = prepareOrder();
+						await chargeCreditCard();
+						promise
+							.then(send)
+							.catch(handle);
+						```
+
+						---
+
+						![](bringing-down-production/datadog.jpg)
+
+						---
+
+						# Look closely
+
+						```ts [|1|2|3,5]
+						const promise = prepareOrder();
+						await chargeCreditCard();
+						promise
+							.then(send)
+							.catch(handle);
+						```
+
+						---
+
+						```ts
+						const promise = prepareOrder();
+						promise.catch(handle);
+						await chargeCreditCard();
+						promise
+							.then(send)
+							.catch(handle);
+						```
+
+						---
+
+						# Termination rate
+						## vs.
+						# Creation rate
+
+						---
+
+						# Thank you!
+						### Tomasz Nurkiewicz
+							
+					</script>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			Reveal.initialize({
+				controls: false,
+				progress: false,
+				center: true,
+				hash: true,
+				transition: 'fade',
+				plugins: [ RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+		</script>
+
+	</body>
+</html>
