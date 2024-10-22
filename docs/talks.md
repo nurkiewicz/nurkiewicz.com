@@ -21,9 +21,21 @@ https://www.youtube.com/@DevSkiller/streams
     <tr itemscope itemtype="https://schema.org/Event">
         <td class="list">
             <h3 itemprop="name">The Pragmatics</h3>
-            <time itemprop="startDate">2024-12-02</time>
+            <time itemprop="startDate">2025-04-01</time>
             <h4>
                 Better call fallback: budowanie systemów odpornych na błędy
+            </h4>
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr itemscope itemtype="https://schema.org/Event">
+        <td class="list">
+            <h3 itemprop="name">monday.com Meetup</h3>
+            <time itemprop="startDate">2024-10-21</time>
+            <h4>
+                <a href="https://nurkiewicz.com/slides/bringing-down-production">Bringing down production, one 'catch' at a time</a>
             </h4>
         </td>
         <td>
