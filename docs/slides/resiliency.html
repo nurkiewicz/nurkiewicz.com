@@ -20,373 +20,415 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
             overflow: hidden;
         }
-  </style>
+
+    </style>
 </head>
 
 <body>
-<div class="reveal">
+    <div class="reveal">
 
-    <div class="slides">
+        <div class="slides">
 
-        <section>
-            <h1>Better Call Fallback</h1>
-            <img src="resiliency/Better_Call_Saul_logo.png" class="r-stretch"/>
-            <h3>Designing resilient services</h3>
-            <h4>Tomasz Nurkiewicz</h4>
-            <p>
-                <a href="https://nurkiewicz.com">nurkiewicz.com</a>,
-                <a href="https://fosstodon.org/@nurkiewicz">@nurkiewicz@fosstodon.org</a>
-            </p>
-        </section>
+            <section>
+                <h1>Better Call Fallback</h1>
+                <img src="resiliency/Better_Call_Saul_logo.png" class="r-stretch" />
+                <h3>Designing resilient services</h3>
+                <h4>Tomasz Nurkiewicz</h4>
+                <p>
+                    <a href="https://nurkiewicz.com">nurkiewicz.com</a>
+                </p>
+            </section>
 
-        <section>
-            <h1>You keep using that word <em>happy path</em></h1>
-        </section>
+            <section>
+                <h1>You keep using that word <em>happy path</em></h1>
+            </section>
 
-        <section>
-            <blockquote cite="https://en.wikiquote.org/wiki/Gerald_Weinberg">
-                If builders built houses the way programmers built programs,<br/>
-                the first woodpecker to come along would destroy civilization
-            </blockquote>
-            <small><a href="https://en.wikiquote.org/wiki/Gerald_Weinberg">Gerald Weinberg</a></small>
-        </section>
+            <section>
+                <blockquote cite="https://en.wikiquote.org/wiki/Gerald_Weinberg">
+                    If builders built houses the way programmers built programs,<br />
+                    the first woodpecker to come along would destroy civilization
+                </blockquote>
+                <small><a href="https://en.wikiquote.org/wiki/Gerald_Weinberg">Gerald Weinberg</a></small>
+            </section>
 
-        <section>
-            <h1>One in a million</h1>
-            <p class="fragment">...happens every 15 minutes at 1k RPS</p>
-        </section>
+            <section>
+                <h1>One in a million</h1>
+                <p class="fragment">...happens every 15 minutes at 1k RPS</p>
+            </section>
 
-        <section>
-            <h1>P99 latency</h1>
-            <p class="fragment">facebook.com makes 350 HTTP requests</p>
-        </section>
+            <section>
+                <h1>P99 latency</h1>
+                <p class="fragment">facebook.com makes 350 HTTP requests</p>
+            </section>
 
-        <section data-visibility="hidden">
-            <h1>How to...</h1>
-            <ul>
-                <li>...avoid</li>
-                <li>...deal with</li>
-                <li>...bypass</li>
-            </ul>
-            <h2>...failures</h2>
-        </section>
+            <section data-visibility="hidden">
+                <h1>How to...</h1>
+                <ul>
+                    <li>...avoid</li>
+                    <li>...deal with</li>
+                    <li>...bypass</li>
+                </ul>
+                <h2>...failures</h2>
+            </section>
 
-        <section>
-            <h1>Part I: RPC</h1>
-        </section>
+            <section>
+                <h1>Part I: RPC</h1>
+            </section>
 
-        <section>
-            <h1><code>try-catch</code></h1>
-        </section>
+            <section>
+                <h1><code>try-catch</code></h1>
+            </section>
 
-        <section>
-            <ul style="list-style: square">
-                <li>
-                    Repay loan
-                    <ul style="list-style: square">
-                        <li>
-                            Send bank transfer
-                            <ul style="list-style: square">
-                                <li>
-                                    Update daily report
-                                    <ul style="list-style: square">
-                                        <li>
-                                            Generate PDF
-                                            <ul style="list-style: square">
-                                                <li>
-                                                    Send report over email
-                                                    <ul style="list-style: square">
-                                                        <li>
-                                                            Wait for SMTP confirmation
-                                                            <ul style="list-style: square" class="fragment">
-                                                                <li>
-                                                                    <del>
-                                                                        <code>SocketException</code>
-                                                                    </del>
-                                                                </li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
+            <section>
+                <ul style="list-style: square">
+                    <li>
+                        Repay loan
+                        <ul style="list-style: square">
+                            <li>
+                                Send bank transfer
+                                <ul style="list-style: square">
+                                    <li>
+                                        Update daily report
+                                        <ul style="list-style: square">
+                                            <li>
+                                                Generate PDF
+                                                <ul style="list-style: square">
+                                                    <li>
+                                                        Send report over email
+                                                        <ul style="list-style: square">
+                                                            <li>
+                                                                Wait for SMTP confirmation
+                                                                <ul style="list-style: square" class="fragment">
+                                                                    <li>
+                                                                        <del>
+                                                                            <code>SocketException</code>
+                                                                        </del>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
                                     </li>
                                 </ul>
                             </li>
-                        </li>
-                    </ul>
+                    </li>
+                </ul>
                 </li>
-            </ul>
-        </section>
+                </ul>
+            </section>
 
-        <section>
-            <h1>Fallback</h1>
-        </section>
+            <section>
+                <h1>Fallback</h1>
+            </section>
 
-        <section>
-            <h1>Retries</h1>
-            <img src="resiliency/have-you-tried-turning-it-off-and-on-again.jpg" class="r-stretch"/>
-        </section>
+            <section>
+                <h1>Retries</h1>
+                <img src="resiliency/have-you-tried-turning-it-off-and-on-again.jpg" class="r-stretch" />
+            </section>
 
-        <section>
-            <h1>Exponential backoff</h1>
-        </section>
+            <section>
+                <h1>Exponential backoff</h1>
+            </section>
 
-        <section>
-            <h1>Timeouts</h1>
-        </section>
+            <section>
+                <h1>Timeouts</h1>
+            </section>
 
-        <section>
-            <h1 class="fragment">12 minutes!</h1>
-            <pre>
+            <section>
+                <h1 class="fragment">12 minutes!</h1>
+                <pre>
                 <code class="hljs language-plain" data-trim>
                     64 bytes from 216.58.212.14: icmp_seq=9720 ttl=114
                     time=749147.422 ms
                 </code>
             </pre>
-        </section>
+            </section>
 
-        <section>
-            <h1>Bulkheading</h1>
-            <img src="resiliency/bulkheads.jpg" class="r-stretch"/>
-            <p>
-                <small><a href="https://en.wikipedia.org/wiki/Bulkhead_(partition)">en.wikipedia.org/wiki/Bulkhead_(partition)</a></small>
-            </p>
-        </section>
+            <section>
+                <h1>Bulkheading</h1>
+                <img src="resiliency/bulkheads.jpg" class="r-stretch" />
+                <p>
+                    <small><a
+                            href="https://en.wikipedia.org/wiki/Bulkhead_(partition)">en.wikipedia.org/wiki/Bulkhead_(partition)</a></small>
+                </p>
+            </section>
 
-        <section>
-            <h1>Throttling</h1>
-            <img src="resiliency/throttle.png" class="r-stretch"/>
-            <p>
-                <small><a href="https://en.wikipedia.org/wiki/Throttle">en.wikipedia.org/wiki/Throttle</a></small>
-            </p>
-        </section>
+            <section>
+                <img src="resiliency/titanic.png" class="r-stretch" />
+                <small><a href="https://www.titanic-titanic.com/titanics-watertight-compartments/">source</a></small>
+            </section>
 
-        <section>
-            <h1>Circuit Breaker</h1>
-            <img src="resiliency/circuit-breaker.jpg" class="r-stretch"/>
-            <p>
-                <small><a href="https://en.wikipedia.org/wiki/Circuit_breaker">en.wikipedia.org/wiki/Circuit_breaker</a></small>
-            </p>
-        </section>
+            <section>
+                <h1>Throttling</h1>
+                <img src="resiliency/throttle.png" class="r-stretch" />
+                <p>
+                    <small><a href="https://en.wikipedia.org/wiki/Throttle">en.wikipedia.org/wiki/Throttle</a></small>
+                </p>
+            </section>
 
-        <section>
-            <h1>To consider</h1>
-            <ul>
-                <li>What conditions open it?</li>
-                <li>Does it ever close?</li>
-                <li>Granularity?</li>
-            </ul>
-        </section>
+            <section>
+                <h1>Circuit Breaker</h1>
+                <img src="resiliency/circuit-breaker.jpg" class="r-stretch" />
+                <p>
+                    <small><a
+                            href="https://en.wikipedia.org/wiki/Circuit_breaker">en.wikipedia.org/wiki/Circuit_breaker</a></small>
+                </p>
+            </section>
 
-        <section>
-            <h1>Thundering herd problem</h1>
-            <img src="resiliency/thundering_herd.jpg" class="r-stretch"/>
-            <p>
-                <small><a href="https://www.reddit.com/r/CFB/comments/2q7tj8/game_thread_boca_raton_bowl_northern_illinois/">www.reddit.com/r/CFB/comments/2q7tj8/...</a></small>
-            </p>
-        </section>
+            <section>
+                <h1>To consider</h1>
+                <ul>
+                    <li>What conditions open it?</li>
+                    <li>Does it ever close?</li>
+                    <li>Granularity?</li>
+                </ul>
+            </section>
 
-        <section>
-            <h1>Cache stampede</h1>
-            <blockquote>How a Cache Stampede Caused One of Facebook’s Biggest Outages</blockquote>
-            <img src="resiliency/cache_stampede_fb.webp" class="r-stretch"/>
-            <p>
-                <small>Sources: <a href="https://betterprogramming.pub/how-a-cache-stampede-caused-one-of-facebooks-biggest-outages-dbb964ffc8ed">[1]</a>, 
-                    <a href="https://www.businessinsider.com/how-we-weathered-the-great-facebook-outage-of-2010-2010-9?IR=T#the-outage-had-far-reaching-consequences-7">[2]</a>
-                </small>
-            </p>
-        </section>
+            <section>
+                <h1>Thundering herd problem</h1>
+                <img src="resiliency/thundering_herd.jpg" class="r-stretch" />
+                <p>
+                    <small><a
+                            href="https://www.reddit.com/r/CFB/comments/2q7tj8/game_thread_boca_raton_bowl_northern_illinois/">www.reddit.com/r/CFB/comments/2q7tj8/...</a></small>
+                </p>
+            </section>
 
-        <section>
-            <h1>Part II: Asynchrony</h1>
-        </section>
+            <section>
+                <h1>Cache stampede</h1>
+                <blockquote>How a Cache Stampede Caused One of Facebook’s Biggest Outages</blockquote>
+                <img src="resiliency/cache_stampede_fb.webp" class="r-stretch" />
+                <p>
+                    <small>Sources: <a
+                            href="https://betterprogramming.pub/how-a-cache-stampede-caused-one-of-facebooks-biggest-outages-dbb964ffc8ed">[1]</a>,
+                        <a
+                            href="https://www.businessinsider.com/how-we-weathered-the-great-facebook-outage-of-2010-2010-9?IR=T#the-outage-had-far-reaching-consequences-7">[2]</a>
+                    </small>
+                </p>
+            </section>
 
-        <section>
-            <h1>You won't get a failure</h1>
-            <img src="resiliency/point_finger.jpg" class="r-stretch"/>
-            <h2>if you don't wait for the result</h2>
-        </section>
+            <section>
+                <h1>Part II: Asynchrony</h1>
+            </section>
 
-        <section>
-            <h1>Exceptions</h1>
-            <p>Futures, promises, async/await, streams</p>
-        </section>
+            <section>
+                <h1>You won't get a failure</h1>
+                <img src="resiliency/point_finger.jpg" class="r-stretch" />
+                <h2>if you don't wait for the result</h2>
+            </section>
 
-        <section>
-            <h1>Thread pools</h1>
-            <p>But also:</p>
-            <ul>
-                <li>Coroutines/Goroutine</li>
-                <li>Virtual threads</li>
-                <li>Actors/agents</li>
-            </ul>
-        </section>
+            <section>
+                <h1>Exceptions</h1>
+                <p>Futures, promises, async/await, streams</p>
+            </section>
 
-        <section>
-            <h1>Message queue</h1>
-        </section>
+            <section>
+                <h1>Thread pools</h1>
+                <p>But also:</p>
+                <ul>
+                    <li>Coroutines/Goroutine</li>
+                    <li>Virtual threads</li>
+                    <li>Actors/agents</li>
+                </ul>
+            </section>
 
-        <section>
-            <h1>Receiver is broken...</h1>
-            <ul>
-                <li>retries?</li>
-                <li>timeouts?</li>
-                <li>DLQ</li>
-                <li>head-of-line blocking?</li>
-            </ul>
-        </section>
+            <section>
+                <h1>Message queue</h1>
+            </section>
 
-        <section>
-            <h1>At-least once</h1>
-        </section>
+            <section>
+                <h1>Receiver is broken...</h1>
+                <ul>
+                    <li>retries?</li>
+                    <li>timeouts?</li>
+                    <li>DLQ</li>
+                    <li>head-of-line blocking?</li>
+                </ul>
+            </section>
 
-        <section>
-            <h1>Idempotency</h1>
-            E.g.: <code>Idempotency-Key</code> HTTP Header
-            <p><small><a href="https://datatracker.ietf.org/doc/draft-ietf-httpapi-idempotency-key-header/">datatracker.ietf.org/doc/draft-ietf-httpapi-idempotency-key-header</a></small></p>
-        </section>
+            <section>
+                <h1>At-least once</h1>
+            </section>
 
-        <section>
-            <h1>Outbox pattern</h1>
-        </section>
+            <section>
+                <h1>Idempotency</h1>
+                E.g.: <code>Idempotency-Key</code> HTTP Header
+                <p><small><a
+                            href="https://datatracker.ietf.org/doc/draft-ietf-httpapi-idempotency-key-header/">datatracker.ietf.org/doc/draft-ietf-httpapi-idempotency-key-header</a></small>
+                </p>
+            </section>
 
-        <section>
-            <h1>Part III: distributed systems</h1>
-        </section>
+            <section>
+                <h1>Outbox pattern</h1>
+            </section>
 
-        <section>
-            <h1>Leader election</h1>
-            Leader ≠ singleton worker
-        </section>
+            <section>
+                <h1>Part III: distributed systems</h1>
+            </section>
 
-        <section>
-            <h1>Local database</h1>
-            <p>Think: asynchronous replication, local SQLite</p>
-        </section>
+            <section>
+                <h1>Leader election</h1>
+                Leader ≠ singleton worker
+            </section>
 
-        <section>
-            <h1>Offline-first</h1>
-        </section>
+            <section>
+                <h1>Local database</h1>
+                <p>Think: asynchronous replication, local SQLite</p>
+            </section>
 
-        <section>
-            <h1>Failure backlog</h1>
-        </section>
+            <section>
+                <h1>Offline-first</h1>
+            </section>
 
-        <section>
-            <h1>Gradual startup</h1>
-        </section>
+            <section>
+                <h1>Failure backlog</h1>
+            </section>
 
-        <section>
-            <h1>Liveness vs Readiness</h1>
-        </section>
+            <section>
+                <h1>Gradual startup</h1>
+            </section>
 
-        <section>
-            <h1>Part IV: Architecture</h1>
-        </section>
+            <section>
+                <h1>Liveness vs Readiness</h1>
+            </section>
 
-        <section>
-            <h1>Dry run</h1>
-            <p>aka. simulation</p>
-            <p class="fragment"><code>terraform plan</code></p>
-        </section>
+            <section>
+                <h1>Part IV: Architecture</h1>
+            </section>
 
-        <section>
-            <h1>Compensating transaction</h1>
-        </section>
+            <section>
+                <h1>Dry run</h1>
+                <p>aka. simulation</p>
+                <p class="fragment"><code>terraform plan</code></p>
+            </section>
 
-        <section>
-            <h1>Saga</h1>
-        </section>
+            <section>
+                <h1>Compensating transaction</h1>
+            </section>
 
-        <section>
-            <h1>Throttling side effects</h1>
-            <blockquote>
-                "we sent 700 thousand text messages to one person"
-            </blockquote>
-            <p>
-                <small><a href="https://mastodon.social/@nurkiewicz/109259595653594613">mastodon.social/@nurkiewicz/109259595653594613</a></small>
-            </p>
-        </section>
+            <section>
+                <h1>Saga</h1>
+            </section>
 
-        <section>
-            <h1>Killswitch</h1>
-            <blockquote>
-                Knight Capital took a [...] loss of $440 million in 45 minutes
-            </blockquote>
-            <p><small>
-                <a href="https://en.wikipedia.org/wiki/Knight_Capital_Group#2012_stock_trading_disruption">Knight Capital Group: 2012 stock trading disruption</a>
-            </small></p>
-            <p class="fragment"><small>
-                $1m per 6 seconds. <span class="fragment"><a href="https://www.businessinsider.com/how-rich-is-bill-gates-net-worth-mind-blowing-facts-2019-5?IR=T">Bill Gates makes &lt; $8k per 6 seconds</a></span>
-            </small></p>
-        </section>
+            <section>
+                <h1>Throttling side effects</h1>
+                <blockquote>
+                    "we sent 700 thousand text messages to one person"
+                </blockquote>
+                <p>
+                    <small><a
+                            href="https://mastodon.social/@nurkiewicz/109259595653594613">mastodon.social/@nurkiewicz/109259595653594613</a></small>
+                </p>
+            </section>
 
-        <section>
-            <h1>Graceful degradation</h1>
-        </section>
+            <section>
+                <h1>Killswitch</h1>
+                <blockquote>
+                    Knight Capital took a [...] loss of $440 million in 45 minutes
+                </blockquote>
+                <p><small>
+                        <a href="https://en.wikipedia.org/wiki/Knight_Capital_Group#2012_stock_trading_disruption">Knight
+                            Capital Group: 2012 stock trading disruption</a>
+                    </small></p>
+                <p class="fragment"><small>
+                        $1m per 6 seconds. <span class="fragment"><a
+                                href="https://www.businessinsider.com/how-rich-is-bill-gates-net-worth-mind-blowing-facts-2019-5?IR=T">Bill
+                                Gates makes &lt; $8k per 6 seconds</a></span>
+                    </small></p>
+            </section>
 
-        <section>
-            <h1>Testing resiliency</h1>
-        </section>
+            <section>
+                <h1>Graceful degradation</h1>
+            </section>
 
-        <section>
-            <h1>Chaos engineering</h1>
-            <img src="resiliency/chaos_monkey.png" class="r-stretch"/>
-            <p>
-                <small><a href="https://devops.stackexchange.com/questions/609/who-is-this-chaos-monkey-and-why-did-he-crash-my-server">Who is this Chaos Monkey and why did he crash my server?</a></small>
-            </p>
-        </section>
+            <section>
+                <h1>Testing resiliency</h1>
+            </section>
 
-        <section>
-            <h1>Observability</h1>
-            <p>Death by a thousand dashboards</p>
-            <ul>
-                <li>Metrics</li>
-                <li>Logs</li>
-                <li>Traces</li>
-            </ul>
-        </section>
+            <section>
+                <h1>Chaos engineering</h1>
+                <img src="resiliency/chaos_monkey.png" class="r-stretch" />
+                <p>
+                    <small><a
+                            href="https://devops.stackexchange.com/questions/609/who-is-this-chaos-monkey-and-why-did-he-crash-my-server">Who
+                            is this Chaos Monkey and why did he crash my server?</a></small>
+                </p>
+            </section>
 
-       <section>
-           <h1>Further reading</h1>
-           <ol>
-               <li><a href="https://learn.microsoft.com/en-us/azure/architecture/patterns/">Cloud Design Patterns</a></li>
-               <li><a href="https://resilience4j.readme.io/">Resilience4j</a> (Java)</li>
-               <li><a href="https://www.thepollyproject.org/">Polly</a> (.NET)</li>
-           </ol>
-       </section>
+            <section>
+                <h1>Toxiproxy</h1>
+                <pre>
+                <code class="hljs language-java" data-trim>
+                    Proxy mysqlProxy = 
+                        client.createProxy("mysql", "localhost:13306", "localhost:3306");
+                    mysqlProxy
+                        .toxics()
+                        .latency("latency", DOWNSTREAM, 100)
+                        .setJitter(15);
+                </code>
+            </pre>
+            </section>
 
-       <section>
-            <h1>Thank you!</h1>
-            <img src="resiliency/qr.svg" class="r-stretch cool-img"/>
-            <p>
-                <small>
-                    <a href="https://nurkiewicz.com/slides/resiliency">nurkiewicz.com/slides/resiliency</a>
-                </small>
-            </p>
-        </section>
+            <section>
+                <h1>Observability</h1>
+                <p>Death by a thousand dashboards</p>
+                <ul>
+                    <li>Metrics</li>
+                    <li>Logs</li>
+                    <li>Traces</li>
+                </ul>
+            </section>
+
+            <section>
+                <h1>Part V: Culture</h1>
+                <ul>
+                    <li>Post-mortem</li>
+                    <li>Pre-mortem</li>
+                    <li>Production readiness</li>
+                </ul>
+            </section>
+
+            <section>
+                <h1>Further reading</h1>
+                <ol>
+                    <li><a href="https://learn.microsoft.com/en-us/azure/architecture/patterns/">Cloud Design
+                            Patterns</a></li>
+                    <li><a href="https://resilience4j.readme.io/">Resilience4j</a> (Java)</li>
+                    <li><a href="https://www.thepollyproject.org/">Polly</a> (.NET)</li>
+                </ol>
+            </section>
+
+            <section>
+                <h1>Thank you!</h1>
+                <img src="resiliency/qr.svg" class="r-stretch cool-img" />
+                <p>
+                    <small>
+                        <a href="https://nurkiewicz.com/slides/resiliency">nurkiewicz.com/slides/resiliency</a>
+                    </small>
+                </p>
+            </section>
+
+        </div>
 
     </div>
 
-</div>
-
-<script src="dist/reveal.js"></script>
-<script src="plugin/highlight/highlight.js"></script>
-<script>
-    Reveal.initialize({
-        hash: true,
-        // Learn about plugins: https://revealjs.com/plugins/
-        plugins: [RevealHighlight],
-        width: 1800,
-        margin: 0.08,
-        transition: 'fade',
-        progress: false,
-        controls: false,
-        center: true,
-        slideNumber: 'c/t',
-    });
-</script>
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            // Learn about plugins: https://revealjs.com/plugins/
+            plugins: [RevealHighlight],
+            width: 1800,
+            margin: 0.08,
+            transition: 'fade',
+            progress: false,
+            controls: false,
+            center: true,
+            slideNumber: 'c/t',
+        });
+    </script>
 
 </body>
 
