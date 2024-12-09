@@ -32,6 +32,18 @@ https://www.youtube.com/@DevSkiller/streams
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
         <td class="list">
+            <h3 itemprop="name">Ya!vaConf</h3>
+            <time itemprop="startDate">2024-12-11</time>
+            <h4>
+                <a href="https://yavaconf.com/#agenda">Better call fallback: Designing resilient services</a>
+            </h4>
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr itemscope itemtype="https://schema.org/Event">
+        <td class="list">
             <h3 itemprop="name">monday.com Meetup</h3>
             <time itemprop="startDate">2024-10-21</time>
             <h4>
