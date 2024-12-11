@@ -20,6 +20,9 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
             overflow: hidden;
         }
+        h1, h2, h3, h4 {
+            text-transform: none !important;
+        }
 
     </style>
 </head>
@@ -49,6 +52,10 @@
                     the first woodpecker to come along would destroy civilization
                 </blockquote>
                 <small><a href="https://en.wikiquote.org/wiki/Gerald_Weinberg">Gerald Weinberg</a></small>
+            </section>
+
+            <section>
+                <h1><span class="fragment">Fr</span>agile</h1>
             </section>
 
             <section>
@@ -129,7 +136,13 @@
             </section>
 
             <section>
+                <h1><code>Retry-After</code> HTTP header</h1>
+                <a href="https://nurkiewicz.com/2015/02/retry-after-http-header-in-practice.html">Retry-After HTTP header in practice</a>
+            </section>
+
+            <section>
                 <h1>Exponential backoff</h1>
+                <h3>...and jitter</h3>
             </section>
 
             <section>
@@ -180,7 +193,7 @@
             <section>
                 <h1>To consider</h1>
                 <ul>
-                    <li>What conditions open it?</li>
+                    <li>What conditions open it? 4xx vs 5xx</li>
                     <li>Does it ever close?</li>
                     <li>Granularity?</li>
                 </ul>
@@ -216,11 +229,6 @@
                 <h1>You won't get a failure</h1>
                 <img src="resiliency/point_finger.jpg" class="r-stretch" />
                 <h2>if you don't wait for the result</h2>
-            </section>
-
-            <section>
-                <h1>Exceptions</h1>
-                <p>Futures, promises, async/await, streams</p>
             </section>
 
             <section>
@@ -286,10 +294,6 @@
             </section>
 
             <section>
-                <h1>Gradual startup</h1>
-            </section>
-
-            <section>
                 <h1>Liveness vs Readiness</h1>
             </section>
 
@@ -340,6 +344,7 @@
 
             <section>
                 <h1>Graceful degradation</h1>
+                <p>Tiered services</p>
             </section>
 
             <section>
@@ -372,12 +377,13 @@
 
             <section>
                 <h1>Observability</h1>
-                <p>Death by a thousand dashboards</p>
                 <ul>
                     <li>Metrics</li>
                     <li>Logs</li>
                     <li>Traces</li>
                 </ul>
+                <p>Death by a thousand dashboards</p>
+                <p class="fragment">...and by millions of $ in APM bill</p>
             </section>
 
             <section>
@@ -396,17 +402,15 @@
                             Patterns</a></li>
                     <li><a href="https://resilience4j.readme.io/">Resilience4j</a> (Java)</li>
                     <li><a href="https://www.thepollyproject.org/">Polly</a> (.NET)</li>
+                    <li><a href="https://samnewman.io/books/building-resilient-distributed-systems/">Building Resilient Distributed Systems</a> by Sam Newman</li>
+                    <li><a href="https://se-radio.net/2024/11/se-radio-643-ganesh-datta-on-production-readiness/">SE Radio 643: Ganesh Datta on Production Readiness</a></li>
+                    <li><a href="https://www.atlassian.com/team-playbook/plays/pre-mortem">Pre-mortem project management strategy</a></li>
                 </ol>
             </section>
 
             <section>
                 <h1>Thank you!</h1>
-                <img src="resiliency/qr.svg" class="r-stretch cool-img" />
-                <p>
-                    <small>
-                        <a href="https://nurkiewicz.com/slides/resiliency">nurkiewicz.com/slides/resiliency</a>
-                    </small>
-                </p>
+                <img src="resiliency/YAVA24-OLLM-04.png" class="r-stretch cool-img" />
             </section>
 
         </div>
