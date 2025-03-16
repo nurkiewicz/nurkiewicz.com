@@ -20,18 +20,6 @@ https://www.youtube.com/@DevSkiller/streams
 <table>
     <tr itemscope itemtype="https://schema.org/Event">
         <td class="list">
-            <h3 itemprop="name">The Pragmatics</h3>
-            <time itemprop="startDate">2025-04-01</time>
-            <h4>
-                Better call fallback: budowanie systemów odpornych na błędy
-            </h4>
-        </td>
-        <td>
-            &nbsp;
-        </td>
-    </tr>
-    <tr itemscope itemtype="https://schema.org/Event">
-        <td class="list">
             <h3 itemprop="name">Ya!vaConf</h3>
             <time itemprop="startDate">2024-12-11</time>
             <h4>
