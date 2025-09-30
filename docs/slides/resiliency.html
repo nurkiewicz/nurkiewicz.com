@@ -42,6 +42,32 @@
                 </p>
             </section>
 
+            <section data-visibility="hidden">
+                <h2>About this talk</h2>
+                
+                <p>
+                    Building resilient services by assuming failures will happen and preparing for them. It walks through practical patterns like retries, circuit breakers, bulkheads, idempotency, and outbox, plus how to test and observe them. The goal is to design systems that degrade gracefully instead of breaking completely.
+                </p>
+            </section>
+
+            <section data-visibility="hidden">
+
+                <p>
+                    The talk focuses on designing services that can survive and recover from failures instead of pretending they won’t happen. It shows why the “happy path” mindset is dangerous in production, where rare bugs surface quickly at scale. Engineers are guided through a set of proven resilience techniques: retries with backoff and jitter, circuit breakers, timeouts, throttling, and bulkheading to contain failures. For asynchronous systems, it covers queues, DLQs, idempotency, and the outbox pattern to handle retries without duplication. In distributed systems, it discusses leader election, offline-first strategies, and clear separation of liveness vs. readiness probes. Architectural safeguards like dry runs, sagas, compensating transactions, graceful degradation, and killswitches are highlighted as essential for containing damage when things go wrong. Testing resiliency with chaos engineering tools and monitoring through metrics, logs, and traces are stressed as key practices. Finally, the cultural side: post-mortems, pre-mortems, and production readiness—ensures teams take failures seriously and learn from them. The message is simple: failures are inevitable, but with the right patterns, they don’t have to take your system down.
+                </p>
+            </section>
+
+            <section data-visibility="hidden">
+                <h3>Key takeaways from this talk:</h3>
+                <ul>
+                    <li>Failures Are the Norm, Not the Exception</li>
+                    <li>Core Resiliency Patterns: fallbacks, retries, circuit breakers, bulkheading</li>
+                    <li>Asynchronous & Distributed System Strategies</li>
+                    <li>Architectural & Operational Safeguards</li>
+                    <li>Cultural Practices for resilient programming</li>
+                </ul>
+            </section>
+
             <section>
                 <h1>You keep using that word <em>happy path</em></h1>
             </section>
