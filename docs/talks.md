@@ -20,6 +20,18 @@ https://www.youtube.com/@DevSkiller/streams
 <table>
     <tr itemscope itemtype="https://schema.org/Event">
         <td class="list">
+            <h3 itemprop="name">WAWTECH</h3>
+            <time itemprop="startDate">2025-12-16</time>
+            <h4>
+                TBA
+            </h4>
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr itemscope itemtype="https://schema.org/Event">
+        <td class="list">
             <h3 itemprop="name">WarsawJS Meetup #132</h3>
             <time itemprop="startDate">2025-11-12</time>
             <h4>
