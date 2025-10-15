@@ -20,6 +20,18 @@ https://www.youtube.com/@DevSkiller/streams
 <table>
     <tr itemscope itemtype="https://schema.org/Event">
         <td class="list">
+            <h3 itemprop="name">WarsawJS Meetup #132</h3>
+            <time itemprop="startDate">2025-11-12</time>
+            <h4>
+                <a href="https://warsawjs.com/">The Illusion of Immortality: Temporal's Magic for Reliable Workflows</a>
+            </h4>
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr itemscope itemtype="https://schema.org/Event">
+        <td class="list">
             <h3 itemprop="name">Ya!vaConf</h3>
             <time itemprop="startDate">2024-12-11</time>
             <h4>
