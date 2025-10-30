@@ -21,9 +21,9 @@ https://www.youtube.com/@DevSkiller/streams
     <tr itemscope itemtype="https://schema.org/Event">
         <td class="list">
             <h3 itemprop="name">WAWTECH</h3>
-            <time itemprop="startDate">2025-12-16</time>
+            <time itemprop="startDate">2025-12-17</time>
             <h4>
-                TBA
+                Better call fallback: Designing resilient services
             </h4>
         </td>
         <td>
