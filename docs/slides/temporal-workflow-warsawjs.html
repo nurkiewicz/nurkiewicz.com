@@ -62,11 +62,11 @@
             <section>
                 <h1>The Illusion of Immortality</h1>
                 <h2>Temporal's Magic for Reliable Workflows</h2>
-                <h4>Tomasz Nurkiewicz</h4>
-                <h4>Software eng. at Monday.com</h4>
+                <h4>Tomasz Nurkiewicz @ Monday.com</h4>
                 <p>
                     <a href="https://nurkiewicz.com">nurkiewicz.com</a>,
-                    <a href="https://fosstodon.org/@nurkiewicz">@nurkiewicz@fosstodon.org</a>
+                    <a href="https://fosstodon.org/@nurkiewicz">@nurkiewicz@fosstodon.org</a>,
+                    <a href="https://www.linkedin.com/in/nurkiewicz/">linkedin.com/in/nurkiewicz/</a>
                 </p>
             </section>
 
@@ -75,8 +75,11 @@
             </section>
 
             <section>
-                <h1>Implement this</h1>
-                <pre class="fragment">
+                <img src="temporal-workflow/spidermen-meme.jpg" class="r-stretch cool-img" />
+            </section>
+
+            <section>
+                <pre>
                     <code class="hljs language-js" data-trim>
                         sendRegistrationLink(user);
                         sleep(86400);
@@ -85,10 +88,6 @@
                         }
                     </code>
                 </pre>
-            </section>
-
-            <section>
-                <img src="temporal-workflow/spidermen-meme.jpg" class="r-stretch cool-img" />
                 <p>Demo time<small><sup>01</sup></small> </p>
             </section>
 
@@ -97,6 +96,7 @@
                 <ul>
                     <li>App can crash</li>
                     <li><code>sleep</code> takes resources</li>
+                    <li>No resiliency</li>
                     <li>Untestable</li>
                 </ul>
             </section>
@@ -105,15 +105,6 @@
                 <h1>The illusion of a server running forever</h1>
                 <p>Meet Temporal workflow engine</p>
                 <p><small><sup>*</sup>Do not confuse with JavaScript Temporal API</small></p>
-            </section>
-
-            <section>
-                <h1>Not your grandpas workflow engine</h1>
-                <ul>
-                    <li>Microsoft BizTalk Server</li>
-                    <li>BPMN</li>
-                    <li>Airflow</li>
-                </ul>
             </section>
 
             <section>
@@ -162,24 +153,11 @@
             </section>
 
             <section>
-                <h1>Supported languages</h1>
-                <ul>
-                    <li>Go</li>
-                    <li>Java</li>
-                    <li>PHP</li>
-                    <li>Python</li>
-                    <li>TypeScript</li>
-                    <li>.NET</li>
-                    <li>Ruby</li>
-                </ul>
-            </section>
-
-            <section>
                 <h1>Under the hood</h1>
             </section>
 
             <section>
-                <h1>Server vs. worker vs. client</h1>
+                <h1>Server vs. worker</h1>
             </section>
 
             <section>
@@ -193,17 +171,8 @@
             </section>
 
             <section>
-                <h1>State rehydration</h1>
-                <p>Demo time</p>
-            </section>
-
-            <section>
                 <h1>Worker node</h1>
                 <p>Polls the server. Does the work</p>
-            </section>
-
-            <section>
-                <h1>Client</h1>
             </section>
 
             <section>
@@ -265,29 +234,12 @@
             </section>
 
             <section>
-                <h1>Materials</h1>
-                <ul>
-                    <li><a href="https://temporal.io/">temporal.io</a></li>
-                    <li><a href="https://github.com/temporalio/samples-typescript">github.com/temporalio/samples-typescript</a></li>
-                    <li><a href="https://mikhail.io/2020/10/temporal-open-source-workflows-as-code/">Temporal: Open Source Workflows as Code</a></li>
-                    <li><a href="https://mikhail.io/2020/10/practical-approach-to-temporal-architecture/">A Practical Approach to Temporal Architecture</a></li>
-                </ul>
-            </section>
-
-            <section>
-                <h1>Alternatives</h1>
-                <ul>
-                    <li><a href="https://restate.dev/">Restate.dev</a></li>
-                    <li><a href="https://learn.microsoft.com/en-us/azure/azure-functions/durable/">Azure Durable Functions</a></li>
-                </ul>
-            </section>
-
-            <section>
                 <h1>Thank you!</h1>
                 <img src="temporal-workflow/qr.svg" class="r-stretch cool-img" />
                 <p>
                     <a href="https://nurkiewicz.com">nurkiewicz.com</a>,
-                    <a href="https://fosstodon.org/@nurkiewicz">@nurkiewicz@fosstodon.org</a>
+                    <a href="https://fosstodon.org/@nurkiewicz">@nurkiewicz@fosstodon.org</a>,
+                    <a href="https://www.linkedin.com/in/nurkiewicz/">linkedin.com/in/nurkiewicz/</a>
                 </p>
                 <hr/>
                 <p>
