@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Saiku – taking OLAP databases into 21st century</title>
+
+    <meta name="author" content="Tomasz Nurkiewicz">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <script>
+      document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+  </head>
+
+  <body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41796111-1', 'nurkiewicz.github.io');
+  ga('send', 'pageview');
+
+</script>
+
+    <div class="reveal">
+      <div class="slides">
+
+        <!-- INTRODUCTION -->
+
+        <section>
+          <h1>async-retry</h1>
+          <h2>Asynchronous retrying<br/>for Java 8</h2>
+          <hr/>
+          <h2>Tomasz Nurkiewicz</h2>
+          <h3><a href="http://nurkiewicz.com">nurkiewicz.com</a> | <a href="https://twitter.com/tnurkiewicz">@tnurkiewicz</a></h3>
+          <hr/>
+          <p>Website: <a href="https://github.com/nurkiewicz/async-retry">github.com/nurkiewicz/async-retry</a></p>
+          <p>Slides: <a href="http://nurkiewicz.github.io/talks/2014/wjug-osb">nurkiewicz.github.io/talks</a></p>
+        </section>
+
+        <section>
+          <h2>Quick example</h2>
+          <pre><code data-trim contenteditable>
+ScheduledExecutorService scheduler = //...
+RetryExecutor executor = new AsyncRetryExecutor(scheduler);
+
+CompletableFuture&lt;Socket&gt; future = executor.getWithRetry(() ->
+  new Socket("localhost", 8080)
+);
+
+future.thenAccept(socket ->
+  System.out.println("Connected! " + socket)
+);
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Logging</h2>
+          <pre><code data-trim contenteditable>
+TRACE Retry 0 failed after 3ms, scheduled next retry in 508ms (Sun Jul 21 21:01:12 CEST 2013)
+java.net.ConnectException: Connection refused
+    ...
+TRACE Retry 1 failed after 0ms, scheduled next retry in 934ms (Sun Jul 21 21:01:13 CEST 2013)
+java.net.ConnectException: Connection refused
+    ...
+TRACE Retry 2 failed after 0ms, scheduled next retry in 1919ms (Sun Jul 21 21:01:15 CEST 2013)
+java.net.ConnectException: Connection refused
+    ...
+TRACE Successful after 2 retries, took 0ms and returned: Socket[addr=localhost/127.0.0.1,port=8080,localport=46332]
+
+Connected! Socket[addr=localhost/127.0.0.1,port=8080,localport=46332]
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Setup - immutable!</h2>
+          <pre><code data-trim contenteditable>
+ScheduledExecutorService scheduler = 
+  Executors.newSingleThreadScheduledExecutor();
+
+RetryExecutor executor = new AsyncRetryExecutor(scheduler)
+    .retryOn(SocketException.class)
+    .withExponentialBackoff(500, 2)  //500ms times 2 after each retry
+    .withUniformJitter()             //add between +/- 100 ms randomly
+    .withMaxDelay(10_000)            //10 seconds
+    .withMaxRetries(20);
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Rationale</h2>
+          <ul>
+            <li>Non-blocking</li>
+            <li>Scalable</li>
+            <li>Easy to use</li>
+            <li>Flexible</li>
+            <li>Embrace immutability</li>
+            <li>Used Java 8, <em>before it was cool</em></li>
+          </ul>
+          <hr/>
+          <p>See also: <a href="http://docs.spring.io/spring-batch/2.1.x/apidocs/org/springframework/batch/retry/support/RetryTemplate.html"><code>RetryTemplate</code> from Spring</a></p>
+        </section>
+
+        <section>
+          <h2>Composable</h2>
+          <pre><code data-trim contenteditable>
+CompletableFuture&lt;String&gt; f1 = 
+    executor.getWithRetry(ctx -&gt; unreliable());
+CompletableFuture&lt;String&gt; f2 = 
+    executor.getWithRetry(ctx -&gt; slow());
+
+f1.acceptEither(f2, first -> {
+    //first to succeed
+});
+          </code></pre>
+        </section>
+
+        <section>
+          <h2><code>abortOn()</code> / <code>retryOn()</code></h2>
+          <pre><code data-trim contenteditable>
+executor.
+    retryOn(IOException.class).
+    abortOn(FileNotFoundException.class).
+    retryOn(SQLException.class).
+    abortOn(DataTruncation.class).
+    getWithRetry(ctx -> dao.load(42));
+          </code></pre>
+        </section>
+
+        <section>
+          <h2><code>OptimisticLock Exception</code></h2>
+          <pre><code data-trim contenteditable>
+executor.
+    retryOn(OptimisticLockException.class).
+    withNoDelay().
+    getWithRetry(ctx -> dao.optimistic());
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Retry predicates</h2>
+          <pre><code data-trim contenteditable>
+executor.
+    abortIf(throwable ->
+        throwable instanceof SQLException &amp;&amp;
+            throwable.getMessage().contains("ORA-00911")    
+    ).
+    retryIf(t -> t.getCause() != null);
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Delays (backoff)</h2>
+          <ul>
+            <li>No delay between retries</li>
+            <li>Fixed delay</li>
+            <li>Growing linearly</li>
+            <li>Growing exponentially</li>
+            <li>Min/max</li>
+            <li>Optionally keep fixed rate</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Random jitter</h2>
+          <pre><code data-trim contenteditable>
+executor.withUniformJitter(100)     //ms
+          </code></pre>
+          <h3>...or:</h3>
+          <pre><code data-trim contenteditable>
+executor.withProportionalJitter(0.1)        //10%
+          </code></pre>
+        </section>
+
+        <section>
+          <h2><code>RetryContext</code></h2>
+          <pre><code data-trim contenteditable>
+executor.
+    getWithRetry(ctx -> 
+        new Socket("localhost", 
+                   8080 + ctx.getRetryCount())).
+    thenAccept(System.out::println);
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>In Spring framework</h2>
+          <pre><code data-trim contenteditable>
+@Bean
+public RetryExecutor retryExecutor() {
+    return new AsyncRetryExecutor(scheduler()).
+        retryOn(SocketException.class).
+        withExponentialBackoff(500, 2);
+}
+
+@Bean(destroyMethod = "shutdownNow")
+public ScheduledExecutorService scheduler() {
+    return Executors.newSingleThreadScheduledExecutor();
+}
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Thank you!</h2>
+          <pre><code data-trim contenteditable>
+&lt;dependency&gt;
+    &lt;groupId&gt;com.nurkiewicz.asyncretry&lt;/groupId&gt;
+    &lt;artifactId&gt;asyncretry&lt;/artifactId&gt;
+    &lt;version&gt;0.0.5&lt;/version&gt;
+&lt;/dependency&gt;
+          </code></pre>
+          <p>Website: <a href="https://github.com/nurkiewicz/async-retry">github.com/nurkiewicz/async-retry</a></p>
+          <p>Slides: <a href="http://nurkiewicz.github.io/talks/2014/wjug-osb">nurkiewicz.github.io/talks</a></p>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        width: 1024,
+        height: 768,
+        margin: 0.05,
+        controls: false,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'linear',
+        transitionSpeed: 'fast',
+        gestureDelay: 0,
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>

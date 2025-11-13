@@ -1,0 +1,676 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Tour around concurrency in Java</title>
+
+		<meta name="author" content="Tomasz Nurkiewicz">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+	    <script>
+	      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	      ga('create', 'UA-41796111-1', 'nurkiewicz.github.io');
+	      ga('send', 'pageview');
+
+	    </script>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Tour around concurrency in Java</h1>
+					<p>Tomasz Nurkiewicz</p>
+					<small>
+						<a href="http://www.nurkiewicz.com">www.nurkiewicz.com</a> 
+						| <a href="http://twitter.com/tnurkiewicz">@tnurkiewicz</a>
+						| <a href="mailto:nurkiewicz@gmail.com">nurkiewicz@gmail.com</a>
+					</small>
+				</section>
+
+				<section>
+					<h2>Plain threads</h2>
+					<pre><code class="hljs">Thread thread = new Thread(
+    () -> doSomeWork(), 
+    "MyWorker");
+thread.setDaemon(true);
+thread.start();</code></pre>
+				</section>
+
+				<section>
+					<h2>When JVM terminates?</h2>
+				</section>
+
+				<section>
+					<h2>Worker queue</h2>
+					<pre><code class="hljs">class Worker implements Runnable {
+	
+  private final BlockingQueue&lt;Work&gt; queue;
+  
+  public void run() {
+    try {
+      while (!Thread.currentThread().isInterrupted()) {
+        Work work = queue.take();
+        work.perform();
+      }
+    } catch (InterruptedException e) {
+      //interrupting Worker
+    }
+  }
+}</code></pre>
+				</section>
+
+				<section>
+					<h2>Interrupting worker queue</h2>
+					<pre><code class="hljs" data-trim>
+Thread thread = new Thread(new Worker());
+//...
+thread.interrupt();
+					</code></pre>
+				</section>
+
+				<section>
+					<h2><code>ExecutorService</code></h2>
+					<pre><code class="hljs">ExecutorService executor = Executors.newSingleThreadExecutor();
+Work work = //...
+executor.submit(work::perform);
+//...
+executor.shutdownNow();</code></pre>
+					<pre><code class="hljs">@FunctionalInterface
+interface Work {
+    void perform()
+};</code></pre>
+				</section>
+
+				<section>
+					<h2>Configuring thread pool - defaults</h2>
+					<pre><code class="hljs">ExecutorService executor =
+  Executors.newFixedThreadPool(10);</code></pre>
+				</section>
+
+				<section>
+					<h2><em>Inline</em></h2>
+					<h2><kbd>⌘</kbd>+<kbd>⌥</kbd>+<kbd>N</kbd></h2>
+					<p>or</p>
+					<h2><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>N</kbd></h2>
+				</section>
+
+				<section>
+					<h2>Configuring thread pool</h2>
+					<pre><code class="hljs">ExecutorService executor = new ThreadPoolExecutor(
+  10,                             // core size
+  10,                             // max size
+  0L, MILLISECONDS,               // keep alive
+  new LinkedBlockingQueue&lt;&gt;(100), // work queue
+  threadFactory,
+  rejectedHandler
+);</code></pre>
+				</section>
+
+				<section>
+					<h2>Always bound queue</h2>
+					<pre><code class="hljs">new LinkedBlockingQueue&lt;&gt;(100)</code></pre>
+				</section>
+
+				<section>
+					<h2>Custom <code>RejectedExecution Handler</code></h2>
+					<pre><code class="hljs">RejectedExecutionHandler rejectedHandler =
+        (runnable, executor) -&gt;
+            log.warn("Rejected task {}", runnable);</code></pre>
+				</section>
+
+				<section>
+					<h2>Custom <code>ThreadFactory</code></h2>
+					<pre><code class="hljs">import com.google.common.util.concurrent.ThreadFactoryBuilder;
+
+ThreadFactory threadFactory = new ThreadFactoryBuilder()
+    .setNameFormat("MyPool-%d")
+    .setDaemon(true)
+    .build();</code></pre>
+				</section>
+
+				<section>
+					<h2>Don't swallow exceptions</h2>
+					<pre><code class="hljs" data-trim>
+Future&lt;Object&gt; f1 = executor.submit(work::perform);
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Monitor queue length</h2>
+					<pre><code class="hljs">BlockingQueue&lt;Runnable&gt; queue = new LinkedBlockingDeque&lt;&gt;(100);
+
+Gauge&lt;Integer&gt; queueLen = queue::size;
+metricRegistry.register("queue", queueLen);
+</code></pre>
+				</section>
+
+				<section>
+					<h2>Micrometer</h2>
+					<pre><code class="hljs" data-trim>
+var executor = Executors.newFixedThreadPool(20);
+ExecutorServiceMetrics.monitor(
+		registry, 
+		executor, 
+		"executors", 
+		Tags.of("key", "value"));
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Other metrics</h2>
+					<ul>
+						<li>Thread utilization</li>
+						<li>Execution latency</li>
+						<li>Execution duration</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2><code>parallelStream()</code></h2>
+					<pre><code class="hljs" data-trim>
+veryLargeList
+  .parallelStream()
+  .filter(s -> s.startsWith("John"))
+  .findAny();
+					</code></pre>
+				</section>
+
+				<section>
+					<h2><code>parallelStream()</code> don'ts</h2>
+					<ul>
+						<li><strong>Don't</strong> run any I/O</li>
+						<li><strong>Don't</strong> use in shared JVM, like application server</li>
+						<li class="fragment"><strong>Don't...</strong> <span class="fragment">just don't use it</span></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2><code>ForkJoinPool</code></h2>
+					<p>Divide and conquer</p>
+				</section>
+
+				<section>
+					<h2><code>ForkJoinPool</code></h2>
+					<h3><code>commonPool()</code></h3>
+					<pre><code class="hljs" data-trim>
+public class ForkJoinPool extends AbstractExecutorService {
+
+  static final ForkJoinPool common;
+
+  public static ForkJoinPool commonPool() {
+    return common;
+  }
+
+  //...
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2><code>CompletableFuture</code></h2>
+					<pre><code class="hljs" data-trim>
+						Future&lt;Object&gt; f1 = executor.submit(work::perform);
+					</code></pre>
+
+vs.
+					<pre><code class="hljs" data-trim>
+CompletableFuture&lt;Object&gt; f2 =
+  CompletableFuture.supplyAsync(work::perform, executor);
+					</code></pre>
+				</section>
+
+				<section>
+					<h2><code>CompletableFuture</code></h2>
+					<pre><code class="hljs" data-trim>
+CompletableFuture&lt;User&gt; userFuture =
+  CompletableFuture.supplyAsync(() -&gt;
+    loadUser(uuid), executorService);
+
+CompletableFuture&lt;GeoLocation&gt; geoFuture =
+  CompletableFuture.supplyAsync(this::trackDevice);
+					</code></pre>
+
+					<pre class="fragment"><code class="hljs" data-trim>
+CompletableFuture&lt;Recommendations&gt; recommendFuture =
+  userFuture.thenCombine(geoFuture,
+    (User user, GeoLocation geo) -&gt;
+      buildRecommendations(user, geo));
+					</code></pre>
+
+					<pre class="fragment"><code class="hljs" data-trim>
+CompletableFuture&lt;String&gt; bestFuture =
+     recommendFuture.thenCompose(
+       (Recommendations r) -&gt; guessBest(r));
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>RxJava / Reactor</h2>
+					<pre><code class="hljs" data-trim>
+Flowable&lt;Tweet&gt; tweets = allTweets();
+
+Flowable&lt;List&lt;String&gt;&gt; batches = tweets
+  .filter(tweet -&gt; tweet.hasHashTag("#java"))
+  .sample(Duration.ofMillis(100))
+  .map(Tweet::contents)
+  .buffer(10);
+  					</code></pre>
+				</section>
+
+				<section>
+					<h2>RxJava / Reactor (cont.)</h2>
+					<pre><code class="hljs" data-trim>
+Mono
+	.fromCallable(this::blockingMethod)
+	.timeout(ofMillis(300))
+	.retry(4)
+	.timeout(ofSeconds(1))
+                	</code></pre>
+				</section>
+
+				<section>
+					<h2>GPars - data flow</h2>
+					<pre><code class="hljs" data-trim>
+def customerVar = new DataflowVariable&lt;Customer&gt;()
+def addressVar = new DataflowVariable&lt;Address&gt;()
+def recommendationVar = new DataflowVariable&lt;Recommendation&gt;()
+
+task {
+  Customer customer = customerVar.val
+  Address address = addressVar.val
+  recommendationVar &lt;&lt; prepareRecommendation(customer, address)
+}
+
+task { customerVar &lt;&lt; loadById(42) }
+
+task { addressVar &lt;&lt; track() }
+
+println recommendationVar.val
+  					</code></pre>
+				</section>
+
+				<section>
+					<h2><code>async/await</code></h2>
+				</section>
+
+				<section>
+					<pre><code class="hljs" data-trim>
+public CompletableFuture&lt;Boolean&gt; buyItem(
+			String itemTypeId, int cost)
+    {
+        return bank.decrement(cost)
+            .thenCompose(result -> {
+                if(!result) {
+                    return completedFuture(false);
+                }
+                return inventory.giveItem(itemTypeId)
+                	.thenApply(res -> true);
+            });
+    }
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Electronic Arts?</h2>
+					<table>
+						<tr>
+							<td class="fragment">
+								<img src="img/ea-fifa-20.jpg" height="300"/>
+							</td>
+							<td class="fragment">
+								<img src="img/ea-battlefield-4.jpg" height="300"/>
+							</td>
+							<td class="fragment">
+								<img src="img/ea-the-sims-4.jpg" height="300"/>
+							</td>
+						</tr>
+					</table>
+					<h3 class="fragment">
+						<a href="https://github.com/electronicarts/ea-async">github.com/electronicarts/ea-async</a>
+					</h3>
+				</section>
+
+				<section>
+					<pre><code class="hljs" data-trim>
+    public CompletableFuture&lt;Boolean&gt; buyItem(
+    			String itemTypeId, int cost)
+    {
+        if(!await(bank.decrement(cost))) {
+            return completedFuture(false);
+        }
+        try {
+            await(inventory.giveItem(itemTypeId));
+            return completedFuture(true);
+        } catch (Exception ex) {
+            await(bank.refund(cost));
+            throw new AppException(ex);
+        }
+    }
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>😢</h2>
+					<code>java -javaagent:ea-async-1.2.3.jar</code>
+				</section>
+
+				<section>
+					<h2>Agents (Clojure)</h2>
+					<pre><code class="hljs" data-trim>
+(def agn (agent ()))
+(dotimes [i 5]
+  (send agn #(conj % i)))
+(-> agn deref print)
+  					</code></pre>
+				</section>
+
+				<section>
+					<h2><code>core.async</code> (Clojure)</h2>
+					<pre><code class="hljs" data-trim>
+(require '[clojure.core.async :as async])
+(def ch (async/chan 128))
+(async/&gt;!! ch "Foo")
+(async/&lt;!! ch)  ;; "Foo"
+  					</code></pre>
+				</section>
+
+				<section>
+					<h2>STM (Clojure)</h2>
+					<pre><code class="hljs" data-trim>
+(def accounts [
+    (ref {:name "Alice", :age 20, :balance 100})
+    (ref {:name "Bob",   :age 23, :balance 200})
+    (ref {:name "Eve",   :age 21, :balance 50})
+    (ref {:name "Jane",  :age 24, :balance 0})
+])
+  					</code></pre>
+				</section>
+
+				<section>
+					<h2>STM cont.</h2>
+					<pre><code class="hljs" data-trim>
+(defn change-balance-by [amount account]
+  (update-in account [:balance] #(+ % amount)))
+					</code></pre>
+					<pre><code class="hljs" data-trim>
+(defn transfer-cash [from to amount]
+  (dosync
+    (alter from (partial change-balance-by (- amount)))
+    (alter to (partial change-balance-by amount))))
+					</code></pre>
+				</section>
+
+				<section>
+					
+					<section>
+						<h2>Actors - example</h2>
+						<pre><code class="hljs" data-trim>
+class Counter extends Actor {
+
+  private[this] var counter = 0
+ 
+  override def receive = {
+    case x: Int =>
+    	counter += x
+        sender() ! counter
+  }
+}
+						</code></pre>
+					</section>
+
+				</section>
+
+				<section>
+					<h2>Kotlin - coroutines</h2>
+					<pre><code class="hljs" data-trim>
+GlobalScope.launch {
+    delay(1000)
+    println("Hello")
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Lightweight threads</h2>
+					<pre><code class="hljs" data-trim>
+for (i in 1..1_000_000)
+    GlobalScope.launch {
+        someWork()
+    }
+					</code></pre>
+				</section>
+
+				<section>
+					<pre><code class="hljs" data-trim>
+suspend fun buyItem(itemTypeId: String, cost: Int): Boolean {
+    if(bank.decrement(cost)) {
+        return false
+    }
+    try {
+        inventory.giveItem(itemTypeId)
+        return true
+    } catch (ex: Exception) {
+        bank.refund(cost)
+        throw AppException(ex);
+    }
+}
+					</code></pre>
+					<pre class="fragment"><code class="hljs" data-trim>
+suspend fun decrement(...)
+suspend fun giveItem(...)
+suspend fun refund(...)
+					</code></pre>
+
+				</section>
+
+				<section>
+					<h2>Project Loom</h2>
+					<a href="https://wiki.openjdk.java.net/display/loom/Main">wiki.openjdk.java.net/display/loom/Main</a>
+				</section>
+
+				<section>
+					<h4><code>java.lang.Continuation</code></h4>
+					<img src="img/fibers.png"/>
+				</section>
+
+				<section>
+					<h2>Let's get practical!</h2>
+				</section>
+
+				<section>
+					<h2>Spring Boot 2.0</h2>
+					<pre><code class="hljs" data-trim>
+public interface ReactiveUserRepository
+		extends ReactiveCrudRepository&lt;User, String&gt; {
+
+    Mono&lt;User&gt; findById(long id);
+
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Infinite stream with <code>@Tailable</code></h2>
+					<pre><code class="hljs" data-trim>
+public interface ReactiveUserRepository
+		extends ReactiveCrudRepository&lt;User, String&gt; {
+
+    @Tailable
+    Flux&lt;User&gt; findBy();
+
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Spring WebFlux</h2>
+					<pre><code class="hljs" data-trim>
+@Bean
+RouterFunction&lt;ServerResponse&gt; mapping(
+			ReactiveUserRepository repository) {
+    return route(
+            GET("/users/{id}"), request -> Mono
+                    .justOrEmpty(request.pathVariable("id"))
+                    .map(Long::parseLong)
+                    .flatMap(id -> repository.findByid(id)
+                    .flatMap(p -> ok().body(fromObject(p))
+                    .switchIfEmpty(notFound().build()))
+    );
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Useful utilities</h2>
+					<h3><code>LongAdder</code></h3>
+					<pre><code class="hljs" data-trim>
+LongAdder adder = new LongAdder();
+adder.increment();
+adder.add(42);
+adder.sum();
+adder.sumThenReset();
+					</code></pre>
+				</section>
+
+				<section>
+					<h2><code>AtomicInteger</code></h2>
+					<h3>Good ol' <code>compareAndSet()</code></h3>
+					<pre><code class="hljs" data-trim>
+AtomicInteger atomic = new AtomicInteger();
+//...
+int cur;
+do {
+    cur = atomic.get();
+} while (!atomic.compareAndSet(cur, cur * 2));
+					</code></pre>
+				</section>
+
+				<section>
+					<h2><code>AtomicInteger</code></h2>
+					<h3><code>updateAndGet()</code></h3>
+					<pre><code class="hljs" data-trim>
+AtomicInteger atomic = new AtomicInteger();
+//...
+atomic.updateAndGet(x -> x * 2);
+					</code></pre>
+				</section>
+
+				<section>
+					<h2><code>java.util.Map</code></h2>
+					<h3><code>merge()</code></h3>
+					<pre><code class="hljs" data-trim>
+Map&lt;String, Integer&gt; wordCount = new ConcurrentHashMap&lt;&gt;();
+
+wordCount.merge("Foo", 1, (x, y) -&gt; x + y);
+wordCount.merge("Bar", 1, (x, y) -&gt; x + y);
+wordCount.merge("Foo", 1, (x, y) -&gt; x + y);
+wordCount.merge("Foo", 1, (x, y) -&gt; x + y);
+					</code></pre>
+					<p>Results:</p>
+					<pre><code class="hljs" data-trim>
+{Foo=3, Bar=1}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2><code>java.util.Map</code></h2>
+					<h3><code>merge()</code> implementation</h3>
+					<pre><code class="hljs" data-trim>
+V merge(K key, V value, BiFunction&lt;V, V, V&gt; mapping) {
+    V oldValue = get(key);
+    V newValue = (oldValue == null) ?
+	   value :
+	   mapping.apply(oldValue, value);
+    put(key, newValue);
+    return newValue;
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2><code>ConcurrentHashMap</code></h2>
+					<img src="img/merge.png"/>
+				</section>
+
+				<section>
+					<h2>Summary</h2>
+					<p>Do you even need concurrency?</p>
+				</section>
+
+				<section>
+					<h1>Thank you</h1>
+					<hr/>
+					<img src="img/qrcode.png" class="stretch"/>
+					<p><a href="http://nurkiewicz.github.io/talks/2018/concurrency">nurkiewicz.github.io/talks/2018/concurrency</a></p>
+					<small>
+						<a href="http://www.nurkiewicz.com">www.nurkiewicz.com</a> 
+						| <a href="http://twitter.com/tnurkiewicz">@tnurkiewicz</a>
+						| <a href="mailto:nurkiewicz@gmail.com">nurkiewicz@gmail.com</a>
+					</small>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: false,
+				progress: false,
+				history: true,
+				center: true,
+
+				transition: 'fade', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>The Dark Side of Scala</title>
+
+    <meta name="author" content="Tomasz Nurkiewicz">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <script>
+      document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+  </head>
+
+  <body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41796111-1', 'nurkiewicz.github.io');
+  ga('send', 'pageview');
+
+</script>
+
+    <div class="reveal">
+      <div class="slides">
+
+        <!-- INTRODUCTION -->
+
+        <section>
+          <h1>The Dark Side of Scala</h1>
+          <h2>Tomasz Nurkiewicz</h2>
+          <hr/>
+          <blockquote>Programming is the art of telling another human what one wants the computer to do</blockquote>
+          <small>- Donald Knuth</small>
+          <hr/>
+          <p>Slides: <a href="http://nurkiewicz.github.io/talks/2014/scalar">nurkiewicz.github.io/talks/2014/scalar</a></p>
+        </section>
+
+        <section>
+          <img src="img/daniel.jpg"/>
+          <p><em>Daniel</em> - <a href="http://en.wikipedia.org/wiki/Briton_Rivière">Briton Rivière</a> (1872)</p>
+        </section>
+
+        <section>
+          <h1>Tomasz Nurkiewicz</h1>
+          <table>
+            <tr>
+              <td style="vertical-align:top"><img src="img/tn.jpg" height="300"></td>
+              <td style="vertical-align:top">
+                <ul>
+                  <li>I love Scala</li>
+                  <li>My language of choice since 2010</li>
+                  <li>Used in production</li>
+                  <li><a href="http://www.nurkiewicz.com" target="_blank">www.nurkiewicz.com</a></li>
+                  <li><a href="https://twitter.com/tnurkiewicz">@tnurkiewicz</a></li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </section>
+
+        <section>
+          <h1>FUD</h1>
+          <table style="width: 100%">
+            <tr>
+              <td style="text-align: right"><img src="img/rodjohnson.jpg" height="250"/></td>
+              <td><img src="img/dispatch.png"  height="250"/></td>
+            </tr>
+            <tr>
+              <td style="text-align: right"><img src="img/paulphillips.jpg" height="250"/></td>
+              <td><img src="img/paulphillips-slides.png" height="250"/></td>
+            </tr>
+          </table>
+        </section>
+
+        <!-- LANGUAGE QUIRKS -->
+
+        <section>
+          <h1><code>val</code><br/> is better than Java's<br/> <code>final</code>?</h1>
+        </section>
+
+        <section>
+          <h1>JavaScript hoisting</h1>
+          <pre><code data-trim contenteditable>
+var r = double(1) + triple(1);
+
+function double(x) {return x * 2;}
+
+var triple = function(x) {return x * 3;}
+          </code></pre>
+          <div class="fragment">
+            <h3>Throws:</h3>
+            <pre><code data-trim contenteditable>TypeError: triple is not a function</code></pre>
+          </div>
+        </section>
+
+        <section>
+          <h2>Hoisting in Scala?!</h2>
+          <pre><code data-trim contenteditable>
+class Vals {
+  val r = double(1) + triple(1)
+
+  def double(x: Int) = x * 2
+
+  val triple = (x: Int) => x * 3
+}
+          </code></pre>
+
+          <div class="fragment">
+            <h3>Throws:</h3>
+          <pre><code data-trim contenteditable>
+java.lang.NullPointerException
+  at Vals.&lt;init&gt;(Vals.scala:2)
+</code></pre>
+        </section>
+
+        <section>
+          <h2>Simplified</h2>
+          <pre><code data-trim contenteditable>
+class Vals {
+  println(answer)
+
+  private[this] val answer = 42
+}          </code></pre>
+          <h3 class="fragment">
+            Prints... 0
+          </h3>
+        </section>
+
+        <section>
+          <h1><code>return</code> in lambda</h1>
+          <pre><code data-trim contenteditable>
+def samples(xs: TraversableOnce[Int]) {
+  xs map {x => return x * 10} foreach println
+}
+          </code></pre>
+          <p>Never prints anything</p>
+          <hr/>
+          <blockquote>The Scala Language Specification<br/>6.20 Return Expressions</blockquote>
+        </section>
+
+        <!-- COLLECTIONS -->
+
+        <section>
+          <h1>Collections</h1>
+          <img src="img/scala-collections.jpg"/>
+        </section>
+
+        <section>
+          <p><code>java.util.ArrayList</code></p>
+          <img src="img/list-java.png"/>
+        </section>
+
+        <section>
+          <p><code>scala.collection.immutable.List</code></p>
+          <img src="img/list-scala.png"/>
+          <p>Source: <a href="https://github.com/tpolecat/examples/raw/master/doc/List.pdf">github.com/tpolecat/examples/raw/master/doc/List.pdf</a></p>
+        </section>
+
+        <section>
+          <h1>Seq<em>-ish</em></h1>
+          <pre><code data-trim contenteditable>
+val p = Seq(1,2,3).permutations
+if (p.size &lt; 10) {
+  //p.size is 6
+  p foreach println
+}
+          </code></pre>
+          <p>Never prints anything</p>
+        </section>
+
+        <section>
+          <h2><code>map</code> in Clojure</h2>
+          <pre><code data-trim contenteditable>
+(defn map [f coll]
+  (lazy-seq
+    (if-not (empty? coll)
+      (cons 
+        (    f (first coll)) 
+        (map f (rest  coll))))))
+              </code></pre>
+          <h2>...Haskell...</h2>
+          <pre><code data-trim contenteditable>
+map :: (a -> b) -> [a] -> [b]
+map _ []     = []
+map f (x:xs) = f x : map f xs
+          </code></pre>  
+        </section>
+
+        <section>
+          <h2>...and Scala</h2>
+          <pre><code data-trim contenteditable>
+def map[B, That](f: A => B)
+                (implicit bf: CanBuildFrom[Repr, B, That]): That = {
+  def builder = {
+    val b = bf(repr)
+    b.sizeHint(this)
+    b
+  }
+  val b = builder
+  for (x &lt;- this) 
+    b += f(x)
+  b.result
+}
+
+def repr: Repr = this.asInstanceOf[Repr]
+          </code></pre>
+        </section>
+
+        <!-- TYPE SYSTEM -->
+
+        <section>
+          <h1>Type system</h1>
+        </section>
+
+        <section>
+          <ul>
+            <li>Invariant/covariant/contravariant <em>types</em> (<code>T</code>, <code>+T</code> and <code>-T</code>)</li>
+            <li class="fragment">Refined <em>types</em> (<code>new Foo {...}</code>)</li>
+            <li class="fragment">Structural <em>types</em> (<code>x: {def y: Int}</code>)</li>
+            <li class="fragment">Path dependant <em>types</em> (<code>a.B</code>)</li>
+            <li class="fragment">Specialized <em>types</em> (<code>@specialized</code>)</li>
+            <li class="fragment">Self <em>types</em> (<code>this =></code>)</li>
+            <li class="fragment">Projection <em>types</em> (<code>A#B</code>)</li>
+            <li class="fragment">Existential <em>types</em> (<code>M[_]</code>)</li>
+            <li class="fragment"><em>Type bounds</em> (<code>&lt;:</code>, <code>&gt;:</code>)</li>
+            <li class="fragment"><em>Type constraints</em> (<code>=:=</code>, <code>&lt;:&lt;</code> and <code>&lt;%&lt;</code>)</li>
+            <li class="fragment"><em>Type members</em> (<code>type T</code>)</li>
+            <li class="fragment"><em>Type aliases</em> (<code>type T = Int</code>)</li>
+            <li class="fragment"><em>Type classes</em> (<code> (implicit ...) </code>)</li>
+            <li class="fragment">View bounds (<code>&lt;%</code>)</li>
+            <li class="fragment">Higher kinded <em>types</em> (<code>* => *</code>)</li>
+            <li class="fragment">F-Bounded <em>type</em> polymorphism (<code>M[T &lt;: M[T]]</code>)</li>
+            <li class="fragment">...</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Compilation error, 7K long</h3>
+          <pre style="font-size: 25%">
+[error] C:\Work\CompStak\CompStak-services\persistence\src\main\scala\com\compstak\persistence\Tables.scala:1628: type mismatch;
+[error]  found   : scala.slick.collection.heterogenous.HCons[Long,scala.slick.collection.heterogenous.HCons[Long,scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[java.sql.Timestamp],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[String,scala.slick.collection.heterogenous.HCons[Int,scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[Long],scala.slick.collection.heterogenous.HCons[String,scala.slick.collection.heterogenous.HCons[Option[...],scala.slick.collection.heterogenous.HCons[...,...]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+[error]  required: Tables.this.CompProposalRawRow
+[error]     (which expands to)  scala.slick.collection.heterogenous.HCons[Long,scala.slick.collection.heterogenous.HCons[Long,scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[java.sql.Timestamp],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[String,scala.slick.collection.heterogenous.HCons[Int,scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[String],scala.slick.collection.heterogenous.HCons[Option[Long],scala.slick.collection.heterogenous.HCons[String,scala.slick.collection.heterogenous.HCons[Option[...],scala.slick.collection.heterogenous.HCons[...,...]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+[error]     &lt;&lt;[Long] :: &lt;&lt;[Long] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[java.sql.Timestamp] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;[String] :: &lt;&lt;[Int] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[Long] :: &lt;&lt;[String] :: &lt;&lt;?[Long] :: &lt;&lt;?[Long] :: &lt;&lt;?[Int] :: &lt;&lt;?[Int] :: &lt;&lt;?[String] :: &lt;&lt;?[Boolean] :: &lt;&lt;[Boolean] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;[Boolean] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: &lt;&lt;?[Long] :: &lt;&lt;?[String] :: &lt;&lt;?[String] :: HNil
+[error]              ^
+</pre>
+          <p>Source: <a href="https://groups.google.com/d/topic/scalaquery/GIptm2LUExg/discussion">groups.google.com/d/topic/scalaquery/GIptm2LUExg/discussion</a></p>
+        </section>
+
+        <section>
+          <h2>Compiles:</h2>
+            <pre><code data-trim contenteditable>
+def f(x: Int) {}
+def f(s: String) {}
+
+Seq(1, 2) foreach f
+            </code></pre>
+          <h2>NOT:</h2>
+            <pre><code data-trim contenteditable>
+def f(x: => Int) {}
+def f(s: => String) {}
+
+Seq(1, 2) foreach f
+            </code></pre>
+        </section>
+
+        <!-- SYNTAX -->
+
+        <section>
+          <h1>Syntax</h1>
+        </section>
+
+        <section>
+          <h1>Macros in Clojure</h1>
+          <pre><code data-trim contenteditable>
+(defmacro log-expr [s]
+  `(println (str "Value of " '~s " is " ~s)))
+          </code></pre>
+          <h2>Result:</h2>
+          <pre><code data-trim contenteditable>
+user=> (log-expr (inc 2))
+Value of (inc 2) is 3
+          </code></pre>
+        </section>
+
+        <section>
+          <h1>Macros in Scala</h1>
+          <pre><code data-trim contenteditable>
+object LogMacros {
+  import language.experimental.macros
+  import reflect.macros.whitebox.Context
+
+  def logExpr(s: Any) = macro logExprInternal
+
+  private def logExprInternal(c: Context)
+                             (exp: c.Expr[Any]): c.Expr[Unit] = {
+    import c.universe._
+    val text = show(exp.tree)
+    val literal = Literal(Constant(text))
+    val str = c.Expr[String](literal)
+    reify {
+      println(s"Value of ${str.splice} is ${exp.splice}")
+    }
+  }
+}
+          </code></pre>
+        </section>
+
+        <section>
+          <h1>One does not compile</h1>
+          <pre><code data-trim contenteditable>
+seq foreach println
+seq.foreach{println}
+seq.foreach(println)
+seq.foreach{println(_)}
+seq.foreach(println(_))
+seq.foreach(x => println(x))
+seq.foreach(x: Int => println(x))
+seq foreach{x: Int => println(x)}
+seq.foreach{x: Int => println(x)}
+seq foreach{case x => println(x)}
+seq.foreach{case x => println(x)}
+seq foreach{case x: Int => println(x)}
+seq.foreach{case x: Int => println(x)}
+          </code></pre>
+        </section>
+
+        <!-- POOR PRACTICES -->
+
+        <section>
+          <h1>Poor practices</h1>
+        </section>
+        
+        <section>
+          <h1><code>object</code></h1>
+          <quote>almost, but not quite, entirely unlike <strong>singleton</strong></quote>
+        </section>
+
+        <section>
+          <h1><code>object</code> do's</h1>
+          <pre><code data-trim contenteditable>
+object Util {
+
+  val answer = 42
+
+  def sinDeg(angleDeg: Double) = math.sin(angleDeg * math.Pi / 180.0)
+
+  def props(target: ActorRef) = 
+    Props(new MyActor(target)).withMailbox("my-mailbox")
+
+}
+          </code></pre>
+        </section>
+
+        <section>
+          <h1><code>object</code> dont's</h1>
+          <pre><code data-trim contenteditable>
+object Util {
+
+  def query(sql: Query) = //...
+
+  def sendTweet(msg: String) {/*...*/}
+
+  def logWarn(event: LogEvent) {/*...*/}
+
+  def randBool() = math.random &lt; 0.5
+
+}
+          </code></pre>
+        </section>
+
+        <section>
+          <h1>Pattern matching or downcasting?</h1>
+          <pre><code data-trim contenteditable>
+public static Date extract(Object obj) throws ParseException {
+  long time;
+  if (obj instanceof Date) {
+    time =  ((Date) obj).getTime();
+  } else if (obj instanceof Long) {
+    time = (Long)obj;
+  } else if (obj instanceof Calendar) {
+    time = ((Calendar)obj).getTimeInMillis();
+  } else if (obj instanceof String) {
+    time = format.parse((String) obj).getTime();
+  } else {
+    throw new IllegalArgumentException("Unrecognized: " + obj);
+  }
+  return new Date(time);
+}
+          </code></pre>
+        </section>
+
+        <section>
+          <h1>Now it's OK?</h1>
+          <pre><code data-trim contenteditable>
+def extract(obj: Any): Date = {
+  val time = obj match {
+    case d: Date     => d.getTime
+    case x: Long     => x
+    case c: Calendar => c.getTimeInMillis
+    case s: String   => format.parse(s).getTime
+    case _           =>
+      throw new IllegalArgumentException(s"Unrecognized: $obj")
+  }
+  new Date(time)
+}
+
+          </code></pre>
+        </section>
+
+        <section>
+          <h1>Immutable<em>-ish</em></h1>
+          <pre><code data-trim contenteditable>
+case class MSet(s: Set[Int])
+case class MSeq(s: Seq[Int])
+case class MMap(m: Map[Int, Int])
+          </code></pre>
+
+          <div class="fragment">
+            <h3>Huh?</h3>
+            <pre><code data-trim contenteditable>
+  val msg = MSeq(new collection.mutable.ArrayBuffer())
+            </code></pre>
+          </div>
+
+          <div class="fragment">
+            <h3>Remember:</h3>
+            <pre><code data-trim contenteditable>import collection.immutable.Seq</code></pre>
+          </div>
+        </section>
+
+        <!-- SUMMARY -->
+
+        <section>
+          <h1>Summary</h1>
+          <img src="img/daniel2.jpg"/>
+          <p><em>Daniel's Answer to the King</em> - <a href="http://en.wikipedia.org/wiki/Briton_Rivière">Briton Rivière</a> (1890)</p>
+        </section>
+
+        <section>
+          <h1>There is hope</h1>
+          <ul>
+            <li>Step in a good direction</li>
+            <li>Best JVM language so far</li>
+            <li>Competitors: <a href="http://groovy.codehaus.org/">Groovy</a>,
+              <a href="http://kotlin.jetbrains.org/">Kotlin</a>, 
+              <a href="http://ceylon-lang.org/">Ceylon</a>, 
+              <a href="http://fantom.org">Fantom</a>, 
+              <a href="http://gosu-lang.org">Gosu</a>, 
+              <a href="https://www.eclipse.org/xtend/">Xtend</a>, ...</li>
+            <li>Modularized language features</li>
+            <li>Safe and productive</li>
+            <li>But has to slow down</li>
+            <li>...and sometimes let go</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Further readings</h1>
+          <ol>
+            <li><a href="http://parleys.com/play/51c1ffe7e4b0d38b54f46231">Rod Johnson - <em>Keynote - Scala in 2018</em></a></li>
+            <li><a href="http://www.youtube.com/watch?v=uiJycy6dFSQ">Paul Phillips - <em>Scala Collections: Why Not?</em></a></li>
+            <li><a href="http://stackoverflow.com/questions/1722726">Chris Marshall - <em>Is the Scala 2.8 collections library a case of "the longest suicide note in history"?</em></a></li>
+            <li><a href="http://yz.mit.edu/wp/true-scala-complexity/">Yang Zhang - <em>True Scala complexity</em></a></li>
+            <li><a href="http://overwatering.org/blog/2013/12/scala-1-star-would-not-program-again/">Giles Alexander - <em>Scala — 1★ Would Not Program Again</em></a></li>
+            <li><a href="http://techblog.bozho.net/?p=1293">Bozhidar Bozhanov - <em>I Don’t Like Scala</em></a></li>
+            <li><a href="http://blog.joda.org/2011/11/scala-feels-like-ejb-2-and-other.html">Stephen Colebourne - <em>Scala feels like EJB 2, and other thoughts</em></a></li>
+            <li><a href="http://blog.joda.org/2011/11/real-life-scala-feedback-from-yammer.html">Stephen Colebourne - <em>Real life Scala feedback from Yammer</em></a></li>
+            <li><a href="http://steve-yegge.blogspot.com/2008/06/rhinos-and-tigers.html">Steve Yegge - <em>Rhinos and Tigers</em></a></li>
+          </ol>
+          <hr/>
+          <p>Slides: <a href="http://nurkiewicz.github.io/talks/2014/scalar">nurkiewicz.github.io/talks/2014/scalar</a></p>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: false,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'linear',
+        transitionSpeed: 'fast',
+        gestureDelay: 0,
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>

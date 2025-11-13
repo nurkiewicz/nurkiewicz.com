@@ -1,0 +1,725 @@
+<!doctype html>
+<html lang="pl">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Short history of time - Tomasz Nurkiewicz - Confitura 2013</title>
+
+        <meta name="author" content="Tomasz Nurkiewicz">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+            document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41796111-1', 'nurkiewicz.github.io');
+  ga('send', 'pageview');
+
+</script>
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+
+                <section>
+                    <h1>Short history of time</h1>
+                    <h3>Tomasz Nurkiewicz</h3>
+                    <p>
+                        <a href="mailto:nurkiewicz@gmail.com">nurkiewicz@gmail.com</a> | <a href="http://twitter.com/tnurkiewicz">@tnurkiewicz</a>
+                    </p>
+                    <p class="dynamic-iso8601">2013-07-06T11:40:00.000Z</p>
+                </section>
+
+                <section>
+                    <h2>Tomasz Nurkiewicz</h2>
+                    <strong><a href="http://nurkiewicz.blogspot.com">nurkiewicz.blogspot.com</a></strong>
+                    <hr/>
+                    <table style="display: inline-block">
+                        <tr><td>
+                            <img src="img/tn.jpg" width="300"/>
+                        </td><td style="vertical-align: top">
+                    <ul>
+                        <li><a href="mailto:nurkiewicz@gmail.com">nurkiewicz@gmail.com</a> | <a href="http://twitter.com/tnurkiewicz">@tnurkiewicz</a></li>
+                        <li>6+ years with Java</li>
+                        <li>Scala, JavaScript, Clojure...</li>
+                        <li>Back-end, data analysis and visualization</li>
+                        <li><a href="http://scala.net.pl/">scala.net.pl</a> | <a href="https://github.com/nurkiewicz">github.com/nurkiewicz</a></li>
+                        <li>Used to be active on <a href="http://stackoverflow.com/users/605744">StackOverflow</a></li>
+                        <li>Third time speaker on Javarsovia/Confitura</li>
+                        <li>Working in Oslo (<a href="https://kezzler.com/career">we are hiring!</a>)</li>
+                    </ul>
+                        </td></tr>
+                    </table>
+                </section>
+
+                <section>
+                    <h2>Bad day at Microsoft</h2>
+                    <img src="img/7824.Outage2.png-550x0.png"/>
+                    <br/>
+                    <a href="http://blogs.msdn.com/b/windowsazure/archive/2012/03/09/summary-of-windows-azure-service-disruption-on-feb-29th-2012.aspx" class="source">blogs.msdn.com/b/windowsazure/archive/2012/03/09/summary-of-windows-azure-service-disruption-on-feb-29th-2012.aspx</a>
+                </section>
+                
+                <section>
+                    <h2>Program result?</h2>
+                    <h3>Java:</h3>
+                    <pre><code>
+Calendar cal = new GregorianCalendar(2012, FEBRUARY, 29, 15, 0);
+cal.add(YEAR, 1);
+System.out.println(cal.getTime());
+                    </code></pre>
+                    <h3>C#:</h3>
+                    <pre><code>
+DateTime cal = new DateTime(2012, 2, 29, 15, 0, 0).AddYears(1);
+Console.WriteLine(cal);
+                    </code></pre>
+                </section>
+                
+                <section>
+                    <ul>
+                        <li>February 28th, 2013, 15:00</li>
+                        <li>February 29th, 2013, 15:00</li>
+                        <li>March 1st, 2013, 00:00</li>
+                        <li>March 1st, 2013, 15:00</li>
+                        <li><code>IllegalArgumentException</code></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>True story</h2>
+                    <blockquote cite="http://samcik.blox.pl/2012/03/Dzien-ktorego-nie-ma-Sprawdz-co-bank-wykreslil.html">
+                         <p>&ldquo;[...] in accordance with Terms and Conditions [...] interest is paid for actual number of days funds were on account [...] however it is assumed that year consists of 365 days.</p>
+                         <p>Year 2012 has 366 days, thus <br/><strong>interest is not paid for 29th of February</strong>.</p>
+                         <p>Yours faithfully, <em>[some] Bank</em>&rdquo;</p>
+                    </blockquote>
+                    <a href="http://samcik.blox.pl/2012/03/Dzien-ktorego-nie-ma-Sprawdz-co-bank-wykreslil.html" class="source">samcik.blox.pl/2012/03/Dzien-ktorego-nie-ma-Sprawdz-co-bank-wykreslil.html</a>
+                </section>
+
+                <section>
+                    <h2>Bad second for Linux</h2>
+                    <img src="img/hetznerpowergraph1.png"/>
+                    <br/>
+                    <a href="http://www.greenprophet.com/2012/07/leap-second-bug-consumes-megawatts-of-electricity/"  class="source">www.greenprophet.com/2012/07/leap-second-bug-consumes-megawatts-of-electricity/</a>
+                </section>
+
+                <section>
+                    <h2>Leap seconds</h2>
+                    <img src="img/Leap_Second_-_June_30,_2012.png"/>
+                    <br/>
+                    <a href="http://en.wikipedia.org/wiki/Leap_second" class="source">en.wikipedia.org/wiki/Leap_second</a>
+                </section>
+
+                <section>
+                    <h2>Inne błędy</h2>
+                    <ul>
+                        <li>Problem of year <strong>2000</strong> (Y2K)</li>
+                        <li>Problem of year <strong>2011</strong> (Taiwan)</li>
+                        <li>Problem of year <strong>2038</strong> (<code>Integer.MAX_VALUE</code>)</li>
+                        <li>Problem of year <strong>2042</strong> (IBM S/370)</li>
+                        <li>Problem of year <strong>2107</strong> (MS-DOS FAT)</li>
+                        <li>Problem of September 9th, '99 (<strong>9/9/99</strong>)</li>
+                    </ul>
+                    <hr/>
+                    <a href="http://en.wikipedia.org/wiki/Time_formatting_and_storage_bugs" class="source">en.wikipedia.org/wiki/Time_formatting_and_storage_bugs</a>
+                </section>
+                
+                <section>
+                    <h2>Understand the domain</h2>
+                    <h3>...of every problem</h3>
+                </section>
+
+                <section>
+                    <h2>Date representation</h2>
+                    <img src="img/The-Persistence-of-Memory-1931.jpg" height="400"/>
+                    <br/>
+                    <a href="http://www.edali.org/persistence-of-memory.jsp" class="source">www.edali.org/persistence-of-memory.jsp</a>
+                </section>
+
+                <section>
+                    <ul>
+                        <li>Seconds since arbitrary moment in time</li>
+                        <li>Calendar system</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Time axis</h2>
+                    <img src="img/time-arrow.png" style="border: 0"/>
+                </section>
+
+                <section>
+                    <h2>Time "0"?</h2>
+                    <table style="font-size: 16px; display: inline-block"><tr><td>
+<table>
+<tr>
+<th><h5>Date</h5></th>
+<th><h5>Used in</h5></th>
+</tr>
+<tr>
+<td>0. January 0</td>
+<td>MATLAB
+</td>
+</tr>
+<tr>
+<td>1. January 0</td>
+<td>Symbian, Turbo DB</td>
+</tr>
+<tr>
+<td>1. January 1</td>
+<td>Microsoft .NET, Go</td>
+</tr>
+<tr>
+<td>1. January 1601</td>
+<td>NTFS, COBOL, Win32/Win64</td>
+</tr>
+<tr>
+<td>1. January 1753</td>
+<td>Microsoft SQL Server</td>
+</tr>
+<tr>
+<td>31. December 1840</span></td>
+<td>MUMPS</td>
+</tr>
+<tr>
+<td>17. November 1858</td>
+<td>VMS, United States Naval Observatory, DVB SI, astronomia
+</td>
+</tr>
+<tr>
+<td>30. December 1899</td>
+<td>Microsoft COM DATE, Object Pascal</td>
+</tr>
+<tr>
+<td>0. January 1900</td>
+<td>Microsoft Excel, Lotus 1-2-3
+</td>
+</tr>
+<tr>
+<td>1. January 1900</td>
+<td>NTP, IBM CICS, Mathematica, RISC OS, Common Lisp
+</td>
+</tr>
+<tr>
+<td>1. January 1904</td>
+<td>LabVIEW, Mac OS 9, Palm OS, MP4</td>
+</tr>
+<tr>
+<td>1. January 1950</td>
+<td>SEGA Dreamcast</td>
+</tr>
+</table>
+</td><td>
+                <table>
+<tr>
+<th><h5>Date</h5></th>
+<th><h5>Used in</h5></th>
+</tr>
+<tr>
+<td>1. January 1960</td>
+<td>S-Plus, SAS
+</td>
+</tr>
+<tr>
+<td>31. December 1967</td>
+<td>Pick OS
+</td>
+</tr>
+<tr>
+<td><strong>1. January 1970</strong></td>
+<td><strong>Linux, Mac OS X, C, Java, JavaScript,<br/>
+Perl, PHP, Python, Tcl, ActionScript</strong>
+</td>
+</tr>
+<tr>
+<td>1. January 1978</td>
+<td>AmigaOS
+</td>
+</tr>
+<tr>
+<td>1. January 1980</td>
+<td>DOS, OS/2, FAT16 I FAT32, VOS
+</td>
+</tr>
+<tr>
+<td>6. January 1980</td>
+<td>Qualcomm BREW, GPS
+</td>
+</tr>
+<tr>
+<td>1. January 1981</td>
+<td>Acorn NetFS</td>
+</tr>
+<tr>
+<td>1. January 1984</td>
+<td>CiA® CANopen®</td>
+</tr>
+<tr>
+<td>22. August 1999</td>
+<td>Satelita Galileo
+</td>
+</tr>
+<tr>
+<td>1. January 2000</td>
+<td>PostgreSQL, AppleSingle, AppleDouble
+</td>
+</tr>
+<tr>
+<td>1. January 2001</td>
+<td>Apple Cocoa</td>
+</tr>
+</table>
+</td></table><br/>
+<a href="http://en.wikipedia.org/wiki/Epoch_date" class="source">en.wikipedia.org/wiki/Epoch_date</a>
+                </section>
+                
+                <section>
+                    <h2><code>java.util.Date</code></h2>
+                    <a href="http://en.wikipedia.org/wiki/Calendar_date">en.wikipedia.org/wiki/Calendar_date</a>:
+                    <blockquote cite="http://en.wikipedia.org/wiki/Calendar_date">
+                        &ldquo;A <strong>date</strong> in a calendar is a reference to a particular day represented within a calendar system. [...] A particular day may be represented by a different date in another calendar&rdquo;
+                    </blockquote>
+                    <h3>vs.</h3>
+                    <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html">docs.oracle.com/javase/7/docs/api/java/util/Date.html</a>:
+                    <blockquote cite="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html">
+                        &ldquo;The class <code>Date</code> represents a specific instant in time, with millisecond precision.&rdquo;
+                    </blockquote>
+                </section>
+
+                <section>
+                    <h2>Time zones</h2>
+                    <code>java.util.Timezone</code>
+                </section>
+                
+                <section>
+                    <h3>Time difference between Warsaw and Sydney?</h3>
+                    <img src="img/time_95.jpg"/>
+                    <br/>
+                    <a href="http://www.travel.com.hk/region/timezone.htm" class="source">www.travel.com.hk/region/timezone.htm</a>
+                </section>
+
+                <section>
+                    <h2>DST (<em>Daylight saving time</em>)</h2>
+                    <img src="img/DST_Countries_Map.png"/>
+                    <br/>
+                    <a href="http://en.wikipedia.org/wiki/Daylight_saving_time" class="source">en.wikipedia.org/wiki/Daylight_saving_time</a>
+                </section>
+
+                <section>
+                    <h2>Daylight saving time</h2>
+                    <div>
+                        <table style="display: inline-block">
+                            <tr>
+                                <td>
+                                    <img src="img/Begin_CEST_Transparent.png"/>
+                                </td>
+                                <td>
+                                    <img src="img/End_CEST_Transparent.png"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Winter &rarr; Summer
+                                </td>
+                                <td>
+                                    Summer &rarr; Winter
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <a href="http://en.wikipedia.org/wiki/Daylight_saving_time" class="source">en.wikipedia.org/wiki/Daylight_saving_time</a>
+                </section>
+
+                <section>
+                    <h3>...so?</h3>
+                    <img src="img/time_95.jpg"/>
+                    <br/>
+                    <a href="http://www.travel.com.hk/region/timezone.htm" class="source">www.travel.com.hk/region/timezone.htm</a>
+                </section>
+
+                <section>
+                    <h2>Representation</h2>
+                    <pre><code>
+final TimeZone tz = TimeZone.getTimeZone("Europe/Warsaw");
+                    </code></pre>
+                    <h3>WRONG!</h3>
+                    <pre><code>
+TimeZone.getTimeZone("GMT+01:00");
+
+TimeZone.getTimeZone("Europe/warsaw");
+                    </code></pre>
+                </section>
+                    <section>
+                        <section>
+                        <h2>Calendar date</h2>
+                        <h3><code>java.util.Calendar</code></h3>
+                        </section>
+                        <section>
+                        <h2>Leap years - WRONG!</h2>
+                        <pre><code>
+    def leapYear(year: Int): Boolean = 
+        year % 4 == 0
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Leap years - poor</h2>
+                        <pre><code>
+    def leapYear(year: Int): Boolean = 
+        (year % 4 == 0 && year % 100 != 0) || 
+        (year % 400 == 0)
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Leap years</h2>
+                        <pre><code>
+    def leapYear(year: Int): Boolean = 
+        new GregorianCalendar(year, JANUARY, 1).
+            getActualMaximum(DAY_OF_YEAR) > 365
+                        </code></pre>
+                    </section>
+                </section>
+                
+                <section>
+                    <h2>Puzzle</h2>
+                    <pre><code>
+Calendar c = Calendar.getInstance();
+
+System.out.println(c.get(Calendar.YEAR));
+                    </code></pre>
+                </section>
+                
+                <section>
+                    <h2>We have (Gregorian) year 2013</h2>
+                    <pre><code>
+$ java ...
+2013
+                    </code></pre>
+                    <h2>Meanwhile in Thailand...</h2>
+                    <pre><code>
+$ java -Duser.country=TH -Duser.language=th ...
+2556
+                    </code></pre>
+                    <h2>...and in Japan...</h2>
+                    <pre><code>
+$ java -Duser.country=JP -Duser.language=ja -Duser.variant=JP ...
+25
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Better:</h3>
+                    <pre><code>
+Calendar c = new GregorianCalendar();
+                    </code></pre>
+                    <h3>Even better:</h3>
+                    <pre><code>
+Calendar c = new GregorianCalendar(timeZone);
+                    </code></pre>
+                    <h3>Just in case...</h3>
+                    <pre><code>
+Calendar c = new GregorianCalendar(timeZone, locale);
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2><code>Date</code> vs. <code>Calendar</code>?</h2>
+                        <ul>
+                            <li><em>"...after some another event"</em></li>
+                            <li><em>"...within 10 seconds"</em></li>
+                            <li><em>"...within an hour"</em></li>
+                            <li><em>"...within 24 hours"</em></li>
+                            <li><em>"...within one day"</em></li>
+                            <li><em>"...in 2013"</em></li>
+                            <li><em>"...after 17:00"</em></li>
+                            <li><em>"...on Friday"</em></li>
+                        </ul>
+                </section>
+
+                <section>
+                    <h2>Practice</h2>
+                </section>
+
+				<section>
+					<section>
+						<h2>Joda Time</h2>
+						<pre><code>
+final DateTime yearLater = new DateTime(2012, 2, 29, 15, 0).plusYears(1);
+						</code></pre>
+						<a href="http://joda-time.sourceforge.net/">joda-time.sourceforge.net</a>
+					</section>
+					
+					                <section>
+                    <h2>Joda Time and JAX-WS</h2>
+                    <pre><code>
+import org.joda.time.DateTime;
+import javax.xml.bind.DatatypeConverter;
+
+public class XsdJodaTimeConverter {
+    public static DateTime unmarshal(String dateTime) {
+        final long millis = DatatypeConverter.
+                parseDate(dateTime).
+                getTimeInMillis();
+        return new DateTime(millis);
+    }
+
+    public static String marshal(DateTime calendar) {
+        return DatatypeConverter.printDate(
+                calendar.toGregorianCalendar()
+        );
+    }
+}
+                    </code></pre>
+					</section>
+
+					<section>
+						<h2>JAX-WS: <code>.xjb</code> file</h2>
+					<pre><code>
+&lt;bindings version=&quot;1.0&quot; xmlns=&quot;http://java.sun.com/xml/ns/jaxb&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
+    &lt;globalBindings&gt;
+        &lt;javaType xmlType=&quot;xs:dateTime&quot;
+                  name=&quot;org.joda.time.DateTime&quot;
+                  parseMethod=&quot;XsdJodaTimeConverter.unmarshal&quot;
+                  printMethod=&quot;XsdJodaTimeConverter.marshal&quot;/&gt;
+    &lt;/globalBindings&gt;
+&lt;/bindings&gt;
+					</code></pre></section>
+
+					<section>
+						<h2>Joda Time and JPA 2.1</h2>
+						<pre><code>
+import org.joda.time.Instant;
+import javax.persistence.AttributeConverter;
+import javax.persistence.Converter;
+import java.util.Date;
+
+@Converter(autoApply = true)
+public class JodaTimeConverter implements AttributeConverter&lt;Instant, Date&gt; {
+
+    @Override
+    public Date convertToDatabaseColumn(Instant attr) {
+        return attr != null? attr.toDate(): null;
+    }
+
+    @Override
+    public Instant convertToEntityAttribute(Date dbData) {
+        return dbData != null? new Instant(dbData): null;
+    }
+}
+						</code></pre>
+					</section>
+					
+				</section>
+
+                <section>
+                    <h2>Testing - tools</h2>
+                    <ul>
+                        <li>Controlled time source (<a href="http://www.javapractices.com/topic/TopicAction.do?Id=234"><em>fake system clock</em></a>)</li>
+                        <li>"Exotic" default time zone</li>
+                        <li>Don't sleep! (<del><code>Thread.sleep()</code></del>), <a href="http://code.google.com/p/awaitility/">Awaitility</a></li>
+                        <li>ScalaCheck</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Testing - edge cases</h2>
+                    <ul>
+                        <li>Beginning/end of month/year</li>
+                        <li>Weekends</li>
+                        <li>29th of February</li>
+                        <li>Time zones, DST</li>
+                    </ul>
+                </section>
+                
+                <section>
+                    <h2>ScalaCheck and ScalaTest</h2>
+                    <pre><code data-trim>
+implicit override val generatorDrivenConfig = 
+	PropertyCheckConfig(minSuccessful = 10000, workers = 4)
+
+test("any date +1 year and -1 year should yield same date back") {
+    check { 
+        random: Date => {
+            val plusMinusYear = new GregorianCalendar
+            plusMinusYear.setTime(random)
+            plusMinusYear.add(YEAR, 1)
+            plusMinusYear.add(YEAR, -1)
+            random == plusMinusYear.getTime
+        }
+    }
+}
+                    </code></pre>
+                    <h4>Negative result</h4>
+                    <pre><code>
+Falsified after 2665 passed tests:
+    arg0 = Mon Feb 29 03:21:22 CET 73843340
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Events in the future</h2>
+                    <ul>
+                        <li><a href="http://www.activiti.org/">Activiti</a>, <a href="http://www.jboss.org/jbpm/">jBPM</a>, ...</li>
+                        <li>Quartz</li>
+                        <li>JMS</li>
+                    </ul>
+                </section>
+                
+                <section>
+                    <h2>Quartz scheduler</h2>
+                    <pre><code>
+newTrigger() 
+    .startAt(futureDate(1, YEAR))
+    .build();
+                    </code></pre>
+                    <a href="http://quartz-scheduler.org/documentation/quartz-2.1.x/tutorials/tutorial-lesson-05" class="source">quartz-scheduler.org/documentation/quartz-2.1.x/tutorials/tutorial-lesson-05</a>
+                </section>
+
+                <section>
+                    <h2>JMS with delay</h2>
+                    <pre><code>
+MessageProducer producer = session.createProducer(destination);
+TextMessage message      = session.createTextMessage("...hello, delayed!");
+message.setLongProperty(ScheduledMessage.AMQ_SCHEDULED_DELAY, oneYearMillis);
+producer.send(message);
+                    </code></pre>
+                    <a href="http://activemq.apache.org/delay-and-schedule-message-delivery.html" class="source">http://activemq.apache.org/delay-and-schedule-message-delivery.html</a>
+                </section>
+
+                <section>
+                    <h2><em>Bonus / Computus</em></h2>
+                    <pre><code>
+(defn easter [year]
+  (let [
+    a       (mod year 19)
+    b       (Math/floor (/ year 100))
+    c       (mod year 100)
+    d       (Math/floor (/ b 4))
+    e       (mod b 4)
+    f       (Math/floor (/ (+ b 8) 25))
+    g       (Math/floor (/ (inc (- b f)) 3))
+    h       (mod (+ (- (+ (* 19 a) b) d g) 15) 30)
+    i       (Math/floor (/ c 4))
+    k       (mod c 4)
+    L       (mod (- (+ 32 (* 2 e) (* 2 i)) h k) 7)
+    m       (Math/floor (/ (+ a (* 11 h) (* 22 L)) 451))
+    n       (- (+ h L 114) (* 7 m))
+    month   (dec (Math/floor (/ n 31)))
+    day     (inc (mod n 31))]
+            (java.util.GregorianCalendar. year month day)))
+                    </code></pre>
+                    <a href="https://en.wikipedia.org/wiki/Computus" class="source">en.wikipedia.org/wiki/Computus</a>
+                </section>
+                
+                <section>
+                    <h2>Bugs, more bugs...</h2>
+                    <ol>
+                        <li><em>"Due to the lack of [time] synchronization [...] a car bomb went off [...] one hour earlier than expected"</em> (<a href="http://catless.ncl.ac.uk/Risks/20.58.html#subj12">catless.ncl.ac.uk/Risks/20.58.html#subj12</a>)</li>
+                        <li><em>"F-22 Raptors [...] experienced multiple computer crashes coincident with their crossing of [...] the International Date Line"</em> (<a href="http://en.wikipedia.org/wiki/List_of_software_bugs">en.wikipedia.org/wiki/List_of_software_bugs</a>)</li>
+                        <li><em>"Damage to a German steel facility occurred during a DST transition"</em> (<a href="http://en.wikipedia.org/wiki/Daylight_Savings_Time#Complexity">en.wikipedia.org/wiki/Daylight_Savings_Time</a>)</li>
+                        <li><a href="http://www.wired.com/wiredenterprise/2012/07/leap-second-bug-wreaks-havoc-with-java-linux">www.wired.com/wiredenterprise/2012/07/leap-second-bug-wreaks-havoc-with-java-linux</a></li>
+                        <li><a href="http://www.theregister.co.uk/2012/07/02/leap_second_crashes_airlines">www.theregister.co.uk/2012/07/02/leap_second_crashes_airlines</a></li>
+                        <li>Unjustified fraud accusation (<a href="http://www.cs.tau.ac.il/~nachumd/horror.html">www.cs.tau.ac.il/~nachumd/horror.html</a> - [37])</li>
+                        <li>Catalog of few hundred bugs, up to year 2000 (!) (<a href="http://www.csl.sri.com/users/neumann/cal.html#DatesTimes">www.csl.sri.com/users/neumann/cal.html</a>)</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h2>Interesting and useful</h2>
+                    <ol>
+                        <li><a href="http://www.timeanddate.com/">www.timeanddate.com</a> - everything about time</li>
+                        <li><a href="http://www.epochconverter.com/">www.epochconverter.com</a> - UNIX time</li>
+                        <li><a href="http://www.odi.ch/prog/design/datetime.php">www.odi.ch/prog/design/datetime.php</a> - foundation for this presentation</li>
+                        <li><a href="http://tycho.usno.navy.mil/systime.html">tycho.usno.navy.mil/systime.html</a> - definitions of TAI, UT, UTC...</li>
+                        <li><a href="http://www.bbc.co.uk/news/world-asia-16351377">www.bbc.co.uk/news/world-asia-16351377</a> - <em>Samoa and Tokelau skip a day for dateline change</em></li>
+                    </ol>
+                </section>
+                
+                <section>
+                    <h2>Thank you for your... time!</h2>
+                    <hr/>
+                    <a href="mailto:nurkiewicz@gmail.com">nurkiewicz@gmail.com</a>
+                    <br/>
+                    Twitter: <a href="http://twitter.com/tnurkiewicz">@tnurkiewicz</a>
+                    <hr/>
+                    <h3><a href="http://nurkiewicz.github.io/talks/confitura2013">nurkiewicz.github.io/talks/confitura2013</a></h3>
+                </section>
+
+            </div>
+
+            </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+
+        <script src="js/jquery-1.10.1.min.js"></script>
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+                transitionSpeed: 'fast',
+                width: '99%',
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                    // { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+                    // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+            setInterval(function() {
+                $('.dynamic-unix').text(Math.floor(new Date() / 1000));
+                $('.dynamic-millis').text(+new Date());
+                $('.dynamic-toString').text(new Date().toString().replace("GMT+0200 (", "").replace(")", ""));
+                $('.dynamic-tai').text(new Date(+new Date() + 35 * 1000).toISOString());
+                $('.dynamic-iso8601').text(new Date().toISOString());
+            }, 39);
+            if(Reveal.getQueryHash().mouse) {
+				window.addEventListener("mousedown", function(e) {
+					e.preventDefault();
+					if(e.button === 0) Reveal.right(); 
+					if(e.button === 2) Reveal.left(); 
+				}, false);
+				window.addEventListener("contextmenu", function(e) { 
+					e.preventDefault(); 
+				}, false);
+			}
+        </script>
+
+    </body>
+</html>

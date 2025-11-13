@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Czego Javowiec nauczy się od Haskella?</title>
+
+		<meta name="description" content="Confitura 2015, Warszawa">
+		<meta name="author" content="Tomasz Nurkiewicz">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-41796111-1', 'nurkiewicz.github.io');
+		  ga('send', 'pageview');
+
+		</script>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class='footer'>
+				<a href="https://twitter.com/tnurkiewicz">@tnurkiewicz</a> |
+				<a href="https://twitter.com/4financeIT">@4financeIT</a>
+			</div>
+
+  			<div class="slides">
+				<section>
+					<h1>Czego Javowiec nauczy się<br/>od Haskella?</h1>
+					<h3>Confitura 2015</h3>
+					<h2>Tomasz Nurkiewicz</h2>
+					<h3>
+						<a href="http://nurkiewicz.com">nurkiewicz.com</a> |
+						<a href="mailto:nurkiewicz@gmail.com">nurkiewicz@gmail.com</a>
+					</h3>
+					<h3>
+						<a href="https://twitter.com/tnurkiewicz">@tnurkiewicz</a> |
+						<a href="https://twitter.com/4financeIT">@4financeIT</a>
+					</h3>
+				</section>
+
+				<section>
+					<h1>Nie znam Haskella</h1>
+				</section>
+
+				<section>
+					<img src="img/dead-end.jpg"/><br/>
+					<small><a href="https://twitter.com/miketaylr/status/569212319864991744">twitter.com/miketaylr/status/569212319864991744</a></small>
+				</section>
+
+				<section>
+					<h1>Czego nie ma Haskell?</h1>
+				</section>
+
+				<section>
+					<ul>
+						<li><code>null</code></li>
+						<li>zmienne</li>
+						<li>wyjątki</li>
+						<li><code>void</code></li>
+						<li><code>Object</code></li>
+						<li>pętle</li>
+						<li>przeciążanie metod</li>
+						<li>efekty uboczne</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>System typów</h1>
+				</section>
+
+				<section>
+					<img src="img/type-systems.png" height="800"/>
+				</section>
+
+				<section>
+					<h1><a href="https://www.haskell.org/hoogle/">Hoogle</a></h1>
+					<pre><code data-trim>
+[a] -&gt; (a -&gt; b) -&gt; [b]
+
+[a] -&gt; (a -&gt; Bool) -&gt; Bool
+
+Ord a =&gt; [a] -&gt; [a]
+					</code></pre>
+				</section>
+
+				<section>
+					<h1>Structural search</h1>
+					<h2>IntelliJ IDEA</h2>
+					<pre><code data-trim>
+class $Class$ {
+	public static int $method$(String $string$, 
+	                           int $def$)
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<img src="img/twitter-types-list.png"/>
+					<br/>
+					<small><a href="https://twitter.com/jessitron/status/529652972679331840">twitter.com/jessitron/status/529652972679331840</a></small>
+				</section>
+
+				<section>
+					<h1>Świat wybiera</h1>
+					<ul>
+						<li>
+							<a href="https://www.omniref.com/blog/blog/2014/11/17/matz-at-rubyconf-2014-will-ruby-3-dot-0-be-statically-typed/">Matz at RubyConf 2014: Will Ruby 3.0 Be Statically Typed?</a>
+						</li>
+						<li>
+							<a href="http://www.infoq.com/news/2014/08/python-type-annotation-proposal">Guido van Rossum Wants to Bring Type Annotations to Python</a>
+						</li>
+						<li>
+							<a href="https://github.com/clojure/core.typed"><code>core.typed</code></a> - an optional type system for Clojure
+						</li>
+						<li>
+							<a href="http://php.net/manual/en/language.oop5.typehinting.php">PHP 5: Type Hinting</a>, <a href="https://wiki.php.net/rfc/return_types">RFC: Return Type Declarations</a>
+						</li>
+						<li>
+							Facebook: <a href="http://hacklang.org/">Hack</a> (składnia PHP, statyczne typowanie)
+						</li>
+						<li>
+							JavaScript: 
+								<a href="http://flowtype.org/">Flow</a>, 
+								<a href="http://www.typescriptlang.org/">TypeScript</a>, 
+								<a href="https://www.dartlang.org/">Dart</a>,
+								<a href="http://www.gwtproject.org/">GWT</a>, 
+								<a href="http://www.scala-js.org/">Scala.js</a>,
+								<a href="http://elm-lang.org/">Elm</a>,
+								<a href="http://haste-lang.org/">Haste</a>,
+								<a href="http://www.purescript.org/">purescript</a>
+						</li>
+					</ul>
+					<br/>
+					<small>Source: <a href="http://www.ybrikman.com/writing/2015/02/06/are-static-typing-and-functional/">Are static typing and functional programming winning?</a></small>
+				</section>
+
+				<section>
+					<img src="img/twitter-string-type.png"/><br/>
+					<small><a href="https://twitter.com/natpryce/status/557553705109950464">twitter.com/natpryce/status/557553705109950464</a></small>
+				</section>
+
+				<section>
+					<img src="img/twitter-string-future.png"/><br/>
+					<small><a href="https://twitter.com/velartrill/status/615714789499637760">twitter.com/velartrill/status/615714789499637760</a></small>
+				</section>
+
+				<section>
+					<h1>Stringly typed</h1>
+					<pre><code data-trim>
+String uuid;
+String website;
+String email;
+String firstName, lastName;
+String clientXml;
+int birthYear;
+long registrationDate;
+int min, max;
+boolean registered;
+int priority;
+					</code></pre>
+				</section>
+
+				<section>
+					<h1>Strongly typed</h1>
+					<pre><code data-trim>
+UUID uuid;
+URL website;
+Email email;
+Name name;
+Optional&lt;Document&gt; client;
+Year birthYear;
+Instant registration;
+Range&lt;Integer&gt; range;
+Status status;
+Priority priority;
+					</code></pre>
+				</section>
+
+				<section>
+					<h1>Żywa dokumentacja</h1>
+					<pre><code data-trim>
+Try&lt;InputStream&gt; tryOpen(File f) {
+	return Try.ofFailable(
+		() -> new FileInputStream(f));
+}
+					</code></pre>
+					<small><a href="https://github.com/jasongoodwin/better-java-monads">github.com/jasongoodwin/better-java-monads</a></small>
+				</section>
+
+				<section>
+					<pre><code data-trim>
+CompletableFuture&lt;String&gt; callWebService() {
+	//...
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h1><code>null</code></h1>
+					<img src="img/npe-street.jpg"/><br/>
+					<small><a href="https://www.facebook.com/programistaplakaljakcommitowal/photos/a.793864227290628.1073741827.793847593958958/880777228599327">https://www.facebook.com/programistaplakaljakcommitowal</a></small>
+				</section>
+
+				<section>
+					<h1>20 lat Javy</h1>
+					<img src="img/20-years.jpg"/>
+					<br/>
+					<small><a href="https://twitter.com/ags313/status/598494588135985152">twitter.com/ags313/status/598494588135985152</a></small>
+				</section>
+
+				<section>
+					<h1>50 lat nulla</h1>
+					<img src="img/ugly-cake.jpg"/>
+					<br/>
+					<small><a href="http://cake.sharonmattnadia.com/2008/10/cake-in-bag.html">cake.sharonmattnadia.com/2008/10/cake-in-bag.html</a></small>
+				</section>
+
+				<section>
+					<img src="img/tony_hoare.jpg"/>
+					<br/>
+					<small><a href="http://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare">infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare</a></small>
+				</section>
+
+				<section>
+					<h1>Tony Hoare (2009)</h1>
+					<quote>
+						 "[<code>null</code>] led to innumerable errors, vulnerabilities, and system crashes,<br/>
+						 which have probably caused a billion dollars of pain and damage [...]"
+					</quote>
+				</section>
+
+				<section>
+					<h1>From "Java 8 in Action"</h1>
+					<quote>
+						<ul>
+							<li>[...] <code>NullPointerException</code> is by far the most common exception in Java. </li>
+							<li>[...] worsens readability by [filling] your code with often deeply nested null checks. </li>
+							<li>[...] It doesn’t have any semantic meaning [...]</li>
+							<li>[...] Java always hides pointers from developers except in one case: the null pointer.</li>
+							<li>[...] It creates a hole in the type system. [...] it can be assigned to any reference type</li>
+						</ul>
+					</quote>
+				</section>
+
+				<section>
+					<img src="img/npe-tv.jpg"/><br/>
+					<small><a href="https://twitter.com/bsletten/status/587441266863943680">twitter.com/bsletten/status/587441266863943680</a></small>
+				</section>
+
+				<section>
+					<img src="img/npe-battery.jpg" height="1000"/><br/>
+					<small><a href="https://twitter.com/shipilev/status/553566131194454016">twitter.com/shipilev/status/553566131194454016</a></small>
+				</section>
+
+				<section>
+					<img src="img/npe-orange.png" height="1000"/><br/>
+					<small><a href="http://niebezpiecznik.pl/post/nullowy-sms-od-orange/">niebezpiecznik.pl/post/nullowy-sms-od-orange</a></small>
+				</section>
+
+				<section>
+					<img src="img/npe-pkp.jpg" height="1000"/><br/>
+					<small><a href="http://niebezpiecznik.pl/post/pociag-do-nulla/">niebezpiecznik.pl/post/pociag-do-nulla</a></small>
+				</section>
+
+				<section>
+					<img src="img/npe-name.png"/><br/>
+					<small><a href="http://stackoverflow.com/questions/4456438/how-do-i-correctly-pass-the-string-null-an-employees-proper-surname-to-a-so">http://stackoverflow.com/questions/4456438</a></small>
+				</section>
+
+				<section>
+					<img src="img/npe-tomcat.png" height="1000"/><br/>
+					<small><code>org.apache.catalina.connector.CoyoteAdapter</code></small>
+				</section>
+
+				<section>
+					<h1><code>Option(al)</code>?</h1>
+					<pre class="fragment"><code data-trim>
+Optional&lt;String&gt; opt = null;  //YOLO
+					</code></pre>
+					<pre class="fragment"><code data-trim>
+scala> Some(null) == None
+res1: Boolean = false
+					</code></pre>
+				</section>
+
+				<section>
+					<section>
+						<h1>Kotlin</h1>
+						<p>Demo</p>
+					</section>
+
+					<section>
+						<h1>Domyślnie not-null</h1>
+						<pre>	<code data-trim>
+val s: String = "abc"
+val x = s.length()
+
+						</code></pre>
+					</section>
+
+					<section>
+						<h1>Nie kompiluje się</h1>
+						<pre>	<code data-trim>
+val s: String? = null
+val x = s.length()
+
+						</code></pre>
+					</section>
+
+					<section>
+						<h1>Sprawdzenie</h1>
+						<pre>	<code data-trim>
+val s: String? = "abc"
+val x: Int? = s?.length()
+
+if (s != null) {
+    val x2: Int = s.length()
+}
+						</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<h1>Immutability</h1>
+				</section>
+
+				<section>
+					<img src="img/twitter-immutable-bad.png"/><br/>
+					<small><a href="https://twitter.com/kellabyte/status/552509551795535874">twitter.com/kellabyte/status/552509551795535874</a></small>
+				</section>
+
+				<section>
+					<h1>Bazy danych</h1>
+					<ul>
+						<li>Cassandra</li>
+						<li>HDFS</li>
+						<li>Datomic<c/li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>1994</h1>
+					<img src="img/design-patterns.jpg"/><br/>
+					<small>Source: <a href="http://www.pearsoned.co.uk/bookshop/detail.asp?item=171742">www.pearsoned.co.uk</a></small>
+				</section>
+
+				<section>
+					<h1>Wzorzec <em>Flyweight</em></h1>
+					<quote>
+						A flyweight [...] minimizes memory use by sharing as much data as possible with other similar objects;<br/>
+						[...] simple repeated representation would use an unacceptable amount of memory.<br/>
+						[...] <strong>Flyweight objects must be immutable.</strong>
+					</quote>
+					<br/>
+					<small>Source: <a href="https://en.wikipedia.org/wiki/Flyweight_pattern">wikipedia.org/wiki/Flyweight_pattern</a></small>
+				</section>
+
+				<section>
+					<h1>2013</h1>
+					<img src="img/implementing-ddd-cover.jpg"/><br/>
+					<small>Source: <a href="https://vaughnvernon.co/?page_id=168">vaughnvernon.co/?page_id=168</a></small>
+				</section>
+
+				<section>
+					<h3>value object</em> - 258 razy</h3>
+					<h3>immutable</em> - 68 razy</h3>
+				</section>
+
+				<section>
+					<h1>"<em>Implementing DDD</em>"</h1>
+					<quote>
+[...] model using Value Objects instead of Entities <strong>wherever possible</strong>. <br/><br/>
+[...] Entity’s design should be biased toward serving as a Value container<br/><br/>
+[...] Value types that measure, quantify, or describe things are easier to create, test, use, optimize, and maintain. <br/><br/>
+					</quote>
+					<br/>
+					<small>From chapter 6</small>
+				</section>
+
+				<section>
+					<h1>git</h1>
+					<img src="img/immutable-git.png"/>
+					<br/>
+					<small><a href="https://git-scm.com/book/en/v2/Git-Internals-Git-Objects">git-scm.com/book/en/v2/Git-Internals-Git-Objects</a></small>
+				</section>
+
+				<section>
+					<h1>Linus Torvalds</h1>
+					<quote>
+					[...] performance almost always matters. <br/>
+					And I absolutely detest the fact that people [...] dismiss performance concerns so readily.
+					</quote>
+					<br/>
+					<small>Git mailing list, Fri, 8 Aug 2008</small>
+				</section>
+
+				<section>
+					<img src="img/carmack.jpg"/><br/>
+					<small><a href="https://www.youtube.com/watch?v=1PhArSujR_A&t=5m41s">youtube.com/watch?v=1PhArSujR_A</a></small>
+				</section>
+
+				<section>
+					<h1>Wolfenstein 3D (1992)</h1>
+					<img src="img/wolfenstein.png" height="700"/><br/>
+					<small><a href="https://en.wikipedia.org/wiki/Wolfenstein_3D">wikipedia.org/wiki/Wolfenstein_3D</a></small>
+				</section>
+
+				<section>
+					<pre><code data-trim>
+float Q_rsqrt( float number )
+{
+  long i;
+  float x2, y;
+  const float threehalfs = 1.5F;
+
+  x2 = number * 0.5F;
+  y  = number;
+  i  = * ( long * ) &amp;y;         // evil floating point 
+                                // bit level hacking
+  i  = 0x5f3759df - ( i &gt;&gt; 1 ); // what the fuck? 
+  y  = * ( float * ) &amp;i;
+  y  = y * ( threehalfs - ( x2 * y * y ) );   // 1st iteration
+//y  = y * ( threehalfs - ( x2 * y * y ) );   // 2nd iteration, this can be removed
+
+  return y;
+}					</code></pre>
+					<small><a href="https://en.wikipedia.org/wiki/Fast_inverse_square_root">wikipedia.org/wiki/Fast_inverse_square_root</a></small>
+				</section>
+
+				<section>
+					<img src="img/twitter-carmack.png"/>
+					<br/>
+					<small><a href="https://twitter.com/id_aa_carmack/status/331918309916295168">twitter.com/id_aa_carmack/status/331918309916295168</a></small>
+				</section>
+
+				<section>
+					<h1>Czemu?</h1>
+					<ul>
+						<li>Zapis stanu gry</li>
+						<li>Gra sieciowa</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Podsumowanie</h1>
+					<ul>
+						<li><code>null</code></li>
+						<li>zmienne</li>
+						<li>wyjątki</li>
+						<li><code>void</code></li>
+						<li><code>Object</code></li>
+						<li>pętle</li>
+						<li>przeciążanie metod</li>
+						<li>efekty uboczne</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Dziękuję!</h1>
+					<img src="img/link-qr.png" height="800"/>
+					<br/>
+					<a href="http://nurkiewicz.github.io/talks/2015/haskell">nurkiewicz.github.io/talks/2015/haskell</a>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: false,
+				progress: false,
+				history: true,
+				center: true,
+			    width: 1920,
+    			height: 1080,
+
+				transition: 'fade', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

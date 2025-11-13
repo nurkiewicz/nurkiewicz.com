@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Asynchronous by default, synchronous when necessary</title>
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-41796111-1', 'nurkiewicz.github.io');
+		  ga('send', 'pageview');
+
+		</script>
+
+		<div class="reveal">
+
+			<div class="footer">
+				<small><a href="http://twitter.com/tnurkiewicz">@tnurkiewicz</a></small>
+			</div>
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+
+				<section>
+					<h1>Asynchronous by default, synchronous when necessary</h1>
+					<h2>
+						<a href="http://nurkiewicz.com">Tomasz Nurkiewicz</a> | <a href="http://twitter.com/tnurkiewicz">@tnurkiewicz</a> | <a href="http://nurkiewicz.com/">nurkiewicz.com</a>
+					</h2>
+				</section>
+
+				<section>
+					<h1>Agenda</h1>
+					<h2>tl;dr: distributed systems &amp; event sourcing</h2>
+				</section>
+
+				<section>
+					<h1>THE monolith</h1>
+					<img src="img/monolith_bright.jpg"/>
+				</section>
+
+				<section>
+					<h1>Splitting the monolith</h1>
+				</section>
+
+				<section>
+					<blockquote>
+						1. All teams will henceforth expose their data and functionality through <strong>service interfaces</strong>.
+						<br/>
+						[...]
+						<br/>
+						4. It doesn’t matter what technology they use. HTTP, Corba, Pubsub, custom protocols — doesn’t matter.
+					</blockquote>
+					<small class="fragment">
+						<a href="http://searchengineland.com/the-google-doesnt-get-platforms-family-intervention-memo-96619">Jeff Bezos, CEO of Amazon, 2002</a>
+					</small>
+				</section>
+
+
+				<section>
+					<blockquote>
+						Anyone who doesn’t do this will be fired.
+						<br/>
+						Thank you; have a nice day!
+					</blockquote>
+					<small>
+						<a href="http://searchengineland.com/the-google-doesnt-get-platforms-family-intervention-memo-96619">Jeff Bezos, CEO of Amazon, 2002</a>
+					</small>
+				</section>
+
+
+				<section>
+					<img src="img/ebola_virus.jpg" width="1000"/>
+					<p>Amazon architecture circa 2009 <span style="visibility: hidden">Ebola virus</span></p>
+				</section>
+
+				<section>
+					<img src="img/ebola_virus.jpg" width="1000"/>
+					<p><span style="text-decoration:line-through; color: red"><span style="color: black">Amazon architecture circa 2009</span></span> Ebola virus</p>
+				</section>
+
+				<section>
+					<img src="img/amazon.png" width="1000"/>
+					<p>Amazon internal services architecture circa 2009</p>
+					<small><a href="https://apigee.com/about/blog/developer/microservices-amazon">https://apigee.com/about/blog/developer/microservices-amazon</a></small>
+				</section>
+
+				<section>
+					<h1>Steve Yegge (2011)</h1>
+					<hr/>
+					<blockquote>
+					[Amazon's] code base is a disaster, with no engineering standards whatsoever except what individual teams choose to put in place [...]
+					</blockquote>
+					<a href="https://plus.google.com/+RipRowan/posts/eVeouesvaVX">plus.google.com/+RipRowan/posts/eVeouesvaVX</a>
+				</section>
+
+				<section>
+					<h1>Steve Yegge (cont.)</h1>
+					<hr/>
+					<blockquote>
+					- pager escalation gets way harder[...]
+					</blockquote>
+				</section>
+
+				<section>
+					<h1>Steve Yegge (cont.)</h1>
+					<hr/>
+					<blockquote>
+					- very serious quotas and throttling [...] in every single service
+					</blockquote>
+				</section>
+
+				<section>
+					<h1>Steve Yegge (cont.)</h1>
+					<hr/>
+					<blockquote>
+					- monitoring and QA are the same thing[...]
+					</blockquote>
+				</section>
+
+				<section>
+					<h1>Steve Yegge (cont.)</h1>
+					<hr/>
+					<blockquote>
+					- you won't be able to find any [<em>service</em>] without a service-discovery mechanism
+					</blockquote>
+				</section>
+
+				<section>
+					<h1>Steve Yegge (cont.)</h1>
+					<hr/>
+					<blockquote>
+					- debugging problems with someone else's code gets a LOT harder
+					</blockquote>
+				</section>
+
+				<section>
+					<img src="img/monolith_bright.jpg"/>
+				</section>
+
+				<section>
+					<h1>Turning Java interfaces into RESTful services</h1>
+				</section>
+
+				<section>
+					<h1>Cheap and safe</h1>
+					<pre><code class="hljs" data-trim>
+						long triple(long x) {
+						  return x * 3;
+						}
+					</code></pre>
+				</section>
+
+				<section>
+					<h1>
+						<a href="https://github.com/OpenFeign/feign">Feign</a>
+					</h1>
+					<pre><code class="hljs" data-trim>
+						@RequestLine("GET /triple/{x}")
+						long triple(@Param("x") long x);
+					</code></pre>
+					
+				</section>
+
+				<section>
+					<pre><code class="hljs" data-trim>
+						> GET /triple/13 HTTP/1.1
+						> Host: my-service.us-east-1
+
+						< HTTP/1.1 200 OK
+
+						< 39
+					</code></pre>
+				</section>
+
+				<section>
+					<h1>Fallacies of distributed computing</h1>
+					<h2>1994</h2>
+					<h2>#AlternativeFacts</h2>
+				</section>
+
+				<section>
+					<h1>1. The network is reliable</h1>
+					<hr/>
+					<img src="img/hystrix.jpg"/>
+				</section>
+
+				<section>
+					<h1>2. Latency is zero</h1>
+					<hr/>
+					<img src="img/zipkin.png"/>
+					<small><a href="https://tech.finn.no/images/2015-04-28-Apache-Cassandra-in-a-Microservices-Enterprise-Platform/zipkin-request-page.png">tech.finn.no</a></small>
+				</section>
+
+				<section>
+					<h1>3. Bandwidth is infinite</h1>
+					<hr/>
+					<h2>Batching, compression</h2>
+				</section>
+
+				<section>
+					<h1>4. The network is secure</h1>
+					<hr/>
+					<h2>SSL, OAuth2</h2>
+				</section>
+
+				<section>
+					<h1>6. There is one administrator</h1>
+					<hr/>
+					<h2>Escalation, root cause</h2>
+				</section>
+
+				<section>
+					<h1>7. Transport cost is zero</h1>
+					<hr/>
+					<blockquote>
+						The Internet is running in debug mode
+					</blockquote>
+					<small><a href="http://java-is-the-new-c.blogspot.com/2014/10/why-protocols-are-messy-concept.html">Rüdiger Möller</a></small>
+				</section>
+
+				<section>
+					<h1>Hollywood principle</h1>
+					<h2>...on architecture level</h2>
+				</section>
+
+				<section>
+					<h1>Synchronous architecture</h1>
+					<img src="img/sync_stock.png" width="1200"/>
+				</section>
+
+				<section>
+					<h1>Still synchronous</h1>
+					<pre><code class="hljs" data-trim>
+						Flowable
+						  .zip(
+						    prices.of("IBM"),
+						    portfolio.fetch(LocalDate.of(25, JANUARY, 2017)),
+						    risk.check("IBM", 12, -0.1, 0)
+						        .filter(Result::isSecure),
+						    Order::build
+						  )
+						  .filter(Order::isProfitable)
+						  .flatMap(stock::buy)
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Scott Bellware:</h2>
+					<blockquote>
+						One of the golden rules of service architecture is that <strong>you cannot query data from a service</strong>. 
+					</blockquote>
+					<blockquote>
+						If you allow queries, you’ve [...] violated the most fundamental tenants of building a service, which is you tell a service what to do [...]
+					</blockquote>
+					<small><a href="https://www.hanselminutes.com/578/ruby-and-rails-in-the-real-world-with-scott-bellware">www.hanselminutes.com/578/ruby-and-rails-in-the-real-world-with-scott-bellware</a> (20:30)</small>
+				</section>
+
+				<section>
+					<h1>Publish changes</h1>
+				</section>
+
+				<section>
+					<img src="img/async_stock.png" width="1200"/>
+				</section>
+
+				<section>
+					<h1>Temporal coupling</h1>
+				</section>
+
+				<section>
+					<h1>Event DB</h1>
+					<img src="img/events_db.png" width="1400"/>
+				</section>
+
+				<section>
+					<h1>Audit, historic data</h1>
+					<pre><code class="hljs" data-trim>
+						GET /portfolio?at=25-01-2017
+					</code></pre>
+				</section>
+
+				<section>
+					<h1>Synchronous architecture</h1>
+					<img src="img/sync_stock.png" width="1200"/>
+				</section>
+
+				<section>
+					<h1>Audit, historic data</h1>
+					<pre><code class="hljs" data-trim>
+						GET /portfolio?at=25-01-2017
+					</code></pre>
+				</section>
+
+				<section>
+					<h1>Occasionally connected devices</h1>
+					<img src="img/trello.jpg"/>
+					<p><small>Google Docs, Trello, Pocket, Evernote, Endomondo</small></p>
+				</section>
+
+				<section>
+					<h1>Use case: blockchain</h1>
+					<img src="img/Blockchain.png" width="600"/>
+					<hr/>
+					<small><a href="https://en.wikipedia.org/wiki/Blockchain">en.wikipedia.org/wiki/Blockchain</a></small>
+				</section>
+
+				<section>
+					<h1>Use case: banking</h1>
+				</section>
+
+				<section>
+					<h1>"Banking": the hipster way</h1>
+					<blockquote>
+						By sending thousands of simultaneous requests, the attacker was able to "move" coins from one user account to another until the sending account was overdrawn, before balances were updated
+					</blockquote>		
+					<small><a href="http://hackingdistributed.com/2014/04/06/another-one-bites-the-dust-flexcoin/">hackingdistributed.com/2014/04/06/another-one-bites-the-dust-flexcoin/</a></small>
+				</section>
+
+				<section>
+					<h1>What went wrong?</h1>
+					<h2>No audit data</h2>
+					<h2>Mutability</h2>
+					<h2>Race conditions</h2>
+				</section>
+
+				<section>
+					<h1>Academic approach</h1>
+					<pre><code class="hljs" data-trim>
+						BEGIN;
+							-- Make sure no overdraft on Alice's account
+
+							UPDATE accounts SET balance = balance - 100.00
+							    WHERE name = 'Alice';
+
+							UPDATE accounts SET balance = balance + 100.00
+							    WHERE name = 'Bob';
+						COMMIT;
+					</code></pre>
+					<small><a href="https://www.postgresql.org/docs/9.6/static/tutorial-transactions.html">www.postgresql.org/docs/9.6/static/tutorial-transactions.html</a></small>
+				</section>
+
+				<section>
+					<h1>Banking: real approach</h1>
+					<blockquote>
+						SWIFT [...] providing a secure, reliable, and scalable network for the smooth <strong>movement of messages</strong>
+					</blockquote>
+					<small><a href="http://www.investopedia.com/articles/personal-finance/050515/how-swift-system-works.asp">www.investopedia.com/articles/personal-finance/050515/how-swift-system-works.asp</a></small>
+				</section>
+
+				<section>
+					<h1>Implementation</h1>
+					<pre><code class="hljs" data-trim>
+					// ...
+					MoneyTransferred(
+						from   = 'Alice',
+						to     = 'Bob',
+						amount = 100.0
+					)
+					// ...
+					</code></pre>
+				</section>
+
+				<section>
+					<h1>Full stack...</h1>
+					<h2>Atwood's Law</h2>
+					<blockquote>any application that can be written in JavaScript, will eventually be written in JavaScript</blockquote>
+					<small><a href="https://blog.codinghorror.com/the-principle-of-least-power/">blog.codinghorror.com/the-principle-of-least-power</a></small>
+				</section>
+
+				<section>
+					<img src="img/docker_js.png">
+					<hr/>
+					<small>
+						<a href="https://twitter.com/jimplush/status/561292521418928128">twitter.com/jimplush/status/561292521418928128</a>
+					</small>
+				</section>
+
+				<section>
+					<h1>Use case: Redux</h1>
+					<a href="http://redux.js.org/">redux.js.org</a>
+				</section>
+
+				<section>
+					<h1>Redux</h1>
+					<pre><code class="hljs" data-trim>
+						function counter(state = 0, action) {
+						  switch (action.type) {
+						    case 'INCREMENT':
+						      return state + 1
+						    case 'DECREMENT':
+						      return state - 1
+						    default:
+						      return state
+						    }
+						}
+					</code></pre>
+				</section>
+
+				<section>
+					<h1>Event store implementation</h1>
+					<h2><a href="https://geteventstore.com/">geteventstore.com</a></h2>
+					<h2><a href="https://kafka.apache.org/">kafka.apache.org</a></h2>
+					<h2><a href="http://eventstore.js.org/">eventstore.js.org</a></h2>
+				</section>
+
+				<section>
+					<h1>Caveats</h1>
+				</section>
+
+				<section>
+					<h1>Eventual consistency</h1>
+				</section>
+
+				<section>
+					<h1>Rebuilding costs</h1>
+					<h2>Snapshots</h2>
+				</section>
+	
+				<section>
+					<h1>Can WWW work this way?</h1>
+				</section>
+
+				<section>
+					<h1>What's next?</h1>
+				</section>
+
+				<section>
+					<h1>Thank you!</h1>
+					<img src="img/qr_url.png"/>
+					<h2>
+						<a href="http://nurkiewicz.github.io/talks/2017/async">nurkiewicz.github.io/talks/2017/async</a>
+					</h2>
+					<h3>
+						<a href="http://nurkiewicz.com">Tomasz Nurkiewicz</a> | <a href="http://twitter.com/tnurkiewicz">@tnurkiewicz</a> | <a href="http://nurkiewicz.com/">nurkiewicz.com</a>
+					</h3>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: false,
+				defaultTiming: 60,
+				progress: false,
+				history: true,
+				center: true,
+				width: 1920,
+				height: 1200,
+				margin: 0.05,
+
+				transition: 'fade', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

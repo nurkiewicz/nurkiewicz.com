@@ -1,0 +1,1408 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>CharBusters - 10 Unicode myths</title>
+
+		<meta name="author" content="Tomasz Nurkiewicz">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+	    <script>
+	      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	      ga('create', 'UA-41796111-1', 'nurkiewicz.github.io');
+	      ga('send', 'pageview');
+
+	    </script>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>CharBusters</h1>
+					<h3>10 Unicode myths</h3>
+					<p>
+						<a href="https://nurkiewicz.com">������ ����</a>,
+						<a href="https://twitter.com/tnurkiewicz">@���</a>
+					</p>
+				</section>
+
+				<section>
+					<h1>CharBusters</h1>
+					<h3>10 Unicode myths</h3>
+					<p>
+						<a href="https://nurkiewicz.com">Tomasz Nurkiewicz</a>,
+						<a href="https://twitter.com/tnurkiewicz">@tnurkiewicz</a>
+					</p>
+				</section>
+
+				<section>
+					<p style="font-size: 80%">
+						काचं शक्नोम्यत्तुम् । नोपहिनस्ति माम् ॥<br/>
+							Μπορῶ νὰ φάω σπασμένα γυαλιὰ χωρὶς νὰ πάθω τίποτα 🇬🇷<br/>
+							ᛁᚳ᛫ᛗᚨᚷ᛫ᚷᛚᚨᛋ᛫ᛖᚩᛏᚪᚾ᛫ᚩᚾᛞ᛫ᚻᛁᛏ᛫ᚾᛖ᛫ᚻᛖᚪᚱᛗᛁᚪᚧ᛫ᛗᛖ᛬<br/>
+							⠊⠀⠉⠁⠝⠀⠑⠁⠞⠀⠛⠇⠁⠎⠎⠀⠁⠝⠙⠀⠊⠞⠀⠙⠕⠑⠎⠝⠞⠀⠓⠥⠗⠞⠀⠍⠑<br/>
+							Я можу їсти скло, і воно мені не зашкодить. 🇺🇦<br/>
+							მინას ვჭამ და არა მტკივა. 🇬🇪<br/>
+							Կրնամ ապակի ուտել և ինծի անհանգիստ չըներ։ 🇦🇲<br/>
+							నేను గాజు తినగలను మరియు అలా చేసినా నాకు ఏమి ఇబ్బంది లేదు 🇮🇳<br/>
+							איך קען עסן גלאָז און עס טוט מיר נישט װײ<br/>
+							ᠪᠢ ᠰᠢᠯᠢ ᠢᠳᠡᠶᠦ ᠴᠢᠳᠠᠨᠠ ᠂ ᠨᠠᠳᠤᠷ ᠬᠣᠤᠷᠠᠳᠠᠢ ᠪᠢᠰᠢ 🇲🇳<br/>
+							我能吞下玻璃而不伤身体。🇨🇳<br>
+							<span class="fragment">Jag kan äta glas utan att skada mig 🇸🇪</span>
+					</p>
+					<small>
+						<a href="http://kermitproject.org/utf8.html">kermitproject.org/utf8.html</a>
+					</small>
+				</section>
+
+				<section>
+					<img src="img/smoking-kills.jpg" class="stretch"/>
+					<hr/>
+					<small>
+						<a href="https://madhatters.me.uk/2009/07/16/health-warning-3/smoking-kills/">https://madhatters.me.uk/2009/07/16/health-warning-3/smoking-kills/</a>
+					</small>
+				</section>
+
+				<section>
+					<img src="img/Unicode_logo.svg" class="stretch"/>
+					<hr/>
+					<small>
+						<a href="https://en.wikipedia.org/wiki/List_of_Unicode_characters">https://en.wikipedia.org/wiki/List_of_Unicode_characters</a>
+					</small>
+				</section>
+
+				<section>
+					<img src="img/ramazan.png" class="stretch"/>
+					<hr/>
+					<small>
+						<a href="https://www.dogancanulker.com/noktali-ve-noktasiz-problemi/">https://www.dogancanulker.com/noktali-ve-noktasiz-problemi/</a>
+					</small>
+				</section>
+
+				<!--
+				<section>
+					<ol start="0">
+						<li>I don’t need to worry about Unicode</li>
+						<li>1 character = 1 <code>byte</code></li>
+						<li>1 character = 1 <code>char</code></li>
+						<li>Java is UTF-16</li>
+						<li>Unicode is unambiguous</li>
+						<li>1 character ≤ 1 <code>int</code></li>
+						<li>1 character ≤ 2 <code>ints</code></li>
+						<li><code>String.length()</code> is useful</li>
+						<li>Whitespace is straightforward</li>
+						<li>Upper case is simple</li>
+						<li>Unicode is harmless</li>
+					</ol>
+				</section>
+			-->
+
+				<section>
+					<h2>I don’t need to worry about Unicode</h2>
+					<h3>Myth 0</h3>
+				</section>
+
+				<section>
+					<img src="img/tweet-testing.png" class="stretch"/>
+					<hr/>
+					<small>
+						<a href="https://twitter.com/filipvanlaenen/status/1009397273351131136">https://twitter.com/filipvanlaenen/status/1009397273351131136</a>
+					</small>
+				</section>
+
+				<section>
+					<h2>History of IT</h2>
+					<h3>(or how we estimate badly)</h3>
+				</section>
+
+				<section>
+					<h2>Parkinson's Law</h2>
+					<blockquote>
+						Work expands so as to fill the time available for its completion
+					</blockquote>
+				</section>
+
+				<section>
+					<h2>Hofstadter's Law</h2>
+					<blockquote>
+						It always takes longer than you expect<span class="fragment">, even when you take into account Hofstadter's Law</span>
+					</blockquote>
+				</section>
+
+<!--
+				<section>
+					<h2>Harvard Business Review</h2>
+					<blockquote>
+						be prepared [...] to spend 400% more than planned [...], but to reap only 25% of the expected benefits.
+					</blockquote>
+					<small>
+						<a href="https://www.infoq.com/news/2011/10/risky-it-projects">https://www.infoq.com/news/2011/10/risky-it-projects</a>
+					</small>
+				</section>
+-->
+				<section>
+					<img src="img/car-estimation.jpg" class="stretch"/>
+					<hr/>
+					<small>
+						<a href="https://twitter.com/HPC_Guru/status/850698874457141248">https://twitter.com/HPC_Guru/status/850698874457141248</a>
+					</small>
+				</section>
+
+				<section>
+					<h2>IPv4</h2>
+					<h3>1978</h3>
+				</section>
+
+				<section>
+					<h2>640 KiB</h2>
+					<h3>
+						<del>Bill Gates</del> IBM, 1981
+					</h3>
+				</section>
+
+				<section>
+					<h2>Y2K<span class="fragment">38</span></h2>
+				</section>
+
+				<section>
+					<h2>512K problem</h2>
+					<img src="img/bgp-table.svg" class="stretch"/>
+					<hr/>
+					<small>
+						<a href="https://en.wikipedia.org/wiki/Border_Gateway_Protocol#Routing_table_growth">en.wikipedia.org/wiki/Border_Gateway_Protocol#Routing_table_growth</a>
+						<br/>
+						<a href="https://blog.thousandeyes.com/what-is-768k-day/">blog.thousandeyes.com/what-is-768k-day</a>
+					</small>
+				</section>
+
+				<section>
+					<h2>GPS 2019</h2>
+					<small>
+						<a href="https://www.orolia.com/resources/blog/lisa-perdue/2018/gps-2019-week-rollover-what-you-need-know">www.orolia.com/resources/blog/lisa-perdue/2018/gps-2019-week-rollover-what-you-need-know</a>
+					</small>
+				</section>
+
+				<section>
+					<h2>ASCII</h2>
+					<h3>1963</h3>
+				</section>
+
+				<section>
+					<img src="img/USASCII_code_chart.png" class="stretch"/>
+					<hr/>
+					<small>
+						<a href="https://en.wikipedia.org/wiki/ASCII">https://en.wikipedia.org/wiki/ASCII</a>
+					</small>
+				</section>
+
+				<section>
+					<h2>1 character = 1 byte</h2>
+					<h3>Myth 1</h3>
+				</section>
+
+				<section>
+					<h2>Let’s talk about "ą"</h2>
+				</section>
+
+				<section>
+					<h2>ą</h2>
+					<table>
+						<tr>
+							<td>ISO-8859-2</td>
+							<td>
+								<code>B1</code>
+							</td>
+						</tr>
+						<tr>
+							<td>ISO 8859-13 </td>
+							<td>
+								<code>E0</code>
+							</td>
+						</tr>
+						<tr>
+							<td>ISO 8859-16</td>
+							<td>
+								<code>A2</code>
+							</td>
+						</tr>
+						<tr>
+							<td>Windows-1250</td>
+							<td>
+								<code>B9</code>
+							</td>
+						</tr>
+						<tr>
+							<td>CP775 </td>
+							<td>
+								<code>D0</code>
+							</td>
+						</tr>
+						<tr>
+							<td>CP852</td>
+							<td>
+								<code>A5</code>
+							</td>
+						</tr>
+						<tr>
+							<td>Mazovia</td>
+							<td>
+								<code>86</code>
+							</td>
+						</tr>
+					</table>
+				</section>
+
+				<section>
+					<h2><code>Content-type: text/html; charset=utf-8</code></h2>
+				</section>
+
+				<section>
+					<h2>🇵🇱</h2>
+					<table>
+						<tr>
+							<td>ą</td>
+							<td>ć</td>
+							<td>ę</td>
+							<td>ł</td>
+							<td>ń</td>
+							<td>ó</td>
+							<td>ś</td>
+							<td>ź</td>
+							<td>ż</td>
+						</tr>
+						<tr>
+							<td>Ą</td>
+							<td>Ć</td>
+							<td>Ę</td>
+							<td>Ł</td>
+							<td>Ń</td>
+							<td>Ó</td>
+							<td>Ś</td>
+							<td>Ź</td>
+							<td>Ż</td>
+						</tr>
+					</table>
+				</section>
+
+				<section>
+					<h2>🇨🇿</h2>
+					<table>
+						<tr>
+							<td>á</td>
+							<td>é</td>
+							<td>í</td>
+							<td>ó</td>
+							<td>ú</td>
+							<td>ý</td>
+							<td>č</td>
+							<td>ď</td>
+							<td>ě</td>
+							<td>ň</td>
+							<td>ř</td>
+							<td>š</td>
+							<td>ť</td>
+							<td>ž</td>
+							<td>ů</td>
+						</tr>
+						<tr>
+							<td>Á</td>
+							<td>É</td>
+							<td>Í</td>
+							<td>Ó</td>
+							<td>Ú</td>
+							<td>Ý</td>
+							<td>Č</td>
+							<td>Ď</td>
+							<td>Ě</td>
+							<td>Ň</td>
+							<td>Ř</td>
+							<td>Š</td>
+							<td>Ť</td>
+							<td>Ž</td>
+							<td>Ů</td>
+						</tr>
+					</table>
+				</section>
+
+				<section>
+					<h2>🇫🇷</h2>
+					<table>
+						<tr>
+							<td>ù</td>
+							<td>û</td>
+							<td>ü</td>
+							<td>ÿ</td>
+							<td>à</td>
+							<td>â</td>
+							<td>æ</td>
+							<td>ç</td>
+							<td>é</td>
+							<td>è</td>
+							<td>ê</td>
+							<td>ë</td>
+							<td>ï</td>
+							<td>î</td>
+							<td>ô</td>
+							<td>œ</td>
+						</tr>
+						<tr>
+							<td>Ù</td>
+							<td>Û</td>
+							<td>Ü</td>
+							<td>Ÿ</td>
+							<td>À</td>
+							<td> </td>
+							<td>Æ</td>
+							<td>Ç</td>
+							<td>É</td>
+							<td>È</td>
+							<td>Ê</td>
+							<td>Ë</td>
+							<td>Ï</td>
+							<td>Î</td>
+							<td>Ô</td>
+							<td>Œ</td>
+						</tr>
+					</table>
+				</section>
+
+				<section>
+					<h2>🇷🇺</h2>
+					<table>
+						<tr>
+							<td>а</td>
+							<td>б</td>
+							<td>в</td>
+							<td>г</td>
+							<td>д</td>
+							<td>е</td>
+							<td>ё</td>
+							<td>ж</td>
+							<td>з</td>
+							<td>и</td>
+							<td>й</td>
+							<td>к</td>
+							<td>л</td>
+							<td>м</td>
+							<td>н</td>
+							<td>о</td>
+							<td>п</td>
+						</tr>
+						<tr>
+							<td>А</td>
+							<td>Б</td>
+							<td>В</td>
+							<td>Г</td>
+							<td>Д</td>
+							<td>Е</td>
+							<td>Ё</td>
+							<td>Ж</td>
+							<td>З</td>
+							<td>И</td>
+							<td>Й</td>
+							<td>К</td>
+							<td>Л</td>
+							<td>М</td>
+							<td>Н</td>
+							<td>О</td>
+						</tr>
+						<tr>
+							<td>П</td>
+							<td>р</td>
+							<td>с</td>
+							<td>т</td>
+							<td>у</td>
+							<td>ф</td>
+							<td>х</td>
+							<td>ц</td>
+							<td>ч</td>
+							<td>ш</td>
+							<td>щ</td>
+							<td>ъ</td>
+							<td>ы</td>
+							<td>ь</td>
+							<td>э</td>
+							<td>ю</td>
+							<td>я</td>
+						</tr>
+						<tr>
+							<td>Р</td>
+							<td>С</td>
+							<td>Т</td>
+							<td>У</td>
+							<td>Ф</td>
+							<td>Х</td>
+							<td>Ц</td>
+							<td>Ч</td>
+							<td>Ш</td>
+							<td>Щ</td>
+							<td>Ъ</td>
+							<td>Ы</td>
+							<td>Ь</td>
+							<td>Э</td>
+							<td>Ю</td>
+							<td>Я</td>
+						</tr>
+					</table>
+				</section>
+
+				<section>
+					<h2>🇩🇪 🇬🇷 🇪🇸</h2>
+				</section>
+
+				<section>
+					<h2>Unicode 1.0</h2>
+					<blockquote>
+						modern [characters], whose number is undoubtedly far below 2<sup>14</sup> = 16&nbsp;384	
+					</blockquote>
+					<h3>1988</h3>
+				</section>
+
+				<section>
+					<h2>Unicode code points</h2>
+					<p>
+						a = <code>U+0061 = &nbsp;&nbsp; 97</code><br/>
+						å = <code>U+00E5 = &nbsp; 229</code><br/>
+						ą = <code>U+0105 = &nbsp; 261</code><br/>
+						鑫= <code>U+946B = 37995</code>
+					</p>
+				</section>
+
+				<section>
+					<h2>1 character = 1 char</h2>
+					<h3>Myth 2</h3>
+				</section>
+
+				<section>
+					<blockquote>
+						[...] undoubtedly far below 2<sup>14</sup> = 16&nbsp;384
+					</blockquote>
+					<h3>1988</h3>
+				</section>
+
+				<section>
+					<h2>🇨🇳</h2>
+				</section>
+
+				<section>
+					<h2>讓我來! 让我来!</h2>
+					<footer>"hold my 🍺!"</footer>
+					<hr/>
+					<small>
+						<a href="https://www.quora.com/How-do-you-say-hold-my-beer-in-Chinese">https://www.quora.com/How-do-you-say-hold-my-beer-in-Chinese</a>
+					</small>
+				</section>
+
+				<section>
+					<h2>CJK</h2>
+					<p><strong>88 thousand</strong> characters in Unicode 12.0</p>
+				</section>
+
+				<section>
+					<h1>𝄞</h1>
+					<h3><code>U+1D11E</code> (119&nbsp;070)</h3>
+				</section>
+
+				<section>
+					<h2>Unicode 2.0</h2>
+					<h3>1996</h3>
+				</section>
+
+				<section>
+					<table>
+						<tr>
+							<td>a</td><td><code>&nbsp;U+0061</code></td>
+						</tr>
+						<tr>
+							<td>ą</td><td><code>&nbsp;U+0105</code></td>
+						</tr>
+						<tr>
+							<td>鑫</td><td><code>&nbsp;U+946B</code></td>
+						</tr>
+						<tr>
+							<td>𝄞</td><td><code>U+1D11E</code></td>
+						</tr>
+					</table>
+				</section>
+
+				<section>
+					<h2>Correct Java type for <mark>one</mark> <code>character</code> is...?</h2>
+					<ol>
+						<li class="fragment"><code>byte</code></li>
+						<li class="fragment"><code>char</code></li>
+						<li class="fragment"><code>int</code></li>
+						<li class="fragment"><code>String</code></li>
+					</ol>
+				</section>
+
+				<section>
+					<h3><code>String</code></h3>
+					<pre><code data-trim>
+						codePointAt(int)         : int
+						codePoints()             : IntStream
+						codePointCount(int, int) : int
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Unicode</h2>
+					<h3>vs</h3>
+					<h2>UTF-*</h2>
+					<div class="fragment">
+						<p>UTF-7, UTF-8</p>
+						<p>UTF-16 [BOM | LE | BE]</p>
+						<p>UTF-32 [BOM | LE | BE]</p>
+					</div>
+				</section>
+
+				<section>
+					<h2>a</h2>
+					<h3><code>U+0061</code></h3>
+					<table>
+						<tr>
+							<td>UTF-8</td>
+							<td><code>&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 61</code></td>
+						</tr>
+						<tr>
+							<td>UTF-16</td>
+							<td><code>&nbsp;&nbsp; &nbsp;&nbsp; 00 61</code></td>
+						</tr>
+						<tr>
+							<td>UTF-32</td>
+							<td><code>00 00 00 61</code></td>
+						</tr>
+					</table>
+				</section>
+
+				<section>
+					<h2>ą</h2>
+					<h3><code>U+0105</code></h3>
+					<table>
+						<tr>
+							<td>UTF-8</td>
+							<td><code>&nbsp;&nbsp; &nbsp;&nbsp; C4 85</code></td>
+						</tr>
+						<tr>
+							<td>UTF-16</td>
+							<td><code>&nbsp;&nbsp; &nbsp;&nbsp; 01 85</code></td>
+						</tr>
+						<tr>
+							<td>UTF-32</td>
+							<td><code>00 00 01 05</code></td>
+						</tr>
+					</table>
+				</section>
+
+				<section>
+					<h2>鑫</h2>
+					<h3><code>U+946B</code></h3>
+					<table>
+						<tr>
+							<td>UTF-8</td>
+							<td><code>&nbsp;&nbsp; E9 91 AB</code></td>
+						</tr>
+						<tr>
+							<td>UTF-16</td>
+							<td><code>&nbsp;&nbsp; &nbsp;&nbsp; 94 6B</code></td>
+						</tr>
+						<tr>
+							<td>UTF-32</td>
+							<td><code>00 00 94 6B</code></td>
+						</tr>
+					</table>
+				</section>
+
+				<section>
+					<h2>𝄞</h2>
+					<h3><code>U+1D11E</code></h3>
+					<table>
+						<tr>
+							<td>UTF-8</td>
+							<td><code>F0 9D 84 9E</code></td>
+						</tr>
+						<tr>
+							<td>UTF-16</td>
+							<td><code>D8 34 DD 1E</code></td>
+						</tr>
+						<tr>
+							<td>UTF-32</td>
+							<td><code>00 01 D1 1E</code></td>
+						</tr>
+					</table>
+				</section>
+
+				<section>
+					<h1>🤔</h1>
+					<h2><code>"𝄞".length() == 2</code></h2>
+				</section>
+
+				<section>
+					<h3><code>"(𝄞)".substring(0, 2)</code></h3>
+					<pre><code data-trim>(?</code></pre>
+				</section>
+
+				<section>
+					<h2>Surrogate pairs</h2>
+				</section>
+
+				<section>
+					<h3><code>var life = "🏭" + "🏖";</code></h3>
+				</section>
+
+				<section>
+					<pre><code data-trim>
+				        StringBuilder rev = new StringBuilder();
+				        for (int i = life.length() - 1; i &gt;= 0; i--)
+				            rev.append(life.charAt(i));
+					</code></pre>
+				</section>
+
+				<section>
+					<h3><code>var life = "🏭🏖";</code></h3>
+					<h3><code>"?🏭?"</code></h3>
+				</section>
+
+				<section>
+					<pre><code data-trim>
+new StringBuilder("🏭🏖")
+          .reverse()
+          .toString()
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Java is UTF-16</h2>
+					<h3>Myth 3</h3>
+				</section>
+
+				<section>
+					<h2>Java 8</h2>
+					<pre><code data-trim>
+    					private final char value[];
+    				</code></pre>
+				</section>
+
+				<section>
+					<h2>Java 9+</h2>
+					<pre><code data-trim>
+						private final byte[] value;
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Java 9+</h2>
+					<pre><code data-trim>
+						public int indexOf(int ch, int fromIndex) {
+						    return isLatin1() 
+						      ? StringLatin1.indexOf(value, ch, fromIndex) 
+						      : StringUTF16.indexOf(value, ch, fromIndex);
+						}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2><code><del>String.getBytes()</del></code></h2>
+					<a href="http://blog.thetaphi.de/2012/07/default-locales-default-charsets-and.html">blog.thetaphi.de/2012/07/default-locales-default-charsets-and.html</a>
+				</section>
+
+				<section>
+					<h2>Unicode is unambiguous</h2>
+					<h3>Myth 4</h3>
+				</section>
+
+				<section>
+					<h2><code>"ą".equals("ą")</code></h2>
+				</section>
+
+				<section>
+					<h2>Tiny tail</h2>
+					<table>
+						<tr>
+							<td>ą</td>
+							<td>Latin Small Letter A with Ogonek</td>
+							<td>U+0105</td>
+						</tr>
+						<tr>
+							<td>a</td>
+							<td>Latin Small Letter A</td>
+							<td>U+0061</td>
+						</tr>
+						<tr>
+							<td>̨</td>
+							<td>Combining Ogonek</td>
+							<td>U+0328</td>
+						</tr>
+					</table>
+				</section>
+
+				<section>
+					<pre><code data-trim>
+Normalizer.normalize("ą", Form.NFKC)
+					</code></pre>
+					<code>java.text</code>
+				</section>
+
+				<section>
+					<h2>1 character ≤ 1 int</h2>
+					<h3>Myth 5</h3>
+				</section>
+
+				<section>
+					<h2>Let’s talk about emoji</h2>
+				</section>
+
+				<section>
+					<img src="img/emoji-movie.png" class="stretch"/>
+					<small>
+						<a href="https://www.imdb.com/title/tt4877122/">https://www.imdb.com/title/tt4877122/</a>
+					</small>
+				</section>
+
+				<section>
+					<img src="img/emoji-translator.jpg" class="stretch"/>
+					<small>
+						<a href="https://www.dailymail.co.uk/femail/article-4794964/World-s-emoji-translator-ridiculed-Twitter.html">https://www.dailymail.co.uk/femail/article-4794964/World-s-emoji-translator-ridiculed-Twitter.html</a>
+					</small>
+				</section>
+
+				<section>
+					<img src="img/emoji-burger.png" class="stretch"/>
+					<small>
+						<a href="https://twitter.com/sundarpichai/status/924487551372615680">https://twitter.com/sundarpichai/status/924487551372615680</a>
+					</small>
+				</section>
+
+				<section>
+					<img src="img/emoji-ant.png" class="stretch"/>
+					<small>
+						<a href="http://curlicuecal.tumblr.com/post/175362924100/an-entomologist-rates-ant-emojis">http://curlicuecal.tumblr.com/post/175362924100/an-entomologist-rates-ant-emojis</a>
+					</small>
+				</section>
+
+				<section>
+					<h1>🇵🇱</h1>
+					<h2>🇵+🇱</h2>
+				</section>
+
+				<section>
+					<h1>🇵🇱</h1>
+					<table>
+						<tr>
+							<td>🇵</td><td><code>00 01 F1 F5</code></td>
+						</tr>
+						<tr>
+							<td>🇱</td><td><code>00 01 F1 F1</code></td>
+						</tr>
+					</table>
+				</section>
+
+				<section>
+					<h2>👧🏽</h2>
+				</section>
+
+				<section>
+					<table>
+						<tr>
+							<td>👧</td>
+							<td><code>00&nbsp;01&nbsp;F4&nbsp;67</code></td>
+						</tr>
+						<tr>
+							<td>🏾</td>
+							<td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;00&nbsp;01&nbsp;F3&nbsp;FE</code></td>
+						</tr>
+						<tr>
+							<td>👧🏽</td>
+							<td><code>00&nbsp;01&nbsp;F4&nbsp;67&nbsp;00&nbsp;01&nbsp;F3&nbsp;FE</code></td>
+						</tr>
+					</table>
+				</section>
+
+				<section>
+					<h2>1 character ≤ 2 ints</h2>
+					<h3>Myth 6</h3>
+				</section>
+
+				<section>
+					<h2>👩🏾‍🚀</h2>
+				</section>
+
+				<section>
+					<table>
+						<tr>
+							<td>👩</td>
+							<td><code>00 01 F4 69</code></td>
+						</tr>
+						<tr>
+							<td>🏾</td>
+							<td><code>00 01 F3 FE</code></td>
+						</tr>
+						<tr>
+							<td>ZWJ</td>
+							<td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20 0D</code></td>
+						</tr>
+						<tr>
+							<td>🚀</td>
+							<td><code>00 01 F6 80</code></td>
+						</tr>
+					</table>
+				</section>
+
+				<section>
+					<h2>👨‍👩‍👧‍👦</h2>
+				</section>
+
+				<section>
+					<table>
+						<tr>
+							<td>👨</td>
+							<td><code>00 01 F4 68</code></td>
+						</tr>
+						<tr>
+							<td>ZWJ</td>
+							<td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20 0D</code></td>
+						</tr>
+						<tr>
+							<td>👩</td>
+							<td><code>00 01 F4 69</code></td>
+						</tr>
+						<tr>
+							<td>ZWJ</td>
+							<td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20 0D</code></td>
+						</tr>
+						<tr>
+							<td>👧</td>
+							<td><code>00 01 F4 67</code></td>
+						</tr>
+						<tr>
+							<td>ZWJ</td>
+							<td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20 0D</code></td>
+						</tr>
+						<tr>
+							<td>👦</td>
+							<td><code>00 01 F4 66</code></td>
+						</tr>
+					</table>
+				</section>
+
+				<section>
+					<img src="img/tweet-turing.png" class="stretch"/>
+					<hr/>
+					<small>
+						<a href="https://twitter.com/relizarov/status/1128347860263669761">https://twitter.com/relizarov/status/1128347860263669761</a>
+					</small>
+				</section>
+
+				<section>
+					<h2><code>String.length()</code> is useful</h2>
+					<h3>Myth 7</h3>
+				</section>
+
+				<section>
+					<h2><code>public int length()</code></h2>
+					<blockquote>
+						Returns the length [...] equal to the number of Unicode <mark>code units</mark> in the string.
+					</blockquote>
+					<small>
+						<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#length()">https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#length()</a>
+					</small>
+				</section>
+
+				<section>
+					<h2>Code unit 😱</h2>
+					<blockquote>
+					The minimal bit combination that can represent a unit of encoded text.
+					<footer>[§3.9, D77]</footer>
+					</blockquote>
+				</section>
+
+				<section>
+					<pre><code data-trim>
+"a".length()	  // 1
+"ą".length()	  // 1
+"ą".length()	  // 2
+"𝄞".length()	  // 2
+					</code></pre>
+				</section>
+
+				<section>
+					<pre><code data-trim>
+"👰".length()    // 2
+"🇵🇱".length()    // 4
+"👩🏾‍🚀".length()    // 7
+"👨‍👩‍👧‍👦".length() 	// 11
+					</code></pre>
+				</section>
+
+				<section>
+					<h4>
+						"<span style="color: red">T̢̗̮͉͈̠̣͆͆̎͐̌͒͢</span><span style="color: green">ȍ̵͑̾͒͂͛̄̔͢҉̡̦͙͎̱̹͍͎͖̪̮̙̪͔̺͕̞̰̤̯</span><span style="color: blue">m̍ͩ̓͋ͫ̑҉̵̷͓̦̩̭̗̩̫̺</span><span style="color: violet">e̵̦̫̭̫̬͉̞̪̹̓̆̈́͊̂̃̀͡</span><span style="color: cyan">ǩ̸̴̢̛̫̦̬̪̘̱̖̼̺͕͇͕̞͓̮̭̯ͣ̌̂̏ͨͤͬ͛̏̋̉̀</span>".length()
+					</h4>
+					<h2>&nbsp;</h2>
+					<h2 class="fragment">119</h2>
+				</section>
+
+				<section>
+					<pre><code data-trim>
+import java.text.BreakIterator;
+
+int graphemes(String str) {
+   BreakIterator graphemeCounter = BreakIterator
+           .getCharacterInstance(Locale.US);
+   graphemeCounter.setText(str);
+   int graphemeCount = 0;
+   while (graphemeCounter.next() != BreakIterator.DONE) {
+       graphemeCount++;
+   }
+   return graphemeCount;
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<img src="img/twitter-counting.png" class="stretch"/>
+					<hr/>
+					<small>
+						<a href="https://developer.twitter.com/en/docs/basics/counting-characters.html">https://developer.twitter.com/en/docs/basics/counting-characters.html</a>
+					</small>
+				</section>
+
+				<section>
+					<h2>What is <em>character?</em> </h2>
+					<ul>
+						<li>Code point</li>
+						<li>Code unit</li>
+						<li>Grapheme cluster</li>
+						<li>Glyph</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>UTF</h2>
+					<blockquote>UTF is an [...] mapping from every Unicode code point [...] to a unique byte sequence</blockquote>
+				</section>
+
+				<section>
+					<h2>Whitespace is straightforward</h2>
+					<h3>Myth 8</h3>
+				</section>
+
+				<section>
+					<h2>How many different types of whitespaces there are?</h2>
+				</section>
+
+				<section>
+					<h2>All of them:</h2>
+					<hr/>
+					<h2>&nbsp; 	
+					</h2>
+					<hr/>
+				</section>
+
+				<section>
+					<h2>Space, tab, enter...</h2>
+				</section>
+
+				<section>
+					<pre><code data-trim>
+						IntStream.rangeClosed(0, 0x10FFFF)
+						         .filter(Character::isDefined)
+						         .count();
+					</code></pre>
+				</section>
+
+				<section>
+					<table>
+						<tr>
+							<th>Java</th>
+							<th>Unicode</th>
+							<th><code>isDefined</code></th>
+						</tr>
+						<tr>
+							<td>8</td>
+							<td>6.2</td>
+							<td>249&nbsp;698</td>
+						</tr>
+						<tr>
+							<td>9/10</td>
+							<td>8.0</td>
+							<td>260&nbsp;253</td>
+						</tr>
+						<tr>
+							<td>11</td>
+							<td>10.0</td>
+							<td>276&nbsp;271</td>
+						</tr>
+						<tr>
+							<td>12</td>
+							<td>11.0</td>
+							<td>276956</td>
+						</tr>
+					</table>
+				</section>
+
+				<section>
+					<pre><code data-trim>
+						IntStream.rangeClosed(0, 0x10FFFF)
+						         .filter(Character::isWhitespace)
+						         .count();
+					</code></pre>
+				</section>
+
+				<section>
+					<table>
+						<tr>
+							<th>Java</th>
+							<th><code>isWhitespace</code></th>
+						</tr>
+						<tr>
+							<td>8</td>
+							<td>26</td>
+						</tr>
+						<tr>
+							<td>9-12</td>
+							<td>25</td>
+						</tr>
+					</table>
+				</section>
+
+				<section>
+					<h3><code>Character.isWhitespace()</code></h3>
+					<h3>25 characters</h3>
+				</section>
+
+				<section>
+					<h2><code>String.trim()</code></h2>
+					<h3>32 characters</h3>
+				</section>
+
+				<section>
+					<h3><code>Pattern.compile("\\s")</code></h3>
+					<h3>6 characters</h3>
+				</section>
+
+				<section>
+					<h2>Upper case is simple</h2>
+					<h3>Myth 9</h3>
+				</section>
+
+				<section>
+					<h1>🇹🇷</h1>
+					<h2>🇹+🇷</h2>
+				</section>
+
+				<section>
+					<h3><code>"i".toUpperCase(tr_TR)</code></h3>
+					<h3>i → İ</h3>
+				</section>
+
+				<section>
+					<ul>
+						<li>
+							<a href="https://jira.atlassian.com/browse/CONFSERVER-7168">jira.atlassian.com/browse/CONFSERVER-7168</a> (Confluence)
+						</li>
+						<li>
+							<a href="https://blogs.msdn.microsoft.com/anutthara/2005/12/05/avoiding-the-turkish-i-issue/">blogs.msdn.microsoft.com/anutthara/2005/12/05/avoiding-the-turkish-i-issue/</a> (.NET)
+						</li>
+						<li>
+							<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=38787">bz.apache.org/bugzilla/show_bug.cgi?id=38787</a> (BCEL)
+						</li>
+						<li>
+							<a href="https://bugzilla.redhat.com/show_bug.cgi?id=1408950">bugzilla.redhat.com/show_bug.cgi?id=1408950</a> (Fedora)
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<p>
+						<ul style="font-size: 70%">
+							<li>
+								<a href="https://bugs.java.com/bugdatabase/view_bug.do?bug_id=6220064">JDK-6220064 - REGRESSION: SSL connections fail with Turkish input locale</a>
+							</li>
+							<li>
+								<a href="https://bugs.java.com/bugdatabase/view_bug.do?bug_id=6240755">JDK-6240755 - Swing rendering error for Turkish locale on XP look and feel</a>
+							</li>
+							<li>
+								<a href="https://bugs.java.com/bugdatabase/view_bug.do?bug_id=6240963">JDK-6240963 - XSLT transforms broken in Turkish locale in JDK 1.5.0+</a>
+							</li>
+							<li>
+								<a href="https://bugs.java.com/bugdatabase/view_bug.do?bug_id=6341798">JDK-6341798 - XMLDecoder fails when using Turkish Locale</a>
+							</li>
+							<li>
+								<a href="https://bugs.java.com/bugdatabase/view_bug.do?bug_id=8023943">JDK-8023943 - Method description fix for String.toLower/UpperCase() methods</a>
+							</li>
+							<li>
+								<a href="https://bugs.java.com/bugdatabase/view_bug.do?bug_id=4624534">JDK-4624534 - JarEntry.getCertificates() returns null on Turkish locale (tr_TR)</a>
+							</li>
+							<li>
+								<a href="https://bugs.java.com/bugdatabase/view_bug.do?bug_id=6867345">JDK-6867345 - Turkish regional options cause NPE in sun.security.x509.AlgorithmId.algOID</a>
+							</li>
+							<li>
+								<a href="https://bugs.java.com/bugdatabase/view_bug.do?bug_id=6972386">JDK-6972386 - issues with String.toLowerCase/toUpperCase</a>
+							</li>
+							<li>
+								<a href="https://bugs.java.com/bugdatabase/view_bug.do?bug_id=6353473">JDK-6353473 - REGRESSION: NameGenerator.captialize doesn't work properly with Turkish locale</a>
+							</li>
+						</ul>
+					</p>
+				</section>
+
+				<section>
+					<h2>Unicode is harmless</h2>
+					<h3>Myth 10</h3>
+				</section>
+
+				<section>
+					<img src="img/winnie.jpg" class="stretch"/>
+					<hr/>
+					<small>
+						<a href="https://twitter.com/JenMsft/status/1012586276678086656">https://twitter.com/JenMsft/status/1012586276678086656</a>
+					</small>
+				</section>
+
+				<section>
+					<h2>effective.  Power
+ لُلُصّبُلُلصّبُررً ॣ ॣh ॣ ॣ 冗</h2>
+ 					<hr/>
+ 					<small>
+ 						<a href="https://www.businessinsider.com/iphone-unicode-bug-crashes-messages-forces-devices-to-reboot-arabic-2015-5?IR=T">https://www.businessinsider.com/iphone-unicode-bug-crashes-messages-forces-devices-to-reboot-arabic-2015-5?IR=T</a>
+ 					</small>
+				</section>
+
+				<section>
+					<h2>జ్ఞా</h2>
+ 					<hr/>
+					<small>
+						<a href="https://serhack.me/articles/crash-iphone-telugu-character-en">https://serhack.me/articles/crash-iphone-telugu-character-en</a>
+					</small>
+				</section>
+
+				<section>
+					<h2><⚫️>👈🏻</h2>
+					<small>
+						<a href="https://www.macworld.com/article/3271426/iphone-ipad/black-dot-unicode-bug-can-crash-messagesheres-how-to-fix-it.html">https://www.macworld.com/article/3271426/iphone-ipad/black-dot-unicode-bug-can-crash-messagesheres-how-to-fix-it.html</a>
+					</small>
+				</section>
+
+				<section>
+					<h2>
+						<code>&amp;#x200F;&amp;#x200E;</code>
+					</h2>
+					<small>
+						<a href="https://blog.infobytesec.com/2018/05/remember-iphone-unicode-bug-android.html">https://blog.infobytesec.com/2018/05/remember-iphone-unicode-bug-android.html</a>
+					</small>
+				</section>
+
+				<section>
+					<img src="img/ramazan.png" class="stretch"/>
+ 					<hr/>
+					<small>
+						<a href="https://www.dogancanulker.com/noktali-ve-noktasiz-problemi/">https://www.dogancanulker.com/noktali-ve-noktasiz-problemi/</a>
+					</small>
+				</section>
+
+				<section>
+					<img src="img/inquirer.png" class="stretch"/>
+					<small>
+						<a href="https://www.theinquirer.net/inquirer/news/1017243/cellphone-localisation-glitch">https://www.theinquirer.net/inquirer/news/1017243/cellphone-localisation-glitch</a>
+					</small>
+				</section>
+
+				<section>
+					<div style="display: grid; grid-template-columns: 5fr 1fr">
+						<div>
+							<blockquote>
+								Zaten sen sıkışınca konuyu değiştiriyorsun.
+								<footer>Ramazan (24 yo)</footer>
+							</blockquote>
+							<blockquote class="fragment">
+								Zaten sen sikişınce konuyu değiştiriyorsun.
+								<footer>Emine (20 yo)</footer>
+							</blockquote>
+						</div>
+						<img src="img/wally.jpg"/>
+					</div>
+				</section>
+
+				<section>
+					<h2>sıkışınca ≠ sikişince</h2>
+					<blockquote>
+						Zaten sen <mark>sıkışınca</mark> konuyu değiştiriyorsun.
+						<footer>Ramazan (24 yo)</footer>
+					</blockquote>
+					<blockquote>
+						Zaten sen <mark>sikişınce</mark> konuyu değiştiriyorsun.
+						<footer>Emine (20 yo)</footer>
+					</blockquote>
+				</section>
+
+				<section>
+					<h2>sıkışınca ≠ sikişince</h2>
+					<blockquote>
+						Anyhow, whenever <mark>you can't answer an argument</mark>, you change the subject.
+						<footer>Ramazan (24 yo)</footer>
+					</blockquote>
+					<blockquote class="fragment">
+						Anyhow, whenever <mark>they are f***ing you</mark>, you change the subject.
+						<footer>Emine (20 yo)</footer>
+					</blockquote>
+				</section>
+
+				<section>
+					<h2>Romanization</h2>
+					<p>Zażółć gęślą jaźń</p>
+					<h2>👇</h2>
+					<p>Zazolc gesla jazn</p>
+				</section>
+
+				<section>
+					<img src="img/ramazan.png" class="stretch"/>
+				</section>
+
+				<section>
+					<h2>Pangram</h2>
+					<p>The quick brown fox jumps over the lazy dog</p>
+					<p>Jeżu klątw, spłódź Finom część gry hańb</p>
+				</section>
+
+				<section>
+					<h2>Conclusions</h2>
+					<h3>Ińtërnâtiônàlizætión☃⛄️</h3>
+					<small>
+						<a href="https://mathiasbynens.be/notes/javascript-unicode">https://mathiasbynens.be/notes/javascript-unicode</a>
+					</small>
+				</section>
+
+				<section>
+					<h2>Which encoding is the best?</h2>
+					<div class="fragment">
+						<h3>
+							<del>It depends</del>
+						</h3>
+						<h3>
+							UTF-8
+						</h3>
+					</div>
+				</section>
+
+				<section>
+					<h2>References</h2>
+					<small>
+						<ul>
+							<li>
+								<a href="http://utf8everywhere.org/">utf8everywhere.org/</a>
+							</li>
+							<li>
+								<a href="https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/">www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/</a>
+							</li>
+							<li>
+								<a href="https://softwareengineering.stackexchange.com/questions/102205/should-utf-16-be-considered-harmful">softwareengineering.stackexchange.com/questions/102205/should-utf-16-be-considered-harmful</a>
+							</li>
+							<li>
+								<a href="http://www.oracle.com/us/technologies/java/supplementary-142654.html">www.oracle.com/us/technologies/java/supplementary-142654.html</a>
+							</li>
+						</ul>
+					</small>
+				</section>
+
+				<section>
+					<section>
+						<h2>Thank you!</h2>
+						<img src="img/qr.svg" class="stretch"/>
+						<p>
+							<small>
+								<a href="http://nurkiewicz.github.io/talks/charbusters">nurkiewicz.github.io/talks/charbusters</a>
+							</small>
+						</p>
+					</section>
+					<section>
+						<pre><code data-trim>
+							public static void main(String[] args) throws UnsupportedEncodingException {
+								var s = "\uD83D\uDC69\uD83C\uDFFE\u200D\uD83D\uDE80";
+								System.out.println(s);
+								final byte[] bytes = s.getBytes("UTF-32BE");
+								for (byte b : bytes) {
+									System.out.print(toHex(b) + " ");
+								}
+							}
+						</code></pre>
+						<pre><code data-trim>
+							private static String toHex(byte b) {
+								final int unsigned = b & 0xFF;
+								final String s = Integer.toHexString(unsigned).toUpperCase();
+								return s.length() == 1? "0" + s : s;
+							}
+						</code></pre>
+					</section>
+				</section>
+
+				<!--
+					https://eng.getwisdom.io/hacking-github-with-unicode-dotless-i/
+				-->
+
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: false,
+				progress: false,
+				history: true,
+				center: true,
+
+				transition: 'fade', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/search/search.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

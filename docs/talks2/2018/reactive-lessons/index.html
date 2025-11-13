@@ -1,0 +1,922 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Reactive programming - lessons learned</title>
+
+		<meta name="author" content="Tomasz Nurkiewicz">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.6.0/css/reveal.css">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.6.0/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'https://cdn.jsdelivr.net/npm/reveal.js@3.6.0/css/print/pdf.css' : 'https://cdn.jsdelivr.net/npm/reveal.js@3.6.0/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+	    <script>
+	      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	      ga('create', 'UA-41796111-1', 'nurkiewicz.github.io');
+	      ga('send', 'pageview');
+
+	    </script>
+
+		<div class="reveal">
+
+			<div class="footer">
+				<small><a href="http://twitter.com/tnurkiewicz">@tnurkiewicz</a></small>
+			</div>
+
+
+			<div class="slides">
+
+				<section>
+					<h2>Reactive programming</h2>
+					<h3>Lessons learned</h3>
+					<p>
+						Tomasz Nurkiewicz
+					</p>
+					<p>
+						<a href="http://twitter.com/tnurkiewicz">@tnurkiewicz</a>
+					</p>
+				</section>
+
+				<section>
+					<h2>You must be <em>this</em> tall to practice reactive programming</h2>
+				</section>
+
+				<section>
+					<blockquote>
+						[...] a very particular set of skills, skills [...] acquired over a very long career. Skills that make me a nightmare for 
+						<br/>
+						<span style='color:red;text-decoration:line-through'>
+							<span style='color:black'>people like you</span>
+						</span>
+						<br/>
+						other developers
+					</blockquote>
+					<p class="fragment">Liam Neeson on reactive programming</p>
+				</section>
+
+				<section>
+					<h3>Who am I?</h3>
+					<img src="img/javachampion.jpg" width="80"/>
+				</section>
+
+				<section>
+					<h3>I built <em>complex</em> reactive systems</h3>
+					<p class="fragment">* not really proud about the <q>complex</q> part</p>
+				</section>
+
+				<section>
+					<h3>1000+ Akka cluster nodes</h3>
+				</section>
+
+				<section>
+					<h3>Tens of thousands of RPS</h3>
+					<h3>on a single node</h3>
+				</section>
+
+				<section>
+					<h3>Beat C10k problem</h3>
+					<h3 class="fragment">...and C100k</h3>
+				</section>
+
+				<section>
+					<p>I wrote a book with the word <q>reactive</q> in the title</p>
+					<img src="img/rxjava-cover.png" class="stretch"/>
+					<p>
+						<small>(2016)</small>
+					</p>
+				</section>
+
+				<section>
+					<img src="img/muppets.png" class="stretch" />
+				</section>
+
+				<section>
+					<h3>
+						<blockquote>
+							May you live in interesting times
+						</blockquote>
+					Chinese curse
+					</h3>
+				</section>
+
+				<section>
+					<h3>
+						<blockquote>
+							May you support interesting codebase
+						</blockquote>
+					</h3>
+					me
+				</section>
+
+				<section>
+					<ol>
+						<li>Fetch user by name from a web service</li>
+						<li>If not yet in database, store it</li>
+						<li>Load shopping cart for user</li>
+						<li>Count total price of items</li>
+						<li>Make single payment</li>
+						<li>Send e-mail for each individual item, together with payment ID</li>
+					</ol>
+				</section>
+
+				<section>
+					<pre><code data-trim>
+User user = ws.findUserByName(name);
+if (!db.contains(user.getSsn())) {
+    db.save(user);
+}
+List&lt;Item&gt; cart = loadCart(user);
+double total = cart.stream()
+		.mapToDouble(Item::getPrice)
+		.sum();
+UUID id = pay(total);
+cart.forEach(item -&gt; sendEmail(item, id));
+					</code></pre>
+				</section>
+
+				<section>
+					<pre><code data-trim>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User&nbsp;&nbsp;user = ws.findUserByName(name)
+					</code></pre>					
+					<pre class="fragment"><code data-trim>
+						Mono&lt;User&gt; user = ws.findUserByName(name)
+					</code></pre>					
+				</section>
+
+				<section>
+					<pre><code data-trim>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolean&nbsp;&nbsp;contains = db.contains(user.getSsn())
+					</code></pre>					
+					<pre class="fragment"><code data-trim>
+Mono&lt;Boolean&gt; contains = db.contains(user.getSsn())
+					</code></pre>
+				</section>
+
+				<section>
+					<pre><code data-trim>
+						if (!db.contains(user.getSsn())) {
+						    db.save(user);
+						}
+					</code></pre>					
+					<pre class="fragment"><code data-trim>
+						user -&gt; db
+				        .contains(user.getSsn())      //Mono&lt;Bool&gt;, true/false
+				        .filter(contains -&gt; contains) //Mono&lt;Bool&gt;, true/empty
+				        .switchIfEmpty(db.save(user)) //if empty,
+				                                      //replace with db.save()
+					</code></pre>
+				</section>
+
+				<section>
+					<pre><code data-trim>
+						User user = ws.findUserByName(name);
+						if (!db.contains(user.getSsn())) {
+						    db.save(user);
+						}
+						List&lt;Item&gt; cart = loadCart(user);
+						double total = cart.stream()
+						        .mapToDouble(Item::getPrice)
+						        .sum();
+						UUID id = pay(total);
+						cart.forEach(item -&gt; sendEmail(item, id));
+					</code></pre>
+				</section>
+
+				<section>
+					Now, take a deep breath...
+				</section>
+
+				<section>
+					<pre><code data-trim>
+ws
+    .findUserByName(name)
+    .flatMap(user -&gt; db
+            .contains(user.getSsn())
+            .filter(contains -&gt; contains)
+            .switchIfEmpty(db.save(user))
+    )
+    .flatMap(user -&gt; loadCart(user)
+            .collectList()
+            .flatMap(cart -&gt; {
+                double total = cart.stream()
+                        .mapToDouble(Item::getPrice)
+                        .sum();
+                return pay(total)
+                        .map(uuid -&gt; Pair.of(cart, uuid));
+            }))
+    .flatMapMany(pair -&gt; Flux
+            .fromIterable(pair.getLeft())
+            .map(item -&gt; Pair.of(item, pair.getRight())))
+    .flatMap(pair -&gt; sendEmail(pair.getLeft(), pair.getRight()))
+    				</code></pre>
+				</section>
+
+				<section>
+					<img class="stretch" src="img/cereal.png"/>
+					<h3 class="fragment">That escalated quickly</h3>
+				</section>
+
+				<section>
+					<pre><code data-trim>
+						User user = ws.findUserByName(name);
+						if (!db.contains(user.getSsn())) {
+						    db.save(user);
+						}
+						List&lt;Item&gt; cart = loadCart(user);
+						double total = cart.stream()
+						        .mapToDouble(Item::getPrice)
+						        .sum();
+						UUID id = pay(total);
+						cart.forEach(item -&gt; sendEmail(item, id));
+					</code></pre>
+				</section>
+
+				<section>
+					<pre><code data-trim>
+ws
+    .findUserByName(name)
+    .flatMap(user -&gt; db
+            .contains(user.getSsn())
+            .filter(contains -&gt; contains)
+            .switchIfEmpty(db.save(user))
+    )
+    .flatMap(user -&gt; loadCart(user)
+            .collectList()
+            .flatMap(cart -&gt; {
+                double total = cart.stream()
+                        .mapToDouble(Item::getPrice)
+                        .sum();
+                return pay(total)
+                        .map(uuid -&gt; Pair.of(cart, uuid));
+            }))
+    .flatMapMany(pair -&gt; Flux
+            .fromIterable(pair.getLeft())
+            .map(item -&gt; Pair.of(item, pair.getRight())))
+    .flatMap(pair -&gt; sendEmail(pair.getLeft(), pair.getRight()))
+    				</code></pre>
+				</section>
+
+				<section>
+					<h2>Ubiquitous language?</h2>
+				</section>
+
+				<section>
+					<blockquote>
+						Are Semigroup, Monoid, Monad, Functor, Kleisli, and Yoneda pervasive in your domain model? 
+					</blockquote>
+					<a class="source" href="https://www.innoq.com/en/blog/the-language-of-maths-is-not-the-language-of-your-business/">www.innoq.com/en/blog/the-language-of-maths-is-not-the-language-of-your-business/</a>
+				</section>
+
+				<section>
+					cont.
+					<blockquote>
+						Unless your core domain is mathematics, category theory is not the language used by your domain experts. 
+					</blockquote>
+					<a class="source" href="https://www.innoq.com/en/blog/the-language-of-maths-is-not-the-language-of-your-business/">www.innoq.com/en/blog/the-language-of-maths-is-not-the-language-of-your-business/</a>
+				</section>
+
+				<section>
+					cont.
+					<blockquote>
+						Good luck getting your domain experts to understand the language introduced by that abstraction. 
+					</blockquote>
+					<a class="source" href="https://www.innoq.com/en/blog/the-language-of-maths-is-not-the-language-of-your-business/">www.innoq.com/en/blog/the-language-of-maths-is-not-the-language-of-your-business/</a>
+				</section>
+
+				<section>
+					<blockquote>
+						Are <code>Mono</code> and <code>Flux</code> pervasive in your domain model? 
+					</blockquote>
+					<div class="fragment">
+						<blockquote>
+							Unless your core domain is infectious diseases, Reactor is not the language used by your domain experts. 
+						</blockquote>
+						<p style="line-height: 0.25em; text-align: left; padding-left: 40%">
+							<a class="source" href="https://en.wikipedia.org/wiki/Infectious_mononucleosis">en.wikipedia.org/wiki/Infectious_mononucleosis</a>
+							<br/>
+							<a class="source" href="https://en.wikipedia.org/wiki/Dysentery">en.wikipedia.org/wiki/Dysentery</a>
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<h2>Universal measure of code quality?</h2>
+				</section>
+
+				<section>
+					<h2>
+					<q>Simple</q>?
+					</h2>
+				</section>
+
+				<section>
+					<h3>
+					<q>Monad transformers are reducing boilerplate</q>
+					</h3>
+				</section>
+
+				<section>
+					<h2>
+						<q>Tested?</q>
+					</h2>
+				</section>
+
+				<section>
+					<h3>
+						<blockquote>
+							Remember that code with badly written tests can be more harmful than code without tests.
+						</blockquote>
+					</h3>
+					<a class="source" href="https://hackernoon.com/few-simple-rules-for-good-coding-my-15-years-experience-96cb29d4acd9">hackernoon.com/few-simple-rules-for-good-coding-my-15-years-experience-96cb29d4acd9</a>
+				</section>
+
+				<section>
+					<ul>
+						<li>open/closed</li>
+						<li class="fragment">SOLID</li>
+						<li class="fragment">high cohesion</li>
+						<li class="fragment">low coupling</li>
+						<li class="fragment">cyclomatic complexity</li>
+						<li class="fragment">DRY</li>
+						<li class="fragment">...</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Boring</h1>
+				</section>
+
+				<section>
+					<h2>Implementation transparency</h2>
+				</section>
+
+				<section>
+					<h3>
+						I don't care about patterns, frameworks, syntax
+					</h3>
+				</section>
+
+				<section>
+					<h2>10x developer?</h2>
+					<p class="fragment">Enable 10 other developers</p>
+				</section>
+
+				<section>
+					<img src="img/pragmatic-dev.jpg" class="stretch"/>
+				</section>
+
+				<section>
+					<h2>What are you optimizing?</h2>
+				</section>
+
+				<section>
+					<h2>Costs</h2>
+					<ul>
+						<li>Software development</li>
+						<li>Hardware</li>
+						<li>Maintenance</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Blocking code</h2>
+					<img src="img/cost-traditional.png"/>
+				</section>
+
+				<section>
+					<h2>Reactive code</h2>
+					<img src="img/cost-reactive.png"/>
+				</section>
+
+				<section>
+					<h2>Tipping point?</h2>
+					<img src="img/cost-comparison3.png">
+				</section>
+
+				<section>
+					<h2>The <img src="img/netflix-logo.png" height="50" style="vertical-align: bottom"/> point</h2>
+					<img src="img/cost-comparison4.png">
+				</section>
+
+				<section>
+					<h2>Are you <img src="img/netflix-logo.png" height="50" style="vertical-align: bottom"/>?</h2>
+				</section>
+
+				<section>
+					<h1>No.</h1>
+				</section>
+
+				<section>
+					<h2>Little's law</h2>
+					<h2 style="font-family: Arial">L = <img src="img/halflife.svg" height="70" style="vertical-align: bottom"/>W</h2>
+					<a class="source" href="https://en.wikipedia.org/wiki/Little's_law">en.wikipedia.org/wiki/Little's_law</a>
+				</section>
+
+				<section>
+					<p>Tomcat, 100 threads (L), 100 ms/request (W)</p>
+					<p class="fragment">1K request/second (<span style="font-family: Arial">λ</span>)</p>
+					<p class="fragment">on a laptop</p>
+					<p class="fragment" style="font-size: 0.3em"><img src="img/halflife3.svg" style="height: 1em; margin: 0"/> confirmed!</p>
+				</section>
+
+				<section>
+					<h2>Ever heard of space-time trade off?</h2>
+				</section>
+
+				<section>
+					<h2>What about human-hardware trade off?</h2>
+				</section>
+
+				<section>
+					<h2>Let's talk about maintenance</h2>
+				</section>
+
+				<section>
+					<h2>I miss you, stack trace...</h2>
+				</section>
+
+				<section>
+					<table>
+						<tr valign="bottom">
+							<td><img src="img/intellij-stack.png" style="max-height: 500px"></td>
+							<td class="fragment" data-fragment-index="1"><img src="img/burj-khalifa.png" style="max-height: 400px"></td>
+						</tr>
+					</table>
+				</section>
+
+				<section>
+					<pre><code data-trim>
+java.sql.SQLTransientConnectionException: HikariPool-1 -
+		Connection is not available,
+		request timed out after 30003ms.
+    at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:555) ~[HikariCP-2.4.7.jar:na]
+    at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:188) ~[HikariCP-2.4.7.jar:na]
+    at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:147) ~[HikariCP-2.4.7.jar:na]
+    at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:99) ~[HikariCP-2.4.7.jar:na]
+    at org.springframework.jdbc.datasource.DataSourceTransactionManager.doBegin(DataSourceTransactionManager.java:211) ~[spring-jdbc-4.3.4.RELEASE.jar:4.3.4.RELEASE]
+    at org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:373) ~[spring-tx-4.3.4.RELEASE.jar:4.3.4.RELEASE]
+    at org.springframework.transaction.interceptor.TransactionAspectSupport.createTransactionIfNecessary(TransactionAspectSupport.java:447) ~[spring-tx-4.3.4.RELEASE.jar:4.3.4.RELEASE]
+    at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:277) ~[spring-tx-4.3.4.RELEASE.jar:4.3.4.RELEASE]
+    at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96) ~[spring-tx-4.3.4.RELEASE.jar:4.3.4.RELEASE]
+    				</code></pre>
+    				<a class="source" href="http://www.nurkiewicz.com/2017/03/beware-of-slow-transaction-callbacks-in.html">www.nurkiewicz.com/2017/03/beware-of-slow-transaction-callbacks-in.html</a>
+				</section>
+
+				<section>
+					<pre><code data-trim>
+"http-nio-9099-exec-2@6415" daemon prio=5 tid=0x28 nid=NA waiting
+  java.lang.Thread.State: WAITING
+    [...4 frames omitted...]
+    at org.apache.activemq.transport.FutureResponse.getResult
+    at o.a.a.transport.ResponseCorrelator.request
+    at o.a.a.ActiveMQConnection.syncSendPacket
+    at o.a.a.ActiveMQConnection.syncSendPacket
+    at o.a.a.ActiveMQSession.syncSendPacket
+    at o.a.a.ActiveMQMessageProducer.&lt;init&gt;
+    at o.a.a.ActiveMQSession.createProducer
+    [...5  frames omitted...]
+    at org.springframework.jms.core.JmsTemplate.send
+    at com.nurkiewicz.Sample$sendMessageAfterCommit$1.afterCommit
+    at org.springframework.transaction.support.TransactionSynchronizationUtils.invokeAfterCommit
+    at o.s.t.s.TransactionSynchronizationUtils.triggerAfterCommit
+    at o.s.t.s.AbstractPlatformTransactionManager.triggerAfterCommit
+    at o.s.t.s.AbstractPlatformTransactionManager.processCommit
+    at o.s.t.s.AbstractPlatformTransactionManager.commit
+    [...73 frames omitted...]
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>
+						<blockquote>
+							stack trace is meaningless when trying to follow a request.
+						</blockquote>
+					</h3>
+					<a class="source" href="https://medium.com/netflix-techblog/zuul-2-the-netflix-journey-to-asynchronous-non-blocking-systems-45947377fb5c">medium.com/netflix-techblog/zuul-2-the-netflix-journey-to-asynchronous-non-blocking-systems-45947377fb5c</a>
+				</section>
+
+				<section>
+					<h3>
+						<blockquote>
+							It is difficult to follow a request as events and callbacks are processed [...]
+						</blockquote>
+					</h3>
+					<a class="source" href="https://medium.com/netflix-techblog/zuul-2-the-netflix-journey-to-asynchronous-non-blocking-systems-45947377fb5c">medium.com/netflix-techblog/zuul-2-the-netflix-journey-to-asynchronous-non-blocking-systems-45947377fb5c</a>
+				</section>
+
+				<section>
+					<h3>
+						<blockquote>
+							[...] unhandled exceptions, and incorrectly handled state changes [...]
+							These types of issues have proven to be quite difficult to debug
+						</blockquote>
+					</h3>
+					<a class="source" href="https://medium.com/netflix-techblog/zuul-2-the-netflix-journey-to-asynchronous-non-blocking-systems-45947377fb5c">medium.com/netflix-techblog/zuul-2-the-netflix-journey-to-asynchronous-non-blocking-systems-45947377fb5c</a>
+				</section>
+
+				<section>
+					<h3>IntelliJ IDEA</h3>
+					<img src="img/intellij.png"/>
+					<hr/>
+					<a class="source" href="https://blog.jetbrains.com/idea/2019/10/whats-new-in-intellij-idea-2019-3-eap6-improved-reactor-support-and-a-huge-pack-of-fixes/">What’s New in IntelliJ IDEA 2019.3 EAP6</a>
+				</section>
+
+				<section>
+					<pre><code data-trim>
+						Hooks.onOperatorDebug()
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>
+						Exceptions from hell
+					</h2>
+				</section>
+
+				<section>
+					<pre><code data-trim>
+flux
+	.map(this::foo)
+	.map(this::bar)
+	.map(this::buzz)
+					</code></pre>
+				</section>
+
+				<section>
+					<pre><code data-trim>
+java.lang.NullPointerException:
+		The mapper function returned a null value.
+	at io.reactivex.internal.functions.ObjectHelper.requireNonNull(ObjectHelper.java:39)
+	at io.reactivex.internal.operators.flowable.FlowableMap$MapSubscriber.onNext(FlowableMap.java:64)
+	at io.reactivex.internal.subscriptions.ScalarSubscription.request(ScalarSubscription.java:55)
+	at io.reactivex.internal.subscribers.BasicFuseableSubscriber.request(BasicFuseableSubscriber.java:153)
+	at io.reactivex.internal.subscribers.BasicFuseableSubscriber.request(BasicFuseableSubscriber.java:153)
+	at io.reactivex.internal.subscribers.BasicFuseableSubscriber.request(BasicFuseableSubscriber.java:153)
+	at io.reactivex.internal.subscribers.LambdaSubscriber.request(LambdaSubscriber.java:111)
+	at io.reactivex.internal.operators.flowable.FlowableInternalHelper$RequestMax.accept(FlowableInternalHelper.java:219)
+	at io.reactivex.internal.operators.flowable.FlowableInternalHelper$RequestMax.accept(FlowableInternalHelper.java:215)
+	at io.reactivex.internal.subscribers.LambdaSubscriber.onSubscribe(LambdaSubscriber.java:49)
+	at io.reactivex.internal.subscribers.BasicFuseableSubscriber.onSubscribe(BasicFuseableSubscriber.java:67)
+	at io.reactivex.internal.subscribers.BasicFuseableSubscriber.onSubscribe(BasicFuseableSubscriber.java:67)
+	at io.reactivex.internal.subscribers.BasicFuseableSubscriber.onSubscribe(BasicFuseableSubscriber.java:67)
+	at io.reactivex.internal.operators.flowable.FlowableJust.subscribeActual(FlowableJust.java:34)
+	at io.reactivex.Flowable.subscribe(Flowable.java:12986)
+	at io.reactivex.internal.operators.flowable.FlowableMap.subscribeActual(FlowableMap.java:38)
+	at io.reactivex.Flowable.subscribe(Flowable.java:12986)
+	at io.reactivex.internal.operators.flowable.FlowableMap.subscribeActual(FlowableMap.java:38)
+	at io.reactivex.Flowable.subscribe(Flowable.java:12986)
+	at io.reactivex.internal.operators.flowable.FlowableMap.subscribeActual(FlowableMap.java:38)
+	at io.reactivex.Flowable.subscribe(Flowable.java:12986)
+	at io.reactivex.Flowable.subscribe(Flowable.java:12922)
+	at io.reactivex.Flowable.subscribe(Flowable.java:12843)
+					</code></pre>
+				</section>
+
+				<section>
+					<pre><code data-trim>
+java.lang.NullPointerException:
+		The mapper returned a null value.
+	at java.util.Objects.requireNonNull(Objects.java:228)
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:107)
+	at reactor.core.publisher.FluxJust$WeakScalarSubscription.request(FluxJust.java:91)
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.request(FluxMapFuseable.java:156)
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.request(FluxMapFuseable.java:156)
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.request(FluxMapFuseable.java:156)
+	at reactor.core.publisher.LambdaSubscriber.onSubscribe(LambdaSubscriber.java:89)
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onSubscribe(FluxMapFuseable.java:90)
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onSubscribe(FluxMapFuseable.java:90)
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onSubscribe(FluxMapFuseable.java:90)
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68)
+	at reactor.core.publisher.FluxMapFuseable.subscribe(FluxMapFuseable.java:63)
+	at reactor.core.publisher.FluxMapFuseable.subscribe(FluxMapFuseable.java:63)
+	at reactor.core.publisher.FluxMapFuseable.subscribe(FluxMapFuseable.java:63)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:6571)
+	at reactor.core.publisher.Flux.subscribeWith(Flux.java:6738)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:6564)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:6528)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:6498)
+					</code></pre>
+				</section>
+
+				<section>
+					<h2><code>TimeoutException</code></h2>
+				</section>
+
+				<section>
+					<pre><code data-trim>
+play.api.http.HttpErrorHandlerExceptions$$anon$1:
+		Execution exception[[AskTimeoutException: 
+		Ask timed out on
+		[Actor[akka://application/user/$a#-948062154]]
+		after [60000 ms]]]
+    at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:265) ~[play_2.11-2.4.3.jar:2.4.3]
+    at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:191) ~[play_2.11-2.4.3.jar:2.4.3]
+    at play.api.GlobalSettings$class.onError(GlobalSettings.scala:179) [play_2.11-2.4.3.jar:2.4.3]
+    at play.api.DefaultGlobal$.onError(GlobalSettings.scala:212) [play_2.11-2.4.3.jar:2.4.3]
+    at play.api.http.GlobalSettingsHttpErrorHandler.onServerError(HttpErrorHandler.scala:94) [play_2.11-2.4.3.jar:2.4.3]
+    at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$9$$anonfun$apply$1.applyOrElse(PlayDefaultUpstreamHandler.scala:158) [play-netty-server_2.11-2.4.3.jar:2.4.3]
+    at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$9$$anonfun$apply$1.applyOrElse(PlayDefaultUpstreamHandler.scala:155) [play-netty-server_2.11-2.4.3.jar:2.4.3]
+    at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36) [scala-library-2.11.7.jar:na]
+    at scala.util.Failure$$anonfun$recover$1.apply(Try.scala:216) [scala-library-2.11.7.jar:na]
+    at scala.util.Try$.apply(Try.scala:192) [scala-library-2.11.7.jar:na]
+    at scala.util.Failure.recover(Try.scala:216) [scala-library-2.11.7.jar:na]
+    at scala.concurrent.Future$$anonfun$recover$1.apply(Future.scala:324) [scala-library-2.11.7.jar:na]
+    at scala.concurrent.Future$$anonfun$recover$1.apply(Future.scala:324) [scala-library-2.11.7.jar:na]
+    at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library-2.11.7.jar:na]
+    at play.api.libs.iteratee.Execution$trampoline$.executeScheduled(Execution.scala:109) [play-iteratees_2.11-2.4.3.jar:2.4.3]
+    at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:71) [play-iteratees_2.11-2.4.3.jar:2.4.3]
+    at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) [scala-library-2.11.7.jar:na]
+    at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) [scala-library-2.11.7.jar:na]
+    at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library-2.11.7.jar:na]
+    at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) [scala-library-2.11.7.jar:na]
+    at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) [scala-library-2.11.7.jar:na]
+    at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) [scala-library-2.11.7.jar:na]
+    at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library-2.11.7.jar:na]
+    at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40) [play_2.11-2.4.3.jar:2.4.3]
+    at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40) [akka-actor_2.11-2.3.13.jar:na]
+    at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397) [akka-actor_2.11-2.3.13.jar:na]
+    at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.7.jar:na]
+    at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.7.jar:na]
+    at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.7.jar:na]
+    at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.7.jar:na]
+Caused by: akka.pattern.AskTimeoutException: Ask timed out on [Actor[akka://application/user/$a#-948062154]] after [60000 ms]
+    at akka.pattern.PromiseActorRef$$anonfun$1.apply$mcV$sp(AskSupport.scala:334) ~[akka-actor_2.11-2.3.13.jar:na]
+    at akka.actor.Scheduler$$anon$7.run(Scheduler.scala:117) ~[akka-actor_2.11-2.3.13.jar:na]
+    at scala.concurrent.Future$InternalCallbackExecutor$.unbatchedExecute(Future.scala:599) ~[scala-library-2.11.7.jar:na]
+    at scala.concurrent.BatchingExecutor$class.execute(BatchingExecutor.scala:109) ~[scala-library-2.11.7.jar:na]
+    at scala.concurrent.Future$InternalCallbackExecutor$.execute(Future.scala:597) ~[scala-library-2.11.7.jar:na]
+    at akka.actor.LightArrayRevolverScheduler$TaskHolder.executeTask(Scheduler.scala:467) ~[akka-actor_2.11-2.3.13.jar:na]
+    at akka.actor.LightArrayRevolverScheduler$$anon$8.executeBucket$1(Scheduler.scala:419) ~[akka-actor_2.11-2.3.13.jar:na]
+    at akka.actor.LightArrayRevolverScheduler$$anon$8.nextTick(Scheduler.scala:423) ~[akka-actor_2.11-2.3.13.jar:na]
+    at akka.actor.LightArrayRevolverScheduler$$anon$8.run(Scheduler.scala:375) ~[akka-actor_2.11-2.3.13.jar:na]
+    at java.lang.Thread.run(Thread.java:745) ~[na:1.8.0_31]
+					</code></pre>
+					<a class="source" href="https://github.com/CogComp/open-eval/issues/186">github.com/CogComp/open-eval/issues/186</a>
+				</section>
+
+				<section>
+					<img src="img/best-practices-dilbert.jpg"/>
+				</section>
+
+				<section>
+					<h2>The best reactive system is single-threaded (!)</h2>
+				</section>
+
+				<section>
+					<ul>
+						<li>Reactor pattern</li>
+						<li>Actors</li>
+						<li>SPSC queues</li>
+						<li>Rx/Reactor operators</li>
+					</ul>
+				</section>
+
+
+				<section>
+					<h2>Order is no longer guaranteed</h2>
+					<code>parallel()</code> vs<br/><code>flatMap()</code> vs<br/><code>concatMap()</code> vs<br/><code>concatMapEager()</code>
+				</section>
+
+				<section>
+					<h2>DDoS was never that simple!</h2>
+					<code>flatMap(..., 128)</code>
+				</section>
+
+				<section>
+					<h1>Monitoring</h1>
+				</section>
+
+				<section>
+					<h2>Staged event-driven architecture</h2>
+					<blockquote>an approach to software architecture that decomposes a complex, <strong>event-driven</strong> application into a set of stages connected by <strong>queues</strong></blockquote>
+					<a class="source" href="https://en.wikipedia.org/wiki/Staged_event-driven_architecture">en.wikipedia.org/wiki/Staged_event-driven_architecture</a>
+				</section>
+
+				<section>
+					<h2>Watch out for your queues</h2>
+				</section>
+
+				<section>
+					<h2>Why no <code>mailboxSize</code> in Akka 2?</h2>
+					<p>
+						slow, inaccurate, impossible, silly
+					</p>
+					<a class="source" href="http://letitcrash.com/post/17707262394/why-no-mailboxsize-in-akka-2">letitcrash.com/post/17707262394/why-no-mailboxsize-in-akka-2</a>
+				</section>
+
+				<section>
+					<h2>Lightbend Telemetry 💰</h2>
+					<img class="stretch" src="img/lightbend-cinnamon.png"/>
+					<dl class="fragment">
+					  <dt>
+					  	Mailbox size (counter)
+					  </dt>
+					  <dd>
+					    statistics for actor mailbox sizes
+					  </dd>
+					</dl>
+					<a class="source" href="https://developer.lightbend.com/docs/cinnamon/2.5.x/instrumentations/akka/akka.html#actor-metrics">developer.lightbend.com/docs/cinnamon/2.5.x/instrumentations/akka/akka.html</a>
+				</section>
+
+				<section>
+					<h2>Timing things</h2>
+					Timers are a bit counterintuitive to get right
+				</section>
+
+				<section>
+					<pre><code data-trim>
+import io.micrometer.core.instrument.Timer;
+
+var timer = Metrics.timer("timer");
+//...
+User user = timer.recordCallable(this::loadUser);
+					</code></pre>
+				</section>
+
+				<section>
+					<pre><code data-trim>
+						Mono&lt;User&gt; user = timer.recordCallable(this::loadUserAsync);
+					</code></pre>
+				</section>
+
+				<section>
+					<pre><code data-trim>
+Mono&lt;User&gt; Mono
+    .fromCallable(System::currentTimeMillis)
+    .flatMap(start ->
+        loadUserAsync()
+            .doOnSuccess(response ->
+                timer.record(
+                    currentTimeMillis() - start, MILLISECONDS))
+    );
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<pre><code data-trim>
+						loadUserAsync()
+							.tag("operation", "loadUser")
+							.metrics()
+					</code></pre>
+				</section>
+
+ 				<section>
+					<h1>Key Takeaways</h1>
+				</section>
+
+				<section>
+					<h1>Syntax is not ready</h1>
+				</section>
+
+				<section>
+					<h2>Spring Boot 2 changes everything</h2>
+				</section>
+
+				<section>
+					<pre><code data-trim>
+@GetMapping("/users/{id}")
+ResponseEntity&lt;User&gt; get(@PathVariable long id) {
+    User user = repository.findById(id);
+    if(user != null) {
+        return ok(user);
+    } else {
+        return notFound();
+    }
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<pre><code data-trim>
+@GetMapping("/users/{id}")
+ResponseEntity&lt;User&gt; get(@PathVariable long id) {
+    return repository
+    		.findById(id)
+    		.map(user -> ok(user))
+    		.orElse(notFound());
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<pre><code data-trim>
+@Bean
+RouterFunction&lt;ServerResponse&gt; route() {
+    return route(
+            GET("/users/{id}"), request -> Mono
+                    .justOrEmpty(request.pathVariable("id"))
+                    .map(Long::parseLong)
+                    .flatMap(id -> repository.findById(id)
+                    .flatMap(p -> ok().body(fromObject(p))
+                    .switchIfEmpty(notFound().build()))
+    );
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Reactive programming is awesome</h2>
+					<h3 class="fragment">Seriously</h3>
+				</section>
+
+				<section>
+					<blockquote>
+						the explosion of latency-inducing microservices
+					</blockquote>
+					<a class="source" href="https://www.infoq.com/articles/Designing-Implementing-Using-Reactive-APIs">www.infoq.com/articles/Designing-Implementing-Using-Reactive-APIs</a>
+				</section>
+
+				<section>
+					<h2>Are you really benefitting?<h2>
+				</section>
+
+				<section>
+					<h2>Need or desire?<h2>
+				</section>
+
+				<section>
+					<h1>Make a conscious decision</h1>
+				</section>
+
+				<section>
+					<section>
+						<h2>Thank you!</h2>
+						<img src="img/qrcode.svg"/>
+						<hr/>
+						<a href="http://twitter.com/tnurkiewicz">@tnurkiewicz</a>
+						<br/>
+						<a href="http://nurkiewicz.github.io/talks/2018/reactive-lessons">nurkiewicz.github.io/talks/2018/reactive-lessons</a>
+					</section>
+
+					<section>
+						<h3>Image sources</h3>
+						<ol>
+							<li><a href="http://disney.wikia.com/wiki/Statler_and_Waldorf">http://disney.wikia.com/wiki/Statler_and_Waldorf</a></li>
+							<li><a href="https://twitter.com/nixcraft/status/974645853976776704">https://twitter.com/nixcraft/status/974645853976776704</a></li>
+							<li><a href="www.pngmart.com/image/46149">www.pngmart.com/image/46149</a></li>
+							<li><a href="http://half-life.wikia.com/wiki/File:HL3_logo.svg">http://half-life.wikia.com/wiki/File:HL3_logo.svg</a></li>
+							<li><a href="http://dilbert.com/strip/2008-09-03">http://dilbert.com/strip/2008-09-03</a></li>
+							<li><a href="https://www.3djuegos.com/comunidad-foros/tema/45105428/0/nintendo-switch-publica-sus-especificaciones-tecnicas-al-completo/">https://www.3djuegos.com/comunidad-foros/tema/45105428/0/nintendo-switch-publica-sus-especificaciones-tecnicas-al-completo/</a></li>
+						</ol>
+					</section>
+					
+				</section>
+
+			</div>
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@3.6.0/lib/js/head.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@3.6.0/js/reveal.min.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: false,
+				progress: false,
+				history: true,
+				center: true,
+				transition: 'fade', // none/fade/slide/convex/concave/zoom
+				dependencies: [
+					{ src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.6.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.6.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.6.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.6.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.6.0/plugin/search/search.js', async: true },
+					{ src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.6.0/plugin/zoom-js/zoom.js', async: true },
+					{ src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.6.0/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

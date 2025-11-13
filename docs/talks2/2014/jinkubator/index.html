@@ -1,0 +1,817 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Monitoring Java applications</title>
+
+    <meta name="author" content="Tomasz Nurkiewicz">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <script>
+      document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+  </head>
+
+  <body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41796111-1', 'nurkiewicz.github.io');
+  ga('send', 'pageview');
+
+</script>
+
+    <div class="reveal">
+      <div class="slides">
+
+        <!-- INTRODUCTION -->
+
+        <section>
+          <h1>Monitoring Java applications</h1>
+          <hr/>
+          <h2>Tomasz Nurkiewicz</h2>
+          <h3><a href="http://nurkiewicz.com">nurkiewicz.com</a> | <a href="https://twitter.com/tnurkiewicz">@tnurkiewicz</a></h3>
+          <hr/>
+          <p>Slides: <a href="http://nurkiewicz.github.io/talks/2014/jinkubator">nurkiewicz.github.io/talks/2014/jinkubator</a></p>
+        </section>
+
+        <section>
+          <pre><code data-trim contenteditable>
+System.out.println("I'm here!");
+          </code></pre>
+        </section>
+
+        <section>
+          <pre><code data-trim contenteditable>
+catch(Exception e) {
+  // TODO Auto-generated catch block
+  e.printStackTrace();
+}
+         </code></pre>
+        </section>
+
+        <section>
+          <ul>
+            <li><code>System.out.println()</code></li>
+            <li>Log4J</li>
+            <li><code>java.util.logging</code></li>
+            <li>commons-logging</li>
+            <li>SLF4J</li>
+            <li>Logback</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Why library?</h2>
+          <ul>
+            <li>Centralized configuration</li>
+            <li>Declarative disabling and tuning</li>
+            <li>Logging to console, file, e-mail, socket... for free</li>
+            <li>Better API</li>
+            <li>More context (thread, class, time)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>SLF4J</h2>
+          <pre><code data-trim contenteditable>
+class MyClass extends MyParent {
+  private static final Logger log = LoggerFactory.getLogger(MyClass.class);
+}
+         </code></pre>
+         <h3><a href="http://groovy.codehaus.org/Logging">Groovy</a></h3>
+          <pre><code data-trim contenteditable>
+@Slf4j
+class MyClass extends MyParent {}
+         </code></pre>
+          <h3><a href="https://github.com/typesafehub/scala-logging">scala-logging</a></h3>
+          <pre><code data-trim contenteditable>
+class MyClass extends MyParent with Logging
+         </code></pre>
+        </section>
+
+        <section>
+          <h2>Usage</h2>
+          <pre><code data-trim contenteditable>
+log.info("I'm here");
+log.trace("Items found {} in {}ms", items, time);
+log.error("Can't load image {}", fileName, exception);
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Result</h2>
+          <pre><code data-trim contenteditable>
+18:23:44.586 | INFO  | Thread-1 | c.n.Main | I'm here
+18:23:44.589 | TRACE | Thread-1 | c.n.Main | Items found [1, 2, 3] in 42ms
+18:23:44.594 | ERROR | Thread-1 | c.n.Main | Can't load image lena.jpg
+java.io.FileNotFoundException: lena.jpg (No such file or directory)
+  at java.io.FileInputStream.open(Native Method) ~[na:1.8.0_05]
+  at java.io.FileInputStream.<init>(FileInputStream.java:131) ~[na:1.8.0_05]
+  at java.io.FileInputStream.<init>(FileInputStream.java:87) ~[na:1.8.0_05]
+  at com.nurkiewicz.Main.main(Main.java:27) ~[my-app-1.0.jar/:na]
+          </code></pre>
+        </section>
+
+        <section>
+          <h1>SLF4J: <code>pom.xml</code></h1>
+          <pre><code data-trim contenteditable>
+<dependency>
+  <groupId>org.slf4j</groupId>
+  <artifactId>slf4j-api</artifactId>
+  <version>1.7.7</version>
+</dependency>
+         </code></pre>
+        </section>
+
+        <section>
+          <h1>SLF4J: fail</h1>
+          <pre><code data-trim contenteditable>
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+         </code></pre>
+        </section>
+
+        <section>
+          <h1>Logback</h1>
+          <pre><code data-trim contenteditable>
+<dependency>
+  <groupId>ch.qos.logback</groupId>
+  <artifactId>logback-classic</artifactId>
+  <version>1.1.2</version>
+</dependency>
+         </code></pre>
+          <p>Transitively includes SLF4J</p>
+        </section>
+
+        <section>
+          <h2>Log4J 1.2.x?</h2>
+          <ul>
+            <li><strong>2012</strong>-05-06 - 1.2.17</li>
+            <li><strong>2010</strong>-04-06 - 1.2.16</li>
+            <li><strong>2007</strong>-08-24 - 1.2.15</li>
+            <li><strong>2006</strong>-09-18 - 1.2.14</li>
+            <li><strong>2005</strong>-12-04 - 1.2.13</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Log4J 2.x?</h2>
+          <p>Not yet released</p>
+          <ul>
+            <li>(<em>like Logback</em>) API Separation </li>
+            <li>(<em>like Logback</em>) Support for multiple APIs </li>
+            <li>(<em>like Logback</em>) Automatic Reloading of Configurations </li>
+            <li>(<em>like Logback</em>) Advanced Filtering </li>
+            <li>(<em>like Logback</em>) Property Support </li>
+            <li>Improved Performance (LMAX Disruptor (!))</li>
+            <li>Plugin Architecture</li>
+          </ul>
+          <hr/>
+          <p>From: <a href="http://logging.apache.org/log4j/2.x/">logging.apache.org/log4j/2.x</a>
+        </section>
+
+        <section>
+          <h2>Using Log4J 1.2.x</h2>
+            <pre><code data-trim contenteditable>
+<dependency>
+  <groupId>log4j</groupId>
+  <artifactId>log4j</artifactId>
+  <version>1.2.17</version>
+</dependency>
+
+<dependency>
+  <groupId>org.slf4j</groupId>
+  <artifactId>slf4j-log4j12</artifactId>
+  <version>1.7.7</version>
+</dependency>
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Always exactly one</h2>
+          <pre><code data-trim contenteditable>
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/org/slf4j/slf4j-log4j12/1.7.7/slf4j-log4j12-1.7.7.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/ch/qos/logback/logback-classic/1.1.2/logback-classic-1.1.2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Bridges</h2>
+          <img src="img/bridges.png"/>
+          <p>From: <a href="http://www.slf4j.org/legacy.html">www.slf4j.org/legacy.html</a>
+        </section>
+
+        <section>
+          <h2>Minimal <code>logback.xml</code></h2>
+          <pre><code data-trim contenteditable>
+<configuration>
+  <root level="ALL">
+    <appender class="ch.qos.logback.core.ConsoleAppender">
+      <encoder>
+        <pattern>
+%d{HH:mm:ss.SSS} | %-5level | %thread | %logger{1} | %m%n%rEx
+        </pattern>
+      </encoder>
+    </appender>
+  </root>
+</configuration>
+          </code></pre>
+          <p>See also: <a href="http://logback.qos.ch/manual/layouts.html">logback.qos.ch/manual/layouts.html</a></p>
+        </section>
+
+        <section>
+          <h2>Roll your files</h2>
+          <pre><code data-trim contenteditable>
+<appender class="ch.qos.logback.core.rolling.RollingFileAppender">
+  <file>application.log</file>
+  <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+    <fileNamePattern>application.%d{yyyy-MM-dd}.log.zip</fileNamePattern>
+    <maxHistory>7</maxHistory>
+  </rollingPolicy>
+
+  <encoder>
+    <pattern>%d{HH:mm:ss.SSS} | %-5level | %thread | %logger{1} | %m%n%rEx</pattern>
+  </encoder>
+</appender> 
+            </code></pre>
+          <p>See also: <a href="http://logback.qos.ch/manual/appenders.html">logback.qos.ch/manual/appenders.html</a></p>
+        </section>
+
+        <section>
+          <h2>Avoid <code>%L</code>, <code>%M</code>, <code>%C</code>, <code>%F</code></h2>
+          <blockquote>[...] its use should be avoided unless execution speed is not an issue.</blockquote>
+          <p>From: <A href="http://logback.qos.ch/manual/layouts.html">logback.qos.ch/manual/layouts.html</a></p>
+        </section>
+
+        <section>
+          <h2>Logging levels</h2>
+          <ul>
+            <li><code>ERROR</code> - Really bad, needs intervention</li>
+            <li><code>WARN&nbsp;</code> - Might be a problem</li>
+            <li><code>INFO&nbsp;</code> - Standard logging</li>
+            <li><code>DEBUG</code> - Used during development</li>
+            <li><code>TRACE</code> - Low level, never on production</li>
+        </section>
+
+        <section>
+          <h2>Reloading at runtime</h2>
+          <pre><code data-trim contenteditable>
+java -Dlogback.configurationFile=/path/to/my-logback.xml
+          </code></pre>
+          <h3>In <code>my-logback.xml</code></h3>
+          <pre><code data-trim contenteditable>
+<configuration scan="true" scanPeriod="10 seconds">
+  ...
+</configuration>
+          </code></pre>
+          <p>From <a href="http://logback.qos.ch/manual/configuration.html">logback.qos.ch/manual/configuration.html</a></p>
+        </section>
+
+        <section>
+          <h2>Parsing 101</h2>
+          <pre><code data-trim contenteditable>
+tail -f application.log | grep ERROR | cut -d'|' -f1,4-5
+          </code></pre>
+          <p>Also learn: <code>zgrep</code>, <code>sed</code>, <code>awk</code>, <code>less</code>, <code>sort</code>, <code>uniq -c</code></p>
+          <p>Quick charting: <a href="http://www.gnuplot.info/">gnuplot</a>, <a href="http://www.r-project.org/">R</a>, Excel...</p>
+          <h3>Example:</h3>
+          <pre><code data-trim contenteditable>
+18:23:44.586 | INFO  | Thread-1 | c.n.Main | I'm here
+          </code></pre>
+
+        </section>
+
+        <section>
+          <h2>Tools...</h2>
+            <p><a href="https://cwiki.apache.org/confluence/display/FLUME/Home">Flume</a> | <a href="http://graylog2.org/">Graylog2</a> | <a href="http://www-03.ibm.com/software/products/pl/ibm-smartcloud-analytics---log-analysis">IBM Log Analysis</a> | <a href="http://lilith.huxhorn.de/">Lilith</a> | <a href="http://www.logalyze.com/">Logalyze</a> | <a href="https://logentries.com/">Logentries</a> | <a href="https://www.loggly.com/">Loggly</a> | <a href="http://www.logrhythm.com/">Logrhythm</a> | <a href="http://logstash.net/">logstash</a> | <a href="http://nxlog.org/why-nxlog">nxlog</a> | <a href="https://papertrailapp.com/">Papertrail</a> | <a href="https://www.scalyr.com/">Scalyr</a> | <a href="https://github.com/facebook/scribe">Scribe</a> | <a href="http://www.splunk.com/">Splunk</a> | <a href="http://www.sumologic.com/">Sumo logic</a> | ...</p>
+        </section>
+
+        <section>
+          <h2>Context</h2>
+          <pre><code data-trim contenteditable>
+log.debug("Got request");
+          </code></pre>
+          <p>vs.</p>
+          <pre><code data-trim contenteditable>
+log.debug("Request to {} from {}", 
+  req.getParameter("id"), req.getRemoteUser());
+          </pre></code>
+          <p>Also: running time, external input</p>
+        </section>
+
+        <section>
+          <h2>Context cont.</h2>
+          <pre><code data-trim contenteditable>
+switch (code) {
+  case "yes": flag = true;
+  case "no": flag = false;
+  default:
+    log.warn("Can't recognize");
+}
+          </pre></code>
+        </section>
+
+        <section>
+          <h2>MDC</h2>
+          <ul>
+            <li>Thread-local map</li>
+            <li><code>MDC.put("user", "tomek")</code></li>
+            <li>Accessible in every log statement</li>
+            <li>Remember to clean it</li>
+          </ul>
+          <pre><code data-trim contenteditable>
+<pattern>
+%d{HH:mm:ss.SSS} | %-5level | %X{user} | %thread | %logger{1} | %m%n%rEx
+</pattern>
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>MDC example in Spring Security</h2>
+          <pre><code data-trim contenteditable>
+public class UserNameFilter implements Filter {
+
+  @Override
+  public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) {
+    final Authentication authentication =
+        SecurityContextHolder.getContext().getAuthentication();
+
+    MDC.put("user", authentication.getName());
+    try {
+      chain.doFilter(req, resp);
+    } finally {
+      MDC.remove("user");
+    }
+  }
+
+  //...
+}
+          </pre></code>
+        </section>
+
+        <section>
+          <h2>Garbage collector and memory</h2>
+          <pre><code data-trim contenteditable>
+-XX:+PrintGCDetails
+-XX:+PrintGCTimeStamps
+
+-Xloggc:gc.log
+-XX:+UseGCLogFileRotation
+-XX:NumberOfGCLogFiles=10
+-XX:GCLogFileSize=100M
+
+-XX:+HeapDumpOnOutOfMemoryError
+-XX:HeapDumpPath=/tmp
+          </pre></code>
+          <p>See also: 
+            <a href="http://docs.oracle.com/javase/8/docs/technotes/tools/unix/java.html">docs.oracle.com/javase/8/docs/technotes/tools/unix/java.html</a>, 
+            <a href="http://stackoverflow.com/questions/3822097">stackoverflow.com/questions/3822097</a></p>
+        </section>
+
+        <section>
+          <h2>GC in 2 minutes</h2>
+          <img src="img/190244.gif">
+          <p>From: <a href="http://www.oracle.com/technetwork/java/javase/gc-tuning-6-140523.html">www.oracle.com/technetwork/java/javase/gc-tuning-6-140523.html</a></p>
+        </section>
+
+        <section>
+          <h2>Young generation GC</h2>
+          <img src="img/verboseGC_YoungGen_detail.png">
+          <p>From: <a href="http://javaeesupportpatterns.blogspot.com/2011/10/verbosegc-output-tutorial-java-7.html">javaeesupportpatterns.blogspot.com/2011/10/verbosegc-output-tutorial-java-7.html</a></p>
+        </section>
+
+        <section>
+          <h2>Old generation GC</h2>
+          <img src="img/verboseGC_OldGen_detail.png">
+          <p>From: <a href="http://javaeesupportpatterns.blogspot.com/2011/10/verbosegc-output-tutorial-java-7.html">javaeesupportpatterns.blogspot.com/2011/10/verbosegc-output-tutorial-java-7.html</a></p>
+        </section>
+
+        <section>
+          <h2>JVisualVM + VisualGC</h2>
+          <img src="img/visualgc.png">
+        </section>
+
+        <section>
+          <h2>Other GC analysis tools</h2>
+          <ul>
+            <li><a href="http://code.google.com/a/eclipselabs.org/p/garbagecat/">garbagecat</a></li>
+            <li><a href="http://www.tagtraum.com/gcviewer.html">gcviewer</a></li>
+            <li><a href="https://h20392.www2.hp.com/portal/swdepot/displayProductInfo.do?productNumber=HPJMETER">HPJmeter</a></li>
+            <li><a href="http://www.jclarity.com/censum/">jClarity censum</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2><code>jps</code>, <code>jinfo</code></h2>
+          <pre><code data-trim contenteditable>
+$ jps -ml
+...
+11028 com.nurkiewicz.MyMain
+...
+
+$ jinfo -flag PrintGCDetails 11028
+-XX:-PrintGCDetails
+
+$ jinfo -flag +PrintGCDetails 11028
+
+$ jinfo -flag PrintGCDetails 11028
+-XX:+PrintGCDetails
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Name your threads!</h2>
+          <pre><code data-trim contenteditable>
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
+
+ThreadFactory threadFactory = new ThreadFactoryBuilder()
+    .setNameFormat("My-pool-%d")
+    .setDaemon(true)
+    .build();
+ExecutorService myPool = Executors.newFixedThreadPool(10, threadFactory);
+          </code></pre>
+          <pre><code data-trim contenteditable>
+Thread thread = new Thread(runnable, "My-unique-thread");
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Exceptions</h2>
+          <pre><code data-trim contenteditable>
+log.error("" + e);                     //A
+log.error(e.toString());               //B
+log.error(e.getMessage());             //C
+log.error("", e);                      //D
+log.error("Error: " + e);              //E
+log.error("Error: " + e.getMessage()); //F
+log.error("Error", e);                 //G
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Wrapping exceptions</h2>
+          <pre><code data-trim contenteditable>
+try {
+  try {
+    final FileInputStream file = new FileInputStream("file.txt");
+  } catch (FileNotFoundException e) {
+    throw new RuntimeException("I/O error", e);
+  }
+} catch (Exception e) {
+  log.error("Houston, we've had a problem", e);
+}
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Where is the cause?</h2>
+          <pre><code data-trim contenteditable>
+ERROR | main | c.n.Main | Houston, we've had a problem
+java.lang.RuntimeException: I/O error
+  at com.nurkiewicz.Main.main(Main.java:18) ~[test-classes/:na]
+  at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_05]
+  at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_05]
+  at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_05]
+  at java.lang.reflect.Method.invoke(Method.java:483) ~[na:1.8.0_05]
+  at com.intellij.rt.execution.application.AppMain.main(AppMain.java:134) [idea_rt.jar:na]
+Caused by: java.io.FileNotFoundException: file.txt (Permission denied)
+  at java.io.FileInputStream.open(Native Method) ~[na:1.8.0_05]
+  at java.io.FileInputStream.<init>(FileInputStream.java:131) ~[na:1.8.0_05]
+  at java.io.FileInputStream.<init>(FileInputStream.java:87) ~[na:1.8.0_05]
+  at com.nurkiewicz.Main.main(Main.java:16) ~[test-classes/:na]
+  ... 5 common frames omitted
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Real life example</h2>
+          <img src="img/causedby.png">
+        </section>
+
+        <section>
+          <h2>Real life example explained</h2>
+          <img src="img/causedby-arrows.png">
+        </section>
+
+        <section>
+          <h2><code>%rEx</code> - root cause first</h2>
+          <pre><code data-trim contenteditable>
+ERROR | main | c.n.Main | Houston, we've had a problem
+java.io.FileNotFoundException: file.txt (Permission denied)
+  at java.io.FileInputStream.open(Native Method) ~[na:1.8.0_05]
+  at java.io.FileInputStream.<init>(FileInputStream.java:131) ~[na:1.8.0_05]
+  at java.io.FileInputStream.<init>(FileInputStream.java:87) ~[na:1.8.0_05]
+  at com.nurkiewicz.Main.main(Main.java:16) ~[test-classes/:na]
+  ... 5 common frames omitted
+Wrapped by: java.lang.RuntimeException: I/O error
+  at com.nurkiewicz.Main.main(Main.java:18) ~[test-classes/:na]
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Real life example with <code>%rEx</code></h2>
+          <img src="img/wrappedby-arrows.png">
+        </section>
+
+        <section>
+          <h2>Thread dumps - how?</h2>
+          <ul>
+            <li><code>jstack &lt;PID&gt;</code></li>
+            <li><code>kill -3 &lt;PID&gt;</code></li>
+            <li>JVisualVM -> Threads -> Thread Dump</li>
+            <li>JMX via <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/management/ThreadMXBean.html"><code>ThreadMXBean</code></a></li>
+            <li><code>Thread.getAllStackTraces()</code></li>
+            <li>In IDE</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>threadlogic</h2>
+          <img src="img/Merged-Timestamp2.jpg">
+          <p>Download: <a href="https://java.net/projects/threadlogic">java.net/projects/threadlogic</a></p>
+          <p>Source: <a href="http://allthingsmdw.blogspot.com/2012/03/threadlogic-version-095-available.html">allthingsmdw.blogspot.com/2012/03/threadlogic-version-095-available.html</a></p>
+        </section>
+
+        <section>
+          <h2>Everything is there!</h2>
+          <img src="img/jtrac-callstack1.png">
+          <p>Source: <a href="http://ptrthomas.wordpress.com/2006/06/06/java-call-stack-from-http-upto-jdbc-as-a-picture/">ptrthomas.wordpress.com/2006/06/06/java-call-stack-from-http-upto-jdbc-as-a-picture/</a></p>
+        </section>
+
+        <section>
+          <h2>Idle thread pool</h2>
+          <pre><code data-trim contenteditable>
+"pool-1-thread-8" #19 prio=5 os_prio=0 tid=0x000000001a4fe000 nid=0x1320 waiting on condition [0x000000001b5be000]
+   java.lang.Thread.State: WAITING (parking)
+  at sun.misc.Unsafe.park(Native Method)
+  - parking to wait for  <0x0000000084a17688> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+  at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+  at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+  at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+  at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)
+  at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)
+  at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+  at java.lang.Thread.run(Thread.java:745)
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Busy thread</h2>
+          <pre><code data-trim contenteditable>
+"main" #1 prio=5 os_prio=0 tid=0x00000000021f3800 nid=0x2d28 runnable [0x000000000216e000]
+   java.lang.Thread.State: RUNNABLE
+  at sun.security.provider.SHA2.implDigest(SHA2.java:102)
+  at sun.security.provider.DigestBase.engineDigest(DigestBase.java:173)
+  at sun.security.provider.DigestBase.engineDigest(DigestBase.java:152)
+  at java.security.MessageDigest$Delegate.engineDigest(MessageDigest.java:576)
+  at java.security.MessageDigest.digest(MessageDigest.java:353)
+  at java.security.MessageDigest.digest(MessageDigest.java:399)
+  at org.apache.commons.codec.digest.DigestUtils.sha256(DigestUtils.java:277)
+  at org.apache.commons.codec.digest.DigestUtils.sha256(DigestUtils.java:309)
+  at com.nurkiewicz.Main.main(Main.java:11)
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Sleeping thread</h2>
+          <pre><code data-trim contenteditable>
+"pool-1-thread-9" #20 prio=5 os_prio=0 tid=0x00000000193cc800 nid=0x2dec waiting on condition [0x000000001a80e000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+  at java.lang.Thread.sleep(Native Method)
+  at java.lang.Thread.sleep(Thread.java:340)
+  at java.util.concurrent.TimeUnit.sleep(TimeUnit.java:386)
+  at com.nurkiewicz.Main.sleeping(Main.java:19)
+  - locked <0x0000000084d79280> (a java.lang.Class for com.nurkiewicz.Main)
+  at com.nurkiewicz.Main.access$100(Main.java:7)
+  at com.nurkiewicz.Main$MyRunnable.run(Main.java:28)
+  at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+  at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+  at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+  at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+  at java.lang.Thread.run(Thread.java:745)
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Blocked thread</h2>
+          <pre><code data-trim contenteditable>
+"pool-1-thread-8" #19 prio=5 os_prio=0 tid=0x00000000193cc000 nid=0x1b3c waiting for monitor entry [0x000000001a60f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+  at com.nurkiewicz.Main.sync(Main.java:19)
+  - waiting to lock <0x0000000084d79280> (a java.lang.Class for com.nurkiewicz.Main)
+  at com.nurkiewicz.Main.access$100(Main.java:7)
+  at com.nurkiewicz.Main$MyRunnable.run(Main.java:28)
+  at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+  at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+  at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+  at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+  at java.lang.Thread.run(Thread.java:745)
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Waiting on <code>ReentrantLock</code></h2>
+          <pre><code data-trim contenteditable>
+"pool-1-thread-8" #19 prio=5 os_prio=0 tid=0x000000001a294000 nid=0x2af4 waiting on condition [0x000000001b77e000]
+   java.lang.Thread.State: WAITING (parking)
+    at sun.misc.Unsafe.park(Native Method)
+    - parking to wait for  <0x00000000d7608010> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:836)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireQueued(AbstractQueuedSynchronizer.java:870)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquire(AbstractQueuedSynchronizer.java:1199)
+    at java.util.concurrent.locks.ReentrantLock$NonfairSync.lock(ReentrantLock.java:209)
+    at java.util.concurrent.locks.ReentrantLock.lock(ReentrantLock.java:285)
+    at com.nurkiewicz.Main$1.run(Main.java:28)
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Deadlock</h2>
+          <pre><code data-trim contenteditable>
+Found one Java-level deadlock:
+=============================
+"pool-1-thread-2":
+  waiting for ownable synchronizer 0x0000000085064d38, (a java.util.concurrent.locks.ReentrantLock$NonfairSync),
+  which is held by "pool-1-thread-1"
+"pool-1-thread-1":
+  waiting for ownable synchronizer 0x0000000085065040, (a java.util.concurrent.locks.ReentrantLock$NonfairSync),
+  which is held by "pool-1-thread-2"
+          </code></pre>
+          <pre><code data-trim contenteditable>
+Java stack information for the threads listed above:
+===================================================
+"pool-1-thread-2":
+  at sun.misc.Unsafe.park(Native Method)
+  - parking to wait for  <0x0000000085064d38> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+  ...
+"pool-1-thread-1":
+  at sun.misc.Unsafe.park(Native Method)
+  - parking to wait for  <0x0000000085065040> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+  ...
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Slow database query</h2>
+          <pre><code data-trim contenteditable>
+"http-0.0.0.0-8443-102" daemon prio=3 tid=0x022a6400 nid=0x1bd runnable [0x78efb000]
+  java.lang.Thread.State: RUNNABLE
+   at java.net.SocketInputStream.socketRead0(Native Method)
+   at java.net.SocketInputStream.read(SocketInputStream.java:129)
+   ...
+   at com.mysql.jdbc.MysqlIO.getResultSet(MysqlIO.java:379)
+   at com.mysql.jdbc.MysqlIO.readResultsForQueryOrUpdate(MysqlIO.java:1970)
+   at com.mysql.jdbc.MysqlIO.readAllResults(MysqlIO.java:1387)
+   ...
+   at org.apache.commons.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+   at org.apache.commons.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Puzzle</h2>
+          <pre><code data-trim contenteditable>
+"http-0.0.0.0-8443-102" daemon prio=3 tid=0x022a6400 nid=0x1bd runnable [0x78efb000]
+   java.lang.Thread.State: RUNNABLE
+  at java.net.SocketInputStream.socketRead0(Native Method)
+  at java.net.SocketInputStream.read(SocketInputStream.java:129)
+  ...
+  at java.io.BufferedInputStream.read(BufferedInputStream.java:317)
+  at sun.net.www.http.HttpClient.parseHTTPHeader(HttpClient.java:687)
+  at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1072)
+  at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:373)
+  at sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:318)
+  ...
+  at com.nurkiewicz.AuthServlet.doPost(AuthServlet.java:67) 
+  at javax.servlet.http.HttpServlet.service(HttpServlet.java:802) 
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Log4J case study</h2>
+          <pre><code data-trim contenteditable>
+final ExecutorService pool = Executors.newFixedThreadPool(100);
+for (int i = 0; i < 100_000_000; i++) {
+  pool.submit(() -> log.debug("Here"));
+}
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Bottleneck</h2>
+          <pre><code data-trim contenteditable>
+"pool-1-thread-4" #15 prio=5 os_prio=0 tid=0x000000001a814000 nid=0x2a68 waiting for monitor entry [0x000000001b40f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+  at org.apache.log4j.Category.callAppenders(Category.java:204)
+  - waiting to lock <0x0000000084c34ff0> (a org.apache.log4j.spi.RootLogger)
+  at org.apache.log4j.Category.forcedLog(Category.java:391)
+  at org.apache.log4j.Category.log(Category.java:856)
+  at org.slf4j.impl.Log4jLoggerAdapter.debug(Log4jLoggerAdapter.java:209)
+  at com.nurkiewicz.Main$1.run(Main.java:25)
+  ...
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Stack trace examination</h2>
+          <pre><code data-trim contenteditable>
+"pool-1-thread-5" #16 prio=5 os_prio=0 tid=0x000000001a814800 nid=0x1560 runnable [0x000000001b50e000]
+   java.lang.Thread.State: RUNNABLE
+  at java.lang.Throwable.getStackTraceElement(Native Method)
+  at java.lang.Throwable.getOurStackTrace(Throwable.java:827)
+  - locked <0x00000000d6e91b80> (a java.lang.Throwable)
+  at java.lang.Throwable.getStackTrace(Throwable.java:816)
+  ...
+  at java.lang.reflect.Method.invoke(Method.java:483)
+  at org.apache.log4j.spi.LoggingEvent.getLocationInformation(LoggingEvent.java:253)
+  ...
+  - locked <0x0000000084c335e8> (a org.apache.log4j.ConsoleAppender)
+  at org.apache.log4j.helpers.AppenderAttachableImpl.appendLoopOnAppenders(AppenderAttachableImpl.java:66)
+  at org.apache.log4j.Category.callAppenders(Category.java:206)
+  - locked <0x0000000084c34ff0> (a org.apache.log4j.spi.RootLogger)
+  at org.apache.log4j.Category.forcedLog(Category.java:391)
+  ...
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Thread vs. CPU</h2>
+          <pre><code data-trim contenteditable>
+$ top -n1 -H
+25938 tomek     20   0 1360m 748m  31m S    2 24.8   0:15.15 java
+          </code></pre>
+          <p><code>25938 == 0x6552</code></p>
+          <pre><code data-trim contenteditable>
+"Thread-10" prio=10 tid=0x7f3bf800 nid=0x6552 runnable [0x7f25c000]
+  java.lang.Thread.State: RUNNABLE
+    at java.util.regex.Pattern$Node.study(Pattern.java:3010)
+    ...
+          </code></pre>
+          <p>From: <a href="http://www.nurkiewicz.com/2012/08/which-java-thread-consumes-my-cpu.html">www.nurkiewicz.com/2012/08/which-java-thread-consumes-my-cpu.html</a></p>
+        </section>
+
+        <section>
+          <h2>Operating system - Linux</h2>
+          <img src="img/linuxperftools.png">
+          <p>From: <a href="http://www.brendangregg.com/linuxperf.html">www.brendangregg.com/linuxperf.html</a></p>
+        </section>
+
+        <section>
+          <h1>Thank you!</h1>
+          <hr/>
+          <h2>Tomasz Nurkiewicz</h2>
+          <h3><a href="http://nurkiewicz.com">nurkiewicz.com</a> | <a href="https://twitter.com/tnurkiewicz">@tnurkiewicz</a></h3>
+          <hr/>
+          <p>Slides: <a href="http://nurkiewicz.github.io/talks/2014/jinkubator">nurkiewicz.github.io/talks/2014/jinkubator</a></p>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: false,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'linear',
+        transitionSpeed: 'fast',
+        gestureDelay: 0,
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
