@@ -1298,3 +1298,5 @@ https://www.youtube.com/@DevSkiller/streams
     </tr>
 </table>
 </ol>
+
+[slides](Slide decks)
