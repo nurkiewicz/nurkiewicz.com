@@ -75,4 +75,11 @@ I also keep track of how many transfers are required to commute by public transi
 
 Now, with a bit of color coding, let's see how long it takes to commute by public transit from every address in Warsaw to the city center:
 
+![Heatmap of commute time](/img/public-transit-heatmap-of-warsaw/heatmap-small.png)
+
+Thank you, Captain Obvious!
+Living close to the metro lines (Warsaw has two), impacts your commute time.
+Can you guess where the lines are located by looking at the green areas?
+Spoiler:
+
 
