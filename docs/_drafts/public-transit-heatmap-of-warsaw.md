@@ -80,6 +80,13 @@ Now, with a bit of color coding, let's see how long it takes to commute by publi
 Thank you, Captain Obvious!
 Living close to the metro lines (Warsaw has two), impacts your commute time.
 Can you guess where the lines are located by looking at the green areas?
-Spoiler:
+Hint: the same map only with points having short commute:
 
+![Heatmap of short commute time](/img/public-transit-heatmap-of-warsaw/heatmap-short-commute.png)
 
+Here's the same map with metro stations laid on top of it.
+Two interesting remarks: living close to the metro station doesn't guarantee fast commute.
+This especially evident in south of the city (Ursynów/Kabaty district).
+But the second observation is even more interesting: what are these seemingly random hotspots, far from the city and metro?
+
+![Heatmap with metro stations overlay](/img/public-transit-heatmap-of-warsaw/heatmap-metro-lines.png)
