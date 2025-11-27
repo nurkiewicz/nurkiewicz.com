@@ -1,6 +1,5 @@
 ---
 title: "Best place to commute from in Warsaw: public transit heatmap"
-tags: Python, geospatial
 layout: post
 ---
 
@@ -90,3 +89,41 @@ This especially evident in south of the city (Ursynów/Kabaty district).
 But the second observation is even more interesting: what are these seemingly random hotspots, far from the city and metro?
 
 ![Heatmap with metro stations overlay](/img/public-transit-heatmap-of-warsaw/heatmap-metro-lines.png)
+
+After closer inspection we see some parts of Warsaw are located close to railway stations.
+These underestimated means of transport also significantly improve commute time.
+Just see how being close to one such station allows you to reach city center in 30 minutes, despite this is almost the edge of Warsaw.
+On the other hand, an address 2 km further east requires almost double that time.
+
+![Piwoniowa 34](/img/public-transit-heatmap-of-warsaw/choszczowka1.png)
+
+![Mehoffera 166K](/img/public-transit-heatmap-of-warsaw/choszczowka2.png)
+
+## Places where public transport is better than a car
+
+While collecting information about commute time via public transport, I also stored travel time by car.
+It's tempting to see whether there are places in Warsaw where public transport is advantageous time-wise.
+Moreover, you have to park your car somewhere (which is not easy, as in every big city center), so a few extra minutes of travel time are fine.
+And don't get me started on the cost of parking and anxiety when sitting in traffic.
+Last but not least, travelling by car is often less predictable.
+Anyway, here's a map:
+
+![Faster than car](/img/public-transit-heatmap-of-warsaw/faster_than_car.png)
+
+Green color marks addresses where it's faster or slightly slower (up to 10 minutes) to reach city center by public transport.
+Once again, we can clearly see the neighborhoods of metro stations, as well as less popular railway stations.
+This becomes even more evident when looking at the number of connections.
+For some people having a single means of transport without the need to switch from bus to tram and vice-versa is more important than just travel time.
+Basically, if I can get downtown directly without getting out and in mid-way, it's very convenient.
+Even, if it's slow.
+Here's a map, with green points having direct connection:
+
+![Number of connections](/img/public-transit-heatmap-of-warsaw/transfers.png)
+
+Two interesting observations:
+
+* Living next to the metro station (and railway station) lets you travel directly to the center (once again, subway and railway wins)
+* The good news is that the vast majority of the city requires at most one transfer
+
+# Summary
+
