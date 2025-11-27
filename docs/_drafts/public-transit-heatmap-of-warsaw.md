@@ -127,3 +127,11 @@ Two interesting observations:
 
 # Summary
 
+Surely, my amateur analysis has plenty of flaws:
+
+* It's purely based on the commute time between given address and arbitrarily chosen "city center". In practice, many people commute to office districts located outside of the center
+* The sample size is just 4%, I didn't analyze all addresses
+* There are broken records, typically due to incorrect geocoding or duplicated street names, which I didn't bother to fix.
+
+But, even taking this into account, I think we can make a few, more or less obvious observations:
+
