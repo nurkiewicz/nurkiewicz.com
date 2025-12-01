@@ -13,7 +13,7 @@ That is, places with great commute time despite the distance and the opposite - 
 
 ## Assumptions
 
-1. The city center is Metro Świętokrzyska, the place where the two existing metro lines cross.
+1. The city center is [Metro Świętokrzyska](https://maps.app.goo.gl/BboekqFqfNpwjQoM8), the place where the two existing metro lines cross.
 2. I use Google Distance API to measure how long it takes to commute, as well as travel by car.
 3. I assume Monday morning, 8 AM, as departure time
 
@@ -135,3 +135,9 @@ Surely, my amateur analysis has plenty of flaws:
 
 But, even taking this into account, I think we can make a few, more or less obvious observations:
 
+* Yes, living next to subway station is the best way to get around the city
+* Railway stations are highly underrated. They supplement subway very well
+* Living outside of these two means of transport, you might be really unlucky, even living relatively close to the center
+* Many districts in Warsaw really discourage driving by car as public transport is equally fast
+* On the other hand, sometimes even living close 
+* In general, the commute time is not proportional to the geographical distance. 
