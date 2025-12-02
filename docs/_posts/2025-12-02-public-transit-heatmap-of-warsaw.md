@@ -1,5 +1,5 @@
 ---
-title: "Best place to commute from in Warsaw: public transit heatmap"
+title: "Best places to commute from in Warsaw: public transit heatmap"
 layout: post
 image: /public-transit-heatmap-of-warsaw/hero.png
 ---
@@ -155,6 +155,6 @@ E.g. [Ochota](https://en.wikipedia.org/wiki/Ochota) and large parts of [Mokotów
 
 ## Source code
 
-Source code (vibe coded, ideal for such experiments) is available on GitHub.
+[Source code](https://github.com/nurkiewicz/public-transport) (vibe coded, ideal for such experiments) is available on GitHub.
 I encourage you to run it under different conditions: different time of day, different target, like office districts, entirely different cities.
 Don't forget to share your findings!
