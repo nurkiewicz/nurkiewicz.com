@@ -143,7 +143,7 @@ But, even taking this into account, I think we can make a few, more or less obvi
 * Railway stations are highly underrated. They supplement subway very well
 * Living outside of these two means of transport, you might be really unlucky, even living relatively close to the center
 * Many districts in Warsaw really discourage driving by car as public transport is equally fast
-* On the other hand, sometimes even living close 
+* On the other hand, sometimes even living close to the center doesn't mean you have good commute options
 * In general, the commute time is not proportional to the geographical distance.
 
 I think the biggest takeaway is the fact that in some districts, even further away from the city center, it still makes more sense to travel by bus/tram/metro/railway than by car.
