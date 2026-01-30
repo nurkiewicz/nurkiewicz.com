@@ -30,4 +30,24 @@ However,
 * podsync
 * `ffmpeg` + CRON
 * adding chapters
-* tips for podcast listeners (from my ex-Twitter)
+
+
+# Podcast listening like a pro
+
+* Auto-skip intro and outro music, introduction, engagement incentives, ads. Define in/out length for each podcast. For some shows I skip the first 8 minutes (!) In that time you can listen to two full episodes of my podcast ;-) 
+
+* Speed up! Some podcasts are hard, then I listen at 1.6x. For some I reach 2.5x. Speed up gradually to train your 🧠
+
+* Some apps have smart speed feature that slows down or speeds up adaptively and cuts silence
+
+* Use headphones with forward button. Skip unwanted in-episode ads and interruptions quickly
+
+* Setup forward button to exactly 30s. Often ad slots are half a minute long
+
+* Organize podcasts into playlists. With limited time you can listen to the interesting ones first
+
+* Some people also organize playlists by “difficulty”, e.g. how much they have to focus
+
+* Use push notifications when the most enjoyale podcasts arrive
+
+* Forget about built-in iPhone player. I use [Overcast](https://overcast.fm) and it has a ton of great features
