@@ -1,0 +1,319 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Saiku – taking OLAP databases into 21st century</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/beige.css">
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+    <style>
+        img {
+            background-color: rgb(238, 238, 238);
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        h1, h2, h3, h4 {
+            text-transform: none !important;
+        }
+        ul {
+            list-style-type: '\21AC  ' !important;
+        }
+        .source {
+            font-size: 0.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        
+        <div class="slides">
+<section data-background="saiku-olap/first_slide.png">
+        </section>
+
+        <section>
+          <h1>Saiku – taking OLAP databases into 21st century</h1>
+          <hr/>
+          <h1>Tomasz Nurkiewicz</h1>
+          <h3><a href="http://nurkiewicz.com">nurkiewicz.com</a> | <a href="https://twitter.com/tnurkiewicz">@tnurkiewicz</a></h3>
+          <hr/>
+          <p>Slides: <a href="http://bit.ly/33degree">bit.ly/33degree</a></p>
+        </section>
+
+        <section>
+          <h1>What is Saiku?</h1>
+          <h2>DEMO</h2>
+          <img src="saiku-olap/saiku_intro.png">
+        </section>
+
+        <section>
+          <h1>Core concepts</h1>
+          <ul>
+            <li>OLAP</li>
+            <li>Fact</li>
+            <li>Dimension</li>
+            <li>Hierarchy</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Example facts</h1>
+          <ul>
+            <li>Sold product</li>
+            <li>Tweet/forum post/shared photo</li>
+            <li>Website hit</li>
+            <li>Incoming text message</li>
+            <li>...you name it</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Dimension</h1>
+          <p>"Properties of facts"</p>
+          <ul>
+            <li>When?</li>
+            <li>What?</li>
+            <li>Where?</li>
+            <li>Who?</li>
+            <li>How?</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Example dimensions</h1>
+          <h2>Access log</h2>
+          <ul>
+            <li>Timestamp</li>
+            <li>IP</li>
+            <li>URL resource</li>
+            <li>HTTP response code</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Hierarchy</h1>
+          <h2>Multi-level aggregation</h2>
+          <h3>Example: <em>location</em> hierarchy</h3>
+          <ul>
+            <li>(All)</li>
+            <li>Continent</li>
+            <li>Country</li>
+            <li>State</li>
+            <li>City</li>
+          </ul>
+        </section>
+
+        <section>
+          <img src="saiku-olap/saiku_hierarchy.png"/>
+        </section>
+
+        <section>
+          <h1>Measures</h1>
+          <ul>
+            <li>Quantitative properties</li>
+            <li>Aggregate matching facts over them</li>
+            <li>Count/Sum/Average/Min/Max</li>
+          </ul>
+        </section>
+
+        <section>
+          <img src="saiku-olap/saiku_measures.png"/>
+        </section>
+
+        <section>
+          <h1>Example measures</h1>
+          <ul>
+            <li>Load time (<em>page hit fact</em>)</li>
+            <li>Total price (<em>sale fact</em>)</li>
+            <li>Age of customer</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Charting - DEMO</h1>
+          <img src="saiku-olap/saiku_chart.png"/>
+        </section>
+
+        <section>
+          <h1>Exporting - DEMO</h1>
+          <img src="saiku-olap/saiku_exporting.png"/>
+        </section>
+
+        <section>
+          <h1>Drill down - DEMO</h1>
+          <img src="saiku-olap/saiku_cell.png"/>
+        </section>
+
+        <section>
+          <h1>Ignored concepts</h1>
+          <ul>
+            <li>Hypercube</li>
+            <li>Mondrian</li>
+            <li>MDX</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Your own cube</h1>
+          <img src="saiku-olap/cubo.png">
+        </section>
+
+        <section>
+          <h1>Star schema</h1>
+          <img src="saiku-olap/star_schema.png"/>
+        </section>
+
+        <section>
+          <h1>ETL</h1>
+          <img src="saiku-olap/spoon_transformation.png"/>
+          <p class="source">Source: <a href="http://community.pentaho.com/projects/data-integration/">community.pentaho.com/projects/data-integration/</a></p>
+        </section>
+
+        <section>
+          <h1>ETL - challenges</h1>
+          <ul>
+            <li>Missing or incomplete data</li>
+            <li>Heuristics</li>
+            <li>Incremental, periodic updates</li>
+            <li>Various data sources</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Schema file</h1>
+          <pre><code data-trim>
+&lt;Schema name="Twitter"&gt;
+
+  &lt;Cube name="Tweets" defaultMeasure="Count"&gt;
+    &lt;Table name="tweet"&gt;
+    &lt;DimensionUsage name="Time" source="Time" foreignKey="time_id"/&gt;
+    &lt;Dimension name="Location" foreignKey="location_id"&gt;
+      &lt;Hierarchy hasAll="true" allMemberName="All locations"&gt;
+        &lt;Table name="location"/&gt;
+        &lt;Level name="Continent" column="continent"/&gt;
+        &lt;Level name="Country" column="country"/&gt;
+        &lt;Level name="City" column="city"/&gt;
+      &lt;/Hierarchy&gt;
+    &lt;/Dimension&gt;
+    &lt;!-- ... --&gt;
+
+&lt;/Schema&gt;
+          </code></pre>
+        </section>
+
+        <section>
+          <h1>Schema Workbench</h1>
+          <img src="saiku-olap/schema_workbench.png"/>
+          <p class="source">Source: <a href="http://www.stratebi.com/cursos/olap-mdx">www.stratebi.com/cursos/olap-mdx</a></p>
+        </section>
+
+        <section>
+          <h1>Security - users</h1>
+          <ul>
+            <li>Standard user/password</li>
+            <li>Roles</li>
+            <li>Spring Security - customizable</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Security - data</h1>
+          <ul>
+            <li>By role</li>
+            <li>Restrict what can be seen</li>
+            <li>Top/bottom limit</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Performance</h1>
+          <p>Big data, <em>before it was cool</em></p>
+          <ul>
+            <li>Indexes on foreign keys</li>
+            <li>Aggregate tables</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Without Aggregate table</h1>
+          <pre><code data-trim>
+SELECT COUNT(id) 
+FROM tweet NATURAL JOIN locations
+GROUP BY locations.continent
+          </code></pre>
+        </section>
+
+        <section>
+          <h1>With aggregate table</h1>
+          <pre><code data-trim>
+INSERT INTO agg (cnt, l.city, l.country, l.continent)
+SELECT COUNT(t.id) AS cnt, city, country, continent
+FROM tweet t NATURAL JOIN locations l
+GROUP BY l.city
+          </code></pre>
+          <div class="fragment">
+            <p>Usages:</p>
+            <pre><code data-trim>
+SELECT SUM(agg.count)
+FROM agg
+GROUP BY locations.continent
+            </code></pre>
+          </div>
+        </section>
+
+        <section>
+          <h1>Pentaho Aggregation Designer</h1>
+          <img src="saiku-olap/workspace_elements_1.png"/>
+          <p class="source">Source: <a href="http://infocenter.pentaho.com/help/index.jsp?topic=%2Faggregation_designer_guide%2Fconcept_pad_overview.html">infocenter.pentaho.com/help/index.jsp</a></p>
+        </section>
+
+        <section>
+          <h1>Deployment</h1>
+          <ul>
+            <li><code>mondrian.jar</code> - engine</li>
+            <li><code>saiku.war</code> - RESTful web services</li>
+            <li><code>ui.war</code> - JS front-end</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Disadvantages</h1>
+          <ul>
+            <li>Horizontal scalability?</li>
+            <li>Stuck with SQL databases</li>
+            <li>Complex schema definition (XML)</li>
+            <li>Aggregate tables are hard</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Thank you!</h1>
+          <hr/>
+          <img src="saiku-olap/qrcode.png"/>
+          <p>Slides: <a href="http://nurkiewicz.github.io/talks/2014/33degree">nurkiewicz.github.io/talks/2014/33degree</a></p>
+        </section>
+        </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            plugins: [RevealHighlight],
+            width: 1800,
+            margin: 0.08,
+            transition: 'fade',
+            progress: false,
+            controls: false,
+            center: true,
+        });
+    </script>
+</body>
+</html>

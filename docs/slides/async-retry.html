@@ -1,0 +1,239 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>async-retry: Asynchronous retrying for Java 8</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/beige.css">
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+    <style>
+        img {
+            background-color: rgb(238, 238, 238);
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        h1, h2, h3, h4 {
+            text-transform: none !important;
+        }
+        ul {
+            list-style-type: '\21AC  ' !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        
+        <div class="slides">
+<!-- INTRODUCTION -->
+
+        <section>
+          <h1>async-retry</h1>
+          <h2>Asynchronous retrying<br/>for Java 8</h2>
+          <hr/>
+          <h2>Tomasz Nurkiewicz</h2>
+          <h3><a href="http://nurkiewicz.com">nurkiewicz.com</a> | <a href="https://twitter.com/tnurkiewicz">@tnurkiewicz</a></h3>
+          <hr/>
+          <p>Website: <a href="https://github.com/nurkiewicz/async-retry">github.com/nurkiewicz/async-retry</a></p>
+          <p>Slides: <a href="http://nurkiewicz.github.io/talks/2014/wjug-osb">nurkiewicz.github.io/talks</a></p>
+        </section>
+
+        <section>
+          <h2>Quick example</h2>
+          <pre><code data-trim>
+ScheduledExecutorService scheduler = //...
+RetryExecutor executor = new AsyncRetryExecutor(scheduler);
+
+CompletableFuture&lt;Socket&gt; future = executor.getWithRetry(() ->
+  new Socket("localhost", 8080)
+);
+
+future.thenAccept(socket ->
+  System.out.println("Connected! " + socket)
+);
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Logging</h2>
+          <pre><code data-trim>
+TRACE Retry 0 failed after 3ms, scheduled next retry in 508ms (Sun Jul 21 21:01:12 CEST 2013)
+java.net.ConnectException: Connection refused
+    ...
+TRACE Retry 1 failed after 0ms, scheduled next retry in 934ms (Sun Jul 21 21:01:13 CEST 2013)
+java.net.ConnectException: Connection refused
+    ...
+TRACE Retry 2 failed after 0ms, scheduled next retry in 1919ms (Sun Jul 21 21:01:15 CEST 2013)
+java.net.ConnectException: Connection refused
+    ...
+TRACE Successful after 2 retries, took 0ms and returned: Socket[addr=localhost/127.0.0.1,port=8080,localport=46332]
+
+Connected! Socket[addr=localhost/127.0.0.1,port=8080,localport=46332]
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Setup - immutable!</h2>
+          <pre><code data-trim>
+ScheduledExecutorService scheduler = 
+  Executors.newSingleThreadScheduledExecutor();
+
+RetryExecutor executor = new AsyncRetryExecutor(scheduler)
+    .retryOn(SocketException.class)
+    .withExponentialBackoff(500, 2)  //500ms times 2 after each retry
+    .withUniformJitter()             //add between +/- 100 ms randomly
+    .withMaxDelay(10_000)            //10 seconds
+    .withMaxRetries(20);
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Rationale</h2>
+          <ul>
+            <li>Non-blocking</li>
+            <li>Scalable</li>
+            <li>Easy to use</li>
+            <li>Flexible</li>
+            <li>Embrace immutability</li>
+            <li>Used Java 8, <em>before it was cool</em></li>
+          </ul>
+          <hr/>
+          <p>See also: <a href="http://docs.spring.io/spring-batch/2.1.x/apidocs/org/springframework/batch/retry/support/RetryTemplate.html"><code>RetryTemplate</code> from Spring</a></p>
+        </section>
+
+        <section>
+          <h2>Composable</h2>
+          <pre><code data-trim>
+CompletableFuture&lt;String&gt; f1 = 
+    executor.getWithRetry(ctx -&gt; unreliable());
+CompletableFuture&lt;String&gt; f2 = 
+    executor.getWithRetry(ctx -&gt; slow());
+
+f1.acceptEither(f2, first -> {
+    //first to succeed
+});
+          </code></pre>
+        </section>
+
+        <section>
+          <h2><code>abortOn()</code> / <code>retryOn()</code></h2>
+          <pre><code data-trim>
+executor.
+    retryOn(IOException.class).
+    abortOn(FileNotFoundException.class).
+    retryOn(SQLException.class).
+    abortOn(DataTruncation.class).
+    getWithRetry(ctx -> dao.load(42));
+          </code></pre>
+        </section>
+
+        <section>
+          <h2><code>OptimisticLock Exception</code></h2>
+          <pre><code data-trim>
+executor.
+    retryOn(OptimisticLockException.class).
+    withNoDelay().
+    getWithRetry(ctx -> dao.optimistic());
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Retry predicates</h2>
+          <pre><code data-trim>
+executor.
+    abortIf(throwable ->
+        throwable instanceof SQLException &amp;&amp;
+            throwable.getMessage().contains("ORA-00911")    
+    ).
+    retryIf(t -> t.getCause() != null);
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Delays (backoff)</h2>
+          <ul>
+            <li>No delay between retries</li>
+            <li>Fixed delay</li>
+            <li>Growing linearly</li>
+            <li>Growing exponentially</li>
+            <li>Min/max</li>
+            <li>Optionally keep fixed rate</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Random jitter</h2>
+          <pre><code data-trim>
+executor.withUniformJitter(100)     //ms
+          </code></pre>
+          <h3>...or:</h3>
+          <pre><code data-trim>
+executor.withProportionalJitter(0.1)        //10%
+          </code></pre>
+        </section>
+
+        <section>
+          <h2><code>RetryContext</code></h2>
+          <pre><code data-trim>
+executor.
+    getWithRetry(ctx -> 
+        new Socket("localhost", 
+                   8080 + ctx.getRetryCount())).
+    thenAccept(System.out::println);
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>In Spring framework</h2>
+          <pre><code data-trim>
+@Bean
+public RetryExecutor retryExecutor() {
+    return new AsyncRetryExecutor(scheduler()).
+        retryOn(SocketException.class).
+        withExponentialBackoff(500, 2);
+}
+
+@Bean(destroyMethod = "shutdownNow")
+public ScheduledExecutorService scheduler() {
+    return Executors.newSingleThreadScheduledExecutor();
+}
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Thank you!</h2>
+          <pre><code data-trim>
+&lt;dependency&gt;
+    &lt;groupId&gt;com.nurkiewicz.asyncretry&lt;/groupId&gt;
+    &lt;artifactId&gt;asyncretry&lt;/artifactId&gt;
+    &lt;version&gt;0.0.5&lt;/version&gt;
+&lt;/dependency&gt;
+          </code></pre>
+          <p>Website: <a href="https://github.com/nurkiewicz/async-retry">github.com/nurkiewicz/async-retry</a></p>
+          <p>Slides: <a href="http://nurkiewicz.github.io/talks/2014/wjug-osb">nurkiewicz.github.io/talks</a></p>
+        </section>
+        </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            plugins: [RevealHighlight],
+            width: 1800,
+            margin: 0.08,
+            transition: 'fade',
+            progress: false,
+            controls: false,
+            center: true,
+        });
+    </script>
+</body>
+</html>
