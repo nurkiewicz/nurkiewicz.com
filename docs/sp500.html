@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S&P 500 DCA Returns Heatmap</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #0f0f23;
+    color: #ccc;
+    padding: 24px;
+  }
+  h1 { text-align: center; font-size: 22px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .subtitle { text-align: center; font-size: 13px; color: #888; margin-bottom: 20px; }
+
+  .legend-container { display: flex; flex-direction: column; align-items: center; margin-bottom: 20px; }
+  .legend-bar { width: 420px; height: 14px; border-radius: 7px; border: 1px solid rgba(255,255,255,0.15); }
+  .legend-labels { display: flex; justify-content: space-between; width: 420px; font-size: 10px; margin-top: 3px; color: #999; }
+
+  .heatmap-container { overflow-x: auto; padding-bottom: 10px; }
+  table.heatmap { border-collapse: separate; border-spacing: 2px; margin: 0 auto; }
+  table.heatmap th { font-size: 11px; font-weight: 600; padding: 4px 2px; color: #aaa; }
+  table.heatmap th.corner { font-size: 10px; color: #666; text-align: center; min-width: 80px; }
+  table.heatmap th.col-header { text-align: center; min-width: 48px; }
+  table.heatmap th.row-header { text-align: right; padding-right: 8px; min-width: 32px; }
+  table.heatmap td {
+    width: 48px; height: 26px; text-align: center; font-size: 10px; font-weight: 700;
+    cursor: pointer; border-radius: 3px; transition: transform 0.1s, box-shadow 0.1s; position: relative;
+  }
+  table.heatmap td:hover { transform: scale(1.2); box-shadow: 0 0 10px rgba(255,255,255,0.35); z-index: 10; }
+  table.heatmap td.empty { background: transparent; cursor: default; }
+  table.heatmap td.empty:hover { transform: none; box-shadow: none; }
+  .x-axis-title { text-align: center; font-size: 11px; color: #666; margin-top: 6px; letter-spacing: 1px; text-transform: uppercase; }
+
+  #tooltip {
+    display: none; position: fixed; background: #161638; border: 1px solid #2a2a5a;
+    border-radius: 8px; padding: 14px 16px; font-size: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.7); z-index: 1000; pointer-events: none;
+    max-height: 85vh; overflow-y: auto;
+  }
+  #tooltip .tt-title { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  #tooltip .tt-return { font-size: 18px; font-weight: 800; margin-bottom: 10px; }
+  #tooltip table { border-collapse: collapse; width: 100%; }
+  #tooltip table th {
+    font-size: 10px; font-weight: 600; color: #777; text-align: right; padding: 3px 7px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+  }
+  #tooltip table th:first-child { text-align: left; }
+  #tooltip table td {
+    font-size: 11px; color: #ddd; text-align: right; padding: 3px 7px;
+    border-bottom: 1px solid rgba(255,255,255,0.05); width: auto; height: auto;
+    cursor: default; font-weight: 400; background: transparent; border-radius: 0;
+  }
+  #tooltip table td:first-child { text-align: left; font-weight: 600; color: #bbb; }
+  #tooltip table td:hover { transform: none; box-shadow: none; }
+  #tooltip .tt-summary {
+    margin-top: 10px; font-size: 11px; color: #aaa;
+    border-top: 1px solid rgba(255,255,255,0.15); padding-top: 8px; line-height: 1.6;
+  }
+  .note { text-align: center; font-size: 10px; color: #444; margin-top: 16px; }
+</style>
+</head>
+<body>
+
+<h1>S&P 500 DCA Real Returns (Inflation-Adjusted)</h1>
+<p class="subtitle">$100/month in constant dollars &mdash; Annualized real return after CPI inflation (%)</p>
+
+<div class="legend-container">
+  <div class="legend-bar" id="legendBar"></div>
+  <div class="legend-labels">
+    <span>-25%</span><span>-15%</span><span>-5%</span><span>0%</span><span>+5%</span><span>+10%</span><span>+15%</span><span>+20%</span><span>+30%</span>
+  </div>
+</div>
+
+<div class="heatmap-container">
+  <table class="heatmap" id="heatmap"></table>
+  <p class="x-axis-title">Starting Year</p>
+</div>
+
+<div id="tooltip"></div>
+
+<p class="note">S&P 500 total returns (incl. dividends) deflated by actual year-by-year US CPI inflation, 2000&ndash;2024. All values in constant dollars. Contributions made at start of each year.</p>
+
+<script>
+const sp500 = {
+  2000:-0.0910,2001:-0.1189,2002:-0.2210,2003:0.2868,2004:0.1088,
+  2005:0.0491,2006:0.1579,2007:0.0549,2008:-0.3700,2009:0.2646,
+  2010:0.1506,2011:0.0211,2012:0.1600,2013:0.3239,2014:0.1369,
+  2015:0.0138,2016:0.1196,2017:0.2183,2018:-0.0438,2019:0.3149,
+  2020:0.1840,2021:0.2871,2022:-0.1811,2023:0.2629,2024:0.2502
+};
+
+const cpi = {
+  2000:0.0338,2001:0.0283,2002:0.0159,2003:0.0227,2004:0.0268,
+  2005:0.0339,2006:0.0324,2007:0.0285,2008:0.0385,2009:-0.0036,
+  2010:0.0164,2011:0.0316,2012:0.0207,2013:0.0146,2014:0.0162,
+  2015:0.0012,2016:0.0126,2017:0.0213,2018:0.0244,2019:0.0181,
+  2020:0.0123,2021:0.0470,2022:0.0800,2023:0.0412,2024:0.0294
+};
+
+const START=2000, END=2024, ANNUAL_BASE=1200;
+const YEARS=[]; for(let y=START;y<=END;y++) YEARS.push(y);
+
+function realReturn(year){ return (1+sp500[year])/(1+cpi[year])-1; }
+
+function simulate(startYear, duration) {
+  let portfolio=0, totalContributed=0;
+  const yearData=[], contributions=[];
+  for(let i=0;i<duration;i++){
+    const year=startYear+i;
+    const c=ANNUAL_BASE;
+    const rr=realReturn(year);
+    contributions.push(c);
+    totalContributed+=c;
+    portfolio=(portfolio+c)*(1+rr);
+    yearData.push({year,contribution:c,totalContributed,portfolioValue:portfolio,nominalReturn:sp500[year],inflation:cpi[year],yearReturn:rr});
+  }
+  return {yearData,finalValue:portfolio,totalContributed,contributions};
+}
+
+function computeIRR(contributions, finalValue, duration) {
+  if(duration===1) return finalValue/contributions[0]-1;
+  let r=0.08;
+  for(let iter=0;iter<300;iter++){
+    let f=-finalValue, df=0;
+    for(let i=0;i<contributions.length;i++){
+      const n=duration-i;
+      const base=1+r;
+      f+=contributions[i]*Math.pow(base,n);
+      df+=contributions[i]*n*Math.pow(base,n-1);
+    }
+    if(Math.abs(df)<1e-15) break;
+    const step=f/df;
+    r-=step;
+    r=Math.max(-0.95,Math.min(3,r));
+    if(Math.abs(step)<1e-10) break;
+  }
+  return r;
+}
+
+const colorStops=[
+  {val:-25,c:[165,0,38]},{val:-15,c:[215,48,39]},{val:-5,c:[253,174,97]},
+  {val:0,c:[255,255,191]},{val:5,c:[217,239,139]},{val:10,c:[166,217,106]},
+  {val:15,c:[102,189,99]},{val:20,c:[26,152,80]},{val:30,c:[0,104,55]}
+];
+
+function getColor(pct){
+  const v=Math.max(-25,Math.min(30,pct));
+  let i=0;
+  while(i<colorStops.length-2 && colorStops[i+1].val<v) i++;
+  const lo=colorStops[i],hi=colorStops[i+1];
+  const t=hi.val===lo.val?0:Math.max(0,Math.min(1,(v-lo.val)/(hi.val-lo.val)));
+  const r=Math.round(lo.c[0]+t*(hi.c[0]-lo.c[0]));
+  const g=Math.round(lo.c[1]+t*(hi.c[1]-lo.c[1]));
+  const b=Math.round(lo.c[2]+t*(hi.c[2]-lo.c[2]));
+  return {r,g,b,css:`rgb(${r},${g},${b})`};
+}
+
+function textColor(r,g,b){ return 0.299*r+0.587*g+0.114*b>140?'#111':'#fff'; }
+function fmt$(v){ return '$'+Math.round(v).toLocaleString('en-US'); }
+function fmtPct(v){ return (v>=0?'+':'')+v.toFixed(1)+'%'; }
+
+// Precompute
+const data={};
+for(const sy of YEARS){
+  const maxD=END-sy+1;
+  for(let d=1;d<=maxD;d++){
+    const sim=simulate(sy,d);
+    const irr=computeIRR(sim.contributions,sim.finalValue,d)*100;
+    data[sy+'-'+d]={irr,sim};
+  }
+}
+
+// Render
+const tbl=document.getElementById('heatmap');
+let html='<tr><th class="corner">Duration \\ Start</th>';
+for(const y of YEARS) html+=`<th class="col-header">${y}</th>`;
+html+='</tr>';
+
+const maxDur=YEARS.length;
+for(let d=1;d<=maxDur;d++){
+  html+=`<tr><th class="row-header">${d}y</th>`;
+  for(const sy of YEARS){
+    const key=sy+'-'+d;
+    if(data[key]){
+      const {irr}=data[key];
+      const col=getColor(irr);
+      const tc=textColor(col.r,col.g,col.b);
+      html+=`<td style="background:${col.css};color:${tc}" data-k="${key}">${irr.toFixed(1)}</td>`;
+    } else {
+      html+='<td class="empty"></td>';
+    }
+  }
+  html+='</tr>';
+}
+tbl.innerHTML=html;
+
+// Legend gradient
+const bar=document.getElementById('legendBar');
+const stops=[];
+for(let p=-25;p<=30;p++){const col=getColor(p);stops.push(`${col.css} ${((p+25)/55*100).toFixed(1)}%`);}
+bar.style.background=`linear-gradient(to right,${stops.join(',')})`;
+
+// Tooltip
+const tooltip=document.getElementById('tooltip');
+tbl.addEventListener('mouseover',e=>{
+  const td=e.target.closest('td[data-k]');
+  if(!td){tooltip.style.display='none';return;}
+  const d=data[td.dataset.k]; if(!d)return;
+  const {irr,sim}=d;
+  const dur=sim.yearData.length;
+  const sy=sim.yearData[0].year;
+  const ic=irr>=0?'#4caf50':'#ef5350';
+
+  let h=`<div class="tt-title">Start: ${sy} &nbsp;|&nbsp; Duration: ${dur} year${dur>1?'s':''}</div>`;
+  h+=`<div class="tt-return" style="color:${ic}">Annualized: ${fmtPct(irr)}</div>`;
+  h+='<table><tr><th style="text-align:left">Year</th><th>S&P nom.</th><th>CPI</th><th>Real</th><th>Contrib.</th><th>Principal</th><th>Portfolio</th><th>Gain</th></tr>';
+
+  for(const yd of sim.yearData){
+    const gain=yd.portfolioValue-yd.totalContributed;
+    const gc=gain>=0?'#81c784':'#e57373';
+    h+=`<tr><td style="text-align:left">${yd.year}</td><td>${fmtPct(yd.nominalReturn*100)}</td>
+    <td>${fmtPct(yd.inflation*100)}</td><td>${fmtPct(yd.yearReturn*100)}</td>
+    <td>${fmt$(yd.contribution)}</td><td>${fmt$(yd.totalContributed)}</td>
+    <td>${fmt$(yd.portfolioValue)}</td><td style="color:${gc}">${fmt$(gain)}</td></tr>`;
+  }
+  h+='</table>';
+
+  const tg=sim.finalValue-sim.totalContributed;
+  const tr=tg/sim.totalContributed*100;
+  h+=`<div class="tt-summary">
+    <strong>Total invested:</strong> ${fmt$(sim.totalContributed)}<br>
+    <strong>Final value:</strong> ${fmt$(sim.finalValue)}<br>
+    <strong>Total gain:</strong> <span style="color:${tg>=0?'#81c784':'#e57373'}">${fmt$(tg)} (${fmtPct(tr)})</span>
+  </div>`;
+  tooltip.innerHTML=h;
+  tooltip.style.display='block';
+});
+
+tbl.addEventListener('mousemove',e=>{
+  if(tooltip.style.display==='none')return;
+  const pad=15;
+  let x=e.clientX+pad, y=e.clientY+pad;
+  const tw=tooltip.offsetWidth, th=tooltip.offsetHeight;
+  if(x+tw>window.innerWidth-10) x=e.clientX-tw-pad;
+  if(y+th>window.innerHeight-10) y=e.clientY-th-pad;
+  if(x<5) x=5; if(y<5) y=5;
+  tooltip.style.left=x+'px'; tooltip.style.top=y+'px';
+});
+
+tbl.addEventListener('mouseleave',()=>{tooltip.style.display='none';});
+</script>
+</body>
+</html>
