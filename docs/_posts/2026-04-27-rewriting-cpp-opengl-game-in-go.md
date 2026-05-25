@@ -10,7 +10,11 @@ description: >
 Twenty years ago I wrote [CuTe](https://github.com/nurkiewicz/cute) - a 3D Tetris clone in C++.
 Raw OpenGL, WinAPI, Boost, a hand-rolled XML parser.
 It compiled with Visual Studio 2005 on Windows XP.
-I haven't touched it since.
+Not VS Code, which was released a decade later.
+Visual Studio.
+I only had a dial-up modem connection, so I had to download the majority of documentation and tutorials.
+Including an official CD with Microsoft's documentation.
+I haven't touched the source code since.
 
 I decided to see what happens when you point Claude Code at this codebase and say: _"rewrite this in Go, replace OpenGL with something portable, keep going until it runs."_
 Spoiler: it ran on the first build.
@@ -22,10 +26,10 @@ CuTe (Cubic Tetris) is a proper game, not a toy ;-).
 Blocks are 3D shapes that fall into a cuboid.
 When a bottom Z-plane fills up, it's removed.
 There's an intro animation, a main menu, difficulty settings, high scores, customizable controls, a demo mode where the computer plays itself, sound effects, textures.
+I believe it was even included on a CD attached to some computer magazine.
+That was a big thing back then.
 
-About 3,000 lines of C++ across 20+ files.
-Heavy use of [boost](https://www.boost.org/releases/1.33.0/), a custom OpenGL, a custom XML parser, and Win32 API for window management, keyboard.
-
+About 3,000 lines of C++ across, heavy use of [boost](https://www.boost.org/releases/1.33.0/), a custom OpenGL, a custom XML parser, and Win32 API for window management, keyboard.
 The architecture is well-layered, which turned out to be the key insight for the rewrite:
 
 - **`Engine`** - pure game logic: cuboid data, blocks, collision, scoring
@@ -39,12 +43,16 @@ The original used the OpenGL, which is is deprecated on MacOS.
 I needed something portable.
 [`raylib-go`](https://github.com/gen2brain/raylib-go) maps almost 1:1 to the original's rendering calls:
 
+Was:
+
 ```go
-// Was:
 glColorHSV(z * M_PI / 3, 1.0, 1.0);
 drawCube(x + 0.5, y + 0.5, z + 0.5, border);
+```
 
-// Became:
+Became:
+
+```go
 color := rl.ColorFromHSV(float32(z)*60.0, 1.0, 1.0)
 rl.DrawCube(pos, size, size, size, color)
 ```
@@ -52,15 +60,15 @@ rl.DrawCube(pos, size, size, size, color)
 ## The first version: 750 lines, built on first try
 
 The first version spit from Claude Code compiled, a window appeared, blocks fell in 3D, planes were removed.
-
-- **WinAPI → raylib**: `WndProc` callbacks replaced by polling. No more `WM_KEYDOWN` messages.
-- **OpenGL state machine → per-call transforms**: No `glPushMatrix`/`glPopMatrix`. raylib handles transforms per draw call.
-- **Display lists → direct drawing**: GPUs are fast enough now to draw a few hundred cubes per frame without precompilation.
-- **Binary `.dat` textures → procedural generation**: I couldn't read the original's custom texture format, so I generate bevel textures at startup with `rl.GenImageColor` and pixel-by-pixel gradients.
+That was pretty astonishing.
+I was particularly impressed that Claude was taking screenshots of the running desktop app to make adjustments on the fly.
+A ton of functionality was missing, and some features were too obscure for Claude.
+So it just straight up ignored them.
 
 ## The artificial intelligence that plays itself
 
-The original's demo mode used a `BlockAnalyzer` class - a brute-force AI.
+My original game had a demo mode, which essentially plays itself.
+The algorithm to play 3D tetris was a straightforward brute-force.
 For each block, it tests all 24 unique orientations (there are exactly 24 distinct rotations of a cube).
 For each orientation, it tries every (x, y) position on the board.
 For each valid position, it computes a fit factor:
@@ -70,8 +78,8 @@ factor = heights * (-8) + holes_below * (-256) + touching_neighbors * 1
 ```
 
 Lower placement is better (negative height weight).
-Holes below the block are terrible (huge negative weight).
-Touching existing cubes is slightly good.
+Holes below the block (obscuring a gap in lower plane) are terrible (huge negative weight).
+Touching existing cubes side-by-side is slightly good.
 
 The original needed time-slicing for this: code would check a timer and yield after 15ms to prevent frame drops.
 I had to invent cooperative multi-tasking - if brute-force algorithm takes too much time, pause, let the frame render, resume.
@@ -79,6 +87,7 @@ I must've felt really smart back then.
 If I had know known C++ and boost library had proper multi-threading back then...
 
 Anyway, on a 2005 Pentium, analyzing 24 rotations x 36 positions apparently took noticeable time.
+If I simply wanted to analyze all options, my naive algorithm caused noticeable hickup in the animation.
 Thus, I had to invent cooperative multi-tasking.
 On an M1 Pro, it takes microseconds.
 Code just runs the whole analysis in one synchronous call.
@@ -86,6 +95,7 @@ No goroutines, no channels, no time-slicing.
 
 Fun fact: this is how I represented rotations of a cube in 3D space.
 I believe lower-case was clockwise, capital-case: counter-clockwise.
+Of course, the code is already translated to Go:
 
 ```go
 var rotCodes = [24]string{
@@ -96,22 +106,6 @@ var rotCodes = [24]string{
 ```
 
 Any orientation is reachable in at most 3 rotations.
-
-## Gradual color transitions
-
-The original used floating-point Z positions for HSV color calculations.
-As a block fell, its color smoothly shifted through the spectrum.
-I initially used integer Z, so colors jumped at each grid line.
-
-The fix was one line:
-
-```go
-// Before: cubeColor(float32(b.Pos.Z + z))
-// After:
-colorZ := float32(b.Pos.Z+z) + e.PosShift[2]
-```
-
-Same for cuboid planes during the collapse animation: `ZPlanePos(z)` returns `float32(z) + PlaneZShift[z]`, so cubes smoothly shift hue as they slide down.
 
 ## Things Claude Code decided to drop "just because"
 
@@ -125,6 +119,9 @@ I appreciate passive-aggressive comment about my XOR _encryption_:
 > - High score persistence (XOR-"encrypted" XML files - charmingly 2005)
 > - Custom key bindings (the options menu was a beast of nested classes)
 > - Multi-language support (Polish and English via XML language packs)
+
+Although I do understand some design choices were questionable (XOR encryption, custom asset format, custom XML parser) - I don't think it justifies Claude to simply drop them.
+Just to what I pay you for!
 
 ## What I learned
 
