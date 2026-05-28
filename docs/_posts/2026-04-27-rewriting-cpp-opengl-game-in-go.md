@@ -8,13 +8,16 @@ description: >
 ---
 
 Twenty years ago I wrote [CuTe](https://github.com/nurkiewicz/cute) - a 3D Tetris clone in C++.
-Raw OpenGL, WinAPI, Boost, a hand-rolled XML parser.
+Raw OpenGL, WinAPI, [Boost](https://www.boost.org/), a hand-rolled XML parser.
 It compiled with Visual Studio 2005 on Windows XP.
-Not VS Code, which was released a decade later.
+Not Visual Studio Code, which was released a decade later.
 Visual Studio.
 I only had a dial-up modem connection, so I had to download the majority of documentation and tutorials.
 Including an official CD with Microsoft's documentation.
 I haven't touched the source code since.
+
+> [!NOTE]
+> Did you know the original author of VS Code is Erich Gamma, one of the authors of "_Design Patterns: Elements of Reusable Object-Oriented Software_"?
 
 I decided to see what happens when you point Claude Code at this codebase and say: _"rewrite this in Go, replace OpenGL with something portable, keep going until it runs."_
 Spoiler: it ran on the first build.
@@ -22,14 +25,15 @@ But "runs" and "feels right" turned out to be very different things.
 
 ## The original codebase
 
-CuTe (Cubic Tetris) is a proper game, not a toy ;-).
+CuTe (Cubic Tetris) is a proper game, not a toy.
 Blocks are 3D shapes that fall into a cuboid.
+You can move them in 3 dimensions (left-right, up-down, and shifting down) and rotate them around 3 axes.
 When a bottom Z-plane fills up, it's removed.
 There's an intro animation, a main menu, difficulty settings, high scores, customizable controls, a demo mode where the computer plays itself, sound effects, textures.
 I believe it was even included on a CD attached to some computer magazine.
 That was a big thing back then.
 
-About 3,000 lines of C++ across, heavy use of [boost](https://www.boost.org/releases/1.33.0/), a custom OpenGL, a custom XML parser, and Win32 API for window management, keyboard.
+About 3,000 lines of C++ across, heavy use of [boost 1.33](https://www.boost.org/releases/1.33.0/), a custom OpenGL, a custom XML parser, and Win32 API for window management, keyboard.
 The architecture is well-layered, which turned out to be the key insight for the rewrite:
 
 - **`Engine`** - pure game logic: cuboid data, blocks, collision, scoring
@@ -39,7 +43,7 @@ The architecture is well-layered, which turned out to be the key insight for the
 
 ## Choosing a graphics library
 
-The original used the OpenGL, which is is deprecated on MacOS.
+The original used the OpenGL, which is deprecated on MacOS.
 I needed something portable.
 [`raylib-go`](https://github.com/gen2brain/raylib-go) maps almost 1:1 to the original's rendering calls:
 
@@ -59,7 +63,7 @@ rl.DrawCube(pos, size, size, size, color)
 
 ## The first version: 750 lines, built on first try
 
-The first version spit from Claude Code compiled, a window appeared, blocks fell in 3D, planes were removed.
+The first version _spit_ from Claude Code compiled, a window appeared, blocks fell in 3D, planes were removed.
 That was pretty astonishing.
 I was particularly impressed that Claude was taking screenshots of the running desktop app to make adjustments on the fly.
 A ton of functionality was missing, and some features were too obscure for Claude.
@@ -71,10 +75,10 @@ My original game had a demo mode, which essentially plays itself.
 The algorithm to play 3D tetris was a straightforward brute-force.
 For each block, it tests all 24 unique orientations (there are exactly 24 distinct rotations of a cube).
 For each orientation, it tries every (x, y) position on the board.
-For each valid position, it computes a fit factor:
+For each valid position, it computes a fit factor for every cube:
 
 ```
-factor = heights * (-8) + holes_below * (-256) + touching_neighbors * 1
+heights * (-8) + holes_below * (-256) + touching_neighbors * 1
 ```
 
 Lower placement is better (negative height weight).
@@ -86,7 +90,7 @@ I had to invent cooperative multi-tasking - if brute-force algorithm takes too m
 I must've felt really smart back then.
 If I had know known C++ and boost library had proper multi-threading back then...
 
-Anyway, on a 2005 Pentium, analyzing 24 rotations x 36 positions apparently took noticeable time.
+Anyway, on a 2005 Pentium, analyzing 24 rotations x 36 positions (with my poor coding skills) apparently took noticeable time.
 If I simply wanted to analyze all options, my naive algorithm caused noticeable hickup in the animation.
 Thus, I had to invent cooperative multi-tasking.
 On an M1 Pro, it takes microseconds.
@@ -111,8 +115,7 @@ Any orientation is reachable in at most 3 rotations.
 
 Even though I asked to port the entire codebase into Go, Claude Code simply assumed some features are just not worth it.
 I felt a bit offended.
-Here's the final output.
-I appreciate passive-aggressive comment about my XOR _encryption_:
+Here's the final output, I appreciate passive-aggressive comment about my XOR _encryption_:
 
 > - Intro animation (XML-driven OpenGL command sequences - cool but not worth porting)
 > - Sound effects (the `.dat` files are in a custom format)
@@ -121,12 +124,12 @@ I appreciate passive-aggressive comment about my XOR _encryption_:
 > - Multi-language support (Polish and English via XML language packs)
 
 Although I do understand some design choices were questionable (XOR encryption, custom asset format, custom XML parser) - I don't think it justifies Claude to simply drop them.
-Just to what I pay you for!
+Just do what I pay you for!
 
 ## What I learned
 
 The port worked because the original was well-architected.
-Clean separation of game logic, animation, and rendering meant I could port each layer independently.
+Clean separation of game logic, animation, and rendering meant Claude could port each layer independently.
 The game engine is basically the same code in Go syntax.
 The rendering is a thin translation layer.
 
