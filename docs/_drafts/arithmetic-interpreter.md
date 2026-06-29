@@ -1,4 +1,7 @@
-# Arithmetic interpreter: Write yourself a compiler, Part II
+---
+title: "Arithmetic interpreter: Write yourself a compiler, Part II"
+layout: post
+---
 
 In the previous article we created the most naive interpreter which can basically execute `number + number` expressions.
 A logic extension is obviously handling all basic operations: addition, subtraction, multiplication and division.
