@@ -1,12 +1,16 @@
-# Arithmetic addition interpreter: Write yourself a compiler, Part I
-# Arithmetic interpreter: Write yourself a compiler, Part II
-# The simplest virtual machine: Write yourself a compiler, Part III
-# Your first JVM language: Write yourself a compiler, Part IV
-# Create standalone binary with LLVM: Write yourself a compiler, Part V
-# Generate assembly by hand: Write yourself a compiler, Part VI
-# Support operator precedence: Write yourself a compiler, Part VII
-# Support parentheses: Write yourself a compiler, Part VIII
+---
+title: "Template: Write yourself a compiler, Part ?"
+layout: post
+---
 
+- Arithmetic addition interpreter: Write yourself a compiler, Part I
+- Arithmetic interpreter: Write yourself a compiler, Part II
+- The simplest virtual machine: Write yourself a compiler, Part III
+- Your first JVM language: Write yourself a compiler, Part IV
+- Create standalone binary with LLVM: Write yourself a compiler, Part V
+- Generate assembly by hand: Write yourself a compiler, Part VI
+- Support operator precedence: Write yourself a compiler, Part VII
+- Support parentheses: Write yourself a compiler, Part VIII
 
 ## Table of contents
 
