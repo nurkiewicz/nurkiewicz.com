@@ -1,4 +1,7 @@
-# The simplest interpreter: Write yourself a compiler, Part I
+---
+title: "The simplest interpreter: Write yourself a compiler, Part I"
+layout: post
+---
 
 I always felt that writing a compiler is the most romantic software engineering task.
 You're writing a program which reads some textual instructions describing precisely what computer can do.
