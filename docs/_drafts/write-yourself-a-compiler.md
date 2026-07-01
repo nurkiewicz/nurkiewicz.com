@@ -20,6 +20,7 @@ layout: post
 - `2 + 3` - custom virtual machine using JVM opcodes
 - `2 + 3` - wrap with JVM `.class` file
 - Show that sequence of opcodes (`2 + 3 + 4 + 5...`) also works
+- Compile to WASM/WAT file
 - `2 + 3` compiled as LLVM
 - `2 + 3` compiled to target assembly (show it's not portable and not optimized), e.g. every compiler will just replace 2 + 3 with `5`
 - Modularization - proper lexer
