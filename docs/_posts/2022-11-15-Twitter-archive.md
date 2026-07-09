@@ -1,4 +1,4 @@
-I'm moving to [https://mastodon.social/@nurkiewicz](https://mastodon.social/@nurkiewicz). Feel free to follow me there for updates
+I'm moving to [https://fosstodon.org/@nurkiewicz](https://fosstodon.org/@nurkiewicz). Feel free to follow me there for updates
 
 [Sun Oct 30 22:23:16 2022](https://twitter.com/tnurkiewicz/status/1586846224799391746)
 
