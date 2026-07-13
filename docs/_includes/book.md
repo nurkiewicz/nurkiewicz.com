@@ -1,4 +1,4 @@
-I co-authored [Reactive Programming with RxJava](https://www.amazon.com/Reactive-Programming-RxJava-Asynchronous-Applications/dp/1491931655), published by O'Reilly. It is also available in a [Korean translation](https://www.amazon.com/Reactive-programming-using-RxJava-Korean/dp/8966263062). Read the [community feedback](/rxjava).
+I co-authored [Reactive Programming with RxJava](https://www.amazon.com/Reactive-Programming-RxJava-Asynchronous-Applications/dp/1491931655), published by O'Reilly. It is also available in a [Korean translation](https://www.amazon.com/Reactive-programming-using-RxJava-Korean/dp/8966263062).
 
 <div class="book-covers">
   <img src="{{ '/img/rxjava-book.jpg' | relative_url }}" alt="Reactive Programming with RxJava book cover">
