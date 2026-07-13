@@ -2,7 +2,7 @@
 title: "OpenTelemetry glossary: 30 terms you should know"
 tags: observability OpenTelemetry monitoring Grafana Prometheus
 layout: post
-image: telemetry-glossary/opentelemetry-glossary.png
+image: /assets/img/telemetry-glossary/opentelemetry-glossary.png
 description: >
     A glossary of OpenTelemetry and observability terms, from traces and spans to Grafana and Datadog.
     Opinionated definitions for developers who don't have time for dry documentation.

@@ -1,4 +1,7 @@
-# My conference talks, webinars, podcasts and workshops
+---
+layout: page
+title: Talks
+---
 
 <style>
     td.list {

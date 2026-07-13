@@ -1,4 +1,5 @@
 ---
+layout: page
 title: "Articles"
 redirect_from:
   - /articles

@@ -1,49 +1,134 @@
-title: Around IT In 256 Seconds By Tomasz Nurkiewicz
-tagline: Around IT In 256 Seconds By Tomasz Nurkiewicz
-description: Podcast for developers, testers, SREs… and their managers. I explain complex and convoluted technologies in a clear way, avoiding buzzwords and hype. Never longer than 4 minutes and 16 seconds.
-logo: img/cover.jpg
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://nurkiewicz.com"
-twitter_username: tnurkiewicz
-github_username:  nurkiewicz
-permalink: /:year/:month/:title:output_ext
-defaults:
-  - scope:
-      path: ""
-    values:
-      author: Tomasz Nurkiewicz
-twitter:
-  username: tnurkiewicz
-  card: summary
-remote_theme: brianmaierjr/long-haul
+theme: jekyll-theme-chirpy
+
+lang: en
+timezone: Europe/Warsaw
+
+title: Around IT in 256 seconds
+tagline: By Tomasz Nurkiewicz
+description: >-
+  Podcast for developers, testers, SREs… and their managers. I explain complex
+  and convoluted technologies in a clear way, avoiding buzzwords and hype.
+  Never longer than 4 minutes and 16 seconds.
+
+url: https://nurkiewicz.com
+baseurl: ""
 repository: nurkiewicz/nurkiewicz.com
 
+github:
+  username: nurkiewicz
+twitter:
+  username: tnurkiewicz
 social:
-  github: nurkiewicz
-  linkedin: nurkiewicz
-  twitter: tnurkiewicz
+  name: Tomasz Nurkiewicz
+  fediverse_handle: "@nurkiewicz@fosstodon.org"
+  links:
+    - https://github.com/nurkiewicz
+    - https://www.linkedin.com/in/tomasz-nurkiewicz-80513b92/
+    - https://fosstodon.org/@nurkiewicz
+    - https://twitter.com/tnurkiewicz
 
-google_analytics: G-K7V9PZ2DFN
+avatar: /assets/img/cover.jpg
+social_preview_image: /assets/img/cover.jpg
+
+analytics:
+  google:
+    id: G-K7V9PZ2DFN
+
+theme_mode:
+toc: true
+actions:
+  edit_post:
+    enabled: true
+    url: https://github.com/nurkiewicz/nurkiewicz.com/edit/master/docs
+    static_url: false
+
+comments:
+  provider:
+
+pwa:
+  enabled: true
+  cache:
+    enabled: true
+    deny_paths:
+      - /10x10
+      - /slides
 
 feed:
   path: feeds/posts/default
 
-# Build settings
-markdown: kramdown
-theme: minima
-plugins:
-  - jekyll-feed
-  - jekyll-remote-theme
-  - jekyll-redirect-from
+permalink: /:year/:month/:title:output_ext
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+kramdown:
+  input: GFM
+  footnote_backlink: "&#8617;&#xfe0e;"
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+collections:
+  tabs:
+    output: true
+    sort_by: order
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      toc: true
+      comments: false
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+  - scope:
+      path: ""
+      type: tabs
+    values:
+      layout: page
+      permalink: /:title/
+
+sass:
+  style: compressed
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
+
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
+
+plugins:
+  - jekyll-archives
+  - jekyll-feed
+  - jekyll-include-cache
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+
+include:
+  - _next

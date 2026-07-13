@@ -1,0 +1,8 @@
+{% capture favicon_path %}{{ '/img' | relative_url }}{% endcapture %}
+<link rel="icon" type="image/png" sizes="32x32" href="{{ favicon_path }}/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ favicon_path }}/favicon-16x16.png">
+<link rel="shortcut icon" href="{{ favicon_path }}/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/img/favicons/apple-touch-icon.png' | relative_url }}">
+{% if site.pwa.enabled %}
+  <link rel="manifest" href="{{ '/assets/img/favicons/site.webmanifest' | relative_url }}">
+{% endif %}

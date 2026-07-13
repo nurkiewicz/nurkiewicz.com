@@ -1,0 +1,73 @@
+name: Build and deploy
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: docs
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+          working-directory: docs
+
+      - name: Build
+        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        env:
+          JEKYLL_ENV: production
+
+      - name: Verify generated site
+        run: |
+          test -f _site/index.html
+          test -f _site/about.html
+          test -f _site/podcast.html
+          test -f _site/talks.html
+          test -f _site/slides/index.html
+          test -f _site/feeds/posts/default
+          test -f _site/10x10/_next/static/css/078903e65c08f2c7.css
+          test "$(find _site -path '*/20??/??/*.html' -type f | wc -l)" -ge 336
+          grep -q "jekyll-theme-chirpy" _site/index.html
+          grep -q "open.spotify.com/embed" _site/2023/02/ruby.html
+          grep -q "mc-embedded-subscribe-form" _site/2026/06/rewriting-cpp-opengl-game-in-go.html
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/_site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,4 +1,7 @@
-# About me
+---
+layout: page
+title: About me
+---
 
 **Tomasz Nurkiewicz**, Java Champion, software engineer at [monday.com](https://monday.com/), trainer, [O’Reilly author](https://www.oreilly.com/library/view/reactive-programming-with/9781491931646/), [conference speaker](/talks), [blogger](/articles).
 
