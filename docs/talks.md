@@ -4,8 +4,66 @@ title: Talks
 ---
 
 <style>
+    .content .table-wrapper {
+        overflow-x: visible;
+    }
+
+    .content table {
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    .content td {
+        min-width: 0;
+        overflow-wrap: anywhere;
+        vertical-align: top;
+    }
+
+    .content td:first-child {
+        width: 44%;
+    }
+
+    .content td:last-child {
+        width: 56%;
+    }
+
     td.list {
         display: list-item
+    }
+
+    .content iframe {
+        display: block;
+        width: 100% !important;
+        max-width: 400px;
+    }
+
+    .content iframe[src*="youtube"],
+    .content iframe[src*="vimeo"] {
+        height: auto !important;
+        aspect-ratio: 16 / 9;
+    }
+
+    @media (max-width: 767px) {
+        .content table,
+        .content tbody,
+        .content tr,
+        .content td {
+            display: block;
+            width: 100%;
+        }
+
+        .content tr {
+            margin-bottom: 2rem;
+        }
+
+        .content td.list {
+            display: list-item;
+        }
+
+        .content td:first-child,
+        .content td:last-child {
+            width: 100%;
+        }
     }
 </style>
 
