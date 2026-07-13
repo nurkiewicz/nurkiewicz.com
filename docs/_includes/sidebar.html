@@ -61,7 +61,7 @@
         {% else %}
           {% assign url = entry.url %}
       {% endcase %}
-      <a href="{{ url }}" aria-label="{{ entry.type }}" {% unless entry.noblank %}target="_blank" rel="noopener noreferrer{% if entry.type == 'mastodon' %} me{% endif %}"{% endunless %}>
+      <a href="{{ url }}" aria-label="{{ entry.type }}" {% unless entry.noblank %}target="_blank" rel="noopener noreferrer{% if entry.type == 'mastodon' or entry.type == 'pixelfed' %} me{% endif %}"{% endunless %}>
         <i class="{{ entry.icon }}"></i>
       </a>
     {% endfor %}
