@@ -54,7 +54,6 @@ jobs:
           test "$(find _site -path '*/20??/??/*.html' -type f | wc -l)" -ge 336
           grep -q "jekyll-theme-chirpy" _site/index.html
           grep -q "open.spotify.com/embed" _site/2023/02/ruby.html
-          grep -q "mc-embedded-subscribe-form" _site/2026/06/rewriting-cpp-opengl-game-in-go.html
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

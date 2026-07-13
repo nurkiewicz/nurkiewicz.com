@@ -1,2 +1,5 @@
 <meta name="apple-itunes-app" content="app-id=1510899104">
 <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.feed.path | absolute_url }}">
+{% unless jekyll.environment == "production" %}
+  {% include analytics/google.html %}
+{% endunless %}
