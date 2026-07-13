@@ -3,42 +3,42 @@ title: "The simplest interpreter: Write yourself a compiler, Part I"
 layout: post
 ---
 
-I always felt that writing a compiler is the most romantic software engineering task.
-You're writing a program which reads some textual instructions describing precisely what computer can do.
-Do not confuse with LLM, where you write vague, verbose instructions somewhat describing what computer might do.
+I've always felt that writing a compiler is the most romantic software engineering task.
+You're writing a program that reads textual instructions describing precisely what a computer should do.
+Do not confuse this with prompting an LLM, where you write vague, verbose instructions that only loosely describe what a computer might do.
 But I digress.
 
-I'm starting a new series of articles, where each part will bring us one step closer to a full-blown compiler.
-In each step I'll try to make small, incremental improvements.
-So small that they are easy to grasp, but always bringing some value.
+I'm starting a new series of articles in which each part will bring us one tiny step closer to a full-blown compiler.
+I'll make small, incremental improvements in each step.
+They'll be easy to grasp, but each will still add some value.
 It's going to be the most agile compiler ever.
 
 We'll start by creating an extremely simple interpreter.
-It will read a string with addition (e.g. `40 + 2`), parse it, execute it, and print the answer (`42`).
+It will read a string containing an addition (e.g. `40 + 2`), parse it, evaluate it, and print the answer (`42`).
 This doesn't sound like a compiler, that's for sure.
 More like a dumb calculator.
-But, believe it or not, it's a giant step for building the actual standalone compiler.
+But, believe it or not, it's a giant step toward building an actual standalone compiler.
 
 Theory aside, let's dive into code.
-We actually need two components: lexer and evaluator.
+We need two components: a lexer that also recognizes our one-rule grammar and an evaluator.
 
 ## Lexer
 
 The example code is written in Go.
-We need a piece of logic which takes a string and splits it into two numbers:
+We need a piece of logic that takes a string and splits it into three tokens:
 
 ```go
-const numberPattern = `\s*([+-]?(?:\d+\.?\d*|\.\d+))\s*`
+const numberPattern = `\s*([+-]?\d*\.?\d+)\s*`
 
 var exprRegex = regexp.MustCompile(`^` + numberPattern + `([+])` + numberPattern + `$`)
 ```
 
-We start by defining what's a number and what's an expression, using regular expressions.
-You like it or not, regexes are at the heart of every compiler.
-They group sequences of characters into logical units (_tokens_).
-In our case the expression always consist of 3 tokens: number, `+` and second number.
+We start by defining a number and an expression using regular expressions.
+Like it or not, regular languages are at the heart of many lexers, and regexes are a convenient way to describe them.
+They let us group sequences of characters into logical units (_tokens_).
+In our case, an expression always consists of three tokens: the first number, `+`, and the second number.
 
-After describing all valid tokens, using regular expressions, we can finally tokenize our input:
+For this tiny language, one regex both validates the expression's structure and tokenizes the input:
 
 ```go
 func interpret(line string) (float64, error) {
@@ -55,21 +55,22 @@ func interpret(line string) (float64, error) {
 ```
 
 As you can see, we successfully extracted logical tokens from a simple string.
-Now the actual execution, which is unsurprisingly pretty straightforward:
+The actual evaluation is unsurprisingly straightforward:
 
 ```go
 a, err := strconv.ParseFloat(left, 64)
 if err != nil {
-  return 0, fmt.Errorf("error: invalid number %q", left)
+	return 0, fmt.Errorf("error: invalid number %q", left)
 }
 b, err := strconv.ParseFloat(right, 64)
 if err != nil {
-  return 0, fmt.Errorf("error: invalid number %q", right)
+	return 0, fmt.Errorf("error: invalid number %q", right)
 }
 
 return a + b, nil
 ```
-For the time being, the only thing our _interpret_ can do is adding two numbers:
+
+For the time being, the only thing our _interpreter_ can do is add two numbers:
 
 ```bash
 echo '2 + 1' | go run main.go
@@ -77,6 +78,7 @@ echo '2 + 1' | go run main.go
 ```
 
 It works!
-I omitted some plumbing related to reading `stdin`, you can find it on GitHub
-We can almost call 
-
+I omitted some plumbing related to reading from `stdin`; you can find it on GitHub.
+In the next episode, we'll handle all arithmetic operations, not just addition.
+If you are a bit disappointed, bear with me.
+We will soon learn how to skip the interpretation step and generate runnable artifacts (executables).
