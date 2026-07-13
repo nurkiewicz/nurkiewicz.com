@@ -4,12 +4,17 @@ title: Talks
 ---
 
 <style>
+    .content {
+        container-type: inline-size;
+    }
+
     .content .table-wrapper {
         overflow-x: visible;
     }
 
     .content table {
         width: 100%;
+        min-width: 0;
         table-layout: fixed;
     }
 
@@ -17,24 +22,26 @@ title: Talks
         min-width: 0;
         overflow-wrap: anywhere;
         vertical-align: top;
+        white-space: normal !important;
     }
 
     .content td:first-child {
-        width: 44%;
+        width: 52%;
     }
 
     .content td:last-child {
-        width: 56%;
+        width: 48%;
     }
 
     td.list {
-        display: list-item
+        display: list-item;
     }
 
     .content iframe {
         display: block;
         width: 100% !important;
         max-width: 400px;
+        margin-inline: auto;
     }
 
     .content iframe[src*="youtube"],
@@ -43,7 +50,7 @@ title: Talks
         aspect-ratio: 16 / 9;
     }
 
-    @media (max-width: 767px) {
+    @container (max-width: 800px) {
         .content table,
         .content tbody,
         .content tr,
@@ -53,7 +60,7 @@ title: Talks
         }
 
         .content tr {
-            margin-bottom: 2rem;
+            padding-block: 1.5rem;
         }
 
         .content td.list {
@@ -63,6 +70,10 @@ title: Talks
         .content td:first-child,
         .content td:last-child {
             width: 100%;
+        }
+
+        .content td:last-child {
+            padding-top: 0;
         }
     }
 </style>
