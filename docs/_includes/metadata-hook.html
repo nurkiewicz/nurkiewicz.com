@@ -3,3 +3,10 @@
 {% unless jekyll.environment == "production" %}
   {% include analytics/google.html %}
 {% endunless %}
+{% if page.categories contains "podcast" %}
+  <style id="podcast-description-compat">
+    .post-desc {
+      display: none;
+    }
+  </style>
+{% endif %}
