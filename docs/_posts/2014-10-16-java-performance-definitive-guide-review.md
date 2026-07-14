@@ -1,0 +1,49 @@
+---
+layout: post
+title: 'Java Performance: The Definitive Guide - review'
+date: '2014-10-16T20:01:00.000+02:00'
+author: Tomasz Nurkiewicz
+tags:
+- performance
+- review
+- books
+modified_time: '2014-10-16T20:01:11.890+02:00'
+blogger_id: tag:blogger.com,1999:blog-6753769565491687768.post-4032593811781365387
+blogger_orig_url: https://www.nurkiewicz.com/2014/10/java-performance-definitive-guide-review.html
+image: /assets/img/java-performance-definitive-guide-review/hero.jpg
+---
+
+[Java Performance: The Definitive Guide](http://www.amazon.com/gp/product/1449358454/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=1449358454&linkCode=as2&tag=javaandneighb-20&linkId=5WZBX5N6TLD2QCKN) is the best Java book I read this year.
+In about 400 pages [Scott Oaks](http://www.oreilly.com/pub/au/193) touches every aspect of Java-based applications, from core terminology and methodologies, through tooling, JIT, garbage collection, threading etc., to reach high-level topics, such as Java EE, JDBC/JPA, Java 8 and even...
+JavaScript and CSS compression.
+But let's go through this book chapter by chapter.
+
+First the author explains common terms like what is a microbenchmark, measuring throughput versus response time, etc. Surprisingly few sections are devoted solely to statistics and interpretation of inherently varying benchmark results.
+Oaks goes as far as briefly explaining [Student's t-test](http://en.wikipedia.org/wiki/Student%27s_t-test) - important tool in measuring correctness of tests.
+I found that part very enjoyable (and way too short), but it's just about enough for ordinary purposes.
+Now it's time to get our hands dirty.
+Before we start exploring Java performance, author goes through various tool, both available out-of-the-box in JDK and proprietary.
+A lot is said about different types of profilers - and why they don't show the full picture.
+
+JIT (just-in-time) compiler turns out to be one of the most important tools bringing performance to the JVM.
+First "real" chapter goes into great details of how JIT works in different modes, how to monitor and tune it.
+I learnt a lot already, but the best is yet to come.
+Obviously garbage collection is a major concern, thus Oaks devotes two full chapters to explain all popular GC algorithms.
+Besides pure description, expect strengths and weaknesses of every algorithm as well as unique tuning options.
+These two chapters are enough to buy this book, but there's plenty more.
+
+Further into the book, topics are becoming more high-level.
+We start with assembly and JIT, through GC, heap and native memory, to reach chapters about threading, thread pools and synchronization.
+There are many, many examples of proper and broken use of multi-threading, including benchmarks - present throughout whole book as well.
+We also learn how to monitor and tune threads.
+Later we learn about somewhat related Java EE topics, including XML parsing performance (expect plenty of SAX/StAX/DOM benchmarks!), JSON and Java serialization.
+Also HTTP sessions and servlets are well covered, with amazing benchmarks how bloated session or incorrectly tuned thread pools affect performance.
+I was really amazed to see how increasing heap can degrade (!)
+performance.
+Last chapter, "*Java SE API Tips*" is surprisingly interesting, with many good advices about collections, streams and lambdas introduced in Java 8, class loading, I/O, etc. I think you see the overall picture by now - we start almost from hardware level to reach JDBC/JPA and JDK level in the end.
+Similarly to first chapter, still every concept is accompanied with microbenchmark.
+
+Because this not-so-long book still manages to cover wide range of subjects, I can honestly recommend it to beginners and more experienced Java developers (the former should probably start reading it from back to front).
+Some aspects are covered only briefly, but in general it was a very enjoyable and thought-provoking lecture.
+A must buy for every Java developer struggling with performance or lacking understanding of how JVM works.
+Highly recommended.
