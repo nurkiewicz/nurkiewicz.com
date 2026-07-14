@@ -21,24 +21,13 @@
     const path = window.location.pathname;
     if (/^\/\d{4}\/\d{2}\//.test(path)) return;
 
-    const sources = {
-      "/": "index.md",
-      "/about": "about.md",
-      "/about.html": "about.md",
-      "/book": "book.md",
-      "/guest": "guest.md",
-      "/guest.html": "guest.md",
-      "/notes": "notes.md",
-      "/notes.html": "notes.md",
-      "/podcast": "podcast.md",
-      "/podcast.html": "podcast.md",
-      "/rxjava": "rxjava.md",
-      "/rxjava.html": "rxjava.md",
-      "/slides/": "slides/index.md",
-      "/talks": "talks.md",
-      "/talks.html": "talks.md"
-    };
-    const source = sources[path];
+    const markdownPages = new Set(["about", "book", "guest", "notes", "podcast", "rxjava", "talks"]);
+    const slug = path.replace(/^\//, "").replace(/\.html$/, "");
+    const source = path === "/"
+      ? "index.md"
+      : path === "/slides/"
+        ? "slides/index.md"
+        : markdownPages.has(slug) ? `${slug}.md` : undefined;
     if (!source) return;
 
     const link = document.getElementById("edit-page");
