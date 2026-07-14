@@ -1,0 +1,26 @@
+<nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
+  {% assign previous = site.data.locales[include.lang].post.button.previous %}
+  {% assign next = site.data.locales[include.lang].post.button.next %}
+
+  {% if page.previous.url %}
+    <a href="{{ page.previous.url | relative_url }}" class="btn btn-outline-primary" aria-label="{{ previous }}">
+      {% if page.previous.image %}
+        <img src="{{ page.previous.image.path | default: page.previous.image | relative_url }}" alt="">
+      {% endif %}
+      <p>{{ page.previous.title }}</p>
+    </a>
+  {% else %}
+    <div class="btn btn-outline-primary disabled" aria-label="{{ previous }}"><p>-</p></div>
+  {% endif %}
+
+  {% if page.next.url %}
+    <a href="{{ page.next.url | relative_url }}" class="btn btn-outline-primary" aria-label="{{ next }}">
+      {% if page.next.image %}
+        <img src="{{ page.next.image.path | default: page.next.image | relative_url }}" alt="">
+      {% endif %}
+      <p>{{ page.next.title }}</p>
+    </a>
+  {% else %}
+    <div class="btn btn-outline-primary disabled" aria-label="{{ next }}"><p>-</p></div>
+  {% endif %}
+</nav>

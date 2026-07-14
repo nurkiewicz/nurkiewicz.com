@@ -1,4 +1,7 @@
-# About me
+---
+layout: page
+title: About me
+---
 
 **Tomasz Nurkiewicz**, Java Champion, software engineer at [monday.com](https://monday.com/), trainer, [O’Reilly author](https://www.oreilly.com/library/view/reactive-programming-with/9781491931646/), [conference speaker](/talks), [blogger](/articles).
 
@@ -17,10 +20,7 @@ Claims that code not tested automatically is not a feature but just a rumour.
 
 ## My book
 
-I wrote a [book about RxJava](https://www.amazon.com/Reactive-Programming-RxJava-Asynchronous-Applications/dp/1491931655), also translated to [Korean](https://www.amazon.com/Reactive-programming-using-RxJava-Korean/dp/8966263062) ([community feedback](rxjava))
-
-<img src="img/rxjava-book.jpg" width="40%"/>
-<img src="img/rxjava-book-korean.jpg" width="40%"/>
+{% include book.md %}
 
 ## Hire me
 
@@ -32,4 +32,5 @@ If you find my work valuable or need some help, contact me.
 
 * E-mail: `nurkiewicz` (on GMail)
 * [Mastodon](https://fosstodon.org/@nurkiewicz)
+* [Pixelfed: @nurkiewicz@pixelfed.social](https://pixelfed.social/nurkiewicz)
 * [LinkedIn](https://www.linkedin.com/in/tomasz-nurkiewicz-80513b92/)

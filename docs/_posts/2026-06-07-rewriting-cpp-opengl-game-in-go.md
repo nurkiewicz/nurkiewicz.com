@@ -2,7 +2,7 @@
 title: "Rewriting my 2005 C++/OpenGL game in Go"
 tags: Go raylib OpenGL gamedev AI
 layout: post
-image: cute/screenshot-hero.png
+image: /assets/img/cute/screenshot-hero.png
 description: >
     I asked Claude Code to rewrite CuTe, my 20-year-old 3D Tetris clone, from C++/OpenGL/WinAPI into modern Go.
     What went well, what broke, and what I had to fix four times.

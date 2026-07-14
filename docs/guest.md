@@ -1,4 +1,7 @@
-# Be My Guest
+---
+layout: page
+title: Be My Guest
+---
 
 I'd love to have you as a guest in my podcast!
 All you need is to know some technology or concept really well and be able to explain it in **under 4 minutes**.

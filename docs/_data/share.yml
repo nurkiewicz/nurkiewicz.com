@@ -1,0 +1,10 @@
+platforms:
+  - type: Linkedin
+    icon: "fab fa-linkedin"
+    link: "https://www.linkedin.com/feed/?shareActive=true&shareUrl=URL"
+
+  - type: Mastodon
+    icon: "fa-brands fa-mastodon"
+    instances:
+      - label: fosstodon.org
+        link: "https://fosstodon.org/"

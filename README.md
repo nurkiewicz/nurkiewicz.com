@@ -5,5 +5,8 @@
 ## Building
 
 ```bash
-bundle exec jekyll serve --drafts --incremental
+make serve
 ```
+
+The site uses the [Chirpy Jekyll theme](https://github.com/cotes2020/jekyll-theme-chirpy).
+Pushes to `master` are built and deployed by GitHub Actions.

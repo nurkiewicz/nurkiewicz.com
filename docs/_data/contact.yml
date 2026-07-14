@@ -1,0 +1,18 @@
+- type: github
+  icon: "fab fa-github"
+
+- type: mastodon
+  icon: "fab fa-mastodon"
+  url: "https://fosstodon.org/@nurkiewicz"
+
+- type: pixelfed
+  icon: "fab fa-pixelfed"
+  url: "https://pixelfed.social/nurkiewicz"
+
+- type: linkedin
+  icon: "fab fa-linkedin"
+  url: "https://www.linkedin.com/in/tomasz-nurkiewicz-80513b92/"
+
+- type: rss
+  icon: "fas fa-rss"
+  noblank: true

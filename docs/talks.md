@@ -1,8 +1,80 @@
-# My conference talks, webinars, podcasts and workshops
+---
+layout: page
+title: Talks
+---
 
 <style>
+    .content {
+        container-type: inline-size;
+    }
+
+    .content .table-wrapper {
+        overflow-x: visible;
+    }
+
+    .content table {
+        width: 100%;
+        min-width: 0;
+        table-layout: fixed;
+    }
+
+    .content td {
+        min-width: 0;
+        overflow-wrap: anywhere;
+        vertical-align: top;
+        white-space: normal !important;
+    }
+
+    .content td:first-child {
+        width: 52%;
+    }
+
+    .content td:last-child {
+        width: 48%;
+    }
+
     td.list {
-        display: list-item
+        display: list-item;
+    }
+
+    .content iframe {
+        display: block;
+        width: 100% !important;
+        max-width: 400px;
+        margin-inline: auto;
+    }
+
+    .content iframe[src*="youtube"],
+    .content iframe[src*="vimeo"] {
+        height: auto !important;
+        aspect-ratio: 16 / 9;
+    }
+
+    @container (max-width: 800px) {
+        .content table,
+        .content tbody,
+        .content tr,
+        .content td {
+            display: block;
+            width: 100%;
+        }
+
+        .content tr {
+            padding-block: 1.5rem;
+        }
+
+        .content td.list {
+            display: list-item;
+        }
+
+        .content td:first-child,
+        .content td:last-child {
+            width: 100%;
+        }
+
+        .content td:last-child {
+            padding-top: 0;
+        }
     }
 </style>
 
