@@ -6,7 +6,7 @@ author: Tomasz Nurkiewicz
 tags:
 - graphql
 modified_time: '2020-03-24T01:27:25.567+01:00'
-thumbnail: https://1.bp.blogspot.com/-ejICtIh9pXE/XbHwMK0h6MI/AAAAAAAAwoM/sEPvhGE8MaYDNNKQN6_8an4VtBWzn31ywCLcBGAsYHQ/s72-c/IMG_0642.JPG
+thumbnail: /assets/img/graphql-server-in-java-part-ii/1.jpg
 blogger_id: tag:blogger.com,1999:blog-6753769565491687768.post-2132388239224386004
 blogger_orig_url: https://www.nurkiewicz.com/2019/10/graphql-server-in-java-part-ii.html
 ---

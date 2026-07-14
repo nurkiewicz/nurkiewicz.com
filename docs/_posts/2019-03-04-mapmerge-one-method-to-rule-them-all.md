@@ -5,7 +5,7 @@ date: '2019-03-04T10:08:00.000+01:00'
 author: Tomasz Nurkiewicz
 tags: 
 modified_time: '2019-04-20T00:20:22.184+02:00'
-thumbnail: https://4.bp.blogspot.com/-Vs7dzDKgj9A/XHcjNNO-yPI/AAAAAAAAp58/Y5Xr_orib_A3vHsfQhuPWTfCqXlSlv05wCK4BGAYYCw/s72-c/IMG_0537.JPG
+thumbnail: /assets/img/mapmerge-one-method-to-rule-them-all/1.jpg
 blogger_id: tag:blogger.com,1999:blog-6753769565491687768.post-6474215493985612572
 blogger_orig_url: https://www.nurkiewicz.com/2019/03/mapmerge-one-method-to-rule-them-all.html
 ---
