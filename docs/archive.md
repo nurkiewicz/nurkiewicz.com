@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Articles"
+title: "Archive"
 redirect_from:
   - /articles
 ---

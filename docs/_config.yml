@@ -53,6 +53,8 @@ pwa:
       - /10x10
       - /slides
 
+paginate: 50
+
 feed:
   path: feeds/posts/default
 
@@ -120,6 +122,7 @@ plugins:
   - jekyll-archives
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll-paginate
   - jekyll-redirect-from
   - jekyll-seo-tag
   - jekyll-sitemap

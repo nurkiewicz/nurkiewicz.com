@@ -45,6 +45,7 @@ jobs:
       - name: Verify generated site
         run: |
           test -f _site/index.html
+          test -f _site/archive.html
           test -f _site/about.html
           test -f _site/podcast.html
           test -f _site/talks.html

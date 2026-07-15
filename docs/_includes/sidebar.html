@@ -9,7 +9,7 @@
 
   <nav class="flex-column flex-grow-1 w-100 ps-0">
     <ul class="nav">
-      {% assign navigation = "Articles|/|fas fa-newspaper,Podcast|/podcast|fas fa-podcast,Talks|/talks|fas fa-microphone,Slides|/slides/|fas fa-display,About me|/about|fas fa-info-circle,Book|/book|fas fa-book,CV|/cv|fas fa-file-lines" | split: "," %}
+      {% assign navigation = "Home|/|fas fa-home,Archive|/archive|fas fa-box-archive,Podcast|/podcast|fas fa-podcast,Talks|/talks|fas fa-microphone,Slides|/slides/|fas fa-display,About me|/about|fas fa-info-circle,Book|/book|fas fa-book,CV|/cv|fas fa-file-lines" | split: "," %}
       {% for item in navigation %}
         {% assign fields = item | split: "|" %}
         {% assign active = false %}
