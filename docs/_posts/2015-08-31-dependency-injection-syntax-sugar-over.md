@@ -101,7 +101,7 @@ Not because it's just a bunch of procedures in namespaces so-called classes (I h
 But because objects are implemented as procedures with implicit `this` parameter, when you see: `this.database.insert(payment)` it is actually compiled into something like this: `Database.insert(this.database, payment)`.
 Don't believe me?
 
-```java
+```bash
 $ javap -c Storage.class 
 ...
   public java.util.UUID save(com.nurkiewicz.di.Payment);
