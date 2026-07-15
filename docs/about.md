@@ -27,6 +27,7 @@ Claims that code not tested automatically is not a feature but just a rumour.
 I'm occasionally doing [Reactor](https://github.com/nurkiewicz/reactor-workshop), [Java concurrency](https://github.com/nurkiewicz/java-concurrency-workshop) workshops and consulting.
 I trained almost **1000** people from companies around the world.
 If you find my work valuable or need some help, contact me.
+Also, here's my [CV](/cv).
 
 ## Contact me
 
