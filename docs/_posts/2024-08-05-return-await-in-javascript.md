@@ -32,11 +32,11 @@ For starters, `await` is definitely needed when wrapped within `try-catch`:
 
 ```js
 async function foo() {
-    try {
-        return await waitAndMaybeReject();
- } catch(error) {
-        console.error(error);
- }
+  try {
+    return await waitAndMaybeReject();
+  } catch(error) {
+    console.error(error);
+  }
 }
 ```
 
