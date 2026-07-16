@@ -43,7 +43,10 @@ actions:
     static_url: false
 
 comments:
-  provider:
+  provider: utterances
+  utterances:
+    repo: nurkiewicz/nurkiewicz.com
+    issue_term: "og:title"
 
 pwa:
   enabled: true
@@ -84,7 +87,7 @@ defaults:
     values:
       layout: post
       toc: true
-      comments: false
+      comments: true
   - scope:
       path: ""
       type: pages
