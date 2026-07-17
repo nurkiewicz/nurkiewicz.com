@@ -2,7 +2,7 @@
 title: "The simplest interpreter: Write yourself a compiler, Part I"
 layout: post
 category: writing-compiler
-tags: compiler lexer go
+tags: compiler interpreter lexer go
 ---
 
 I've always felt that writing a compiler is the most romantic software engineering task.
