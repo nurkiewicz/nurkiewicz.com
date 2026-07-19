@@ -5,12 +5,12 @@ category: writing-compiler
 tags: compiler interpreter go
 ---
 
-In the [previous article]({% raw %}{% link _posts/2026-07-17-simplest-interpreter-write-yourself-a-compiler-part-i.md %}{% endraw %}) we created the most naive interpreter which can basically execute `number + number` expressions.
-A logical extension is obviously handling all basic operations: addition, subtraction, multiplication and division.
+In the [previous article]({% raw %}{% link _posts/2026-07-17-simplest-interpreter-write-yourself-a-compiler-part-i.md %}{% endraw %}), we created the most naive interpreter, which can basically execute `number + number` expressions.
+A logical extension is obviously to handle all basic operations: addition, subtraction, multiplication and division.
 The time has come!
 
-First of all, we need to teach our proto-compiler how to recognize all basic operators.
-The simple:
+First, we need to teach our proto-compiler how to recognize all basic operators.
+This simple code:
 
 ```go
 const numberPattern = `\s*([+-]?(?:\d+\.?\d*|\.\d+))\s*`
@@ -18,14 +18,14 @@ const numberPattern = `\s*([+-]?(?:\d+\.?\d*|\.\d+))\s*`
 var exprRegex = regexp.MustCompile(`^` + numberPattern + `([+])` + numberPattern + `$`)
 ```
 
-Becomes:
+becomes:
 
 ```go
 var exprRegex = regexp.MustCompile(`^` + numberPattern + `([+\-*/])` + numberPattern + `$`)
 ```
 
-Very similar, the only difference is that a regular expression now supports all sorts of expressions, like `-2 * 3`, `3 - 5`, etc.
-To decompose this regular expression, let's extract even more primitives:
+The code is very similar; the only difference is that the regular expression now supports all sorts of expressions, such as `-2 * 3`, `3 - 5`, etc.
+To break down this regular expression, let's extract even more primitives:
 
 ```go
 const (
@@ -42,8 +42,8 @@ var exprRegex = regexp.MustCompile(`^` + ws + c(number) + ws + c(operator) + ws 
 
 ```
 
-The `exprRegex` looks a bit more high-level, better explaining what we're actually trying to achieve.
-Only `ws` (whitespace) and `c()` (_capture_) leak some abstraction.
+The `exprRegex` looks a bit more high-level and better explains what we're actually trying to achieve.
+Only `ws` (whitespace) and `c()` (_capture_) leak through the abstraction.
 
 The second necessary change is in the interpreter itself.
 It now needs to take the operator into account:
@@ -67,8 +67,8 @@ default:
 ```
 
 OK, once again, the outcome seems disappointing.
-After all, we just parsed a string using regular expression and, well, interpreted it.
-But our tiny programming language is getting some shape.
+After all, we just parsed a string using a regular expression and, well, interpreted it.
+But our tiny programming language is taking shape.
 In the next installment, we'll actually try to "compile" it into an intermediate representation (IR).
 
-The source code is available [here](https://github.com/nurkiewicz/writing-compiler/tree/part-ii), branch `part-ii`.
+The source code is available [here](https://github.com/nurkiewicz/writing-compiler/tree/part-ii) on the `part-ii` branch.
