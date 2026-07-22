@@ -21,8 +21,6 @@ description: >
 
 {% include player.html spotify_id="6lKzjo3FsHZbEloAdsmAvo" youtube_id="U3QhlQNvVJI" %}
 
-{{ page.description }}
-
 This cloud model is known as Infrastructure as a Service.
 IaaS for short.
 It was popularized by one of the first cloud vendors: Amazon's Elastic Compute Cloud.

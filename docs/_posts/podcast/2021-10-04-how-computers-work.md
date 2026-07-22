@@ -15,8 +15,6 @@ description: >
 
 {% include player.html spotify_id="7EVHMs2fpRLF0wjyU1eHJk" youtube_id="DaLhEk_3xjE" %}
 
-{{ page.description }}
-
 ## Vacuum tubes
 
 Then comes diode.

@@ -15,8 +15,6 @@ description: >
 
 {% include player.html spotify_id="17Gvx82clO2Agf7bRLbpe8" youtube_id="TODO" %}
 
-{{ page.description }}
-
 First of all, let's recap how the proof-of-work algorithm works.
 In general, hundreds of thousands of energy-hungry computers are trying to find a solution to a math problem.
 To be honest, it's more like making millions of uneducated guesses per second.

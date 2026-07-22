@@ -15,8 +15,6 @@ description: >
 
 {% include player.html spotify_id="4Wvj5YmBvuOr57vL2xdHa0" youtube_id="RW_CSPK2Igk" %}
 
-{{ page.description }}
-
 Imagine you just began a new software project.
 You desperately need a teammate to work on some features.
 You work independently, maybe remotely.

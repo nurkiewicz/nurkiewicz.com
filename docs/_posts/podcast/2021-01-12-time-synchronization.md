@@ -27,8 +27,6 @@ description: >
 
 {% include player.html spotify_id="6vvNijnCYZMVJM8ZzD1DhB" youtube_id="2epTAKPGcOs" %}
 
-{{ page.description }}
-
 
 
 For practical reasons we really want two servers, even very geographically distant, to have the same time.

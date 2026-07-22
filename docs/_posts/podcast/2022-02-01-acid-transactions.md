@@ -19,8 +19,6 @@ description: >
 
 {% include player.html spotify_id="4dtpAcKhsiPJUv9vjdTbif" youtube_id="KBjID1TTnZM" %}
 
-{{ page.description }}
-
 When it comes to ACID, _A_ means _atomicity_.
 Simply put, if you make multiple changes to your database, either all or none of them are persisted.
 Contrast that to a typical NoSQL database.

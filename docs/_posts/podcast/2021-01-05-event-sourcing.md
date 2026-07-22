@@ -17,8 +17,6 @@ description: >
 
 {% include player.html spotify_id="2Z8K3Zbe28Mqsw2gTMYJKo" youtube_id="Szd5pIFzWKI" %}
 
-{{ page.description }}
-
 
 
 Let's say you need to keep track of your customers.

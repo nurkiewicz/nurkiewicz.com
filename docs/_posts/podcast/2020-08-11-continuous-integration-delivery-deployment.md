@@ -16,8 +16,6 @@ description: >
 
 {% include player.html spotify_id="0yhni9TICTBT8zBbnTwjJA" youtube_id="rnuovduS14s" %}
 
-{{ page.description }}
-
 
 # The problem
 

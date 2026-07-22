@@ -20,8 +20,6 @@ description: >
 
 {% include player.html spotify_id="3b59wmtZaC5V9qrNnL8zfE" youtube_id="jzkRzZxatJE" %}
 
-{{ page.description }}
-
 
 
 A drug dealer may believe in one fork, whereas a gun dealer believes in the other.

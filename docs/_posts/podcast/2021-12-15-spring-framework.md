@@ -16,8 +16,6 @@ description: >
 
 {% include player.html spotify_id="425Q4U4XnovBL9iCSAesM0" youtube_id="RlnOZjR7uvc" %}
 
-{{ page.description }}
-
 The core principle of Spring framework is _dependency injection_.
 It's an idea that objects should not create their own dependencies.
 Instead, there should be some glue layer that creates all objects and composes them together.

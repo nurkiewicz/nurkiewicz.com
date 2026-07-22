@@ -21,8 +21,6 @@ description: >
 
 {% include player.html spotify_id="4Aj3diNw4Xd7VifYsDU0GS" youtube_id="HiBVxtFycTI" %}
 
-{{ page.description }}
-
 
 
 A slightly smarter approach is long-polling.

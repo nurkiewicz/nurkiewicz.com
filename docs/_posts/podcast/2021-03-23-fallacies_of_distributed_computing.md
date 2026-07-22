@@ -18,8 +18,6 @@ description: >
 
 {% include player.html spotify_id="77yxlj0QlkCbWixgbjLTe2" youtube_id="Y_IVKUtZlgc" %}
 
-{{ page.description }}
-
 ## Number 1: The network is reliable
 
 Somehow we believe that making an HTTP request will always suceed.

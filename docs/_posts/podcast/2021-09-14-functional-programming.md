@@ -20,8 +20,6 @@ description: >
 
 {% include player.html spotify_id="7eagJKitLtJlcZgfLPyywg" youtube_id="L693WOIBcfs" %}
 
-{{ page.description }}
-
 There is another important distinction of what is a function.
 It can't have visible side effects.
 For example, registering a user saves that user to the database.

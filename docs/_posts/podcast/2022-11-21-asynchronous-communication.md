@@ -13,8 +13,6 @@ description: >
 
 {% include player.html spotify_id="0Ljr9sGNDCVJsEpzaa687r" youtube_id="TODO" %}
 
-{{ page.description }}
-
 On the other hand, asynchronous communication is more like sending a text message.
 Fire and forget.
 You don't actively wait for a reply.

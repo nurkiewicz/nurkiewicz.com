@@ -24,8 +24,6 @@ description: >
 
 {% include player.html spotify_id="5K3tGBIHCIG3TdPDg3cZTs" youtube_id="snYyLmOKJq8" %}
 
-{{ page.description }}
-
 This is not an abstract problem.
 German army during Second World War used an encryption device known as Enigma.
 The password was changed daily.

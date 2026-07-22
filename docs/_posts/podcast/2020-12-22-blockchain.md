@@ -23,8 +23,6 @@ description: >
 
 {% include player.html spotify_id="5IbUexoU3P9QCiRhKMRNfv" youtube_id="sdizKU1_g-g" %}
 
-{{ page.description }}
-
 
 
 Starting from the basics.

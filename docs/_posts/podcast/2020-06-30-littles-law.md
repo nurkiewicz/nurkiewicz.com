@@ -10,8 +10,6 @@ description: Little's law is an astounding equation that's dead simple, yet it c
 
 {% include player.html spotify_id="4JCnxbwVGdF7KHWVIkpFZs" youtube_id="wT08bS3Gj7o" %}
 
-{{ page.description }}
-
 But first, let's go to a grocery store.
 Imagine there is a single clerk that, on average, procesess one customer in four minutes.
 It's fairly obvious that he can serve: sixty minutes divided by four - fifteen customers per hour.

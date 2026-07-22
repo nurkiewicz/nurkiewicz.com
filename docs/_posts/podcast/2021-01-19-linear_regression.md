@@ -23,8 +23,6 @@ description: >
 
 {% include player.html spotify_id="7CtIsqE5g04QO0VYdw82ar" youtube_id="6TalLh9CM9w" %}
 
-{{ page.description }}
-
 
 
 As a matter of fact, this train of thought is quite obvious.

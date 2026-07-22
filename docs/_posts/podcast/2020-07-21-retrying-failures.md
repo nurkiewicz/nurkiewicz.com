@@ -12,8 +12,6 @@ description: >
 
 {% include player.html spotify_id="6QZVGv2RqHRoUvwCSjndPR" youtube_id="6ZqqqfBDh_k" %}
 
-{{ page.description }}
-
 First, let's discuss the different types of failures.
 Some errors can be retried immediately.
 For example if you hit an unhealthy instance of a service behind a load balancer.

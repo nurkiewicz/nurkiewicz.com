@@ -14,8 +14,6 @@ description: >
 
 {% include player.html spotify_id="2kzDD6DGLlHhx9jaKUtvNV" youtube_id="35YSs56-7Lk" %}
 
-{{ page.description }}
-
 First of all, percentages are used to define a ratio of two values.
 For example, if your data uses 100 GiB out of 500 GiB on disk, it uses one fifth.
 Or 20%.

@@ -24,8 +24,6 @@ description: >
 
 {% include player.html spotify_id="3caZaL67OHgcMP4RIaWV5C" youtube_id="pRvfsbHd3f0" %}
 
-{{ page.description }}
-
 
 
 ## Shared database

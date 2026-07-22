@@ -17,8 +17,6 @@ description: >
 
 {% include player.html spotify_id="08Pens38XZEfGchvaEf41c" youtube_id="TODO" %}
 
-{{ page.description }}
-
 But first things first.
 Both inputs and outputs are basically just numbers.
 The simplest neuron may take two numbers and return their sum or product.

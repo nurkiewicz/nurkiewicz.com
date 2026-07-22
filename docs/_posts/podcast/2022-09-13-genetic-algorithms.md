@@ -15,8 +15,6 @@ description: >
 
 {% include player.html spotify_id="6b7tpexnHEr33jr3f73wjk" youtube_id="TODO" %}
 
-{{ page.description }}
-
 Let's take a concrete problem.
 You must schedule classes for teachers, students and buildings.
 There are multiple constraints, for example:

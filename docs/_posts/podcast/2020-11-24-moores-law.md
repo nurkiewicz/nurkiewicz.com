@@ -19,8 +19,6 @@ description: >
 
 {% include player.html spotify_id="57LAFOw2alamnCswuejX17" youtube_id="ZsM9mbOKnSA" %}
 
-{{ page.description }}
-
 
 
 A clock speed is simple.

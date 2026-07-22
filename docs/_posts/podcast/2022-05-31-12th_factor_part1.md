@@ -13,8 +13,6 @@ description: >
 
 {% include player.html spotify_id="6DY7TcuO082kCzmAa5uRKU" youtube_id="65Q3iu23mo0" %}
 
-{{ page.description }}
-
 ## I. One codebase tracked in revision control, many deploys
 
 It means that there should only be one version of your codebase deployed to all environments.

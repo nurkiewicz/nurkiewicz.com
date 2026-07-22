@@ -18,8 +18,6 @@ description: >
 
 {% include player.html spotify_id="6xiMQEggYikV7WwG0nWULU" youtube_id="7w9BVQLlVO4" %}
 
-{{ page.description }}
-
 You may think this is terribly inefficient.
 Naively implemented immutable data structures are very inefficient.
 Imagine copying 1 million items in a list just to add a new one.

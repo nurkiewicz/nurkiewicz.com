@@ -19,8 +19,6 @@ description: >
 
 {% include player.html spotify_id="6FpzyeffBU9Zdo84J6x17B" youtube_id="Gx31bvbBz34" %}
 
-{{ page.description }}
-
 First, the consumer (client) creates a contract.
 It's basically a set of requirements for the server.
 The contract typically contains sample requests and responses.

@@ -14,8 +14,6 @@ description: >
 
 {% include player.html spotify_id="5v2EYpKDN6kFqBzpUjtwKw" youtube_id="T1lvRIHoMqc" %}
 
-{{ page.description }}
-
 The compiler's work is traditionally divided into three stages: frontend, middle, and backend.
 The frontend interacts directly with the source code.
 It reads your C++, Rust or... Go file.

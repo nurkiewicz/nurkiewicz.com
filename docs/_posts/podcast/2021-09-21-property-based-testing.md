@@ -22,8 +22,6 @@ description: >
 
 {% include player.html spotify_id="313A2uGgQeosMewYoIhaRE" youtube_id="Ufcjf2YahEk" %}
 
-{{ page.description }}
-
 Property-based testing frameworks, do just that.
 The most popular one is QuickCheck for Haskell.
 Here's an example of a compression algorithm test.

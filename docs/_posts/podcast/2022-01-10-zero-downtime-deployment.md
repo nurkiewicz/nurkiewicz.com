@@ -16,8 +16,6 @@ description: >
 
 {% include player.html spotify_id="6clYLaFhwkV2j2MCIV2T90" youtube_id="NFr0ClRDEh0" %}
 
-{{ page.description }}
-
 A typical old-school process looked as follows:
 
 1. Stopping the production server

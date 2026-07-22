@@ -12,8 +12,6 @@ description: >
 
 {% include player.html spotify_id="5i2IYlEgtz7RcWTVKvVNSH" youtube_id="ldzltWr_HM4" %}
 
-{{ page.description }}
-
 ## VIII. Scale out via the process model
 
 This principle encourages scaling out by spawning multiple instances of the same application.

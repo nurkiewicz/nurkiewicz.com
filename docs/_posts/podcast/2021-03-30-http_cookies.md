@@ -23,8 +23,6 @@ description: >
 
 {% include player.html spotify_id="7htJlw269oihrtZ61M6Jaw" youtube_id="6wGkFBTMsGo" %}
 
-{{ page.description }}
-
 When the server wants to keep some information in between requests, it uses cookies.
 Cookies are just a tiny piece of information stored on the client.
 That's right, in the browser, not the server!

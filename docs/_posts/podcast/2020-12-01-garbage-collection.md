@@ -21,8 +21,6 @@ description: >
 
 {% include player.html spotify_id="35G1SNLsaGlJiWMHSqWUpf" youtube_id="uJ11kAzjva4" %}
 
-{{ page.description }}
-
 
 
 Back in the old days of C and C++, every object we created had to be manually freed.

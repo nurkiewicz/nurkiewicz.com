@@ -19,8 +19,6 @@ description: >
 
 {% include player.html spotify_id="3PyGpbnyKKFPREVcc6DDmR" youtube_id="0ZY_LOcnCe4" %}
 
-{{ page.description }}
-
 
 
 Believe it or not, many organizations do practice deliberately injecting faults into production.

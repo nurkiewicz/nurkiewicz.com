@@ -9,8 +9,6 @@ description: Serverless (function as a service) is the fastest and most cost eff
 
 {% include player.html spotify_id="1RiPQDsstfeXwB0BWNxcYF" youtube_id="8Y07RglQBX8" %}
 
-{{ page.description }}
-
 In order to fully appreciate how simple it is let's think about the history for a while.
 In the beginning we had to order physical servers, put them into racks, wire them to the network and deploy the code on top of them once they were provisioned.
 Then cloud came in and we could get a virtual machine using an API call in 1 or 2 minutes.

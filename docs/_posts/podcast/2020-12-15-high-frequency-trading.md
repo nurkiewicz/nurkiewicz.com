@@ -22,8 +22,6 @@ description: >
 
 {% include player.html spotify_id="5SvM2rZkhPU964ZDuJUhGk" youtube_id="By-nAO53yNo" %}
 
-{{ page.description }}
-
 
 
 Interpreting social media and other online sources is just one strategy.

@@ -10,8 +10,6 @@ description: Speed of light is not as abstract to us, software engineers, as you
 
 {% include player.html spotify_id="4xmF0EoYZLebgUSMmpz9Tt" youtube_id="4YEx7FxxnCk" %}
 
-{{ page.description }}
-
 Light travels at an unbelievable speed of three hundred thousand kilometres per second.
 That's more than 7 times around the globe in one second.
 Is this relevant in our industry?

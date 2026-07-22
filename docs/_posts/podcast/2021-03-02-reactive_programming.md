@@ -24,8 +24,6 @@ description: >
 
 {% include player.html spotify_id="1kbgcxBKVQk2Dd7UttS4G2" youtube_id="-_JXQfp5X-w" %}
 
-{{ page.description }}
-
 Yes, good old spreadsheet is a very sophisticated reactive programming environment.
 The change propagation is crucial here.
 Rather than defining a sequence of operations, we declare data dependencies.

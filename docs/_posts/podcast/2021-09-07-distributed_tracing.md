@@ -16,8 +16,6 @@ description: >
 
 {% include player.html spotify_id="6ArAEK4X6mmjhyx79QIsgS" youtube_id="mJjelWesExI" %}
 
-{{ page.description }}
-
 In a distributed system, a failure in one component may be caused by problems several services away.
 For example, your Python backend returned HTTP 503 to the browser.
 What happened?

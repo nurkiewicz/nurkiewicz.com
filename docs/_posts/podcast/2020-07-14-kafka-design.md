@@ -16,8 +16,6 @@ description: >
 
 {% include player.html spotify_id="2gXn06ADmh68Pae1rRAHru" youtube_id="lTyta7LoHeY" %}
 
-{{ page.description }}
-
 In this episode I am focusing on the architecture and internals of Kafka.
 The best way to understand Kafka is by examining how it works.
 Writing data to Kafka (publishing messages) is done by appending messages to a flat file.

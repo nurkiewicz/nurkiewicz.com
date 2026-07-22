@@ -18,8 +18,6 @@ description: >
 
 {% include player.html spotify_id="15zlML4thKnVVwwBPyhJ1D" youtube_id="fBxyoDzw4o8" %}
 
-{{ page.description }}
-
 The Terraform configuration consists of a bunch of resources.
 Each resource describes one infrastructure element.
 What kind of elements you can manage?

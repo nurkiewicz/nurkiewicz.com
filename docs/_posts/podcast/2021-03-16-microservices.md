@@ -19,8 +19,6 @@ description: >
 
 {% include player.html spotify_id="7siqtZgiHgPRzH5E7lkcQ3" youtube_id="EccSxljWY4Y" %}
 
-{{ page.description }}
-
 # Deployment independence
 
 It should be possible to deploy each service independently.

@@ -17,8 +17,6 @@ description: >
 
 {% include player.html spotify_id="0qZ47M7fLhMf2jm5PQ0doZ" youtube_id="YDlGK81snSg" %}
 
-{{ page.description }}
-
 SOAP used to be an acronym starting with _Simple_.
 However, the acronym was later dropped.
 It's far from simple, to be honest.

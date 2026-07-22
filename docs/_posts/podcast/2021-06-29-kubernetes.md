@@ -17,8 +17,6 @@ description: >
 
 {% include player.html spotify_id="3Y2ROQqmPKatG2bMMFzEQE" youtube_id="RaAOvdHK76s" %}
 
-{{ page.description }}
-
 You need to take into account:
 
 * CPU and memory requirements of each component

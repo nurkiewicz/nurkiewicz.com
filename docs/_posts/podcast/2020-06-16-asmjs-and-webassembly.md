@@ -9,8 +9,6 @@ description: asm.js and WebAssembly are two technologies used to run native code
 
 {% include player.html spotify_id="43vAe1EWEf0pPWVdf32IHg" youtube_id="4L2VVe0CNj8" %}
 
-{{ page.description }}
-
 JavaScript is a dynamically typed languages and languages like that are typically harder to get fast.
 Take for example a simple expression like `A + B`.
 In statically typed languages if you know in advance that `A` and `B` are, let's say, integers, you simply issue a single CPU instruction for adding 2 numbers.

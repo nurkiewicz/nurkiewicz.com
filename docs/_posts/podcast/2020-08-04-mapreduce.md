@@ -14,8 +14,6 @@ description: >
 
 {% include player.html spotify_id="4lmzW5Z11t9Mrf2UORvG1C" youtube_id="HBT1hovKj7E" %}
 
-{{ page.description }}
-
 ## How MapReduce works?
 
 Imagine you have a lot of data, way more than fits on disk.
