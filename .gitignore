@@ -4,3 +4,5 @@ _site
 .jekyll-cache
 .jekyll-metadata
 vendor
+src/mastodon-import/.venv/
+src/mastodon-import/__pycache__/
