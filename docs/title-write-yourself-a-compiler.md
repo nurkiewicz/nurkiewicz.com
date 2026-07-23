@@ -1,6 +1,5 @@
 ---
 title: "Template: Write yourself a compiler, Part ?"
-layout: post
 category: writing-compiler
 tags: compiler interpreter go
 ---
