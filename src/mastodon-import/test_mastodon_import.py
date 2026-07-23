@@ -97,7 +97,7 @@ class MastodonImportTest(unittest.TestCase):
             self.assertIn(
                 "![Useful caption](/img/mastodon/123-image.png)", page
             )
-            self.assertIn("*Useful caption*", page)
+            self.assertNotIn("<figcaption>", page)
             self.assertIn(
                 "[Mon Nov 07 09:55:58 2022](https://social.example/@user/123)",
                 page,

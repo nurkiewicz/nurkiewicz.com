@@ -265,9 +265,8 @@ def render_media(
     filename: str, caption: str, media_type: str, assets_url: str
 ) -> str:
     url = f"{assets_url.rstrip('/')}/{filename}"
-    safe_caption = escape_link_text(caption)
     if media_type.startswith("image/"):
-        media = f"![{safe_caption}]({url})"
+        return f"![{escape_link_text(caption)}]({url})"
     elif media_type.startswith("video/"):
         fallback = "Your browser does not support the video tag."
         media = f'<video controls><source src="{url}" type="{media_type}">{fallback}</video>'
@@ -276,7 +275,7 @@ def render_media(
         media = f'<audio controls src="{url}">{fallback}</audio>'
     else:
         media = f"[Download attachment]({url})"
-    return f"{media}\n\n*{caption}*" if caption else media
+    return media
 
 
 def render_page(
