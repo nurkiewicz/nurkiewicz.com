@@ -1,5 +1,6 @@
 ---
 layout: post
+image: /assets/img/tenfold-increase-in-server-throughput/response-latencies-over-time-blocking.png
 title: Tenfold increase in server throughput with Servlet 3.0 asynchronous processing
 date: '2011-03-11T23:22:00.004+01:00'
 author: Tomasz Nurkiewicz
@@ -12,7 +13,7 @@ tags:
 - monitoring
 - tomcat
 modified_time: '2011-11-17T19:14:40.640+01:00'
-thumbnail: https://lh5.googleusercontent.com/-uKjs32ELGeY/TXqdMttwQiI/AAAAAAAAAZ0/9JCcQtXSyUM/s72-c/Active+Threads+Over+Time.png
+thumbnail: /assets/img/tenfold-increase-in-server-throughput/active-threads-over-time.png
 blogger_id: tag:blogger.com,1999:blog-6753769565491687768.post-1457220125559134237
 blogger_orig_url: https://www.nurkiewicz.com/2011/03/tenfold-increase-in-server-throughput.html
 ---
@@ -266,7 +267,7 @@ For the testing purposes we will use [JMeter](http://jakarta.apache.org/jmeter/)
 During the 20-minute testing session we warm up our server firing up one new thread (concurrent connection) every 6 seconds to reach 100 threads after 10 minutes.
 For the next ten minutes we will keep 100 concurrent connections to see how stable the server works:
 
-[![](https://lh5.googleusercontent.com/-uKjs32ELGeY/TXqdMttwQiI/AAAAAAAAAZ0/9JCcQtXSyUM/s320/Active+Threads+Over+Time.png)](https://lh5.googleusercontent.com/-uKjs32ELGeY/TXqdMttwQiI/AAAAAAAAAZ0/9JCcQtXSyUM/s1600/Active+Threads+Over+Time.png)
+![Active threads over time](/assets/img/tenfold-increase-in-server-throughput/active-threads-over-time.png)
 
 **Important note**: I artificially lowered the number of HTTP worker threads to **10** in Tomcat (7.0.10 tested).
 This is a far from real configuration, but I wanted to emphasize some phenomena that occur with high load compared to server capabilities.
@@ -275,13 +276,13 @@ If you have a server farm or couple of servers in the cloud (as opposed to my 3-
 
 Remembering how many HTTP worker threads are available in Tomcat, response times over time are far from satisfactory:
 
-[![](https://lh6.googleusercontent.com/--CWo69ehvOw/TXqdYbf-xdI/AAAAAAAAAZ4/2J3BTeW5Kcs/s320/Response+Times+Over+Time.png)](https://lh6.googleusercontent.com/--CWo69ehvOw/TXqdYbf-xdI/AAAAAAAAAZ4/2J3BTeW5Kcs/s1600/Response+Times+Over+Time.png)
+![Response times over time with asynchronous processing](/assets/img/tenfold-increase-in-server-throughput/response-times-over-time-async.png)
 
 Please note the plateau at the beginning of the test: after about a minute (hint: when the number of concurrent connections exceeds 10) response times are skyrocketing to stabilize at around 10 seconds after 10 minutes (number of concurrent connections reaches one hundred).
 Once again: the same behavior would occur with 100 worker threads and 1000 concurrent connections – it's just a matter of scale.
 The response latencies graph (time between sending request and receiving first lines of response) clears any doubts:
 
-[![](https://lh6.googleusercontent.com/-mkl08vVSROM/TXqdkbc6-yI/AAAAAAAAAZ8/cXi15QU6rqE/s320/Response+Latencies+Over+Time.png)](https://lh6.googleusercontent.com/-mkl08vVSROM/TXqdkbc6-yI/AAAAAAAAAZ8/cXi15QU6rqE/s1600/Response+Latencies+Over+Time.png)
+![Response latencies over time with asynchronous processing](/assets/img/tenfold-increase-in-server-throughput/response-latencies-over-time-async.png)
 
 Below magical 10 threads our application responds almost instantly.
 This is really important for clients as receiving only headers (especially Content-Type and Content-Length) allows them to more accurately inform the user what is going on.
@@ -293,7 +294,7 @@ The moment one of the 10 lucky ones is done, one connection from the queue is ta
 This explains average 9 second latency whilst the servlet needs only 1 second to serve the request (200 kiB with 20 kiB/s limit).
 If you are still not convinced, Tomcat provides nice JMX indicators showing how many threads are occupied and how many requests are queued:
 
-[![](https://lh4.googleusercontent.com/-9o9aY_HxOVk/TXqdqoF_wFI/AAAAAAAAAaA/sTAlBHf1zKY/s320/zrzut_ekranu-1.png)](https://lh4.googleusercontent.com/-9o9aY_HxOVk/TXqdqoF_wFI/AAAAAAAAAaA/sTAlBHf1zKY/s1600/zrzut_ekranu-1.png)
+![Thread count in JConsole](/assets/img/tenfold-increase-in-server-throughput/jconsole-thread-count.png)
 
 With traditional servlets there is nothing we can do.
 Throughput is horrible but increasing the total number of threads is not an option (think: from 100 to 1000).
@@ -403,9 +404,9 @@ BTW creating a thread pool using Spring is childishly easy (and we get nice thre
 That's right, one thread is enough to serve one hundred concurrent clients.
 See for yourself (the amount of HTTP worker threads is still 10 and yes, the scale is in milliseconds):
 
-[![](https://lh5.googleusercontent.com/-mV7FcIdrz5o/TXqdyW9t1lI/AAAAAAAAAaE/3efNVR-XJyM/s320/Response+Times+Over+Time.png)](https://lh5.googleusercontent.com/-mV7FcIdrz5o/TXqdyW9t1lI/AAAAAAAAAaE/3efNVR-XJyM/s1600/Response+Times+Over+Time.png)
+![Response times over time with blocking processing](/assets/img/tenfold-increase-in-server-throughput/response-times-over-time-blocking.png)
 
-[![](https://lh6.googleusercontent.com/-vvhCnFH2ows/TXqd52qQeeI/AAAAAAAAAaI/6qwTgyfeseM/s320/Response+Latencies+Over+Time.png)](https://lh6.googleusercontent.com/-vvhCnFH2ows/TXqd52qQeeI/AAAAAAAAAaI/6qwTgyfeseM/s1600/Response+Latencies+Over+Time.png)
+![Response latencies over time with blocking processing](/assets/img/tenfold-increase-in-server-throughput/response-latencies-over-time-blocking.png)
 
 As you can see, response times when one hundred clients are downloading a file concurrently are only about 5% higher compared to the system with almost no load.
 Also response latencies aren't particularly harmed by increasing load.

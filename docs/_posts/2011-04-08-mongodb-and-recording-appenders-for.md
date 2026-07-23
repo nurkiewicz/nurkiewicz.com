@@ -1,5 +1,6 @@
 ---
 layout: post
+image: /assets/img/mongodb-and-recording-appenders-for/class-diagram.svg
 title: MongoDB and recording appenders for Logback
 date: '2011-04-08T19:50:00.003+02:00'
 author: Tomasz Nurkiewicz
@@ -156,7 +157,7 @@ Logback has a pretty clever architecture.
 In logback-core you place general logging logic, like connecting and storing documents in MongoDB in our case.
 Then one can simply subclass the base appender to define logic specific to a given logging object type.
 
-![](http://yuml.me/diagram/scruffy;dir:td/class/%5BMongoDBAppenderBase%3CE%3E%5D%5E%5BMongoDBAppender%3CIAccessEvent%3E%5D%0D,%20%5BMongoDBAppenderBase%3CE%3E%5D%5E%5BMongoDBAppender%3CILoggingEvent%3E%5D)
+![MongoDB appender class hierarchy](/assets/img/mongodb-and-recording-appenders-for/class-diagram.svg)
 
 So what object types does Logback support?
 The traditional (classic) logging is what we are familiar with.

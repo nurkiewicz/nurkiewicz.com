@@ -1,5 +1,6 @@
 ---
 layout: post
+image: /assets/img/spring-data-jdbc-generic-dao/classes.png
 title: Spring Data JDBC generic DAO implementation - most lightweight ORM ever
 date: '2013-01-20T18:10:00.001+01:00'
 author: Tomasz Nurkiewicz
@@ -496,7 +497,7 @@ It would be terrific if someone could have a look at it.
 
 ### Testing
 
-This library is continuously tested using Travis ([![Build Status](https://secure.travis-ci.org/nurkiewicz/spring-data-jdbc-repository.png?branch=master)](https://travis-ci.org/nurkiewicz/spring-data-jdbc-repository)).
+This library is continuously tested using [Travis CI](https://travis-ci.org/nurkiewicz/spring-data-jdbc-repository).
 Test suite consists of **265 tests** (53 distinct tests each run against 5 different databases: MySQL, PostgreSQL, H2, HSQLDB and Derby.
 
 When filling [bug reports](https://github.com/nurkiewicz/spring-data-jdbc-repository/issues) or submitting new features please try including supporting test cases.
@@ -527,7 +528,7 @@ Exception stack traces come from root [`AbstractIntegrationTest`](https://github
 
 Library consists of only a handful of classes, highlighted in the diagram below:
 
-![UML diagram](https://raw.github.com/nurkiewicz/spring-data-jdbc-repository/master/src/main/docs/classes.png)
+![UML diagram](/assets/img/spring-data-jdbc-generic-dao/classes.png)
 
 [`JdbcRepository`](https://github.com/nurkiewicz/spring-data-jdbc-repository/blob/master/src/main/java/com/blogspot/nurkiewicz/jdbcrepository/JdbcRepository.java) is the most important class that implements all [`PagingAndSortingRepository`](http://static.springsource.org/spring-data/data-commons/docs/current/api/org/springframework/data/repository/PagingAndSortingRepository.html) methods.
 Each user repository has to extend this class.

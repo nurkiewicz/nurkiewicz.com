@@ -1,5 +1,6 @@
 ---
 layout: post
+image: /assets/img/how-aggressive-is-method-inlining-in-jvm/inlining-environments.png
 title: How aggressive is method inlining in JVM?
 date: '2013-01-27T22:09:00.000+01:00'
 author: Tomasz Nurkiewicz
@@ -304,11 +305,11 @@ Encouraged by some interesting readers input after [my article about `@Cacheable
 Results are unexpected and a bit ambiguous.
 I run the same benchmark on two machines (blue and red), same software but the second one has more cores and is 64 bit:
 
-![Diagram](https://raw.github.com/nurkiewicz/benchmarks/master/src/main/docs/img/inlining-diagram.png)
+![Method inlining diagram](/assets/img/how-aggressive-is-method-inlining-in-jvm/inlining-diagram.png)
 
 Detailed environments:
 
-![Environments](https://raw.github.com/nurkiewicz/benchmarks/master/src/main/docs/img/inlining-environments.png)
+![Method inlining benchmark environments](/assets/img/how-aggressive-is-method-inlining-in-jvm/inlining-environments.png)
 
 It turns out that on a slower machine *A* JVM decided to inline everything.
 Not only simple `private` calls but also the virtual once.

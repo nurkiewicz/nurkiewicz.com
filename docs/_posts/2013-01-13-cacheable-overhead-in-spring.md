@@ -1,5 +1,6 @@
 ---
 layout: post
+image: /assets/img/cacheable-overhead-in-spring/caching-timing.png
 title: "@Cacheable overhead in Spring"
 date: '2013-01-13T22:17:00.000+01:00'
 author: Tomasz Nurkiewicz
@@ -273,7 +274,7 @@ CacheableWithAspectJWeaving 1514.83 ============================
  
 ```
 
-![Caliper](https://raw.github.com/nurkiewicz/benchmarks/master/src/main/docs/img/caching_timing.png)
+![Caliper benchmark results](/assets/img/cacheable-overhead-in-spring/caching-timing.png)
 
 ## Interpretation
 

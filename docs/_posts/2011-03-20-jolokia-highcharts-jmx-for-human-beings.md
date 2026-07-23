@@ -1,5 +1,6 @@
 ---
 layout: post
+image: /assets/img/jolokia-highcharts-jmx-for-human-beings/multiple-charts.png
 title: Jolokia + Highcharts = JMX for human beings
 date: '2011-03-20T19:46:00.001+01:00'
 author: Tomasz Nurkiewicz
@@ -13,7 +14,7 @@ tags:
 - jqplot
 - highcharts
 modified_time: '2011-11-17T19:17:16.718+01:00'
-thumbnail: https://lh5.googleusercontent.com/-H3nlHGAfKN0/TYZJODIuekI/AAAAAAAAAaQ/cA8_tVMcqio/s72-c/single.png
+thumbnail: /assets/img/jolokia-highcharts-jmx-for-human-beings/single-chart.png
 blogger_id: tag:blogger.com,1999:blog-6753769565491687768.post-8563938229337803058
 blogger_orig_url: https://www.nurkiewicz.com/2011/03/jolokia-highcharts-jmx-for-human-beings.html
 ---
@@ -159,7 +160,7 @@ function Monitor() {
 Few less important lines were skipped (mainly chart cosmetics), as always full source is available on [GitHub](https://github.com/nurkiewicz/token-bucket).
 And this is the result so far:
 
-[![](https://lh5.googleusercontent.com/-H3nlHGAfKN0/TYZJODIuekI/AAAAAAAAAaQ/cA8_tVMcqio/s320/single.png)](https://lh5.googleusercontent.com/-H3nlHGAfKN0/TYZJODIuekI/AAAAAAAAAaQ/cA8_tVMcqio/s1600/single.png)
+![Single JMX chart](/assets/img/jolokia-highcharts-jmx-for-human-beings/single-chart.png)
 
 BTW I bit reluctantly switched to Google Chrome browser while writing this article.
 JavaScript-heavy applications are insanely slow on Firefox, work fine on Opera but Google Chrome beats them together.
@@ -167,7 +168,7 @@ JavaScript-heavy applications are insanely slow on Firefox, work fine on Opera b
 Having one chart, why not add several others?
 Luckily Jolokia supports [bulk](http://jolokia.org/features/bulk-requests.html) requests (also in JavaScript client library), so we will poll server only once a second, no matter how many charts are displayed.
 
-[![](https://lh4.googleusercontent.com/-V1pVl5POZ24/TYZJWYKkXNI/AAAAAAAAAaU/vlIn5Dyt1iM/s320/multiple.png)](https://lh4.googleusercontent.com/-V1pVl5POZ24/TYZJWYKkXNI/AAAAAAAAAaU/vlIn5Dyt1iM/s1600/multiple.png)
+![Multiple JMX charts](/assets/img/jolokia-highcharts-jmx-for-human-beings/multiple-charts.png)
 
 Since we are doing so well, why not allow user to rearrange charts so that he can put most relevant ones next to each other (portlets?
 iGoogle?
@@ -346,7 +347,7 @@ $(document).ready(function() {
 Tired of code?
 HTML for this article can be found [here](https://github.com/nurkiewicz/token-bucket/blob/master/src/main/webapp/index.html), and as Chinese used to say, *a picture is worth a thousand* *lines of code*:
 
-[![](https://lh4.googleusercontent.com/-oJPWOO1VYAU/TYZJc98K_lI/AAAAAAAAAaY/erLrPCHYv7A/s320/portlet.png)](https://lh4.googleusercontent.com/-oJPWOO1VYAU/TYZJc98K_lI/AAAAAAAAAaY/erLrPCHYv7A/s1600/portlet.png)
+![JMX monitoring portlet](/assets/img/jolokia-highcharts-jmx-for-human-beings/jmx-portlet.png)
 
 But because our monitoring dashboard is so dynamic, to quote [Nicolaus Copernicus](http://en.wikipedia.org/wiki/Nicolaus_Copernicus) “*A YouTube video is worth a thousand pictures*”\* (somewhere in the middle you'll see the system reacting after heavy load was simulated):
 
