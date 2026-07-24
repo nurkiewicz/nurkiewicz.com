@@ -47,6 +47,13 @@ iconst_2
 iconst_3
 iadd
 ```
+In WebAssembly it looks almost exactly the same:
+
+```
+i32.const 2
+i32.const 3
+i32.add
+```
 
 Of course, such bytecode is encoded in binary, not as text.
 The bytecode basically says: push constant `2` onto virtual operand stack, followed by `3`.
