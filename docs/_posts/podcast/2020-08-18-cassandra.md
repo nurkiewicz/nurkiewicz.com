@@ -16,7 +16,7 @@ description: >
 
 {% include player.html spotify_id="24hMSXpkmQcVkfM1g0J4Ez" youtube_id="G_4VOAn7WAk" %}
 
-# Write path
+## Write path
 
 Writing data to Cassandra is very clever.
 It involves two operations: 
@@ -42,7 +42,7 @@ Also, deleting records is quite costly.
 You can't remove them from immutable SStable.
 Instead, you create a special tombstone record.
 
-# Read path
+## Read path
 
 In order to understand how reading from Cassandra works, you must be familiar with a few concepts.
 First of all, data is spread between partitions and partitions are assigned to virtual nodes.
@@ -76,7 +76,7 @@ It if says something is absent in a set, that's 100% sure.
 If it says something is present in a set, that may not be true.
 But it's enough to reduce the number of SStables being read.
 
-# Technology
+## Technology
 
 Cassandra is implemented in Java.
 This means it may be occasionally be slow to respond when JVM performs garbage collection.
@@ -91,7 +91,7 @@ Same concepts and API, different technology.
 And much faster.
 
 
-# More materials
+## More materials
 
 * [Official website](https://cassandra.apache.org/)
 * [Cassandra writes in depth](https://blog.softwaremill.com/cassandra-writes-in-depth-6ea8d7581eb)
