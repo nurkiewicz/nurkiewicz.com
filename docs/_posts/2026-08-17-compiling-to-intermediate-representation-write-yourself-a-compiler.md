@@ -102,7 +102,7 @@ Or, to be more precise, to the following sequence of bytes:
 | Bytes | Explanation |
 |--|--|
 | `01 00 00 00 02` | `PUSH 2` |
-| `01 00 00 00 03` | `PUSH 2` | 
+| `01 00 00 00 03` | `PUSH 3` | 
 | `2B`             | `ADD`    |
 
 Two conventions: I'm using Big Endian for integers (for no apparent reason) and I'll add a small header with magic value [`PL/0`](https://en.wikipedia.org/wiki/PL/0) and version 0.1 of the format.
