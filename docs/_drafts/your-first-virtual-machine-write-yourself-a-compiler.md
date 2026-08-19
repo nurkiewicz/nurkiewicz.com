@@ -96,3 +96,11 @@ cat file.pl0 | ./compiler > file.ir
 cat file.ir | ./vm
 5
 ```
+
+Technically speaking, the `file.ir` is _THE_ executable.
+It contains runnable code (just like your `.exe` file).
+It just so happens that this runnable code targets a CPU/machine that doesn't exist.
+It's emulated by our `vm` process.
+If you think it's cheating, this is exactly how `.class`/`.jar` files or DLL files are "executable" in Java and C# respectively.
+
+
