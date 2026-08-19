@@ -38,7 +38,7 @@ To visualize this, here's how operand stack looks like after each instruction:
 | Instruction | Stack after execution |
 |--|--|
 | `PUSH 2` | `2` |
-| `PUSH 2` | `2`, `3` |
+| `PUSH 3` | `2`, `3` |
 | `ADD`    | `5` |
 
 ## Core loop
@@ -102,5 +102,21 @@ It contains runnable code (just like your `.exe` file).
 It just so happens that this runnable code targets a CPU/machine that doesn't exist.
 It's emulated by our `vm` process.
 If you think it's cheating, this is exactly how `.class`/`.jar` files or DLL files are "executable" in Java and C# respectively.
+
+## VM outgrows the source language
+
+There's some interesting feature that we created by accident in our VM.
+It turns out it's not limited to simple `number op number` expressions.
+For example, our source language doesn't support (yet) adding three numbers, like so: `1 + 2 + 3`.
+But the VM is perfectly capable of running such IR code!
+
+
+| Instruction | Stack after execution |
+|--|--|
+| `PUSH 1` | `1` |
+| `PUSH 2` | `1`, `2` |
+| `PUSH 3` | `1`, `2`, `3` |
+| `ADD`    | `1`, `5` |
+| `ADD`    | `6` |
 
 
