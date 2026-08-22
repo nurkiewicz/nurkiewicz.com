@@ -158,7 +158,19 @@ But that's not the point of RPN!
 Our language is definitely not ready for it, but what about expressions like `2 * 3 + 4`?
 Or `2 * (3 + 4)` (parentheses!) or even `2 + 3 * 4` (operator precedence!)
 Turns out, our VM is perfectly capable of calculating arbitrarily complex arithmetic expressions already.
-Let's take 
+Let's take `2 * 3 + 4` as an example.
+The following instructions compute it just fine:
+
+| Instruction | Stack after execution |
+|--|--|
+| `PUSH 2` | `2` |
+| `PUSH 3` | `2`, `3` |
+| `MUL`    | `6` |
+| `PUSH 4` | `6`, `2`, `3` |
+| `ADD`    | `1`, `5` |
+| `ADD`    | `6` |
+
+
 
 Moreover, we can imagine other programming languages compiling to our (admittedly, primitive) IR.
 This is the biggest advantage of modern virtual machines like JVM or .NET CLR.
