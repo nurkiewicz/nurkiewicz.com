@@ -1,7 +1,7 @@
 ---
 title: "Your First Virtual Machine: Write yourself a compiler, Part IV"
 category: writing-compiler
-tags: compiler interpreter go virtual-machine
+tags: compiler interpreter go virtual-machine clojure reverse-polish-notation
 ---
 
 In the previous article [we emitted intermediate representation (IR) for our programming language]({% post_url 2026-08-17-compiling-to-intermediate-representation-write-yourself-a-compiler %}) which is supposedly easier to parse than source code.
@@ -119,4 +119,47 @@ But the VM is perfectly capable of running such IR code!
 | `ADD`    | `1`, `5` |
 | `ADD`    | `6` |
 
+Because our compiler doesn't support such complex arithmetic expressions, we need to construct the binary IR code by hand.
+That's fairly simple, we end up with the following `.ir` file:
 
+```
+$ xxd -u -g1 -c 32 add.ir
+00000000: 50 4C 2F 30 00 01 01 00 00 00 01 01 00 00 00 02 01 00 00 00 03 2B 2B
+```
+
+Let's break it down, instruction by instruction:
+
+| Binary | Instruction | Operand stack after executing |
+|--|--|--|
+| 50 4C 2F 30 00 01 | Header | |
+| 01 00 00 00 01 | `PUSH 1` | `1` |
+| 01 00 00 00 02 | `PUSH 2` | `1`, `2` |
+| 01 00 00 00 03 | `PUSH 3` | `1`, `2`, `3` |
+| 2B | `ADD` | `1`, `5` |
+| 2B | `ADD` | `6` |
+
+Let's run this file to prove the VM is capable of loading it:
+
+```sh
+$ cat add.ir | ./vm
+6
+```
+
+Amazing!
+Our VM is way more powerful than the language already.
+OK, but maybe you are still not convinced why our instructions are using this weird _Reversed Polish Notation_ (RPN)?
+What's the point of having an operand stack and operators at the end?
+Who the hell writes `1 + 2 + 3` as `1 2 3 + +`?
+To answer this rhetorical question: Clojure programmers and [many real calculators](https://lestallion.com/blogs/product-reviews/best-rpn-calculators-for-engineers-and-scientists).
+But that's not the point of RPN!
+
+## Handling arbitrary arithmetic expressions
+
+Our language is definitely not ready for it, but what about expressions like `2 * 3 + 4`?
+Or `2 * (3 + 4)` (parentheses!) or even `2 + 3 * 4` (operator precedence!)
+Turns out, our VM is perfectly capable of calculating arbitrarily complex arithmetic expressions already.
+Let's take 
+
+Moreover, we can imagine other programming languages compiling to our (admittedly, primitive) IR.
+This is the biggest advantage of modern virtual machines like JVM or .NET CLR.
+But before we dive into established VMs
