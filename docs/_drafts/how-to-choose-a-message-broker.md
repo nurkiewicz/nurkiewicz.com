@@ -4,4 +4,7 @@
 | DLQ support | |
 | Delayed delivery | |
 | Ordering guarantees | |
+| Individual message ACK | |
+| Horizontal scalability | |
+| Internal routing and filtering | |
 
