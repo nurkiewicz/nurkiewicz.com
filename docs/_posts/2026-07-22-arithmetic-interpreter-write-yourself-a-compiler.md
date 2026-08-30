@@ -72,3 +72,5 @@ But our tiny programming language is taking shape.
 In the next installment, we'll actually try to "compile" it into an intermediate representation (IR).
 
 The source code is available [here](https://github.com/nurkiewicz/writing-compiler/tree/part-ii) on the `part-ii` branch.
+
+{% include writing-compiler.md %}

@@ -29,3 +29,5 @@ tags: compiler interpreter go
 - Add support for parentheses, proper lexer
 - Support for assignment (no re-assignment?)
 - Is our language Turing-complete?
+
+{% include writing-compiler.md %}

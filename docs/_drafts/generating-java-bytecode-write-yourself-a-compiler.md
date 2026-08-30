@@ -50,4 +50,4 @@ Constant pool:
   #23 = Integer            1234567890
 ```
 
-
+{% include writing-compiler.md %}

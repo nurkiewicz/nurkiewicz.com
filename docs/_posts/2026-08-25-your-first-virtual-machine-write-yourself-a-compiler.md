@@ -207,3 +207,5 @@ Those rules still matter when the compiler parses the source expression, but the
 Moreover, we can imagine other programming languages compiling to our admittedly primitive IR.
 Supporting multiple source languages is one major advantage of mature runtime platforms such as the JVM and .NET.
 We'll leave compiling to an existing virtual machine for the next part.
+
+{% include writing-compiler.md %}

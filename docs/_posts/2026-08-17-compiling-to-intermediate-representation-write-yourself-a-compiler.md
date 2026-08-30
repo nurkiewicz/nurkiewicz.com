@@ -181,3 +181,5 @@ Hopefully, you can recognize two `PUSH` opcodes (`01 00 00 00 02` and `01 00 00 
 In the next part we'll write a simple virtual machine: a program which takes this binary IR and executes it.
 
 As always, the complete source code is [available on GitHub](https://github.com/nurkiewicz/writing-compiler/tree/part-iii) (`part-iii` branch).
+
+{% include writing-compiler.md %}

@@ -84,3 +84,5 @@ I omitted some plumbing related to reading from `stdin`; you can find it on [Git
 In the next episode, we'll handle all arithmetic operations, not just addition.
 If you are a bit disappointed, bear with me.
 We will soon learn how to skip the interpretation step and generate runnable artifacts (executables).
+
+{% include writing-compiler.md %}
