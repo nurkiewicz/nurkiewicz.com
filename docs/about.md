@@ -31,7 +31,7 @@ Also, here's my [CV](/cv).
 
 ## Contact me
 
-* E-mail: `nurkiewicz` (on GMail)
+* E-mail: `tomasz` (`@nurkiewicz.com`)
 * [Mastodon](https://fosstodon.org/@nurkiewicz)
 * [Pixelfed: @nurkiewicz@pixelfed.social](https://pixelfed.social/nurkiewicz)
 * [LinkedIn](https://www.linkedin.com/in/tomasz-nurkiewicz-80513b92/)
