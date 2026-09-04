@@ -5,10 +5,10 @@ tags: compiler interpreter go
 ---
 
 Last time [we craeted a virtual machine for our toy language]({% post_url 2026-08-17-compiling-to-intermediate-representation-write-yourself-a-compiler %}).
-I think you can agree that writing a language which barely recognizes `2 + 3` expressions and building a branch new virtual machine for it seems a bit tedious.
+I think you can agree that writing a language which barely recognizes `2 + 3` expressions and building a brand new virtual machine for it seems a bit tedious.
 So what about keeping our microscopic language, but running it on a real, production-ready, battle-proven virtual machine?
 Like Java Virtual Machine?
-Our task for today is emit JVM bytecode in the form of a valid `.class` file.
+Our task for today is to emit JVM bytecode in the form of a valid `.class` file.
 That file can then be fed directly to JVM and run our program.
 
 How's that even possible?
