@@ -18,7 +18,16 @@ So, let's just say we are building yet another JVM language!
 
 ## Getting familiar with the JVM bytecode
 
-Superficially, JVM bytecode is very similar to the IR we build 
+Superficially, JVM bytecode is very similar to the IR we build.
+For example, the expression `2 + 3` will result in the following bytecode:
+
+```
+iconst_2
+iconst_3
+iadd
+```
+
+
 
 ```
 bash-3.2$ xxd -u -g1 -c 16 PL0.class
