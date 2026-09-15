@@ -5,9 +5,9 @@ tags: compiler interpreter go jvm java
 ---
 
 Last time [we created a virtual machine for our toy language]({% post_url 2026-08-17-compiling-to-intermediate-representation-write-yourself-a-compiler %}).
-I think you can agree that designing a language which barely recognizes expressions like `2 + 3` and building a brand-new virtual machine for it seems a bit tedious.
-So what about keeping our microscopic language, but running it on a real, production-ready, battle-proven virtual machine?
-Like the Java Virtual Machine?
+I think you can agree that designing a language which barely recognizes expressions like `2 + 3w` and building a brand-new virtual machine for it seems a bit tedious.
+So what about keeping our microscopic language for now, but running it on a real, production-ready, battle-proven virtual machine?
+Like the [Java Virtual Machine](https://en.wikipedia.org/wiki/Java_virtual_machine)?
 Our task for today is to emit JVM bytecode in the form of a valid `.class` file.
 That file can then be fed directly to the JVM to run our program.
 
@@ -32,7 +32,8 @@ opcode, ok := map[byte]byte{
 }[expr.op]
 ```
 
-Push the first operand, push the second operand, and execute the operator instruction.
+Opcodes are defined e.g. [here](https://en.wikipedia.org/wiki/List_of_JVM_bytecode_instructions).
+So, push the first operand, push the second operand, and execute the operator instruction.
 The instruction pops the two operands and pushes the result back.
 Just like our custom VM.
 For example, the expression `2 + 3` results in the following bytecode:
@@ -54,7 +55,7 @@ However, the instruction used to push an integer onto the operand stack depends 
 | N | `ldc` or `ldc_w` | C |
 
 The JVM uses several instruction families just to push an integer onto the operand stack (!)
-For values between `-1` and `5`, there's a dedicated instruction for each number.
+For values between `-1` and `5`, there's a dedicated instruction for each number (without arguments).
 Other values fitting in a signed byte or signed 16-bit integer are stored directly in the `bipush` or `sipush` instruction.
 Once a constant no longer fits in 16 bits, we use `ldc` or `ldc_w`.
 These instructions load a value from the so-called _constant pool_ at index `C`; `ldc_w` supports a wider constant-pool index than `ldc`.
@@ -82,7 +83,7 @@ The same expression, but with higher values (`65536 + 65537`), is represented by
 7: iadd
 ```
 
-The instructions `ldc #22` and `ldc #23` basically mean "load the values located at indices 22 and 23, respectively, in the constant pool."
+The instructions `ldc #22` and `ldc #23` basically mean "_load the values located at indices 22 and 23, respectively, in the constant pool._"
 Because the constant pool appears before the methods in a `.class` file, we must collect its entries before serializing the complete class.
 
 ## Building a fully functional `.class` file
@@ -90,6 +91,8 @@ Because the constant pool appears before the methods in a `.class` file, we must
 There used to be a ton of ceremony to write a simple `"Hello, world!"` program in Java.
 There's also a ton of ceremony in creating a proper Java class.
 It's almost as if JVM bytecode is supposed to be as verbose as the language itself.
+Boilerplate tradition.
+
 There aren't many good Go libraries for creating Java `.class` files, so I'm building everything from scratch.
 Just look how much structure we have to output for a minimal class:
 
@@ -150,7 +153,7 @@ Most of the above is just `.class` file structure and constant-pool data.
 The executable code of our `main` method takes just a few bytes:
 
 ```
-00000110: 00 00 00 0C B2 00 0D 12 16 12 17 60 B6 00 13 B1  ...........`....
+00 00 00 0C B2 00 0D 12 16 12 17 60 B6 00 13 B1
 ```
 
 Within that method, bytes `12 16 12 17 60` represent the arithmetic expression itself.
@@ -196,8 +199,9 @@ $ java com.nurkiewicz.PL0
 131073
 ```
 
-It's alive!
+**It's alive!**
 The first command feeds the `jvm-compiler` process (full source code here: [`main.go`](https://github.com/nurkiewicz/writing-compiler/blob/part-v/cmd/jvm-compiler/main.go)).
+The second command executes the generated binary `.class` file on a real Java Virtual Machine.
 We managed to write a compiler which takes a program written in our imaginary (and extremely simple) language and creates a proper Java class.
 
 ## Disassembling the generated program
