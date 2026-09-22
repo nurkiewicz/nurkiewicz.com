@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Talks
+lite_youtube: true
 ---
 
 <style>
@@ -44,7 +45,12 @@ title: Talks
         margin-inline: auto;
     }
 
-    .content iframe[src*="youtube"],
+    .content lite-youtube {
+        width: 100%;
+        max-width: 400px;
+        margin-inline: auto;
+    }
+
     .content iframe[src*="vimeo"] {
         height: auto !important;
         aspect-ratio: 16 / 9;
@@ -99,7 +105,7 @@ https://www.youtube.com/@DevSkiller/streams
         </h4>
       </td>
       <td>
-        <iframe width="400" height="225" src="https://www.youtube.com/embed/_qy-7FKfiLo" frameborder="0" allowfullscreen></iframe>
+        <lite-youtube videoid="_qy-7FKfiLo" playlabel="Play video"></lite-youtube>
       </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -111,7 +117,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/YyqBNMmTvUQ" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="YyqBNMmTvUQ" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -123,7 +129,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/3GevHSV2-zU" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="3GevHSV2-zU" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -159,7 +165,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/El7CHysRrgU" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="El7CHysRrgU" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -171,7 +177,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/qAnNqEvcRso" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="qAnNqEvcRso" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -231,7 +237,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/0DUlUzqr09I" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="0DUlUzqr09I" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -267,7 +273,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/FVEpsgquheo" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="FVEpsgquheo" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -291,7 +297,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/iYbDBBJZb3w" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="iYbDBBJZb3w" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -315,7 +321,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/t8vaZJG0kt4" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="t8vaZJG0kt4" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -327,7 +333,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/6Gobw4O5nUA?start=1029" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="6Gobw4O5nUA" playlabel="Play video" params="start=1029"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -339,7 +345,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/n_XRUljffu0" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="n_XRUljffu0" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -351,7 +357,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/wZJs3R2-MZs" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="wZJs3R2-MZs" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -363,7 +369,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/AaGxEn8fGJY" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="AaGxEn8fGJY" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -375,7 +381,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/Tj9NzWOCLzk" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="Tj9NzWOCLzk" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -387,7 +393,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/AZe-K1JGi-8" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="AZe-K1JGi-8" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -411,7 +417,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/VHtD6dG6K4Q" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="VHtD6dG6K4Q" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -423,7 +429,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/gbjF4ahIX7E" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="gbjF4ahIX7E" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -435,7 +441,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/fLXp81DuyPU" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="fLXp81DuyPU" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -484,7 +490,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/hYc5XhhKwnQ" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="hYc5XhhKwnQ" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -496,7 +502,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/WHWe38CgwuM" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="WHWe38CgwuM" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -534,7 +540,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/z0a0N9OgaAA" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="z0a0N9OgaAA" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -548,7 +554,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/QIEpZ0MGoBc" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="QIEpZ0MGoBc" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -584,7 +590,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/foe8meidF5I" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="foe8meidF5I" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -621,7 +627,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/5TJiTSWktLU" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="5TJiTSWktLU" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -633,8 +639,8 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/WxCb6TMkNd8" frameborder="0" allowfullscreen></iframe>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/Jo6hWb74TJg" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="WxCb6TMkNd8" playlabel="Play video"></lite-youtube>
+            <lite-youtube videoid="Jo6hWb74TJg" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -646,7 +652,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/fqu3N8LCauM" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="fqu3N8LCauM" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -702,7 +708,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/g_JyHJ20Iog" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="g_JyHJ20Iog" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -715,7 +721,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/CGZGBi9CKfg" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="CGZGBi9CKfg" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -749,7 +755,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/ppfCf2o-ofw" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="ppfCf2o-ofw" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -792,7 +798,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/QfpCF_Eo4V0" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="QfpCF_Eo4V0" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -814,7 +820,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/YjJZaGVwKAY" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="YjJZaGVwKAY" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -857,7 +863,7 @@ https://www.youtube.com/@DevSkiller/streams
             <a href="2017/async/index.html">slides</a>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/wMo5HkFD_zg?start=1893" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="wMo5HkFD_zg" playlabel="Play video" params="start=1893"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -901,7 +907,7 @@ https://www.youtube.com/@DevSkiller/streams
             <a href="https://github.com/nurkiewicz/rx-legacy/blob/devternity/src/test/java/com/nurkiewicz/DevTernity.java">source code from live coding</a>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/4D3GP1inhIs" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="4D3GP1inhIs" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -913,7 +919,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
             <a href="https://github.com/nurkiewicz/rx-legacy/blob/wjug/src/test/java/com/nurkiewicz/WjugTest.java">source code from live coding</a>
         </td>
-        <td><iframe width="400" height="225" src="https://www.youtube.com/embed/aXBq1LQSrks" frameborder="0" allowfullscreen></iframe></td>
+        <td><lite-youtube videoid="aXBq1LQSrks" playlabel="Play video"></lite-youtube></td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
         <td data-place="Minsk" class="list">
@@ -924,7 +930,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
             <a href="https://github.com/nurkiewicz/rx-legacy/blob/jetconf/src/test/java/JetConfTest.java">source code from live coding</a>
         </td>
-        <td><iframe width="400" height="225" src="https://www.youtube.com/embed/Ut6d_vkUn-U" frameborder="0" allowfullscreen></iframe></td>
+        <td><lite-youtube videoid="Ut6d_vkUn-U" playlabel="Play video"></lite-youtube></td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
         <td data-place="San Francisco" class="list">
@@ -947,9 +953,9 @@ https://www.youtube.com/@DevSkiller/streams
             <a href="https://github.com/nurkiewicz/rx-legacy/blob/jugtoberfest/src/test/java/com/nurkiewicz/JugtoberfestTest.java">source code from live coding</a>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/9LsqqBXQXXU" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="9LsqqBXQXXU" playlabel="Play video"></lite-youtube>
             <br/>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/YpHE3eLENjY" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="YpHE3eLENjY" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -1007,7 +1013,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/Pxce6J5ldfg" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="Pxce6J5ldfg" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -1029,7 +1035,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/-MBPQ7NIL_Y" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="-MBPQ7NIL_Y" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -1041,7 +1047,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/-gL-nO2cqwU" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="-gL-nO2cqwU" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -1054,7 +1060,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/5xPLkUCHn5Y" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="5xPLkUCHn5Y" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -1068,7 +1074,7 @@ https://www.youtube.com/@DevSkiller/streams
             <a href="http://nurkiewicz.github.io/talks/2015/haskell">slides</a>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/DL40Ru1sn3w" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="DL40Ru1sn3w" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -1081,7 +1087,7 @@ https://www.youtube.com/@DevSkiller/streams
             <a href="https://github.com/nurkiewicz/hystrix-demo">source code</a>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/Jtcx7vAo33E" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="Jtcx7vAo33E" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -1104,7 +1110,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/Lpw4_hol3vY" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="Lpw4_hol3vY" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -1116,7 +1122,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/596RKKhvZG8" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="596RKKhvZG8" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -1141,7 +1147,7 @@ https://www.youtube.com/@DevSkiller/streams
             <a href="https://github.com/nurkiewicz/hystrix-demo">source code</a>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/RpfQ8AHwEvg" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="RpfQ8AHwEvg" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -1165,7 +1171,7 @@ https://www.youtube.com/@DevSkiller/streams
             <a href="https://github.com/nurkiewicz/hystrix-demo">source code</a>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/JadVts_prtA" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="JadVts_prtA" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -1204,7 +1210,7 @@ https://www.youtube.com/@DevSkiller/streams
             <a href="http://www.meetup.com/Warszawa-Java-User-Group-Warszawa-JUG/events/186345502/">Meetup</a>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/1Bri1EZTPrc?start=7571" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="1Bri1EZTPrc" playlabel="Play video" params="start=7571"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -1219,7 +1225,7 @@ https://www.youtube.com/@DevSkiller/streams
             <a href="http://www.meetup.com/Warszawa-Java-User-Group-Warszawa-JUG/events/185030162/">Meetup</a>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/zrR8tbcDDeQ" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="zrR8tbcDDeQ" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -1244,7 +1250,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/5QoMWFy3LmA" frameborder="0" allowfullscreen></iframe><br/>
+            <lite-youtube videoid="5QoMWFy3LmA" playlabel="Play video"></lite-youtube><br/>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -1256,7 +1262,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/5qjFq0Pj5MU" frameborder="0" allowfullscreen></iframe><br/>
+            <lite-youtube videoid="5qjFq0Pj5MU" playlabel="Play video"></lite-youtube><br/>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -1268,7 +1274,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/KPjS0-IVZYE" frameborder="0" allowfullscreen></iframe><br/>
+            <lite-youtube videoid="KPjS0-IVZYE" playlabel="Play video"></lite-youtube><br/>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -1292,7 +1298,7 @@ https://www.youtube.com/@DevSkiller/streams
             <a href="http://www.meetup.com/Warszawa-Java-User-Group-Warszawa-JUG/events/153208712/">meetup.com</a>, <a href="https://github.com/nurkiewicz/wjug-reactive">sources</a>
         </td>
         <td>
-            <iframe width="400" height="225" src="http://www.youtube.com/embed/S7gCcgTWSPs" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="S7gCcgTWSPs" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -1327,7 +1333,7 @@ https://www.youtube.com/@DevSkiller/streams
             <a href="confitura2013/english.html">slides (EN)</a>, <a href="http://www.slideshare.net/nurkiewicz/krtka-historia-czasu-confitura-2013">slides (PL)</a>, <a href="http://www.slideshare.net/nurkiewicz/short-history-of-time-confitura-2013">Slideshare (EN)</a>
         </td>
         <td>
-            <iframe width="400" height="225" src="http://www.youtube.com/embed/zsfEWLGgsEY" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="zsfEWLGgsEY" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -1341,7 +1347,7 @@ https://www.youtube.com/@DevSkiller/streams
             <a href="http://www.slideshare.net/nurkiewicz/uwolni-si-od-if">slides</a>
         </td>
         <td>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/xAMbxSCSyio" frameborder="0" allowfullscreen></iframe>
+            <lite-youtube videoid="xAMbxSCSyio" playlabel="Play video"></lite-youtube>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
