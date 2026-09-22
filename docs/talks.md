@@ -2,6 +2,7 @@
 layout: page
 title: Talks
 lite_youtube: true
+lite_vimeo: true
 ---
 
 <style>
@@ -45,15 +46,11 @@ lite_youtube: true
         margin-inline: auto;
     }
 
-    .content lite-youtube {
+    .content lite-youtube,
+    .content lite-vimeo {
         width: 100%;
         max-width: 400px;
         margin-inline: auto;
-    }
-
-    .content iframe[src*="vimeo"] {
-        height: auto !important;
-        aspect-ratio: 16 / 9;
     }
 
     @container (max-width: 800px) {
@@ -776,7 +773,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe src="https://player.vimeo.com/video/221255968?byline=0&title=0&portrait=0" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <lite-vimeo videoid="221255968" playlabel="Play video"></lite-vimeo>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -979,7 +976,7 @@ https://www.youtube.com/@DevSkiller/streams
             <a href="https://github.com/nurkiewicz/rx-legacy/blob/javazone/src/test/java/com/nurkiewicz/JavaZoneTest.java">source code from live coding</a>
         </td>
         <td>
-            <iframe src="https://player.vimeo.com/video/181948154?byline=0&title=0&portrait=0" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <lite-vimeo videoid="181948154" playlabel="Play video"></lite-vimeo>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -1134,7 +1131,7 @@ https://www.youtube.com/@DevSkiller/streams
             </h4>
         </td>
         <td>
-            <iframe src="https://player.vimeo.com/video/131394616?byline=0&title=0&portrait=0" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <lite-vimeo videoid="131394616" playlabel="Play video"></lite-vimeo>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -1184,7 +1181,7 @@ https://www.youtube.com/@DevSkiller/streams
             <a href="https://github.com/nurkiewicz/hystrix-demo">source code</a>
         </td>
         <td>
-            <iframe src="https://player.vimeo.com/video/130729630?byline=0&title=0&portrait=0" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <lite-vimeo videoid="130729630" playlabel="Play video"></lite-vimeo>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
@@ -1238,7 +1235,7 @@ https://www.youtube.com/@DevSkiller/streams
             <a href="https://github.com/nurkiewicz/geecon-2014">source code</a>
         </td>
         <td>
-            <iframe src="https://player.vimeo.com/video/99625796?byline=0&title=0&portrait=0" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <lite-vimeo videoid="99625796" playlabel="Play video"></lite-vimeo>
         </td>
     </tr>
     <tr itemscope itemtype="https://schema.org/Event">
