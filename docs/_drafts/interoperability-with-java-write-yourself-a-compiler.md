@@ -4,8 +4,20 @@ category: writing-compiler
 tags: compiler interpreter go jvm java
 ---
 
-A small addendum to our previous article [where we wrote functional compiler targetting JVM bytecode]({% post_url 2026-08-17-compiling-to-intermediate-representation-write-yourself-a-compiler %}), let's discuss interoperability with the JVM.
+A small addendum to our previous article [where we wrote functional compiler targetting JVM bytecode]({% post_url 2026-09-15-generating-java-bytecode-write-yourself-a-compiler %}), let's discuss interoperability with the JVM.
 The biggest win from using a well-established virtual machine is gaining access to the entire ecosystem.
+
+## Building the `PL0` class
+
+```bash
+$ mkdir -p com/nurkiewicz
+$ echo '65536 + 65537' | ./jvm-compiler > com/nurkiewicz/PL0.class
+```
+
+The `echo` command writes our one-line PL/0 program to the compiler's standard input.
+The compiler translates it into JVM bytecode and writes to `com/nurkiewicz/PL0.class`, matching the generated class name: `com.nurkiewicz.PL0`.
+From now on, that class is available on the CLASSPATH just like one produced by `javac`.
+
 Let's say I'm a Java developer.
 I can write a program in my favorite language like so:
 
@@ -42,7 +54,7 @@ It works just fine, printing the result.
 
 Notice that such integration is much broader.
 Any other JVM language, like Scala or Kotlin, could interoperate with our language.
-Moreover, our toy language can take advantage of the Java standard library—for example, by using `System.out.println()` to print results.
+Moreover, our toy language can take advantage of the Java standard library - for example, by using `System.out.println()` to print results.
 
 But the benefits don't end here.
 A Java compiler compiling the equivalent Java expression would not even emit both `ldc` instructions followed by `iadd`.
