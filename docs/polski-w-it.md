@@ -244,6 +244,4 @@ Jeśli musisz się zastanowić, jakie jest polskie tłumaczenie, danego pojęcia
 | zoom |  | powiększenie, powiększać |
 
 
-* _a_ - przymiotnik
-* _n_ - rzeczownik
-* _v_ - czasownik
+* _a_ - przymiotnik, _n_ - rzeczownik, _v_ - czasownik
