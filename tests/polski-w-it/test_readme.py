@@ -2,23 +2,26 @@ from pathlib import Path
 
 import pytest
 
-GLOSSARY = Path(__file__).resolve().parents[2] / "docs" / "polski-w-it" / "index.md"
+GLOSSARY = Path(__file__).resolve().parents[2] / "docs" / "polski-w-it.md"
 
-# Words that have no good Polish equivalent and are deliberately left untranslated
-UNTRANSLATABLE = [
-    "bean",
-    "branch",
-    "commit",
-    "framework",
-    "garbage collector",
-    "legacy",
-    "lint",
-    "merge",
-    "pipeline",
-    "pull",
-    "pull request",
-    "push",
-]
+PR = "https://github.com/nurkiewicz/polski-w-it/pull/"
+
+# Words with no good Polish equivalent, deliberately left untranslated.
+# Each maps to discussion of proposed translations that were rejected.
+UNTRANSLATABLE = {
+    "bean": [PR + "12"],
+    "branch": [PR + "118"],
+    "commit": [PR + "117", PR + "145/files"],
+    "framework": [PR + "15"],
+    "garbage collector": [PR + "19"],
+    "legacy": [PR + "144"],
+    "lint": [PR + "248"],
+    "merge": [PR + "178"],
+    "pipeline": [PR + "90"],
+    "pull": [],
+    "pull request": [],
+    "push": [],
+}
 
 
 @pytest.fixture
@@ -41,4 +44,8 @@ def test_terms_are_sorted(english_terms):
 
 
 def test_does_not_contain_untranslateble_words(english_terms):
-    assert not set(english_terms) & set(UNTRANSLATABLE)
+    for term in english_terms:
+        assert term not in UNTRANSLATABLE, (
+            f"'{term}' is untranslatable, see rejected proposals: "
+            f"{UNTRANSLATABLE[term] or 'none yet'}"
+        )

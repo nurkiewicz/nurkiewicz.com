@@ -5,7 +5,6 @@ permalink: /polski-w-it/
 ---
 
 [![](https://github.com/nurkiewicz/nurkiewicz.com/actions/workflows/polski-w-it-tests.yml/badge.svg)](https://github.com/nurkiewicz/nurkiewicz.com/actions/workflows/polski-w-it-tests.yml)
-[![](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 Krótki słowniczek pojęć w języku angielskim z okolic IT oraz ich polskich odpowiedników.
 Co prawda nikt z nas nie mówi _rusztowanie sieciowe oparte o wstrzykiwanie ziaren_ czy [_ściana ognia_](https://www.youtube.com/watch?v=wFXLzr86MQ4&t=6).
