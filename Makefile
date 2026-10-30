@@ -11,4 +11,5 @@ build:
 	cd docs && bundle exec jekyll build
 
 test:
+	cd tests/polski-w-it && python3 -m pytest
 	cd docs && bundle exec jekyll build

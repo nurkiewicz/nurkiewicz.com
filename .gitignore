@@ -6,3 +6,5 @@ _site
 vendor
 src/mastodon-import/.venv/
 src/mastodon-import/__pycache__/
+__pycache__
+.pytest_cache
