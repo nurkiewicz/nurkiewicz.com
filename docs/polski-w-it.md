@@ -13,7 +13,7 @@ Po prostu czasem istnieje poprawne, polskie sformułowanie i nie ma powodu, żeb
 Ograniczamy się do pojęć z zakresu IT.
 Bez ironii, bez korpomowy.
 Zachęcam do współudziału (ang. _contribution_).
-Znaczy [pull requestów](https://github.com/nurkiewicz/polski-w-it/pulls), nie tłumacząc na siłę.
+Znaczy [pull requestów](https://github.com/nurkiewicz/nurkiewicz.com/pulls), nie tłumacząc na siłę.
 Jeśli musisz się zastanowić, jakie jest polskie tłumaczenie, danego pojęcia, to prawdopodobnie nie istnieje.
 
 | angielski | polskawy | polski |
