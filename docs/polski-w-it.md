@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Polski w IT
-permalink: /polski-w-it/
 ---
 
 [![](https://github.com/nurkiewicz/nurkiewicz.com/actions/workflows/polski-w-it-tests.yml/badge.svg)](https://github.com/nurkiewicz/nurkiewicz.com/actions/workflows/polski-w-it-tests.yml)
