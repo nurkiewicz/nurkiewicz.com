@@ -1,0 +1,9 @@
+daysUntilStale: 180
+daysUntilClose: 14
+exemptLabels:
+  - pinned
+  - security
+staleLabel: wontfix
+markComment: >
+  To zadanie wydaje się opuszczone i zostanie zamknięte, jeśli nie będzie w nim żadnej aktywności.
+closeComment: false
