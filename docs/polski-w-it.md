@@ -3,8 +3,6 @@ layout: page
 title: Polski w IT
 ---
 
-[![](https://github.com/nurkiewicz/nurkiewicz.com/actions/workflows/polski-w-it-tests.yml/badge.svg)](https://github.com/nurkiewicz/nurkiewicz.com/actions/workflows/polski-w-it-tests.yml)
-
 Krótki słowniczek pojęć w języku angielskim z okolic IT oraz ich polskich odpowiedników.
 Co prawda nikt z nas nie mówi _rusztowanie sieciowe oparte o wstrzykiwanie ziaren_ czy [_ściana ognia_](https://www.youtube.com/watch?v=wFXLzr86MQ4&t=6).
 Ale już _customowy header na requeście_ można śmiało zastąpić _niestandardowym nagłówkiem żądania_.
