@@ -26,6 +26,17 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.9"
+
+      - name: Test Polski w IT glossary
+        working-directory: tests/polski-w-it
+        run: |
+          pip install -r requirements.txt
+          pytest
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
@@ -49,6 +60,7 @@ jobs:
           test -f _site/about.html
           test -f _site/podcast.html
           test -f _site/talks.html
+          test -f _site/polski-w-it/index.html
           test -f _site/slides/index.html
           test -f _site/feeds/posts/default
           test -f _site/10x10/_next/static/css/078903e65c08f2c7.css

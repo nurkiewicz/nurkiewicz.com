@@ -1,1 +1,0 @@
-[![Star History Chart](https://api.star-history.com/chart?repos=nurkiewicz/polski-w-it&type=date&legend=bottom-right)](https://www.star-history.com/?repos=nurkiewicz%2Fpolski-w-it&type=date&legend=bottom-right)
