@@ -231,6 +231,7 @@ Jeśli musisz się zastanowić, jakie jest polskie tłumaczenie, danego pojęcia
 | track (_v_) |  | śledzić |
 | traffic |  | ruch |
 | trigger (_v_) | trigerować | wyzwalać |
+| trim (_v_) | trimować | przyciąć |
 | tuple | tupla, tapla | krotka |
 | typo |  | literówka |
 | unit test |  | test jednostkowy |
