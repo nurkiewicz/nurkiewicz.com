@@ -20,6 +20,7 @@ UNTRANSLATABLE = {
     "lint": [PR + "248"],
     "merge": [PR + "178"],
     "mock": [PR + "280"],
+    "parse": [PR + "279"],
     "pipeline": [PR + "90"],
     "pull": [],
     "pull request": [],
