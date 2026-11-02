@@ -25,6 +25,7 @@ UNTRANSLATABLE = {
     "pull": [],
     "pull request": [],
     "push": [],
+    "stub": [PR + "281"],
 }
 
 
