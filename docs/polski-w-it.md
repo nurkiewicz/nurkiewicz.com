@@ -213,6 +213,7 @@ Jeśli musisz się zastanowić, jakie jest polskie tłumaczenie, danego pojęcia
 | step |  | krok |
 | stored procedure (_n_) |  | procedura składowana |
 | stream |  | strumień |
+| subnet (_n_) |  | podsieć |
 | subquery (_n_) |  | podzapytanie |
 | support | saportować | _(1)_ obsługiwać, _(2)_ wspierać |
 | switch (_v_) | słiczować | przełączyć |
