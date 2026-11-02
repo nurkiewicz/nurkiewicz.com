@@ -27,6 +27,7 @@ UNTRANSLATABLE = {
     "push": [],
     "string": [PR + "258"],
     "stub": [PR + "281"],
+    "whitelist": [PR + "276"],
 }
 
 
