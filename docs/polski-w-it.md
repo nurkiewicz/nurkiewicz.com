@@ -100,7 +100,7 @@ Jeśli musisz się zastanowić, jakie jest polskie tłumaczenie, danego pojęcia
 | footer |  | stopka |
 | foreign key |  | klucz obcy |
 | form | formatka | formularz |
-| gradual |  | stopniowo |
+| gradual (_a_) |  | stopniowy |
 | handle (_v_) | handlować | obsłużyć |
 | header |  | nagłówek |
 | heap |  | sterta |
