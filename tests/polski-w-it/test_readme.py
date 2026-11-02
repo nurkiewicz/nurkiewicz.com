@@ -10,6 +10,7 @@ PR = "https://github.com/nurkiewicz/polski-w-it/pull/"
 # Each maps to discussion of proposed translations that were rejected.
 UNTRANSLATABLE = {
     "bean": [PR + "12"],
+    "blacklist": [PR + "277"],
     "branch": [PR + "118"],
     "commit": [PR + "117", PR + "145/files"],
     "framework": [PR + "15"],
