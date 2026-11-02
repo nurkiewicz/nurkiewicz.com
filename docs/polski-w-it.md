@@ -78,6 +78,7 @@ Jeśli musisz się zastanowić, jakie jest polskie tłumaczenie, danego pojęcia
 | elevation | elewacja (uprawnień) | podniesienie (uprawnień) |
 | embed |  | zawierać, osadzić |
 | enable | enejblować | włączyć |
+| encode (_v_) | encodować, enkodować | zakodować |
 | encryption | enkrypcja | szyfrowanie |
 | engine |  | silnik |
 | error |  | błąd |
