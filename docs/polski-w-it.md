@@ -211,6 +211,7 @@ Jeśli musisz się zastanowić, jakie jest polskie tłumaczenie, danego pojęcia
 | stack |  | stos |
 | step |  | krok |
 | stream |  | strumień |
+| subquery (_n_) |  | podzapytanie |
 | support | saportować | _(1)_ obsługiwać, _(2)_ wspierać |
 | switch (_v_) | słiczować | przełączyć |
 | syntax |  | składnia |
