@@ -146,7 +146,7 @@ Jeśli musisz się zastanowić, jakie jest polskie tłumaczenie, danego pojęcia
 | override (_v_) |  | przesłonić |
 | owner (_n_) |  | właściciel |
 | paging | paginacja | stronicowanie |
-| parallel (_a_) | paralelnie | równolegle |
+| parallel (_a_) |  | równoległy |
 | parent |  | rodzic |
 | patch | paczować | łatać, naprawiać |
 | pattern |  | wzorzec |
