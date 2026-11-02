@@ -210,6 +210,7 @@ Jeśli musisz się zastanowić, jakie jest polskie tłumaczenie, danego pojęcia
 | source |  | źródło |
 | stack |  | stos |
 | step |  | krok |
+| stored procedure (_n_) |  | procedura składowana |
 | stream |  | strumień |
 | subquery (_n_) |  | podzapytanie |
 | support | saportować | _(1)_ obsługiwać, _(2)_ wspierać |
