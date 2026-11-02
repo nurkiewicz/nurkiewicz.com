@@ -13,6 +13,7 @@ UNTRANSLATABLE = {
     "blacklist": [PR + "277"],
     "branch": [PR + "118"],
     "commit": [PR + "117", PR + "145/files"],
+    "dispatch": [PR + "275"],
     "framework": [PR + "15"],
     "garbage collector": [PR + "19"],
     "legacy": [PR + "144"],
