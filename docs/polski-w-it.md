@@ -59,6 +59,7 @@ Jeśli musisz się zastanowić, jakie jest polskie tłumaczenie, danego pojęcia
 | corner case |  | przypadek szczególny |
 | credentials | kredensziale, kredencjały | poświadczenia |
 | custom | kastomowy | specjalny, nietypowy, niestandardowy |
+| deadlock (_n_) |  | zakleszczenie |
 | decryption | dekrypcja | deszyfrowanie |
 | default | difoltowo | domyślnie |
 | delay (_n_) |  | opóźnienie |
