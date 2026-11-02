@@ -168,6 +168,7 @@ Jeśli musisz się zastanowić, jakie jest polskie tłumaczenie, danego pojęcia
 | random | randomowy | losowy, przypadkowy |
 | reactive |  | reaktywny |
 | real-time |  | czas rzeczywisty |
+| reboot (_v_) | rebootować | uruchomić ponownie |
 | redirect |  | przekierowanie |
 | reflection |  | refleksja |
 | refresh |  | odświeżyć |
