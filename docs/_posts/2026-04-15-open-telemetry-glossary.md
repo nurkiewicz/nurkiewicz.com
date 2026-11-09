@@ -164,6 +164,11 @@ Thanos
 Thanos sits *alongside* your existing Prometheus servers and uploads their data to object storage, providing a unified query layer.
 If Mimir *replaces* Prometheus, Thanos *extends* it.
 
+VictoriaMetrics
+: A fast, cost-efficient time-series database and a drop-in alternative to Prometheus for long-term storage.
+It accepts Prometheus remote write, can scrape targets itself, and is queried with PromQL-compatible MetricsQL.
+Known for low resource usage and simple operations - a single binary is often enough, with a cluster version for scale.
+
 Alloy
 : Open-source telemetry collector, previously known as Grafana Agent.
 Collects metrics, logs, traces, and profiles, then ships them to your backends.
