@@ -27,6 +27,7 @@ Jeśli musisz się zastanowić, jakie jest polskie tłumaczenie, danego pojęcia
 | authorization (_n_) |  | autoryzacja |
 | background |  | tło, w tle |
 | backup (_n_) |  | kopia zapasowa, kopia bezpieczeństwa |
+| blacklist (_v_) | blacklistować | stale blokować |
 | bottleneck (_n_) |  | wąskie gardło |
 | bug |  | błąd |
 | bugfix (_n_) |  | poprawka |
@@ -57,6 +58,7 @@ Jeśli musisz się zastanowić, jakie jest polskie tłumaczenie, danego pojęcia
 | core (_a_) | korowy | główny, najbardziej istotny |
 | core (_n_) |  | rdzeń |
 | corner case |  | przypadek szczególny |
+| crash (_v_) | crashować | ulec awarii |
 | credentials | kredensziale, kredencjały | poświadczenia |
 | custom | kastomowy | specjalny, nietypowy, niestandardowy |
 | deadlock (_n_) |  | zakleszczenie |
@@ -73,6 +75,7 @@ Jeśli musisz się zastanowić, jakie jest polskie tłumaczenie, danego pojęcia
 | device |  | urządzenie |
 | disable | disejblować | wyłączyć |
 | disconnect (_v_) |  | odłączyć/odłączać |
+| dispatch (_v_) | dispatchować | rozdać |
 | draft (_n_) |  | szkic, wersja robocza |
 | edge case |  | przypadek brzegowy |
 | elevation | elewacja (uprawnień) | podniesienie (uprawnień) |
@@ -82,6 +85,7 @@ Jeśli musisz się zastanowić, jakie jest polskie tłumaczenie, danego pojęcia
 | encryption | enkrypcja | szyfrowanie |
 | engine |  | silnik |
 | error |  | błąd |
+| escape (_v_) | escapować | maskować znaki specjalne, zapisać znaki jako sekwencje ucieczki, zamienić znaki na encje HTML |
 | estimate (_n_) | estymata | oszacowanie, szacunek |
 | estimate (_v_) | estymować | (o)szacować |
 | event |  | zdarzenie |
@@ -98,12 +102,15 @@ Jeśli musisz się zastanowić, jakie jest polskie tłumaczenie, danego pojęcia
 | fix (_n_) | fiks | poprawka |
 | fix (_v_) | fiksnąć | poprawić |
 | flow |  | przepływ |
+| flush (_v_) | flushować, zflushować | opróżnić bufor |
 | focus (_v_) | sfocusować | skupić się |
 | footer |  | stopka |
 | foreign key |  | klucz obcy |
 | form | formatka | formularz |
+| freeze (_v_) | freezować | zawiesić się |
 | gradual (_a_) |  | stopniowy |
 | handle (_v_) | handlować | obsłużyć |
+| hardcoded (_a_) | zahardkodowany | zapisany na stałe w kodzie |
 | header |  | nagłówek |
 | heap |  | sterta |
 | image |  | obraz |
@@ -116,7 +123,9 @@ Jeśli musisz się zastanowić, jakie jest polskie tłumaczenie, danego pojęcia
 | investigate | inwestygować | zbadać, badać, sprawdzić |
 | issue | isiu | kwestia, problem |
 | job |  | zadanie |
+| join (_v_) | zjoinować | połączyć, scalić, złączyć |
 | kernel |  | jądro |
+| kill (_v_) | killować | zamknąć, ubić |
 | label |  | etykieta |
 | lag |  | opóźnienie |
 | latency |  | opóźnienie |
@@ -135,6 +144,7 @@ Jeśli musisz się zastanowić, jakie jest polskie tłumaczenie, danego pojęcia
 | memory leak |  | wyciek pamięci |
 | message |  | wiadomość |
 | metric | metryka | miara |
+| mock (_v_) | mockować | zastąpić atrapą |
 | mockup |  | makieta |
 | muted | zmutowany | wyciszony |
 | node |  | węzeł |
@@ -150,6 +160,7 @@ Jeśli musisz się zastanowić, jakie jest polskie tłumaczenie, danego pojęcia
 | paging | paginacja | stronicowanie |
 | parallel (_a_) |  | równoległy |
 | parent |  | rodzic |
+| parse (_v_) | parsować | odczytać składniowo |
 | patch | paczować | łatać, naprawiać |
 | pattern |  | wzorzec |
 | performance |  | wydajność |
@@ -181,6 +192,7 @@ Jeśli musisz się zastanowić, jakie jest polskie tłumaczenie, danego pojęcia
 | rename | zrinejmować | zmienić nazwę |
 | request |  | żądanie |
 | research |  | zbadać |
+| resize (_v_) | resizować | przeskalować |
 | resolve (_v_) | resolwować | rozwiązać |
 | resource |  | zasób |
 | response |  | odpowiedź |
@@ -204,9 +216,9 @@ Jeśli musisz się zastanowić, jakie jest polskie tłumaczenie, danego pojęcia
 | service |  | usługa |
 | set (_n_) |  | zbiór |
 | set (_v_) | setować | ustawiać |
+| set up (_v_) |  | skonfigurować, zestawić |
 | settings |  | ustawienia |
-| setup (_n_) |  | konfiguracja |
-| setup (_v_) | zsetapować | zestawić |
+| setup (_n_) |  | konfiguracja, ustawienie |
 | share (_v_) | szerować | udostępnić, dzielić |
 | side effect |  | efekt uboczny |
 | solution | solucja | rozwiązanie |
@@ -215,6 +227,7 @@ Jeśli musisz się zastanowić, jakie jest polskie tłumaczenie, danego pojęcia
 | step |  | krok |
 | stored procedure (_n_) |  | procedura składowana |
 | stream |  | strumień |
+| stub (_v_) | stubować | zastąpić uproszczeniem |
 | subnet (_n_) |  | podsieć |
 | subquery (_n_) |  | podzapytanie |
 | support | saportować | _(1)_ obsługiwać, _(2)_ wspierać |
@@ -223,11 +236,14 @@ Jeśli musisz się zastanowić, jakie jest polskie tłumaczenie, danego pojęcia
 | task |  | zadanie |
 | team |  | zespół |
 | template | templatka | szablon |
+| test case (_n_) | testkejs | przypadek testowy |
 | theme |  | motyw |
 | thread |  | wątek |
 | threshold |  | próg, poziom |
+| throttle (_v_) | throttlować | zwolnić, ograniczać |
 | throughput |  | przepustowość |
 | ticket |  | zadanie |
+| timeout (_v_) | timeoutować | przekroczyć limit czasu |
 | toggle | togel | przełącznik |
 | tool |  | narzędzie |
 | track (_v_) |  | śledzić |
@@ -242,9 +258,11 @@ Jeśli musisz się zastanowić, jakie jest polskie tłumaczenie, danego pojęcia
 | usability |  | użyteczność |
 | use case |  | przypadek użycia |
 | user |  | użytkownik |
+| validate (_v_) | walidować | sprawdzać poprawność |
 | vendor |  | dostawca |
 | vulnerability |  | podatność, słaby punkt |
 | warning |  | ostrzeżenie |
+| whitelist (_v_) | whitelistować | stale dopuszczać |
 | window |  | okno |
 | workaround |  | obejście |
 | zip (_v_) | zipować | (s)kompresować, (s)pakować |
